@@ -149,7 +149,7 @@ export default function HandwritingCalc() {
           'Content-Type': 'application/json',
           'applicationKey': APP_KEY,
           'hmac': hmac,
-          'Accept': 'application/json,application/x-latex',
+          'Accept': 'application/x-latex',
         },
         body,
       });
@@ -160,8 +160,7 @@ export default function HandwritingCalc() {
         throw new Error(`API error: ${response.status}`);
       }
 
-      const data = await response.json();
-      const latex = data?.exports?.['application/x-latex'] || '';
+      const latex = await response.text();
 
       if (latex) {
         setRecognized(latex);
