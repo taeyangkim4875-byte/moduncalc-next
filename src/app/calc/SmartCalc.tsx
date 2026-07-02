@@ -138,14 +138,14 @@ export default function SmartCalc() {
           />
         </div>
 
-        {/* 실시간 결과 (높이 고정) */}
-        <div className="mt-3 rounded-xl p-4 min-h-[64px] flex items-center justify-end" style={{ background: value !== null ? 'var(--primary-weak)' : error ? '#FFF4E5' : 'var(--bg)' }}>
+        {/* 실시간 결과 (높이 완전 고정) */}
+        <div className="mt-3 rounded-xl p-4 h-[72px] flex items-center justify-end overflow-hidden" style={{ background: value !== null ? 'var(--primary-weak)' : error ? '#FFF4E5' : 'var(--bg)' }}>
           {value !== null ? (
-            <div className="text-[32px] font-extrabold text-[var(--primary-dark)] tracking-tight">= {formatResult(value)}</div>
+            <div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight truncate">= {formatResult(value)}</div>
           ) : error ? (
             <div className="text-sm font-semibold text-[#B26A00]">{error}</div>
           ) : input ? (
-            <div className="text-lg text-[var(--sub)] font-medium">입력 중...</div>
+            <div className="text-sm text-[var(--sub)] font-medium">입력 중...</div>
           ) : (
             <div className="text-sm text-[var(--sub)]">수식을 입력하면 실시간으로 계산돼요</div>
           )}
