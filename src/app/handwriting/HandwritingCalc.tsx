@@ -1,66 +1,87 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback } from 'react';
-import Card from '@/components/Card';
+import { useRef, useState, useEffect } from 'react';
+import Card, { SectionTitle } from '@/components/Card';
+
+// MyScript REST API로 수학 인식
+const APP_KEY = 'a362edb6-2971-4ddd-855a-06376d8b15e1';
+const HMAC_KEY = '10192909-b0b0-46d4-9e7d-62059a7dd300';
+const API_URL = 'https://cloud.myscript.com/api/v4.0/iink/batch';
+
+// 일일 사용 제한 (과금 방지)
+const DAILY_LIMIT = 50;
+function getDailyCount(): number {
+  const today = new Date().toISOString().slice(0, 10);
+  const stored = localStorage.getItem('hw_usage');
+  if (stored) {
+    const { date, count } = JSON.parse(stored);
+    if (date === today) return count;
+  }
+  return 0;
+}
+function incrementDailyCount() {
+  const today = new Date().toISOString().slice(0, 10);
+  const count = getDailyCount() + 1;
+  localStorage.setItem('hw_usage', JSON.stringify({ date: today, count }));
+}
+
+interface StrokeData {
+  x: number[];
+  y: number[];
+}
 
 export default function HandwritingCalc() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [lastPos, setLastPos] = useState<{ x: number; y: number } | null>(null);
-  const [recognized, setRecognized] = useState<string>('');
-  const [result, setResult] = useState<string>('');
+  const [strokes, setStrokes] = useState<StrokeData[]>([]);
+  const [currentStroke, setCurrentStroke] = useState<StrokeData>({ x: [], y: [] });
+  const [recognized, setRecognized] = useState('');
+  const [result, setResult] = useState('');
+  const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState<{ expr: string; result: string }[]>([]);
-  const [penSize, setPenSize] = useState(6);
-  const recogniserRef = useRef<any>(null);
+  const [dailyUsed, setDailyUsed] = useState(0);
 
-  // Load recogniser dynamically (browser only)
-  useEffect(() => {
-    import('handwritten-mathematics-recogniser').then(mod => {
-      recogniserRef.current = mod;
-    }).catch(() => {
-      console.warn('Recogniser failed to load');
-    });
-  }, []);
+  useEffect(() => { setDailyUsed(getDailyCount()); }, []);
 
-  // Init canvas
+  // 캔버스 초기화
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
     const resize = () => {
-      const rect = canvas.parentElement!.getBoundingClientRect();
-      const w = rect.width;
-      const h = Math.max(280, Math.min(400, window.innerHeight * 0.4));
-
-      // Save current drawing
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
+      const w = canvas.parentElement!.getBoundingClientRect().width;
       canvas.width = w;
-      canvas.height = h;
-
-      // Restore drawing
-      ctx.putImageData(imageData, 0, 0);
-
-      ctx.strokeStyle = '#191F28';
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
-      ctx.lineWidth = penSize;
+      canvas.height = Math.max(250, Math.min(350, window.innerHeight * 0.35));
+      redrawStrokes();
     };
-
     resize();
     window.addEventListener('resize', resize);
     return () => window.removeEventListener('resize', resize);
-  }, [penSize]);
+  }, []);
+
+  const redrawStrokes = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d')!;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = '#191F28';
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    [...strokes, currentStroke].forEach(s => {
+      if (s.x.length < 2) return;
+      ctx.beginPath();
+      ctx.moveTo(s.x[0], s.y[0]);
+      for (let i = 1; i < s.x.length; i++) ctx.lineTo(s.x[i], s.y[i]);
+      ctx.stroke();
+    });
+  };
+
+  useEffect(() => { redrawStrokes(); }, [strokes]);
 
   const getPos = (e: React.MouseEvent | React.TouchEvent) => {
-    const canvas = canvasRef.current!;
-    const rect = canvas.getBoundingClientRect();
-    if ('touches' in e) {
-      const touch = e.touches[0];
-      return { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
-    }
+    const rect = canvasRef.current!.getBoundingClientRect();
+    if ('touches' in e) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
     return { x: (e as React.MouseEvent).clientX - rect.left, y: (e as React.MouseEvent).clientY - rect.top };
   };
 
@@ -69,124 +90,160 @@ export default function HandwritingCalc() {
     const pos = getPos(e);
     setIsDrawing(true);
     setLastPos(pos);
+    setCurrentStroke({ x: [pos.x], y: [pos.y] });
   };
 
   const draw = (e: React.MouseEvent | React.TouchEvent) => {
     e.preventDefault();
-    if (!isDrawing || !lastPos) return;
-    const canvas = canvasRef.current!;
-    const ctx = canvas.getContext('2d')!;
+    if (!isDrawing) return;
     const pos = getPos(e);
-
+    const ctx = canvasRef.current!.getContext('2d')!;
     ctx.strokeStyle = '#191F28';
-    ctx.lineWidth = penSize;
+    ctx.lineWidth = 3;
     ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
-
-    ctx.beginPath();
-    ctx.moveTo(lastPos.x, lastPos.y);
-    ctx.lineTo(pos.x, pos.y);
-    ctx.stroke();
-
+    if (lastPos) {
+      ctx.beginPath();
+      ctx.moveTo(lastPos.x, lastPos.y);
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+    }
     setLastPos(pos);
+    setCurrentStroke(prev => ({ x: [...prev.x, pos.x], y: [...prev.y, pos.y] }));
   };
 
   const endDraw = () => {
+    if (currentStroke.x.length > 1) {
+      setStrokes(prev => [...prev, currentStroke]);
+    }
+    setCurrentStroke({ x: [], y: [] });
     setIsDrawing(false);
     setLastPos(null);
   };
 
   const clearCanvas = () => {
-    const canvas = canvasRef.current!;
-    const ctx = canvas.getContext('2d')!;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const ctx = canvasRef.current!.getContext('2d')!;
+    ctx.clearRect(0, 0, canvasRef.current!.width, canvasRef.current!.height);
+    setStrokes([]);
+    setCurrentStroke({ x: [], y: [] });
     setRecognized('');
     setResult('');
   };
 
-  const recognize = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas || !recogniserRef.current) return;
+  const undoStroke = () => {
+    setStrokes(prev => prev.slice(0, -1));
+    setRecognized('');
+    setResult('');
+  };
 
+  // MyScript REST API로 인식
+  const recognize = async () => {
+    if (strokes.length === 0) return;
+    if (dailyUsed >= DAILY_LIMIT) {
+      setRecognized('일일 사용 한도 초과');
+      setResult('내일 다시 이용해 주세요');
+      return;
+    }
+
+    setLoading(true);
     try {
-      const mod = recogniserRef.current;
-      // Try expression recogniser first
-      let latex = '';
-      try {
-        latex = mod.HandwrittenExpressionRecogniserDNN.recognise(canvas);
-      } catch {
-        try {
-          latex = mod.HandwrittenExpressionRecogniserCNN.recognise(canvas);
-        } catch {
-          // Fallback to digit recogniser
-          const digit = mod.HandwrittenDigitRecogniserDNN.recognise(canvas);
-          latex = String(digit);
-        }
-      }
+      // HMAC 계산
+      const { computeHmac } = await import('iink-ts');
+      const hmac = await computeHmac(APP_KEY, APP_KEY, HMAC_KEY);
 
-      if (!latex || latex.trim() === '') {
+      // 스트로크 데이터 구성
+      const strokeGroups = strokes.map(s => ({
+        pointerType: 'PEN' as const,
+        x: s.x,
+        y: s.y,
+      }));
+
+      const body = {
+        configuration: {
+          math: { mimeTypes: ['application/x-latex'], solver: { enable: true } },
+          lang: 'en_US',
+        },
+        xDPI: 96,
+        yDPI: 96,
+        contentType: 'Math',
+        strokeGroups: [{ strokes: strokeGroups }],
+      };
+
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'applicationKey': APP_KEY,
+          'hmac': hmac,
+          'Accept': 'application/json,application/x-latex',
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (!response.ok) throw new Error(`API error: ${response.status}`);
+
+      const data = await response.json();
+      const latex = data?.exports?.['application/x-latex'] || '';
+
+      if (latex) {
+        setRecognized(latex);
+        incrementDailyCount();
+        setDailyUsed(prev => prev + 1);
+
+        // LaTeX → 계산 가능한 수식으로 변환
+        let expr = latex
+          .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1)/($2)')
+          .replace(/\\sqrt\{([^}]+)\}/g, 'Math.sqrt($1)')
+          .replace(/\\times/g, '*')
+          .replace(/\\div/g, '/')
+          .replace(/\\cdot/g, '*')
+          .replace(/\^/g, '**')
+          .replace(/\\left\(/g, '(')
+          .replace(/\\right\)/g, ')')
+          .replace(/\{/g, '(')
+          .replace(/\}/g, ')')
+          .replace(/\\/g, '');
+
+        try {
+          const sanitized = expr.replace(/Math\.\w+/g, '').replace(/[0-9+\-*/.()%\s]/g, '');
+          if (sanitized.length === 0 || /^\*+$/.test(sanitized)) {
+            const val = Function('"use strict"; return (' + expr + ')')();
+            if (typeof val === 'number' && isFinite(val)) {
+              const formatted = Number.isInteger(val) ? val.toLocaleString('ko-KR') : parseFloat(val.toFixed(6)).toLocaleString('ko-KR');
+              setResult(formatted);
+              const displayExpr = latex.replace(/\\times/g, '×').replace(/\\div/g, '÷').replace(/\\cdot/g, '·').replace(/\\frac/g, '').replace(/[{}\\]/g, '');
+              setHistory(prev => [{ expr: displayExpr, result: formatted }, ...prev.slice(0, 9)]);
+            } else {
+              setResult('계산할 수 없는 수식');
+            }
+          } else {
+            setResult(expr);
+          }
+        } catch {
+          setResult('인식됨: ' + latex);
+        }
+      } else {
         setRecognized('인식 실패');
         setResult('다시 그려주세요');
-        return;
       }
-
-      setRecognized(latex);
-
-      // Convert latex to evaluable expression
-      let expr = latex
-        .replace(/\\times/g, '*')
-        .replace(/\\sqrt\{([^}]+)\}/g, 'Math.sqrt($1)')
-        .replace(/\\sqrt/g, 'Math.sqrt')
-        .replace(/\s+/g, '');
-
-      // Evaluate
-      try {
-        // Safety check - only allow numbers, operators, parens, Math functions
-        if (/^[0-9+\-*/.()Math.sqrt\s]+$/.test(expr)) {
-          const evalResult = Function('"use strict"; return (' + expr + ')')();
-          const formatted = typeof evalResult === 'number'
-            ? (Number.isInteger(evalResult) ? evalResult.toLocaleString('ko-KR') : parseFloat(evalResult.toFixed(6)).toLocaleString('ko-KR'))
-            : String(evalResult);
-          setResult(formatted);
-          setHistory(prev => [{ expr: latex.replace(/\\times/g, '×').replace(/\\sqrt/g, '√'), result: formatted }, ...prev.slice(0, 9)]);
-        } else {
-          setResult('계산할 수 없는 수식');
-        }
-      } catch {
-        setResult('계산 오류');
-      }
-    } catch {
-      setRecognized('인식 실패');
-      setResult('다시 그려주세요');
+    } catch (err) {
+      console.error(err);
+      setRecognized('오류 발생');
+      setResult('네트워크 오류 또는 API 한도 초과');
     }
-  }, []);
+    setLoading(false);
+  };
 
   return (
     <>
-      {/* 캔버스 영역 */}
-      <Card className="!p-3">
-        <div className="flex items-center justify-between mb-2">
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-[var(--sub)]">펜 굵기</span>
-            {[4, 6, 8].map(s => (
-              <button
-                key={s}
-                onClick={() => setPenSize(s)}
-                className={`w-7 h-7 rounded-full border-[1.5px] flex items-center justify-center cursor-pointer transition-all ${penSize === s ? 'border-[var(--primary)] bg-[var(--primary-weak)]' : 'border-[var(--line)] bg-white'}`}
-              >
-                <span className="rounded-full bg-[var(--ink)]" style={{ width: s + 2, height: s + 2 }} />
-              </button>
-            ))}
-          </div>
-          <button
-            onClick={clearCanvas}
-            className="px-3 py-1.5 text-xs font-bold text-[var(--sub)] border border-[var(--line)] rounded-lg bg-white hover:bg-[var(--bg)] cursor-pointer"
-          >
-            지우기
-          </button>
-        </div>
+      {/* 남은 횟수 */}
+      <div className="text-xs text-[var(--sub)] text-center mb-2">
+        오늘 사용: <b className={dailyUsed >= DAILY_LIMIT ? 'text-[#E5484D]' : 'text-[var(--primary)]'}>{dailyUsed}</b> / {DAILY_LIMIT}회
+        <span className="ml-2 text-[10px]">(Beta · 일일 제한)</span>
+      </div>
 
-        <div className="relative border-2 border-dashed border-[var(--line)] rounded-xl overflow-hidden bg-white">
+      {/* 캔버스 */}
+      <Card className="!p-3">
+        <div className="border-2 border-dashed border-[var(--line)] rounded-xl overflow-hidden bg-white relative">
           <canvas
             ref={canvasRef}
             className="block w-full touch-none"
@@ -199,64 +256,70 @@ export default function HandwritingCalc() {
             onTouchMove={draw}
             onTouchEnd={endDraw}
           />
-          {!recognized && (
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <p className="text-[var(--sub)] text-sm font-medium opacity-50">여기에 수식을 그려주세요</p>
+          {strokes.length === 0 && !isDrawing && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none opacity-40">
+              <span className="text-5xl mb-2">✍️</span>
+              <span className="text-sm font-semibold">수식을 자유롭게 그려주세요</span>
+              <span className="text-xs mt-1">예: 2+3, 12×4, √16</span>
             </div>
           )}
         </div>
 
-        <button
-          onClick={recognize}
-          className="w-full mt-3 py-3.5 border-0 rounded-xl bg-[var(--primary)] text-white text-base font-extrabold cursor-pointer shadow-[var(--shadow-h)] transition-all hover:bg-[var(--primary-dark)] active:scale-[.985]"
-        >
-          ✨ 인식하고 계산하기
-        </button>
+        <div className="flex gap-2 mt-2.5">
+          <button
+            onClick={recognize}
+            disabled={loading || strokes.length === 0 || dailyUsed >= DAILY_LIMIT}
+            className="flex-1 py-3.5 rounded-xl bg-[var(--primary)] text-white font-extrabold border-0 cursor-pointer text-sm hover:bg-[var(--primary-dark)] active:scale-[.98] disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            {loading ? '인식 중...' : '✨ 인식하고 계산하기'}
+          </button>
+          <button onClick={undoStroke} disabled={strokes.length === 0} className="px-3 py-3.5 rounded-xl bg-[var(--bg)] text-[var(--sub)] font-bold border-0 cursor-pointer text-sm hover:bg-[var(--line)] disabled:opacity-30">↩</button>
+          <button onClick={clearCanvas} className="px-3 py-3.5 rounded-xl bg-[#FFE5E5] text-[#E5484D] font-bold border-0 cursor-pointer text-sm">C</button>
+        </div>
       </Card>
 
       {/* 결과 */}
       {(recognized || result) && (
         <Card>
           <div className="text-center">
-            {recognized && (
+            {recognized && recognized !== '인식 실패' && recognized !== '오류 발생' && recognized !== '일일 사용 한도 초과' && (
               <div className="text-sm text-[var(--sub)] font-semibold mb-1">
-                인식된 수식: <span className="text-[var(--ink)] font-bold">{recognized.replace(/\\times/g, '×').replace(/\\sqrt/g, '√')}</span>
+                인식: <span className="text-[var(--ink)] font-bold">{recognized}</span>
               </div>
             )}
-            {result && (
-              <div className="bg-[var(--primary-weak)] rounded-[14px] p-5 mt-2">
-                <div className="text-xs text-[var(--primary-dark)] font-bold mb-1">계산 결과</div>
-                <div className="text-[36px] font-extrabold text-[var(--primary-dark)] tracking-tight">= {result}</div>
+            <div className="bg-[var(--primary-weak)] rounded-[14px] p-5 mt-2">
+              <div className="text-xs text-[var(--primary-dark)] font-bold mb-1">
+                {recognized === '인식 실패' || recognized === '오류 발생' || recognized === '일일 사용 한도 초과' ? '안내' : '계산 결과'}
               </div>
-            )}
+              <div className={`text-[32px] font-extrabold tracking-tight ${recognized === '인식 실패' || recognized === '오류 발생' ? 'text-[#B26A00] text-lg' : 'text-[var(--primary-dark)]'}`}>
+                {recognized === '인식 실패' || recognized === '오류 발생' || recognized === '일일 사용 한도 초과' ? result : `= ${result}`}
+              </div>
+            </div>
           </div>
         </Card>
       )}
 
-      {/* 지원 수식 안내 */}
+      {/* 사용법 */}
       <Card>
-        <div className="text-[13px] font-extrabold mb-2">✏️ 지원하는 수식</div>
+        <SectionTitle num="💡">이렇게 그려보세요</SectionTitle>
         <div className="grid grid-cols-2 gap-2 text-[13px]">
-          <div className="bg-[var(--bg)] rounded-lg p-2.5 text-center">
-            <div className="font-bold text-[var(--ink)]">숫자</div>
-            <div className="text-[var(--sub)] text-xs mt-0.5">0 ~ 9</div>
-          </div>
-          <div className="bg-[var(--bg)] rounded-lg p-2.5 text-center">
-            <div className="font-bold text-[var(--ink)]">사칙연산</div>
-            <div className="text-[var(--sub)] text-xs mt-0.5">+ - × ÷</div>
-          </div>
-          <div className="bg-[var(--bg)] rounded-lg p-2.5 text-center">
-            <div className="font-bold text-[var(--ink)]">괄호</div>
-            <div className="text-[var(--sub)] text-xs mt-0.5">( )</div>
-          </div>
-          <div className="bg-[var(--bg)] rounded-lg p-2.5 text-center">
-            <div className="font-bold text-[var(--ink)]">제곱근</div>
-            <div className="text-[var(--sub)] text-xs mt-0.5">√</div>
-          </div>
+          {[
+            { sym: '2 + 3', desc: '덧셈' },
+            { sym: '12 × 4', desc: '곱셈' },
+            { sym: '√16', desc: '제곱근' },
+            { sym: '5²', desc: '거듭제곱' },
+            { sym: '¹²⁄₄', desc: '분수' },
+            { sym: '( ) ', desc: '괄호' },
+          ].map((ex, i) => (
+            <div key={i} className="bg-[var(--bg)] rounded-lg p-2.5 text-center">
+              <div className="font-bold text-[var(--ink)] text-base">{ex.sym}</div>
+              <div className="text-[var(--sub)] text-xs mt-0.5">{ex.desc}</div>
+            </div>
+          ))}
         </div>
         <div className="text-[11px] text-[var(--sub)] mt-3 text-center leading-relaxed">
-          수식을 하나씩 또박또박 크게 그려주세요.<br/>
-          인식이 잘 안 되면 지우고 다시 그려보세요.
+          수식 전체를 한 번에 그려주세요 (한 글자씩 X)<br/>
+          또박또박 크게 그릴수록 정확해요
         </div>
       </Card>
 
@@ -277,8 +340,8 @@ export default function HandwritingCalc() {
 
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
         <div className="bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">
-          AI가 브라우저에서 직접 인식합니다. 서버로 데이터가 전송되지 않아요.<br/>
-          복잡한 수식은 인식률이 낮을 수 있습니다.
+          Beta 버전 · MyScript AI 기반 수학 인식 · 일일 {DAILY_LIMIT}회 제한<br/>
+          서버에 스트로크 데이터만 전송되며, 이미지는 저장되지 않습니다.
         </div>
       </footer>
     </>
