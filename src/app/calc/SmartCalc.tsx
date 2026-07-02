@@ -138,19 +138,17 @@ export default function SmartCalc() {
           />
         </div>
 
-        {/* 실시간 결과 */}
-        <div className="mt-3 rounded-xl p-4" style={{ background: value !== null ? 'var(--primary-weak)' : error ? '#FFF4E5' : 'var(--bg)' }}>
-          <div className="text-right">
-            {value !== null ? (
-              <div className="text-[32px] font-extrabold text-[var(--primary-dark)] tracking-tight">= {formatResult(value)}</div>
-            ) : error ? (
-              <div className="text-sm font-semibold text-[#B26A00]">{error}</div>
-            ) : input ? (
-              <div className="text-lg text-[var(--sub)] font-medium">입력 중...</div>
-            ) : (
-              <div className="text-sm text-[var(--sub)]">수식을 입력하면 실시간으로 계산돼요</div>
-            )}
-          </div>
+        {/* 실시간 결과 (높이 고정) */}
+        <div className="mt-3 rounded-xl p-4 min-h-[64px] flex items-center justify-end" style={{ background: value !== null ? 'var(--primary-weak)' : error ? '#FFF4E5' : 'var(--bg)' }}>
+          {value !== null ? (
+            <div className="text-[32px] font-extrabold text-[var(--primary-dark)] tracking-tight">= {formatResult(value)}</div>
+          ) : error ? (
+            <div className="text-sm font-semibold text-[#B26A00]">{error}</div>
+          ) : input ? (
+            <div className="text-lg text-[var(--sub)] font-medium">입력 중...</div>
+          ) : (
+            <div className="text-sm text-[var(--sub)]">수식을 입력하면 실시간으로 계산돼요</div>
+          )}
         </div>
       </Card>
 
