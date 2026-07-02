@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import HandwritingCalc from "./HandwritingCalc";
+import SmartCalc from "./SmartCalc";
 
 export const metadata: Metadata = {
-  title: "손글씨 계산기 - 마우스로 수식을 그려 계산 | 모든 계산기",
-  description: "마우스나 터치로 수식을 직접 그리면 AI가 인식해서 계산해 드려요. 덧셈, 뺄셈, 곱셈, 나눗셈, 제곱근까지.",
+  title: "스마트 계산기 - 수식 입력·공학 계산 | 모든 계산기",
+  description: "cos, sin, sqrt, log 등 공학 함수를 텍스트로 입력하면 실시간으로 계산해 드려요. 한국어 입력도 지원.",
   alternates: { canonical: "https://moduncalc.com/calc" },
 };
 
 export default function Page() {
   return (
     <PageLayout
-      eyebrow="AI 손글씨 인식"
-      title="손글씨 계산기"
-      description="마우스나 손가락으로 수식을 그리면 인식해서 계산해 드려요."
+      eyebrow="공학 · 일반 계산"
+      title="스마트 계산기"
+      description="수식을 입력하면 실시간으로 계산해 드려요. 한국어도 지원!"
     >
-      <HandwritingCalc />
+      <SmartCalc />
     </PageLayout>
   );
 }

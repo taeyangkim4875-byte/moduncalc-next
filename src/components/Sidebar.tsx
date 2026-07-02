@@ -17,8 +17,8 @@ interface MenuItem {
 }
 
 const MENUS: MenuItem[] = [
-  { href: '/calc', ico: '✏️', label: '손글씨 계산기', sub: [
-    { label: 'AI 손글씨 인식', href: '/calc' }
+  { href: '/calc', ico: '🧮', label: '스마트 계산기', sub: [
+    { label: '수식 입력 계산기', href: '/calc' }
   ]},
   { href: '/', ico: '🏦', label: '도약·미래적금', sub: [
     { label: '도약 vs 미래 비교', href: '/' }
@@ -56,6 +56,9 @@ const MENUS: MenuItem[] = [
   { href: '/tax', ico: '🧾', label: '세금', sub: [
     { label: '부가세', href: '/tax/vat' },
     { label: '종합소득세', href: '/tax/income' }
+  ]},
+  { href: '/handwriting', ico: '✏️', label: '손글씨 계산기', sub: [
+    { label: 'AI 손글씨 인식 (Beta)', href: '/handwriting' }
   ]},
 ];
 
