@@ -17,6 +17,9 @@ interface MenuItem {
 }
 
 const MENUS: MenuItem[] = [
+  { href: '/calc', ico: '✏️', label: '손글씨 계산기', sub: [
+    { label: 'AI 손글씨 인식', href: '/calc' }
+  ]},
   { href: '/', ico: '🏦', label: '도약·미래적금', sub: [
     { label: '도약 vs 미래 비교', href: '/' }
   ]},
