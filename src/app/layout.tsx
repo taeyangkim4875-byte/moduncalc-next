@@ -9,11 +9,13 @@ export const metadata: Metadata = {
     template: "%s | 모든 계산기",
   },
   description: "연봉 실수령액, 청년도약계좌, 대출이자, BMI까지. 2026년 최신 정책 반영 무료 계산기 모음.",
+  keywords: "계산기, 연봉 실수령액, 청년도약계좌, 대출 이자 계산기, BMI 계산기, 국민연금, 실업급여, 최저시급",
   metadataBase: new URL("https://moduncalc.com"),
   openGraph: {
     type: "website",
     locale: "ko_KR",
     siteName: "모든 계산기",
+    url: "https://moduncalc.com",
   },
   robots: "index, follow",
   verification: {
