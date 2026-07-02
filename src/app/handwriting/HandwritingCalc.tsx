@@ -59,6 +59,19 @@ export default function HandwritingCalc() {
 
   useEffect(() => { redrawStrokes(); }, [strokes]);
 
+  // 캔버스 터치 시 페이지 스크롤 방지
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const prevent = (e: TouchEvent) => e.preventDefault();
+    canvas.addEventListener('touchstart', prevent, { passive: false });
+    canvas.addEventListener('touchmove', prevent, { passive: false });
+    return () => {
+      canvas.removeEventListener('touchstart', prevent);
+      canvas.removeEventListener('touchmove', prevent);
+    };
+  }, []);
+
   const getPos = (e: React.MouseEvent | React.TouchEvent) => {
     const rect = canvasRef.current!.getBoundingClientRect();
     if ('touches' in e) return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
@@ -67,6 +80,8 @@ export default function HandwritingCalc() {
 
   const startDraw = (e: React.MouseEvent | React.TouchEvent) => {
     e.preventDefault();
+    // 모바일: 캔버스가 화면에 보이도록 스크롤
+    canvasRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     const pos = getPos(e);
     setIsDrawing(true);
     setLastPos(pos);
