@@ -146,10 +146,6 @@ export default function HandwritingCalc() {
 
     setLoading(true);
     try {
-      // HMAC 계산
-      const { computeHmac } = await import('iink-ts');
-      const hmac = await computeHmac(APP_KEY, APP_KEY, HMAC_KEY);
-
       // 스트로크 데이터 구성
       const strokeGroups = strokes.map(s => ({
         pointerType: 'PEN' as const,
@@ -157,7 +153,7 @@ export default function HandwritingCalc() {
         y: s.y,
       }));
 
-      const body = {
+      const body = JSON.stringify({
         configuration: {
           math: { mimeTypes: ['application/x-latex'], solver: { enable: true } },
           lang: 'en_US',
@@ -166,7 +162,11 @@ export default function HandwritingCalc() {
         yDPI: 96,
         contentType: 'Math',
         strokeGroups: [{ strokes: strokeGroups }],
-      };
+      });
+
+      // HMAC 계산 (message = request body)
+      const { computeHmac } = await import('iink-ts');
+      const hmac = await computeHmac(body, APP_KEY, HMAC_KEY);
 
       const response = await fetch(API_URL, {
         method: 'POST',
@@ -176,7 +176,7 @@ export default function HandwritingCalc() {
           'hmac': hmac,
           'Accept': 'application/json,application/x-latex',
         },
-        body: JSON.stringify(body),
+        body,
       });
 
       if (!response.ok) throw new Error(`API error: ${response.status}`);
