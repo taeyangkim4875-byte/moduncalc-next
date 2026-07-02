@@ -8,23 +8,6 @@ const APP_KEY = 'a362edb6-2971-4ddd-855a-06376d8b15e1';
 const HMAC_KEY = '10192909-b0b0-46d4-9e7d-62059a7dd300';
 const API_URL = 'https://cloud.myscript.com/api/v4.0/iink/batch';
 
-// 일일 사용 제한 (과금 방지)
-const DAILY_LIMIT = 50;
-function getDailyCount(): number {
-  const today = new Date().toISOString().slice(0, 10);
-  const stored = localStorage.getItem('hw_usage');
-  if (stored) {
-    const { date, count } = JSON.parse(stored);
-    if (date === today) return count;
-  }
-  return 0;
-}
-function incrementDailyCount() {
-  const today = new Date().toISOString().slice(0, 10);
-  const count = getDailyCount() + 1;
-  localStorage.setItem('hw_usage', JSON.stringify({ date: today, count }));
-}
-
 interface StrokeData {
   x: number[];
   y: number[];
@@ -40,9 +23,6 @@ export default function HandwritingCalc() {
   const [result, setResult] = useState('');
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState<{ expr: string; result: string }[]>([]);
-  const [dailyUsed, setDailyUsed] = useState(0);
-
-  useEffect(() => { setDailyUsed(getDailyCount()); }, []);
 
   // 캔버스 초기화
   useEffect(() => {
@@ -138,11 +118,6 @@ export default function HandwritingCalc() {
   // MyScript REST API로 인식
   const recognize = async () => {
     if (strokes.length === 0) return;
-    if (dailyUsed >= DAILY_LIMIT) {
-      setRecognized('일일 사용 한도 초과');
-      setResult('내일 다시 이용해 주세요');
-      return;
-    }
 
     setLoading(true);
     try {
@@ -179,15 +154,17 @@ export default function HandwritingCalc() {
         body,
       });
 
-      if (!response.ok) throw new Error(`API error: ${response.status}`);
+      if (!response.ok) {
+        const errorText = await response.text().catch(() => '');
+        console.error('API response:', response.status, errorText);
+        throw new Error(`API error: ${response.status}`);
+      }
 
       const data = await response.json();
       const latex = data?.exports?.['application/x-latex'] || '';
 
       if (latex) {
         setRecognized(latex);
-        incrementDailyCount();
-        setDailyUsed(prev => prev + 1);
 
         // LaTeX → 계산 가능한 수식으로 변환
         let expr = latex
@@ -227,20 +204,14 @@ export default function HandwritingCalc() {
       }
     } catch (err) {
       console.error(err);
-      setRecognized('오류 발생');
-      setResult('네트워크 오류 또는 API 한도 초과');
+      setRecognized('');
+      setResult('네트워크 오류가 발생했어요. 다시 시도해 주세요.');
     }
     setLoading(false);
   };
 
   return (
     <>
-      {/* 남은 횟수 */}
-      <div className="text-xs text-[var(--sub)] text-center mb-2">
-        오늘 사용: <b className={dailyUsed >= DAILY_LIMIT ? 'text-[#E5484D]' : 'text-[var(--primary)]'}>{dailyUsed}</b> / {DAILY_LIMIT}회
-        <span className="ml-2 text-[10px]">(Beta · 일일 제한)</span>
-      </div>
-
       {/* 캔버스 */}
       <Card className="!p-3">
         <div className="border-2 border-dashed border-[var(--line)] rounded-xl overflow-hidden bg-white relative">
@@ -268,7 +239,7 @@ export default function HandwritingCalc() {
         <div className="flex gap-2 mt-2.5">
           <button
             onClick={recognize}
-            disabled={loading || strokes.length === 0 || dailyUsed >= DAILY_LIMIT}
+            disabled={loading || strokes.length === 0}
             className="flex-1 py-3.5 rounded-xl bg-[var(--primary)] text-white font-extrabold border-0 cursor-pointer text-sm hover:bg-[var(--primary-dark)] active:scale-[.98] disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {loading ? '인식 중...' : '✨ 인식하고 계산하기'}
@@ -282,17 +253,17 @@ export default function HandwritingCalc() {
       {(recognized || result) && (
         <Card>
           <div className="text-center">
-            {recognized && recognized !== '인식 실패' && recognized !== '오류 발생' && recognized !== '일일 사용 한도 초과' && (
+            {recognized && recognized !== '인식 실패' && (
               <div className="text-sm text-[var(--sub)] font-semibold mb-1">
                 인식: <span className="text-[var(--ink)] font-bold">{recognized}</span>
               </div>
             )}
             <div className="bg-[var(--primary-weak)] rounded-[14px] p-5 mt-2">
               <div className="text-xs text-[var(--primary-dark)] font-bold mb-1">
-                {recognized === '인식 실패' || recognized === '오류 발생' || recognized === '일일 사용 한도 초과' ? '안내' : '계산 결과'}
+                {recognized === '인식 실패' || !recognized ? '안내' : '계산 결과'}
               </div>
-              <div className={`text-[32px] font-extrabold tracking-tight ${recognized === '인식 실패' || recognized === '오류 발생' ? 'text-[#B26A00] text-lg' : 'text-[var(--primary-dark)]'}`}>
-                {recognized === '인식 실패' || recognized === '오류 발생' || recognized === '일일 사용 한도 초과' ? result : `= ${result}`}
+              <div className={`font-extrabold tracking-tight ${recognized === '인식 실패' || !recognized ? 'text-[#B26A00] text-base' : 'text-[var(--primary-dark)] text-[32px]'}`}>
+                {recognized === '인식 실패' || !recognized ? result : `= ${result}`}
               </div>
             </div>
           </div>
@@ -340,8 +311,7 @@ export default function HandwritingCalc() {
 
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
         <div className="bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">
-          Beta 버전 · MyScript AI 기반 수학 인식 · 일일 {DAILY_LIMIT}회 제한<br/>
-          서버에 스트로크 데이터만 전송되며, 이미지는 저장되지 않습니다.
+          MyScript AI 기반 수학 인식 · 서버에 스트로크 데이터만 전송되며, 이미지는 저장되지 않습니다.
         </div>
       </footer>
     </>
