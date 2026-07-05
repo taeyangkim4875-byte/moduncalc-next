@@ -277,7 +277,7 @@ export default function MiraeCalculator() {
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 우대금리를 중간에 못 채우면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 충족하지 못한 항목의 우대금리만 빠지고, 기본금리 5%와 나머지 우대금리는 유지됩니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 도약계좌에서 환승할 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 도약계좌를 특별중도해지하고 미래적금에 신규 가입하는 형태입니다. 일부 은행은 연계가입 우대금리를 제공합니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 도약계좌에서 환승할 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 환승은 최초 신청 기간(2026.6.22~7.3)에 <b>단 한 번만</b> 가능했습니다. 반드시 미래적금 가입 신청 → 대상 확인 → 계좌 개설 후에 도약계좌를 특별중도해지해야 합니다. 도약계좌를 먼저 해지하면 환승 혜택을 받을 수 없습니다.</div></div>
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 어떤 은행이 가장 유리한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 금리 자체는 1그룹 은행이 동일(최대 8%)이지만, 우대 조건 달성 난이도가 다릅니다. 주거래 은행을 선택하는 것이 가장 현실적입니다.</div></div>
         </div>
       </Card>

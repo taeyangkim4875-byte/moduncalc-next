@@ -184,7 +184,8 @@ export default function DoyakCalculator() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 중도해지하면 어떻게 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 정부 기여금 반환 + 이자 과세(15.4%). 특별중도해지 사유(결혼, 출산 등) 시 기여금 유지 가능.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 중도해지하면 어떻게 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 정부 기여금 반환 + 이자 과세(15.4%). 특별중도해지 사유(결혼, 출산, 청년미래적금 환승 등) 시 기여금 유지 가능.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 미래적금으로 환승할 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 환승은 최초 신청 기간(2026.6.22~7.3)에 단 한 번만 가능했습니다. 미래적금 가입 신청 → 계좌 개설 후 도약계좌를 특별중도해지하는 순서입니다.</div></div>
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 우대금리는 언제부터 적용되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 대부분 조건 충족 시점부터 적용됩니다. 일부 은행은 만기 소급 적용하므로 은행별 확인이 필요합니다.</div></div>
         </div>
       </Card>
