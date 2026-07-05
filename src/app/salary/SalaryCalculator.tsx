@@ -16,16 +16,17 @@ function ageBand(age: number): AgeBand | null {
   return AGE5[idx] ?? null;
 }
 
-/* ── 백분위 앵커 (2024 통계청 임금근로 기준, 연 만원) ── */
+/* ── 백분위 앵커 (2024 귀속 국세청 전체 근로자 기준, 연 만원) ── */
+/* 전체 평균 4,500만, 중위 3,417만 (출처: 국회 기재위 박성훈 의원실) */
 const PCT_ANCHORS: Record<AgeBand, [number, number, number, number, number]> = {
-  '20~24': [1400, 1900, 2400, 2900, 3600],
-  '25~29': [2200, 2800, 3300, 3900, 5000],
-  '30~34': [2600, 3200, 3900, 4800, 6500],
-  '35~39': [2600, 3400, 4200, 5400, 7500],
-  '40~44': [2400, 3200, 4200, 5600, 8000],
-  '45~49': [2200, 3100, 4100, 5600, 8200],
-  '50~54': [2000, 2800, 3800, 5200, 7800],
-  '55~59': [1800, 2500, 3400, 4800, 7200],
+  '20~24': [1300, 1800, 2400, 3000, 3800],
+  '25~29': [2100, 2700, 3400, 4100, 5200],
+  '30~34': [2500, 3200, 4000, 5000, 6800],
+  '35~39': [2600, 3400, 4400, 5600, 7800],
+  '40~44': [2400, 3200, 4400, 5800, 8200],
+  '45~49': [2200, 3100, 4300, 5800, 8500],
+  '50~54': [2000, 2800, 4000, 5500, 8100],
+  '55~59': [1800, 2500, 3500, 5000, 7500],
 };
 
 /* ── 구간별 백분위 보간 ── */
@@ -329,7 +330,7 @@ export default function SalaryCalculator() {
                 </table>
               </div>
               <div className="text-[11px] text-[var(--sub)] mt-2.5 leading-relaxed">
-                출처: 통계청 임금근로 일자리 소득 결과 기반 추정치
+                출처: 2024 귀속 국세청 근로소득 백분위 · 전체 근로자 기준 (평균 4,500만, 중위 3,417만)
               </div>
             </Card>
           )}
@@ -373,7 +374,7 @@ export default function SalaryCalculator() {
         <div className="flex flex-col gap-4">
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연봉과 실수령액의 차이는 왜 크나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 4대보험(약 9%)과 소득세·지방소득세가 공제되기 때문입니다. 연봉이 높을수록 누진세율이 적용되어 공제 비율이 커집니다.</div></div>
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 2026년 4대보험 요율은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 국민연금 4.75%, 건강보험 3.595%, 장기요양 건강보험료의 13.14%, 고용보험 0.9%입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연봉 상위 %는 어떤 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 국세청이 발표한 2023년 귀속 근로소득 천분위 자료를 기반으로 추정합니다. 만근 근로자 약 1,368만 명이 대상입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연봉 상위 %는 어떤 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 국세청이 발표한 2024년 귀속 근로소득 자료를 기반으로 추정합니다. 전체 근로소득 신고자 기준이며, 평균 4,500만원, 중위 3,417만원입니다.</div></div>
         </div>
       </Card>
 
