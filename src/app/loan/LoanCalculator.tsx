@@ -80,6 +80,19 @@ export default function LoanCalculator(){
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
       <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">실제 대출 금리·조건은 금융기관마다 다릅니다. 참고용으로만 활용하세요.</div>
     </footer>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 대출 상환 방식 비교</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>원리금균등상환</b>은 매월 동일한 금액(원금+이자)을 납부하는 방식입니다. 초기 부담이 적고 예측 가능하지만, 총 이자가 더 많습니다. <b>원금균등상환</b>은 매월 동일한 원금에 잔액 이자를 더해 납부합니다. 초기 부담이 크지만 총 이자가 적어 장기적으로 유리합니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">일반적으로 대출 기간이 길수록 두 방식의 총 이자 차이가 커집니다. 30년 3억원 대출 시 원금균등이 수백만원 이상 이자를 절약할 수 있습니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 어떤 상환 방식이 유리한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 총 이자만 보면 원금균등이 유리하지만, 초기 납입 부담이 크므로 소득 상황에 따라 선택하세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 거치기간이란 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 원금 상환 없이 이자만 납부하는 기간입니다. 거치기간 동안은 월 부담이 적지만, 이후 원금 상환 시 부담이 커집니다.</div></div>
+      </div>
+    </Card>
+
     <CtaButton label="월 납입액 계산하기" onClick={calc}/>
   </>);
 }

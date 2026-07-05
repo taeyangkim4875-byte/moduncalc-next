@@ -103,6 +103,20 @@ export default function JoblessCalculator(){
       <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">참고용 추정 도구입니다. 정확한 내용은 고용24(work24.go.kr)에서 확인하세요.</div>
     </footer>
 
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 실업급여(구직급여)란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">실업급여는 고용보험에 가입한 근로자가 비자발적으로 실직했을 때 재취업 활동 기간 동안 지급되는 급여입니다. 정식 명칭은 &apos;구직급여&apos;이며, 퇴직 전 평균임금의 60%를 기준으로 산정됩니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">2026년 기준 1일 상한액은 68,100원, 하한액은 66,048원입니다. 대부분의 근로자는 하한액 또는 상한액이 적용되어 실제 수급액은 월 약 198만~204만원 수준입니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 자발적 퇴사도 실업급여를 받을 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 원칙적으로 자발적 퇴사는 수급 대상이 아닙니다. 다만 임금체불, 직장 내 괴롭힘, 통근 곤란 등 정당한 사유가 인정되면 수급 가능합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 실업급여는 얼마나 오래 받을 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 고용보험 가입기간과 나이에 따라 120일~270일(약 4~9개월)간 지급됩니다. 50세 이상이거나 장애인은 지급일수가 더 깁니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 실업급여 신청은 어디서 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 고용24(work24.go.kr)에서 온라인으로 신청하거나, 가까운 고용센터를 방문하여 신청할 수 있습니다.</div></div>
+      </div>
+    </Card>
+
     <CtaButton label="구직급여 계산하기" onClick={calc}/>
   </>);
 }

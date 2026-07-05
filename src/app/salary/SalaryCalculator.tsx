@@ -354,6 +354,29 @@ export default function SalaryCalculator() {
         </div>
       </footer>
 
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">📖 연봉 실수령액이란?</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">연봉 실수령액이란 세전 연봉에서 국민연금, 건강보험, 장기요양보험, 고용보험 등 4대보험 본인부담금과 근로소득세, 지방소득세를 공제한 후 실제로 통장에 입금되는 금액을 말합니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">예를 들어 연봉 4,000만원이라면 월 세전 약 333만원에서 4대보험과 소득세를 공제하면 월 실수령액은 약 290만원 내외가 됩니다. 비과세 식대(월 20만원)를 적용하면 과세 대상 급여가 줄어 세금이 조금 더 줄어듭니다.</p>
+      </Card>
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">💡 알아두면 좋은 점</h2>
+        <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 flex flex-col gap-2">
+          <li>2026년부터 국민연금 보험료율이 9%에서 9.5%로 인상되어 본인부담 4.75%가 적용됩니다.</li>
+          <li>비과세 식대(월 20만원)를 적용하면 연간 약 240만원이 과세 대상에서 제외됩니다.</li>
+          <li>부양가족이 많을수록 인적공제가 늘어나 소득세가 줄어듭니다.</li>
+          <li>국민연금 기준소득월액 상한은 637만원으로, 이를 초과하는 소득에는 국민연금이 부과되지 않습니다.</li>
+        </ul>
+      </Card>
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <div className="flex flex-col gap-4">
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연봉과 실수령액의 차이는 왜 크나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 4대보험(약 9%)과 소득세·지방소득세가 공제되기 때문입니다. 연봉이 높을수록 누진세율이 적용되어 공제 비율이 커집니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 2026년 4대보험 요율은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 국민연금 4.75%, 건강보험 3.595%, 장기요양 건강보험료의 13.14%, 고용보험 0.9%입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연봉 상위 %는 어떤 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 국세청이 발표한 2023년 귀속 근로소득 천분위 자료를 기반으로 추정합니다. 만근 근로자 약 1,368만 명이 대상입니다.</div></div>
+        </div>
+      </Card>
+
       <CtaButton label="계산하기" onClick={calculate} />
     </>
   );

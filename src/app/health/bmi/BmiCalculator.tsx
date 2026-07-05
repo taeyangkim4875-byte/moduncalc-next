@@ -52,6 +52,19 @@ export default function BmiCalculator(){
         <tbody>{CATEGORIES.map(c=><tr key={c.label} className="border-b border-[var(--line)]"><td className="py-2 font-bold" style={{color:c.color}}>{c.label}</td><td className="text-right py-2 font-bold">{c.max===Infinity?'35 이상':c.max===18.5?'18.5 미만':`${c.max===23?'18.5':c.max===25?'23':c.max===30?'25':'30'}~${c.max}`}</td></tr>)}</tbody>
       </table>
     </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 BMI(체질량지수)란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">BMI(Body Mass Index)는 체중(kg)을 키(m)의 제곱으로 나눈 값으로, 비만도를 판정하는 가장 널리 쓰이는 지표입니다. WHO 아시아태평양 기준으로 23 이상이면 과체중, 25 이상이면 비만으로 분류합니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">다만 BMI는 근육량과 체지방률을 구분하지 못하므로, 운동선수처럼 근육이 많은 경우 BMI가 높아도 비만이 아닐 수 있습니다. 정확한 체지방 판정은 인바디 등 체성분 분석이 필요합니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 정상 BMI 범위는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. WHO 아시아태평양 기준 18.5~22.9가 정상 범위입니다. 서양 기준(18.5~24.9)과 다르므로 주의하세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. BMI가 과체중이면 어떻게 해야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 식이 조절과 규칙적인 운동을 권장합니다. 급격한 체중 감량보다 주당 0.5~1kg 감량이 건강에 좋습니다.</div></div>
+      </div>
+    </Card>
+
     <CtaButton label="BMI 계산하기" onClick={calc}/>
   </>);
 }

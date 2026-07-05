@@ -98,6 +98,20 @@ export default function PensionCalculator(){
       <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">참고용 추정 도구입니다. 정확한 예상연금은 국민연금공단(nps.or.kr)에서 확인하세요.</div>
     </footer>
 
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 국민연금이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">국민연금은 대한민국의 공적 연금 제도로, 18세 이상 60세 미만의 국민이 의무적으로 가입합니다. 매월 소득의 일정 비율을 납부하면 노후에 평생 매월 연금을 받을 수 있습니다. 2026년부터 보험료율이 9%에서 9.5%로 인상되었으며, 2033년까지 13%로 단계적 인상이 예정되어 있습니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">연금 수령액은 가입기간과 평균소득에 따라 결정되며, 최소 10년(120개월) 이상 가입해야 노령연금을 받을 수 있습니다. 수급 개시 연령은 출생연도에 따라 60~65세입니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 10년 미만 가입하면 연금을 못 받나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 매월 받는 노령연금 대신 반환일시금으로 납부한 금액에 이자를 더해 일시불로 돌려받게 됩니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연금을 조기에 받을 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 수급 개시 연령보다 최대 5년 일찍 받을 수 있지만, 1년 앞당길 때마다 6%씩 감액됩니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 가입기간이 길수록 유리한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 20년 초과 시 매 1년마다 연금액이 5%씩 추가 가산됩니다. 오래 가입할수록 유리합니다.</div></div>
+      </div>
+    </Card>
+
     <CtaButton label="예상 연금 계산하기" onClick={calc}/>
   </>);
 }

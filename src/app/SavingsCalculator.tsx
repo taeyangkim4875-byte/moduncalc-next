@@ -278,6 +278,41 @@ export default function SavingsCalculator() {
         </div>
       </footer>
 
+      {/* SEO 콘텐츠 */}
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">📖 청년도약계좌 vs 미래적금, 뭐가 다를까?</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">청년도약계좌는 만 19~34세 청년이 매월 최대 70만원을 5년간 납입하면 정부 기여금과 비과세 혜택을 받을 수 있는 정책 금융상품입니다. 2026년 새로 출시된 청년미래적금은 3년 만기로, 기본금리 5.0%에 우대금리 최대 3.0%p를 더해 최대 연 8.0%의 높은 금리를 제공합니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">두 상품 모두 정부 기여금이 지급되지만, 소득 구간별 매칭 비율과 납입 한도가 다릅니다. 도약계좌는 5년 장기 투자, 미래적금은 3년 단기 고금리라는 차이가 있어 본인의 상황에 맞게 비교해보는 것이 중요합니다.</p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">💡 알아두면 좋은 점</h2>
+        <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 flex flex-col gap-2">
+          <li>총급여 6,000만원 초과~7,500만원 이하는 정부 기여금 없이 비과세 혜택만 적용됩니다.</li>
+          <li>미래적금은 중위소득 기준도 충족해야 가입할 수 있으며, 2인 가구는 250%까지 완화됩니다.</li>
+          <li>도약계좌 우대금리는 은행마다 조건이 다르므로, 가입 전 비교가 필요합니다.</li>
+          <li>두 상품 모두 중도해지 시 정부 기여금을 돌려줘야 하므로 만기까지 유지하는 것이 유리합니다.</li>
+        </ul>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <div className="flex flex-col gap-4">
+          <div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 청년도약계좌를 중도해지하면 어떻게 되나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 중도해지 시 정부 기여금은 반환해야 하며, 이자에 대해 일반 과세(15.4%)가 적용됩니다. 다만 특별중도해지 사유(결혼, 출산, 주택구입 등)에 해당하면 기여금을 유지할 수 있습니다.</div>
+          </div>
+          <div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 미래적금 가입 자격은 무엇인가요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 만 19~34세, 총급여 7,500만원 이하, 가구 중위소득 200% 이하(2인 가구 250%)를 모두 충족해야 합니다. 우대형은 총급여 3,600만원 이하, 중위소득 150% 이하입니다.</div>
+          </div>
+          <div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 정부 기여금이란 무엇인가요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 본인이 납입한 금액에 비례하여 정부가 추가로 지급하는 금액입니다. 소득이 낮을수록 매칭 비율이 높으며, 도약계좌는 최대 6%, 미래적금 우대형은 12%가 적용됩니다.</div>
+          </div>
+        </div>
+      </Card>
+
       <CtaButton label="실수령액 계산하기" onClick={calculate} />
     </>
   );
