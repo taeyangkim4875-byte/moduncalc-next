@@ -238,6 +238,21 @@ export default function MinWageCalculator() {
         </div>
       </footer>
 
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">📖 최저시급·주휴수당이란?</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">최저임금은 국가가 근로자의 생활 안정을 위해 정한 시간당 최소 급여입니다. 2026년 최저시급은 10,320원이며, 이를 월급으로 환산하면 약 215만 6,880원(주 40시간, 209시간 기준)입니다. 사업주가 최저임금 미만으로 급여를 지급하면 3년 이하 징역 또는 2,000만원 이하 벌금에 처해질 수 있습니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">주휴수당은 주 15시간 이상 근무하고 약정된 근무일을 모두 출근한 근로자에게 유급 휴일(주휴일)에 대해 지급하는 수당입니다. 주휴 시간은 &apos;주 소정근로시간 / 40 x 8시간&apos;으로 계산되며, 주 40시간 근무자의 경우 하루 8시간분이 추가 지급됩니다.</p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <div className="flex flex-col gap-4">
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 주휴수당 포함 시급은 얼마인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 2026년 기준 주 40시간 근무 시 주휴수당을 포함한 실질 시급은 약 12,384원입니다. 주휴 8시간이 추가되어 주 48시간분의 급여를 40시간에 나누어 환산한 금액입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 주 15시간 미만 근무하면 주휴수당이 없나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 근로기준법상 주 소정근로시간이 15시간 미만인 초단시간 근로자에게는 주휴수당 지급 의무가 없습니다. 또한 연차유급휴가, 퇴직금 규정도 적용되지 않습니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 수습기간에도 최저임금을 받나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 1년 이상 근로계약을 체결한 경우, 수습 시작일부터 3개월간 최저임금의 90%(2026년 기준 9,288원)까지 감액할 수 있습니다. 단, 단순노무직은 수습 감액이 적용되지 않으며 처음부터 100% 지급해야 합니다.</div></div>
+        </div>
+      </Card>
+
       <CtaButton label="계산하기" onClick={calculate} />
     </>
   );

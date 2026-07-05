@@ -110,5 +110,20 @@ export default function GpaCalc() {
       <b className="text-[#6B7684]">계산 방법</b><br/>· 평균 평점 = (학점 x 성적값)의 합 / 총 학점
       <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">4.5 만점 기준입니다. 학교별 기준이 다를 수 있으니 참고용으로 활용하세요.</div>
     </footer>
+
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 학점(GPA)이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">GPA(Grade Point Average)는 대학에서 학업 성취도를 수치로 나타내는 평균 평점입니다. 한국 대학은 주로 4.5 만점(A+~F) 체계를 사용하며, 일부 대학은 4.3 만점(A+를 4.3으로 환산)을 적용합니다. 각 과목의 학점(이수 단위)과 성적 등급을 곱한 가중 합계를 총 학점으로 나누어 산출합니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">GPA는 장학금 선발, 대학원 진학, 교환학생 지원, 취업 시 서류 심사 등에 핵심 지표로 활용됩니다. 전공 평점과 전체 평점을 구분하여 관리하는 것이 좋으며, 학기별로 꾸준히 관리해야 졸업 요건과 목표 평점을 달성할 수 있습니다.</p>
+    </Card>
+
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 4.5 만점과 4.3 만점의 차이는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 4.5 만점 체계는 A+를 4.5로, 4.3 만점 체계는 A+를 4.3으로 환산합니다. 대부분의 한국 대학은 4.5 만점을 사용하지만, 서울대 등 일부 대학은 4.3 만점을 적용합니다. 해외 대학원 지원 시에는 4.0 만점으로 변환이 필요한 경우도 있습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 재수강하면 성적이 어떻게 반영되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 대부분의 대학에서 재수강 시 이전 성적이 삭제되고 새 성적으로 대체됩니다. 다만 재수강 성적 상한(예: A0까지만)이 있는 학교가 많고, 성적표에 재수강 표시가 남을 수 있으니 학칙을 확인하세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 졸업에 필요한 최소 평점은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 학교마다 다르지만 일반적으로 4.5 만점 기준 2.0 이상이 졸업 요건입니다. 일부 학과에서는 전공 평점 기준을 별도로 두기도 합니다. 장학금이나 대학원 진학을 목표로 한다면 3.5 이상을 유지하는 것이 유리합니다.</div></div>
+      </div>
+    </Card>
   </>);
 }

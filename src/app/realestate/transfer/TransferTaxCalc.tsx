@@ -150,10 +150,17 @@ export default function TransferTaxCalc() {
     </footer>
 
     <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 양도소득세란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">양도소득세는 부동산, 주식 등 자산을 양도(매도)할 때 발생하는 차익(양도가액 - 취득가액)에 대해 부과되는 국세입니다. 부동산의 경우 보유기간, 주택 수, 1세대1주택 여부 등에 따라 세율과 공제 혜택이 크게 달라집니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">양도소득세는 6~45%의 누진세율이 적용되며, 1년 미만 보유 시 45%, 1~2년 보유 시 기본세율이 적용됩니다. 양도일이 속하는 달의 말일부터 2개월 이내에 관할 세무서에 예정신고·납부해야 합니다. 필요경비(취득세, 중개수수료, 인테리어 비용 등)를 공제받으면 세 부담을 줄일 수 있습니다.</p>
+    </Card>
+
+    <Card>
       <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1세대1주택 비과세 조건은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 양도가 12억원 이하인 경우 비과세입니다. 12억 초과분에 대해서만 양도세가 과세되며, 2년 이상 보유(조정대상지역은 2년 거주)가 필요합니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 장기보유특별공제란?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 부동산을 장기간 보유한 경우 양도차익에서 일정 비율을 공제해 주는 제도입니다. 일반적으로 연 2%씩 최대 30%(15년), 1세대1주택은 최대 80%까지 공제됩니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1세대1주택 비과세 조건은 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 양도가액 12억원 이하인 경우 전액 비과세이며, 12억 초과분에 대해서만 과세됩니다. 2년 이상 보유가 필수이고, 조정대상지역은 2년 이상 실거주 요건도 충족해야 합니다. 일시적 2주택의 경우 3년 이내 기존 주택을 처분하면 비과세가 인정됩니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 장기보유특별공제는 어떻게 적용되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 부동산을 3년 이상 보유하면 양도차익에서 일정 비율을 공제받습니다. 일반 부동산은 연 2%씩 최대 30%(15년), 1세대1주택은 보유 연 4% + 거주 연 4%로 최대 80%까지 공제됩니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 2년 미만 보유 시 세율이 높아지나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 단기 보유 시 중과세율이 적용됩니다. 1년 미만 보유 시 양도차익의 45%가 단일세율로 과세되고, 1~2년 보유 시에는 기본 누진세율(6~45%)이 적용됩니다. 장기 보유가 절세에 유리합니다.</div></div>
       </div>
     </Card>
 

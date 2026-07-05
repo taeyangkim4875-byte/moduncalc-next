@@ -115,10 +115,17 @@ export default function SeveranceCalc() {
     </footer>
 
     <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 퇴직금이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">퇴직금은 근로기준법에 따라 1년 이상 계속 근무한 근로자가 퇴직할 때 받는 금액입니다. 계산 방식은 &apos;30일분의 평균임금 x 재직연수&apos;이며, 평균임금은 퇴직 전 3개월간의 총 임금을 기준으로 산정합니다. 상여금, 연차수당 등 정기적으로 지급되는 금액도 평균임금에 포함됩니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">2012년부터 퇴직연금(DB형, DC형) 제도가 도입되어, 사업장에 따라 퇴직연금으로 수령하는 경우도 있습니다. 퇴직금은 퇴직일로부터 14일 이내에 지급해야 하며, 미지급 시 지연이자가 발생합니다. 퇴직소득세가 부과되나, 근속연수공제가 적용되어 장기 근무자일수록 세 부담이 줄어듭니다.</p>
+    </Card>
+
+    <Card>
       <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1년 미만 근무해도 퇴직금을 받을 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 근로기준법상 퇴직금은 계속 근로기간 1년 이상인 근로자에게 지급됩니다. 1년 미만 근무 시 퇴직금 지급 의무가 없습니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 퇴직금에 세금이 부과되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 퇴직소득세가 부과됩니다. 근속연수에 따른 공제가 적용되어 근속기간이 길수록 세금이 줄어듭니다. 실수령액은 퇴직소득세를 차감한 금액입니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1년 미만 근무해도 퇴직금을 받을 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 근로기준법상 퇴직금은 계속 근로기간 1년 이상인 근로자에게 지급됩니다. 1년 미만 근무 시 법적 지급 의무가 없지만, 회사 내규에 따라 지급하는 경우도 있으니 취업규칙을 확인하세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 퇴직금에 세금이 얼마나 부과되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 퇴직소득세가 부과됩니다. 근속연수공제, 환산급여공제 등이 적용되어 근속기간이 길수록 세금이 줄어듭니다. 일반적으로 퇴직금의 2~10% 수준이며, IRP 계좌로 수령하면 퇴직소득세를 30~40% 감면받을 수 있습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 상여금이나 성과급도 퇴직금 계산에 포함되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 정기적·일률적으로 지급되는 상여금은 평균임금에 포함됩니다. 연간 상여금 총액의 3/12을 퇴직 전 3개월 임금에 합산하여 계산합니다. 다만, 일시적이거나 은혜적으로 지급되는 경조금 등은 제외됩니다.</div></div>
       </div>
     </Card>
 

@@ -64,6 +64,21 @@ export default function AcqTaxCalc(){
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
       <div className="bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">참고용 추정치입니다. 정확한 세액은 관할 지자체에 확인하세요.</div>
     </footer>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 취득세란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">취득세는 부동산, 차량 등 자산을 취득(매매, 상속, 증여 등)할 때 납부하는 지방세입니다. 주택 매매의 경우 취득가액에 세율을 곱하여 산출하며, 주택 수와 거래금액에 따라 1~12%까지 차등 적용됩니다. 1주택자는 6억 이하 1%, 6~9억 구간 1~3%, 9억 초과 3%가 기본 세율입니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">취득세와 함께 지방교육세(취득세의 10%)가 부과되며, 전용면적 85㎡ 초과 주택에는 농어촌특별세(0.2%)도 추가됩니다. 다주택자의 경우 2주택 8%, 3주택 이상 12%의 중과세율이 적용되어 세 부담이 크게 증가합니다. 취득일로부터 60일 이내에 관할 구청에 신고·납부해야 합니다.</p>
+    </Card>
+
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 생애 첫 주택 취득세 감면이 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 생애 최초로 주택을 구입하는 경우 취득세 감면 혜택이 있습니다. 부부 합산 소득 기준을 충족하고 취득가액 12억원 이하인 경우, 최대 200만원까지 취득세를 감면받을 수 있습니다. 세대 구성원 전원이 주택을 소유한 사실이 없어야 합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 다주택자 중과세율은 어떻게 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 조정대상지역 내 2주택 취득 시 8%, 3주택 이상 또는 법인은 12%의 중과세율이 적용됩니다. 비조정지역의 경우 완화된 세율이 적용될 수 있으며, 일시적 2주택 등 예외 사항도 있으니 정확한 세율은 관할 지자체에 확인하세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 전용면적 85㎡ 이하이면 어떤 혜택이 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 전용면적 85㎡(약 25.7평) 이하 주택은 농어촌특별세(0.2%)가 면제됩니다. 이는 국민주택 규모에 해당하며, 취득세와 지방교육세만 납부하면 됩니다. 85㎡ 초과 시에는 농어촌특별세가 추가로 부과됩니다.</div></div>
+      </div>
+    </Card>
+
     <CtaButton label="취득세 계산하기" onClick={calc}/>
   </>);
 }

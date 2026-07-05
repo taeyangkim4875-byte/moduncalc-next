@@ -58,6 +58,21 @@ export default function BmrCalculator(){
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
       <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">Mifflin-St Jeor 공식 기준 추정치입니다.</div>
     </footer>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 기초대사량(BMR)이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">기초대사량(BMR, Basal Metabolic Rate)은 생명을 유지하기 위해 최소한으로 필요한 에너지량을 말합니다. 심장 박동, 호흡, 체온 유지, 세포 활동 등 아무런 활동을 하지 않고 가만히 있어도 소모되는 칼로리입니다. 전체 에너지 소비의 약 60~75%를 차지하며, 성별·나이·키·체중에 따라 달라집니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">이 계산기는 정확도가 높은 Mifflin-St Jeor 공식을 사용합니다. 남성은 (10 x 체중kg) + (6.25 x 키cm) - (5 x 나이) + 5, 여성은 같은 공식에서 +5 대신 -161을 적용합니다. 기초대사량에 활동계수를 곱하면 하루 총 에너지 소비량(TDEE)을 구할 수 있습니다.</p>
+    </Card>
+
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 기초대사량을 높이려면 어떻게 해야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 근육량을 늘리는 것이 가장 효과적입니다. 근육은 지방보다 약 3배 많은 에너지를 소비하므로, 웨이트 트레이닝 등 근력 운동을 꾸준히 하면 기초대사량이 증가합니다. 충분한 단백질 섭취와 규칙적인 식사, 충분한 수면도 중요합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. TDEE란 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. TDEE(Total Daily Energy Expenditure)는 하루 총 에너지 소비량으로, 기초대사량에 신체 활동량을 반영한 값입니다. 활동 수준에 따라 기초대사량의 1.2배(좌식)~1.9배(매우 활발)까지 차이가 납니다. 체중 유지를 위해서는 TDEE만큼 섭취해야 합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 다이어트 시 얼마나 줄여야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 건강한 감량을 위해서는 TDEE에서 하루 300~500kcal 정도 적게 섭취하는 것이 권장됩니다. 이 경우 주당 약 0.3~0.5kg 감량이 가능합니다. 기초대사량 이하로 섭취하면 근손실과 요요현상이 올 수 있으므로, BMR 이상은 반드시 섭취하세요.</div></div>
+      </div>
+    </Card>
+
     <CtaButton label="칼로리 계산하기" onClick={calc}/>
   </>);
 }

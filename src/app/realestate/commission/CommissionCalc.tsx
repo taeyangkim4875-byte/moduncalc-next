@@ -139,10 +139,17 @@ export default function CommissionCalc() {
     </footer>
 
     <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 부동산 중개수수료(복비)란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">부동산 중개수수료는 매매, 전세, 월세 등 부동산 거래 시 공인중개사에게 지불하는 서비스 대가입니다. 흔히 &apos;복비&apos;라고 부르며, 거래 유형과 금액에 따라 법정 상한요율이 정해져 있습니다. 매매의 경우 거래금액 구간별로 0.4%~0.7%, 전세·임대의 경우 0.3%~0.6%가 적용됩니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">중개수수료는 매도인(임대인)과 매수인(임차인)이 각각 부담하는 것이 원칙이며, 상한요율은 최대 금액을 의미하므로 협의를 통해 낮출 수 있습니다. 부가가치세(10%)는 중개사의 과세 유형에 따라 별도로 부과될 수 있으니 거래 전 반드시 확인하시기 바랍니다.</p>
+    </Card>
+
+    <Card>
       <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 복비(중개수수료)는 협상이 가능한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 법정 상한요율 이내에서 중개사와 협의하여 낮출 수 있습니다. 상한요율은 최대 금액이며, 실제 수수료는 이보다 낮게 책정할 수 있습니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 부가세는 반드시 내야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 중개사가 일반과세자인 경우 부가세 10%가 별도 부과됩니다. 간이과세자인 경우 부가세가 면제되거나 줄어들 수 있으니 확인하세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 복비(중개수수료)를 깎을 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 법정 상한요율은 말 그대로 최대 한도입니다. 이 범위 안에서 중개사와 자유롭게 협의하여 수수료를 낮출 수 있습니다. 거래금액이 클수록 협상 여지가 크며, 계약 전에 수수료를 미리 확인하는 것이 좋습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 부가세는 별도인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 공인중개사가 일반과세자인 경우 중개수수료의 10%가 부가가치세로 별도 부과됩니다. 간이과세자(연매출 8,000만원 미만)인 경우에는 부가세가 면제되거나 크게 줄어들 수 있으니, 계약 전에 중개사의 과세 유형을 확인하세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 요율 상한은 법적 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 「공인중개사법」 시행규칙에 의해 거래 유형·금액별 상한요율이 법정되어 있습니다. 중개사가 이 상한을 초과하여 수수료를 받으면 법 위반에 해당하며, 과잉 수수료 수령 시 행정 제재를 받을 수 있습니다.</div></div>
       </div>
     </Card>
 
