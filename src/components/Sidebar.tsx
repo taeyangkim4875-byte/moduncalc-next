@@ -27,7 +27,8 @@ const MENUS: MenuItem[] = [
   { href: '/salary', ico: '💰', label: '연봉/급여', sub: [
     { label: '연봉 상위%', href: '/salary' },
     { label: '실수령액 표', href: '/salary/table' },
-    { label: '최저시급·주휴수당', href: '/salary/minimum' }
+    { label: '최저시급·주휴수당', href: '/salary/minimum' },
+    { label: '퇴직금', href: '/salary/severance' },
   ]},
   { href: '/pension', ico: '👵', label: '연금/보험', sub: [
     { label: '실업급여', href: '/pension/jobless' },
@@ -47,12 +48,16 @@ const MENUS: MenuItem[] = [
     { label: 'D-day', href: '/daily/dday' },
     { label: '나이', href: '/daily/age' },
     { label: '단위변환', href: '/daily/unit' },
+    { label: '학점(GPA)', href: '/daily/gpa' },
+    { label: '환율 변환', href: '/daily/currency' },
     { label: '속도·시간', href: '/daily/speed' },
     { label: '연비', href: '/daily/fuel' }
   ]},
   { href: '/realestate', ico: '🏢', label: '부동산', sub: [
     { label: '취득세', href: '/realestate/acqtax' },
-    { label: '전월세 전환', href: '/realestate/convert' }
+    { label: '전월세 전환', href: '/realestate/convert' },
+    { label: '복비(중개수수료)', href: '/realestate/commission' },
+    { label: '양도소득세', href: '/realestate/transfer' },
   ]},
   { href: '/tax', ico: '🧾', label: '세금', sub: [
     { label: '부가세', href: '/tax/vat' },
