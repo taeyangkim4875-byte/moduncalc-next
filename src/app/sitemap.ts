@@ -5,6 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages = [
     { path: '/', priority: 1.0 },
+    { path: '/savings/doyak', priority: 0.9 },
+    { path: '/savings/mirae', priority: 0.9 },
     { path: '/calc', priority: 0.9 },
     { path: '/salary', priority: 0.9 },
     { path: '/salary/table', priority: 0.9 },

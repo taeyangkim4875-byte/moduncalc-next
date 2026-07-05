@@ -13,7 +13,8 @@ interface CalcItem {
 
 const CALCULATORS: CalcItem[] = [
   { name: '스마트 계산기', keywords: ['스마트', '수식', 'cos', 'sin', 'sqrt', '공학', '함수'], href: '/calc', icon: '🧮', category: '계산기' },
-  { name: '도약계좌 vs 미래적금', keywords: ['도약', '미래', '적금', '환승', '청년', '비교'], href: '/', icon: '🏦', category: '적금' },
+  { name: '청년도약계좌 계산기', keywords: ['도약', '도약계좌', '청년도약', '적금', '5년'], href: '/savings/doyak', icon: '🏦', category: '적금' },
+  { name: '청년미래적금 계산기', keywords: ['미래', '미래적금', '청년미래', '환승', '3년', '은행별'], href: '/savings/mirae', icon: '🏦', category: '적금' },
   { name: '연봉 상위%', keywords: ['연봉', '상위', '퍼센트', '백분위', '급여', '소득'], href: '/salary', icon: '💰', category: '연봉' },
   { name: '연봉 실수령액 표', keywords: ['실수령액', '표', '연봉', '세후', '월급', '공제'], href: '/salary/table', icon: '📋', category: '연봉' },
   { name: '최저시급 계산기', keywords: ['최저시급', '최저임금', '시급', '주휴수당', '알바', '아르바이트'], href: '/salary/minimum', icon: '💰', category: '연봉' },

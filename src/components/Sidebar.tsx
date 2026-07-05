@@ -20,8 +20,9 @@ const MENUS: MenuItem[] = [
   { href: '/calc', ico: '🧮', label: '스마트 계산기', sub: [
     { label: '수식 입력 계산기', href: '/calc' }
   ]},
-  { href: '/', ico: '🏦', label: '도약·미래적금', sub: [
-    { label: '도약 vs 미래 비교', href: '/' }
+  { href: '/savings', ico: '🏦', label: '적금', sub: [
+    { label: '청년도약계좌', href: '/savings/doyak' },
+    { label: '청년미래적금', href: '/savings/mirae' },
   ]},
   { href: '/salary', ico: '💰', label: '연봉/급여', sub: [
     { label: '연봉 상위%', href: '/salary' },
