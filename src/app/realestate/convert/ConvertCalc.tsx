@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 export default function ConvertCalc(){
   const [dir,setDir]=useState<'j2m'|'m2j'>('j2m');
@@ -16,9 +17,11 @@ export default function ConvertCalc(){
     if(dir==='j2m'){
       const monthly=(jeonse-deposit)*10000*rate/100/12;
       setResult({value:monthly,label:'월세',annual:monthly*12});
+      scrollToResult();
     }else{
       const total=deposit*10000+rent*10000*12/(rate/100);
       setResult({value:total,label:'전세 환산금',annual:rent*10000*12});
+      scrollToResult();
     }
   };
 
@@ -38,7 +41,7 @@ export default function ConvertCalc(){
       </>}
       <div className="mb-0"><label className="block text-sm font-bold mb-2">전환율</label><div className="flex items-center gap-2.5"><input type="number" value={rate} step={0.1} onChange={e=>setRate(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">%</span></div></div>
     </Card>
-    {result&&<div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
+    {result&&<div id="calc-result" className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
       <div className="text-center py-2">
         <div className="text-sm font-bold text-[var(--sub)]">{result.label}</div>
         <div className="text-[38px] font-extrabold text-[var(--primary-dark)] tracking-tight">{won(result.value)}{dir==='j2m'&&<span className="text-base font-bold">/월</span>}</div>

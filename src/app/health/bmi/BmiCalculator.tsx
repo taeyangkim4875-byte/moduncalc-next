@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
+import { scrollToResult } from '@/utils/scroll';
 
 const CATEGORIES=[{max:18.5,label:'저체중',color:'#3182F6'},{max:23,label:'정상',color:'#00C271'},{max:25,label:'과체중',color:'#F59E0B'},{max:30,label:'비만 1단계',color:'#E5484D'},{max:35,label:'비만 2단계',color:'#E5484D'},{max:Infinity,label:'고도비만',color:'#C62828'}];
 
@@ -16,6 +17,7 @@ export default function BmiCalculator(){
     const normalRange:[number,number]=[Math.round(18.5*h*h*10)/10,Math.round(22.9*h*h*10)/10];
     const standard=Math.round((height-100)*0.9*10)/10;
     setResult({bmi,category:cat.label,color:cat.color,normalRange,standard});
+    scrollToResult();
   };
 
   return(<>
@@ -31,7 +33,7 @@ export default function BmiCalculator(){
         <input type="range" min={30} max={150} value={weight} onChange={e=>setWeight(+e.target.value)} className="w-full mt-3.5"/>
       </div>
     </Card>
-    {result&&<div>
+    {result&&<div id="calc-result">
       <div className="text-lg font-extrabold mt-4 mb-3 px-1">BMI 결과</div>
       <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
         <div className="text-center py-2">

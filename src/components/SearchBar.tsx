@@ -37,7 +37,6 @@ const CALCULATORS: CalcItem[] = [
   { name: '복비 계산기', keywords: ['복비', '중개수수료', '중개보수', '부동산', '매매', '전세'], href: '/realestate/commission', icon: '🏢', category: '부동산' },
   { name: '양도소득세 계산기', keywords: ['양도세', '양도소득세', '부동산', '매매', '차익'], href: '/realestate/transfer', icon: '🏢', category: '부동산' },
   { name: '학점 계산기', keywords: ['학점', 'gpa', '평점', '대학', '성적', '평균'], href: '/daily/gpa', icon: '🎓', category: '일상' },
-  { name: '환율 계산기', keywords: ['환율', '달러', '엔', '유로', '원화', '외화', '환전'], href: '/daily/currency', icon: '💱', category: '일상' },
   { name: '부가세 계산기', keywords: ['부가세', 'vat', '부가가치세', '공급가액', '세금계산서'], href: '/tax/vat', icon: '🧾', category: '세금' },
   { name: '종합소득세 계산기', keywords: ['종합소득세', '종소세', '소득세', '누진세', '세율', '프리랜서'], href: '/tax/income', icon: '🧾', category: '세금' },
   { name: '손글씨 계산기', keywords: ['손글씨', '필기', '그리기', '터치', 'ai', '인식'], href: '/handwriting', icon: '✏️', category: '계산기' },

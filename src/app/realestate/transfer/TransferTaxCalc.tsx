@@ -4,6 +4,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { progressiveTax } from '@/utils/tax';
+import { scrollToResult } from '@/utils/scroll';
 
 type HoldPeriod = '1년미만' | '1~2년' | '2년이상';
 
@@ -23,6 +24,7 @@ export default function TransferTaxCalc() {
     let gain = sell - acq;
     if (gain <= 0) {
       setResult({ gain, taxBase: 0, transferTax: 0, localTax: 0, total: 0, deduction: 0, basicDeduction: 0 });
+      scrollToResult();
       return;
     }
 
@@ -32,6 +34,7 @@ export default function TransferTaxCalc() {
     if (oneHouse) {
       if (sell <= 1200000000) {
         setResult({ gain, taxBase: 0, transferTax: 0, localTax: 0, total: 0, deduction: 0, basicDeduction: 0 });
+        scrollToResult();
         return;
       }
       const ratio = (sell - 1200000000) / sell;
@@ -77,6 +80,7 @@ export default function TransferTaxCalc() {
       deduction,
       basicDeduction,
     });
+    scrollToResult();
   };
 
   const periods: HoldPeriod[] = ['1년미만', '1~2년', '2년이상'];
@@ -116,7 +120,7 @@ export default function TransferTaxCalc() {
     </Card>
 
     {result && (
-      <div>
+      <div id="calc-result">
         <div className="text-lg font-extrabold mt-4 mb-3 px-1">예상 양도소득세</div>
         <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
           <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--primary-weak)] text-[var(--primary-dark)]">

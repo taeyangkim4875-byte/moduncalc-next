@@ -5,6 +5,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won, fmtSalary } from '@/utils/format';
 import { netPay, type NetPayResult } from '@/utils/tax';
+import { scrollToResult } from '@/utils/scroll';
 
 /* ── 연령대 구간 ── */
 const AGE5 = ['20~24', '25~29', '30~34', '35~39', '40~44', '45~49', '50~54', '55~59'] as const;
@@ -81,6 +82,7 @@ export default function SalaryCalculator() {
     const band = ageBand(state.age);
     const percentile = band ? calcPercentile(band, state.salary) : null;
     setResult({ pay, percentile, band });
+    scrollToResult();
   };
 
   return (
@@ -191,7 +193,7 @@ export default function SalaryCalculator() {
       </Card>
 
       {result ? (
-        <>
+        <div id="calc-result">
           {/* ── 백분위 게이지 ── */}
           {result.percentile !== null && result.band && (
             <Card>
@@ -338,7 +340,7 @@ export default function SalaryCalculator() {
           <div className="text-[11.5px] text-[var(--sub)] leading-relaxed text-center py-1 mt-0.5">
             추정치예요. 실제 급여명세서와 다를 수 있습니다.
           </div>
-        </>
+        </div>
       ) : (
         <Card className="text-center text-[var(--sub)] text-sm py-8">
           계산하기 버튼을 누르면 실수령액과 백분위를 알려드려요.

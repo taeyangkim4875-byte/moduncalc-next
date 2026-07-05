@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 const JB_RATE=0.60, JB_UPPER=68100, JB_LOWER=66048, JB_WAIT=7;
 function joblessDays(years:number, age:number){
@@ -24,6 +25,7 @@ export default function JoblessCalculator(){
     const days=joblessDays(years,age), total=daily*days;
     const cap=raw>JB_UPPER?'상한 적용':raw<JB_LOWER?'하한 적용':'';
     setResult({daily,days,total,dailyAvg,cap});
+    scrollToResult();
   };
 
   return (<>
@@ -58,7 +60,7 @@ export default function JoblessCalculator(){
     </Card>
 
     {result && (
-      <div>
+      <div id="calc-result">
         <div className="text-lg font-extrabold mt-4 mb-3 px-1">예상 구직급여</div>
         <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
           <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--primary-weak)] text-[var(--primary-dark)]">

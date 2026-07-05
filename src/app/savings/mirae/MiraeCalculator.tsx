@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:6494738,5:7556719,6:8555952};
 const MIRAE_MONTHS = 36;
@@ -141,6 +142,7 @@ export default function MiraeCalculator() {
     const rTaxAdj = rEff / (1 - NORMAL_TAX_RATE);
 
     setResult({ total, principal, contrib, interest, rate: totalRate, mt, rTaxAdj });
+    scrollToResult();
   };
 
   return (
@@ -228,7 +230,7 @@ export default function MiraeCalculator() {
       </Card>
 
       {result && (
-        <div>
+        <div id="calc-result">
           <div className="text-lg font-extrabold mt-4 mb-3 px-1">미래적금 만기 수령액</div>
           <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--violet)]">
             <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--violet-weak)] text-[var(--violet)]">만기 3년 · {result.mt.label}</span>

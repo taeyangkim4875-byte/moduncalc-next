@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 export default function LoanCalculator(){
   const [amount,setAmount]=useState(30000);
@@ -23,6 +24,7 @@ export default function LoanCalculator(){
     const prTotalInt=P*r*(payM+1)/2;
     const saving=eqTotalInt-prTotalInt;
     setResult({eq:{monthly:eqM,totalInt:eqTotalInt+graceInt,total:P+eqTotalInt+graceInt},pr:{first:prFirst,last:prLast,totalInt:prTotalInt+graceInt,total:P+prTotalInt+graceInt},graceInt,saving});
+    scrollToResult();
   };
 
   return(<>
@@ -49,7 +51,7 @@ export default function LoanCalculator(){
         </select>
       </div>
     </Card>
-    {result&&<div>
+    {result&&<div id="calc-result">
       <div className="text-lg font-extrabold mt-4 mb-3 px-1">상환 비교</div>
       <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
         <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--primary-weak)] text-[var(--primary-dark)]">원리금균등상환</span>

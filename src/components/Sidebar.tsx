@@ -49,7 +49,6 @@ const MENUS: MenuItem[] = [
     { label: '나이', href: '/daily/age' },
     { label: '단위변환', href: '/daily/unit' },
     { label: '학점(GPA)', href: '/daily/gpa' },
-    { label: '환율 변환', href: '/daily/currency' },
     { label: '속도·시간', href: '/daily/speed' },
     { label: '연비', href: '/daily/fuel' }
   ]},

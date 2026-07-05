@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6370000, NPS_FLOOR=400000;
 function pensionAge(by:number){if(by<=1952)return 60;if(by<=1956)return 61;if(by<=1960)return 62;if(by<=1964)return 63;if(by<=1968)return 64;return 65;}
@@ -22,6 +23,7 @@ export default function PensionCalculator(){
     const birthYear=2026-age;
     const startAge=pensionAge(birthYear);
     setResult({monthly,basicYear,replaceRate,startAge,birthYear,tooShort:years<10});
+    scrollToResult();
   };
 
   return (<>
@@ -50,7 +52,7 @@ export default function PensionCalculator(){
     </Card>
 
     {result && (
-      <div>
+      <div id="calc-result">
         <div className="text-lg font-extrabold mt-4 mb-3 px-1">예상 노령연금</div>
         {result.tooShort ? (
           <div className="bg-[#FFF4E5] rounded-xl p-3.5 text-[13px] text-[#B26A00] font-semibold mb-3.5">가입기간이 10년 미만이면 노령연금 대상이 아니에요. 최소 10년 이상 납입해야 합니다.</div>

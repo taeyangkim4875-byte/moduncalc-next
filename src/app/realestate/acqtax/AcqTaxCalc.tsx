@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 export default function AcqTaxCalc(){
   const [price,setPrice]=useState(50000);
@@ -24,6 +25,7 @@ export default function AcqTaxCalc(){
     const nongTax=area<=85?0:Math.round(priceWon*0.002);
     const eduTax=Math.round(acqTax*0.1);
     setResult({acqTax,nongTax,eduTax,total:acqTax+nongTax+eduTax,rate});
+    scrollToResult();
   };
 
   const seg=(opts:{label:string;value:number|string}[],current:number|string,set:(v:number|string)=>void)=>
@@ -43,7 +45,7 @@ export default function AcqTaxCalc(){
         <div className="flex items-center gap-2.5"><input type="number" value={area} onChange={e=>setArea(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">㎡</span></div>
       </div>
     </Card>
-    {result&&<div>
+    {result&&<div id="calc-result">
       <div className="text-lg font-extrabold mt-4 mb-3 px-1">취득세 결과</div>
       <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
         <div className="text-center py-2">

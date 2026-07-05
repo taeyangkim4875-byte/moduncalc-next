@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 function toDateStr(d: Date) {
   return d.toISOString().slice(0, 10);
@@ -46,6 +47,7 @@ export default function SeveranceCalc() {
       years,
       months,
     });
+    scrollToResult();
   };
 
   return (<>
@@ -87,7 +89,7 @@ export default function SeveranceCalc() {
     </Card>
 
     {result && (
-      <div>
+      <div id="calc-result">
         <div className="text-lg font-extrabold mt-4 mb-3 px-1">예상 퇴직금</div>
         <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
           <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--primary-weak)] text-[var(--primary-dark)]">

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
+import { scrollToResult } from '@/utils/scroll';
 
 export default function BmrCalculator(){
   const [gender,setGender]=useState<'male'|'female'>('male');
@@ -15,6 +16,7 @@ export default function BmrCalculator(){
     const bmr=gender==='male'?10*weight+6.25*height-5*age+5:10*weight+6.25*height-5*age-161;
     const tdee=bmr*activity;
     setResult({bmr:Math.round(bmr),tdee:Math.round(tdee),diet:Math.round(tdee-500)});
+    scrollToResult();
   };
 
   return(<>
@@ -44,7 +46,7 @@ export default function BmrCalculator(){
         </select>
       </div>
     </Card>
-    {result&&<div>
+    {result&&<div id="calc-result">
       <div className="text-lg font-extrabold mt-4 mb-3 px-1">칼로리 결과</div>
       <div className="grid grid-cols-3 gap-2.5">
         <div className="bg-white rounded-[14px] shadow-[var(--shadow)] p-4 text-center"><div className="text-xs text-[var(--sub)] font-bold">기초대사량</div><div className="text-xl font-extrabold text-[var(--primary-dark)] mt-1">{result.bmr}</div><div className="text-[10px] text-[var(--sub)]">kcal</div></div>

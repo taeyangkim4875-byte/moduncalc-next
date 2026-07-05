@@ -4,6 +4,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { progressiveTax } from '@/utils/tax';
+import { scrollToResult } from '@/utils/scroll';
 
 export default function IncomeTaxCalc(){
   const [income,setIncome]=useState(5000);
@@ -18,6 +19,7 @@ export default function IncomeTaxCalc(){
     const total=Math.round(tax)+local;
     const effectiveRate=income>0?(total/(income*10000)*100):0;
     setResult({base,tax:Math.round(tax),local,total,effectiveRate});
+    scrollToResult();
   };
 
   return(<>
@@ -30,7 +32,7 @@ export default function IncomeTaxCalc(){
         </select>
       </div>
     </Card>
-    {result&&<div>
+    {result&&<div id="calc-result">
       <div className="text-lg font-extrabold mt-4 mb-3 px-1">세액 결과</div>
       <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
         <div className="text-center py-2">

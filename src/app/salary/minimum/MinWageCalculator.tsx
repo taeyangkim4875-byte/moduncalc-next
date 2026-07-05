@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 const MIN_WAGE_2026 = 10320;
 
@@ -60,6 +61,7 @@ export default function MinWageCalculator() {
       totalMonth,
       isBelowMin,
     });
+    scrollToResult();
   };
 
   return (
@@ -131,7 +133,7 @@ export default function MinWageCalculator() {
       </Card>
 
       {result ? (
-        <>
+        <div id="calc-result">
           {/* ── 최저시급 경고 ── */}
           {result.isBelowMin && (
             <div className="bg-[#FFF4E5] rounded-xl p-3.5 mb-3.5 text-[13px] text-[#B26A00] font-semibold leading-relaxed">
@@ -219,7 +221,7 @@ export default function MinWageCalculator() {
           <div className="text-[11.5px] text-[var(--sub)] leading-relaxed text-center py-1 mt-0.5">
             추정치예요. 실제 급여와 다를 수 있습니다.
           </div>
-        </>
+        </div>
       ) : (
         <Card className="text-center text-[var(--sub)] text-sm py-8">
           계산하기 버튼을 누르면 월 예상 급여와 주휴수당을 알려드려요.

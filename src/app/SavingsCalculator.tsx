@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:6494738,5:7556719,6:8555952};
 const DOHYAK_MONTHS = 60;
@@ -152,6 +153,7 @@ export default function SavingsCalculator() {
 
     html += '<div class="text-[11.5px] text-[var(--sub)] leading-relaxed text-center py-1 mt-0.5">추정치예요. 가입 전 공식 상품설명서를 꼭 확인하세요.</div>';
     setResult(html);
+    scrollToResult();
   };
 
   return (
@@ -261,7 +263,7 @@ export default function SavingsCalculator() {
       </Card>
 
       {result ? (
-        <div dangerouslySetInnerHTML={{ __html: result }} />
+        <div id="calc-result" dangerouslySetInnerHTML={{ __html: result }} />
       ) : (
         <Card className="text-center text-[var(--sub)] text-sm py-8">
           계산하기 버튼을 누르면 두 상품을 비교해 드려요.

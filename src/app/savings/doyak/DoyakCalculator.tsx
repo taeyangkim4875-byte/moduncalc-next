@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:6494738,5:7556719,6:8555952};
 const DOHYAK_MONTHS = 60;
@@ -76,6 +77,7 @@ export default function DoyakCalculator() {
     const segLabel = segs.map(g => `${g.from}~${g.to}개월 연 ${g.rate.toFixed(1)}%`).join(' → ');
 
     setResult({ total, principal, contrib, interest, segLabel, tier });
+    scrollToResult();
   };
 
   return (
@@ -159,7 +161,7 @@ export default function DoyakCalculator() {
       </Card>
 
       {result && (
-        <div>
+        <div id="calc-result">
           <div className="text-lg font-extrabold mt-4 mb-3 px-1">도약계좌 만기 수령액</div>
           <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
             <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--primary-weak)] text-[var(--primary-dark)]">만기 5년 · {result.tier?.label}</span>

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
+import { scrollToResult } from '@/utils/scroll';
 
 type DealType = '매매' | '전세' | '월세';
 
@@ -49,6 +50,7 @@ export default function CommissionCalc() {
     const { rate, fee } = getRate(amount, table);
     const vat = Math.round(fee * 0.1);
     setResult({ rate, fee, vat, total: fee + vat });
+    scrollToResult();
   };
 
   const types: DealType[] = ['매매', '전세', '월세'];
@@ -87,7 +89,7 @@ export default function CommissionCalc() {
     </Card>
 
     {result && (
-      <div>
+      <div id="calc-result">
         <div className="text-lg font-extrabold mt-4 mb-3 px-1">예상 중개수수료</div>
         <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">
           <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--primary-weak)] text-[var(--primary-dark)]">
