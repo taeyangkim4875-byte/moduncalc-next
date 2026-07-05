@@ -36,64 +36,65 @@ interface BankRate {
 }
 
 // 2026.06 기준 · 출처: 금융위원회 공시, 은행연합회, 각 은행 상품설명서
+// ※ 우대금리는 만기해지 시 충족 여부를 판정하여 일괄 적용
 const BANKS: BankRate[] = [
   { name: 'KB국민', group: 1, maxBonus: 3.0, items: [
-    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하' },
-    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 이수' },
-    { label: '급여이체', rate: 1.0, desc: 'KB입출금 통장 급여 입금 12회 이상' },
-    { label: '출금실적', rate: 0.8, desc: '공과금 자동이체·KB카드 결제 등 출금 12회 이상' },
-    { label: '거래감사', rate: 0.5, desc: '만기 전전월 말 KB 거래 실적 충족' },
+    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하 · 가입 시 자동 판정' },
+    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 1회 이수 · 가입 후 아무 때나 이수 가능' },
+    { label: '급여이체', rate: 1.0, desc: 'KB입출금 통장에 급여 입금 월수 12회 이상 · 3년 중 12개월만 충족하면 OK' },
+    { label: '출금실적', rate: 0.8, desc: '공과금 자동이체·KB리브모바일·KB카드 결제 출금 월수 12회 이상' },
+    { label: '거래감사', rate: 0.5, desc: '만기 전전월 말 기준 KB 거래 실적 충족 · 만기 직전 조건' },
   ]},
   { name: 'NH농협', group: 1, maxBonus: 3.0, items: [
-    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하' },
-    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 이수' },
-    { label: '급여·대금이체', rate: 1.0, desc: '급여 또는 사업자대금 이체 실적' },
-    { label: '카드실적', rate: 0.7, desc: 'NH카드 월 20만원 이상 결제' },
-    { label: '신규가입', rate: 0.3, desc: 'NH 첫 적금 가입 또는 도약 연계' },
-    { label: '마이데이터', rate: 0.3, desc: 'NH마이데이터 서비스 가입' },
+    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하 · 가입 시 자동 판정' },
+    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 1회 이수' },
+    { label: '급여·대금이체', rate: 1.0, desc: '급여 또는 사업자대금 이체 실적 · 가입기간 중 충족' },
+    { label: '카드실적', rate: 0.7, desc: 'NH카드 월 20만원 이상 결제 · 가입기간 중 충족' },
+    { label: '신규가입', rate: 0.3, desc: 'NH 첫 적금 가입 또는 도약계좌 연계 · 가입 시 1회 판정' },
+    { label: '마이데이터', rate: 0.3, desc: 'NH마이데이터 서비스 가입 유지 · 가입 후 유지' },
   ]},
   { name: '신한', group: 1, maxBonus: 3.0, items: [
-    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하' },
-    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 이수' },
-    { label: '급여이체', rate: 0.3, desc: '신한은행 급여이체 18개월 이상' },
-    { label: '카드이용', rate: 0.2, desc: '신한카드 이용 18개월 이상' },
-    { label: '갈아타기', rate: 1.3, desc: '도약계좌 연계가입 시 (최초 신청기간 한정)' },
-    { label: '증권거래', rate: 0.5, desc: '신한투자증권 3개월 이상 거래' },
+    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하 · 가입 시 자동 판정' },
+    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 1회 이수' },
+    { label: '급여이체', rate: 0.3, desc: '신한은행 급여이체 18개월 이상 · 36개월 중 18개월만 충족' },
+    { label: '카드이용', rate: 0.2, desc: '신한카드 이용 18개월 이상 · 36개월 중 18개월만 충족' },
+    { label: '갈아타기', rate: 1.3, desc: '도약계좌 연계가입 · 최초 신청기간(6.22~7.3) 한정, 1회 판정' },
+    { label: '증권거래', rate: 0.5, desc: '신한투자증권 3개월 이상 거래 실적 · 가입기간 중 3개월 충족' },
   ]},
   { name: '하나', group: 1, maxBonus: 3.0, items: [
-    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하' },
-    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 이수' },
-    { label: '급여이체', rate: 1.2, desc: '급여(월 50만 이상) 이체 24회 이상' },
-    { label: '카드결제', rate: 0.6, desc: '하나카드 결제 24회 이상' },
-    { label: '예적금미보유', rate: 0.5, desc: '직전 1년 하나은행 예적금 미보유' },
+    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하 · 가입 시 자동 판정' },
+    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 1회 이수' },
+    { label: '급여이체', rate: 1.2, desc: '급여(월 50만↑) 이체 24회 이상 · 36개월 중 24개월 충족 필요' },
+    { label: '카드결제', rate: 0.6, desc: '하나카드 결제 24회 이상 · 36개월 중 24개월 충족 필요' },
+    { label: '예적금미보유', rate: 0.5, desc: '직전 1년 하나은행 예적금 미보유 · 가입 시 1회 판정' },
   ]},
   { name: '우리', group: 1, maxBonus: 3.0, items: [
-    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하' },
-    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 이수' },
-    { label: '급여이체', rate: 1.5, desc: '우리은행 소득 입금 실적' },
-    { label: '카드이용', rate: 0.5, desc: '우리카드 월 10만원 이상 결제' },
-    { label: '출시기념', rate: 0.3, desc: '출시 기념 우대 (한정 기간)' },
+    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하 · 가입 시 자동 판정' },
+    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 1회 이수' },
+    { label: '급여이체', rate: 1.5, desc: '우리은행 소득 입금 실적 · 가입기간 중 충족' },
+    { label: '카드이용', rate: 0.5, desc: '우리카드 월 10만원 이상 결제 · 가입기간 중 충족' },
+    { label: '출시기념', rate: 0.3, desc: '출시 기념 우대 · 한정 기간 가입자 자동 적용' },
   ]},
   { name: 'IBK기업', group: 1, maxBonus: 3.0, items: [
-    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하' },
-    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 이수' },
-    { label: '급여이체', rate: 0.8, desc: 'IBK 급여이체 실적' },
-    { label: '카드이용', rate: 0.5, desc: 'IBK카드 결제 실적' },
-    { label: '중소기업재직', rate: 0.5, desc: '중소기업 재직 청년 추가 우대' },
-    { label: '연계가입', rate: 0.5, desc: '도약계좌 연계 또는 첫 적금' },
+    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하 · 가입 시 자동 판정' },
+    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 1회 이수' },
+    { label: '급여이체', rate: 0.8, desc: 'IBK 급여이체 실적 · 가입기간 중 충족' },
+    { label: '카드이용', rate: 0.5, desc: 'IBK카드 결제 실적 · 가입기간 중 충족' },
+    { label: '중소기업재직', rate: 0.5, desc: '중소기업 재직 청년 · 가입 시 재직증명서로 판정' },
+    { label: '연계가입', rate: 0.5, desc: '도약계좌 연계 또는 첫 적금 · 가입 시 1회 판정' },
   ]},
   { name: '우체국', group: 1, maxBonus: 3.0, items: [
-    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하' },
-    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 이수' },
-    { label: '급여이체', rate: 0.8, desc: '우체국 급여이체 실적' },
-    { label: '거래실적', rate: 1.0, desc: '우체국 예적금·보험 거래 실적' },
-    { label: '자동이체', rate: 0.5, desc: '공과금 자동이체 실적' },
+    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하 · 가입 시 자동 판정' },
+    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 1회 이수' },
+    { label: '급여이체', rate: 0.8, desc: '우체국 급여이체 실적 · 가입기간 중 충족' },
+    { label: '거래실적', rate: 1.0, desc: '우체국 예적금·보험 거래 실적 · 가입기간 중 유지' },
+    { label: '자동이체', rate: 0.5, desc: '공과금 자동이체 실적 · 가입기간 중 충족' },
   ]},
   { name: '카카오뱅크', group: 2, maxBonus: 2.0, items: [
-    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하' },
-    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 이수' },
-    { label: '급여이체', rate: 0.5, desc: '카카오뱅크 급여이체 실적' },
-    { label: '거래실적', rate: 0.8, desc: '카카오뱅크 자유적금·체크카드 등 거래' },
+    { label: '소득우대', rate: 0.5, desc: '총급여 3,600만(종합소득 2,600만)원 이하 · 가입 시 자동 판정' },
+    { label: '재무상담', rate: 0.2, desc: '청년 재무상담 프로그램 1회 이수' },
+    { label: '급여이체', rate: 0.5, desc: '카카오뱅크 급여이체 실적 · 가입기간 중 충족' },
+    { label: '거래실적', rate: 0.8, desc: '카카오뱅크 자유적금·체크카드 등 거래 · 가입기간 중 충족' },
   ]},
 ];
 
@@ -206,7 +207,8 @@ export default function MiraeCalculator() {
       {/* 선택된 은행의 우대금리 체크리스트 */}
       <Card>
         <SectionTitle num="3">{bank.name} 우대금리 선택</SectionTitle>
-        <div className="text-xs text-[var(--sub)] mb-3">충족 가능한 우대 조건을 체크하세요 (최대 {bank.maxBonus}%p)</div>
+        <div className="text-xs text-[var(--sub)] mb-1">충족 가능한 우대 조건을 체크하세요 (최대 {bank.maxBonus}%p)</div>
+        <div className="text-[10px] text-[var(--primary)] font-semibold mb-3">※ 우대금리는 만기해지 시 충족 여부를 판정하여 일괄 적용됩니다</div>
         <div className="flex flex-col gap-2">
           {bank.items.map(item => {
             const key = `${state.bank}-${item.label}`;
