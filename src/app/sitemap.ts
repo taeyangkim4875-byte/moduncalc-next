@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/pension/jobless', priority: 0.9 },
     { path: '/pension/nps', priority: 0.9 },
     { path: '/loan', priority: 0.9 },
+    { path: '/loan/car', priority: 0.9 },
     { path: '/health/bmi', priority: 0.8 },
     { path: '/health/bmr', priority: 0.8 },
     { path: '/daily/percent', priority: 0.8 },

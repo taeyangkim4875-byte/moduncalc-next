@@ -22,6 +22,7 @@ const CALCULATORS: CalcItem[] = [
   { name: '국민연금 계산기', keywords: ['국민연금', '연금', '노후', '수령액', '가입기간'], href: '/pension/nps', icon: '👵', category: '연금/보험' },
   { name: '퇴직금 계산기', keywords: ['퇴직금', '퇴직', '퇴사', '재직기간', '평균임금'], href: '/salary/severance', icon: '💰', category: '연봉' },
   { name: '대출 이자 계산기', keywords: ['대출', '이자', '원리금', '원금균등', '상환', '모기지', '주담대'], href: '/loan', icon: '🏠', category: '대출' },
+  { name: '자동차 할부 계산기', keywords: ['자동차', '할부', '차량', '오토론', '취등록세', '선수금', '다운페이'], href: '/loan/car', icon: '🚗', category: '대출' },
   { name: 'BMI 계산기', keywords: ['bmi', '체질량', '비만', '체중', '키', '다이어트'], href: '/health/bmi', icon: '💪', category: '건강' },
   { name: '기초대사량 계산기', keywords: ['기초대사량', 'bmr', '칼로리', 'tdee', '다이어트', '대사'], href: '/health/bmr', icon: '💪', category: '건강' },
   { name: '퍼센트 계산기', keywords: ['퍼센트', '%', '비율', '변화율', '할인율'], href: '/daily/percent', icon: '📊', category: '일상' },

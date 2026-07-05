@@ -35,7 +35,8 @@ const MENUS: MenuItem[] = [
     { label: '국민연금', href: '/pension/nps' }
   ]},
   { href: '/loan', ico: '🏠', label: '대출/이자', sub: [
-    { label: '원리금균등 vs 원금균등', href: '/loan' }
+    { label: '원리금균등 vs 원금균등', href: '/loan' },
+    { label: '자동차 할부', href: '/loan/car' },
   ]},
   { href: '/health', ico: '💪', label: '건강', sub: [
     { label: 'BMI', href: '/health/bmi' },
