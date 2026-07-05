@@ -71,15 +71,9 @@ const MENUS: MenuItem[] = [
 export default function Sidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [expandedGroup, setExpandedGroup] = useState<string | null>(null);
-
   const isActive = (menu: MenuItem) => {
     if (menu.href === '/') return pathname === '/';
     return pathname.startsWith(menu.href);
-  };
-
-  const toggleGroup = (href: string) => {
-    setExpandedGroup(expandedGroup === href ? null : href);
   };
 
   return (
@@ -110,35 +104,28 @@ export default function Sidebar() {
         <nav className="flex-1 p-2.5 flex flex-col gap-0.5">
           {MENUS.map((menu) => {
             const active = isActive(menu);
-            const expanded = active || expandedGroup === menu.href;
             const hasSub = menu.sub.length > 1;
 
             return (
-              <div key={menu.href} className="mb-0.5">
-                <div
-                  className={`flex items-center gap-2.5 px-3.5 py-3 rounded-xl cursor-pointer text-sm font-semibold transition-colors ${active ? 'bg-[var(--primary-weak)] text-[var(--primary-dark)] font-extrabold' : 'text-[var(--ink)] hover:bg-[var(--bg)]'}`}
-                  onClick={() => hasSub ? toggleGroup(menu.href) : undefined}
-                >
+              <div key={menu.href} className="mb-1">
+                <div className={`flex items-center gap-2.5 px-3.5 py-2 rounded-xl text-sm font-semibold ${active ? 'text-[var(--primary-dark)] font-extrabold' : 'text-[var(--ink)]'}`}>
                   <span className="text-lg w-6 text-center">{menu.ico}</span>
                   {!hasSub ? (
                     <Link href={menu.sub[0].href} className="flex-1 no-underline text-inherit" onClick={() => setOpen(false)}>
                       {menu.label}
                     </Link>
                   ) : (
-                    <span className="flex-1">{menu.label}</span>
-                  )}
-                  {hasSub && (
-                    <span className={`text-sm text-[var(--sub)] transition-transform duration-200 ${expanded ? 'rotate-90' : ''}`}>›</span>
+                    <span className="flex-1 text-xs font-bold text-[var(--sub)] uppercase tracking-wide">{menu.label}</span>
                   )}
                 </div>
 
-                {hasSub && expanded && (
-                  <div className="flex flex-col gap-0.5 pl-12 py-1">
+                {hasSub && (
+                  <div className="flex flex-col gap-0.5 pl-12 pb-1">
                     {menu.sub.map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className={`block px-3.5 py-2 rounded-lg text-[13px] font-semibold no-underline transition-colors ${pathname === sub.href ? 'text-[var(--primary-dark)] bg-[var(--primary-weak)]' : 'text-[var(--sub)] hover:bg-[var(--bg)] hover:text-[var(--ink)]'}`}
+                        className={`block px-3.5 py-1.5 rounded-lg text-[13px] font-semibold no-underline transition-colors ${pathname === sub.href ? 'text-[var(--primary-dark)] bg-[var(--primary-weak)]' : 'text-[var(--sub)] hover:bg-[var(--bg)] hover:text-[var(--ink)]'}`}
                         onClick={() => setOpen(false)}
                       >
                         {sub.label}
