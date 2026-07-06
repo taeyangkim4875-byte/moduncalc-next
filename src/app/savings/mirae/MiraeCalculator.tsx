@@ -112,6 +112,14 @@ export default function MiraeCalculator() {
   useEffect(() => {
     const p = getParams();
     if (!Object.keys(p).length) return;
+    const bankIdx = p.bank ? +p.bank : 0;
+    // 체크된 우대항목 복원
+    const restored: Record<string, boolean> = {};
+    if (p.checked) {
+      const indices = p.checked.split(',').map(Number);
+      const b = BANKS[bankIdx];
+      if (b) indices.forEach(i => { if (b.items[i]) restored[`${bankIdx}-${b.items[i].label}`] = true; });
+    }
     setState(prev => ({
       ...prev,
       ...(p.size ? { size: +p.size } : {}),
@@ -119,7 +127,8 @@ export default function MiraeCalculator() {
       ...(p.houseIncome ? { houseIncome: +p.houseIncome } : {}),
       ...(p.dual !== undefined ? { dual: p.dual === 'true' } : {}),
       ...(p.pay ? { pay: +p.pay } : {}),
-      ...(p.bank ? { bank: +p.bank } : {}),
+      bank: bankIdx,
+      checkedItems: restored,
     }));
     setAutoCalc(true);
   }, []);
@@ -166,7 +175,9 @@ export default function MiraeCalculator() {
     const rTaxAdj = rEff / (1 - NORMAL_TAX_RATE);
 
     setResult({ total, principal, contrib, interest, rate: totalRate, mt, rTaxAdj });
-    setParams({ size: s.size, salary: s.salary, houseIncome: s.houseIncome, dual: s.dual, pay: s.pay, bank: s.bank });
+    // 체크된 우대항목 인덱스를 URL에 저장
+    const checkedIndices = bank.items.map((item, i) => state.checkedItems[`${state.bank}-${item.label}`] ? i : -1).filter(i => i >= 0);
+    setParams({ size: s.size, salary: s.salary, houseIncome: s.houseIncome, dual: s.dual, pay: s.pay, bank: s.bank, checked: checkedIndices.join(',') });
     scrollToResult();
   };
 
