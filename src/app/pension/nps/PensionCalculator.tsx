@@ -4,6 +4,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6370000, NPS_FLOOR=400000;
 function pensionAge(by:number){if(by<=1952)return 60;if(by<=1956)return 61;if(by<=1960)return 62;if(by<=1964)return 63;if(by<=1968)return 64;return 65;}
@@ -79,6 +80,7 @@ export default function PensionCalculator(){
         )}
       </div>
     )}
+    {result && <ShareButtons title="국민연금 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 월 수령액을 계산해 드려요.</Card>}
 

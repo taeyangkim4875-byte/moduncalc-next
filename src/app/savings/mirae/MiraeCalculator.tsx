@@ -5,6 +5,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:6494738,5:7556719,6:8555952};
 const MIRAE_MONTHS = 36;
@@ -251,6 +252,7 @@ export default function MiraeCalculator() {
           </div>
         </div>
       )}
+      {result && <ShareButtons title="미래적금 수령액" />}
 
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">은행을 선택하고 우대 조건을 체크한 후 계산해 보세요.</Card>}
 

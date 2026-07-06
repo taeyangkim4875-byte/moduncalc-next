@@ -5,6 +5,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function CarLoanCalc() {
   const [price, setPrice] = useState(3000);
@@ -143,6 +144,7 @@ export default function CarLoanCalc() {
           </div>
         </div>
       )}
+      {result && <ShareButtons title="자동차 할부 계산" />}
 
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 할부 납입액과 취등록세를 계산해 드려요.</Card>}
 

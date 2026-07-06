@@ -5,6 +5,7 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { progressiveTax } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function IncomeTaxCalc(){
   const [income,setIncome]=useState(5000);
@@ -47,6 +48,7 @@ export default function IncomeTaxCalc(){
         </div>
       </div>
     </div>}
+    {result && <ShareButtons title="종합소득세 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 세액을 계산해 드려요.</Card>}
     <CtaButton label="세액 계산하기" onClick={calc}/>
   </>);

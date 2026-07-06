@@ -4,6 +4,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function ConvertCalc(){
   const [dir,setDir]=useState<'j2m'|'m2j'>('j2m');
@@ -48,6 +49,7 @@ export default function ConvertCalc(){
         <div className="text-sm text-[var(--sub)]">연간 {won(result.annual)}</div>
       </div>
     </div>}
+    {result && <ShareButtons title="전월세 전환 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 전환 결과를 알려드려요.</Card>}
     <Card>
       <h2 className="text-base font-extrabold mb-3">📖 전월세 전환이란?</h2>

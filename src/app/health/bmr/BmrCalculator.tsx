@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function BmrCalculator(){
   const [gender,setGender]=useState<'male'|'female'>('male');
@@ -54,6 +55,7 @@ export default function BmrCalculator(){
         <div className="bg-white rounded-[14px] shadow-[var(--shadow)] p-4 text-center"><div className="text-xs text-[var(--sub)] font-bold">다이어트</div><div className="text-xl font-extrabold text-[#E5484D] mt-1">{result.diet}</div><div className="text-[10px] text-[var(--sub)]">kcal (-500)</div></div>
       </div>
     </div>}
+    {result && <ShareButtons title="칼로리 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 칼로리를 계산해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
       <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">Mifflin-St Jeor 공식 기준 추정치입니다.</div>

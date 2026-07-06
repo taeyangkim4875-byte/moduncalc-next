@@ -11,6 +11,7 @@
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
     "handwritten-mathematics-recogniser": "^0.0.6",
+    "html2canvas": "^1.4.1",
     "iink-ts": "^3.3.2",
     "next": "16.2.10",
     "pretendard": "^1.3.9",

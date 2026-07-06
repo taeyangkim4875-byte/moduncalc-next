@@ -5,6 +5,7 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { progressiveTax } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 type HoldPeriod = '1년미만' | '1~2년' | '2년이상';
 
@@ -141,6 +142,7 @@ export default function TransferTaxCalc() {
         </div>
       </div>
     )}
+    {result && <ShareButtons title="양도소득세 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 양도소득세를 계산해 드려요.</Card>}
 

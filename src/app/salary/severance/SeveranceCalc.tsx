@@ -4,6 +4,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 function toDateStr(d: Date) {
   return d.toISOString().slice(0, 10);
@@ -106,6 +107,7 @@ export default function SeveranceCalc() {
         </div>
       </div>
     )}
+    {result && <ShareButtons title="퇴직금 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 퇴직금을 계산해 드려요.</Card>}
 

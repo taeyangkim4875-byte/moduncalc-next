@@ -4,6 +4,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 type DealType = '매매' | '전세' | '월세';
 
@@ -108,6 +109,7 @@ export default function CommissionCalc() {
         </div>
       </div>
     )}
+    {result && <ShareButtons title="복비 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 중개수수료를 계산해 드려요.</Card>}
 

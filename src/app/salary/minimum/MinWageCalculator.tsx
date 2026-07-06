@@ -5,6 +5,7 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
+import ShareButtons from '@/components/ShareButtons';
 
 const MIN_WAGE_2026 = 10320;
 
@@ -227,6 +228,7 @@ export default function MinWageCalculator() {
           계산하기 버튼을 누르면 월 예상 급여와 주휴수당을 알려드려요.
         </Card>
       )}
+      {result && <ShareButtons title="최저시급 계산 결과" />}
 
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
         <b className="text-[#6B7684]">계산 가정</b><br />
