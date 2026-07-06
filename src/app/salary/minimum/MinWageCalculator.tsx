@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 const MIN_WAGE_2026 = 10320;
 
@@ -29,6 +30,24 @@ export default function MinWageCalculator() {
     weekDays: 5,
   });
   const [result, setResult] = useState<CalcResult | null>(null);
+  const [autoCalc, setAutoCalc] = useState(false);
+
+  useEffect(() => {
+    const p = getParams();
+    if (!Object.keys(p).length) return;
+    setState(prev => ({
+      ...prev,
+      ...(p.hourly ? { hourly: +p.hourly } : {}),
+      ...(p.dailyHours ? { dailyHours: +p.dailyHours } : {}),
+      ...(p.weekDays ? { weekDays: +p.weekDays } : {}),
+    }));
+    setAutoCalc(true);
+  }, []);
+
+  useEffect(() => {
+    if (autoCalc) { calculate(); setAutoCalc(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCalc]);
 
   const update = (key: string, val: number) =>
     setState(prev => ({ ...prev, [key]: val }));
@@ -62,6 +81,7 @@ export default function MinWageCalculator() {
       totalMonth,
       isBelowMin,
     });
+    setParams({ hourly, dailyHours, weekDays });
     scrollToResult();
   };
 

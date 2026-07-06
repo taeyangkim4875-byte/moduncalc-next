@@ -1,9 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 const CATEGORIES=[{max:18.5,label:'저체중',color:'#3182F6'},{max:23,label:'정상',color:'#00C271'},{max:25,label:'과체중',color:'#F59E0B'},{max:30,label:'비만 1단계',color:'#E5484D'},{max:35,label:'비만 2단계',color:'#E5484D'},{max:Infinity,label:'고도비만',color:'#C62828'}];
 
@@ -11,6 +12,20 @@ export default function BmiCalculator(){
   const [height,setHeight]=useState(170);
   const [weight,setWeight]=useState(70);
   const [result,setResult]=useState<{bmi:number;category:string;color:string;normalRange:[number,number];standard:number}|null>(null);
+  const [autoCalc,setAutoCalc]=useState(false);
+
+  useEffect(()=>{
+    const p=getParams();
+    if(!Object.keys(p).length)return;
+    if(p.height)setHeight(+p.height);
+    if(p.weight)setWeight(+p.weight);
+    setAutoCalc(true);
+  },[]);
+
+  useEffect(()=>{
+    if(autoCalc){calc();setAutoCalc(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[autoCalc]);
 
   const calc=()=>{
     const h=height/100,bmi=weight/(h*h);
@@ -18,6 +33,7 @@ export default function BmiCalculator(){
     const normalRange:[number,number]=[Math.round(18.5*h*h*10)/10,Math.round(22.9*h*h*10)/10];
     const standard=Math.round((height-100)*0.9*10)/10;
     setResult({bmi,category:cat.label,color:cat.color,normalRange,standard});
+    setParams({height,weight});
     scrollToResult();
   };
 

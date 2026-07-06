@@ -1,10 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6370000, NPS_FLOOR=400000;
 function pensionAge(by:number){if(by<=1952)return 60;if(by<=1956)return 61;if(by<=1960)return 62;if(by<=1964)return 63;if(by<=1968)return 64;return 65;}
@@ -14,6 +15,21 @@ export default function PensionCalculator(){
   const [income,setIncome]=useState(300);
   const [years,setYears]=useState(30);
   const [result,setResult]=useState<{monthly:number;basicYear:number;replaceRate:number;startAge:number;birthYear:number;tooShort:boolean}|null>(null);
+  const [autoCalc,setAutoCalc]=useState(false);
+
+  useEffect(()=>{
+    const p=getParams();
+    if(!Object.keys(p).length)return;
+    if(p.age)setAge(+p.age);
+    if(p.income)setIncome(+p.income);
+    if(p.years)setYears(+p.years);
+    setAutoCalc(true);
+  },[]);
+
+  useEffect(()=>{
+    if(autoCalc){calc();setAutoCalc(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[autoCalc]);
 
   const calc=()=>{
     const B=Math.min(Math.max(income*10000,NPS_FLOOR),NPS_CAP);
@@ -24,6 +40,7 @@ export default function PensionCalculator(){
     const birthYear=2026-age;
     const startAge=pensionAge(birthYear);
     setResult({monthly,basicYear,replaceRate,startAge,birthYear,tooShort:years<10});
+    setParams({age,income,years});
     scrollToResult();
   };
 

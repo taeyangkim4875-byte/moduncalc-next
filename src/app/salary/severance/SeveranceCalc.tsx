@@ -1,10 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 function toDateStr(d: Date) {
   return d.toISOString().slice(0, 10);
@@ -21,6 +22,23 @@ export default function SeveranceCalc() {
   const [bonus, setBonus] = useState(0);
   const [annualLeave, setAnnualLeave] = useState(0);
   const [result, setResult] = useState<{ severance: number; days: number; dailyAvg: number; years: number; months: number } | null>(null);
+  const [autoCalc, setAutoCalc] = useState(false);
+
+  useEffect(() => {
+    const p = getParams();
+    if (!Object.keys(p).length) return;
+    if (p.startDate) setStartDate(p.startDate);
+    if (p.endDate) setEndDate(p.endDate);
+    if (p.wage) setWage(+p.wage);
+    if (p.bonus) setBonus(+p.bonus);
+    if (p.annualLeave) setAnnualLeave(+p.annualLeave);
+    setAutoCalc(true);
+  }, []);
+
+  useEffect(() => {
+    if (autoCalc) { calc(); setAutoCalc(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCalc]);
 
   const calc = () => {
     const start = new Date(startDate);
@@ -48,6 +66,7 @@ export default function SeveranceCalc() {
       years,
       months,
     });
+    setParams({ startDate, endDate, wage, bonus, annualLeave });
     scrollToResult();
   };
 

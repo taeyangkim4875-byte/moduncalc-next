@@ -1,10 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 type DealType = '매매' | '전세' | '월세';
 
@@ -41,6 +42,21 @@ export default function CommissionCalc() {
   const [price, setPrice] = useState(50000);
   const [monthly, setMonthly] = useState(50);
   const [result, setResult] = useState<{ rate: number; fee: number; vat: number; total: number } | null>(null);
+  const [autoCalc, setAutoCalc] = useState(false);
+
+  useEffect(() => {
+    const p = getParams();
+    if (!Object.keys(p).length) return;
+    if (p.dealType) setDealType(p.dealType as DealType);
+    if (p.price) setPrice(+p.price);
+    if (p.monthly) setMonthly(+p.monthly);
+    setAutoCalc(true);
+  }, []);
+
+  useEffect(() => {
+    if (autoCalc) { calc(); setAutoCalc(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCalc]);
 
   const calc = () => {
     let amount = price;
@@ -51,6 +67,7 @@ export default function CommissionCalc() {
     const { rate, fee } = getRate(amount, table);
     const vat = Math.round(fee * 0.1);
     setResult({ rate, fee, vat, total: fee + vat });
+    setParams({ dealType, price, monthly });
     scrollToResult();
   };
 

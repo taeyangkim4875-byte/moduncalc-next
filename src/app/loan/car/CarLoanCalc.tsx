@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 export default function CarLoanCalc() {
   const [price, setPrice] = useState(3000);
@@ -17,6 +18,23 @@ export default function CarLoanCalc() {
     loanAmt: number; monthly: number; totalInt: number; totalRepay: number;
     acqTax: number; eduTax: number; totalTax: number; totalCost: number;
   } | null>(null);
+  const [autoCalc, setAutoCalc] = useState(false);
+
+  useEffect(() => {
+    const p = getParams();
+    if (!Object.keys(p).length) return;
+    if (p.price) setPrice(+p.price);
+    if (p.carType) setCarType(p.carType as 'normal'|'light'|'ev');
+    if (p.downPay) setDownPay(+p.downPay);
+    if (p.rate) setRate(+p.rate);
+    if (p.term) setTerm(+p.term);
+    setAutoCalc(true);
+  }, []);
+
+  useEffect(() => {
+    if (autoCalc) { calc(); setAutoCalc(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCalc]);
 
   const calc = () => {
     const priceWon = price * 10000;
@@ -54,6 +72,7 @@ export default function CarLoanCalc() {
     const totalCost = priceWon + totalTax + totalInt;
 
     setResult({ loanAmt, monthly: Math.round(monthly), totalInt: Math.round(totalInt), totalRepay: Math.round(totalRepay), acqTax, eduTax, totalTax, totalCost: Math.round(totalCost) });
+    setParams({ price, carType, downPay, rate, term });
     scrollToResult();
   };
 

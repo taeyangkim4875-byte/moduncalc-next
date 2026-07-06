@@ -1,10 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 export default function ConvertCalc(){
   const [dir,setDir]=useState<'j2m'|'m2j'>('j2m');
@@ -13,15 +14,34 @@ export default function ConvertCalc(){
   const [rent,setRent]=useState(50);
   const [rate,setRate]=useState(4.5);
   const [result,setResult]=useState<{value:number;label:string;annual:number}|null>(null);
+  const [autoCalc,setAutoCalc]=useState(false);
+
+  useEffect(()=>{
+    const p=getParams();
+    if(!Object.keys(p).length)return;
+    if(p.dir)setDir(p.dir as 'j2m'|'m2j');
+    if(p.jeonse)setJeonse(+p.jeonse);
+    if(p.deposit)setDeposit(+p.deposit);
+    if(p.rent)setRent(+p.rent);
+    if(p.rate)setRate(+p.rate);
+    setAutoCalc(true);
+  },[]);
+
+  useEffect(()=>{
+    if(autoCalc){calc();setAutoCalc(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[autoCalc]);
 
   const calc=()=>{
     if(dir==='j2m'){
       const monthly=(jeonse-deposit)*10000*rate/100/12;
       setResult({value:monthly,label:'월세',annual:monthly*12});
+      setParams({dir,jeonse,deposit,rate});
       scrollToResult();
     }else{
       const total=deposit*10000+rent*10000*12/(rate/100);
       setResult({value:total,label:'전세 환산금',annual:rent*10000*12});
+      setParams({dir,deposit,rent,rate});
       scrollToResult();
     }
   };

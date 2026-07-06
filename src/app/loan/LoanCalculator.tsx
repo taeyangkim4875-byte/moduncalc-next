@@ -1,10 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 export default function LoanCalculator(){
   const [amount,setAmount]=useState(30000);
@@ -12,6 +13,22 @@ export default function LoanCalculator(){
   const [term,setTerm]=useState(30);
   const [grace,setGrace]=useState(0);
   const [result,setResult]=useState<{eq:{monthly:number;totalInt:number;total:number};pr:{first:number;last:number;totalInt:number;total:number};graceInt:number;saving:number}|null>(null);
+  const [autoCalc,setAutoCalc]=useState(false);
+
+  useEffect(()=>{
+    const p=getParams();
+    if(!Object.keys(p).length)return;
+    if(p.amount)setAmount(+p.amount);
+    if(p.rate)setRate(+p.rate);
+    if(p.term)setTerm(+p.term);
+    if(p.grace)setGrace(+p.grace);
+    setAutoCalc(true);
+  },[]);
+
+  useEffect(()=>{
+    if(autoCalc){calc();setAutoCalc(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[autoCalc]);
 
   const calc=()=>{
     const P=amount*10000,r=rate/100/12,totalM=term*12,graceM=grace,payM=totalM-graceM;
@@ -25,6 +42,7 @@ export default function LoanCalculator(){
     const prTotalInt=P*r*(payM+1)/2;
     const saving=eqTotalInt-prTotalInt;
     setResult({eq:{monthly:eqM,totalInt:eqTotalInt+graceInt,total:P+eqTotalInt+graceInt},pr:{first:prFirst,last:prLast,totalInt:prTotalInt+graceInt,total:P+prTotalInt+graceInt},graceInt,saving});
+    setParams({amount,rate,term,grace});
     scrollToResult();
   };
 

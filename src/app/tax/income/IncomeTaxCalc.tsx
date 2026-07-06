@@ -1,17 +1,33 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { progressiveTax } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 export default function IncomeTaxCalc(){
   const [income,setIncome]=useState(5000);
   const [deduction,setDeduction]=useState(1000);
   const [dependents,setDependents]=useState(1);
   const [result,setResult]=useState<{base:number;tax:number;local:number;total:number;effectiveRate:number}|null>(null);
+  const [autoCalc,setAutoCalc]=useState(false);
+
+  useEffect(()=>{
+    const p=getParams();
+    if(!Object.keys(p).length)return;
+    if(p.income)setIncome(+p.income);
+    if(p.deduction)setDeduction(+p.deduction);
+    if(p.dependents)setDependents(+p.dependents);
+    setAutoCalc(true);
+  },[]);
+
+  useEffect(()=>{
+    if(autoCalc){calc();setAutoCalc(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[autoCalc]);
 
   const calc=()=>{
     const base=Math.max(0,(income-deduction)*10000-dependents*1500000);
@@ -20,6 +36,7 @@ export default function IncomeTaxCalc(){
     const total=Math.round(tax)+local;
     const effectiveRate=income>0?(total/(income*10000)*100):0;
     setResult({base,tax:Math.round(tax),local,total,effectiveRate});
+    setParams({income,deduction,dependents});
     scrollToResult();
   };
 

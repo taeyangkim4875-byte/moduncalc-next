@@ -1,11 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { progressiveTax } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 type HoldPeriod = '1년미만' | '1~2년' | '2년이상';
 
@@ -18,6 +19,22 @@ export default function TransferTaxCalc() {
     gain: number; taxBase: number; transferTax: number; localTax: number; total: number;
     deduction: number; basicDeduction: number;
   } | null>(null);
+  const [autoCalc, setAutoCalc] = useState(false);
+
+  useEffect(() => {
+    const p = getParams();
+    if (!Object.keys(p).length) return;
+    if (p.acqPrice) setAcqPrice(+p.acqPrice);
+    if (p.sellPrice) setSellPrice(+p.sellPrice);
+    if (p.holdPeriod) setHoldPeriod(p.holdPeriod as HoldPeriod);
+    if (p.oneHouse) setOneHouse(p.oneHouse === 'true');
+    setAutoCalc(true);
+  }, []);
+
+  useEffect(() => {
+    if (autoCalc) { calc(); setAutoCalc(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCalc]);
 
   const calc = () => {
     const acq = acqPrice * 10000;
@@ -81,6 +98,7 @@ export default function TransferTaxCalc() {
       deduction,
       basicDeduction,
     });
+    setParams({ acqPrice, sellPrice, holdPeriod, oneHouse });
     scrollToResult();
   };
 

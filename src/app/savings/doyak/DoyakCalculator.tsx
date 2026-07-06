@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:6494738,5:7556719,6:8555952};
 const DOHYAK_MONTHS = 60;
@@ -51,6 +52,29 @@ export default function DoyakCalculator() {
     pay: 70, baseRate: 4.5, varRate: 3.0, dohyakBonus: 1.5, bonusStart: 13,
   });
   const [result, setResult] = useState<{total:number;principal:number;contrib:number;interest:number;segLabel:string;tier:ReturnType<typeof dohyakTier>}|null>(null);
+  const [autoCalc, setAutoCalc] = useState(false);
+
+  useEffect(() => {
+    const p = getParams();
+    if (!Object.keys(p).length) return;
+    setState(prev => ({
+      ...prev,
+      ...(p.size ? { size: +p.size } : {}),
+      ...(p.salary ? { salary: +p.salary } : {}),
+      ...(p.houseIncome ? { houseIncome: +p.houseIncome } : {}),
+      ...(p.pay ? { pay: +p.pay } : {}),
+      ...(p.baseRate ? { baseRate: +p.baseRate } : {}),
+      ...(p.varRate ? { varRate: +p.varRate } : {}),
+      ...(p.dohyakBonus ? { dohyakBonus: +p.dohyakBonus } : {}),
+      ...(p.bonusStart ? { bonusStart: +p.bonusStart } : {}),
+    }));
+    setAutoCalc(true);
+  }, []);
+
+  useEffect(() => {
+    if (autoCalc) { calculate(); setAutoCalc(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCalc]);
 
   const update = (key: string, val: number) => setState(prev => ({ ...prev, [key]: val }));
 
@@ -78,6 +102,7 @@ export default function DoyakCalculator() {
     const segLabel = segs.map(g => `${g.from}~${g.to}개월 연 ${g.rate.toFixed(1)}%`).join(' → ');
 
     setResult({ total, principal, contrib, interest, segLabel, tier });
+    setParams({ size: s.size, salary: s.salary, houseIncome: s.houseIncome, pay: s.pay, baseRate: s.baseRate, varRate: s.varRate, dohyakBonus: s.dohyakBonus, bonusStart: s.bonusStart });
     scrollToResult();
   };
 

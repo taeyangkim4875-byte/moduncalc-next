@@ -1,9 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 export default function BmrCalculator(){
   const [gender,setGender]=useState<'male'|'female'>('male');
@@ -12,11 +13,29 @@ export default function BmrCalculator(){
   const [weight,setWeight]=useState(70);
   const [activity,setActivity]=useState(1.55);
   const [result,setResult]=useState<{bmr:number;tdee:number;diet:number}|null>(null);
+  const [autoCalc,setAutoCalc]=useState(false);
+
+  useEffect(()=>{
+    const p=getParams();
+    if(!Object.keys(p).length)return;
+    if(p.gender)setGender(p.gender as 'male'|'female');
+    if(p.age)setAge(+p.age);
+    if(p.height)setHeight(+p.height);
+    if(p.weight)setWeight(+p.weight);
+    if(p.activity)setActivity(+p.activity);
+    setAutoCalc(true);
+  },[]);
+
+  useEffect(()=>{
+    if(autoCalc){calc();setAutoCalc(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[autoCalc]);
 
   const calc=()=>{
     const bmr=gender==='male'?10*weight+6.25*height-5*age+5:10*weight+6.25*height-5*age-161;
     const tdee=bmr*activity;
     setResult({bmr:Math.round(bmr),tdee:Math.round(tdee),diet:Math.round(tdee-500)});
+    setParams({gender,age,height,weight,activity});
     scrollToResult();
   };
 

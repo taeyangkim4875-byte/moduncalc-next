@@ -1,10 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 export default function AcqTaxCalc(){
   const [price,setPrice]=useState(50000);
@@ -12,6 +13,22 @@ export default function AcqTaxCalc(){
   const [houseCount,setHouseCount]=useState(1);
   const [area,setArea]=useState(85);
   const [result,setResult]=useState<{acqTax:number;nongTax:number;eduTax:number;total:number;rate:number}|null>(null);
+  const [autoCalc,setAutoCalc]=useState(false);
+
+  useEffect(()=>{
+    const p=getParams();
+    if(!Object.keys(p).length)return;
+    if(p.price)setPrice(+p.price);
+    if(p.houseType)setHouseType(p.houseType);
+    if(p.houseCount)setHouseCount(+p.houseCount);
+    if(p.area)setArea(+p.area);
+    setAutoCalc(true);
+  },[]);
+
+  useEffect(()=>{
+    if(autoCalc){calc();setAutoCalc(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[autoCalc]);
 
   const calc=()=>{
     const priceWon=price*10000;
@@ -26,6 +43,7 @@ export default function AcqTaxCalc(){
     const nongTax=area<=85?0:Math.round(priceWon*0.002);
     const eduTax=Math.round(acqTax*0.1);
     setResult({acqTax,nongTax,eduTax,total:acqTax+nongTax+eduTax,rate});
+    setParams({price,houseType,houseCount,area});
     scrollToResult();
   };
 

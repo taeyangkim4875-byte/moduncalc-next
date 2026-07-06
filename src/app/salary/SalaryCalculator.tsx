@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won, fmtSalary } from '@/utils/format';
 import { netPay, type NetPayResult } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 /* ── 연령대 구간 ── */
 const AGE5 = ['20~24', '25~29', '30~34', '35~39', '40~44', '45~49', '50~54', '55~59'] as const;
@@ -74,6 +75,25 @@ export default function SalaryCalculator() {
     dependents: 1,
   });
   const [result, setResult] = useState<CalcResult | null>(null);
+  const [autoCalc, setAutoCalc] = useState(false);
+
+  useEffect(() => {
+    const p = getParams();
+    if (!Object.keys(p).length) return;
+    setState(prev => ({
+      ...prev,
+      ...(p.age ? { age: +p.age } : {}),
+      ...(p.salary ? { salary: +p.salary } : {}),
+      ...(p.nontax !== undefined ? { nontax: p.nontax === 'true' } : {}),
+      ...(p.dependents ? { dependents: +p.dependents } : {}),
+    }));
+    setAutoCalc(true);
+  }, []);
+
+  useEffect(() => {
+    if (autoCalc) { calculate(); setAutoCalc(false); }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoCalc]);
 
   const update = (key: string, val: number | boolean) =>
     setState(prev => ({ ...prev, [key]: val }));
@@ -83,6 +103,7 @@ export default function SalaryCalculator() {
     const band = ageBand(state.age);
     const percentile = band ? calcPercentile(band, state.salary) : null;
     setResult({ pay, percentile, band });
+    setParams({ age: state.age, salary: state.salary, nontax: state.nontax, dependents: state.dependents });
     scrollToResult();
   };
 

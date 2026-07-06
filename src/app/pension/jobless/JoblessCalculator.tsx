@@ -1,10 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import { getParams, setParams } from '@/utils/params';
 
 const JB_RATE=0.60, JB_UPPER=68100, JB_LOWER=66048, JB_WAIT=7;
 function joblessDays(years:number, age:number){
@@ -19,6 +20,21 @@ export default function JoblessCalculator(){
   const [wage,setWage]=useState(300);
   const [years,setYears]=useState(2);
   const [result,setResult]=useState<{daily:number;days:number;total:number;dailyAvg:number;cap:string}|null>(null);
+  const [autoCalc,setAutoCalc]=useState(false);
+
+  useEffect(()=>{
+    const p=getParams();
+    if(!Object.keys(p).length)return;
+    if(p.age)setAge(+p.age);
+    if(p.wage)setWage(+p.wage);
+    if(p.years)setYears(+p.years);
+    setAutoCalc(true);
+  },[]);
+
+  useEffect(()=>{
+    if(autoCalc){calc();setAutoCalc(false);}
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[autoCalc]);
 
   const calc=()=>{
     const wageM=wage*10000, dailyAvg=wageM/30.4, raw=dailyAvg*JB_RATE;
@@ -26,6 +42,7 @@ export default function JoblessCalculator(){
     const days=joblessDays(years,age), total=daily*days;
     const cap=raw>JB_UPPER?'상한 적용':raw<JB_LOWER?'하한 적용':'';
     setResult({daily,days,total,dailyAvg,cap});
+    setParams({age,wage,years});
     scrollToResult();
   };
 
