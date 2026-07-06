@@ -48,7 +48,7 @@ function dohyakTier(s: number) {
 export default function DoyakCalculator() {
   const [state, setState] = useState({
     size: 3, salary: 3000, houseIncome: 400,
-    pay: 70, baseRate: 4.5, varRate: 3.0, dohyakBonus: 1.5, bonusStart: 1,
+    pay: 70, baseRate: 4.5, varRate: 3.0, dohyakBonus: 1.5, bonusStart: 13,
   });
   const [result, setResult] = useState<{total:number;principal:number;contrib:number;interest:number;segLabel:string;tier:ReturnType<typeof dohyakTier>}|null>(null);
 
@@ -139,7 +139,7 @@ export default function DoyakCalculator() {
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">우대금리 적용 시작</label>
           <select value={state.bonusStart} onChange={e => update('bonusStart', +e.target.value)} className="w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-[15px] font-bold outline-none appearance-none bg-white">
-            <option value={1}>가입 시점부터 (소급)</option><option value={13}>2년차부터</option><option value={25}>3년차부터</option><option value={37}>4년차부터</option><option value={49}>5년차부터</option>
+            <option value={1}>가입 시점부터 (일부 은행 만기 소급)</option><option value={13}>2년차부터 (일반적)</option><option value={25}>3년차부터</option><option value={37}>4년차부터</option><option value={49}>5년차부터</option>
           </select>
         </div>
       </Card>
@@ -190,7 +190,7 @@ export default function DoyakCalculator() {
         <div className="flex flex-col gap-4">
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 중도해지하면 어떻게 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 정부 기여금 반환 + 이자 과세(15.4%). 특별중도해지 사유(결혼, 출산, 청년미래적금 환승 등) 시 기여금 유지 가능.</div></div>
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 미래적금으로 환승할 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 환승은 최초 신청 기간(2026.6.22~7.3)에 단 한 번만 가능했습니다. 미래적금 가입 신청 → 계좌 개설 후 도약계좌를 특별중도해지하는 순서입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 우대금리는 언제부터 적용되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 대부분 조건 충족 시점부터 적용됩니다. 일부 은행은 만기 소급 적용하므로 은행별 확인이 필요합니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 우대금리는 언제부터 적용되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. <b>소급 적용이 안 됩니다.</b> 조건을 충족한 시점부터 우대금리가 적용되며, 그 이전 기간에는 기본금리만 적용됩니다. 일부 은행은 만기 시 소급 적용하므로 반드시 은행별 상품설명서를 확인하세요.</div></div>
         </div>
       </Card>
 
