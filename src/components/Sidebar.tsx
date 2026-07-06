@@ -141,6 +141,7 @@ export default function Sidebar() {
         <div className="mt-auto px-4 py-3.5 border-t border-[var(--line)] flex gap-3.5">
           <Link href="/about" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">소개</Link>
           <Link href="/privacy" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">개인정보처리방침</Link>
+          <Link href="/terms" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">이용약관</Link>
         </div>
       </aside>
     </>
