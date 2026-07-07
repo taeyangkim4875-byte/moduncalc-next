@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import CommissionCalc from "./CommissionCalc";
 
 export const metadata: Metadata = {
-  title: "복비 계산기 - 부동산 중개수수료 | 모든 계산기",
+  title: "복비 계산기 - 부동산 중개수수료",
   description: "부동산 매매·전세·월세 중개수수료(복비)를 자동 계산하세요. 2026년 요율표 기준, 부가세 포함 총 비용까지 한눈에.",
   alternates: { canonical: "https://moduncalc.com/realestate/commission" },
 };

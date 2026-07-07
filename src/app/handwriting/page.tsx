@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import HandwritingCalc from "./HandwritingCalc";
 
 export const metadata: Metadata = {
-  title: "손글씨 계산기 - 마우스로 수식을 그려 계산 | 모든 계산기",
+  title: "손글씨 계산기 - 마우스로 수식을 그려 계산",
   description: "마우스나 터치로 수식을 직접 그리면 AI가 인식해서 계산해 드려요. MyScript 기반 수학 전문 인식.",
   alternates: { canonical: "https://moduncalc.com/handwriting" },
 };
