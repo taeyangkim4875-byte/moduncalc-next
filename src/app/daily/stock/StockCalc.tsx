@@ -6,6 +6,128 @@ import Card, { SectionTitle } from '@/components/Card';
 const fmt = (n: number) => parseFloat(n.toFixed(2)).toLocaleString('ko-KR');
 const fmtWon = (n: number) => Math.round(n).toLocaleString('ko-KR');
 
+function LeverageSim() {
+  const [initAmt] = useState(1000);
+  const [dailyPct, setDailyPct] = useState(5);
+  const [days, setDays] = useState(10);
+  const [pattern, setPattern] = useState<'zigzag'|'down'|'up'>('zigzag');
+
+  // 일별 수익률 생성
+  const dailyReturns: number[] = [];
+  for (let i = 0; i < days; i++) {
+    if (pattern === 'zigzag') dailyReturns.push(i % 2 === 0 ? -dailyPct : dailyPct);
+    else if (pattern === 'down') dailyReturns.push(-dailyPct);
+    else dailyReturns.push(dailyPct);
+  }
+
+  // 1x, 2x, 3x 시뮬레이션
+  const simulate = (leverage: number) => {
+    let value = initAmt;
+    for (const r of dailyReturns) {
+      value *= (1 + (r * leverage) / 100);
+    }
+    return value;
+  };
+
+  const v1 = simulate(1);
+  const v2 = simulate(2);
+  const v3 = simulate(3);
+  const r1 = ((v1 - initAmt) / initAmt) * 100;
+  const r2 = ((v2 - initAmt) / initAmt) * 100;
+  const r3 = ((v3 - initAmt) / initAmt) * 100;
+
+  // 일별 추적 (표용)
+  const track = (leverage: number) => {
+    const vals: number[] = [initAmt];
+    let v = initAmt;
+    for (const r of dailyReturns) {
+      v *= (1 + (r * leverage) / 100);
+      vals.push(Math.round(v));
+    }
+    return vals;
+  };
+  const t1 = track(1), t2 = track(2), t3 = track(3);
+
+  return (
+    <Card>
+      <SectionTitle num="4">레버리지 ETF 시뮬레이터</SectionTitle>
+      <div className="text-xs text-[var(--sub)] mb-3">일별 등락이 반복될 때 1배·2배·3배 레버리지의 자산이 어떻게 변하는지 확인하세요</div>
+
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">시장 패턴</label>
+        <div className="flex gap-2">
+          {([['zigzag', '📊 등락 반복 (횡보)'], ['down', '📉 매일 하락'], ['up', '📈 매일 상승']] as const).map(([v, l]) => (
+            <button key={v} onClick={() => setPattern(v)} className={`flex-1 py-2 px-1 border-[1.5px] rounded-xl text-xs font-bold cursor-pointer transition-all ${pattern === v ? 'bg-[var(--primary-weak)] border-[var(--primary)] text-[var(--primary-dark)]' : 'bg-white border-[var(--line)] text-[var(--sub)]'}`}>{l}</button>
+          ))}
+        </div>
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">일별 등락폭 <span className="text-xs text-[var(--sub)] font-medium ml-1">±{dailyPct}%</span></label>
+        <input type="range" min={1} max={15} step={1} value={dailyPct} onChange={e => setDailyPct(+e.target.value)} className="w-full" />
+      </div>
+      <div className="mb-4">
+        <label className="block text-sm font-bold mb-2">거래일 수 <span className="text-xs text-[var(--sub)] font-medium ml-1">{days}일</span></label>
+        <input type="range" min={2} max={30} step={1} value={days} onChange={e => setDays(+e.target.value)} className="w-full" />
+      </div>
+
+      {/* 결과 비교 */}
+      <div className="grid grid-cols-3 gap-2 mb-4">
+        <div className="rounded-[14px] p-3 text-center" style={{ background: r1 >= 0 ? '#E6F8F0' : '#FFE5E5' }}>
+          <div className="text-[10px] font-bold text-[var(--sub)]">1배 (일반)</div>
+          <div className="text-lg font-extrabold" style={{ color: r1 >= 0 ? 'var(--green)' : '#E5484D' }}>{r1 >= 0 ? '+' : ''}{fmt(r1)}%</div>
+          <div className="text-[10px] text-[var(--sub)]">{fmtWon(v1)}만</div>
+        </div>
+        <div className="rounded-[14px] p-3 text-center" style={{ background: r2 >= 0 ? '#E6F8F0' : '#FFE5E5' }}>
+          <div className="text-[10px] font-bold text-[var(--sub)]">2배 레버리지</div>
+          <div className="text-lg font-extrabold" style={{ color: r2 >= 0 ? 'var(--green)' : '#E5484D' }}>{r2 >= 0 ? '+' : ''}{fmt(r2)}%</div>
+          <div className="text-[10px] text-[var(--sub)]">{fmtWon(v2)}만</div>
+        </div>
+        <div className="rounded-[14px] p-3 text-center" style={{ background: r3 >= 0 ? '#E6F8F0' : '#FFE5E5' }}>
+          <div className="text-[10px] font-bold text-[var(--sub)]">3배 레버리지</div>
+          <div className="text-lg font-extrabold" style={{ color: r3 >= 0 ? 'var(--green)' : '#E5484D' }}>{r3 >= 0 ? '+' : ''}{fmt(r3)}%</div>
+          <div className="text-[10px] text-[var(--sub)]">{fmtWon(v3)}만</div>
+        </div>
+      </div>
+
+      {/* 일별 추적 표 */}
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse text-[11px] min-w-[300px]">
+          <thead>
+            <tr className="border-b-2 border-[var(--line)]">
+              <th className="py-1.5 text-left text-[var(--sub)] font-bold">일차</th>
+              <th className="py-1.5 text-right text-[var(--sub)] font-bold">등락</th>
+              <th className="py-1.5 text-right font-bold">1배</th>
+              <th className="py-1.5 text-right font-bold text-[var(--primary)]">2배</th>
+              <th className="py-1.5 text-right font-bold text-[var(--violet)]">3배</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b border-[var(--line)]">
+              <td className="py-1.5 font-bold">시작</td><td className="py-1.5 text-right">-</td>
+              <td className="py-1.5 text-right">{fmtWon(initAmt)}</td>
+              <td className="py-1.5 text-right text-[var(--primary)]">{fmtWon(initAmt)}</td>
+              <td className="py-1.5 text-right text-[var(--violet)]">{fmtWon(initAmt)}</td>
+            </tr>
+            {dailyReturns.map((r, i) => (
+              <tr key={i} className="border-b border-[var(--line)]">
+                <td className="py-1.5 font-bold">{i + 1}일</td>
+                <td className="py-1.5 text-right" style={{ color: r >= 0 ? 'var(--green)' : '#E5484D' }}>{r >= 0 ? '+' : ''}{r}%</td>
+                <td className="py-1.5 text-right">{fmtWon(t1[i + 1])}</td>
+                <td className="py-1.5 text-right text-[var(--primary)]">{fmtWon(t2[i + 1])}</td>
+                <td className="py-1.5 text-right text-[var(--violet)]">{fmtWon(t3[i + 1])}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="text-[11px] text-[var(--sub)] mt-3 leading-relaxed bg-[#FFF4E5] rounded-lg p-3">
+        <b className="text-[#B26A00]">⚠️ 핵심 포인트:</b> 등락 반복(횡보) 시 1배는 거의 원금을 유지하지만, <b>2배·3배는 매일 손실이 누적</b>됩니다. 이것이 &apos;변동성 손실(Volatility Decay)&apos;이며, 레버리지 배율이 높을수록 손실이 기하급수적으로 커집니다.
+      </div>
+    </Card>
+  );
+}
+
 export default function StockCalc() {
   // 수익률 계산
   const [buyPrice, setBuyPrice] = useState(44000);
@@ -166,6 +288,9 @@ export default function StockCalc() {
           <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">평단가 변화</span><span className="font-bold text-[var(--green)]">▼ {fmtWon(buyPrice - avgPrice)}원 ({fmt(((buyPrice - avgPrice) / buyPrice) * 100)}%↓)</span></div>
         </div>
       </Card>
+
+      {/* 레버리지 시뮬레이터 */}
+      <LeverageSim />
 
       {/* FAQ */}
       <Card>
