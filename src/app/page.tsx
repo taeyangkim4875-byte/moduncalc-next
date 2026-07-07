@@ -21,6 +21,8 @@ const POPULAR = [
   { href: '/salary/table', icon: '📋', title: '실수령액 표', desc: '2천만~1.5억 한눈에' },
   { href: '/salary/minimum', icon: '💰', title: '최저시급', desc: '주휴수당·월급 환산' },
   { href: '/salary/severance', icon: '💰', title: '퇴직금', desc: '예상 퇴직금 조회' },
+  { href: '/salary/parental', icon: '👶', title: '육아휴직 급여', desc: '6+6 부모휴직' },
+  { href: '/salary/annual', icon: '📅', title: '연차 계산기', desc: '입사일 기준' },
   { href: '/pension/jobless', icon: '👵', title: '실업급여', desc: '구직급여 예상액' },
   { href: '/pension/nps', icon: '👵', title: '국민연금', desc: '예상 월 수령액' },
   { href: '/loan', icon: '🏠', title: '대출 이자', desc: '원리금·원금균등 비교' },
@@ -40,6 +42,7 @@ const POPULAR = [
   { href: '/daily/age', icon: '🎂', title: '나이', desc: '만 나이·띠·별자리' },
   { href: '/daily/unit', icon: '📏', title: '단위변환', desc: '길이·무게·온도' },
   { href: '/daily/stock', icon: '📈', title: '주식 수익률', desc: '손익·물타기' },
+  { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day' },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산' },
   { href: '/calc', icon: '🧮', title: '스마트 계산기', desc: '수식 입력·공학' },
 ];

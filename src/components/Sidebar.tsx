@@ -29,6 +29,8 @@ const MENUS: MenuItem[] = [
     { label: '실수령액 표', href: '/salary/table' },
     { label: '최저시급·주휴수당', href: '/salary/minimum' },
     { label: '퇴직금', href: '/salary/severance' },
+    { label: '육아휴직 급여', href: '/salary/parental' },
+    { label: '연차 계산기', href: '/salary/annual' },
   ]},
   { href: '/pension', ico: '👵', label: '연금/보험', sub: [
     { label: '실업급여', href: '/pension/jobless' },
@@ -50,6 +52,7 @@ const MENUS: MenuItem[] = [
     { label: '나이', href: '/daily/age' },
     { label: '단위변환', href: '/daily/unit' },
     { label: '주식 수익률·물타기', href: '/daily/stock' },
+    { label: '전역일', href: '/daily/military' },
     { label: '학점(GPA)', href: '/daily/gpa' },
     { label: '속도·시간', href: '/daily/speed' },
     { label: '연비', href: '/daily/fuel' }
