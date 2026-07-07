@@ -78,6 +78,41 @@ export default function StockCalc() {
         </div>
       </Card>
 
+      {/* 음의 복리 표 */}
+      <Card>
+        <SectionTitle num="📉">음의 복리 — 하락 vs 회복 수익률</SectionTitle>
+        <div className="text-xs text-[var(--sub)] mb-3">주가가 하락하면, 원금 회복에 필요한 수익률은 하락률보다 훨씬 커집니다.</div>
+        <table className="w-full border-collapse text-[13px]">
+          <thead>
+            <tr className="border-b-2 border-[var(--line)]">
+              <th className="py-2 text-left text-xs text-[var(--sub)] font-bold">하락률</th>
+              <th className="py-2 text-right text-xs text-[var(--sub)] font-bold">남은 금액</th>
+              <th className="py-2 text-right text-xs text-[var(--sub)] font-bold">회복 필요 수익률</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              [-5, 95, 5.3], [-10, 90, 11.1], [-15, 85, 17.6], [-20, 80, 25.0],
+              [-25, 75, 33.3], [-30, 70, 42.9], [-40, 60, 66.7], [-50, 50, 100.0],
+              [-60, 40, 150.0], [-70, 30, 233.3], [-80, 20, 400.0], [-90, 10, 900.0],
+            ].map(([loss, remain, recover]) => {
+              const isClose = Math.abs(pctChange - (loss as number)) < 5 && pctChange < 0;
+              return (
+                <tr key={loss} className={`border-b border-[var(--line)] ${isClose ? 'bg-[#FFE5E5] font-extrabold' : ''}`}>
+                  <td className="py-2 text-[#E5484D] font-bold">{loss}%</td>
+                  <td className="py-2 text-right">{remain}만원</td>
+                  <td className="py-2 text-right text-[var(--primary-dark)] font-bold">+{recover}%</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <div className="text-[11px] text-[var(--sub)] mt-2 leading-relaxed">
+          100만원 기준 · 현재 수익률과 가까운 구간이 하이라이트됩니다<br/>
+          예) 50% 하락 시 원금 회복에 100% 상승이 필요
+        </div>
+      </Card>
+
       {/* 목표가 계산 */}
       <Card>
         <SectionTitle num="2">목표가 계산</SectionTitle>
