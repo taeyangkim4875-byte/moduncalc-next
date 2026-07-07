@@ -39,6 +39,7 @@ const POPULAR = [
   { href: '/daily/dday', icon: '📅', title: 'D-day', desc: '날짜 차이' },
   { href: '/daily/age', icon: '🎂', title: '나이', desc: '만 나이·띠·별자리' },
   { href: '/daily/unit', icon: '📏', title: '단위변환', desc: '길이·무게·온도' },
+  { href: '/daily/stock', icon: '📈', title: '주식 수익률', desc: '손익·물타기' },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산' },
   { href: '/calc', icon: '🧮', title: '스마트 계산기', desc: '수식 입력·공학' },
 ];

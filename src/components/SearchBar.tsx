@@ -37,6 +37,7 @@ const CALCULATORS: CalcItem[] = [
   { name: '전월세 전환 계산기', keywords: ['전월세', '전세', '월세', '전환율', '보증금'], href: '/realestate/convert', icon: '🏢', category: '부동산' },
   { name: '복비 계산기', keywords: ['복비', '중개수수료', '중개보수', '부동산', '매매', '전세'], href: '/realestate/commission', icon: '🏢', category: '부동산' },
   { name: '양도소득세 계산기', keywords: ['양도세', '양도소득세', '부동산', '매매', '차익'], href: '/realestate/transfer', icon: '🏢', category: '부동산' },
+  { name: '주식 수익률 계산기', keywords: ['주식', '수익률', '물타기', '평단가', '손익', '매수', '매도'], href: '/daily/stock', icon: '📈', category: '투자' },
   { name: '학점 계산기', keywords: ['학점', 'gpa', '평점', '대학', '성적', '평균'], href: '/daily/gpa', icon: '🎓', category: '일상' },
   { name: '부가세 계산기', keywords: ['부가세', 'vat', '부가가치세', '공급가액', '세금계산서'], href: '/tax/vat', icon: '🧾', category: '세금' },
   { name: '종합소득세 계산기', keywords: ['종합소득세', '종소세', '소득세', '누진세', '세율', '프리랜서'], href: '/tax/income', icon: '🧾', category: '세금' },

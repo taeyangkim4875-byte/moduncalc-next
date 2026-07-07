@@ -49,6 +49,7 @@ const MENUS: MenuItem[] = [
     { label: 'D-day', href: '/daily/dday' },
     { label: '나이', href: '/daily/age' },
     { label: '단위변환', href: '/daily/unit' },
+    { label: '주식 수익률·물타기', href: '/daily/stock' },
     { label: '학점(GPA)', href: '/daily/gpa' },
     { label: '속도·시간', href: '/daily/speed' },
     { label: '연비', href: '/daily/fuel' }
