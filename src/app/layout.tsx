@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Sidebar from "@/components/Sidebar";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -54,6 +55,7 @@ export default function RootLayout({
         <main className="lg:ml-[var(--sb-w)]">
           {children}
         </main>
+        <ScrollToTop />
       </body>
     </html>
   );
