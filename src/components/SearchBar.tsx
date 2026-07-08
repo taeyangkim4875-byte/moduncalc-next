@@ -40,6 +40,7 @@ const CALCULATORS: CalcItem[] = [
   { name: '복비 계산기', keywords: ['복비', '중개수수료', '중개보수', '부동산', '매매', '전세'], href: '/realestate/commission', icon: '🏢', category: '부동산' },
   { name: '양도소득세 계산기', keywords: ['양도세', '양도소득세', '부동산', '매매', '차익'], href: '/realestate/transfer', icon: '🏢', category: '부동산' },
   { name: '주식 수익률 계산기', keywords: ['주식', '수익률', '물타기', '평단가', '손익', '매수', '매도'], href: '/daily/stock', icon: '📈', category: '투자' },
+  { name: 'FIRE 계산기', keywords: ['파이어', 'fire', '조기은퇴', '경제적자유', '저축률', '4%룰'], href: '/daily/fire', icon: '🔥', category: '투자' },
   { name: '전역일 계산기', keywords: ['전역일', '군대', '입대', '복무', '육군', '해군', '공군', '해병대'], href: '/daily/military', icon: '🪖', category: '일상' },
   { name: '학점 계산기', keywords: ['학점', 'gpa', '평점', '대학', '성적', '평균'], href: '/daily/gpa', icon: '🎓', category: '일상' },
   { name: '부가세 계산기', keywords: ['부가세', 'vat', '부가가치세', '공급가액', '세금계산서'], href: '/tax/vat', icon: '🧾', category: '세금' },

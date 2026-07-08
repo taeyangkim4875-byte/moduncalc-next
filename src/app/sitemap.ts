@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/daily/speed', priority: 0.8 },
     { path: '/daily/fuel', priority: 0.8 },
     { path: '/daily/stock', priority: 0.8 },
+    { path: '/daily/fire', priority: 0.8 },
     { path: '/daily/military', priority: 0.8 },
     { path: '/daily/gpa', priority: 0.8 },
     { path: '/realestate/acqtax', priority: 0.8 },

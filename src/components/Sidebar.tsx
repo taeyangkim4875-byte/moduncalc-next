@@ -52,6 +52,7 @@ const MENUS: MenuItem[] = [
     { label: '나이', href: '/daily/age' },
     { label: '단위변환', href: '/daily/unit' },
     { label: '주식 수익률·물타기', href: '/daily/stock' },
+    { label: 'FIRE (조기은퇴)', href: '/daily/fire' },
     { label: '전역일', href: '/daily/military' },
     { label: '학점(GPA)', href: '/daily/gpa' },
     { label: '속도·시간', href: '/daily/speed' },
