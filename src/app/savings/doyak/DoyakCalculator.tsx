@@ -12,8 +12,9 @@ const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:649
 const DOHYAK_MONTHS = 60;
 
 function rentInterestSchedule(monthly: number, rateArr: number[]) {
+  const n = rateArr.length;
   let acc = 0;
-  for (let m = 1; m <= rateArr.length; m++) acc += (rateArr[m - 1] / 12) * m;
+  for (let m = 1; m <= n; m++) acc += (rateArr[m - 1] / 12) * (n - m + 1);
   return monthly * acc;
 }
 

@@ -39,7 +39,8 @@ export default function ConvertCalc(){
       setParams({dir,jeonse,deposit,rate});
       scrollToResult();
     }else{
-      const total=deposit*10000+rent*10000*12/(rate/100);
+      const r=rate>0?rate/100:0.01;
+      const total=deposit*10000+rent*10000*12/r;
       setResult({value:total,label:'전세 환산금',annual:rent*10000*12});
       setParams({dir,deposit,rent,rate});
       scrollToResult();

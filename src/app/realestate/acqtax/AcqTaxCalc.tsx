@@ -34,8 +34,8 @@ export default function AcqTaxCalc(){
     const priceWon=price*10000;
     let rate:number;
     if(houseCount===1){
-      if(price<=6000)rate=0.01;
-      else if(price<=9000){const r=(price/100*2/3-3)/100;rate=Math.max(0.01,Math.min(0.03,r));}
+      if(price<=60000)rate=0.01;
+      else if(price<=90000){const r=(price/10000*2/3-3)/100;rate=Math.max(0.01,Math.min(0.03,r));}
       else rate=0.03;
     }else if(houseCount===2)rate=0.08;
     else rate=0.12;

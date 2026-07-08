@@ -285,7 +285,7 @@ export default function StockCalc() {
           <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">총 보유 수량</span><span className="font-bold">{fmtWon(totalQty)}주</span></div>
           <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">총 투자 금액</span><span className="font-bold">{fmtWon(totalBuy + addPrice * addQty)}원</span></div>
           <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">손익분기 단가</span><span className="font-bold">{fmtWon(breakEvenPrice)}원</span></div>
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">평단가 변화</span><span className="font-bold text-[var(--green)]">▼ {fmtWon(buyPrice - avgPrice)}원 ({fmt(((buyPrice - avgPrice) / buyPrice) * 100)}%↓)</span></div>
+          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">평단가 변화</span><span className={`font-bold ${avgPrice<=buyPrice?'text-[var(--green)]':'text-[#E5484D]'}`}>{avgPrice<=buyPrice?'▼':'▲'} {fmtWon(Math.abs(buyPrice - avgPrice))}원 ({fmt(buyPrice>0?Math.abs((buyPrice - avgPrice) / buyPrice) * 100:0)}%{avgPrice<=buyPrice?'↓':'↑'})</span></div>
         </div>
       </Card>
 

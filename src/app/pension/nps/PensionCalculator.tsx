@@ -34,7 +34,8 @@ export default function PensionCalculator(){
   const calc=()=>{
     const B=Math.min(Math.max(income*10000,NPS_FLOOR),NPS_CAP);
     const n=Math.max(0,(years-20))*12;
-    const basicYear=NPS_CONST*(NPS_A+B)*(1+0.05*n/12);
+    const baseRatio=Math.min(years,20)/20;
+    const basicYear=NPS_CONST*(NPS_A+B)*baseRatio*(1+0.05*n/12);
     const monthly=basicYear/12;
     const replaceRate=income>0?(monthly/(income*10000)*100):0;
     const birthYear=2026-age;

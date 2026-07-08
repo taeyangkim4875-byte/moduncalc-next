@@ -28,6 +28,7 @@ export default function BmiCalculator(){
   },[autoCalc]);
 
   const calc=()=>{
+    if(height<=0||weight<=0)return;
     const h=height/100,bmi=weight/(h*h);
     const cat=CATEGORIES.find(c=>bmi<c.max)||CATEGORIES[CATEGORIES.length-1];
     const normalRange:[number,number]=[Math.round(18.5*h*h*10)/10,Math.round(22.9*h*h*10)/10];

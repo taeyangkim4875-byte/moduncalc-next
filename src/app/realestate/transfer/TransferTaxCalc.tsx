@@ -80,8 +80,7 @@ export default function TransferTaxCalc() {
     if (holdPeriod === '1년미만') {
       transferTax = Math.round(taxBase * 0.45); // 1년 미만: 45%
     } else if (holdPeriod === '1~2년') {
-      transferTax = Math.round(taxBase * 0.35); // 1~2년: 기본세율(35% 단일)은 아니지만 간편 적용
-      // 실제로는 기본세율이지만 간편계산기이므로 누진세율 적용
+      // 1~2년: 기본 누진세율 적용
       transferTax = Math.round(progressiveTax(taxBase));
     } else {
       transferTax = Math.round(progressiveTax(taxBase));

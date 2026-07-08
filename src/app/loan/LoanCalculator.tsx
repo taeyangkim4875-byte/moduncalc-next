@@ -31,7 +31,7 @@ export default function LoanCalculator(){
   },[autoCalc]);
 
   const calc=()=>{
-    const P=amount*10000,r=rate/100/12,totalM=term*12,graceM=grace,payM=totalM-graceM;
+    const P=amount*10000,r=rate/100/12,totalM=term*12,graceM=grace,payM=Math.max(1,totalM-graceM);
     const graceInt=P*r*graceM;
     let eqM:number,eqTotalInt:number;
     if(r>0){eqM=P*r*Math.pow(1+r,payM)/(Math.pow(1+r,payM)-1);eqTotalInt=eqM*payM-P;}
