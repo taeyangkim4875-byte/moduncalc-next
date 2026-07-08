@@ -120,6 +120,11 @@ export default function MilitaryCalc() {
       </Card>
 
       <Card>
+        <h2 className="text-base font-extrabold mb-3">📖 군 복무기간이란?</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">대한민국 남성은 병역법에 따라 현역, 사회복무요원, 대체복무요원 등의 형태로 군 복무를 이행합니다. 2020년 6월 이후 입대자 기준으로 육군·해병대 18개월, 해군 20개월, 공군·사회복무요원 21개월, 대체복무요원 36개월의 복무기간이 적용됩니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">전역일은 입대일로부터 복무기간을 더한 날짜의 전날입니다. 모범복무자 조기전역, 특별휴가 미사용 등에 따라 실제 전역일이 1~2일 달라질 수 있습니다.</p>
+      </Card>
+      <Card>
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 전역일은 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 복무기간 기준으로 계산한 예상 전역일입니다. 실제 전역일은 부대 사정, 휴가 미사용 등에 따라 1~2일 달라질 수 있습니다.</div></div>

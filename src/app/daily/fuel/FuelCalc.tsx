@@ -22,5 +22,17 @@ export default function FuelCalc(){
         <R v={`${Math.round(cost).toLocaleString()}원`} l="예상 유류비"/>
       </div>
     </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 자동차 연비란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">연비(km/L)는 연료 1리터로 주행할 수 있는 거리를 나타내며, 자동차의 경제성을 판단하는 핵심 지표입니다. 연비 = 주행 거리 ÷ 사용 연료량으로 계산합니다. 일반 경차는 15~20km/L, 중형차는 10~14km/L, SUV는 8~12km/L 수준입니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">여행 유류비는 (주행 거리 ÷ 연비) × 유가로 계산합니다. 서울에서 부산까지 약 400km를 연비 12km/L 차량으로 이동하면 약 33L가 필요하며, 리터당 1,650원이면 약 55,000원의 유류비가 들어갑니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 실제 연비가 공인연비보다 낮은 이유는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 공인연비는 정해진 시험 조건에서 측정한 값이며, 실제 도로 주행에서는 에어컨 사용, 급가속·급제동, 도심 정체 등으로 인해 공인연비의 70~85% 수준이 나옵니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연비를 높이는 방법은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 급가속·급제동을 피하고, 정속 주행을 유지하며, 타이어 공기압을 적정 수준으로 관리하면 연비가 5~15% 개선됩니다. 불필요한 짐을 줄이는 것도 도움이 됩니다.</div></div>
+      </div>
+    </Card>
   </>);
 }

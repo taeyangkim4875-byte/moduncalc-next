@@ -25,5 +25,17 @@ export default function PercentCalc(){
       <div className="mb-0"><label className="block text-sm font-bold mb-2">전체 값 B</label><div className="flex items-center gap-2.5"><input type="number" value={b3} onChange={e=>setB3(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/></div></div>
       <R v={`${fmt(r3)}%`} l={`${fmt(a3)}은 ${fmt(b3)}의 ${fmt(r3)}%`}/>
     </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 퍼센트 계산이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">퍼센트(%)는 전체를 100으로 보았을 때의 비율을 나타내는 단위입니다. 일상에서 할인율, 이자율, 성장률, 세율 등 다양한 곳에서 사용됩니다. &apos;A의 B%&apos;는 A × B ÷ 100으로 계산하며, &apos;A는 B의 몇 %&apos;는 A ÷ B × 100으로 구합니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">변화율은 (이후 값 - 이전 값) ÷ 이전 값 × 100으로 계산합니다. 예를 들어 100에서 130으로 변했다면 변화율은 +30%이며, 100에서 70으로 줄었다면 -30%입니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 퍼센트포인트(%p)와 퍼센트(%)의 차이는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 퍼센트포인트는 두 퍼센트 값의 단순 차이이고, 퍼센트는 비율의 변화입니다. 예를 들어 금리가 3%에서 5%로 오르면 2%p 상승이지만, 변화율로는 약 66.7% 상승입니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 할인된 가격에서 원래 가격을 구하려면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 할인된 가격 ÷ (1 - 할인율/100)로 구합니다. 예를 들어 30% 할인된 가격이 7,000원이면, 원래 가격은 7,000 ÷ 0.7 = 10,000원입니다.</div></div>
+      </div>
+    </Card>
   </>);
 }

@@ -19,5 +19,17 @@ export default function DutchCalc(){
         <R v={`${Math.round(tipTotal*(1+tipRate/100)).toLocaleString()}원`} l="총 결제액"/>
       </div>
     </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 더치페이·팁 계산이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">더치페이(Dutch Pay)는 식사나 모임 비용을 참석자가 균등하게 나누어 내는 방식입니다. 1인당 금액 = 총 금액 ÷ 인원 수로 간단히 계산합니다. 나누어떨어지지 않으면 올림 처리하여 한 사람이 약간 더 내는 것이 일반적입니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">팁 계산기는 해외 여행이나 호텔 등에서 팁을 포함한 결제 금액을 미리 계산할 때 유용합니다. 미국은 15~20%, 유럽은 5~10% 정도가 일반적인 팁 비율입니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 나누어떨어지지 않으면 어떻게 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 계산기에서는 올림 처리하여 1인당 금액을 보여줍니다. 실제로는 한 명이 약간 더 내거나, 소수점 이하를 무시하는 방식으로 정리합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 해외에서 팁은 꼭 줘야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 나라마다 다릅니다. 미국·캐나다는 팁이 관행(15~20%)이고, 일본·한국은 팁 문화가 없습니다. 유럽은 서비스에 만족하면 5~10% 정도를 남기는 것이 일반적입니다.</div></div>
+      </div>
+    </Card>
   </>);
 }

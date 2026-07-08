@@ -22,5 +22,17 @@ export default function UnitCalc(){
       <div className="flex items-center gap-2.5 mb-3"><input type="number" value={area} onChange={e=>setArea(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">㎡</span></div>
       <div className="grid grid-cols-2 gap-2"><R v={fmt(area/3.3058)} l="평"/><R v={fmt(area*10.7639)} l="ft²"/></div>
     </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 단위 변환이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">단위 변환은 같은 물리량을 다른 단위 체계로 환산하는 것입니다. 길이(m, cm, ft, inch), 무게(kg, g, lb, oz), 온도(℃, ℉, K), 면적(㎡, 평, ft²) 등 일상에서 자주 사용하는 단위들을 즉시 변환할 수 있습니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">한국에서는 부동산 면적에 &apos;평&apos;(1평 = 약 3.3058㎡)을 많이 사용하며, 미국은 피트(ft)와 파운드(lb)를 주로 씁니다. 해외 쇼핑이나 여행 시 단위 변환이 유용합니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1평은 몇 ㎡인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 1평은 약 3.3058㎡입니다. 아파트 전용면적 84㎡는 약 25.4평, 59㎡는 약 17.8평에 해당합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 화씨를 섭씨로 빠르게 환산하려면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 정확한 공식은 ℃ = (℉ - 32) × 5/9이지만, 대략적으로 (℉ - 30) ÷ 2로 암산할 수 있습니다. 예를 들어 72℉는 대략 (72-30)÷2 = 21℃입니다.</div></div>
+      </div>
+    </Card>
   </>);
 }

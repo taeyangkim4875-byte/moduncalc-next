@@ -55,5 +55,17 @@ export default function AgeCalc(){
     {r&&<Card><SectionTitle num="🐲">띠 · 별자리</SectionTitle>
       <R v={`${r.animal}띠 · ${r.star}자리`} l={`${r.year}년생`}/>
     </Card>}
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 만 나이와 한국 나이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">만 나이는 생일을 기준으로 계산하는 국제 표준 나이입니다. 태어난 해에 0세로 시작하고, 생일이 지나야 1살이 추가됩니다. 2023년 6월부터 한국에서도 법적·행정적으로 만 나이를 기준으로 사용합니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">한국 나이(연 나이)는 현재 연도 - 출생 연도 + 1로 계산하며, 새해가 되면 모두 동시에 한 살이 추가됩니다. 일상 대화에서 여전히 사용되지만, 계약서·법률 등 공식 문서에서는 만 나이를 씁니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 만 나이가 법적 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 2023년 6월 28일부터 민법·행정법에서 만 나이를 기준으로 사용합니다. 주류·담배 구매, 운전면허 취득 등 모두 만 나이 기준입니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 띠(십이지)는 어떻게 정해지나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 출생 연도를 12로 나눈 나머지로 결정됩니다. 쥐-소-호랑이-토끼-용-뱀-말-양-원숭이-닭-개-돼지 순으로 12년 주기로 반복됩니다.</div></div>
+      </div>
+    </Card>
   </>);
 }

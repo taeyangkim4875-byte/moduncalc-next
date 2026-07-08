@@ -98,6 +98,19 @@ export default function NetPayTable() {
           이 표는 일반적인 요율 기준 추정치이며, 실제 급여와 다를 수 있습니다.
         </div>
       </footer>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">📖 연봉 실수령액 표란?</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">연봉 실수령액 표는 세전 연봉에서 4대보험과 소득세를 공제한 후 실제로 매월 통장에 입금되는 금액을 한눈에 비교할 수 있는 표입니다. 부양가족 1명(본인), 비과세 식대 월 20만원을 기본 조건으로 적용하여 계산됩니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">2026년 기준 4대보험 요율(국민연금 4.75%, 건강보험 3.595%, 장기요양 13.14%, 고용보험 0.9%)이 적용되며, 연봉이 높아질수록 소득세 누진세율로 인해 공제 비율이 커집니다. 연봉 4,500만원(전체 평균) 기준 월 실수령액은 약 310만원 내외입니다.</p>
+      </Card>
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <div className="flex flex-col gap-4">
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 표에서 내 연봉 구간을 어떻게 찾나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 각 행을 터치하면 해당 연봉의 상세 공제 내역(국민연금, 건강보험, 고용보험, 소득세)을 확인할 수 있습니다. 하이라이트된 행은 전체 근로자 통계 기준의 주요 연봉 구간입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 부양가족이 많으면 실수령액이 달라지나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 이 표는 부양가족 1명(본인만) 기준입니다. 부양가족이 늘어나면 인적공제로 소득세가 줄어들어 실수령액이 증가합니다. 정확한 계산은 연봉 실수령액 계산기를 이용하세요.</div></div>
+        </div>
+      </Card>
     </>
   );
 }

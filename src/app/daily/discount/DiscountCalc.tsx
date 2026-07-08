@@ -20,5 +20,17 @@ export default function DiscountCalc(){
         <R v={`${Math.round(bp/3).toLocaleString()}원`} l="2+1 개당"/>
       </div>
     </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">📖 할인 계산이란?</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">할인가 계산은 원래 가격에서 할인율을 적용한 실제 결제 금액을 구하는 것입니다. 할인 적용가 = 원래 가격 × (1 - 할인율/100)로 계산합니다. 예를 들어 50,000원 상품에 30% 할인을 적용하면 35,000원이 됩니다.</p>
+      <p className="text-sm text-[#4E5968] leading-relaxed">1+1이나 2+1 같은 묶음 행사도 실질 할인으로 환산할 수 있습니다. 1+1은 50% 할인, 2+1은 약 33% 할인과 같습니다. 개당 단가로 비교하면 어떤 행사가 더 유리한지 쉽게 판단할 수 있습니다.</p>
+    </Card>
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <div className="flex flex-col gap-4">
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 이중 할인은 어떻게 계산하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 20% 할인 후 추가 10% 할인은 30% 할인이 아닙니다. 원래 가격의 80% × 90% = 72%, 즉 28% 할인과 같습니다. 할인은 순차적으로 곱해야 합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1+1과 50% 할인 중 어느 게 유리한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 같은 가격 기준이라면 개당 단가는 동일합니다. 다만 1+1은 2개를 반드시 가져가야 하므로, 1개만 필요하다면 50% 할인이 낭비가 적습니다.</div></div>
+      </div>
+    </Card>
   </>);
 }

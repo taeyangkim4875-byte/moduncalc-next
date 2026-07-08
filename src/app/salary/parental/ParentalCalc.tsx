@@ -113,6 +113,11 @@ export default function ParentalCalc() {
       </Card>
 
       <Card>
+        <h2 className="text-base font-extrabold mb-3">📖 육아휴직 급여란?</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">육아휴직 급여는 만 8세 이하 또는 초등학교 2학년 이하의 자녀를 가진 근로자가 육아휴직을 사용할 때 고용보험에서 지급하는 급여입니다. 2026년부터 최대 18개월까지 사용할 수 있으며, 사후지급금(25%)이 폐지되어 매월 전액 지급됩니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">일반 육아휴직은 통상임금의 80%(상한 월 160만원, 하한 70만원)를 지급합니다. 6+6 부모육아휴직제를 적용하면 생후 18개월 이내 자녀에 대해 부모가 동시 또는 순차적으로 휴직할 경우, 첫 6개월은 통상임금 100%(상한 월 450만원)까지 받을 수 있습니다.</p>
+      </Card>
+      <Card>
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 6+6 부모육아휴직제란?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 생후 18개월 이내 자녀에 대해 부모가 동시 또는 순차적으로 육아휴직 시, 첫 6개월은 통상임금 100%(상한 월 450만원)를 지급하는 제도입니다.</div></div>
