@@ -29,6 +29,7 @@ const MENUS: MenuItem[] = [
     { label: '실수령액 표', href: '/salary/table' },
     { label: '최저시급·주휴수당', href: '/salary/minimum' },
     { label: '퇴직금', href: '/salary/severance' },
+    { label: '💰 실시간 카운터', href: '/salary/live' },
     { label: '평생 근로소득', href: '/salary/lifetime' },
     { label: '육아휴직 급여', href: '/salary/parental' },
     { label: '연차 계산기', href: '/salary/annual' },

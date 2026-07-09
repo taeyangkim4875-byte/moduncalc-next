@@ -20,6 +20,7 @@ const POPULAR = [
   { href: '/salary', icon: '💰', title: '연봉 상위%', desc: '내 연봉 순위 확인' },
   { href: '/salary/table', icon: '📋', title: '실수령액 표', desc: '2천만~1.5억 한눈에' },
   { href: '/salary/minimum', icon: '💰', title: '최저시급', desc: '주휴수당·월급 환산' },
+  { href: '/salary/live', icon: '⏱️', title: '실시간 카운터', desc: '초당 버는 돈' },
   { href: '/salary/lifetime', icon: '💰', title: '평생 근로소득', desc: '은퇴까지 총 소득' },
   { href: '/salary/severance', icon: '💰', title: '퇴직금', desc: '예상 퇴직금 조회' },
   { href: '/salary/parental', icon: '👶', title: '육아휴직 급여', desc: '6+6 부모휴직' },
