@@ -40,7 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/realestate/transfer', priority: 0.8 },
     { path: '/tax/vat', priority: 0.8 },
     { path: '/tax/income', priority: 0.8 },
-    { path: '/handwriting', priority: 0.7 },
     { path: '/about', priority: 0.5 },
   ];
 

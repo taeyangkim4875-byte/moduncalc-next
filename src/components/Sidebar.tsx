@@ -70,9 +70,6 @@ const MENUS: MenuItem[] = [
     { label: '부가세', href: '/tax/vat' },
     { label: '종합소득세', href: '/tax/income' }
   ]},
-  { href: '/handwriting', ico: '✏️', label: '손글씨 계산기', sub: [
-    { label: 'AI 손글씨 인식 (Beta)', href: '/handwriting' }
-  ]},
 ];
 
 export default function Sidebar() {

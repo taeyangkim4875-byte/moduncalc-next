@@ -47,7 +47,6 @@ const CALCULATORS: CalcItem[] = [
   { name: '학점 계산기', keywords: ['학점', 'gpa', '평점', '대학', '성적', '평균'], href: '/daily/gpa', icon: '🎓', category: '일상' },
   { name: '부가세 계산기', keywords: ['부가세', 'vat', '부가가치세', '공급가액', '세금계산서'], href: '/tax/vat', icon: '🧾', category: '세금' },
   { name: '종합소득세 계산기', keywords: ['종합소득세', '종소세', '소득세', '누진세', '세율', '프리랜서'], href: '/tax/income', icon: '🧾', category: '세금' },
-  { name: '손글씨 계산기', keywords: ['손글씨', '필기', '그리기', '터치', 'ai', '인식'], href: '/handwriting', icon: '✏️', category: '계산기' },
 ];
 
 export default function SearchBar() {
