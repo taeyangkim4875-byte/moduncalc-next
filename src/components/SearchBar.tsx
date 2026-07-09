@@ -13,6 +13,7 @@ interface CalcItem {
 
 const CALCULATORS: CalcItem[] = [
   { name: '스마트 계산기', keywords: ['스마트', '수식', 'cos', 'sin', 'sqrt', '공학', '함수'], href: '/calc', icon: '🧮', category: '계산기' },
+  { name: '적금·예금 이자 계산기', keywords: ['적금', '예금', '이자', '만기', '수령액', '단리'], href: '/savings/interest', icon: '🏦', category: '적금' },
   { name: '청년도약계좌 계산기', keywords: ['도약', '도약계좌', '청년도약', '적금', '5년'], href: '/savings/doyak', icon: '🏦', category: '적금' },
   { name: '청년미래적금 계산기', keywords: ['미래', '미래적금', '청년미래', '환승', '3년', '은행별'], href: '/savings/mirae', icon: '🏦', category: '적금' },
   { name: '연봉 상위%', keywords: ['연봉', '상위', '퍼센트', '백분위', '급여', '소득'], href: '/salary', icon: '💰', category: '연봉' },
@@ -41,6 +42,9 @@ const CALCULATORS: CalcItem[] = [
   { name: '전월세 전환 계산기', keywords: ['전월세', '전세', '월세', '전환율', '보증금'], href: '/realestate/convert', icon: '🏢', category: '부동산' },
   { name: '복비 계산기', keywords: ['복비', '중개수수료', '중개보수', '부동산', '매매', '전세'], href: '/realestate/commission', icon: '🏢', category: '부동산' },
   { name: '양도소득세 계산기', keywords: ['양도세', '양도소득세', '부동산', '매매', '차익'], href: '/realestate/transfer', icon: '🏢', category: '부동산' },
+  { name: '임대수익률 계산기', keywords: ['임대', '수익률', '월세', '투자', '부동산', '회수기간'], href: '/realestate/rental', icon: '🏢', category: '부동산' },
+  { name: '증여세 계산기', keywords: ['증여세', '증여', '자녀', '배우자', '면제한도', '상속'], href: '/tax/gift', icon: '🧾', category: '세금' },
+  { name: '전기요금 계산기', keywords: ['전기요금', '전기세', '누진제', '전력', 'kWh', '에어컨'], href: '/daily/electric', icon: '⚡', category: '일상' },
   { name: '주식 수익률 계산기', keywords: ['주식', '수익률', '물타기', '평단가', '손익', '매수', '매도'], href: '/daily/stock', icon: '📈', category: '투자' },
   { name: 'FIRE 계산기', keywords: ['파이어', 'fire', '조기은퇴', '경제적자유', '저축률', '4%룰'], href: '/daily/fire', icon: '🔥', category: '투자' },
   { name: '전역일 계산기', keywords: ['전역일', '군대', '입대', '복무', '육군', '해군', '공군', '해병대'], href: '/daily/military', icon: '🪖', category: '일상' },

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 const POPULAR = [
+  { href: '/savings/interest', icon: '🏦', title: '적금·예금 이자', desc: '만기 수령액 계산' },
   { href: '/savings/doyak', icon: '🏦', title: '청년도약계좌', desc: '5년 만기 실수령액' },
   { href: '/savings/mirae', icon: '🏦', title: '청년미래적금', desc: '은행별 우대금리 비교' },
   { href: '/salary', icon: '💰', title: '연봉 상위%', desc: '내 연봉 순위 확인' },
@@ -34,15 +35,18 @@ const POPULAR = [
   { href: '/realestate/acqtax', icon: '🏢', title: '취득세', desc: '주택 매매 세금' },
   { href: '/realestate/commission', icon: '🏢', title: '복비', desc: '중개수수료 계산' },
   { href: '/realestate/convert', icon: '🏢', title: '전월세 전환', desc: '전세↔월세' },
+  { href: '/realestate/rental', icon: '🏢', title: '임대수익률', desc: '투자 수익률' },
   { href: '/realestate/transfer', icon: '🏢', title: '양도소득세', desc: '부동산 양도세' },
   { href: '/tax/vat', icon: '🧾', title: '부가세', desc: '공급가액·역산' },
   { href: '/tax/income', icon: '🧾', title: '종합소득세', desc: '누진세율 계산' },
+  { href: '/tax/gift', icon: '🧾', title: '증여세', desc: '가족 간 증여세' },
   { href: '/daily/percent', icon: '📊', title: '퍼센트', desc: '비율·변화율' },
   { href: '/daily/discount', icon: '🏷️', title: '할인가', desc: '할인율·1+1 단가' },
   { href: '/daily/dutch', icon: '🍽️', title: '더치페이', desc: 'N분의1·팁' },
   { href: '/daily/dday', icon: '📅', title: 'D-day', desc: '날짜 차이' },
   { href: '/daily/age', icon: '🎂', title: '나이', desc: '만 나이·띠·별자리' },
   { href: '/daily/unit', icon: '📏', title: '단위변환', desc: '길이·무게·온도' },
+  { href: '/daily/electric', icon: '⚡', title: '전기요금', desc: '누진제 요금 계산' },
   { href: '/daily/stock', icon: '📈', title: '주식 수익률', desc: '손익·물타기' },
   { href: '/daily/fire', icon: '🔥', title: 'FIRE', desc: '조기 은퇴 시뮬레이션' },
   { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day' },

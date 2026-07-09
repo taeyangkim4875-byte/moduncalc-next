@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages = [
     { path: '/', priority: 1.0 },
+    { path: '/savings/interest', priority: 0.9 },
     { path: '/savings/doyak', priority: 0.9 },
     { path: '/savings/mirae', priority: 0.9 },
     { path: '/calc', priority: 0.9 },
@@ -31,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/daily/speed', priority: 0.8 },
     { path: '/daily/fuel', priority: 0.8 },
     { path: '/daily/stock', priority: 0.8 },
+    { path: '/daily/electric', priority: 0.8 },
     { path: '/daily/fire', priority: 0.8 },
     { path: '/daily/military', priority: 0.8 },
     { path: '/daily/gpa', priority: 0.8 },
@@ -38,8 +40,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/realestate/convert', priority: 0.8 },
     { path: '/realestate/commission', priority: 0.8 },
     { path: '/realestate/transfer', priority: 0.8 },
+    { path: '/realestate/rental', priority: 0.8 },
     { path: '/tax/vat', priority: 0.8 },
     { path: '/tax/income', priority: 0.8 },
+    { path: '/tax/gift', priority: 0.8 },
     { path: '/about', priority: 0.5 },
   ];
 

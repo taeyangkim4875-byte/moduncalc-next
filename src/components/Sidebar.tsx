@@ -20,7 +20,8 @@ const MENUS: MenuItem[] = [
   { href: '/calc', ico: '🧮', label: '스마트 계산기', sub: [
     { label: '수식 입력 계산기', href: '/calc' }
   ]},
-  { href: '/savings', ico: '🏦', label: '적금', sub: [
+  { href: '/savings', ico: '🏦', label: '적금/예금', sub: [
+    { label: '적금·예금 이자', href: '/savings/interest' },
     { label: '청년도약계좌', href: '/savings/doyak' },
     { label: '청년미래적금', href: '/savings/mirae' },
   ]},
@@ -47,6 +48,7 @@ const MENUS: MenuItem[] = [
     { label: '기초대사량', href: '/health/bmr' }
   ]},
   { href: '/daily', ico: '📅', label: '일상', sub: [
+    { label: '전기요금', href: '/daily/electric' },
     { label: '퍼센트', href: '/daily/percent' },
     { label: '할인가', href: '/daily/discount' },
     { label: '더치페이', href: '/daily/dutch' },
@@ -63,12 +65,14 @@ const MENUS: MenuItem[] = [
   { href: '/realestate', ico: '🏢', label: '부동산', sub: [
     { label: '취득세', href: '/realestate/acqtax' },
     { label: '전월세 전환', href: '/realestate/convert' },
+    { label: '임대수익률', href: '/realestate/rental' },
     { label: '복비(중개수수료)', href: '/realestate/commission' },
     { label: '양도소득세', href: '/realestate/transfer' },
   ]},
   { href: '/tax', ico: '🧾', label: '세금', sub: [
     { label: '부가세', href: '/tax/vat' },
-    { label: '종합소득세', href: '/tax/income' }
+    { label: '종합소득세', href: '/tax/income' },
+    { label: '증여세', href: '/tax/gift' },
   ]},
 ];
 
