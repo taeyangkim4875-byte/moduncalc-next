@@ -16,7 +16,7 @@ interface MenuItem {
   sub: SubItem[];
 }
 
-const MENUS: MenuItem[] = [
+const MENUS_KO: MenuItem[] = [
   { href: '/calc', ico: '🧮', label: '스마트 계산기', sub: [
     { label: '수식 입력 계산기', href: '/calc' }
   ]},
@@ -76,7 +76,10 @@ const MENUS: MenuItem[] = [
     { label: '종합소득세', href: '/tax/income' },
     { label: '증여세', href: '/tax/gift' },
   ]},
-  { href: '/en/tax-comparison', ico: '🌍', label: 'English', sub: [
+];
+
+const MENUS_EN: MenuItem[] = [
+  { href: '/en/tax-comparison', ico: '💰', label: 'Tax', sub: [
     { label: 'Flat vs Progressive Tax', href: '/en/tax-comparison' },
   ]},
 ];
@@ -84,6 +87,8 @@ const MENUS: MenuItem[] = [
 export default function Sidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isEn = pathname.startsWith('/en');
+  const menus = isEn ? MENUS_EN : MENUS_KO;
   const isActive = (menu: MenuItem) => {
     if (menu.href === '/') return pathname === '/';
     return pathname.startsWith(menu.href);
@@ -110,12 +115,12 @@ export default function Sidebar() {
       {/* 사이드바 */}
       <aside className={`fixed top-0 left-0 w-[var(--sb-w)] h-full bg-white border-r border-[var(--line)] z-[200] flex flex-col overflow-y-auto transition-transform duration-250 ${open ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0`}>
         <div className="flex items-center justify-between px-4 py-4 border-b border-[var(--line)]">
-          <span className="text-[17px] font-extrabold text-[var(--ink)]">모든 계산기</span>
+          <span className="text-[17px] font-extrabold text-[var(--ink)]">{isEn ? 'Calculators' : '모든 계산기'}</span>
           <button className="bg-transparent border-none text-xl text-[var(--sub)] cursor-pointer lg:hidden" onClick={() => setOpen(false)}>×</button>
         </div>
 
         <nav className="flex-1 p-2.5 flex flex-col gap-0.5">
-          {MENUS.map((menu) => {
+          {menus.map((menu) => {
             const active = isActive(menu);
             const hasSub = menu.sub.length > 1;
 
@@ -151,10 +156,18 @@ export default function Sidebar() {
           })}
         </nav>
 
-        <div className="mt-auto px-4 py-3.5 border-t border-[var(--line)] flex gap-3.5">
-          <Link href="/about" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">소개</Link>
-          <Link href="/privacy" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">개인정보처리방침</Link>
-          <Link href="/terms" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">이용약관</Link>
+        <div className="mt-auto px-4 py-3.5 border-t border-[var(--line)] flex flex-col gap-2">
+          {isEn && (
+            <Link href="/" className="text-xs text-[var(--primary)] no-underline font-bold hover:text-[var(--primary-dark)]">🇰🇷 한국어로 보기</Link>
+          )}
+          {!isEn && (
+            <Link href="/en/tax-comparison" className="text-xs text-[var(--primary)] no-underline font-bold hover:text-[var(--primary-dark)]">🌍 English</Link>
+          )}
+          <div className="flex gap-3.5">
+            <Link href="/about" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>
+            <Link href="/privacy" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보처리방침'}</Link>
+            <Link href="/terms" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Terms' : '이용약관'}</Link>
+          </div>
         </div>
       </aside>
     </>
