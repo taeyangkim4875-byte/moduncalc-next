@@ -1,0 +1,18 @@
+{
+  "name": "모든 계산기",
+  "short_name": "모든계산기",
+  "description": "연봉, 적금, 대출, 건강, 세금 무료 계산기 모음",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3182F6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

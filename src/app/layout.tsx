@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Sidebar from "@/components/Sidebar";
 import ScrollToTop from "@/components/ScrollToTop";
+import { WebsiteJsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,6 +38,13 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="theme-color" content="#3182F6" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="모든계산기" />
+        <link rel="apple-touch-icon" href="/icons/icon.svg" />
+        <WebsiteJsonLd />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NX4JK10SS6"
           strategy="afterInteractive"
@@ -56,6 +64,9 @@ export default function RootLayout({
           {children}
         </main>
         <ScrollToTop />
+        <Script id="sw-register" strategy="afterInteractive">
+          {`if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}`}
+        </Script>
       </body>
     </html>
   );
