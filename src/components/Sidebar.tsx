@@ -76,6 +76,9 @@ const MENUS: MenuItem[] = [
     { label: '종합소득세', href: '/tax/income' },
     { label: '증여세', href: '/tax/gift' },
   ]},
+  { href: '/en/tax-comparison', ico: '🌍', label: 'English', sub: [
+    { label: 'Flat vs Progressive Tax', href: '/en/tax-comparison' },
+  ]},
 ];
 
 export default function Sidebar() {

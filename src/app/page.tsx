@@ -54,6 +54,7 @@ const POPULAR = [
   { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day' },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산' },
   { href: '/calc', icon: '🧮', title: '스마트 계산기', desc: '수식 입력·공학' },
+  { href: '/en/tax-comparison', icon: '🌍', title: 'Flat vs Progressive', desc: 'Foreign worker tax' },
 ];
 
 export default function Home() {
