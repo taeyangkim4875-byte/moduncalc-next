@@ -47,6 +47,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/tax/income', priority: 0.8 },
     { path: '/tax/gift', priority: 0.8 },
     { path: '/en/tax-comparison', priority: 0.9 },
+    { path: '/en/salary', priority: 0.9 },
+    { path: '/en/pension-refund', priority: 0.9 },
+    { path: '/en/korean-age', priority: 0.8 },
+    { path: '/en/rent', priority: 0.8 },
+    { path: '/en/severance', priority: 0.8 },
     { path: '/about', priority: 0.5 },
   ];
 

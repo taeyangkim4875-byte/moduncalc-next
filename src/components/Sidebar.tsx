@@ -79,8 +79,19 @@ const MENUS_KO: MenuItem[] = [
 ];
 
 const MENUS_EN: MenuItem[] = [
-  { href: '/en/tax-comparison', ico: '💰', label: 'Tax', sub: [
+  { href: '/en/salary', ico: '💰', label: 'Salary & Tax', sub: [
+    { label: 'Salary Calculator', href: '/en/salary' },
     { label: 'Flat vs Progressive Tax', href: '/en/tax-comparison' },
+    { label: 'Severance Pay', href: '/en/severance' },
+  ]},
+  { href: '/en/pension-refund', ico: '👵', label: 'Pension', sub: [
+    { label: 'Pension Refund', href: '/en/pension-refund' },
+  ]},
+  { href: '/en/rent', ico: '🏠', label: 'Housing', sub: [
+    { label: 'Jeonse vs Wolse', href: '/en/rent' },
+  ]},
+  { href: '/en/korean-age', ico: '🎂', label: 'Daily Life', sub: [
+    { label: 'Korean Age', href: '/en/korean-age' },
   ]},
 ];
 

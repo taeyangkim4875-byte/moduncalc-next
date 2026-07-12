@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface CalcItem {
   name: string;
@@ -11,7 +11,7 @@ interface CalcItem {
   category: string;
 }
 
-const CALCULATORS: CalcItem[] = [
+const CALCULATORS_KO: CalcItem[] = [
   { name: '스마트 계산기', keywords: ['스마트', '수식', 'cos', 'sin', 'sqrt', '공학', '함수'], href: '/calc', icon: '🧮', category: '계산기' },
   { name: '적금·예금 이자 계산기', keywords: ['적금', '예금', '이자', '만기', '수령액', '단리'], href: '/savings/interest', icon: '🏦', category: '적금' },
   { name: '청년도약계좌 계산기', keywords: ['도약', '도약계좌', '청년도약', '적금', '5년'], href: '/savings/doyak', icon: '🏦', category: '적금' },
@@ -53,7 +53,15 @@ const CALCULATORS: CalcItem[] = [
   { name: '학점 계산기', keywords: ['학점', 'gpa', '평점', '대학', '성적', '평균'], href: '/daily/gpa', icon: '🎓', category: '일상' },
   { name: '부가세 계산기', keywords: ['부가세', 'vat', '부가가치세', '공급가액', '세금계산서'], href: '/tax/vat', icon: '🧾', category: '세금' },
   { name: '종합소득세 계산기', keywords: ['종합소득세', '종소세', '소득세', '누진세', '세율', '프리랜서'], href: '/tax/income', icon: '🧾', category: '세금' },
-  { name: 'Flat vs Progressive Tax', keywords: ['flat tax', 'foreigner', 'foreign worker', 'expatriate', '외국인', '19%', 'progressive'], href: '/en/tax-comparison', icon: '🌍', category: 'English' },
+];
+
+const CALCULATORS_EN: CalcItem[] = [
+  { name: 'Flat vs Progressive Tax', keywords: ['flat tax', '19%', 'foreigner', 'expat', 'progressive', 'compare', 'which'], href: '/en/tax-comparison', icon: '💰', category: 'Tax' },
+  { name: 'Salary Calculator', keywords: ['salary', 'net pay', 'take-home', 'paycheck', 'after tax', 'deductions'], href: '/en/salary', icon: '💰', category: 'Salary' },
+  { name: 'Pension Refund Calculator', keywords: ['pension', 'refund', 'lump sum', 'national pension', 'leaving korea', 'NPS'], href: '/en/pension-refund', icon: '👵', category: 'Pension' },
+  { name: 'Korean Age Calculator', keywords: ['korean age', 'international age', 'age', 'how old', 'birthday'], href: '/en/korean-age', icon: '🎂', category: 'Daily' },
+  { name: 'Jeonse vs Wolse Calculator', keywords: ['jeonse', 'wolse', 'rent', 'deposit', 'housing', 'apartment', 'key money'], href: '/en/rent', icon: '🏠', category: 'Housing' },
+  { name: 'Severance Pay Calculator', keywords: ['severance', 'retirement', 'quitting', 'leaving job', 'severance pay'], href: '/en/severance', icon: '💰', category: 'Salary' },
 ];
 
 export default function SearchBar() {
@@ -63,9 +71,12 @@ export default function SearchBar() {
   const inputRef = useRef<HTMLInputElement>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+  const pathname = usePathname();
+  const isEn = pathname.startsWith('/en');
+  const calculators = isEn ? CALCULATORS_EN : CALCULATORS_KO;
 
   const filtered = query.trim()
-    ? CALCULATORS.filter(c => {
+    ? calculators.filter(c => {
         const q = query.toLowerCase();
         return c.name.toLowerCase().includes(q) ||
                c.keywords.some(k => k.toLowerCase().includes(q)) ||
@@ -126,7 +137,7 @@ export default function SearchBar() {
           onChange={e => setQuery(e.target.value)}
           onFocus={() => setFocused(true)}
           onKeyDown={handleKeyDown}
-          placeholder="계산기 검색 (예: 연봉, BMI, 대출)"
+          placeholder={isEn ? "Search calculators (e.g. salary, tax, pension)" : "계산기 검색 (예: 연봉, BMI, 대출)"}
           className="w-full py-3 pl-10 pr-4 border-[1.5px] border-[var(--line)] rounded-2xl text-sm font-semibold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)] transition-colors placeholder:text-[var(--sub)] placeholder:font-medium"
         />
         {query && (
@@ -166,7 +177,7 @@ export default function SearchBar() {
           ) : (
             <div className="p-6 text-center text-sm text-[var(--sub)]">
               <span className="text-2xl block mb-2">🔍</span>
-              &quot;{query}&quot;에 해당하는 계산기가 없어요
+              {isEn ? `No calculators found for "${query}"` : `"${query}"에 해당하는 계산기가 없어요`}
             </div>
           )}
         </div>
