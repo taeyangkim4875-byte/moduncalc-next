@@ -5,10 +5,10 @@ import Card from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "모든 계산기 - 연봉, 적금, 대출, 부동산, 건강, 세금 무료 계산기",
-  description: "연봉 실수령액, 청년도약계좌, 미래적금, 대출이자, 취득세, 복비, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 36종.",
+  description: "연봉 실수령액, 청년도약계좌, 미래적금, 대출이자, 취득세, 복비, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 38종.",
   alternates: { canonical: "https://moduncalc.com" },
   openGraph: {
-    title: "모든 계산기 - 연봉, 적금, 대출, 건강 무료 계산기 36종",
+    title: "모든 계산기 - 연봉, 적금, 대출, 건강 무료 계산기 38종",
     description: "2026년 최신 정책 반영. 연봉, 적금, 대출, 부동산, 건강, 세금, 일상 계산기를 한 곳에서 무료로.",
     url: "https://moduncalc.com",
   },
@@ -59,7 +59,7 @@ const POPULAR = [
 export default function Home() {
   return (
     <PageLayout
-      eyebrow="무료 계산기 36종"
+      eyebrow="무료 계산기 38종"
       title="모든 계산기"
       description="필요한 계산기를 찾아보세요. 2026년 최신 정책 반영."
     >
