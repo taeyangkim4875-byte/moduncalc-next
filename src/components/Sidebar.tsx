@@ -94,7 +94,6 @@ const MENUS_EN: MenuItem[] = [
   ]},
   { href: '/en/korean-age', ico: '🎂', label: 'Daily Life', sub: [
     { label: 'Korean Age', href: '/en/korean-age' },
-    { label: 'Currency Converter', href: '/en/currency' },
   ]},
 ];
 

@@ -62,7 +62,6 @@ const CALCULATORS_EN: CalcItem[] = [
   { name: 'Korean Age Calculator', keywords: ['korean age', 'international age', 'age', 'how old', 'birthday'], href: '/en/korean-age', icon: '🎂', category: 'Daily' },
   { name: 'Jeonse vs Wolse Calculator', keywords: ['jeonse', 'wolse', 'rent', 'deposit', 'housing', 'apartment', 'key money'], href: '/en/rent', icon: '🏠', category: 'Housing' },
   { name: 'Severance Pay Calculator', keywords: ['severance', 'retirement', 'quitting', 'leaving job', 'severance pay'], href: '/en/severance', icon: '💰', category: 'Salary' },
-  { name: 'Currency Converter', keywords: ['currency', 'exchange', 'KRW', 'USD', 'won', 'dollar', 'euro', 'convert'], href: '/en/currency', icon: '💱', category: 'Finance' },
   { name: 'Health Insurance Calculator', keywords: ['health', 'insurance', 'NHI', 'premium', 'medical', 'healthcare'], href: '/en/health-insurance', icon: '🏥', category: 'Insurance' },
   { name: 'Cost of Living Calculator', keywords: ['cost', 'living', 'expenses', 'budget', 'rent', 'Seoul', 'monthly'], href: '/en/cost-of-living', icon: '🏙️', category: 'Living' },
 ];

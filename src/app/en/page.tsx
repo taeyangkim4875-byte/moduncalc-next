@@ -23,7 +23,6 @@ const TOOLS = [
   { href: '/en/severance', icon: '💼', title: 'Severance Pay', desc: 'Retirement allowance calculator' },
   { href: '/en/cost-of-living', icon: '🏙️', title: 'Cost of Living', desc: 'Monthly budget by city & lifestyle' },
   { href: '/en/rent', icon: '🏠', title: 'Jeonse vs Wolse', desc: 'Korean rental deposit converter' },
-  { href: '/en/currency', icon: '💱', title: 'Currency Converter', desc: 'KRW ↔ USD, EUR, JPY & more' },
   { href: '/en/korean-age', icon: '🎂', title: 'Korean Age', desc: 'International vs Korean age' },
 ];
 
