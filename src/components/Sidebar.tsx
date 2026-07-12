@@ -84,14 +84,17 @@ const MENUS_EN: MenuItem[] = [
     { label: 'Flat vs Progressive Tax', href: '/en/tax-comparison' },
     { label: 'Severance Pay', href: '/en/severance' },
   ]},
-  { href: '/en/pension-refund', ico: '👵', label: 'Pension', sub: [
+  { href: '/en/pension-refund', ico: '👵', label: 'Insurance & Pension', sub: [
     { label: 'Pension Refund', href: '/en/pension-refund' },
+    { label: 'Health Insurance', href: '/en/health-insurance' },
   ]},
-  { href: '/en/rent', ico: '🏠', label: 'Housing', sub: [
+  { href: '/en/rent', ico: '🏠', label: 'Housing & Living', sub: [
     { label: 'Jeonse vs Wolse', href: '/en/rent' },
+    { label: 'Cost of Living', href: '/en/cost-of-living' },
   ]},
   { href: '/en/korean-age', ico: '🎂', label: 'Daily Life', sub: [
     { label: 'Korean Age', href: '/en/korean-age' },
+    { label: 'Currency Converter', href: '/en/currency' },
   ]},
 ];
 

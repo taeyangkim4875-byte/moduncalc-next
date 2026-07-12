@@ -53,6 +53,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/korean-age', priority: 0.8 },
     { path: '/en/rent', priority: 0.8 },
     { path: '/en/severance', priority: 0.8 },
+    { path: '/en/currency', priority: 0.8 },
+    { path: '/en/health-insurance', priority: 0.8 },
+    { path: '/en/cost-of-living', priority: 0.8 },
     { path: '/about', priority: 0.5 },
   ];
 

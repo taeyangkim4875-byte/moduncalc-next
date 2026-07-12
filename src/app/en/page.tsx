@@ -19,8 +19,11 @@ const TOOLS = [
   { href: '/en/tax-comparison', icon: '💰', title: 'Flat vs Progressive Tax', desc: 'Which tax method saves you more?' },
   { href: '/en/salary', icon: '💰', title: 'Salary Calculator', desc: 'Net pay after tax & insurance' },
   { href: '/en/pension-refund', icon: '👵', title: 'Pension Refund', desc: 'Lump-sum refund when leaving Korea' },
+  { href: '/en/health-insurance', icon: '🏥', title: 'Health Insurance', desc: 'Monthly NHI premium calculator' },
   { href: '/en/severance', icon: '💼', title: 'Severance Pay', desc: 'Retirement allowance calculator' },
+  { href: '/en/cost-of-living', icon: '🏙️', title: 'Cost of Living', desc: 'Monthly budget by city & lifestyle' },
   { href: '/en/rent', icon: '🏠', title: 'Jeonse vs Wolse', desc: 'Korean rental deposit converter' },
+  { href: '/en/currency', icon: '💱', title: 'Currency Converter', desc: 'KRW ↔ USD, EUR, JPY & more' },
   { href: '/en/korean-age', icon: '🎂', title: 'Korean Age', desc: 'International vs Korean age' },
 ];
 
