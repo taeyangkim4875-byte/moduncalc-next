@@ -169,7 +169,7 @@ export default function LiveCounter() {
       )}
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 월급 실시간 카운터란?</h2>
+        <h2 className="text-base font-extrabold mb-3">📖 월급 카운터란?</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">연봉을 근무 시간으로 나누면 초당 얼마를 버는지 알 수 있습니다. 연간 근무일수 252일, 일 8시간 기준으로 계산합니다. 연봉 4,500만원이면 초당 약 6.2원, 시간당 약 22,321원을 벌고 있는 셈입니다.</p>
         <p className="text-sm text-[#4E5968] leading-relaxed">카운터를 켜놓으면 실시간으로 금액이 올라가는 걸 볼 수 있어요. 화장실 다녀오는 5분 동안에도, 커피를 마시는 15분 동안에도 돈을 벌고 있다는 걸 체감할 수 있습니다.</p>
       </Card>

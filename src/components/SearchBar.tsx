@@ -21,7 +21,7 @@ const CALCULATORS: CalcItem[] = [
   { name: '최저시급 계산기', keywords: ['최저시급', '최저임금', '시급', '주휴수당', '알바', '아르바이트'], href: '/salary/minimum', icon: '💰', category: '연봉' },
   { name: '실업급여 계산기', keywords: ['실업급여', '구직급여', '퇴사', '고용보험', '실직'], href: '/pension/jobless', icon: '👵', category: '연금/보험' },
   { name: '국민연금 계산기', keywords: ['국민연금', '연금', '노후', '수령액', '가입기간'], href: '/pension/nps', icon: '👵', category: '연금/보험' },
-  { name: '월급 실시간 카운터', keywords: ['실시간', '카운터', '초당', '시급', '분당'], href: '/salary/live', icon: '⏱️', category: '연봉' },
+  { name: '월급 카운터', keywords: ['실시간', '카운터', '초당', '시급', '분당', '월급'], href: '/salary/live', icon: '⏱️', category: '연봉' },
   { name: '평생 근로소득', keywords: ['평생', '근로소득', '총소득', '은퇴', '임금상승률'], href: '/salary/lifetime', icon: '💰', category: '연봉' },
   { name: '퇴직금 계산기', keywords: ['퇴직금', '퇴직', '퇴사', '재직기간', '평균임금'], href: '/salary/severance', icon: '💰', category: '연봉' },
   { name: '육아휴직 급여 계산기', keywords: ['육아휴직', '육아', '출산', '6+6', '부모휴직', '급여'], href: '/salary/parental', icon: '👶', category: '연봉' },
