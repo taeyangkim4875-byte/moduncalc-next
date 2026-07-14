@@ -62,7 +62,10 @@ const MENUS_KO: MenuItem[] = [
     { label: '전역일', href: '/daily/military' },
     { label: '학점(GPA)', href: '/daily/gpa' },
     { label: '속도·시간', href: '/daily/speed' },
-    { label: '연비', href: '/daily/fuel' }
+    { label: '연비', href: '/daily/fuel' },
+    { label: '애드센스 수익', href: '/daily/adsense' },
+    { label: '쿠팡 파트너스', href: '/daily/coupang' },
+    { label: '유튜브 수익', href: '/daily/youtube' }
   ]},
   { href: '/realestate', ico: '🏢', label: '부동산', sub: [
     { label: '취득세', href: '/realestate/acqtax' },
@@ -210,7 +213,8 @@ export default function Sidebar() {
           )}
           <div className="flex gap-3.5">
             <Link href="/about" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>
-            <Link href="/privacy" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보처리방침'}</Link>
+            <Link href="/contact" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Contact' : '문의'}</Link>
+            <Link href="/privacy" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보'}</Link>
             <Link href="/terms" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Terms' : '이용약관'}</Link>
           </div>
         </div>

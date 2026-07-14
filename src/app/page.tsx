@@ -53,6 +53,9 @@ const POPULAR = [
   { href: '/daily/fire', icon: '🔥', title: 'FIRE', desc: '조기 은퇴 시뮬레이션' },
   { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day' },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산' },
+  { href: '/daily/adsense', icon: '💻', title: '애드센스 수익', desc: '블로그 예상 수익' },
+  { href: '/daily/coupang', icon: '🛍️', title: '쿠팡 파트너스', desc: '예상 수익 계산' },
+  { href: '/daily/youtube', icon: '🎬', title: '유튜브 수익', desc: '조회수별 예상 수익' },
   { href: '/calc', icon: '🧮', title: '스마트 계산기', desc: '수식 입력·공학' },
 ];
 
