@@ -107,6 +107,8 @@ export default function MiraeCalculator() {
     checkedItems: {} as Record<string, boolean>,
   });
   const [result, setResult] = useState<{total:number;principal:number;contrib:number;interest:number;rate:number;mt:ReturnType<typeof miraeType>;rTaxAdj:number}|null>(null);
+  const [currentResult, setCurrentResult] = useState<{months:number;principal:number;contrib:number;interest:number;total:number;monthlyData:{m:number;principal:number;contrib:number;interest:number;total:number}[]}|null>(null);
+  const [elapsedMonths, setElapsedMonths] = useState(6);
   const [autoCalc, setAutoCalc] = useState(false);
 
   useEffect(() => {
@@ -175,6 +177,36 @@ export default function MiraeCalculator() {
     const rTaxAdj = rEff / (1 - NORMAL_TAX_RATE);
 
     setResult({ total, principal, contrib, interest, rate: totalRate, mt, rTaxAdj });
+
+    // 현재까지 쌓인 금액 계산
+    const em = elapsedMonths || 0;
+    if (em > 0 && em <= 36) {
+      const monthlyData: {m:number;principal:number;contrib:number;interest:number;total:number}[] = [];
+      const accPrincipal = payM * em;
+      const accContrib = cm * em;
+      // 단리 적수: Σ(k=1→em) 납입액 × (연이율/12) × (em - k + 1)
+      const accInterestP = rentInterest(payM, rate, em);
+      const accInterestC = rentInterest(cm, rate, em);
+      const accInterest = accInterestP + accInterestC;
+
+      // 스냅샷: 3개월 간격 + 현재
+      const snapshots = [1, 3, 6, 9, 12, 18, 24, 30, 36].filter(m => m <= em);
+      if (!snapshots.includes(em)) snapshots.push(em);
+      snapshots.sort((a, b) => a - b);
+
+      for (const sm of snapshots) {
+        const p2 = payM * sm;
+        const c2 = cm * sm;
+        const ip2 = rentInterest(payM, rate, sm);
+        const ic2 = rentInterest(cm, rate, sm);
+        monthlyData.push({ m: sm, principal: p2, contrib: c2, interest: ip2 + ic2, total: p2 + c2 + ip2 + ic2 });
+      }
+
+      setCurrentResult({ months: em, principal: accPrincipal, contrib: accContrib, interest: accInterest, total: accPrincipal + accContrib + accInterest, monthlyData });
+    } else {
+      setCurrentResult(null);
+    }
+
     // 체크된 우대항목 인덱스를 URL에 저장
     const checkedIndices = bank.items.map((item, i) => state.checkedItems[`${state.bank}-${item.label}`] ? i : -1).filter(i => i >= 0);
     setParams({ size: s.size, salary: s.salary, houseIncome: s.houseIncome, dual: s.dual, pay: s.pay, bank: s.bank, checked: checkedIndices.join(',') });
@@ -286,6 +318,61 @@ export default function MiraeCalculator() {
           </div>
         </div>
       )}
+      {/* 현재까지 쌓인 금액 */}
+      {result && currentResult && (
+        <div>
+          <div className="text-lg font-extrabold mt-4 mb-3 px-1">📊 현재까지 쌓인 금액 ({currentResult.months}개월차)</div>
+          <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--green)]">
+            <div className="mb-3">
+              <label className="block text-sm font-bold mb-2">현재 경과 개월 수 <span className="text-xs text-[var(--sub)] font-medium ml-1">{elapsedMonths}개월</span></label>
+              <input type="range" min={1} max={36} step={1} value={elapsedMonths} onChange={e => setElapsedMonths(+e.target.value)} className="w-full" />
+              <div className="flex justify-between text-[10px] text-[var(--sub)] mt-1">
+                <span>1개월</span><span>12개월</span><span>24개월</span><span>36개월</span>
+              </div>
+            </div>
+            <button onClick={calculate} className="w-full py-2.5 mb-3 border-0 rounded-xl bg-[var(--green)] text-white text-sm font-extrabold cursor-pointer transition-all hover:opacity-90 active:scale-[.985]">
+              잔액 다시 계산
+            </button>
+            <div className="text-[32px] font-extrabold tracking-tight text-[var(--green)]">{won(currentResult.total)}</div>
+            <div className="mt-3 border-t border-[var(--line)] pt-3 flex flex-col gap-2 text-[13.5px]">
+              <div className="flex justify-between"><span className="text-[var(--sub)] font-semibold">납입 원금</span><span className="font-bold">{won(currentResult.principal)}</span></div>
+              <div className="flex justify-between text-[var(--violet)]"><span className="font-semibold">정부 기여금</span><span className="font-bold">{won(currentResult.contrib)}</span></div>
+              <div className="flex justify-between text-[var(--green)]"><span className="font-semibold">이자 (비과세)</span><span className="font-bold">{won(currentResult.interest)}</span></div>
+            </div>
+          </div>
+
+          {currentResult.monthlyData.length > 1 && (
+            <Card>
+              <SectionTitle num="📈">월별 잔액 추이</SectionTitle>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-[11.5px] min-w-[320px]">
+                  <thead>
+                    <tr className="border-b-2 border-[var(--line)]">
+                      <th className="py-1.5 text-left text-[var(--sub)] font-bold">개월</th>
+                      <th className="py-1.5 text-right text-[var(--sub)] font-bold">원금</th>
+                      <th className="py-1.5 text-right text-[var(--sub)] font-bold">기여금</th>
+                      <th className="py-1.5 text-right text-[var(--sub)] font-bold">이자</th>
+                      <th className="py-1.5 text-right font-bold">합계</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentResult.monthlyData.map(d => (
+                      <tr key={d.m} className={`border-b border-[var(--line)] ${d.m === currentResult.months ? 'bg-[var(--green-weak)] font-extrabold' : ''}`}>
+                        <td className="py-1.5 font-bold">{d.m}개월</td>
+                        <td className="py-1.5 text-right">{won(d.principal)}</td>
+                        <td className="py-1.5 text-right text-[var(--violet)]">{won(d.contrib)}</td>
+                        <td className="py-1.5 text-right text-[var(--green)]">{won(d.interest)}</td>
+                        <td className="py-1.5 text-right font-bold">{won(d.total)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+          )}
+        </div>
+      )}
+
       {result && <ShareButtons title="미래적금 수령액" />}
 
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">은행을 선택하고 우대 조건을 체크한 후 계산해 보세요.</Card>}

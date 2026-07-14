@@ -53,6 +53,8 @@ export default function DoyakCalculator() {
     pay: 70, baseRate: 4.5, varRate: 3.0, dohyakBonus: 1.5, bonusStart: 13,
   });
   const [result, setResult] = useState<{total:number;principal:number;contrib:number;interest:number;segLabel:string;tier:ReturnType<typeof dohyakTier>}|null>(null);
+  const [currentResult, setCurrentResult] = useState<{months:number;principal:number;contrib:number;interest:number;total:number;monthlyData:{m:number;principal:number;contrib:number;interest:number;total:number}[]}|null>(null);
+  const [elapsedMonths, setElapsedMonths] = useState(12);
   const [autoCalc, setAutoCalc] = useState(false);
 
   useEffect(() => {
@@ -103,6 +105,56 @@ export default function DoyakCalculator() {
     const segLabel = segs.map(g => `${g.from}~${g.to}개월 연 ${g.rate.toFixed(1)}%`).join(' → ');
 
     setResult({ total, principal, contrib, interest, segLabel, tier });
+
+    // 현재까지 쌓인 금액 계산 (월별)
+    const em = elapsedMonths || 0;
+    if (em > 0 && em <= 60) {
+      const monthlyData: {m:number;principal:number;contrib:number;interest:number;total:number}[] = [];
+      let accPrincipal = 0;
+      let accContrib = 0;
+      let accInterest = 0;
+      for (let m = 1; m <= em; m++) {
+        accPrincipal += payM;
+        accContrib += cm;
+        // 단리: m번째 납입분의 이자 = 납입액 × 월이율 × (경과개월수 - m + 1)개월 적수 아님
+        // 정확한 방식: 각 월 납입분이 (em - m)개월 동안 이자 발생 (납입한 달은 미포함이 일반적)
+        // 하지만 은행 관행상 납입월 포함 적수 방식: (em - m + 1)개월
+      }
+      // 적수 방식으로 정확 계산: 이자 = Σ(k=1→em) 납입액 × (연이율/12) × (em - k + 1)
+      let interestP = 0;
+      let interestC = 0;
+      for (let k = 1; k <= em; k++) {
+        const monthRate = sched[k - 1] / 12; // 해당 월의 월이율
+        const remaining = em - k; // 납입 후 경과 개월 (납입월 미포함이 일반적이나, 만기 시 포함)
+        // 은행 적금 이자 계산: 적수 = 납입액 × 잔여개월수 (납입월 다음달부터 계산)
+        // 단, 간소화를 위해 (em - k + 1)을 쓰면 만기 계산과 일치
+        interestP += payM * monthRate * (em - k + 1);
+        interestC += cm * monthRate * (em - k + 1);
+      }
+      accInterest = interestP + interestC;
+
+      // 월별 데이터 생성 (5개월 간격 + 현재)
+      const snapshots = [1, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60].filter(m => m <= em);
+      if (!snapshots.includes(em)) snapshots.push(em);
+      snapshots.sort((a, b) => a - b);
+
+      for (const sm of snapshots) {
+        let p2 = payM * sm;
+        let c2 = cm * sm;
+        let ip2 = 0, ic2 = 0;
+        for (let k = 1; k <= sm; k++) {
+          const mr = sched[k - 1] / 12;
+          ip2 += payM * mr * (sm - k + 1);
+          ic2 += cm * mr * (sm - k + 1);
+        }
+        monthlyData.push({ m: sm, principal: p2, contrib: c2, interest: ip2 + ic2, total: p2 + c2 + ip2 + ic2 });
+      }
+
+      setCurrentResult({ months: em, principal: accPrincipal, contrib: accContrib, interest: accInterest, total: accPrincipal + accContrib + accInterest, monthlyData });
+    } else {
+      setCurrentResult(null);
+    }
+
     setParams({ size: s.size, salary: s.salary, houseIncome: s.houseIncome, pay: s.pay, baseRate: s.baseRate, varRate: s.varRate, dohyakBonus: s.dohyakBonus, bonusStart: s.bonusStart });
     scrollToResult();
   };
@@ -202,6 +254,62 @@ export default function DoyakCalculator() {
           </div>
         </div>
       )}
+      {/* 현재까지 쌓인 금액 */}
+      {result && currentResult && (
+        <div>
+          <div className="text-lg font-extrabold mt-4 mb-3 px-1">📊 현재까지 쌓인 금액 ({currentResult.months}개월차)</div>
+          <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--green)]">
+            <div className="mb-3">
+              <label className="block text-sm font-bold mb-2">현재 경과 개월 수 <span className="text-xs text-[var(--sub)] font-medium ml-1">{elapsedMonths}개월</span></label>
+              <input type="range" min={1} max={60} step={1} value={elapsedMonths} onChange={e => { setElapsedMonths(+e.target.value); }} className="w-full" />
+              <div className="flex justify-between text-[10px] text-[var(--sub)] mt-1">
+                <span>1개월</span><span>12개월</span><span>24개월</span><span>36개월</span><span>48개월</span><span>60개월</span>
+              </div>
+            </div>
+            <button onClick={calculate} className="w-full py-2.5 mb-3 border-0 rounded-xl bg-[var(--green)] text-white text-sm font-extrabold cursor-pointer transition-all hover:opacity-90 active:scale-[.985]">
+              잔액 다시 계산
+            </button>
+            <div className="text-[32px] font-extrabold tracking-tight text-[var(--green)]">{won(currentResult.total)}</div>
+            <div className="mt-3 border-t border-[var(--line)] pt-3 flex flex-col gap-2 text-[13.5px]">
+              <div className="flex justify-between"><span className="text-[var(--sub)] font-semibold">납입 원금</span><span className="font-bold">{won(currentResult.principal)}</span></div>
+              <div className="flex justify-between text-[var(--violet)]"><span className="font-semibold">정부 기여금</span><span className="font-bold">{won(currentResult.contrib)}</span></div>
+              <div className="flex justify-between text-[var(--green)]"><span className="font-semibold">이자 (비과세)</span><span className="font-bold">{won(currentResult.interest)}</span></div>
+            </div>
+          </div>
+
+          {/* 월별 추이 표 */}
+          {currentResult.monthlyData.length > 1 && (
+            <Card>
+              <SectionTitle num="📈">월별 잔액 추이</SectionTitle>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-[11.5px] min-w-[320px]">
+                  <thead>
+                    <tr className="border-b-2 border-[var(--line)]">
+                      <th className="py-1.5 text-left text-[var(--sub)] font-bold">개월</th>
+                      <th className="py-1.5 text-right text-[var(--sub)] font-bold">원금</th>
+                      <th className="py-1.5 text-right text-[var(--sub)] font-bold">기여금</th>
+                      <th className="py-1.5 text-right text-[var(--sub)] font-bold">이자</th>
+                      <th className="py-1.5 text-right font-bold">합계</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentResult.monthlyData.map(d => (
+                      <tr key={d.m} className={`border-b border-[var(--line)] ${d.m === currentResult.months ? 'bg-[var(--green-weak)] font-extrabold' : ''}`}>
+                        <td className="py-1.5 font-bold">{d.m}개월</td>
+                        <td className="py-1.5 text-right">{won(d.principal)}</td>
+                        <td className="py-1.5 text-right text-[var(--violet)]">{won(d.contrib)}</td>
+                        <td className="py-1.5 text-right text-[var(--green)]">{won(d.interest)}</td>
+                        <td className="py-1.5 text-right font-bold">{won(d.total)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+          )}
+        </div>
+      )}
+
       {result && <ShareButtons title="도약계좌 수령액" />}
 
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 만기 수령액을 계산해 드려요.</Card>}
@@ -209,7 +317,9 @@ export default function DoyakCalculator() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">📖 청년도약계좌란?</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">청년도약계좌는 만 19~34세 청년이 매월 최대 70만원을 5년간 납입하면 정부 기여금과 비과세 혜택을 받을 수 있는 정책 금융상품입니다. 1~3년차는 고정금리, 4~5년차는 변동금리가 적용되며, 우대금리는 충족 시점부터 적용됩니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">정부 기여금은 소득 구간에 따라 납입액의 3~6%가 매칭 지급됩니다. 총급여 6,000만원 초과~7,500만원 이하는 비과세 혜택만 적용됩니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">정부 기여금은 소득 구간에 따라 납입액의 3~6%가 매칭 지급됩니다. 총급여 6,000만원 초과~7,500만원 이하는 비과세 혜택만 적용됩니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>2026년 3년차 변동금리 전환:</b> 2024년 초에 가입한 1기 가입자부터 고정금리(연 4.5%) 기간이 종료되고, 4년차부터 변동금리로 전환됩니다. KB국민·신한·우리은행은 변동금리를 연 3.0%로 고시했으며, 우대금리 1.5%p를 합해도 최고 4.5%로 낮아집니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed"><b>현재 잔액 확인:</b> 위 계산기에서 &quot;현재까지 쌓인 금액&quot; 기능을 이용하면 만기 전이라도 지금까지 원금+이자+기여금이 얼마인지 확인할 수 있습니다. 변동금리 전환 시점(37개월차)을 기준으로 이자가 달라지는 것도 자동 반영됩니다.</p>
       </Card>
       <Card>
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
