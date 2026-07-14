@@ -65,6 +65,10 @@ const MENUS_KO: MenuItem[] = [
     { label: '학점(GPA)', href: '/daily/gpa' },
     { label: '속도·시간', href: '/daily/speed' },
     { label: '연비', href: '/daily/fuel' },
+    { label: '글자수 세기', href: '/daily/charcount' },
+    { label: '칼로리 계산기', href: '/daily/calorie' },
+    { label: '평수 계산기', href: '/daily/pyeong' },
+    { label: '자동차세', href: '/daily/cartax' },
     { label: '수도요금', href: '/daily/water' },
     { label: '가스요금·난방비', href: '/daily/gas' },
     { label: '아기 100일·돌', href: '/daily/baby100' },
@@ -92,6 +96,7 @@ const MENUS_KO: MenuItem[] = [
     { label: '부가세', href: '/tax/vat' },
     { label: '종합소득세', href: '/tax/income' },
     { label: '증여세', href: '/tax/gift' },
+    { label: '상속세', href: '/tax/inherit' },
   ]},
 ];
 
