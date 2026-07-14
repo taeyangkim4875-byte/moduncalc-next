@@ -120,7 +120,7 @@ export default function SalaryCalculator() {
             <input
               type="number"
               value={state.age}
-              onChange={e => update('age', +e.target.value || 0)}
+              onChange={e => update('age', +e.target.value)}
               className="flex-1 w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)]"
             />
             <span className="text-sm font-bold text-[var(--sub)]">세</span>
@@ -144,7 +144,7 @@ export default function SalaryCalculator() {
             <input
               type="number"
               value={state.salary}
-              onChange={e => update('salary', +e.target.value || 0)}
+              onChange={e => update('salary', +e.target.value)}
               className="flex-1 w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)]"
             />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>

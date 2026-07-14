@@ -175,7 +175,7 @@ export default function SavingsCalculator() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">본인 총급여 (연) <span className="text-xs text-[var(--sub)] font-medium ml-1">{state.salary.toLocaleString()}만원</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={state.salary} onChange={e => update('salary', +e.target.value || 0)}
+            <input type="number" value={state.salary} onChange={e => update('salary', +e.target.value)}
               className="flex-1 w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
@@ -186,7 +186,7 @@ export default function SavingsCalculator() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">가구 월 소득 <span className="text-xs text-[var(--sub)] font-medium ml-1">중위소득 대비 {medianRatio().toFixed(0)}%</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={state.houseIncome} onChange={e => update('houseIncome', +e.target.value || 0)}
+            <input type="number" value={state.houseIncome} onChange={e => update('houseIncome', +e.target.value)}
               className="flex-1 w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
@@ -236,7 +236,7 @@ export default function SavingsCalculator() {
           <label className="block text-sm font-bold mb-2">청년도약 우대금리</label>
           <div className="flex items-center gap-2.5">
             <input type="number" value={state.dohyakBonus} min={0} max={1.5} step={0.1}
-              onChange={e => update('dohyakBonus', Math.min(1.5, Math.max(0, +e.target.value || 0)))}
+              onChange={e => update('dohyakBonus', Math.min(1.5, Math.max(0, +e.target.value)))}
               className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">%</span>
           </div>
@@ -254,7 +254,7 @@ export default function SavingsCalculator() {
           <label className="block text-sm font-bold mb-2">미래적금 우대금리</label>
           <div className="flex items-center gap-2.5">
             <input type="number" value={state.miraeBonus} min={0} max={3.0} step={0.1}
-              onChange={e => update('miraeBonus', Math.min(3.0, Math.max(0, +e.target.value || 0)))}
+              onChange={e => update('miraeBonus', Math.min(3.0, Math.max(0, +e.target.value)))}
               className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">%</span>
           </div>

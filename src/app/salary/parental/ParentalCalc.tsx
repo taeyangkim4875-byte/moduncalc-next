@@ -47,7 +47,7 @@ export default function ParentalCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">통상임금 (월) <span className="text-xs text-[var(--sub)] font-medium ml-1">{wage.toLocaleString()}만원</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={wage} onChange={e => setWage(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={wage} onChange={e => setWage(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <input type="range" min={100} max={700} step={10} value={wage} onChange={e => setWage(+e.target.value)} className="w-full mt-3.5" />

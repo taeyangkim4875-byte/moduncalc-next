@@ -196,7 +196,7 @@ export default function MiraeCalculator() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">본인 총급여 (연) <span className="text-xs text-[var(--sub)] font-medium ml-1">{state.salary.toLocaleString()}만원</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={state.salary} onChange={e => update('salary', +e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={state.salary} onChange={e => update('salary', +e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <input type="range" min={0} max={8000} step={100} value={state.salary} onChange={e => update('salary', +e.target.value)} className="w-full mt-3.5" />
@@ -204,7 +204,7 @@ export default function MiraeCalculator() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">가구 월 소득 <span className="text-xs text-[var(--sub)] font-medium ml-1">중위소득 대비 {medianRatio().toFixed(0)}%</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={state.houseIncome} onChange={e => update('houseIncome', +e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={state.houseIncome} onChange={e => update('houseIncome', +e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
         </div>

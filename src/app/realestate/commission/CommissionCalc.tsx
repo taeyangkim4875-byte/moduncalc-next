@@ -90,7 +90,7 @@ export default function CommissionCalc() {
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">{dealType === '월세' ? '보증금' : '거래금액'} <span className="text-xs text-[var(--sub)] font-medium ml-1">{price.toLocaleString()}만원</span></label>
         <div className="flex items-center gap-2.5">
-          <input type="number" value={price} min={0} onChange={e => setPrice(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+          <input type="number" value={price} min={0} onChange={e => setPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
           <span className="text-sm font-bold text-[var(--sub)]">만원</span>
         </div>
         <input type="range" min={0} max={200000} step={1000} value={price} onChange={e => setPrice(+e.target.value)} className="w-full mt-3.5" />
@@ -99,7 +99,7 @@ export default function CommissionCalc() {
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">월세 <span className="text-xs text-[var(--sub)] font-medium ml-1">{monthly.toLocaleString()}만원</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={monthly} min={0} onChange={e => setMonthly(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={monthly} min={0} onChange={e => setMonthly(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원/월</span>
           </div>
         </div>

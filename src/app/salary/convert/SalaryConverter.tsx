@@ -77,7 +77,7 @@ export default function SalaryConverter() {
             <input
               type="number"
               value={salary}
-              onChange={e => setSalary(+e.target.value || 0)}
+              onChange={e => setSalary(+e.target.value)}
               className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"
             />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>

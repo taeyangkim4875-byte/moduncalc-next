@@ -43,13 +43,13 @@ export default function PensionRefundCalc() {
         <div className="mb-3">
           <label className="block text-sm font-bold mb-2">Monthly Salary <span className="text-xs text-[var(--sub)] font-medium ml-1">{monthlySalary}만원</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={monthlySalary} onChange={e => setMonthlySalary(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={monthlySalary} onChange={e => setMonthlySalary(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원/mo</span>
           </div>
         </div>
         <div className="mb-3">
           <label className="block text-sm font-bold mb-2">Months Worked in Korea</label>
-          <input type="number" value={months} onChange={e => setMonths(+e.target.value || 0)} className="w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+          <input type="number" value={months} onChange={e => setMonths(+e.target.value)} className="w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
         </div>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">Your Nationality</label>

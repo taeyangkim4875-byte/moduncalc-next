@@ -75,14 +75,14 @@ export default function FireCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">월 소득 (세후)</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={monthlyIncome} onChange={e => setMonthlyIncome(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={monthlyIncome} onChange={e => setMonthlyIncome(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
         </div>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">월 지출</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={monthlyExpense} onChange={e => setMonthlyExpense(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={monthlyExpense} onChange={e => setMonthlyExpense(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <div className="text-xs text-[var(--sub)] mt-1">월 저축: {(monthlyIncome - monthlyExpense).toLocaleString()}만원 (저축률 {monthlyIncome > 0 ? ((monthlyIncome - monthlyExpense) / monthlyIncome * 100).toFixed(0) : 0}%)</div>
@@ -90,7 +90,7 @@ export default function FireCalc() {
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">현재 순자산 (금융자산)</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={currentAsset} onChange={e => setCurrentAsset(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={currentAsset} onChange={e => setCurrentAsset(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
         </div>
@@ -106,7 +106,7 @@ export default function FireCalc() {
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">은퇴 후 월 생활비</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={retireExpense} onChange={e => setRetireExpense(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={retireExpense} onChange={e => setRetireExpense(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <div className="text-xs text-[var(--sub)] mt-1">4% 룰 기준 필요 자산: {fmtAmt(retireExpense * 10000 * 12 * 25)}원</div>

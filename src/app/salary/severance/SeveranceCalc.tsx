@@ -88,21 +88,21 @@ export default function SeveranceCalc() {
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">최근 3개월 월평균 임금 <span className="text-xs text-[var(--sub)] font-medium ml-1">{wage.toLocaleString()}만원</span></label>
         <div className="flex items-center gap-2.5">
-          <input type="number" value={wage} min={0} onChange={e => setWage(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+          <input type="number" value={wage} min={0} onChange={e => setWage(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
           <span className="text-sm font-bold text-[var(--sub)]">만원/월</span>
         </div>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">연간 상여금 <span className="text-xs text-[var(--sub)] font-medium ml-1">{bonus.toLocaleString()}만원</span></label>
         <div className="flex items-center gap-2.5">
-          <input type="number" value={bonus} min={0} onChange={e => setBonus(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+          <input type="number" value={bonus} min={0} onChange={e => setBonus(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
           <span className="text-sm font-bold text-[var(--sub)]">만원/년</span>
         </div>
       </div>
       <div className="mb-0">
         <label className="block text-sm font-bold mb-2">연차수당 <span className="text-xs text-[var(--sub)] font-medium ml-1">{annualLeave.toLocaleString()}만원</span></label>
         <div className="flex items-center gap-2.5">
-          <input type="number" value={annualLeave} min={0} onChange={e => setAnnualLeave(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+          <input type="number" value={annualLeave} min={0} onChange={e => setAnnualLeave(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
           <span className="text-sm font-bold text-[var(--sub)]">만원/년</span>
         </div>
       </div>

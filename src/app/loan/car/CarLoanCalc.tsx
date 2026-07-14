@@ -83,7 +83,7 @@ export default function CarLoanCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">차량 가격 <span className="text-xs text-[var(--sub)] font-medium ml-1">{price.toLocaleString()}만원</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={price} onChange={e => setPrice(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={price} onChange={e => setPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <input type="range" min={500} max={15000} step={100} value={price} onChange={e => setPrice(+e.target.value)} className="w-full mt-3.5" />
@@ -105,7 +105,7 @@ export default function CarLoanCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">선수금(다운페이) <span className="text-xs text-[var(--sub)] font-medium ml-1">{downPay.toLocaleString()}만원</span></label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={downPay} onChange={e => setDownPay(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={downPay} onChange={e => setDownPay(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <input type="range" min={0} max={Math.max(price, 100)} step={50} value={downPay} onChange={e => setDownPay(+e.target.value)} className="w-full mt-3.5" />
@@ -114,7 +114,7 @@ export default function CarLoanCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">할부 이자율 (연)</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={rate} min={0} max={20} step={0.1} onChange={e => setRate(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={rate} min={0} max={20} step={0.1} onChange={e => setRate(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">%</span>
           </div>
           <div className="text-xs text-[var(--sub)] mt-1">캐피탈사 5~8%, 은행 4~6%, 무이자 0%</div>
