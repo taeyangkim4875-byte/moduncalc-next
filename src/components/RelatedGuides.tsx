@@ -78,6 +78,12 @@ const GUIDES: Record<string, { href: string; title: string }[]> = {
   '/daily/electric': [
     { href: '/guide/jeonse', title: '📖 전세 계약·주거 가이드' },
   ],
+  '/daily/fuel': [
+    { href: '/guide/loan-comparison', title: '📖 자동차 할부·대출 비교' },
+  ],
+  '/daily/aircon': [
+    { href: '/guide/jeonse', title: '📖 전세 계약·주거 가이드' },
+  ],
 };
 
 export default function RelatedGuides() {

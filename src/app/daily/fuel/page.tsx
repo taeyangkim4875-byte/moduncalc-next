@@ -2,5 +2,29 @@ import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
 import FuelCalc from "./FuelCalc";
-export const metadata: Metadata = { title: "연비 계산기 - 자동차 연비·주유비", description: "실제 연비와 여행 유류비를 계산하세요.", alternates: { canonical: "https://moduncalc.com/daily/fuel" } };
-export default function Page() { return <PageLayout eyebrow="자동차" title="연비 계산기" description="실제 연비와 여행 유류비를 계산해요."><CalculatorJsonLd name="연비 계산기" description="실제 연비와 여행 유류비를 계산하세요." url="https://moduncalc.com/daily/fuel" /><FaqJsonLd items={[{q:"실제 연비가 공인연비보다 낮은 이유는?",a:"공인연비는 표준 시험 조건에서 측정됩니다. 실제 운전은 에어컨, 급가속, 정체 등으로 연비가 낮아집니다."},{q:"연비를 높이는 방법은?",a:"정속 주행, 급가속·급제동 자제, 적정 타이어 공기압 유지, 불필요한 짐 줄이기가 효과적입니다."}]} /><FuelCalc /></PageLayout>; }
+
+export const metadata: Metadata = {
+  title: "자동차 연비 계산기 - 실제 연비 측정 · 유류비 계산 (2026)",
+  description: "주행 거리와 주유량으로 실제 연비(km/L)를 측정하고, 여행 유류비를 미리 계산하세요. 차종별 평균 연비 비교, 연비 절약 팁까지.",
+  alternates: { canonical: "https://moduncalc.com/daily/fuel" },
+  openGraph: {
+    title: "자동차 연비 계산기 - 실제 연비 측정 · 유류비 계산 (2026)",
+    description: "주행 거리와 주유량으로 내 차 실제 연비를 측정. 서울-부산 유류비 얼마? 차종별 평균 연비 비교.",
+    url: "https://moduncalc.com/daily/fuel",
+  },
+};
+
+export default function Page() {
+  return (
+    <PageLayout eyebrow="자동차 · 2026 유가 반영" title="자동차 연비 계산기" description="내 차 실제 연비를 측정하고 여행 유류비를 미리 계산하세요.">
+      <CalculatorJsonLd name="자동차 연비 계산기" description="주행 거리와 주유량으로 실제 연비(km/L)를 측정하고 여행 유류비를 계산합니다." url="https://moduncalc.com/daily/fuel" />
+      <FaqJsonLd items={[
+        {q:"자동차 연비는 어떻게 계산하나요?",a:"연비(km/L) = 주행 거리(km) ÷ 사용 연료(L)입니다. 주유 후 트립미터를 0으로 초기화하고, 다음 주유 시 주행거리와 주유량을 기록하면 실제 연비를 측정할 수 있습니다."},
+        {q:"실제 연비가 공인연비보다 낮은 이유는?",a:"공인연비는 표준 시험실 조건에서 측정됩니다. 실제 도로에서는 에어컨, 급가속, 도심 정체, 오르막길 등으로 공인연비의 70~85% 수준이 나옵니다."},
+        {q:"연비를 높이는 방법은?",a:"경제속도(60~80km/h) 유지, 급가속·급제동 자제, 타이어 공기압 적정 유지(월 1회 점검), 불필요한 짐 줄이기, 에어컨 적정 사용이 효과적입니다. 이것만으로 연비가 10~20% 개선됩니다."},
+        {q:"서울에서 부산까지 유류비는 얼마인가요?",a:"서울-부산 약 400km 기준, 연비 12km/L 차량에 리터당 1,650원이면 약 55,000원입니다. 고속도로 통행료(약 25,000원)는 별도입니다."},
+      ]} />
+      <FuelCalc />
+    </PageLayout>
+  );
+}
