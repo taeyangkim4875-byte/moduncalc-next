@@ -24,6 +24,14 @@ const TOOLS = [
   { href: '/en/cost-of-living', icon: '🏙️', title: 'Cost of Living', desc: 'Monthly budget by city & lifestyle' },
   { href: '/en/rent', icon: '🏠', title: 'Jeonse vs Wolse', desc: 'Korean rental deposit converter' },
   { href: '/en/korean-age', icon: '🎂', title: 'Korean Age', desc: 'International vs Korean age' },
+  { href: '/en/subway', icon: '🚇', title: 'Subway Fare', desc: 'Seoul metro cost calculator' },
+  { href: '/en/size-converter', icon: '👟', title: 'Size Converter', desc: 'Clothing & shoe sizes' },
+  { href: '/en/tip-calculator', icon: '💵', title: 'Tipping Guide', desc: 'Do you tip in Korea?' },
+  { href: '/en/timezone', icon: '🕐', title: 'Time Zone (KST)', desc: 'Korea time converter' },
+  { href: '/en/electricity', icon: '⚡', title: 'Electricity Bill', desc: 'Understand your 전기요금' },
+  { href: '/en/date-converter', icon: '📅', title: 'Date Converter', desc: 'Korean date format' },
+  { href: '/en/grocery', icon: '🛒', title: 'Grocery Prices', desc: 'Food costs in Korea' },
+  { href: '/en/internet-speed', icon: '📶', title: 'Internet Plans', desc: 'Compare providers & plans' },
 ];
 
 export default function EnHome() {

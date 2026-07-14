@@ -67,6 +67,14 @@ const CALCULATORS_EN: CalcItem[] = [
   { name: 'Severance Pay Calculator', keywords: ['severance', 'retirement', 'quitting', 'leaving job', 'severance pay'], href: '/en/severance', icon: '💰', category: 'Salary' },
   { name: 'Health Insurance Calculator', keywords: ['health', 'insurance', 'NHI', 'premium', 'medical', 'healthcare'], href: '/en/health-insurance', icon: '🏥', category: 'Insurance' },
   { name: 'Cost of Living Calculator', keywords: ['cost', 'living', 'expenses', 'budget', 'rent', 'Seoul', 'monthly'], href: '/en/cost-of-living', icon: '🏙️', category: 'Living' },
+  { name: 'Subway Fare Calculator', keywords: ['subway', 'metro', 'fare', 'T-money', 'train', 'Seoul', 'transport'], href: '/en/subway', icon: '🚇', category: 'Transport' },
+  { name: 'Size Converter', keywords: ['size', 'clothing', 'shoe', 'Korean size', 'convert', 'US', 'EU'], href: '/en/size-converter', icon: '👟', category: 'Shopping' },
+  { name: 'Tipping Guide', keywords: ['tip', 'tipping', 'gratuity', 'restaurant', 'service'], href: '/en/tip-calculator', icon: '💵', category: 'Culture' },
+  { name: 'Time Zone Converter', keywords: ['time', 'timezone', 'KST', 'UTC', 'Seoul time', 'convert'], href: '/en/timezone', icon: '🕐', category: 'Daily' },
+  { name: 'Electricity Bill', keywords: ['electricity', 'bill', 'power', 'kWh', 'KEPCO', 'utility'], href: '/en/electricity', icon: '⚡', category: 'Housing' },
+  { name: 'Date Converter', keywords: ['date', 'format', 'Korean date', 'calendar', 'holiday', 'lunar'], href: '/en/date-converter', icon: '📅', category: 'Daily' },
+  { name: 'Grocery Prices', keywords: ['grocery', 'food', 'price', 'supermarket', 'market', 'cost'], href: '/en/grocery', icon: '🛒', category: 'Living' },
+  { name: 'Internet Plans', keywords: ['internet', 'wifi', 'broadband', 'mobile data', 'KT', 'SKT', 'plan'], href: '/en/internet-speed', icon: '📶', category: 'Living' },
 ];
 
 export default function SearchBar() {

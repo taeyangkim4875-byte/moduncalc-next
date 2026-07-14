@@ -109,6 +109,14 @@ const MENUS_EN: MenuItem[] = [
   ]},
   { href: '/en/korean-age', ico: '🎂', label: 'Daily Life', sub: [
     { label: 'Korean Age', href: '/en/korean-age' },
+    { label: 'Subway Fare', href: '/en/subway' },
+    { label: 'Size Converter', href: '/en/size-converter' },
+    { label: 'Tipping Guide', href: '/en/tip-calculator' },
+    { label: 'Time Zone (KST)', href: '/en/timezone' },
+    { label: 'Electricity Bill', href: '/en/electricity' },
+    { label: 'Date Converter', href: '/en/date-converter' },
+    { label: 'Grocery Prices', href: '/en/grocery' },
+    { label: 'Internet Plans', href: '/en/internet-speed' },
   ]},
   { href: '/en/guide/tax-guide', ico: '📖', label: 'Guides', sub: [
     { label: 'Income Tax Guide', href: '/en/guide/tax-guide' },
