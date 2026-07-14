@@ -54,7 +54,6 @@ const POPULAR = [
   { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day' },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산' },
   { href: '/calc', icon: '🧮', title: '스마트 계산기', desc: '수식 입력·공학' },
-  { href: '/en/tax-comparison', icon: '🌍', title: 'Flat vs Progressive', desc: 'Foreign worker tax' },
 ];
 
 export default function Home() {
@@ -78,6 +77,12 @@ export default function Home() {
             </div>
           </Link>
         ))}
+      </div>
+
+      <div className="mt-4 text-center">
+        <Link href="/en" className="text-sm font-bold text-[var(--primary)] no-underline hover:text-[var(--primary-dark)]">
+          🌍 English Calculators for Foreigners →
+        </Link>
       </div>
 
       <Card className="mt-4">

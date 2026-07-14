@@ -134,23 +134,25 @@ export default function StockCalc() {
   const [curPrice, setCurPrice] = useState(12000);
   const [qty, setQty] = useState(100);
 
-  const pctChange = buyPrice ? ((curPrice - buyPrice) / buyPrice) * 100 : 0;
-  const totalBuy = buyPrice * qty;
-  const totalCur = curPrice * qty;
+  const bp = buyPrice || 0, cp = curPrice || 0, q = qty || 0;
+  const pctChange = bp ? ((cp - bp) / bp) * 100 : 0;
+  const totalBuy = bp * q;
+  const totalCur = cp * q;
   const profit = totalCur - totalBuy;
 
   // 물타기 계산
   const [addPrice, setAddPrice] = useState(12000);
   const [addQty, setAddQty] = useState(100);
 
-  const totalQty = qty + addQty;
-  const avgPrice = totalQty > 0 ? (totalBuy + addPrice * addQty) / totalQty : 0;
-  const newPct = avgPrice ? ((curPrice - avgPrice) / avgPrice) * 100 : 0;
+  const ap = addPrice || 0, aq = addQty || 0;
+  const totalQty = q + aq;
+  const avgPrice = totalQty > 0 ? (totalBuy + ap * aq) / totalQty : 0;
+  const newPct = avgPrice ? ((cp - avgPrice) / avgPrice) * 100 : 0;
   const breakEvenPrice = avgPrice;
 
   // 목표가 계산
   const [targetPct, setTargetPct] = useState(10);
-  const targetPrice = buyPrice * (1 + targetPct / 100);
+  const targetPrice = bp * (1 + targetPct / 100);
 
   return (
     <>
@@ -160,21 +162,21 @@ export default function StockCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">매수 단가</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={buyPrice} onChange={e => setBuyPrice(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={buyPrice} onChange={e => setBuyPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">현재가</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={curPrice} onChange={e => setCurPrice(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={curPrice} onChange={e => setCurPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">보유 수량</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={qty} onChange={e => setQty(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={qty} onChange={e => setQty(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">주</span>
           </div>
         </div>
@@ -186,7 +188,7 @@ export default function StockCalc() {
             {pctChange >= 0 ? '+' : ''}{fmt(pctChange)}%
           </div>
           <div className="text-sm text-[var(--sub)] mt-1">
-            {pctChange >= 0 ? '▲' : '▼'} {fmtWon(Math.abs(curPrice - buyPrice))}원 ({pctChange >= 0 ? '상승' : '하락'})
+            {pctChange >= 0 ? '▲' : '▼'} {fmtWon(Math.abs(cp - bp))}원 ({pctChange >= 0 ? '상승' : '하락'})
           </div>
         </div>
 
@@ -245,7 +247,7 @@ export default function StockCalc() {
         <div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center mt-3">
           <div className="text-xs text-[var(--primary-dark)] font-bold">목표 매도가</div>
           <div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{fmtWon(targetPrice)}원</div>
-          <div className="text-xs text-[var(--sub)] mt-1">매수가 {fmtWon(buyPrice)}원 기준 {targetPct >= 0 ? '+' : ''}{targetPct}%</div>
+          <div className="text-xs text-[var(--sub)] mt-1">매수가 {fmtWon(bp)}원 기준 {targetPct >= 0 ? '+' : ''}{targetPct}%</div>
         </div>
       </Card>
 
@@ -256,14 +258,14 @@ export default function StockCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">추가 매수 단가</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={addPrice} onChange={e => setAddPrice(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={addPrice} onChange={e => setAddPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">추가 매수 수량</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={addQty} onChange={e => setAddQty(+e.target.value || 0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={addQty} onChange={e => setAddQty(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">주</span>
           </div>
         </div>
@@ -272,7 +274,7 @@ export default function StockCalc() {
           <div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center">
             <div className="text-xs text-[var(--primary-dark)] font-bold">물타기 후 평단가</div>
             <div className="text-xl font-extrabold text-[var(--primary-dark)]">{fmtWon(avgPrice)}원</div>
-            <div className="text-[10px] text-[var(--sub)] mt-1">기존 {fmtWon(buyPrice)}원 → {fmtWon(avgPrice)}원</div>
+            <div className="text-[10px] text-[var(--sub)] mt-1">기존 {fmtWon(bp)}원 → {fmtWon(avgPrice)}원</div>
           </div>
           <div className="rounded-[14px] p-4 text-center" style={{ background: newPct >= 0 ? '#E6F8F0' : '#FFE5E5' }}>
             <div className="text-xs font-bold" style={{ color: newPct >= 0 ? 'var(--green)' : '#E5484D' }}>물타기 후 수익률</div>
@@ -283,9 +285,9 @@ export default function StockCalc() {
 
         <div className="mt-3 flex flex-col gap-2 text-[13.5px]">
           <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">총 보유 수량</span><span className="font-bold">{fmtWon(totalQty)}주</span></div>
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">총 투자 금액</span><span className="font-bold">{fmtWon(totalBuy + addPrice * addQty)}원</span></div>
+          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">총 투자 금액</span><span className="font-bold">{fmtWon(totalBuy + ap * aq)}원</span></div>
           <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">손익분기 단가</span><span className="font-bold">{fmtWon(breakEvenPrice)}원</span></div>
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">평단가 변화</span><span className={`font-bold ${avgPrice<=buyPrice?'text-[var(--green)]':'text-[#E5484D]'}`}>{avgPrice<=buyPrice?'▼':'▲'} {fmtWon(Math.abs(buyPrice - avgPrice))}원 ({fmt(buyPrice>0?Math.abs((buyPrice - avgPrice) / buyPrice) * 100:0)}%{avgPrice<=buyPrice?'↓':'↑'})</span></div>
+          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">평단가 변화</span><span className={`font-bold ${avgPrice<=bp?'text-[var(--green)]':'text-[#E5484D]'}`}>{avgPrice<=bp?'▼':'▲'} {fmtWon(Math.abs(bp - avgPrice))}원 ({fmt(bp>0?Math.abs((bp - avgPrice) / bp) * 100:0)}%{avgPrice<=bp?'↓':'↑'})</span></div>
         </div>
       </Card>
 
