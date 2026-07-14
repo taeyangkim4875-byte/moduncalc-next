@@ -6,6 +6,8 @@ import MinWageCalculator from './MinWageCalculator';
 export const metadata: Metadata = {
   title: '최저시급 계산기 · 2026',
   description: '2026년 최저시급 기준 월급과 주휴수당을 계산하세요. 시급, 근무시간, 근무일수를 입력하면 예상 월급을 알려드립니다.',
+  alternates: { canonical: "https://moduncalc.com/salary/minimum" },
+  openGraph: { title: "2026 최저시급 계산기 - 주휴수당 포함 월급·연봉 환산", description: "2026년 최저시급 기준 주휴수당, 월급, 연봉을 자동 계산. 수습 감액, 주 15시간 미만 기준도 확인.", url: "https://moduncalc.com/salary/minimum" },
 };
 
 export default function MinWagePage() {

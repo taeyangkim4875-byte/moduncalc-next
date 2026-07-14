@@ -7,11 +7,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "모든 계산기 - 연봉, 적금, 대출, 건강 계산기",
+    default: "모든 계산기 - 연봉, 적금, 대출, 건강, 세금 무료 계산기 51종 (2026)",
     template: "%s | 모든 계산기",
   },
-  description: "연봉 실수령액, 청년도약계좌, 대출이자, BMI까지. 2026년 최신 정책 반영 무료 계산기 모음.",
-  keywords: "계산기, 연봉 실수령액, 청년도약계좌, 대출 이자 계산기, BMI 계산기, 국민연금, 실업급여, 최저시급",
+  description: "연봉 실수령액, 청년도약계좌, 청년미래적금, 대출이자, 취득세, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 51종.",
+  keywords: "계산기, 연봉 실수령액, 청년도약계좌, 청년미래적금, 대출 이자 계산기, BMI 계산기, 국민연금, 실업급여, 최저시급, 퇴직금 계산기, 취득세, 전월세 전환, 종합소득세, 증여세, 연말정산",
   metadataBase: new URL("https://moduncalc.com"),
   openGraph: {
     type: "website",
@@ -19,7 +19,21 @@ export const metadata: Metadata = {
     siteName: "모든 계산기",
     url: "https://moduncalc.com",
   },
-  robots: "index, follow",
+  twitter: {
+    card: "summary_large_image",
+    site: "@moduncalc",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
   verification: {
     other: {
       "naver-site-verification": "c33afc1701de2a5bdeff3618d35c66829dd77437",
@@ -27,6 +41,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.svg",
+  },
+  alternates: {
+    languages: {
+      "ko": "https://moduncalc.com",
+      "en": "https://moduncalc.com/en",
+    },
   },
 };
 

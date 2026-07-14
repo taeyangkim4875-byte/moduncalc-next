@@ -6,6 +6,8 @@ import SalaryCalculator from './SalaryCalculator';
 export const metadata: Metadata = {
   title: '연봉 실수령액 계산기 · 2026',
   description: '2026년 연봉 실수령액과 급여 백분위를 한번에 계산하세요. 4대보험·소득세 공제 내역까지 확인할 수 있습니다.',
+  alternates: { canonical: "https://moduncalc.com/salary" },
+  openGraph: { title: "2026 연봉 실수령액 계산기 - 4대보험 공제 후 실수령액", description: "연봉을 입력하면 4대보험·소득세 공제 후 실수령액과 동 연령대 급여 백분위를 바로 확인. 2026년 최신 요율 반영.", url: "https://moduncalc.com/salary" },
 };
 
 export default function SalaryPage() {
