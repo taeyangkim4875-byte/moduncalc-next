@@ -63,6 +63,8 @@ const MENUS_KO: MenuItem[] = [
     { label: '학점(GPA)', href: '/daily/gpa' },
     { label: '속도·시간', href: '/daily/speed' },
     { label: '연비', href: '/daily/fuel' },
+    { label: '❄️ 에어컨 전기요금', href: '/daily/aircon' },
+    { label: '✈️ 여행 경비', href: '/daily/travel' },
     { label: '애드센스 수익', href: '/daily/adsense' },
     { label: '쿠팡 파트너스', href: '/daily/coupang' },
     { label: '유튜브 수익', href: '/daily/youtube' }

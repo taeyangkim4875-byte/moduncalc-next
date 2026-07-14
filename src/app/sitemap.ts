@@ -91,6 +91,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/guide/tax-refund-leaving', priority: 0.8 },
     { path: '/en/guide/year-end-settlement', priority: 0.8 },
     { path: '/en/guide/freelancer-tax', priority: 0.8 },
+    { path: '/daily/aircon', priority: 0.9 },
+    { path: '/daily/travel', priority: 0.8 },
     { path: '/daily/adsense', priority: 0.8 },
     { path: '/daily/coupang', priority: 0.8 },
     { path: '/daily/youtube', priority: 0.8 },

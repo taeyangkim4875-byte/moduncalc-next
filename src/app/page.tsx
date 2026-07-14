@@ -53,6 +53,8 @@ const POPULAR = [
   { href: '/daily/fire', icon: '🔥', title: 'FIRE', desc: '조기 은퇴 시뮬레이션' },
   { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day' },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산' },
+  { href: '/daily/aircon', icon: '❄️', title: '에어컨 전기요금', desc: '하루 몇 시간에 얼마?' },
+  { href: '/daily/travel', icon: '✈️', title: '여행 경비', desc: '국내·해외 예산 계산' },
   { href: '/daily/adsense', icon: '💻', title: '애드센스 수익', desc: '블로그 예상 수익' },
   { href: '/daily/coupang', icon: '🛍️', title: '쿠팡 파트너스', desc: '예상 수익 계산' },
   { href: '/daily/youtube', icon: '🎬', title: '유튜브 수익', desc: '조회수별 예상 수익' },

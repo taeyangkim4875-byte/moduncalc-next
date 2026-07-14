@@ -53,6 +53,8 @@ const CALCULATORS_KO: CalcItem[] = [
   { name: '학점 계산기', keywords: ['학점', 'gpa', '평점', '대학', '성적', '평균'], href: '/daily/gpa', icon: '🎓', category: '일상' },
   { name: '부가세 계산기', keywords: ['부가세', 'vat', '부가가치세', '공급가액', '세금계산서'], href: '/tax/vat', icon: '🧾', category: '세금' },
   { name: '종합소득세 계산기', keywords: ['종합소득세', '종소세', '소득세', '누진세', '세율', '프리랜서'], href: '/tax/income', icon: '🧾', category: '세금' },
+  { name: '에어컨 전기요금 계산기', keywords: ['에어컨', '전기요금', '전기세', '냉방', '인버터', '누진', '여름'], href: '/daily/aircon', icon: '❄️', category: '일상' },
+  { name: '여행 경비 계산기', keywords: ['여행', '경비', '예산', '항공', '숙소', '일본', '유럽', '동남아'], href: '/daily/travel', icon: '✈️', category: '일상' },
   { name: '애드센스 수익 계산기', keywords: ['애드센스', 'adsense', '블로그', '수익', 'RPM', 'CPC', '광고'], href: '/daily/adsense', icon: '💻', category: '부업' },
   { name: '쿠팡 파트너스 계산기', keywords: ['쿠팡', '파트너스', '쿠팡파트너스', '수익', '전환율', '수수료'], href: '/daily/coupang', icon: '🛍️', category: '부업' },
   { name: '유튜브 수익 계산기', keywords: ['유튜브', 'youtube', '조회수', 'CPM', '수익', '구독자', '광고'], href: '/daily/youtube', icon: '🎬', category: '부업' },
