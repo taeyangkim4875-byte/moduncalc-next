@@ -5,10 +5,10 @@ import Card from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "모든 계산기 - 연봉, 적금, 대출, 부동산, 건강, 세금 무료 계산기",
-  description: "연봉 실수령액, 청년도약계좌, 미래적금, 대출이자, 취득세, 복비, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 53종.",
+  description: "연봉 실수령액, 청년도약계좌, 미래적금, 대출이자, 취득세, 복비, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 60종.",
   alternates: { canonical: "https://moduncalc.com" },
   openGraph: {
-    title: "모든 계산기 - 연봉, 적금, 대출, 건강 무료 계산기 53종",
+    title: "모든 계산기 - 연봉, 적금, 대출, 건강 무료 계산기 60종",
     description: "2026년 최신 정책 반영. 연봉, 적금, 대출, 부동산, 건강, 세금, 일상 계산기를 한 곳에서 무료로.",
     url: "https://moduncalc.com",
   },
@@ -53,6 +53,13 @@ const POPULAR = [
   { href: '/daily/fire', icon: '🔥', title: 'FIRE', desc: '조기 은퇴 시뮬레이션' },
   { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day' },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산' },
+  { href: '/daily/compound', icon: '📈', title: '복리 계산기', desc: '투자 수익 시뮬레이션' },
+  { href: '/daily/alcohol', icon: '🍺', title: '음주 운전 계산기', desc: '운전 가능 시간' },
+  { href: '/daily/due-date', icon: '🤰', title: '출산 예정일', desc: '임신 주수·예정일' },
+  { href: '/daily/airfryer', icon: '🍳', title: '에어프라이어', desc: '오븐→에어프라이어 변환' },
+  { href: '/daily/lunar', icon: '🌙', title: '음력 양력 변환', desc: '음력↔양력 날짜' },
+  { href: '/daily/paint', icon: '🎨', title: '페인트·벽지', desc: '방 면적 자재량 계산' },
+  { href: '/health/bodyfat', icon: '💪', title: '체지방률', desc: '체지방 측정·판정' },
   { href: '/daily/aircon', icon: '❄️', title: '에어컨 전기요금', desc: '하루 몇 시간에 얼마?' },
   { href: '/daily/travel', icon: '✈️', title: '여행 경비', desc: '국내·해외 예산 계산' },
   { href: '/daily/adsense', icon: '💻', title: '애드센스 수익', desc: '블로그 예상 수익' },
@@ -64,7 +71,7 @@ const POPULAR = [
 export default function Home() {
   return (
     <PageLayout
-      eyebrow="무료 계산기 53종"
+      eyebrow="무료 계산기 60종"
       title="모든 계산기"
       description="필요한 계산기를 찾아보세요. 2026년 최신 정책 반영."
     >

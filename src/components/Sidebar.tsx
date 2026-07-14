@@ -47,6 +47,7 @@ const MENUS_KO: MenuItem[] = [
   ]},
   { href: '/health', ico: '💪', label: '건강', sub: [
     { label: 'BMI', href: '/health/bmi' },
+    { label: '체지방률', href: '/health/bodyfat' },
     { label: '기초대사량', href: '/health/bmr' }
   ]},
   { href: '/daily', ico: '📅', label: '일상', sub: [
@@ -63,6 +64,12 @@ const MENUS_KO: MenuItem[] = [
     { label: '학점(GPA)', href: '/daily/gpa' },
     { label: '속도·시간', href: '/daily/speed' },
     { label: '연비', href: '/daily/fuel' },
+    { label: '복리 계산기', href: '/daily/compound' },
+    { label: '음주 운전 가능 시간', href: '/daily/alcohol' },
+    { label: '출산 예정일', href: '/daily/due-date' },
+    { label: '에어프라이어 변환', href: '/daily/airfryer' },
+    { label: '음력 양력 변환', href: '/daily/lunar' },
+    { label: '페인트·벽지', href: '/daily/paint' },
     { label: '에어컨 전기요금', href: '/daily/aircon' },
     { label: '여행 경비', href: '/daily/travel' },
     { label: '애드센스 수익', href: '/daily/adsense' },
