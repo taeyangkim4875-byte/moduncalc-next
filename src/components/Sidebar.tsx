@@ -118,6 +118,13 @@ const MENUS_EN: MenuItem[] = [
   ]},
   { href: '/en/korean-age', ico: '🎂', label: 'Daily Life', sub: [
     { label: 'Korean Age', href: '/en/korean-age' },
+    { label: 'Blood Alcohol (DUI)', href: '/en/alcohol' },
+    { label: 'Air Fryer Converter', href: '/en/air-fryer' },
+    { label: 'Due Date Calculator', href: '/en/due-date' },
+    { label: 'Compound Interest', href: '/en/compound' },
+    { label: 'Body Fat Calculator', href: '/en/body-fat' },
+    { label: 'Lunar Calendar 2026', href: '/en/lunar-calendar' },
+    { label: 'Paint Calculator', href: '/en/paint' },
     { label: 'Subway Fare', href: '/en/subway' },
     { label: 'Size Converter', href: '/en/size-converter' },
     { label: 'Tipping Guide', href: '/en/tip-calculator' },

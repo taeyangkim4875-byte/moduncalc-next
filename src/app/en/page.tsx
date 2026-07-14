@@ -32,6 +32,13 @@ const TOOLS = [
   { href: '/en/date-converter', icon: '📅', title: 'Date Converter', desc: 'Korean date format' },
   { href: '/en/grocery', icon: '🛒', title: 'Grocery Prices', desc: 'Food costs in Korea' },
   { href: '/en/internet-speed', icon: '📶', title: 'Internet Plans', desc: 'Compare providers & plans' },
+  { href: '/en/alcohol', icon: '🍺', title: 'Blood Alcohol (DUI)', desc: 'When can I drive in Korea?' },
+  { href: '/en/air-fryer', icon: '🍳', title: 'Air Fryer Converter', desc: 'Oven to air fryer settings' },
+  { href: '/en/compound', icon: '📈', title: 'Compound Interest', desc: 'Investment growth simulator' },
+  { href: '/en/due-date', icon: '🤰', title: 'Due Date Calculator', desc: 'Pregnancy week tracker' },
+  { href: '/en/body-fat', icon: '💪', title: 'Body Fat Calculator', desc: 'US Navy formula' },
+  { href: '/en/lunar-calendar', icon: '🌙', title: 'Lunar Calendar 2026', desc: 'Korean holidays & dates' },
+  { href: '/en/paint', icon: '🎨', title: 'Paint Calculator', desc: 'How much paint do I need?' },
 ];
 
 export default function EnHome() {

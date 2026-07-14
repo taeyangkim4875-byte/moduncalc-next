@@ -84,6 +84,13 @@ const CALCULATORS_EN: CalcItem[] = [
   { name: 'Date Converter', keywords: ['date', 'format', 'Korean date', 'calendar', 'holiday', 'lunar'], href: '/en/date-converter', icon: '📅', category: 'Daily' },
   { name: 'Grocery Prices', keywords: ['grocery', 'food', 'price', 'supermarket', 'market', 'cost'], href: '/en/grocery', icon: '🛒', category: 'Living' },
   { name: 'Internet Plans', keywords: ['internet', 'wifi', 'broadband', 'mobile data', 'KT', 'SKT', 'plan'], href: '/en/internet-speed', icon: '📶', category: 'Living' },
+  { name: 'Blood Alcohol Calculator', keywords: ['alcohol', 'BAC', 'DUI', 'drunk', 'drive', 'soju', 'beer'], href: '/en/alcohol', icon: '🍺', category: 'Daily' },
+  { name: 'Air Fryer Converter', keywords: ['air fryer', 'oven', 'convert', 'temperature', 'time', 'cooking'], href: '/en/air-fryer', icon: '🍳', category: 'Daily' },
+  { name: 'Compound Interest', keywords: ['compound', 'interest', 'investment', 'growth', 'savings', 'rule of 72'], href: '/en/compound', icon: '📈', category: 'Finance' },
+  { name: 'Due Date Calculator', keywords: ['pregnancy', 'due date', 'week', 'baby', 'prenatal', 'trimester'], href: '/en/due-date', icon: '🤰', category: 'Health' },
+  { name: 'Body Fat Calculator', keywords: ['body fat', 'percentage', 'navy', 'waist', 'neck', 'fitness'], href: '/en/body-fat', icon: '💪', category: 'Health' },
+  { name: 'Lunar Calendar 2026', keywords: ['lunar', 'calendar', 'Seollal', 'Chuseok', 'holiday', 'Korean'], href: '/en/lunar-calendar', icon: '🌙', category: 'Culture' },
+  { name: 'Paint Calculator', keywords: ['paint', 'wallpaper', 'room', 'liters', 'rolls', 'area'], href: '/en/paint', icon: '🎨', category: 'Daily' },
 ];
 
 export default function SearchBar() {
