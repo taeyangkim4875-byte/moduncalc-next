@@ -257,7 +257,7 @@ export default function DoyakCalculator() {
       {/* 현재까지 쌓인 금액 */}
       {result && currentResult && (
         <div>
-          <div className="text-lg font-extrabold mt-4 mb-3 px-1">📊 현재까지 쌓인 금액 ({currentResult.months}개월차)</div>
+          <div className="text-lg font-extrabold mt-4 mb-3 px-1">📊 지금까지 모은 돈 ({currentResult.months}개월차)</div>
           <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--green)]">
             <div className="mb-3">
               <label className="block text-sm font-bold mb-2">현재 경과 개월 수 <span className="text-xs text-[var(--sub)] font-medium ml-1">{elapsedMonths}개월</span></label>
@@ -321,6 +321,44 @@ export default function DoyakCalculator() {
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>2026년 3년차 변동금리 전환:</b> 2024년 초에 가입한 1기 가입자부터 고정금리(연 4.5%) 기간이 종료되고, 4년차부터 변동금리로 전환됩니다. KB국민·신한·우리은행은 변동금리를 연 3.0%로 고시했으며, 우대금리 1.5%p를 합해도 최고 4.5%로 낮아집니다.</p>
         <p className="text-sm text-[#4E5968] leading-relaxed"><b>현재 잔액 확인:</b> 위 계산기에서 &quot;현재까지 쌓인 금액&quot; 기능을 이용하면 만기 전이라도 지금까지 원금+이자+기여금이 얼마인지 확인할 수 있습니다. 변동금리 전환 시점(37개월차)을 기준으로 이자가 달라지는 것도 자동 반영됩니다.</p>
       </Card>
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">🚨 특별중도해지 사유 안내</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">아래 사유에 해당하면 <b>정부기여금과 비과세 혜택을 유지</b>한 채 중도해지할 수 있습니다. 일반 중도해지 시에는 기여금 반환 + 이자 과세(15.4%)가 적용되므로, 해지를 고려한다면 특별중도해지 해당 여부를 먼저 확인하세요.</p>
+        <div className="flex flex-col gap-1.5 text-[13px]">
+          {[
+            ['💒 혼인', '혼인신고일 전후 2년 이내'],
+            ['👶 출산', '출생일 전후 2년 이내'],
+            ['🏠 생애최초 주택구입', '가입자 본인이 생애 최초로 주택 구입 시'],
+            ['📦 퇴직', '가입자 본인의 비자발적 퇴직 (권고사직, 계약만료 등)'],
+            ['🏢 폐업', '가입자 본인의 사업장 폐업'],
+            ['🏥 장기치료', '3개월 이상 치료가 필요한 질병·상해'],
+            ['🌊 천재지변', '자연재해 등 불가항력적 사유'],
+            ['✈️ 사망·해외이주', '가입자 사망 또는 해외 이주'],
+            ['🔄 청년미래적금 환승', '미래적금 가입 신청 → 계좌 개설 후 도약계좌 특별중도해지'],
+          ].map(([title, desc]) => (
+            <div key={title as string} className="bg-[var(--bg)] rounded-xl px-3 py-2.5">
+              <span className="font-bold text-[var(--ink)]">{title}</span>
+              <span className="text-[var(--sub)] ml-1.5">— {desc}</span>
+            </div>
+          ))}
+        </div>
+        <div className="mt-3 text-[11.5px] text-[var(--sub)] leading-relaxed bg-[#FFF4E5] rounded-lg p-3">
+          <b className="text-[#B26A00]">⚠️ 주의:</b> 특별중도해지 시에도 해지 신청 시점까지의 이자만 지급됩니다. 만기 이자보다 적을 수 있으므로, 만기까지 유지가 가능하다면 유지하는 것이 유리합니다. 정확한 요건은 가입 은행에 문의하세요.
+        </div>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">💡 일반 중도해지 vs 특별중도해지 비교</h2>
+        <table className="w-full border-collapse text-[13px]">
+          <thead><tr className="border-b-2 border-[var(--line)]"><th className="py-2 text-left text-xs text-[var(--sub)] font-bold">구분</th><th className="py-2 text-center text-xs text-[var(--sub)] font-bold">일반 해지</th><th className="py-2 text-center text-xs text-[var(--sub)] font-bold">특별 해지</th></tr></thead>
+          <tbody>
+            <tr className="border-b border-[var(--line)]"><td className="py-2 font-semibold">정부기여금</td><td className="py-2 text-center text-[#E5484D] font-bold">반환 ❌</td><td className="py-2 text-center text-[var(--green)] font-bold">유지 ✅</td></tr>
+            <tr className="border-b border-[var(--line)]"><td className="py-2 font-semibold">비과세</td><td className="py-2 text-center text-[#E5484D] font-bold">과세 (15.4%)</td><td className="py-2 text-center text-[var(--green)] font-bold">비과세 유지 ✅</td></tr>
+            <tr className="border-b border-[var(--line)]"><td className="py-2 font-semibold">원금+이자</td><td className="py-2 text-center font-bold">지급</td><td className="py-2 text-center font-bold">지급</td></tr>
+          </tbody>
+        </table>
+      </Card>
+
       <Card>
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">

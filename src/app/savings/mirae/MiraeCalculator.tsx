@@ -321,7 +321,7 @@ export default function MiraeCalculator() {
       {/* 현재까지 쌓인 금액 */}
       {result && currentResult && (
         <div>
-          <div className="text-lg font-extrabold mt-4 mb-3 px-1">📊 현재까지 쌓인 금액 ({currentResult.months}개월차)</div>
+          <div className="text-lg font-extrabold mt-4 mb-3 px-1">📊 지금까지 모은 돈 ({currentResult.months}개월차)</div>
           <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--green)]">
             <div className="mb-3">
               <label className="block text-sm font-bold mb-2">현재 경과 개월 수 <span className="text-xs text-[var(--sub)] font-medium ml-1">{elapsedMonths}개월</span></label>
