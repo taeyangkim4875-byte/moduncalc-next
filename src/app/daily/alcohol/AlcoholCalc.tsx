@@ -28,7 +28,7 @@ export default function AlcoholCalc(){
   const w=+weight||0, a=+abv||0, m=+ml||0, e=+elapsed||0;
   const pureAlcohol=m*(a/100)*0.7894;
   const genderFactor=gender==='male'?0.68:0.55;
-  const bac=w>0?pureAlcohol/(w*genderFactor)*100:0;
+  const bac=w>0?pureAlcohol/(w*genderFactor*10):0;
   const decayRate=0.015;
   const currentBac=Math.max(0,bac-e*decayRate);
   const remainHours=currentBac>0?currentBac/decayRate:0;
