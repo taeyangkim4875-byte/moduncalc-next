@@ -54,6 +54,11 @@ const CALCULATORS_KO: CalcItem[] = [
   { name: '부가세 계산기', keywords: ['부가세', 'vat', '부가가치세', '공급가액', '세금계산서'], href: '/tax/vat', icon: '🧾', category: '세금' },
   { name: '종합소득세 계산기', keywords: ['종합소득세', '종소세', '소득세', '누진세', '세율', '프리랜서'], href: '/tax/income', icon: '🧾', category: '세금' },
   { name: '글자수 세기', keywords: ['글자수', '바이트', '단어수', '문자수', '공백', '자소서', '카운터'], href: '/daily/charcount', icon: '📝', category: '일상' },
+  { name: '비밀번호 생성기', keywords: ['비밀번호', '패스워드', '랜덤', '생성', '보안'], href: '/daily/password', icon: '🔐', category: '일상' },
+  { name: '랜덤 번호 뽑기', keywords: ['랜덤', '번호', '추첨', '로또', '뽑기', '제비', '섞기'], href: '/daily/random', icon: '🎲', category: '일상' },
+  { name: '시간 계산기', keywords: ['시간', '차이', '근무시간', '알바', '시급', '더하기'], href: '/daily/time', icon: '⏰', category: '일상' },
+  { name: '수면 계산기', keywords: ['수면', '잠', '기상', '취침', '수면주기', '개운'], href: '/health/sleep', icon: '😴', category: '건강' },
+  { name: '청약 가점 계산기', keywords: ['청약', '가점', '무주택', '부양가족', '청약통장', '아파트'], href: '/realestate/subscription', icon: '🏢', category: '부동산' },
   { name: '칼로리 계산기', keywords: ['칼로리', 'TDEE', '기초대사량', '다이어트', '섭취량', '소모'], href: '/daily/calorie', icon: '🍎', category: '건강' },
   { name: '평수 계산기', keywords: ['평수', '평', '제곱미터', '㎡', '면적', '아파트', '전용면적'], href: '/daily/pyeong', icon: '📐', category: '부동산' },
   { name: '상속세 계산기', keywords: ['상속세', '상속', '유산', '배우자공제', '일괄공제', '세율'], href: '/tax/inherit', icon: '🧾', category: '세금' },
@@ -101,6 +106,11 @@ const CALCULATORS_EN: CalcItem[] = [
   { name: 'Body Fat Calculator', keywords: ['body fat', 'percentage', 'navy', 'waist', 'neck', 'fitness'], href: '/en/body-fat', icon: '💪', category: 'Health' },
   { name: 'Lunar Calendar 2026', keywords: ['lunar', 'calendar', 'Seollal', 'Chuseok', 'holiday', 'Korean'], href: '/en/lunar-calendar', icon: '🌙', category: 'Culture' },
   { name: 'Paint Calculator', keywords: ['paint', 'wallpaper', 'room', 'liters', 'rolls', 'area'], href: '/en/paint', icon: '🎨', category: 'Daily' },
+  { name: 'Character Counter', keywords: ['character', 'word', 'count', 'byte', 'sentence', 'twitter'], href: '/en/character-counter', icon: '📝', category: 'Tools' },
+  { name: 'Calorie Calculator', keywords: ['calorie', 'TDEE', 'BMR', 'diet', 'weight', 'loss'], href: '/en/calorie', icon: '🍎', category: 'Health' },
+  { name: 'Pyeong Converter', keywords: ['pyeong', 'square meter', 'apartment', 'size', 'area', 'convert'], href: '/en/pyeong', icon: '📐', category: 'Housing' },
+  { name: 'Password Generator', keywords: ['password', 'random', 'secure', 'generate', 'strong'], href: '/en/password', icon: '🔐', category: 'Tools' },
+  { name: 'Random Generator', keywords: ['random', 'number', 'lottery', 'picker', 'shuffle', 'draw'], href: '/en/random', icon: '🎲', category: 'Tools' },
 ];
 
 export default function SearchBar() {

@@ -39,6 +39,11 @@ const TOOLS = [
   { href: '/en/body-fat', icon: '💪', title: 'Body Fat Calculator', desc: 'US Navy formula' },
   { href: '/en/lunar-calendar', icon: '🌙', title: 'Lunar Calendar 2026', desc: 'Korean holidays & dates' },
   { href: '/en/paint', icon: '🎨', title: 'Paint Calculator', desc: 'How much paint do I need?' },
+  { href: '/en/character-counter', icon: '📝', title: 'Character Counter', desc: 'Words, bytes, limits' },
+  { href: '/en/calorie', icon: '🍎', title: 'Calorie Calculator', desc: 'TDEE & diet plan' },
+  { href: '/en/pyeong', icon: '📐', title: 'Pyeong Converter', desc: 'Korean apartment sizes' },
+  { href: '/en/password', icon: '🔐', title: 'Password Generator', desc: 'Strong random passwords' },
+  { href: '/en/random', icon: '🎲', title: 'Random Generator', desc: 'Numbers, lottery, shuffler' },
 ];
 
 export default function EnHome() {
