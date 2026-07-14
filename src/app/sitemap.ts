@@ -75,6 +75,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/guide/working-rights', priority: 0.8 },
     { path: '/en/guide/korean-age-guide', priority: 0.7 },
     { path: '/en/guide/banking-guide', priority: 0.7 },
+    { path: '/en/guide/visa-guide', priority: 0.8 },
+    { path: '/en/guide/remittance-guide', priority: 0.8 },
+    { path: '/en/guide/drivers-license', priority: 0.7 },
+    { path: '/en/guide/phone-guide', priority: 0.7 },
+    { path: '/en/guide/delivery-apps', priority: 0.7 },
+    { path: '/en/guide/tax-refund-leaving', priority: 0.8 },
+    { path: '/en/guide/year-end-settlement', priority: 0.8 },
+    { path: '/en/guide/freelancer-tax', priority: 0.8 },
     { path: '/about', priority: 0.5 },
   ];
 

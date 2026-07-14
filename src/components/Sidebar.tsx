@@ -118,6 +118,14 @@ const MENUS_EN: MenuItem[] = [
     { label: 'Worker Rights', href: '/en/guide/working-rights' },
     { label: 'Korean Age System', href: '/en/guide/korean-age-guide' },
     { label: 'Banking Guide', href: '/en/guide/banking-guide' },
+    { label: 'Visa & Work Permits', href: '/en/guide/visa-guide' },
+    { label: 'Sending Money Home', href: '/en/guide/remittance-guide' },
+    { label: "Driver's License", href: '/en/guide/drivers-license' },
+    { label: 'Phone & SIM Card', href: '/en/guide/phone-guide' },
+    { label: 'Delivery Apps', href: '/en/guide/delivery-apps' },
+    { label: 'Tax Refund (Leaving)', href: '/en/guide/tax-refund-leaving' },
+    { label: 'Year-End Settlement', href: '/en/guide/year-end-settlement' },
+    { label: 'Freelancer Tax', href: '/en/guide/freelancer-tax' },
   ]},
 ];
 
