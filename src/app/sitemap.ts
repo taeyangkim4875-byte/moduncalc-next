@@ -65,6 +65,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/severance', priority: 0.8 },
     { path: '/en/health-insurance', priority: 0.8 },
     { path: '/en/cost-of-living', priority: 0.8 },
+    { path: '/en/guide/tax-guide', priority: 0.8 },
+    { path: '/en/guide/salary-guide', priority: 0.8 },
+    { path: '/en/guide/pension-guide', priority: 0.8 },
+    { path: '/en/guide/health-insurance-guide', priority: 0.8 },
+    { path: '/en/guide/housing-guide', priority: 0.8 },
+    { path: '/en/guide/cost-of-living-guide', priority: 0.8 },
+    { path: '/en/guide/severance-guide', priority: 0.8 },
+    { path: '/en/guide/working-rights', priority: 0.8 },
+    { path: '/en/guide/korean-age-guide', priority: 0.7 },
+    { path: '/en/guide/banking-guide', priority: 0.7 },
     { path: '/about', priority: 0.5 },
   ];
 

@@ -107,6 +107,18 @@ const MENUS_EN: MenuItem[] = [
   { href: '/en/korean-age', ico: '🎂', label: 'Daily Life', sub: [
     { label: 'Korean Age', href: '/en/korean-age' },
   ]},
+  { href: '/en/guide/tax-guide', ico: '📖', label: 'Guides', sub: [
+    { label: 'Income Tax Guide', href: '/en/guide/tax-guide' },
+    { label: 'Payslip Explained', href: '/en/guide/salary-guide' },
+    { label: 'Pension & Refund', href: '/en/guide/pension-guide' },
+    { label: 'Health Insurance', href: '/en/guide/health-insurance-guide' },
+    { label: 'Renting in Korea', href: '/en/guide/housing-guide' },
+    { label: 'Cost of Living', href: '/en/guide/cost-of-living-guide' },
+    { label: 'Severance Pay', href: '/en/guide/severance-guide' },
+    { label: 'Worker Rights', href: '/en/guide/working-rights' },
+    { label: 'Korean Age System', href: '/en/guide/korean-age-guide' },
+    { label: 'Banking Guide', href: '/en/guide/banking-guide' },
+  ]},
 ];
 
 export default function Sidebar() {
