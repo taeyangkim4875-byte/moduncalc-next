@@ -51,9 +51,9 @@ export default function SeveranceCalc() {
     const years = Math.floor(totalDays / 365);
     const months = Math.floor((totalDays % 365) / 30);
 
-    const wageTotal3m = wage * 10000 * 3;
-    const bonusPortion = (bonus * 10000 / 12) * 3;
-    const leavePortion = (annualLeave * 10000 / 12) * 3;
+    const wageTotal3m = (wage || 0) * 10000 * 3;
+    const bonusPortion = ((bonus || 0) * 10000 / 12) * 3;
+    const leavePortion = ((annualLeave || 0) * 10000 / 12) * 3;
     const totalPay3m = wageTotal3m + bonusPortion + leavePortion;
 
     const dailyAvg = totalPay3m / 92;

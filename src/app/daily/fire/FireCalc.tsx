@@ -21,12 +21,12 @@ export default function FireCalc() {
   } | null>(null);
 
   const calc = () => {
-    const monthlySaving = (monthlyIncome - monthlyExpense) * 10000;
-    const savingRate = monthlyIncome > 0 ? ((monthlyIncome - monthlyExpense) / monthlyIncome) * 100 : 0;
-    const fireAsset = retireExpense * 10000 * 12 * 25; // 4% 룰
-    const r = returnRate / 100 / 12; // 월 수익률
+    const monthlySaving = ((monthlyIncome || 0) - (monthlyExpense || 0)) * 10000;
+    const savingRate = (monthlyIncome || 0) > 0 ? (((monthlyIncome || 0) - (monthlyExpense || 0)) / (monthlyIncome || 0)) * 100 : 0;
+    const fireAsset = (retireExpense || 0) * 10000 * 12 * 25; // 4% 룰
+    const r = (returnRate || 0) / 100 / 12; // 월 수익률
 
-    let asset = currentAsset * 10000;
+    let asset = (currentAsset || 0) * 10000;
     let months = 0;
     const maxMonths = (100 - age) * 12; // 100세까지
     const yearlyData: { age: number; asset: number }[] = [{ age, asset: Math.round(asset) }];
@@ -85,7 +85,7 @@ export default function FireCalc() {
             <input type="number" value={monthlyExpense} onChange={e => setMonthlyExpense(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
-          <div className="text-xs text-[var(--sub)] mt-1">월 저축: {(monthlyIncome - monthlyExpense).toLocaleString()}만원 (저축률 {monthlyIncome > 0 ? ((monthlyIncome - monthlyExpense) / monthlyIncome * 100).toFixed(0) : 0}%)</div>
+          <div className="text-xs text-[var(--sub)] mt-1">월 저축: {((monthlyIncome || 0) - (monthlyExpense || 0)).toLocaleString()}만원 (저축률 {(monthlyIncome || 0) > 0 ? (((monthlyIncome || 0) - (monthlyExpense || 0)) / (monthlyIncome || 0) * 100).toFixed(0) : 0}%)</div>
         </div>
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">현재 순자산 (금융자산)</label>
@@ -109,7 +109,7 @@ export default function FireCalc() {
             <input type="number" value={retireExpense} onChange={e => setRetireExpense(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
-          <div className="text-xs text-[var(--sub)] mt-1">4% 룰 기준 필요 자산: {fmtAmt(retireExpense * 10000 * 12 * 25)}원</div>
+          <div className="text-xs text-[var(--sub)] mt-1">4% 룰 기준 필요 자산: {fmtAmt((retireExpense || 0) * 10000 * 12 * 25)}원</div>
         </div>
       </Card>
 

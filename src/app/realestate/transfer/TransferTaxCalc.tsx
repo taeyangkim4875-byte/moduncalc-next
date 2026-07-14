@@ -37,8 +37,8 @@ export default function TransferTaxCalc() {
   }, [autoCalc]);
 
   const calc = () => {
-    const acq = acqPrice * 10000;
-    const sell = sellPrice * 10000;
+    const acq = (acqPrice || 0) * 10000;
+    const sell = (sellPrice || 0) * 10000;
     let gain = sell - acq;
     if (gain <= 0) {
       setResult({ gain, taxBase: 0, transferTax: 0, localTax: 0, total: 0, deduction: 0, basicDeduction: 0 });
@@ -55,7 +55,7 @@ export default function TransferTaxCalc() {
         scrollToResult();
         return;
       }
-      const ratio = (sell - 1200000000) / sell;
+      const ratio = sell ? (sell - 1200000000) / sell : 0;
       taxableGain = Math.round(gain * ratio);
     }
 

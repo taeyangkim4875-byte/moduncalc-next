@@ -50,7 +50,7 @@ export default function SalaryCalendar() {
   const month = today.getMonth();
   const day = today.getDate();
 
-  const monthlyPay = (salary * 10000) / 12;
+  const monthlyPay = ((salary || 0) * 10000) / 12;
   const workDaysTotal = getWorkDaysInMonth(year, month);
   const dailyPay = monthlyPay / workDaysTotal;
 

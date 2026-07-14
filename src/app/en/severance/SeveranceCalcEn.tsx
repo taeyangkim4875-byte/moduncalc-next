@@ -16,7 +16,7 @@ export default function SeveranceCalcEn() {
   const totalDays = Math.max(0, Math.floor(diffMs / (1000 * 60 * 60 * 24)));
   const years = totalDays / 365;
 
-  const dailyWage = (monthlySalary * 10000) / 30;
+  const dailyWage = ((monthlySalary || 0) * 10000) / 30;
   const severance = dailyWage * 30 * years;
   const eligible = totalDays >= 365;
 

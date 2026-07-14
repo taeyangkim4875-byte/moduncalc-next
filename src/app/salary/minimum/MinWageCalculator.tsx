@@ -53,7 +53,7 @@ export default function MinWageCalculator() {
     setState(prev => ({ ...prev, [key]: val }));
 
   const calculate = () => {
-    const { hourly, dailyHours, weekDays } = state;
+    const hourly = state.hourly || 0, dailyHours = state.dailyHours || 0, weekDays = state.weekDays || 0;
     const weeklyHours = dailyHours * weekDays;
 
     /* 주휴수당: 주 15시간 이상 근무 시 발생 */

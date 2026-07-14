@@ -13,7 +13,7 @@ export default function TaxComparator() {
   const [nontax, setNontax] = useState(false);
   const [result, setResult] = useState<ComparisonResult | null>(null);
 
-  const calculate = () => setResult(compareTax(salary, dependents, nontax));
+  const calculate = () => setResult(compareTax(salary || 0, dependents, nontax));
 
   return (
     <>

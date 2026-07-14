@@ -31,7 +31,7 @@ export default function LifetimeCalc() {
     if (years <= 0) return;
 
     let totalGross = 0;
-    let currentMonthly = monthlySalary * 10000;
+    let currentMonthly = (monthlySalary || 0) * 10000;
     let peakSalary = currentMonthly;
     let peakAge = age;
     const yearlyData: { age: number; annual: number; cumulative: number }[] = [];
@@ -41,7 +41,7 @@ export default function LifetimeCalc() {
       totalGross += annual;
       if (currentMonthly > peakSalary) { peakSalary = currentMonthly; peakAge = age + y; }
       yearlyData.push({ age: age + y, annual, cumulative: totalGross });
-      currentMonthly *= (1 + raiseRate / 100);
+      currentMonthly *= (1 + (raiseRate || 0) / 100);
     }
 
     // 세후 대략 추정 (평균 실효세율 약 20~25% 적용)

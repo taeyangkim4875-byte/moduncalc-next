@@ -20,7 +20,7 @@ export default function SalaryConverter() {
   const [salary, setSalary] = useState(4500);
 
   const workSecondsPerYear = 252 * 8 * 3600;
-  const perSecond = (salary * 10000) / workSecondsPerYear;
+  const perSecond = ((salary || 0) * 10000) / workSecondsPerYear;
 
   const fmtWorkTime = (price: number) => {
     const totalSec = price / perSecond;
@@ -88,7 +88,7 @@ export default function SalaryConverter() {
         <div className="grid grid-cols-2 gap-2 mb-2">
           <div className="bg-[var(--bg)] rounded-xl p-3 text-center">
             <div className="text-[10px] text-[var(--sub)] font-bold">시급</div>
-            <div className="text-lg font-extrabold text-[var(--primary-dark)]">{Math.round((salary * 10000) / (252 * 8)).toLocaleString()}원</div>
+            <div className="text-lg font-extrabold text-[var(--primary-dark)]">{Math.round(((salary || 0) * 10000) / (252 * 8)).toLocaleString()}원</div>
           </div>
           <div className="bg-[var(--bg)] rounded-xl p-3 text-center">
             <div className="text-[10px] text-[var(--sub)] font-bold">분당</div>

@@ -81,16 +81,16 @@ export default function DoyakCalculator() {
 
   const medianRatio = () => {
     const median = MEDIAN_2026[state.size];
-    return median ? (state.houseIncome * 10000 / median * 100) : 0;
+    return median ? ((state.houseIncome || 0) * 10000 / median * 100) : 0;
   };
 
   const calculate = () => {
     const s = state;
-    const payM = s.pay * 10000;
-    const tier = dohyakTier(s.salary);
+    const payM = (s.pay || 0) * 10000;
+    const tier = dohyakTier(s.salary || 0);
     if (!tier) return;
 
-    const incomeBonus = s.salary <= 2400 ? 0.5 : 0;
+    const incomeBonus = (s.salary || 0) <= 2400 ? 0.5 : 0;
     const sched = dohyakSchedule(s.baseRate, s.varRate, s.dohyakBonus, incomeBonus, s.bonusStart);
     const segs = dohyakRateSegments(s.baseRate, s.varRate, s.dohyakBonus, incomeBonus, s.bonusStart);
     const cm = Math.min(payM, tier.limit) * tier.ratio;

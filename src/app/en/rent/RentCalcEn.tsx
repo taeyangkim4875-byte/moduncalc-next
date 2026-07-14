@@ -12,12 +12,13 @@ export default function RentCalcEn() {
   const [rate, setRate] = useState(4.5); // 전환율 %
 
   // Jeonse → Wolse conversion
-  const monthlyRent = ((jeonse - deposit) * 10000 * (rate / 100)) / 12;
+  const safeRate = rate || 0;
+  const monthlyRent = safeRate ? (((jeonse || 0) - (deposit || 0)) * 10000 * (safeRate / 100)) / 12 : 0;
 
   // Wolse → Jeonse conversion
   const [wolse, setWolse] = useState(80); // 만원/월
   const [wolseDeposit, setWolseDeposit] = useState(1000);
-  const jeonseEquiv = wolseDeposit + (wolse * 12 / (rate / 100)) / 10000;
+  const jeonseEquiv = safeRate ? (wolseDeposit || 0) + ((wolse || 0) * 12 / (safeRate / 100)) / 10000 : 0;
 
   return (
     <>

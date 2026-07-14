@@ -12,11 +12,11 @@ export default function LiveCounter() {
 
   // 연봉 기준 초당 급여 (근무일 기준: 연 252일, 일 8시간)
   const workSecondsPerYear = 252 * 8 * 3600;
-  const perSecond = (salary * 10000) / workSecondsPerYear;
+  const perSecond = ((salary || 0) * 10000) / workSecondsPerYear;
   const perMinute = perSecond * 60;
   const perHour = perSecond * 3600;
-  const perDay = salary * 10000 / 252;
-  const perMonth = salary * 10000 / 12;
+  const perDay = (salary || 0) * 10000 / 252;
+  const perMonth = (salary || 0) * 10000 / 12;
 
   const earned = perSecond * elapsed;
 

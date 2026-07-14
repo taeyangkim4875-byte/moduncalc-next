@@ -11,12 +11,12 @@ export default function HealthInsCalc() {
   const [salary, setSalary] = useState(300); // 만원/월
 
   // Employee: 50% split with employer
-  const empHI = salary * 10000 * HI_RATE;
+  const empHI = (salary || 0) * 10000 * HI_RATE;
   const empLTC = empHI * LTC_RATE;
   const empTotal = empHI + empLTC;
 
   // Self-employed foreigner: full amount (no employer share), with minimum floor
-  const selfHI = salary * 10000 * HI_RATE * 2; // pay both halves
+  const selfHI = (salary || 0) * 10000 * HI_RATE * 2; // pay both halves
   const selfLTC = selfHI * LTC_RATE;
   const selfMin = 142810; // 2026 minimum for self-employed foreigners (approx)
   const selfTotal = Math.max(selfHI + selfLTC, selfMin);

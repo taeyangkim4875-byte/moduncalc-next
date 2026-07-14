@@ -37,8 +37,8 @@ export default function CarLoanCalc() {
   }, [autoCalc]);
 
   const calc = () => {
-    const priceWon = price * 10000;
-    const downWon = downPay * 10000;
+    const priceWon = (price || 0) * 10000;
+    const downWon = (downPay || 0) * 10000;
     const loanAmt = Math.max(0, priceWon - downWon);
 
     // 취득세 계산 (2026 기준)
@@ -58,7 +58,7 @@ export default function CarLoanCalc() {
     const totalTax = acqTax + eduTax;
 
     // 할부 계산 (원리금균등)
-    const r = rate / 100 / 12;
+    const r = (rate || 0) / 100 / 12;
     let monthly: number, totalInt: number;
     if (r > 0 && loanAmt > 0) {
       monthly = loanAmt * r * Math.pow(1 + r, term) / (Math.pow(1 + r, term) - 1);
@@ -109,7 +109,7 @@ export default function CarLoanCalc() {
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <input type="range" min={0} max={Math.max(price, 100)} step={50} value={downPay} onChange={e => setDownPay(+e.target.value)} className="w-full mt-3.5" />
-          <div className="text-xs text-[var(--sub)] mt-1">할부 원금: {Math.max(0, price - downPay).toLocaleString()}만원</div>
+          <div className="text-xs text-[var(--sub)] mt-1">할부 원금: {Math.max(0, (price || 0) - (downPay || 0)).toLocaleString()}만원</div>
         </div>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">할부 이자율 (연)</label>

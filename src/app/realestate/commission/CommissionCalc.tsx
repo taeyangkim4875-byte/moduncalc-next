@@ -59,10 +59,10 @@ export default function CommissionCalc() {
   }, [autoCalc]);
 
   const calc = () => {
-    let amount = price;
+    let amount = price || 0;
     const table = dealType === '매매' ? SALE_RATES : RENT_RATES;
     if (dealType === '월세') {
-      amount = price + monthly * 100;
+      amount = (price || 0) + (monthly || 0) * 100;
     }
     const { rate, fee } = getRate(amount, table);
     const vat = Math.round(fee * 0.1);

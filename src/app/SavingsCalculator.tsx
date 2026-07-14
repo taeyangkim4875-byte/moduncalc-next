@@ -75,26 +75,26 @@ export default function SavingsCalculator() {
 
   const medianRatio = () => {
     const median = MEDIAN_2026[state.size];
-    return median ? (state.houseIncome * 10000 / median * 100) : 0;
+    return median ? ((state.houseIncome || 0) * 10000 / median * 100) : 0;
   };
 
   const calculate = () => {
     const s = state;
-    const payM = s.pay * 10000;
+    const payM = (s.pay || 0) * 10000;
     const miraePayM = Math.min(payM, MIRAE_PAY_CAP);
-    const incWon = s.houseIncome * 10000;
+    const incWon = (s.houseIncome || 0) * 10000;
     const median = MEDIAN_2026[s.size];
     const mr = median ? (incWon / median * 100) : 9999;
 
     let html = '<div class="text-lg font-extrabold mt-4 mb-3 px-1">비교 결과</div>';
 
-    if (s.salary > 7500) {
+    if ((s.salary || 0) > 7500) {
       html += '<div style="background:#FFF4E5;border-radius:12px;padding:12px 14px;font-size:13px;color:#B26A00;font-weight:600;margin-bottom:14px">총급여 7,500만원 초과 — 가입 대상이 아닙니다.</div>';
     }
 
-    const tier = dohyakTier(s.salary);
+    const tier = dohyakTier(s.salary || 0);
     if (tier) {
-      const ib = s.salary <= 2400 ? 0.5 : 0;
+      const ib = (s.salary || 0) <= 2400 ? 0.5 : 0;
       const sched = dohyakSchedule(s.baseRate, s.varRate, s.dohyakBonus, ib, s.bonusStart);
       const segs = dohyakRateSegments(s.baseRate, s.varRate, s.dohyakBonus, ib, s.bonusStart);
       const cm = Math.min(payM, tier.limit) * tier.ratio;
@@ -117,13 +117,13 @@ export default function SavingsCalculator() {
       </div>`;
     }
 
-    if (s.salary <= 7500) {
-      const mt = miraeType(s.salary, mr, s.size, s.dual);
+    if ((s.salary || 0) <= 7500) {
+      const mt = miraeType(s.salary || 0, mr, s.size, s.dual);
       if (mt.type !== '이용불가' && mt.type !== '비과세형' || mt.type === '비과세형') {
         if (mt.type === '이용불가') {
           html += '<div style="background:#FFF4E5;border-radius:12px;padding:12px 14px;font-size:13px;color:#B26A00;font-weight:600;margin-bottom:14px">가입 기준을 초과합니다.</div>';
         } else {
-          const rate = (5 + s.miraeBonus) / 100;
+          const rate = (5 + (s.miraeBonus || 0)) / 100;
           const cm = Math.min(miraePayM * mt.rate, mt.cap);
           const pr = miraePayM * MIRAE_MONTHS, cs = cm * MIRAE_MONTHS;
           const ip = rentInterest(miraePayM, rate, MIRAE_MONTHS), ic = rentInterest(cm, rate, MIRAE_MONTHS);

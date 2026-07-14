@@ -18,7 +18,7 @@ export default function ParentalCalc() {
   const [result, setResult] = useState<{ monthlyList: number[]; total: number; avgMonthly: number } | null>(null);
 
   const calc = () => {
-    const wageWon = wage * 10000;
+    const wageWon = (wage || 0) * 10000;
     const monthlyList: number[] = [];
 
     for (let m = 1; m <= months; m++) {

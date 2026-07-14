@@ -25,9 +25,9 @@ export default function PensionRefundCalc() {
   const [country, setCountry] = useState('');
   const [calculated, setCalculated] = useState(false);
 
-  const monthlyBase = Math.min(monthlySalary * 10000, NP_CAP);
+  const monthlyBase = Math.min((monthlySalary || 0) * 10000, NP_CAP);
   const monthlyContribution = monthlyBase * NP_RATE;
-  const totalContributions = monthlyContribution * months;
+  const totalContributions = monthlyContribution * (months || 0);
 
   // Simple interest approximation (average contribution time = months/2)
   const avgYears = months / 24; // average holding period

@@ -151,14 +151,14 @@ export default function MiraeCalculator() {
 
   const medianRatio = () => {
     const median = MEDIAN_2026[state.size];
-    return median ? (state.houseIncome * 10000 / median * 100) : 0;
+    return median ? ((state.houseIncome || 0) * 10000 / median * 100) : 0;
   };
 
   const calculate = () => {
     const s = state;
-    const payM = Math.min(s.pay * 10000, MIRAE_PAY_CAP);
+    const payM = Math.min((s.pay || 0) * 10000, MIRAE_PAY_CAP);
     const mr = medianRatio();
-    const mt = miraeType(s.salary, mr, s.size, s.dual);
+    const mt = miraeType(s.salary || 0, mr, s.size, s.dual);
     if (mt.type === '이용불가') { setResult(null); return; }
 
     const rate = totalRate / 100;

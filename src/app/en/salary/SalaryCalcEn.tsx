@@ -12,7 +12,7 @@ export default function SalaryCalcEn() {
   const [nontax, setNontax] = useState(false);
   const [result, setResult] = useState<ReturnType<typeof netPay> | null>(null);
 
-  const calculate = () => setResult(netPay(salary, dependents, nontax));
+  const calculate = () => setResult(netPay(salary || 0, dependents, nontax));
 
   return (
     <>

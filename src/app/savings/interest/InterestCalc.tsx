@@ -13,14 +13,14 @@ export default function InterestCalc(){
   const taxRate=taxType==='normal'?0.154:taxType==='prefer'?0.095:0;
 
   const calc=()=>{
-    const p=principal*10000;
+    const p=(principal||0)*10000;
     let interest:number, totalPrincipal:number;
     if(type==='savings'){
       totalPrincipal=p*months;
-      interest=p*(rate/100/12)*(months*(months+1)/2);
+      interest=p*((rate||0)/100/12)*(months*(months+1)/2);
     }else{
       totalPrincipal=p;
-      interest=p*(rate/100)*(months/12);
+      interest=p*((rate||0)/100)*(months/12);
     }
     const tax=Math.floor(interest*taxRate);
     const afterTaxInterest=Math.floor(interest-tax);
