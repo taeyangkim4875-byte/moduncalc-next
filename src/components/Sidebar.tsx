@@ -49,6 +49,8 @@ const MENUS_KO: MenuItem[] = [
   { href: '/health', ico: '💪', label: '건강', sub: [
     { label: 'BMI', href: '/health/bmi' },
     { label: '체지방률', href: '/health/bodyfat' },
+    { label: '물 섭취량', href: '/health/water' },
+    { label: '어린이 BMI', href: '/daily/bmi-child' },
     { label: '기초대사량', href: '/health/bmr' }
   ]},
   { href: '/daily', ico: '📅', label: '일상', sub: [
@@ -70,6 +72,9 @@ const MENUS_KO: MenuItem[] = [
     { label: '랜덤 뽑기·로또', href: '/daily/random' },
     { label: '시간 계산기', href: '/daily/time' },
     { label: '수면 계산기', href: '/health/sleep' },
+    { label: '금 시세 환산', href: '/daily/gold' },
+    { label: '모임 정산', href: '/daily/tip-split' },
+    { label: '가상자산 수익률', href: '/daily/crypto' },
     { label: '칼로리 계산기', href: '/daily/calorie' },
     { label: '평수 계산기', href: '/daily/pyeong' },
     { label: '자동차세', href: '/daily/cartax' },
@@ -96,6 +101,7 @@ const MENUS_KO: MenuItem[] = [
     { label: '복비(중개수수료)', href: '/realestate/commission' },
     { label: '양도소득세', href: '/realestate/transfer' },
     { label: '청약 가점', href: '/realestate/subscription' },
+    { label: '등기비용', href: '/realestate/registration' },
   ]},
   { href: '/tax', ico: '🧾', label: '세금', sub: [
     { label: '부가세', href: '/tax/vat' },
@@ -145,6 +151,10 @@ const MENUS_EN: MenuItem[] = [
     { label: 'Pyeong Converter', href: '/en/pyeong' },
     { label: 'Password Generator', href: '/en/password' },
     { label: 'Random Generator', href: '/en/random' },
+    { label: 'Gold Price', href: '/en/gold' },
+    { label: 'Water Intake', href: '/en/water-intake' },
+    { label: 'Crypto Profit', href: '/en/crypto' },
+    { label: 'Sleep Calculator', href: '/en/sleep' },
     { label: 'Subway Fare', href: '/en/subway' },
     { label: 'Size Converter', href: '/en/size-converter' },
     { label: 'Tipping Guide', href: '/en/tip-calculator' },

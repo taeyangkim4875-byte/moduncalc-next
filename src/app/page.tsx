@@ -5,10 +5,10 @@ import Card from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "모든 계산기 - 연봉, 적금, 대출, 부동산, 건강, 세금 무료 계산기",
-  description: "연봉 실수령액, 청년도약계좌, 미래적금, 대출이자, 취득세, 복비, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 76종.",
+  description: "연봉 실수령액, 청년도약계좌, 미래적금, 대출이자, 취득세, 복비, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 82종.",
   alternates: { canonical: "https://moduncalc.com" },
   openGraph: {
-    title: "모든 계산기 - 연봉, 적금, 대출, 건강 무료 계산기 76종",
+    title: "모든 계산기 - 연봉, 적금, 대출, 건강 무료 계산기 82종",
     description: "2026년 최신 정책 반영. 연봉, 적금, 대출, 부동산, 건강, 세금, 일상 계산기를 한 곳에서 무료로.",
     url: "https://moduncalc.com",
   },
@@ -59,6 +59,12 @@ const POPULAR = [
   { href: '/daily/time', icon: '⏰', title: '시간 계산기', desc: '시간 차이·근무시간' },
   { href: '/health/sleep', icon: '😴', title: '수면 계산기', desc: '최적 취침·기상 시간' },
   { href: '/realestate/subscription', icon: '🏢', title: '청약 가점', desc: '가점 자동 계산' },
+  { href: '/realestate/registration', icon: '🏢', title: '등기비용', desc: '취득세·인지세·법무사' },
+  { href: '/daily/gold', icon: '🪙', title: '금 시세 환산', desc: '돈·g·oz 가격 환산' },
+  { href: '/daily/tip-split', icon: '🧾', title: '모임 정산', desc: 'N분의1·차등 정산' },
+  { href: '/daily/crypto', icon: '₿', title: '가상자산 수익률', desc: '비트코인 손익 계산' },
+  { href: '/health/water', icon: '💧', title: '물 섭취량', desc: '하루 권장 물 섭취량' },
+  { href: '/daily/bmi-child', icon: '👦', title: '어린이 BMI', desc: '소아 성장 백분위' },
   { href: '/daily/calorie', icon: '🍎', title: '칼로리 계산기', desc: 'TDEE·다이어트' },
   { href: '/daily/pyeong', icon: '📐', title: '평수 계산기', desc: '평↔㎡ 변환' },
   { href: '/tax/inherit', icon: '🧾', title: '상속세', desc: '상속세 자동 계산' },
@@ -86,7 +92,7 @@ const POPULAR = [
 export default function Home() {
   return (
     <PageLayout
-      eyebrow="무료 계산기 76종"
+      eyebrow="무료 계산기 82종"
       title="모든 계산기"
       description="필요한 계산기를 찾아보세요. 2026년 최신 정책 반영."
     >

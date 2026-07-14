@@ -44,6 +44,10 @@ const TOOLS = [
   { href: '/en/pyeong', icon: '📐', title: 'Pyeong Converter', desc: 'Korean apartment sizes' },
   { href: '/en/password', icon: '🔐', title: 'Password Generator', desc: 'Strong random passwords' },
   { href: '/en/random', icon: '🎲', title: 'Random Generator', desc: 'Numbers, lottery, shuffler' },
+  { href: '/en/gold', icon: '🪙', title: 'Gold Price', desc: 'Grams, ounces & Korean don' },
+  { href: '/en/water-intake', icon: '💧', title: 'Water Intake', desc: 'Daily hydration needs' },
+  { href: '/en/crypto', icon: '₿', title: 'Crypto Profit', desc: 'Bitcoin investment returns' },
+  { href: '/en/sleep', icon: '😴', title: 'Sleep Calculator', desc: 'Best bedtime & wake time' },
 ];
 
 export default function EnHome() {
