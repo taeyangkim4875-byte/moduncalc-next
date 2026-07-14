@@ -79,6 +79,18 @@ const MENUS_KO: MenuItem[] = [
 ];
 
 const MENUS_EN: MenuItem[] = [
+  { href: '/guide', ico: '📖', label: '가이드', sub: [
+    { label: '연봉 실수령액 정리', href: '/guide/salary-net-pay' },
+    { label: '도약 vs 미래적금', href: '/guide/doyak-vs-mirae' },
+    { label: '4대보험 총정리', href: '/guide/4-insurance' },
+    { label: '전세 계약 가이드', href: '/guide/jeonse' },
+    { label: '연말정산 가이드', href: '/guide/year-end-tax' },
+    { label: '퇴직금 정리', href: '/guide/severance-pay' },
+    { label: '최저시급 정리', href: '/guide/minimum-wage' },
+    { label: '대출 상환 비교', href: '/guide/loan-comparison' },
+    { label: '주식 세금 총정리', href: '/guide/investment-tax' },
+    { label: 'FIRE 조기 은퇴', href: '/guide/fire-retirement' },
+  ]},
   { href: '/en/salary', ico: '💰', label: 'Salary & Tax', sub: [
     { label: 'Salary Calculator', href: '/en/salary' },
     { label: 'Flat vs Progressive Tax', href: '/en/tax-comparison' },
