@@ -96,6 +96,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/daily/youtube', priority: 0.8 },
     { path: '/contact', priority: 0.5 },
     { path: '/about', priority: 0.5 },
+    { path: '/privacy', priority: 0.5 },
+    { path: '/terms', priority: 0.5 },
   ];
 
   return pages.map(({ path, priority }) => ({
