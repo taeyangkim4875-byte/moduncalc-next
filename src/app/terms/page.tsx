@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: "이용약관",
   description: "모든 계산기(moduncalc.com) 서비스 이용약관",
   alternates: { canonical: "https://moduncalc.com/terms" },
-  robots: "noindex, follow",
 };
 
 export default function Page() {
