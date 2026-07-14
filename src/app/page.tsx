@@ -5,10 +5,10 @@ import Card from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "모든 계산기 - 연봉, 적금, 대출, 부동산, 건강, 세금 무료 계산기",
-  description: "연봉 실수령액, 청년도약계좌, 미래적금, 대출이자, 취득세, 복비, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 60종.",
+  description: "연봉 실수령액, 청년도약계좌, 미래적금, 대출이자, 취득세, 복비, BMI, 퇴직금, 최저시급까지. 2026년 최신 정책 반영 무료 계산기 모음 65종.",
   alternates: { canonical: "https://moduncalc.com" },
   openGraph: {
-    title: "모든 계산기 - 연봉, 적금, 대출, 건강 무료 계산기 60종",
+    title: "모든 계산기 - 연봉, 적금, 대출, 건강 무료 계산기 65종",
     description: "2026년 최신 정책 반영. 연봉, 적금, 대출, 부동산, 건강, 세금, 일상 계산기를 한 곳에서 무료로.",
     url: "https://moduncalc.com",
   },
@@ -53,6 +53,11 @@ const POPULAR = [
   { href: '/daily/fire', icon: '🔥', title: 'FIRE', desc: '조기 은퇴 시뮬레이션' },
   { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day' },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산' },
+  { href: '/loan/dsr', icon: '🏠', title: 'DSR 계산기', desc: '대출 한도 확인' },
+  { href: '/daily/water', icon: '💧', title: '수도요금', desc: '누진 요금 계산' },
+  { href: '/daily/gas', icon: '🔥', title: '가스요금', desc: '난방비·가스비' },
+  { href: '/daily/baby100', icon: '👶', title: '아기 100일', desc: '백일·돌 계산' },
+  { href: '/daily/anniversary', icon: '💕', title: '기념일', desc: '100일·1000일' },
   { href: '/daily/compound', icon: '📈', title: '복리 계산기', desc: '투자 수익 시뮬레이션' },
   { href: '/daily/alcohol', icon: '🍺', title: '음주 운전 계산기', desc: '운전 가능 시간' },
   { href: '/daily/due-date', icon: '🤰', title: '출산 예정일', desc: '임신 주수·예정일' },
@@ -71,7 +76,7 @@ const POPULAR = [
 export default function Home() {
   return (
     <PageLayout
-      eyebrow="무료 계산기 60종"
+      eyebrow="무료 계산기 65종"
       title="모든 계산기"
       description="필요한 계산기를 찾아보세요. 2026년 최신 정책 반영."
     >

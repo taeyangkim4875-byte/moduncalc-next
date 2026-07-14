@@ -44,6 +44,7 @@ const MENUS_KO: MenuItem[] = [
   { href: '/loan', ico: '🏠', label: '대출/이자', sub: [
     { label: '원리금균등 vs 원금균등', href: '/loan' },
     { label: '자동차 할부', href: '/loan/car' },
+    { label: 'DSR 계산기', href: '/loan/dsr' },
   ]},
   { href: '/health', ico: '💪', label: '건강', sub: [
     { label: 'BMI', href: '/health/bmi' },
@@ -64,6 +65,10 @@ const MENUS_KO: MenuItem[] = [
     { label: '학점(GPA)', href: '/daily/gpa' },
     { label: '속도·시간', href: '/daily/speed' },
     { label: '연비', href: '/daily/fuel' },
+    { label: '수도요금', href: '/daily/water' },
+    { label: '가스요금·난방비', href: '/daily/gas' },
+    { label: '아기 100일·돌', href: '/daily/baby100' },
+    { label: '기념일', href: '/daily/anniversary' },
     { label: '복리 계산기', href: '/daily/compound' },
     { label: '음주 운전 가능 시간', href: '/daily/alcohol' },
     { label: '출산 예정일', href: '/daily/due-date' },
