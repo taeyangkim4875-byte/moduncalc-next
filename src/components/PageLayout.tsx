@@ -1,5 +1,6 @@
 import SearchBar from './SearchBar';
 import RelatedCalcs from './RelatedCalcs';
+import RelatedGuides from './RelatedGuides';
 
 interface PageLayoutProps {
   eyebrow: string;
@@ -18,6 +19,7 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
         <p className="m-0 text-sm text-[var(--sub)]">{description}</p>
       </header>
       {children}
+      <RelatedGuides />
       <RelatedCalcs />
     </div>
   );
