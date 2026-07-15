@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Sidebar from "@/components/Sidebar";
 import ScrollToTop from "@/components/ScrollToTop";
+import AiChat from "@/components/AiChat";
 import { WebsiteJsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
@@ -84,6 +85,7 @@ export default function RootLayout({
           {children}
         </main>
         <ScrollToTop />
+        <AiChat />
         <Script id="sw-register" strategy="afterInteractive">
           {`if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js')}`}
         </Script>
