@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const NVIDIA_API_URL = 'https://integrate.api.nvidia.com/v1/chat/completions';
-const MODEL = 'meta/llama-3.3-70b-instruct';
+const MODEL = 'meta/llama-3.1-8b-instruct';
+
+export const maxDuration = 30; // Vercel serverless timeout 30초
 
 export async function POST(req: NextRequest) {
   try {
@@ -19,6 +21,9 @@ export async function POST(req: NextRequest) {
     const systemPrompt = getSystemPrompt(type);
     const userPrompt = getUserPrompt(type, data);
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 25000);
+
     const response = await fetch(NVIDIA_API_URL, {
       method: 'POST',
       headers: {
@@ -32,14 +37,17 @@ export async function POST(req: NextRequest) {
           { role: 'user', content: userPrompt },
         ],
         temperature: 0.7,
-        max_tokens: 1024,
+        max_tokens: 512,
       }),
+      signal: controller.signal,
     });
+
+    clearTimeout(timeout);
 
     if (!response.ok) {
       const err = await response.text();
-      console.error('NVIDIA API error:', err);
-      return NextResponse.json({ error: 'AI 분석에 실패했습니다. 잠시 후 다시 시도해주세요.' }, { status: 502 });
+      console.error('NVIDIA API error:', response.status, err);
+      return NextResponse.json({ error: `AI 분석에 실패했습니다 (${response.status}). 잠시 후 다시 시도해주세요.` }, { status: 502 });
     }
 
     const result = await response.json();
