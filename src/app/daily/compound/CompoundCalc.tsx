@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
-import AiAnalysis from '@/components/AiAnalysis';
 const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center mt-3"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
 
 const fmtW=(n:number)=>{
@@ -132,14 +131,6 @@ export default function CompoundCalc(){
         </div>
       </Card>
 
-      <AiAnalysis type="compound" data={{
-        principal: +principal,
-        monthly: +monthly,
-        rate: +rate,
-        years: +years,
-        finalAmount: Math.round(compoundTotal / 10000),
-        profit: Math.round(totalProfit / 10000),
-      }} label="투자 전략 AI 분석 받기" />
     </>}
 
     <Card>
