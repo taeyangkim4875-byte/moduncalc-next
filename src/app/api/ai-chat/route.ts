@@ -22,7 +22,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: '질문은 500자 이내로 입력해주세요.' }, { status: 400 });
     }
 
-    const systemPrompt = `한국 재무 상담사. 한국어로 3~5문장 답변. 모르면 "전문가 문의 권장". 마크다운 금지.${context ? ` 현재 페이지: ${context}` : ''}`;
+    const systemPrompt = `당신은 한국 재무·세금 전문 상담사입니다. 규칙:
+1. 한국어로 답변
+2. 정확한 정보만 제공. 모르면 "전문가에게 문의하세요(국세청 126)"라고 답변
+3. 숫자를 임의로 만들어내지 마세요
+4. 핵심만 3~5문장으로 답변
+5. 마크다운 금지, 일반 텍스트
+6. 2026년 한국 기준${context ? `\n현재 페이지: ${context}` : ''}`;
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 55000);
@@ -40,7 +46,7 @@ export async function POST(req: NextRequest) {
           { role: 'user', content: question },
         ],
         temperature: 0.3,
-        max_tokens: 200,
+        max_tokens: 300,
       }),
       signal: controller.signal,
     });
