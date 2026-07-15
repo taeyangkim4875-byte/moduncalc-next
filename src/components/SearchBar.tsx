@@ -75,6 +75,10 @@ const CALCULATORS_KO: CalcItem[] = [
   { name: '음력 양력 변환기', keywords: ['음력', '양력', '변환', '설날', '추석', '음력생일'], href: '/daily/lunar', icon: '🌙', category: '일상' },
   { name: '페인트 벽지 계산기', keywords: ['페인트', '벽지', '인테리어', '도배', '면적', '롤'], href: '/daily/paint', icon: '🎨', category: '일상' },
   { name: '체지방률 계산기', keywords: ['체지방', '체지방률', '비만', '허리둘레', '목둘레', '해군'], href: '/health/bodyfat', icon: '💪', category: '건강' },
+  { name: '어린이 BMI 계산기', keywords: ['어린이', 'bmi', '소아', '백분위', '키', '체중', '비만'], href: '/daily/bmi-child', icon: '👦', category: '건강' },
+  { name: '가상자산 수익률', keywords: ['가상자산', '비트코인', '수익률', '투자', '코인', '이더리움'], href: '/daily/crypto', icon: '₿', category: '투자' },
+  { name: '금 시세 환산기', keywords: ['금', '시세', '금값', '돈', 'oz', '그램', '금거래'], href: '/daily/gold', icon: '🪙', category: '투자' },
+  { name: '모임 정산 계산기', keywords: ['정산', '모임', 'n분의1', '차등', '송금', '더치'], href: '/daily/tip-split', icon: '🧾', category: '일상' },
   { name: '에어컨 전기요금 계산기', keywords: ['에어컨', '전기요금', '전기세', '냉방', '인버터', '누진', '여름'], href: '/daily/aircon', icon: '❄️', category: '일상' },
   { name: '여행 경비 계산기', keywords: ['여행', '경비', '예산', '항공', '숙소', '일본', '유럽', '동남아'], href: '/daily/travel', icon: '✈️', category: '일상' },
   { name: '애드센스 수익 계산기', keywords: ['애드센스', 'adsense', '블로그', '수익', 'RPM', 'CPC', '광고'], href: '/daily/adsense', icon: '💻', category: '부업' },
@@ -111,6 +115,10 @@ const CALCULATORS_EN: CalcItem[] = [
   { name: 'Pyeong Converter', keywords: ['pyeong', 'square meter', 'apartment', 'size', 'area', 'convert'], href: '/en/pyeong', icon: '📐', category: 'Housing' },
   { name: 'Password Generator', keywords: ['password', 'random', 'secure', 'generate', 'strong'], href: '/en/password', icon: '🔐', category: 'Tools' },
   { name: 'Random Generator', keywords: ['random', 'number', 'lottery', 'picker', 'shuffle', 'draw'], href: '/en/random', icon: '🎲', category: 'Tools' },
+  { name: 'Crypto Profit Calculator', keywords: ['crypto', 'bitcoin', 'investment', 'profit', 'coin'], href: '/en/crypto', icon: '₿', category: 'Finance' },
+  { name: 'Gold Price Calculator', keywords: ['gold', 'price', 'ounce', 'gram', 'don', 'weight'], href: '/en/gold', icon: '🪙', category: 'Finance' },
+  { name: 'Sleep Calculator', keywords: ['sleep', 'bedtime', 'wake', 'cycle', '90 minutes', 'rest'], href: '/en/sleep', icon: '😴', category: 'Health' },
+  { name: 'Water Intake Calculator', keywords: ['water', 'hydration', 'intake', 'daily', 'drink'], href: '/en/water-intake', icon: '💧', category: 'Health' },
 ];
 
 export default function SearchBar() {
