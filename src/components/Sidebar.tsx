@@ -117,9 +117,6 @@ const MENUS_KO: MenuItem[] = [
     { label: '증여세', href: '/tax/gift' },
     { label: '상속세', href: '/tax/inherit' },
   ]},
-];
-
-const MENUS_EN: MenuItem[] = [
   { href: '/guide', ico: '📖', label: '가이드', sub: [
     { label: '연봉 실수령액 정리', href: '/guide/salary-net-pay' },
     { label: '도약 vs 미래적금', href: '/guide/doyak-vs-mirae' },
@@ -132,6 +129,9 @@ const MENUS_EN: MenuItem[] = [
     { label: '주식 세금 총정리', href: '/guide/investment-tax' },
     { label: 'FIRE 조기 은퇴', href: '/guide/fire-retirement' },
   ]},
+];
+
+const MENUS_EN: MenuItem[] = [
   { href: '/en/salary', ico: '💰', label: 'Salary & Tax', sub: [
     { label: 'Salary Calculator', href: '/en/salary' },
     { label: 'Flat vs Progressive Tax', href: '/en/tax-comparison' },
@@ -145,32 +145,36 @@ const MENUS_EN: MenuItem[] = [
     { label: 'Jeonse vs Wolse', href: '/en/rent' },
     { label: 'Cost of Living', href: '/en/cost-of-living' },
   ]},
-  { href: '/en/korean-age', ico: '🎂', label: 'Daily Life', sub: [
+  { href: '/en/korean-age', ico: '🇰🇷', label: 'Korea Life', sub: [
     { label: 'Korean Age', href: '/en/korean-age' },
-    { label: 'Blood Alcohol (DUI)', href: '/en/alcohol' },
-    { label: 'Air Fryer Converter', href: '/en/air-fryer' },
-    { label: 'Due Date Calculator', href: '/en/due-date' },
-    { label: 'Compound Interest', href: '/en/compound' },
-    { label: 'Body Fat Calculator', href: '/en/body-fat' },
-    { label: 'Lunar Calendar 2026', href: '/en/lunar-calendar' },
-    { label: 'Paint Calculator', href: '/en/paint' },
-    { label: 'Character Counter', href: '/en/character-counter' },
-    { label: 'Calorie Calculator', href: '/en/calorie' },
-    { label: 'Pyeong Converter', href: '/en/pyeong' },
-    { label: 'Password Generator', href: '/en/password' },
-    { label: 'Random Generator', href: '/en/random' },
-    { label: 'Gold Price', href: '/en/gold' },
-    { label: 'Water Intake', href: '/en/water-intake' },
-    { label: 'Crypto Profit', href: '/en/crypto' },
-    { label: 'Sleep Calculator', href: '/en/sleep' },
     { label: 'Subway Fare', href: '/en/subway' },
     { label: 'Size Converter', href: '/en/size-converter' },
     { label: 'Tipping Guide', href: '/en/tip-calculator' },
     { label: 'Time Zone (KST)', href: '/en/timezone' },
-    { label: 'Electricity Bill', href: '/en/electricity' },
     { label: 'Date Converter', href: '/en/date-converter' },
+    { label: 'Lunar Calendar', href: '/en/lunar-calendar' },
+    { label: 'Pyeong Converter', href: '/en/pyeong' },
+  ]},
+  { href: '/en/calorie', ico: '💪', label: 'Health', sub: [
+    { label: 'Calorie Calculator', href: '/en/calorie' },
+    { label: 'Body Fat', href: '/en/body-fat' },
+    { label: 'Sleep Calculator', href: '/en/sleep' },
+    { label: 'Water Intake', href: '/en/water-intake' },
+    { label: 'Due Date', href: '/en/due-date' },
+    { label: 'Blood Alcohol', href: '/en/alcohol' },
+  ]},
+  { href: '/en/compound', ico: '💹', label: 'Finance & Tools', sub: [
+    { label: 'Compound Interest', href: '/en/compound' },
+    { label: 'Crypto Profit', href: '/en/crypto' },
+    { label: 'Gold Price', href: '/en/gold' },
+    { label: 'Electricity Bill', href: '/en/electricity' },
     { label: 'Grocery Prices', href: '/en/grocery' },
     { label: 'Internet Plans', href: '/en/internet-speed' },
+    { label: 'Air Fryer', href: '/en/air-fryer' },
+    { label: 'Paint Calculator', href: '/en/paint' },
+    { label: 'Character Counter', href: '/en/character-counter' },
+    { label: 'Password Generator', href: '/en/password' },
+    { label: 'Random Generator', href: '/en/random' },
   ]},
   { href: '/en/guide/tax-guide', ico: '📖', label: 'Guides', sub: [
     { label: 'Income Tax Guide', href: '/en/guide/tax-guide' },
