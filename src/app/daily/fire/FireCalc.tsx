@@ -6,6 +6,7 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import AiAnalysis from '@/components/AiAnalysis';
 
 export default function FireCalc() {
   const [age, setAge] = useState(30);
@@ -167,6 +168,15 @@ export default function FireCalc() {
               </div>
             )}
           </div>
+
+          <AiAnalysis type="fire" data={{
+            income: monthlyIncome,
+            expense: monthlyExpense,
+            asset: currentAsset,
+            fireAsset: result.fireAsset,
+            fireAge: result.fireAge,
+            savingRate: result.savingRate,
+          }} label="FIRE 전략 AI 분석 받기" />
         </div>
       )}
       {result && <ShareButtons title="FIRE 계산 결과" />}

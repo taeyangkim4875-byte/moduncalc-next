@@ -6,6 +6,7 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import AiAnalysis from '@/components/AiAnalysis';
 import { getParams, setParams } from '@/utils/params';
 
 const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:6494738,5:7556719,6:8555952};
@@ -252,6 +253,20 @@ export default function DoyakCalculator() {
               <div className="flex justify-between text-[var(--green)]"><span className="font-semibold">이자 (비과세)</span><span className="font-bold">{won(result.interest)}</span></div>
             </div>
           </div>
+
+          <AiAnalysis type="doyak" data={{
+            pay: state.pay,
+            salary: state.salary,
+            baseRate: state.baseRate,
+            varRate: state.varRate,
+            bonus: state.dohyakBonus,
+            total: result.total,
+            principal: result.principal,
+            contrib: result.contrib,
+            interest: result.interest,
+            elapsed: elapsedMonths,
+            currentTotal: currentResult ? currentResult.total : null,
+          }} label="도약계좌 AI 분석 받기" />
         </div>
       )}
       {/* 현재까지 쌓인 금액 */}

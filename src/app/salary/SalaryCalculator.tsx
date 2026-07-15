@@ -7,6 +7,7 @@ import { won, fmtSalary } from '@/utils/format';
 import { netPay, type NetPayResult } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import AiAnalysis from '@/components/AiAnalysis';
 import { getParams, setParams } from '@/utils/params';
 
 /* ── 연령대 구간 ── */
@@ -362,6 +363,17 @@ export default function SalaryCalculator() {
           <div className="text-[11.5px] text-[var(--sub)] leading-relaxed text-center py-1 mt-0.5">
             추정치예요. 실제 급여명세서와 다를 수 있습니다.
           </div>
+
+          <AiAnalysis type="salary" data={{
+            salary: state.salary,
+            netMonth: Math.round(result.pay.netMonth),
+            insurance: Math.round(result.pay.insurance / 12),
+            incomeTax: Math.round(result.pay.incomeTax / 12),
+            localTax: Math.round(result.pay.localTax / 12),
+            dependents: state.dependents,
+            nontax: state.nontax,
+            percentile: result.percentile ? Math.round(100 - result.percentile) : null,
+          }} label="내 연봉 AI 분석 받기" />
         </div>
       ) : (
         <Card className="text-center text-[var(--sub)] text-sm py-8">

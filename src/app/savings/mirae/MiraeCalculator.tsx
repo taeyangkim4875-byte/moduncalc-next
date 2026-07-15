@@ -6,6 +6,7 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import AiAnalysis from '@/components/AiAnalysis';
 import { getParams, setParams } from '@/utils/params';
 
 const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:6494738,5:7556719,6:8555952};
@@ -316,6 +317,14 @@ export default function MiraeCalculator() {
               <div className="text-[11px] text-[var(--sub)] mt-1">기여금·비과세 포함, 일반 적금(15.4% 과세) 대비</div>
             </div>
           </div>
+          <AiAnalysis type="mirae" data={{
+            pay: state.pay,
+            rate: result.rate,
+            total: result.total,
+            contrib: result.contrib,
+            interest: result.interest,
+            type: result.mt.type,
+          }} label="미래적금 AI 분석 받기" />
         </div>
       )}
       {/* 현재까지 쌓인 금액 */}
