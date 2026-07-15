@@ -275,7 +275,7 @@ export default function Sidebar() {
             <Link href="/" className="text-xs text-[var(--primary)] no-underline font-bold hover:text-[var(--primary-dark)]">🇰🇷 한국어로 보기</Link>
           )}
           {!isEn && (
-            <Link href="/en/tax-comparison" className="text-xs text-[var(--primary)] no-underline font-bold hover:text-[var(--primary-dark)]">🌍 English</Link>
+            <Link href="/en" className="text-xs text-[var(--primary)] no-underline font-bold hover:text-[var(--primary-dark)]">🌍 English</Link>
           )}
           <div className="flex gap-3.5">
             <Link href="/about" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>
