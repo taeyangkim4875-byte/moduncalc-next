@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 const NVIDIA_API_URL = 'https://integrate.api.nvidia.com/v1/chat/completions';
 const MODEL = 'meta/llama-3.1-8b-instruct';
 
-export const maxDuration = 30;
+export const maxDuration = 60;
 
 export async function POST(req: NextRequest) {
   try {
@@ -22,21 +22,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: '질문은 500자 이내로 입력해주세요.' }, { status: 400 });
     }
 
-    const systemPrompt = `당신은 한국 재무·세금·생활 전문 상담사입니다. 규칙:
-1. 한국어로 답변
-2. 정확한 정보만 제공. 모르면 "정확한 답변을 드리기 어렵습니다. 국세청(126) 또는 전문가에게 문의하세요"라고 하세요
-3. 숫자를 임의로 만들어내지 마세요
-4. 간결하게 핵심만 답변 (3~5문장)
-5. 마크다운 금지, 일반 텍스트로
-6. 이모지 적절히 사용
-7. 2026년 한국 기준으로 답변
-
-전문 분야: 연봉 실수령액, 4대보험, 소득세, 연말정산, 청년도약계좌, 청년미래적금, 대출(DSR), 부동산(취득세/양도세), 퇴직금, 최저시급, 주휴수당, 증여세, 상속세, 국민연금, 실업급여, 건강보험
-
-${context ? `현재 사용자가 보고 있는 계산기: ${context}` : ''}`;
+    const systemPrompt = `한국 재무 상담사. 한국어로 3~5문장 답변. 모르면 "전문가 문의 권장". 마크다운 금지.${context ? ` 현재 페이지: ${context}` : ''}`;
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 25000);
+    const timeout = setTimeout(() => controller.abort(), 55000);
 
     const response = await fetch(NVIDIA_API_URL, {
       method: 'POST',
@@ -51,7 +40,7 @@ ${context ? `현재 사용자가 보고 있는 계산기: ${context}` : ''}`;
           { role: 'user', content: question },
         ],
         temperature: 0.3,
-        max_tokens: 300,
+        max_tokens: 200,
       }),
       signal: controller.signal,
     });
