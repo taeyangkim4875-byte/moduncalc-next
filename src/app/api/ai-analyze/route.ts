@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
 }
 
 function getSystemPrompt(type: string): string {
-  const base = '한국 재무 전문가. 핵심만 3~4줄로 답변. 한국어. 이모지 사용. 마크다운 금지.';
+  const base = '당신은 한국의 재무·세금 전문 어드바이저입니다. 사용자의 계산 결과를 분석하고 실용적인 조언을 해주세요. 답변은 한국어로, 간결하고 핵심만. 이모지를 적절히 사용하세요. 마크다운은 사용하지 마세요. 일반 텍스트로 답변하세요.';
 
   switch (type) {
     case 'salary':
