@@ -93,7 +93,7 @@ export default function AiChat() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-[90] w-14 h-14 rounded-full bg-gradient-to-r from-[var(--primary)] to-[var(--violet)] text-white text-2xl border-0 cursor-pointer shadow-lg hover:scale-105 transition-transform flex items-center justify-center lg:right-[calc(50%-280px+20px)]"
+        className="fixed bottom-5 right-5 z-[90] w-14 h-14 rounded-full bg-gradient-to-r from-[var(--primary)] to-[var(--violet)] text-white text-2xl border-0 cursor-pointer shadow-lg hover:scale-105 transition-transform flex items-center justify-center lg:right-8"
         aria-label="AI 상담"
       >
         💬
@@ -102,7 +102,7 @@ export default function AiChat() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-[90] w-[340px] max-h-[500px] bg-white rounded-2xl shadow-2xl border border-[var(--line)] flex flex-col overflow-hidden lg:right-[calc(50%-280px+20px)]">
+    <div className="fixed bottom-5 right-5 z-[90] w-[340px] max-h-[500px] bg-white rounded-2xl shadow-2xl border border-[var(--line)] flex flex-col overflow-hidden lg:right-8">
       {/* 헤더 */}
       <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-[var(--primary)] to-[var(--violet)] text-white">
         <div className="flex items-center gap-2">
