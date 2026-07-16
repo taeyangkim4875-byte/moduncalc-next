@@ -50,9 +50,7 @@ export default function AiChat() {
   const pathname = usePathname();
 
   const suggestions = SUGGESTIONS[pathname] || DEFAULT_SUGGESTIONS;
-
-  // 활성화된 페이지가 아니면 렌더링 안 함
-  if (!ENABLED_PATHS.includes(pathname)) return null;
+  const enabled = ENABLED_PATHS.includes(pathname);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -61,6 +59,9 @@ export default function AiChat() {
   useEffect(() => {
     if (open) inputRef.current?.focus();
   }, [open]);
+
+  // Hook 이후에 조건부 return
+  if (!enabled) return null;
 
   const ask = async (question: string) => {
     if (!question.trim() || loading) return;
