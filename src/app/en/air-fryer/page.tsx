@@ -5,7 +5,7 @@ import AirFryerCalcEn from "./AirFryerCalcEn";
 
 export const metadata: Metadata = {
   title: "Air Fryer Converter - Oven to Air Fryer Time & Temperature",
-  description: "Convert oven recipes to air fryer settings. Reduce temperature by 15°C and time by 20%. Includes popular Korean dish conversions.",
+  description: "Oven recipe to air fryer? Reduce temp by 15°C, time by 20%. Includes 10 popular Korean food presets.",
   alternates: { canonical: "https://moduncalc.com/en/air-fryer" },
 };
 

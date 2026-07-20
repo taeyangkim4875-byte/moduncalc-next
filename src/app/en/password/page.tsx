@@ -5,7 +5,7 @@ import PasswordGenEn from "./PasswordGenEn";
 
 export const metadata: Metadata = {
   title: "Password Generator - Create Strong Random Passwords",
-  description: "Generate secure random passwords instantly. Customize length, uppercase, lowercase, numbers, and special characters.",
+  description: "Need a strong password? Generate secure random passwords instantly. Custom length, symbols & strength indicator.",
   alternates: { canonical: "https://moduncalc.com/en/password" },
 };
 

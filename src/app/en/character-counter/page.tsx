@@ -5,7 +5,7 @@ import CharCountEn from "./CharCountEn";
 
 export const metadata: Metadata = {
   title: "Character Counter - Word Count, Byte, Sentence Counter",
-  description: "Count characters, words, sentences, and bytes in real-time. Check limits for Twitter, Instagram, YouTube, and more.",
+  description: "How many characters? Paste text — get character count, bytes, words & platform limit checks instantly. Free.",
   alternates: { canonical: "https://moduncalc.com/en/character-counter" },
 };
 

@@ -5,7 +5,7 @@ import SubwayCalc from "./SubwayCalc";
 
 export const metadata: Metadata = {
   title: "Seoul Subway Fare Calculator - Metro Cost & Travel Time",
-  description: "Calculate Seoul subway fares, travel time, and transfer info. Base fare ₩1,250 with T-money card.",
+  description: "Seoul subway fare: how much? Base ₩1,250 with T-money. Calculate cost by distance and number of transfers.",
   alternates: { canonical: "https://moduncalc.com/en/subway" },
 };
 

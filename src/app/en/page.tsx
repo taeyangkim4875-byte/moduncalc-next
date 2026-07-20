@@ -5,7 +5,7 @@ import { WebsiteJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Korea Calculators for Foreigners - Tax, Salary, Pension, Housing",
-  description: "Free calculators for foreigners living in Korea. Flat tax vs progressive, salary after tax, pension refund, jeonse vs wolse, severance pay, and Korean age.",
+  description: "Living in Korea? Free calculators for expats: salary, tax, pension refund, rent, subway & more. 30+ tools, no signup needed.",
   alternates: { canonical: "https://moduncalc.com/en" },
   openGraph: {
     title: "Korea Calculators for Foreigners",

@@ -5,7 +5,7 @@ import DateConverter from "./DateConverter";
 
 export const metadata: Metadata = {
   title: "Korean Date Format Converter - YYYY년 MM월 DD일 Explained",
-  description: "Convert between Korean and international date formats. Understand Korean date notation, lunar calendar dates, and important Korean holidays.",
+  description: "What's today's date in Korean? Convert date formats + see 2026 Korean holidays. Useful for visa & contracts.",
   alternates: { canonical: "https://moduncalc.com/en/date-converter" },
 };
 

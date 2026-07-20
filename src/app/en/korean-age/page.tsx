@@ -5,7 +5,7 @@ import KoreanAgeCalc from "./KoreanAgeCalc";
 
 export const metadata: Metadata = {
   title: "Korean Age Calculator - International vs Korean Age",
-  description: "Convert between international age and Korean age. Enter your birthday to see both systems and understand the difference.",
+  description: "How old are you in Korea? Enter your birthday \u2014 see international age, Korean age & Chinese zodiac instantly.",
   alternates: { canonical: "https://moduncalc.com/en/korean-age" },
 };
 

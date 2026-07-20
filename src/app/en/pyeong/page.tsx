@@ -5,7 +5,7 @@ import PyeongCalcEn from "./PyeongCalcEn";
 
 export const metadata: Metadata = {
   title: "Pyeong to Square Meters Converter - Korean Apartment Size Guide",
-  description: "Convert pyeong (평) to square meters (㎡) and vice versa. Essential for understanding Korean apartment sizes. 1 pyeong = 3.3058 ㎡.",
+  description: "What is 33평 in square meters? Convert Korean pyeong ↔ ㎡ instantly. Essential for apartment hunting in Korea.",
   alternates: { canonical: "https://moduncalc.com/en/pyeong" },
 };
 

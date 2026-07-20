@@ -5,7 +5,7 @@ import TaxComparator from "./TaxComparator";
 
 export const metadata: Metadata = {
   title: "Korea Flat Tax vs Progressive Tax Calculator for Foreigners (2026)",
-  description: "Compare 19% flat tax vs progressive tax rates for foreign workers in Korea. Find which option saves you more and calculate your exact take-home pay.",
+  description: "Should you choose 19% flat tax or progressive? Enter your salary and see exactly which saves you more. Break-even at ~\u20A9160M.",
   alternates: { canonical: "https://moduncalc.com/en/tax-comparison" },
   openGraph: {
     title: "Korea Flat Tax vs Progressive Tax Calculator (2026)",

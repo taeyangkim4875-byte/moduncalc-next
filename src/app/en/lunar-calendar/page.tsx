@@ -5,7 +5,7 @@ import LunarCalendarEn from "./LunarCalendarEn";
 
 export const metadata: Metadata = {
   title: "Korean Lunar Calendar 2026 - Important Dates & Holidays",
-  description: "Find Korean lunar calendar dates for 2026. Seollal, Chuseok, and other traditional holidays. Convert lunar birthday to solar date.",
+  description: "When is Chuseok & Seollal in 2026? Korean lunar calendar dates + D-day countdown to next holiday.",
   alternates: { canonical: "https://moduncalc.com/en/lunar-calendar" },
 };
 

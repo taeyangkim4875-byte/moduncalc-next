@@ -5,7 +5,7 @@ import TimezoneCalc from "./TimezoneCalc";
 
 export const metadata: Metadata = {
   title: "Korea Time Zone Converter (KST) - What Time Is It in Korea?",
-  description: "Convert Korea Standard Time (KST/UTC+9) to your time zone. See current time in Seoul and major world cities.",
+  description: "What time is it in Korea right now? Convert KST (UTC+9) to your time zone instantly. Major cities included.",
   alternates: { canonical: "https://moduncalc.com/en/timezone" },
 };
 

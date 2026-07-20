@@ -5,7 +5,7 @@ import GroceryCalcEn from "./GroceryCalcEn";
 
 export const metadata: Metadata = {
   title: "Korea Grocery Price Guide - How Much Does Food Cost? (2026)",
-  description: "Reference prices for common groceries in Korea. Compare supermarket, convenience store, and market prices.",
+  description: "How much does food cost in Korea? Real prices for fruits, meat, drinks & snacks. Build your weekly budget.",
   alternates: { canonical: "https://moduncalc.com/en/grocery" },
 };
 

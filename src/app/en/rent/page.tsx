@@ -5,7 +5,7 @@ import RentCalcEn from "./RentCalcEn";
 
 export const metadata: Metadata = {
   title: "Jeonse vs Wolse Calculator - Korean Rent Deposit Explained",
-  description: "Convert between jeonse (key money deposit) and wolse (monthly rent) in Korea. Understand the unique Korean rental system and find the best option.",
+  description: "What is jeonse? Convert between Korea's unique deposit system and monthly rent. Essential for apartment hunting.",
   alternates: { canonical: "https://moduncalc.com/en/rent" },
 };
 

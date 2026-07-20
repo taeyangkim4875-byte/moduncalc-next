@@ -5,7 +5,7 @@ import SalaryCalcEn from "./SalaryCalcEn";
 
 export const metadata: Metadata = {
   title: "Korea Salary Calculator - Net Pay After Tax & Insurance (2026)",
-  description: "Calculate your take-home salary in Korea. See exact deductions for National Pension, Health Insurance, Income Tax, and Local Tax based on 2026 rates.",
+  description: "What's your take-home pay in Korea? Enter salary, see exact deductions for pension, health insurance & tax. 2026 rates.",
   alternates: { canonical: "https://moduncalc.com/en/salary" },
 };
 

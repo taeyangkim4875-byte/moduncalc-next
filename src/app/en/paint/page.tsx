@@ -5,7 +5,7 @@ import PaintCalcEn from "./PaintCalcEn";
 
 export const metadata: Metadata = {
   title: "Paint Calculator - How Much Paint Do I Need? (Room Size to Liters)",
-  description: "Calculate how much paint and wallpaper you need for your room. Enter dimensions and get exact quantities with cost estimates.",
+  description: "How many liters of paint do I need? Enter room size — get exact paint & wallpaper quantities with cost estimate.",
   alternates: { canonical: "https://moduncalc.com/en/paint" },
 };
 

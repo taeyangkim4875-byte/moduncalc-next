@@ -5,7 +5,7 @@ import RandomPickerEn from "./RandomPickerEn";
 
 export const metadata: Metadata = {
   title: "Random Number Generator - Lottery, Picker & Shuffler",
-  description: "Generate random numbers, pick lottery numbers, or shuffle a list randomly. Fair and transparent randomization.",
+  description: "Need a fair random pick? Random numbers, Korean lotto (6/45), or shuffle a list. Cryptographically secure.",
   alternates: { canonical: "https://moduncalc.com/en/random" },
 };
 

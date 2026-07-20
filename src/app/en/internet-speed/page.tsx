@@ -5,7 +5,7 @@ import InternetSpeedCalc from "./InternetSpeedCalc";
 
 export const metadata: Metadata = {
   title: "Korea Internet Plans & Speed Guide for Foreigners",
-  description: "Compare Korean internet providers, plans, and speeds. Find the best home internet and mobile data plans for foreigners.",
+  description: "Best internet plan in Korea? Compare KT, SK, LG U+ prices side by side. Home internet + mobile data plans.",
   alternates: { canonical: "https://moduncalc.com/en/internet-speed" },
 };
 

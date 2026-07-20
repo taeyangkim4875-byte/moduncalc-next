@@ -5,7 +5,7 @@ import AlcoholCalcEn from "./AlcoholCalcEn";
 
 export const metadata: Metadata = {
   title: "Blood Alcohol Calculator - When Can I Drive? (Korea BAC Limits)",
-  description: "Calculate your estimated BAC and when you can safely drive in Korea. Korea's strict limit is 0.03% (license suspension). Widmark formula based.",
+  description: "When can I drive after drinking in Korea? Enter what you drank \u2014 see BAC & safe driving time. Korea limit: 0.03%.",
   alternates: { canonical: "https://moduncalc.com/en/alcohol" },
 };
 

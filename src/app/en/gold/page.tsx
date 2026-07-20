@@ -5,7 +5,7 @@ import GoldCalcEn from "./GoldCalcEn";
 
 export const metadata: Metadata = {
   title: "Gold Price Calculator - Grams, Ounces & Korean Don (돈)",
-  description: "Convert gold weight to value. Supports grams, ounces, and Korean don (돈 = 3.75g). Great for shopping in Korea's gold markets.",
+  description: "How much is my gold worth? Convert grams, ounces & Korean don (돈) to value. Great for Jongno gold shopping.",
   alternates: { canonical: "https://moduncalc.com/en/gold" },
 };
 

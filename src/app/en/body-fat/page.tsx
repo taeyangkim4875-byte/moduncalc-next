@@ -5,7 +5,7 @@ import BodyFatCalcEn from "./BodyFatCalcEn";
 
 export const metadata: Metadata = {
   title: "Body Fat Calculator - US Navy Formula (Free & Accurate)",
-  description: "Calculate your body fat percentage using the US Navy method. Just need height, waist, and neck measurements. More accurate than BMI.",
+  description: "What's your body fat %? Just measure waist & neck — US Navy formula. More accurate than BMI alone.",
   alternates: { canonical: "https://moduncalc.com/en/body-fat" },
 };
 

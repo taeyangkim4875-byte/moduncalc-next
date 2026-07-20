@@ -5,7 +5,7 @@ import CalorieCalcEn from "./CalorieCalcEn";
 
 export const metadata: Metadata = {
   title: "Calorie Calculator - Daily TDEE & Weight Loss Plan",
-  description: "Calculate your daily calorie needs based on age, height, weight, and activity level. Get targets for weight loss, maintenance, and gain.",
+  description: "How many calories should you eat? Enter age, height, weight — get TDEE + diet targets. Mifflin-St Jeor formula.",
   alternates: { canonical: "https://moduncalc.com/en/calorie" },
 };
 

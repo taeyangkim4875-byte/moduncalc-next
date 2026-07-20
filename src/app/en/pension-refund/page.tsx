@@ -5,7 +5,7 @@ import PensionRefundCalc from "./PensionRefundCalc";
 
 export const metadata: Metadata = {
   title: "Korea Pension Refund Calculator - Lump-Sum Withdrawal for Foreigners",
-  description: "Calculate how much National Pension (NPS) refund you can get when leaving Korea. Covers eligibility, refund amount, and the application process.",
+  description: "Leaving Korea? Find out how much pension refund you can claim. Enter salary & months worked \u2014 instant calculation.",
   alternates: { canonical: "https://moduncalc.com/en/pension-refund" },
 };
 

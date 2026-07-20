@@ -5,7 +5,7 @@ import CryptoCalcEn from "./CryptoCalcEn";
 
 export const metadata: Metadata = {
   title: "Crypto Profit Calculator - Bitcoin & Crypto Investment Returns",
-  description: "Calculate your cryptocurrency investment returns. Enter buy price, current price, and quantity to see your profit or loss.",
+  description: "How much did you make on crypto? Enter buy & sell price — see profit, fees & net return instantly.",
   alternates: { canonical: "https://moduncalc.com/en/crypto" },
 };
 

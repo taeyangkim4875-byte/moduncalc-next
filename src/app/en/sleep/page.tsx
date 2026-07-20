@@ -5,7 +5,7 @@ import SleepCalcEn from "./SleepCalcEn";
 
 export const metadata: Metadata = {
   title: "Sleep Calculator - Best Time to Sleep & Wake Up (90-min Cycles)",
-  description: "Find your optimal bedtime and wake-up time based on 90-minute sleep cycles. Wake up refreshed, not groggy.",
+  description: "What time should I go to sleep? 90-minute sleep cycle calculator. Wake up refreshed, not groggy.",
   alternates: { canonical: "https://moduncalc.com/en/sleep" },
 };
 

@@ -5,7 +5,7 @@ import TipCalc from "./TipCalc";
 
 export const metadata: Metadata = {
   title: "Korea Tipping Guide & Calculator - Do You Tip in Korea?",
-  description: "Learn about tipping culture in Korea and calculate tips for when you travel abroad. Korea has NO tipping culture.",
+  description: "Do you tip in Korea? Short answer: NO. Learn Korean tipping culture + calculate tips for travel abroad.",
   alternates: { canonical: "https://moduncalc.com/en/tip-calculator" },
 };
 

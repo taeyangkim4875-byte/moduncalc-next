@@ -5,7 +5,7 @@ import SeveranceCalcEn from "./SeveranceCalcEn";
 
 export const metadata: Metadata = {
   title: "Korea Severance Pay Calculator - Retirement Allowance for Foreigners",
-  description: "Calculate your severance pay (퇴직금) in Korea. If you worked 1+ year, you're entitled to at least 1 month salary per year of service.",
+  description: "How much severance pay are you owed? Enter start date & salary — instant calculation. 1+ year = mandatory in Korea.",
   alternates: { canonical: "https://moduncalc.com/en/severance" },
 };
 

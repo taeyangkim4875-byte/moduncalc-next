@@ -5,7 +5,7 @@ import CompoundCalcEn from "./CompoundCalcEn";
 
 export const metadata: Metadata = {
   title: "Compound Interest Calculator - Investment Growth Simulator",
-  description: "Calculate compound interest with monthly contributions. See how your investment grows over time. Includes the Rule of 72.",
+  description: "How much will your investment grow? Compound interest calculator with monthly contributions + Rule of 72.",
   alternates: { canonical: "https://moduncalc.com/en/compound" },
 };
 

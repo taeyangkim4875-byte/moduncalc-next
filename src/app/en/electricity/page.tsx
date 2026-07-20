@@ -5,7 +5,7 @@ import ElectricCalcEn from "./ElectricCalcEn";
 
 export const metadata: Metadata = {
   title: "Korea Electricity Bill Calculator - Understand Your 전기요금 (2026)",
-  description: "Calculate your Korean electricity bill with the progressive tier system. Understand why your summer bill is so high.",
+  description: "Why is my Korean electricity bill so high? Calculate your bill with progressive tiers. Summer discount explained.",
   alternates: { canonical: "https://moduncalc.com/en/electricity" },
 };
 

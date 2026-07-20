@@ -5,7 +5,7 @@ import CostOfLivingCalc from "./CostOfLivingCalc";
 
 export const metadata: Metadata = {
   title: "Korea Cost of Living Calculator - Monthly Budget Estimator (2026)",
-  description: "Estimate your monthly living costs in Seoul, Busan, or other Korean cities. Covers rent, food, transport, utilities, and entertainment for foreigners.",
+  description: "How much does it cost to live in Seoul? Monthly budget breakdown by city & lifestyle. Rent, food, transport included.",
   alternates: { canonical: "https://moduncalc.com/en/cost-of-living" },
 };
 

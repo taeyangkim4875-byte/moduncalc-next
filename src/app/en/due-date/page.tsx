@@ -5,7 +5,7 @@ import DueDateCalcEn from "./DueDateCalcEn";
 
 export const metadata: Metadata = {
   title: "Pregnancy Due Date Calculator - Week by Week Tracker",
-  description: "Calculate your due date and current pregnancy week from your last menstrual period. Includes Korean prenatal checkup schedule.",
+  description: "When is your baby due? Enter last period date — see due date, current week & Korean prenatal checkup schedule.",
   alternates: { canonical: "https://moduncalc.com/en/due-date" },
 };
 

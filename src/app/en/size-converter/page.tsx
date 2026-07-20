@@ -5,7 +5,7 @@ import SizeConverter from "./SizeConverter";
 
 export const metadata: Metadata = {
   title: "Korean Size Converter - Clothing & Shoe Size Chart (US/UK/EU to Korean)",
-  description: "Convert US, UK, and EU clothing and shoe sizes to Korean sizes. Includes men's, women's, and kids' size charts.",
+  description: "What's your Korean clothing size? Convert US, UK, EU sizes to Korean sizes instantly. Shoes & clothes included.",
   alternates: { canonical: "https://moduncalc.com/en/size-converter" },
 };
 

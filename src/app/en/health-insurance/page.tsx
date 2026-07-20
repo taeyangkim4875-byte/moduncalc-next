@@ -5,7 +5,7 @@ import HealthInsCalc from "./HealthInsCalc";
 
 export const metadata: Metadata = {
   title: "Korea Health Insurance Calculator for Foreigners (2026)",
-  description: "Calculate your monthly National Health Insurance (NHI) premium in Korea. Covers employee and self-employed foreigner rates for 2026.",
+  description: "How much is Korean health insurance? Enter your monthly salary \u2014 see your exact NHI premium. Employee vs self-employed.",
   alternates: { canonical: "https://moduncalc.com/en/health-insurance" },
 };
 

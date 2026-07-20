@@ -5,7 +5,7 @@ import WaterIntakeEn from "./WaterIntakeEn";
 
 export const metadata: Metadata = {
   title: "Daily Water Intake Calculator - How Much Water Should You Drink?",
-  description: "Calculate your recommended daily water intake based on weight and activity level.",
+  description: "How much water should you drink daily? Enter weight & activity level — get personalized recommendation in cups.",
   alternates: { canonical: "https://moduncalc.com/en/water-intake" },
 };
 
