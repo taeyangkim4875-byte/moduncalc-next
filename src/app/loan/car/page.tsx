@@ -5,7 +5,7 @@ import CarLoanCalc from "./CarLoanCalc";
 
 export const metadata: Metadata = {
   title: "자동차 할부 계산기 - 월 납입액·취등록세·총 비용",
-  description: "자동차 할부 월 납입액, 취등록세, 총 구매 비용을 한 번에 계산하세요. 선수금, 할부기간, 이자율 반영. 경차·전기차 감면 포함.",
+  description: "자동차 할부 월 얼마? 차량가·선수금·금리 입력하면 월 납입액 + 취등록세 바로 계산.",
   alternates: { canonical: "https://moduncalc.com/loan/car" },
 };
 

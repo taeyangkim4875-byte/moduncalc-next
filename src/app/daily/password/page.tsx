@@ -5,7 +5,7 @@ import PasswordGen from "./PasswordGen";
 
 export const metadata: Metadata = {
   title: "비밀번호 생성기 - 안전한 랜덤 비밀번호 만들기",
-  description: "강력한 랜덤 비밀번호를 즉시 생성. 길이, 대소문자, 숫자, 특수문자 옵션 설정 가능. 비밀번호 강도 표시.",
+  description: "해킹 걱정 없는 안전한 비밀번호를 1초 만에 생성. 길이·특수문자 설정 + 강도 표시.",
   alternates: { canonical: "https://moduncalc.com/daily/password" },
   openGraph: {
     title: "비밀번호 생성기 - 안전한 랜덤 비밀번호 만들기",

@@ -5,7 +5,7 @@ import SleepCalc from "./SleepCalc";
 
 export const metadata: Metadata = {
   title: "수면 시간 계산기 - 몇 시에 자야 개운할까? · 수면 주기",
-  description: "수면 주기(90분)에 맞춰 최적의 취침·기상 시간을 알려드립니다. 개운하게 일어나는 시간 계산.",
+  description: "몇 시에 자야 개운하게 일어날까? 수면 주기 90분에 맞춘 최적의 취침·기상 시간 계산.",
   alternates: { canonical: "https://moduncalc.com/health/sleep" },
   openGraph: {
     title: "수면 시간 계산기 - 몇 시에 자야 개운할까? · 수면 주기",

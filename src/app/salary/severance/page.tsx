@@ -5,7 +5,7 @@ import SeveranceCalc from "./SeveranceCalc";
 
 export const metadata: Metadata = {
   title: "퇴직금 계산기 - 예상 퇴직금 조회",
-  description: "입사일·퇴사일·월급만 입력하면 예상 퇴직금을 바로 계산합니다. 1일 평균임금, 재직기간 자동 산출.",
+  description: "퇴직금 얼마 받을 수 있을까? 입사일·퇴사일·월급 입력하면 예상 퇴직금 바로 계산.",
   alternates: { canonical: "https://moduncalc.com/salary/severance" },
 };
 

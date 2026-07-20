@@ -5,7 +5,7 @@ import TimeCalc from "./TimeCalc";
 
 export const metadata: Metadata = {
   title: "시간 계산기 - 시간 더하기 빼기 · 근무시간 · 시간 차이",
-  description: "두 시간 사이의 차이를 계산하거나, 시간을 더하고 빼세요. 근무시간, 알바 시간 계산에 활용.",
+  description: "출근부터 퇴근까지 실 근무시간은? 시간 차이·더하기·빼기 + 시급 환산까지.",
   alternates: { canonical: "https://moduncalc.com/daily/time" },
   openGraph: {
     title: "시간 계산기 - 시간 더하기 빼기 · 근무시간 · 시간 차이",

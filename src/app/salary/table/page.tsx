@@ -5,7 +5,7 @@ import NetPayTable from './NetPayTable';
 
 export const metadata: Metadata = {
   title: '연봉 실수령액표 · 2026',
-  description: '2026년 연봉별 실수령액을 한눈에 비교하세요. 2,000만원부터 1억 5,000만원까지 4대보험·세금 공제 후 월 실수령액을 확인할 수 있습니다.',
+  description: '연봉 2,000만~1.5억까지 월 실수령액을 한눈에 비교. 4대보험·소득세 공제 후 내 연봉은 월 얼마?',
   alternates: { canonical: "https://moduncalc.com/salary/table" },
   openGraph: { title: "2026 연봉 실수령액표 - 2천만~1.5억 한눈에 비교", description: "연봉별 월 실수령액을 한눈에 비교. 4대보험·소득세 공제 후 실수령액 표. 2026년 최신 요율 반영.", url: "https://moduncalc.com/salary/table" },
 };

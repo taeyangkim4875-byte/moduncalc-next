@@ -5,7 +5,7 @@ import TransferTaxCalc from "./TransferTaxCalc";
 
 export const metadata: Metadata = {
   title: "양도소득세 계산기 - 부동산 양도세",
-  description: "부동산 양도소득세를 간편 계산하세요. 1세대1주택 비과세, 장기보유특별공제, 누진세율 자동 적용.",
+  description: "양도소득세 얼마 나올까? 매수가·매도가 입력하면 장기보유공제·비과세 자동 적용.",
   alternates: { canonical: "https://moduncalc.com/realestate/transfer" },
 };
 

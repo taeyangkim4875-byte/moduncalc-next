@@ -5,7 +5,7 @@ import RandomPicker from "./RandomPicker";
 
 export const metadata: Metadata = {
   title: "랜덤 번호 뽑기 - 숫자 추첨 · 로또 번호 생성기",
-  description: "랜덤 숫자 추첨, 로또 번호 생성, 순서 섞기. 제비뽑기, 당첨자 추첨, 팀 나누기에 활용.",
+  description: "공정한 추첨이 필요할 때! 랜덤 숫자 뽑기 + 로또 번호 생성 + 목록 섞기. 무료.",
   alternates: { canonical: "https://moduncalc.com/daily/random" },
   openGraph: {
     title: "랜덤 번호 뽑기 - 숫자 추첨 · 로또 번호 생성기",

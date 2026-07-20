@@ -5,7 +5,7 @@ import SalaryCalendar from "./SalaryCalendar";
 
 export const metadata: Metadata = {
   title: "월급 달력 - 월급날 D-day & 오늘까지 번 돈",
-  description: "월급날까지 며칠 남았는지, 이번 달 지금까지 얼마를 벌었는지 한눈에 확인하세요.",
+  description: "월급날까지 D-몇일? 이번 달 지금까지 번 돈은? 월급 달력으로 매일 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/salary/calendar" },
 };
 
