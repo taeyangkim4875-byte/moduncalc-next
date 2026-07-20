@@ -5,11 +5,11 @@ import FuelCalc from "./FuelCalc";
 
 export const metadata: Metadata = {
   title: "자동차 연비 계산기 - 연비 측정 · 유류비 · 전기차 전비 비교 (2026)",
-  description: "주행 거리와 주유량으로 실제 연비(km/L)를 측정하고 유류비를 계산. 전기차 전비(km/kWh) 충전비 계산, 내연차 vs 전기차 비용 비교까지.",
+  description: "내 차 실제 연비는? 주행거리·주유량 입력하면 바로 측정. 서울→부산 유류비 + 전기차 비용 비교까지 무료.",
   alternates: { canonical: "https://moduncalc.com/daily/fuel" },
   openGraph: {
     title: "자동차 연비 계산기 - 연비·유류비·전기차 전비 비교 (2026)",
-    description: "내연차 연비 측정, 유류비 계산, 전기차 전비·충전비 계산. 내연차 vs 전기차 연간 비용 비교까지.",
+    description: "연비 측정 + 유류비 계산 + 전기차 충전비 비교. 내연차 vs 전기차 연간 절약액까지.",
     url: "https://moduncalc.com/daily/fuel",
   },
 };

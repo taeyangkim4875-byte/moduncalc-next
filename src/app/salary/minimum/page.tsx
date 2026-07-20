@@ -5,9 +5,9 @@ import MinWageCalculator from './MinWageCalculator';
 
 export const metadata: Metadata = {
   title: '2026 최저시급 계산기 - 시급 10,320원 · 주휴수당 · 월급 환산',
-  description: '2026년 최저시급 10,320원 기준 주휴수당 포함 월급, 연봉을 자동 계산. 주 40시간 월급 215만원. 수습 감액, 주 15시간 미만 기준, 최저임금 위반 확인까지.',
+  description: '2026 최저시급 10,320원, 주휴수당 포함하면 월급 얼마? 시급·근무시간 입력하면 월 예상 급여 바로 계산.',
   alternates: { canonical: "https://moduncalc.com/salary/minimum" },
-  openGraph: { title: "2026 최저시급 계산기 - 시급 10,320원 · 월급 215만원 · 주휴수당", description: "2026년 최저시급 10,320원 기준 주휴수당, 월급, 연봉 환산. 수습 감액 90%, 주 15시간 미만 기준, 시급별 월급 표.", url: "https://moduncalc.com/salary/minimum" },
+  openGraph: { title: "2026 최저시급 계산기 - 시급 10,320원 · 월급 215만원 · 주휴수당", description: "시급 10,320원 기준 월급 215만원. 주휴수당·수습 감액까지 1초 만에 계산.", url: "https://moduncalc.com/salary/minimum" },
 };
 
 export default function MinWagePage() {

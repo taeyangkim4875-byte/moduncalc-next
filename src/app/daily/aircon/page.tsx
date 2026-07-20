@@ -6,7 +6,7 @@ import AirconCalc from "./AirconCalc";
 export const metadata: Metadata = {
   title: "에어컨 전기요금 계산기 - 하루 몇 시간 틀면 얼마? (2026 여름)",
   description:
-    "에어컨 하루 사용 시간과 소비전력으로 월 전기요금을 계산하세요. 2026년 여름 누진 완화 구간 반영. 인버터·정속형 비교.",
+    "에어컨 하루 8시간 틀면 전기세 얼마? 인버터·정속형 비교, 여름 누진 완화 반영. 사용시간별 요금표까지.",
   alternates: { canonical: "https://moduncalc.com/daily/aircon" },
   openGraph: {
     title: "에어컨 전기요금 계산기 - 2026 여름 누진 완화 반영",

@@ -5,9 +5,9 @@ import DoyakCalculator from "./DoyakCalculator";
 
 export const metadata: Metadata = {
   title: "청년도약계좌 계산기 - 지금까지 모은 돈 · 만기 수령액 · 특별중도해지",
-  description: "청년도약계좌 지금까지 얼마 모았는지 확인하세요. 원금+이자+정부기여금 적립액 조회, 3년차 변동금리 반영 만기 수령액, 특별중도해지 사유 안내.",
+  description: "내 도약계좌에 지금까지 얼마 모였을까? 원금+이자+정부기여금 적립액 바로 확인. 변동금리 반영, 특별중도해지 사유 안내.",
   alternates: { canonical: "https://moduncalc.com/savings/doyak" },
-  openGraph: { title: "청년도약계좌 계산기 - 지금까지 모은 돈 · 특별중도해지 (2026)", description: "청년도약계좌 적립액 조회. 원금+이자+정부기여금, 3년차 변동금리 반영, 특별중도해지 9가지 사유 안내.", url: "https://moduncalc.com/savings/doyak" },
+  openGraph: { title: "청년도약계좌 계산기 - 지금까지 모은 돈 · 특별중도해지 (2026)", description: "도약계좌 적립액 조회 + 만기 수령액 + 특별중도해지 9가지 사유. 2026 변동금리 반영.", url: "https://moduncalc.com/savings/doyak" },
 };
 
 export default function Page() {

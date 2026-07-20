@@ -5,7 +5,7 @@ import CharCountCalc from "./CharCountCalc";
 
 export const metadata: Metadata = {
   title: "글자수 세기 - 공백 포함·제외 · 바이트 · 키워드 분석 · 플랫폼별 체크",
-  description: "글자수, 바이트(UTF-8/EUC-KR), 단어수, 문장수를 실시간으로 세고, 자소서·트위터·인스타 등 플랫폼별 제한 초과 여부를 한눈에 확인. 키워드 빈도 분석까지.",
+  description: "자소서 글자수 제한 초과? 붙여넣기만 하면 글자수·바이트·단어수 + 플랫폼별 제한 체크 + 키워드 분석까지 무료.",
   alternates: { canonical: "https://moduncalc.com/daily/charcount" },
   openGraph: {
     title: "글자수 세기 - 자소서·블로그·SNS 글자수 실시간 카운터",

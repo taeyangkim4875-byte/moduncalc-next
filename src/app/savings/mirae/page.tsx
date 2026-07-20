@@ -5,9 +5,9 @@ import MiraeCalculator from "./MiraeCalculator";
 
 export const metadata: Metadata = {
   title: "청년미래적금 계산기 - 지금까지 모은 돈 · 은행별 우대금리 비교 · 만기 수령액",
-  description: "청년미래적금 지금까지 얼마 모았는지 적립액 조회. 은행별 우대금리 비교, 정부기여금 포함 3년 만기 실수령액. KB국민, NH농협, 신한, 하나, 우리, 기업, 우체국.",
+  description: "내 미래적금에 지금 얼마 쌓였을까? 7개 은행 우대금리 한눈에 비교 + 정부기여금 포함 만기 수령액 계산.",
   alternates: { canonical: "https://moduncalc.com/savings/mirae" },
-  openGraph: { title: "청년미래적금 계산기 - 은행별 우대금리 비교 · 지금까지 모은 돈", description: "청년미래적금 적립액 조회, 7개 은행 우대금리 비교, 정부기여금 포함 만기 수령액. 2026년 최신 금리.", url: "https://moduncalc.com/savings/mirae" },
+  openGraph: { title: "청년미래적금 계산기 - 은행별 우대금리 비교 · 지금까지 모은 돈", description: "KB·NH·신한·하나·우리·기업·우체국 우대금리 비교 + 만기 수령액 바로 계산.", url: "https://moduncalc.com/savings/mirae" },
 };
 
 export default function Page() {
