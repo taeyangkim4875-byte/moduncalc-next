@@ -9,6 +9,7 @@ import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
 
 const MIN_WAGE_2026 = 10320;
+const MIN_WAGE_2027 = 10700;
 
 interface CalcResult {
   hourly: number;
@@ -237,6 +238,28 @@ export default function MinWageCalculator() {
                 <span className="font-bold">{won(MIN_WAGE_2026 * 209 * 12)}</span>
               </div>
             </div>
+          </Card>
+
+          {/* ── 2027 최저시급 비교 ── */}
+          <Card>
+            <SectionTitle num="5">2027년 최저임금 확정 (내년)</SectionTitle>
+            <div className="bg-[var(--primary-weak)] rounded-xl p-3.5 mb-3 text-center">
+              <div className="text-xs font-bold text-[var(--primary-dark)]">2027년 최저시급</div>
+              <div className="text-[28px] font-extrabold text-[var(--primary-dark)]">{MIN_WAGE_2027.toLocaleString()}원</div>
+              <div className="text-xs text-[var(--sub)] mt-1">2026년 대비 +{(MIN_WAGE_2027 - MIN_WAGE_2026).toLocaleString()}원 ({((MIN_WAGE_2027 - MIN_WAGE_2026) / MIN_WAGE_2026 * 100).toFixed(1)}% 인상)</div>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-[13px]">
+                <thead><tr className="border-b-2 border-[var(--line)]"><th className="py-2 text-left text-xs text-[var(--sub)] font-bold">구분</th><th className="py-2 text-right text-xs text-[var(--sub)] font-bold">2026년</th><th className="py-2 text-right text-xs text-[var(--primary-dark)] font-bold">2027년</th><th className="py-2 text-right text-xs text-[var(--sub)] font-bold">차이</th></tr></thead>
+                <tbody>
+                  <tr className="border-b border-[var(--line)]"><td className="py-2 font-semibold">시급</td><td className="py-2 text-right">{MIN_WAGE_2026.toLocaleString()}원</td><td className="py-2 text-right font-bold text-[var(--primary-dark)]">{MIN_WAGE_2027.toLocaleString()}원</td><td className="py-2 text-right text-[var(--green)] font-bold">+{(MIN_WAGE_2027 - MIN_WAGE_2026).toLocaleString()}원</td></tr>
+                  <tr className="border-b border-[var(--line)]"><td className="py-2 font-semibold">일급 (8h)</td><td className="py-2 text-right">{won(MIN_WAGE_2026 * 8)}</td><td className="py-2 text-right font-bold text-[var(--primary-dark)]">{won(MIN_WAGE_2027 * 8)}</td><td className="py-2 text-right text-[var(--green)] font-bold">+{won((MIN_WAGE_2027 - MIN_WAGE_2026) * 8)}</td></tr>
+                  <tr className="border-b border-[var(--line)]"><td className="py-2 font-semibold">월급 (209h)</td><td className="py-2 text-right">{won(MIN_WAGE_2026 * 209)}</td><td className="py-2 text-right font-bold text-[var(--primary-dark)]">{won(MIN_WAGE_2027 * 209)}</td><td className="py-2 text-right text-[var(--green)] font-bold">+{won((MIN_WAGE_2027 - MIN_WAGE_2026) * 209)}</td></tr>
+                  <tr className="border-b border-[var(--line)]"><td className="py-2 font-semibold">연봉</td><td className="py-2 text-right">{won(MIN_WAGE_2026 * 209 * 12)}</td><td className="py-2 text-right font-bold text-[var(--primary-dark)]">{won(MIN_WAGE_2027 * 209 * 12)}</td><td className="py-2 text-right text-[var(--green)] font-bold">+{won((MIN_WAGE_2027 - MIN_WAGE_2026) * 209 * 12)}</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="text-[11px] text-[var(--sub)] mt-2 leading-relaxed">2027년 최저임금은 2027.1.1부터 적용됩니다. 최저임금위원회 2026.7.15 의결.</div>
           </Card>
 
           <div className="text-[11.5px] text-[var(--sub)] leading-relaxed text-center py-1 mt-0.5">
