@@ -42,6 +42,10 @@ const KOREA_CULTURE = [
   { href: '/en/date-converter', icon: '📅', title: 'Date Converter', desc: 'Korean date format' },
   { href: '/en/lunar-calendar', icon: '🌙', title: 'Lunar Calendar 2026', desc: 'Seollal, Chuseok dates' },
   { href: '/en/alcohol', icon: '🍺', title: 'Blood Alcohol (DUI)', desc: 'Korea limit: 0.03%' },
+  { href: '/en/visa-check', icon: '🛂', title: 'Visa Checker', desc: 'Which visa do you need?' },
+  { href: '/en/hospital', icon: '🏥', title: 'Hospital Costs', desc: 'Medical expenses guide' },
+  { href: '/en/phone-cost', icon: '📱', title: 'Phone Plans', desc: 'Cheapest mobile plans' },
+  { href: '/en/delivery-fee', icon: '📦', title: 'Delivery Cost', desc: '택배 shipping prices' },
 ];
 
 const OTHER_TOOLS = [

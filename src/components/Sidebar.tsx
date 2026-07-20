@@ -163,6 +163,10 @@ const MENUS_EN: MenuItem[] = [
     { label: 'Date Converter', href: '/en/date-converter' },
     { label: 'Lunar Calendar', href: '/en/lunar-calendar' },
     { label: 'Blood Alcohol (DUI)', href: '/en/alcohol' },
+    { label: 'Visa Checker', href: '/en/visa-check' },
+    { label: 'Hospital Costs', href: '/en/hospital' },
+    { label: 'Phone Plans', href: '/en/phone-cost' },
+    { label: 'Delivery Cost', href: '/en/delivery-fee' },
   ]},
   { href: '/en/guide/tax-guide', ico: '📖', label: 'Guides', sub: [
     { label: 'Income Tax Guide', href: '/en/guide/tax-guide' },
