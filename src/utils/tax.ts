@@ -1,6 +1,6 @@
 // 2026년 4대보험 요율 (근로자 부담분)
 export const NP_RATE = 0.0475;       // 국민연금 4.75%
-export const NP_CAP = 6370000;       // 기준소득월액 상한
+export const NP_CAP = 6590000;       // 기준소득월액 상한 (2026.7~ 659만원)
 export const HI_RATE = 0.03595;      // 건강보험 3.595%
 export const LTC_RATE = 0.1314;      // 장기요양 = 건강보험료의 13.14%
 export const EI_RATE = 0.009;        // 고용보험 0.9%

@@ -6,7 +6,8 @@ import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 
-// 2026 기준: 일반 육아휴직 통상임금 80%, 상한 160만, 하한 70만
+// 2026 하반기 개편: 일반 육아휴직 통상임금 80%, 단계적 상한
+// 1~3개월: 상한 250만, 4~6개월: 상한 200만, 7개월~: 상한 160만, 하한 70만
 // 6+6: 통상임금 100%, 상한 월 450만 (첫 6개월)
 // 사후지급금 폐지 (2026~), 매월 전액 지급
 // 최대 사용기간: 1년 6개월
@@ -27,8 +28,9 @@ export default function ParentalCalc() {
         // 6+6: 통상임금 100%, 상한 450만
         monthly = Math.min(wageWon, 4500000);
       } else {
-        // 일반: 통상임금 80%, 상한 160만, 하한 70만
-        monthly = Math.max(700000, Math.min(wageWon * 0.8, 1600000));
+        // 일반: 통상임금 80%, 단계적 상한
+        const cap = m <= 3 ? 2500000 : m <= 6 ? 2000000 : 1600000;
+        monthly = Math.max(700000, Math.min(wageWon * 0.8, cap));
       }
       monthlyList.push(Math.round(monthly));
     }
@@ -104,9 +106,11 @@ export default function ParentalCalc() {
         <table className="w-full border-collapse text-[13px]">
           <thead><tr className="border-b-2 border-[var(--line)]"><th className="py-2 text-left text-xs text-[var(--sub)] font-bold">구분</th><th className="py-2 text-right text-xs text-[var(--sub)] font-bold">지급률</th><th className="py-2 text-right text-xs text-[var(--sub)] font-bold">상한/하한</th></tr></thead>
           <tbody>
-            <tr className="border-b border-[var(--line)]"><td className="py-2 font-bold">일반 육아휴직</td><td className="py-2 text-right">통상임금 80%</td><td className="py-2 text-right">상한 160만 / 하한 70만</td></tr>
-            <tr className="border-b border-[var(--line)] bg-[var(--primary-weak)]"><td className="py-2 font-bold">6+6 (첫 6개월)</td><td className="py-2 text-right">통상임금 100%</td><td className="py-2 text-right">상한 450만</td></tr>
-            <tr className="border-b border-[var(--line)]"><td className="py-2 font-bold">6+6 (7개월~)</td><td className="py-2 text-right">통상임금 80%</td><td className="py-2 text-right">상한 160만 / 하한 70만</td></tr>
+            <tr className="border-b border-[var(--line)]"><td className="py-2 font-bold">일반 1~3개월</td><td className="py-2 text-right">통상임금 80%</td><td className="py-2 text-right font-bold text-[var(--primary-dark)]">상한 250만 / 하한 70만</td></tr>
+            <tr className="border-b border-[var(--line)]"><td className="py-2 font-bold">일반 4~6개월</td><td className="py-2 text-right">통상임금 80%</td><td className="py-2 text-right">상한 200만 / 하한 70만</td></tr>
+            <tr className="border-b border-[var(--line)]"><td className="py-2 font-bold">일반 7개월~</td><td className="py-2 text-right">통상임금 80%</td><td className="py-2 text-right">상한 160만 / 하한 70만</td></tr>
+            <tr className="border-b border-[var(--line)] bg-[var(--primary-weak)]"><td className="py-2 font-bold">6+6 (첫 6개월)</td><td className="py-2 text-right">통상임금 100%</td><td className="py-2 text-right font-bold text-[var(--primary-dark)]">상한 450만</td></tr>
+            <tr className="border-b border-[var(--line)]"><td className="py-2 font-bold">6+6 (7개월~)</td><td className="py-2 text-right">통상임금 80%</td><td className="py-2 text-right">단계적 상한</td></tr>
           </tbody>
         </table>
         <div className="text-[11px] text-[var(--sub)] mt-2">2026년 기준 · 사후지급금 폐지, 매월 전액 지급 · 최대 18개월</div>
@@ -115,7 +119,7 @@ export default function ParentalCalc() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">📖 육아휴직 급여란?</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">육아휴직 급여는 만 8세 이하 또는 초등학교 2학년 이하의 자녀를 가진 근로자가 육아휴직을 사용할 때 고용보험에서 지급하는 급여입니다. 2026년부터 최대 18개월까지 사용할 수 있으며, 사후지급금(25%)이 폐지되어 매월 전액 지급됩니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">일반 육아휴직은 통상임금의 80%(상한 월 160만원, 하한 70만원)를 지급합니다. 6+6 부모육아휴직제를 적용하면 생후 18개월 이내 자녀에 대해 부모가 동시 또는 순차적으로 휴직할 경우, 첫 6개월은 통상임금 100%(상한 월 450만원)까지 받을 수 있습니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">2026년 하반기부터 일반 육아휴직 급여 상한이 단계적으로 인상되었습니다. 1~3개월차 월 최대 250만원, 4~6개월차 200만원, 7개월차 이후 160만원입니다. 6+6 부모육아휴직제를 적용하면 첫 6개월은 통상임금 100%(상한 월 450만원)까지 받을 수 있습니다.</p>
       </Card>
       <Card>
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
