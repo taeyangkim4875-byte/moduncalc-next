@@ -148,6 +148,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/about', priority: 0.5 },
     { path: '/privacy', priority: 0.5 },
     { path: '/terms', priority: 0.5 },
+    { path: '/disclaimer', priority: 0.5 },
   ];
 
   return pages.map(({ path, priority }) => ({

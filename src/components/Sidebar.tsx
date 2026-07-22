@@ -274,6 +274,7 @@ export default function Sidebar() {
             <Link href="/contact" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Contact' : '문의'}</Link>
             <Link href="/privacy" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보'}</Link>
             <Link href="/terms" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Terms' : '이용약관'}</Link>
+            <Link href="/disclaimer" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Disclaimer' : '면책조항'}</Link>
           </div>
         </div>
       </aside>
