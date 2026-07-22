@@ -269,12 +269,12 @@ export default function Sidebar() {
           {!isEn && (
             <Link href="/en" className="text-xs text-[var(--primary)] no-underline font-bold hover:text-[var(--primary-dark)]">🌍 English</Link>
           )}
-          <div className="flex gap-3.5">
-            <Link href="/about" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>
-            <Link href="/contact" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Contact' : '문의'}</Link>
-            <Link href="/privacy" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보'}</Link>
-            <Link href="/terms" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Terms' : '이용약관'}</Link>
-            <Link href="/disclaimer" className="text-xs text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Disclaimer' : '면책조항'}</Link>
+          <div className="flex flex-wrap gap-x-3 gap-y-1">
+            <Link href="/about" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>
+            <Link href="/contact" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Contact' : '문의'}</Link>
+            <Link href="/privacy" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보'}</Link>
+            <Link href="/terms" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Terms' : '약관'}</Link>
+            <Link href="/disclaimer" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Disclaimer' : '면책'}</Link>
           </div>
         </div>
       </aside>
