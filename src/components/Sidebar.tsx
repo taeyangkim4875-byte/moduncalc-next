@@ -276,21 +276,25 @@ export default function Sidebar() {
           })}
         </nav>
 
-        <div className="mt-auto px-4 py-3 border-t border-[var(--line)]">
-          <div className="flex flex-wrap gap-x-2.5 gap-y-1 text-[10px]">
-            <Link href="/about" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>
-            <span className="text-[var(--line)]">·</span>
-            <Link href="/contact" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Contact' : '문의'}</Link>
-            <span className="text-[var(--line)]">·</span>
-            <Link href="/privacy" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보'}</Link>
-            <span className="text-[var(--line)]">·</span>
-            <Link href="/terms" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Terms' : '약관'}</Link>
-            <span className="text-[var(--line)]">·</span>
-            <Link href="/disclaimer" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Disclaimer' : '면책'}</Link>
-          </div>
-          <Link href={isEn ? '/' : '/en'} className="block mt-2 text-[10px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--primary)]">
-            {isEn ? '🇰🇷 Korean version' : '🌍 English version'}
+        <div className="mt-auto border-t border-[var(--line)]">
+          <Link
+            href={isEn ? '/' : '/en'}
+            className="flex items-center gap-2 px-4 py-2.5 text-[12px] font-bold no-underline text-[var(--ink)] hover:bg-[var(--bg)] transition-colors"
+          >
+            <span>{isEn ? '🇰🇷' : '🌍'}</span>
+            <span>{isEn ? 'Korean version' : 'English version'}</span>
           </Link>
+          <div className="px-4 pb-3 pt-0 grid grid-cols-3 gap-1">
+            {[
+              { href: '/about', ko: '소개', en: 'About' },
+              { href: '/contact', ko: '문의', en: 'Contact' },
+              { href: '/privacy', ko: '개인정보', en: 'Privacy' },
+              { href: '/terms', ko: '약관', en: 'Terms' },
+              { href: '/disclaimer', ko: '면책', en: 'Disclaimer' },
+            ].map(l => (
+              <Link key={l.href} href={l.href} className="text-[10px] text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? l.en : l.ko}</Link>
+            ))}
+          </div>
         </div>
       </aside>
     </>
