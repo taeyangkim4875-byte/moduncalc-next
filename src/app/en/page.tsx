@@ -50,6 +50,11 @@ const KOREA_CULTURE = [
   { href: '/en/emergency', icon: '🚨', title: 'Emergency Numbers', desc: '112, 119, 1345 & more' },
   { href: '/en/korean-phrases', icon: '🗣️', title: 'Korean Phrases', desc: '50 must-know phrases' },
   { href: '/en/tax-calendar', icon: '📅', title: 'Tax Calendar 2026', desc: 'Filing deadlines' },
+  { href: '/en/income-tax', icon: '💰', title: 'Income Tax Calculator', desc: 'Tax brackets & rate' },
+  { href: '/en/exchange-tip', icon: '💱', title: 'Exchange Tips', desc: 'Best rates in Korea' },
+  { href: '/en/public-holiday', icon: '🎌', title: 'Public Holidays 2026', desc: 'All 15 holidays' },
+  { href: '/en/salary-negotiation', icon: '💼', title: 'Salary Guide', desc: 'Pay by industry' },
+  { href: '/en/weather', icon: '🌤️', title: 'Weather Guide', desc: 'Monthly forecast' },
 ];
 
 const OTHER_TOOLS = [

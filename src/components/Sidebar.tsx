@@ -171,6 +171,11 @@ const MENUS_EN: MenuItem[] = [
     { label: 'Emergency Numbers', href: '/en/emergency' },
     { label: 'Korean Phrases', href: '/en/korean-phrases' },
     { label: 'Tax Calendar', href: '/en/tax-calendar' },
+    { label: 'Income Tax', href: '/en/income-tax' },
+    { label: 'Exchange Tips', href: '/en/exchange-tip' },
+    { label: 'Public Holidays', href: '/en/public-holiday' },
+    { label: 'Salary Guide', href: '/en/salary-negotiation' },
+    { label: 'Weather Guide', href: '/en/weather' },
   ]},
   { href: '/en/guide/tax-guide', ico: '📖', label: 'Guides', sub: [
     { label: 'Income Tax Guide', href: '/en/guide/tax-guide' },
