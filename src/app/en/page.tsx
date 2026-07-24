@@ -34,27 +34,30 @@ const KOREA_LIVING = [
   { href: '/en/gold', icon: '🪙', title: 'Gold Price', desc: 'Korean don (돈) converter' },
 ];
 
-const KOREA_CULTURE = [
-  { href: '/en/korean-age', icon: '🎂', title: 'Korean Age', desc: 'How old are you in Korea?' },
-  { href: '/en/size-converter', icon: '👟', title: 'Size Converter', desc: 'Korean clothing & shoe sizes' },
-  { href: '/en/tip-calculator', icon: '💵', title: 'Tipping Guide', desc: 'No tip culture in Korea' },
-  { href: '/en/timezone', icon: '🕐', title: 'Time Zone (KST)', desc: 'Korea time converter' },
-  { href: '/en/date-converter', icon: '📅', title: 'Date Converter', desc: 'Korean date format' },
-  { href: '/en/lunar-calendar', icon: '🌙', title: 'Lunar Calendar 2026', desc: 'Seollal, Chuseok dates' },
-  { href: '/en/alcohol', icon: '🍺', title: 'Blood Alcohol (DUI)', desc: 'Korea limit: 0.03%' },
+const KOREA_PRACTICAL = [
   { href: '/en/visa-check', icon: '🛂', title: 'Visa Checker', desc: 'Which visa do you need?' },
+  { href: '/en/move-in-cost', icon: '🏠', title: 'Move-in Cost', desc: 'Deposit + agent + setup' },
   { href: '/en/hospital', icon: '🏥', title: 'Hospital Costs', desc: 'Medical expenses guide' },
   { href: '/en/phone-cost', icon: '📱', title: 'Phone Plans', desc: 'Cheapest mobile plans' },
-  { href: '/en/delivery-fee', icon: '📦', title: 'Delivery Cost', desc: '택배 shipping prices' },
-  { href: '/en/move-in-cost', icon: '🏠', title: 'Move-in Cost', desc: 'Deposit + agent + setup' },
-  { href: '/en/emergency', icon: '🚨', title: 'Emergency Numbers', desc: '112, 119, 1345 & more' },
-  { href: '/en/korean-phrases', icon: '🗣️', title: 'Korean Phrases', desc: '50 must-know phrases' },
-  { href: '/en/tax-calendar', icon: '📅', title: 'Tax Calendar 2026', desc: 'Filing deadlines' },
-  { href: '/en/income-tax', icon: '💰', title: 'Income Tax Calculator', desc: 'Tax brackets & rate' },
+  { href: '/en/delivery-fee', icon: '📦', title: 'Delivery Cost', desc: 'Shipping prices' },
+  { href: '/en/emergency', icon: '🚨', title: 'Emergency Numbers', desc: '112, 119, 1345' },
   { href: '/en/exchange-tip', icon: '💱', title: 'Exchange Tips', desc: 'Best rates in Korea' },
-  { href: '/en/public-holiday', icon: '🎌', title: 'Public Holidays 2026', desc: 'All 15 holidays' },
+  { href: '/en/income-tax', icon: '💰', title: 'Income Tax', desc: 'Tax brackets & rate' },
+  { href: '/en/tax-calendar', icon: '📅', title: 'Tax Calendar', desc: 'Filing deadlines' },
   { href: '/en/salary-negotiation', icon: '💼', title: 'Salary Guide', desc: 'Pay by industry' },
+];
+
+const KOREA_CULTURE = [
+  { href: '/en/korean-age', icon: '🎂', title: 'Korean Age', desc: 'How old are you in Korea?' },
+  { href: '/en/korean-phrases', icon: '🗣️', title: 'Korean Phrases', desc: '50 must-know phrases' },
+  { href: '/en/size-converter', icon: '👟', title: 'Size Converter', desc: 'Clothing & shoe sizes' },
+  { href: '/en/tip-calculator', icon: '💵', title: 'Tipping Guide', desc: 'No tipping in Korea' },
+  { href: '/en/timezone', icon: '🕐', title: 'Time Zone (KST)', desc: 'Korea time converter' },
+  { href: '/en/date-converter', icon: '📅', title: 'Date Converter', desc: 'Korean date format' },
+  { href: '/en/lunar-calendar', icon: '🌙', title: 'Lunar Calendar', desc: 'Seollal, Chuseok' },
+  { href: '/en/public-holiday', icon: '🎌', title: 'Public Holidays', desc: 'All 15 holidays' },
   { href: '/en/weather', icon: '🌤️', title: 'Weather Guide', desc: 'Monthly forecast' },
+  { href: '/en/alcohol', icon: '🍺', title: 'Blood Alcohol', desc: 'DUI limit: 0.03%' },
 ];
 
 const OTHER_TOOLS = [
@@ -107,7 +110,8 @@ export default function EnHome() {
 
       <Section title="💰 Money & Tax" items={KOREA_ESSENTIALS} />
       <Section title="🏠 Living in Korea" items={KOREA_LIVING} />
-      <Section title="🇰🇷 Korean Culture & Daily Life" items={KOREA_CULTURE} />
+      <Section title="🛂 Practical Tools" items={KOREA_PRACTICAL} />
+      <Section title="🇰🇷 Korean Culture" items={KOREA_CULTURE} />
       <Section title="🔧 Other Tools" items={OTHER_TOOLS} />
 
       <div className="mt-4 text-center">
