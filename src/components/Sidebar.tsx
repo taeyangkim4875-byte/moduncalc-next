@@ -284,16 +284,12 @@ export default function Sidebar() {
             <span>{isEn ? '🇰🇷' : '🌍'}</span>
             <span>{isEn ? 'Korean version' : 'English version'}</span>
           </Link>
-          <div className="px-4 pb-3 pt-0">
-            {[
-              { href: '/about', ko: '소개', en: 'About' },
-              { href: '/contact', ko: '문의', en: 'Contact' },
-              { href: '/privacy', ko: '개인정보', en: 'Privacy' },
-              { href: '/terms', ko: '약관', en: 'Terms' },
-              { href: '/disclaimer', ko: '면책', en: 'Disclaimer' },
-            ].map(l => (
-              <Link key={l.href} href={l.href} className="block py-1 text-[11px] text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? l.en : l.ko}</Link>
-            ))}
+          <div className="px-4 pb-3 pt-0 text-[10px] text-[var(--sub)] leading-relaxed">
+            <Link href="/about" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>{' · '}
+            <Link href="/contact" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? 'Contact' : '문의'}</Link>{' · '}
+            <Link href="/privacy" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보'}</Link>{' · '}
+            <Link href="/terms" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? 'Terms' : '약관'}</Link>{' · '}
+            <Link href="/disclaimer" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? 'Disclaimer' : '면책'}</Link>
           </div>
         </div>
       </aside>
