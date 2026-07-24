@@ -284,7 +284,7 @@ export default function Sidebar() {
             <span>{isEn ? '🇰🇷' : '🌍'}</span>
             <span>{isEn ? 'Korean version' : 'English version'}</span>
           </Link>
-          <div className="px-4 pb-3 pt-0 grid grid-cols-3 gap-1">
+          <div className="px-4 pb-3 pt-0">
             {[
               { href: '/about', ko: '소개', en: 'About' },
               { href: '/contact', ko: '문의', en: 'Contact' },
@@ -292,7 +292,7 @@ export default function Sidebar() {
               { href: '/terms', ko: '약관', en: 'Terms' },
               { href: '/disclaimer', ko: '면책', en: 'Disclaimer' },
             ].map(l => (
-              <Link key={l.href} href={l.href} className="text-[10px] text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? l.en : l.ko}</Link>
+              <Link key={l.href} href={l.href} className="block py-1 text-[11px] text-[var(--sub)] no-underline hover:text-[var(--ink)]">{isEn ? l.en : l.ko}</Link>
             ))}
           </div>
         </div>
