@@ -276,20 +276,21 @@ export default function Sidebar() {
           })}
         </nav>
 
-        <div className="mt-auto px-4 py-3.5 border-t border-[var(--line)] flex flex-col gap-2">
-          {isEn && (
-            <Link href="/" className="text-xs text-[var(--primary)] no-underline font-bold hover:text-[var(--primary-dark)]">🇰🇷 한국어로 보기</Link>
-          )}
-          {!isEn && (
-            <Link href="/en" className="text-xs text-[var(--primary)] no-underline font-bold hover:text-[var(--primary-dark)]">🌍 English</Link>
-          )}
-          <div className="flex flex-wrap gap-x-3 gap-y-1">
-            <Link href="/about" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>
-            <Link href="/contact" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Contact' : '문의'}</Link>
-            <Link href="/privacy" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보'}</Link>
-            <Link href="/terms" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Terms' : '약관'}</Link>
-            <Link href="/disclaimer" className="text-[11px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Disclaimer' : '면책'}</Link>
+        <div className="mt-auto px-4 py-3 border-t border-[var(--line)]">
+          <div className="flex flex-wrap gap-x-2.5 gap-y-1 text-[10px]">
+            <Link href="/about" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'About' : '소개'}</Link>
+            <span className="text-[var(--line)]">·</span>
+            <Link href="/contact" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Contact' : '문의'}</Link>
+            <span className="text-[var(--line)]">·</span>
+            <Link href="/privacy" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Privacy' : '개인정보'}</Link>
+            <span className="text-[var(--line)]">·</span>
+            <Link href="/terms" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Terms' : '약관'}</Link>
+            <span className="text-[var(--line)]">·</span>
+            <Link href="/disclaimer" className="text-[var(--sub)] no-underline font-semibold hover:text-[var(--ink)]">{isEn ? 'Disclaimer' : '면책'}</Link>
           </div>
+          <Link href={isEn ? '/' : '/en'} className="block mt-2 text-[10px] text-[var(--sub)] no-underline font-semibold hover:text-[var(--primary)]">
+            {isEn ? '🇰🇷 Korean version' : '🌍 English version'}
+          </Link>
         </div>
       </aside>
     </>
