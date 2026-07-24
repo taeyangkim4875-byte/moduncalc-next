@@ -7,7 +7,7 @@ import { FaqJsonLd } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Renting an Apartment in Korea as a Foreigner - Complete Guide 2026",
   description:
-    "How to find and rent an apartment in Korea. Jeonse vs wolse, real estate agents, contracts, deposits, and tenant rights.",
+    "Renting in Korea as a foreigner? Jeonse vs wolse explained, how to find apartments, contract terms in English, deposit protection.",
   alternates: { canonical: "https://moduncalc.com/en/guide/apartment-guide" },
   openGraph: {
     title: "Renting an Apartment in Korea as a Foreigner - Complete Guide 2026",

@@ -5,7 +5,7 @@ import VisaCheckCalc from "./VisaCheckCalc";
 
 export const metadata: Metadata = {
   title: "Korea Visa Checker - Which Visa Do You Need? (2026)",
-  description: "Which Korean visa fits you? Answer 5 questions and find your visa type, requirements & application process. E-2, E-7, F-2, F-4, F-5, F-6.",
+  description: "Which Korean visa do you need? Take a 5-question quiz — get your visa type, requirements & how to apply. E-2, E-7, F-2, F-5 covered.",
   alternates: { canonical: "https://moduncalc.com/en/visa-check" },
 };
 

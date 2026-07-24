@@ -5,7 +5,7 @@ import TaxCalendarCalc from "./TaxCalendarCalc";
 
 export const metadata: Metadata = {
   title: "Korea Tax Calendar 2026 - Important Deadlines for Foreigners",
-  description: "Never miss a tax deadline in Korea. Monthly calendar of tax filing dates, insurance payments, and financial deadlines for 2026.",
+  description: "When is Korean tax filing due? 2026 tax calendar with D-day countdown. Year-end settlement, income tax, VAT deadlines.",
   alternates: { canonical: "https://moduncalc.com/en/tax-calendar" },
 };
 

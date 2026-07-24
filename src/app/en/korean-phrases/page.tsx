@@ -5,7 +5,7 @@ import KoreanPhrasesGuide from "./KoreanPhrasesGuide";
 
 export const metadata: Metadata = {
   title: "Essential Korean Phrases for Foreigners - Daily Life Survival Guide",
-  description: "50 must-know Korean phrases for daily life: greetings, shopping, restaurant, hospital, taxi, and emergency situations.",
+  description: "Don't speak Korean? 50 survival phrases with pronunciation: restaurant, taxi, shopping, hospital & emergency. Free printable guide.",
   alternates: { canonical: "https://moduncalc.com/en/korean-phrases" },
 };
 

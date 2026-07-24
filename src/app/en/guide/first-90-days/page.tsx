@@ -7,7 +7,7 @@ import { FaqJsonLd } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "First 90 Days in Korea - Essential Checklist for New Foreigners",
   description:
-    "Just arrived in Korea? Complete checklist for your first 90 days: ARC, bank account, phone, insurance, housing, and more.",
+    "Just arrived in Korea? Week-by-week checklist: ARC, bank account, phone, housing, insurance. Don't miss these critical steps.",
   alternates: { canonical: "https://moduncalc.com/en/guide/first-90-days" },
   openGraph: {
     title: "First 90 Days in Korea - Essential Checklist for New Foreigners",

@@ -5,7 +5,7 @@ import PhoneCostCalc from "./PhoneCostCalc";
 
 export const metadata: Metadata = {
   title: "Korea Phone Plan Calculator - Compare Mobile Costs (2026)",
-  description: "Which Korean phone plan is cheapest? Compare SKT, KT, LG U+ and MVNOs. Find the best data plan for foreigners.",
+  description: "Cheapest phone plan in Korea? Compare SKT, KT, LG U+ vs MVNOs from ₩25,000/month. Find the best deal for foreigners.",
   alternates: { canonical: "https://moduncalc.com/en/phone-cost" },
 };
 

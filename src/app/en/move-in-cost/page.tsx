@@ -5,7 +5,7 @@ import MoveInCostCalc from "./MoveInCostCalc";
 
 export const metadata: Metadata = {
   title: "Korea Move-in Cost Calculator - Deposit, Agent Fee & Setup Costs",
-  description: "Moving into a Korean apartment? Calculate total move-in costs: deposit, agent fee, utility setup, and first month expenses.",
+  description: "How much to move into a Korean apartment? Calculate deposit + agent fee + utility setup. Know your total before signing.",
   alternates: { canonical: "https://moduncalc.com/en/move-in-cost" },
 };
 

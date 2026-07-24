@@ -5,7 +5,7 @@ import DeliveryFeeCalc from "./DeliveryFeeCalc";
 
 export const metadata: Metadata = {
   title: "Korea Delivery & Shipping Cost Calculator - 택배비 Guide",
-  description: "How much does shipping cost in Korea? Compare 택배 prices by size & weight. CJ대한통운, 로젠, 한진, 우체국 comparison.",
+  description: "Shipping a package in Korea? Compare 택배 prices: CJ, Logen, Hanjin, Post Office. Small package from ₩3,500.",
   alternates: { canonical: "https://moduncalc.com/en/delivery-fee" },
 };
 

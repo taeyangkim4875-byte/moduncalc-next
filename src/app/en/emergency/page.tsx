@@ -5,7 +5,7 @@ import EmergencyGuide from "./EmergencyGuide";
 
 export const metadata: Metadata = {
   title: "Korea Emergency Numbers & Useful Contacts for Foreigners",
-  description: "Essential emergency numbers in Korea: police 112, fire 119, immigration 1345. Plus hospitals, embassies, and helplines.",
+  description: "Emergency in Korea? Police 112, Ambulance 119, Immigration 1345. Tap to call. Hospitals, embassies & Korean phrases included.",
   alternates: { canonical: "https://moduncalc.com/en/emergency" },
 };
 

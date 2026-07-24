@@ -5,7 +5,7 @@ import HospitalCostCalc from "./HospitalCostCalc";
 
 export const metadata: Metadata = {
   title: "Korea Hospital Cost Guide - Medical Expenses for Foreigners",
-  description: "How much does a doctor visit cost in Korea? NHI copay rates for clinics, hospitals, dental, ER. With vs without insurance.",
+  description: "Doctor visit in Korea: how much? See exact costs with vs without insurance. Clinic ₩5,000, ER ₩20,000+. NHI copay rates explained.",
   alternates: { canonical: "https://moduncalc.com/en/hospital" },
 };
 

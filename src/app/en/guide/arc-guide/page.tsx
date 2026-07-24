@@ -7,7 +7,7 @@ import { FaqJsonLd } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "How to Get Your ARC (Alien Registration Card) in Korea - 2026 Guide",
   description:
-    "Step-by-step guide to getting your Residence Card (ARC/외국인등록증) in Korea. Documents, cost ₩30,000, timeline, and what to do after.",
+    "How to get your ARC in Korea? Step-by-step: documents, cost ₩30,000, timeline 2-3 weeks. Mobile ARC now available.",
   alternates: { canonical: "https://moduncalc.com/en/guide/arc-guide" },
   openGraph: {
     title: "How to Get Your ARC (Alien Registration Card) in Korea - 2026 Guide",

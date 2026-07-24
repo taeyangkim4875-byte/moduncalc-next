@@ -7,7 +7,7 @@ import { FaqJsonLd } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Korean Food Guide for Foreigners - Ordering, Prices & Must-Try Dishes",
   description:
-    "How to order food in Korea as a foreigner. Restaurant etiquette, menu translations, prices, delivery apps, and 20 must-try dishes.",
+    "What to eat in Korea? 20 must-try dishes with prices, how to order, delivery apps & restaurant etiquette for foreigners.",
   alternates: { canonical: "https://moduncalc.com/en/guide/korean-food-guide" },
   openGraph: {
     title: "Korean Food Guide for Foreigners - Ordering, Prices & Must-Try Dishes",

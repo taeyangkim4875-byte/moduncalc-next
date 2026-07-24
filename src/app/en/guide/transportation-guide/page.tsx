@@ -7,7 +7,7 @@ import { FaqJsonLd } from "@/components/JsonLd";
 export const metadata: Metadata = {
   title: "Korea Transportation Guide - Subway, Bus, KTX & Taxi for Foreigners",
   description:
-    "Complete guide to getting around Korea. T-money card, Seoul subway, buses, KTX trains, taxis, and intercity travel tips.",
+    "How to get around Korea? T-money card, Seoul subway ₩1,250, buses, KTX to Busan ₩59,000, taxi apps & airport transfer.",
   alternates: { canonical: "https://moduncalc.com/en/guide/transportation-guide" },
   openGraph: {
     title: "Korea Transportation Guide - Subway, Bus, KTX & Taxi for Foreigners",
