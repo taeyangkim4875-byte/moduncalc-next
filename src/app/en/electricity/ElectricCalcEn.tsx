@@ -63,7 +63,7 @@ export default function ElectricCalcEn() {
           min={50}
           max={1000}
           value={kwh}
-          onChange={e => setKwh(+e.target.value || 0)}
+          onChange={e => setKwh(+e.target.value)}
           className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center mb-3"
         />
         <input
@@ -72,7 +72,7 @@ export default function ElectricCalcEn() {
           max={1000}
           step={10}
           value={kwh}
-          onChange={e => setKwh(+e.target.value || 0)}
+          onChange={e => setKwh(+e.target.value)}
           className="w-full accent-[var(--primary)]"
         />
         <div className="flex justify-between text-[10px] text-[var(--sub)] mt-1">

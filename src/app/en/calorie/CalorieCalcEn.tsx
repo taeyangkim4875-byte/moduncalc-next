@@ -50,15 +50,15 @@ export default function CalorieCalcEn() {
         <div className="grid grid-cols-3 gap-2 mb-4">
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Age</label>
-            <input type="number" value={age} onChange={e => setAge(+e.target.value || 0)} className={inputClass} />
+            <input type="number" value={age} onChange={e => setAge(+e.target.value)} className={inputClass} />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Height (cm)</label>
-            <input type="number" value={height} onChange={e => setHeight(+e.target.value || 0)} className={inputClass} />
+            <input type="number" value={height} onChange={e => setHeight(+e.target.value)} className={inputClass} />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Weight (kg)</label>
-            <input type="number" value={weight} onChange={e => setWeight(+e.target.value || 0)} className={inputClass} />
+            <input type="number" value={weight} onChange={e => setWeight(+e.target.value)} className={inputClass} />
           </div>
         </div>
         <div>

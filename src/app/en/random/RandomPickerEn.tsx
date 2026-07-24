@@ -108,15 +108,15 @@ export default function RandomPickerEn() {
             <div className="grid grid-cols-3 gap-2 mb-3">
               <div>
                 <label className="block text-xs font-bold text-[var(--sub)] mb-1">Min</label>
-                <input type="number" value={min} onChange={e => setMin(+e.target.value || 0)} className={inputClass} />
+                <input type="number" value={min} onChange={e => setMin(+e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className="block text-xs font-bold text-[var(--sub)] mb-1">Max</label>
-                <input type="number" value={max} onChange={e => setMax(+e.target.value || 0)} className={inputClass} />
+                <input type="number" value={max} onChange={e => setMax(+e.target.value)} className={inputClass} />
               </div>
               <div>
                 <label className="block text-xs font-bold text-[var(--sub)] mb-1">Count</label>
-                <input type="number" value={count} onChange={e => setCount(+e.target.value || 0)} className={inputClass} />
+                <input type="number" value={count} onChange={e => setCount(+e.target.value)} className={inputClass} />
               </div>
             </div>
             <button onClick={() => setNoDuplicates(!noDuplicates)} className={`w-full py-2.5 mb-3 rounded-xl text-xs font-bold border-[1.5px] transition-colors ${noDuplicates ? 'bg-[var(--primary-weak)] border-[var(--primary)] text-[var(--primary)]' : 'border-[var(--line)] text-[var(--sub)]'}`}>
@@ -158,11 +158,11 @@ export default function RandomPickerEn() {
               <div className="grid grid-cols-2 gap-2 mb-4">
                 <div>
                   <label className="block text-xs font-bold text-[var(--sub)] mb-1">Max Number</label>
-                  <input type="number" value={customMax} onChange={e => setCustomMax(+e.target.value || 0)} className={inputClass} />
+                  <input type="number" value={customMax} onChange={e => setCustomMax(+e.target.value)} className={inputClass} />
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-[var(--sub)] mb-1">Pick Count</label>
-                  <input type="number" value={customPick} onChange={e => setCustomPick(+e.target.value || 0)} className={inputClass} />
+                  <input type="number" value={customPick} onChange={e => setCustomPick(+e.target.value)} className={inputClass} />
                 </div>
               </div>
             )}
