@@ -46,6 +46,10 @@ const KOREA_CULTURE = [
   { href: '/en/hospital', icon: '🏥', title: 'Hospital Costs', desc: 'Medical expenses guide' },
   { href: '/en/phone-cost', icon: '📱', title: 'Phone Plans', desc: 'Cheapest mobile plans' },
   { href: '/en/delivery-fee', icon: '📦', title: 'Delivery Cost', desc: '택배 shipping prices' },
+  { href: '/en/move-in-cost', icon: '🏠', title: 'Move-in Cost', desc: 'Deposit + agent + setup' },
+  { href: '/en/emergency', icon: '🚨', title: 'Emergency Numbers', desc: '112, 119, 1345 & more' },
+  { href: '/en/korean-phrases', icon: '🗣️', title: 'Korean Phrases', desc: '50 must-know phrases' },
+  { href: '/en/tax-calendar', icon: '📅', title: 'Tax Calendar 2026', desc: 'Filing deadlines' },
 ];
 
 const OTHER_TOOLS = [

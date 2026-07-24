@@ -167,6 +167,10 @@ const MENUS_EN: MenuItem[] = [
     { label: 'Hospital Costs', href: '/en/hospital' },
     { label: 'Phone Plans', href: '/en/phone-cost' },
     { label: 'Delivery Cost', href: '/en/delivery-fee' },
+    { label: 'Move-in Cost', href: '/en/move-in-cost' },
+    { label: 'Emergency Numbers', href: '/en/emergency' },
+    { label: 'Korean Phrases', href: '/en/korean-phrases' },
+    { label: 'Tax Calendar', href: '/en/tax-calendar' },
   ]},
   { href: '/en/guide/tax-guide', ico: '📖', label: 'Guides', sub: [
     { label: 'Income Tax Guide', href: '/en/guide/tax-guide' },
