@@ -240,23 +240,20 @@ export default function CharCountCalc() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 글자수 세기 활용 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>자기소개서 작성:</b> 대부분 &apos;공백 포함&apos; 기준입니다. 글자수 제한의 90~100%를 채우는 것이 좋습니다. 너무 짧으면 성의 없어 보이고, 초과하면 잘립니다. 핵심 역량과 경험을 구체적 수치와 함께 기술하세요.</p>
-          <p><b>블로그 SEO:</b> 구글 기준 양질의 콘텐츠는 최소 1,500자 이상이 권장됩니다. 제목은 35자 내외로 핵심 키워드를 포함하고, 키워드 밀도 분석을 활용해 자연스럽게 키워드를 배치하세요.</p>
-          <p><b>SNS 게시글:</b> 트위터는 280자로 짧고 임팩트 있게, 인스타그램은 첫 125자가 미리보기에 노출되므로 핵심 메시지를 앞에 배치하세요. 해시태그는 인스타 최대 30개이지만 5~10개가 적정입니다.</p>
-          <p><b>바이트 계산:</b> UTF-8 기준 한글 1자 = 3바이트, 영문 1자 = 1바이트입니다. EUC-KR은 한글 2바이트입니다. SMS/MMS, 데이터베이스 등에서 바이트 제한을 사용하는 경우 확인이 필요합니다.</p>
-          <p><b>원고지 환산:</b> 200자 원고지 기준으로 환산하면 인쇄물 분량을 가늠할 수 있습니다. 일반적으로 A4 1장은 약 500~600자(공백 포함) 분량입니다.</p>
+        <h2 className="text-base font-extrabold mb-3">왜 만들었냐면요</h2>
+        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2.5">
+          <p>자소서 쓸 때 글자수 500자 맞추느라 고생한 적 있을 거예요. 공백 포함인지 제외인지도 헷갈리고. 그래서 만들었습니다.</p>
+          <p>자소서는 거의 다 &apos;공백 포함&apos; 기준이에요. 제한의 90% 이상은 채우는 게 좋아요. 너무 짧으면 성의 없어 보이고, 넘으면 잘리니까. 삼성은 700자, LG는 500자인데 공고에서 꼭 한번 더 확인해보세요.</p>
+          <p>블로그 쓸 때도 유용해요. 네이버 블로그 제목은 35자가 적당하고, 인스타 캡션은 첫 125자가 미리보기에 뜨니까 핵심을 앞에 써야 하거든요. 해시태그는 30개까지 되지만 5~10개가 딱 좋습니다.</p>
         </div>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 물어보시는 것들</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 한글은 몇 바이트인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. UTF-8 인코딩 기준 한글 1자 = 3바이트, EUC-KR 기준 2바이트입니다. 영문/숫자는 두 인코딩 모두 1바이트입니다. 이 계산기는 UTF-8과 EUC-KR 바이트를 모두 표시합니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 자기소개서는 공백 포함인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 대부분 &apos;공백 포함&apos; 기준입니다. 다만 일부 기업은 &apos;공백 제외&apos;를 사용하므로, 채용 공고의 정확한 기준을 반드시 확인하세요. 모호한 경우 공백 포함으로 맞추는 것이 안전합니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 키워드 밀도는 어떻게 활용하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 블로그 SEO에서 핵심 키워드가 전체 텍스트에서 1~3% 정도 나타나면 적정합니다. 위 &apos;자주 사용된 키워드&apos; 분석을 활용해 특정 키워드가 너무 많거나 적지 않은지 확인하세요.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 읽기 시간은 어떻게 계산하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 한국어 평균 읽기 속도인 분당 약 500자를 기준으로 추정합니다. 실제 읽기 속도는 내용 난이도, 개인 차이에 따라 달라질 수 있습니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">한글은 몇 바이트예요?</div><div className="text-sm text-[#4E5968] leading-relaxed">UTF-8에서는 3바이트, EUC-KR에서는 2바이트예요. 영문은 둘 다 1바이트고요. SMS 보낼 때나 DB 용량 따질 때 필요한 정보인데, 위에 두 가지 다 표시해두었어요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">자소서 공백 포함이에요 제외예요?</div><div className="text-sm text-[#4E5968] leading-relaxed">거의 다 공백 포함이에요. 근데 가끔 공백 제외를 쓰는 데도 있어서, 채용 공고에서 꼭 확인하세요. 애매하면 공백 포함으로 맞추는 게 안전합니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">키워드 분석은 뭐에 쓰는 건가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">블로그 SEO할 때 유용해요. 핵심 키워드가 전체 글에서 1~3% 정도 나오면 적당한데, 너무 많으면 어색하고 너무 적으면 검색에 안 걸리거든요. 위에 TOP 10 키워드 보면서 조절해보세요.</div></div>
         </div>
       </Card>
 

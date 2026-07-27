@@ -139,40 +139,29 @@ export default function FuelCalc(){
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 자동차 연비란?</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">연비(km/L)는 연료 1리터로 주행할 수 있는 거리를 나타내며, 자동차의 경제성을 판단하는 핵심 지표입니다. <b>연비 = 주행 거리(km) ÷ 사용 연료량(L)</b>으로 계산합니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>실제 연비 측정법:</b> 주유 후 트립미터(구간거리계)를 0으로 초기화합니다. 다음 주유 시 주행거리와 주유량을 기록하면 실제 연비를 정확히 계산할 수 있습니다. 이 방법이 가장 정확합니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>공인연비 vs 실제 연비:</b> 환경부가 발표하는 공인연비는 표준 시험실 조건에서 측정한 값입니다. 실제 도로에서는 에어컨, 급가속, 정체, 오르막길 등으로 공인연비의 70~85% 수준이 나옵니다. 특히 여름철에는 에어컨 사용으로 연비가 10~20% 더 떨어질 수 있습니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed"><b>여행 유류비 계산:</b> (주행 거리 ÷ 연비) × 유가로 계산합니다. 서울에서 부산까지 약 400km를 연비 12km/L 차량으로 이동하면 약 33L가 필요하며, 리터당 1,650원이면 약 55,000원의 유류비가 들어갑니다. 왕복이면 약 11만원입니다.</p>
-    </Card>
-
-    <Card>
-      <h2 className="text-base font-extrabold mb-3">💡 연비를 높이는 7가지 방법</h2>
-      <div className="flex flex-col gap-2 text-sm text-[#4E5968]">
-        {[
-          ['경제속도 유지', '일반도로 60~80km/h, 고속도로 90~100km/h가 가장 연비 효율이 좋습니다.'],
-          ['급가속·급제동 자제', '부드러운 가속과 감속만으로 연비가 10~15% 개선됩니다.'],
-          ['타이어 공기압 점검', '적정 공기압보다 10% 부족하면 연비가 3~5% 떨어집니다. 월 1회 점검 권장.'],
-          ['불필요한 짐 줄이기', '차량 무게가 50kg 늘면 연비가 약 2% 감소합니다.'],
-          ['에어컨 적정 사용', '에어컨은 연비를 10~20% 떨어뜨립니다. 내기순환 모드와 적정 온도(24~26도) 설정.'],
-          ['엔진오일 교체', '적정 주기로 엔진오일을 교체하면 마찰이 줄어 연비가 개선됩니다.'],
-          ['아이들링 줄이기', '정차 시 시동을 끄면 불필요한 연료 소모를 줄일 수 있습니다. 최신 차량은 ISG 기능 활용.'],
-        ].map(([title, desc], i) => (
-          <div key={i} className="bg-[var(--bg)] rounded-xl p-3">
-            <span className="font-bold text-[var(--ink)]">{i+1}. {title}</span>
-            <p className="mt-0.5 text-[12.5px] text-[var(--sub)]">{desc}</p>
-          </div>
-        ))}
+      <h2 className="text-base font-extrabold mb-3">내 차 연비, 직접 재보는 게 제일 정확해요</h2>
+      <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2.5">
+        <p>주유할 때마다 &apos;이번에 연비 얼마 나왔지?&apos; 궁금하잖아요. 만탱 하고 트립미터 초기화한 다음, 다음 주유 때 거리랑 주유량 넣으면 바로 나옵니다.</p>
+        <p>공인연비는 솔직히 참고만 하세요. 실험실에서 잰 거라 실제로는 70~85% 수준밖에 안 나오더라고요. 여름에 에어컨 켜면 연비가 10~20%는 더 떨어져요.</p>
+        <p>서울에서 부산까지 400km를 연비 12km/L 차로 가면 기름값이 약 55,000원이에요. 왕복하면 11만원. 여기에 고속도로 통행료까지 합치면 꽤 나가죠. 여행 전에 미리 계산해보면 마음의 준비가 됩니다.</p>
       </div>
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">연비 아끼는 팁 (실제로 효과 본 것들)</h2>
+      <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2.5">
+        <p>급가속·급제동만 안 해도 연비가 10~15% 좋아져요. 이게 진짜 제일 효과 큽니다. 일반도로에서 60~80km/h 유지하는 것도 중요하고요.</p>
+        <p>타이어 공기압도 은근 영향이 커요. 적정보다 10%만 부족해도 연비가 3~5% 빠지거든요. 한 달에 한 번은 체크해보세요.</p>
+        <p>여름에 에어컨은 어쩔 수 없지만, 내기순환 모드로 쓰고 24~26도로 맞추면 그나마 덜 떨어져요. 그리고 트렁크에 안 쓰는 짐 빼는 것도 도움 됩니다. 50kg 늘면 연비가 2%씩 떨어진다고 하더라고요.</p>
+      </div>
+    </Card>
+
+    <Card>
+      <h2 className="text-base font-extrabold mb-3">궁금한 점들</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 자동차 연비는 어떻게 계산하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 연비(km/L) = 주행 거리 ÷ 주유량입니다. 만탱 후 트립미터를 0으로 놓고, 다음 만탱 시 주행거리와 주유량을 나누면 실제 연비를 구할 수 있습니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 실제 연비가 공인연비보다 낮은 이유는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 공인연비는 표준 시험실 조건에서 측정한 값입니다. 실제 도로에서는 에어컨, 급가속, 정체, 오르막길 등으로 공인연비의 70~85% 수준이 나옵니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 서울에서 부산까지 유류비는 얼마인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 서울-부산 약 400km 기준, 연비 12km/L 차량에 유가 1,650원/L이면 약 55,000원입니다. 고속도로 통행료(약 25,000원)는 별도입니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연비를 높이는 가장 효과적인 방법은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 경제속도(60~80km/h) 유지와 급가속·급제동 자제가 가장 효과적입니다. 이것만으로도 연비가 10~20% 개선됩니다. 타이어 공기압 점검도 간단하지만 효과가 큽니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">연비를 정확하게 재려면?</div><div className="text-sm text-[#4E5968] leading-relaxed">만탱 하고 트립미터를 0으로 맞추세요. 다음에 만탱 할 때 주행거리를 주유량으로 나누면 됩니다. 계기판에 뜨는 평균 연비보다 이 방법이 더 정확해요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">공인연비만큼 안 나오는 게 정상인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">네, 정상이에요. 에어컨, 정체, 오르막 같은 변수가 많아서 공인연비의 70~85% 나오면 잘 나오는 거예요. 너무 차이 나면 점검 한번 받아보세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">서울에서 부산까지 기름값 얼마예요?</div><div className="text-sm text-[#4E5968] leading-relaxed">연비 12km/L, 유가 1,650원 기준으로 약 55,000원이에요. 고속도로 통행료가 약 25,000원 따로 나오니까, 편도 8만원 정도 생각하시면 됩니다.</div></div>
       </div>
     </Card>
   </>);

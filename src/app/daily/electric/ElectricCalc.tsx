@@ -94,16 +94,18 @@ export default function ElectricCalc(){
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 전기요금 누진제란?</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">전기요금 누진제는 전기 사용량이 많을수록 높은 단가를 적용하는 요금 체계입니다. 사용량 구간에 따라 기본요금과 전력량 단가가 달라지며, 많이 쓸수록 요금이 급격히 올라갑니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">전기요금에는 기본요금과 전력량요금 외에 부가가치세(10%)와 전력산업기반기금(3.7%)이 추가로 부과됩니다.</p>
+      <h2 className="text-base font-extrabold mb-3">전기세 폭탄, 누진제 때문입니다</h2>
+      <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2.5">
+        <p>여름에 에어컨 좀 틀었다가 전기세 폭탄 맞아본 적 있으신가요? 누진제 때문인데, 사용량이 늘수록 단가가 확 올라가거든요. 200kWh까지는 kWh당 120원인데, 400kWh 넘으면 307원이에요. 거의 3배.</p>
+        <p>그래서 이 계산기를 만들었습니다. 우리 집 사용량 넣으면 구간별로 얼마나 나오는지 바로 보이니까, 어디서 요금이 확 뛰는지 감이 오거든요. 부가세(10%)랑 기반기금(3.7%)까지 다 포함해서 계산해요.</p>
+      </div>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">전기세 관련 궁금한 것들</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 하계 요금이 완화되는 이유는 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 여름철(7~8월)에는 냉방 사용이 급증하므로 1구간 상한을 300kWh로 확대하고 2구간도 450kWh까지 확대하여 요금 부담을 줄여줍니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 전기요금을 절약하는 방법은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 대기전력 차단, 에너지효율 1등급 가전 사용, 냉난방 적정 온도 유지(여름 26도, 겨울 20도) 등이 효과적입니다. 특히 누진제 상위 구간 진입을 피하면 큰 절약 효과가 있습니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 누진제는 모든 가정에 적용되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 주택용 전기에만 누진제가 적용됩니다. 산업용·교육용·일반용 전기에는 별도 요금 체계가 적용되며 누진제가 적용되지 않습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">여름에는 요금이 좀 낮아지나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">7~8월에는 에어컨 때문에 다들 전기를 많이 쓰니까, 1구간을 200kWh에서 300kWh로 넓혀줘요. 그래도 많이 쓰면 폭탄 맞긴 하지만, 안 넓혀주는 것보다는 낫죠.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">전기세 줄이는 현실적인 방법은?</div><div className="text-sm text-[#4E5968] leading-relaxed">솔직히 에어컨 26도, 히터 20도 이 원칙만 지켜도 많이 줄어요. 그리고 누진제 2구간 넘지 않는 게 핵심이에요. 200kWh 근처에서 관리하면 단가가 확 뛰는 걸 막을 수 있거든요. 멀티탭 끄기 같은 건 솔직히 효과가 미미하고, 에어컨 사용 시간 줄이는 게 제일 큽니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">가게나 사무실도 누진제인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">아니요, 누진제는 가정용(주택용)만 해당돼요. 사무실이나 가게는 일반용·산업용 요금이 따로 있어서 구조가 달라요. 이 계산기는 가정용 기준이니까 참고해주세요.</div></div>
       </div>
     </Card>
 

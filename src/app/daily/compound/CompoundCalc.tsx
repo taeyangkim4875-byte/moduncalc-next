@@ -134,20 +134,20 @@ export default function CompoundCalc(){
     </>}
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 복리의 마법</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">복리(compound interest)는 원금뿐 아니라 이전에 발생한 이자에도 이자가 붙는 방식입니다. 아인슈타인이 "세상에서 가장 강력한 힘"이라 불렀다는 일화가 있을 만큼, 시간이 지날수록 그 효과는 기하급수적으로 커집니다. 10년보다 20년, 20년보다 30년 투자할 때 수익 차이가 크게 벌어지는 이유입니다.</p>
-      <h3 className="text-sm font-bold mb-2">72의 법칙</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">72의 법칙은 복리로 원금이 2배가 되는 시간을 빠르게 계산하는 방법입니다. 72를 연간 수익률(%)로 나누면 됩니다. 예: 연 6% → 12년, 연 8% → 9년, 연 12% → 6년. 실제 계산과 약간의 오차가 있지만 암산으로 빠르게 판단할 때 매우 유용합니다.</p>
-      <h3 className="text-sm font-bold mb-2">투자 수익률 참고</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed">은행 예금: 연 3~4% / 채권: 연 4~5% / 국내 주식(KOSPI): 장기 평균 연 7~8% / 미국 주식(S&P 500): 장기 평균 연 10% 내외 (인플레이션 고려 시 약 7%). 수익률이 높을수록 리스크도 크므로, 분산 투자와 장기 투자가 중요합니다.</p>
+      <h2 className="text-base font-extrabold mb-3">복리, 한번 계산해보면 놀랍습니다</h2>
+      <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2.5">
+        <p>복리의 힘을 한번 계산해보면 놀랍습니다. 1,000만원을 연 7%로 10년 놔두면 거의 2,000만원이 돼요. 이자에 이자가 붙으니까, 시간이 길어질수록 차이가 엄청나게 벌어지거든요.</p>
+        <p>72의 법칙이라는 게 있는데, 72를 수익률로 나누면 원금이 2배 되는 시간이 나와요. 연 6%면 12년, 8%면 9년. 암산으로 빠르게 감 잡을 때 진짜 유용합니다.</p>
+        <p>참고로 은행 예금은 연 3~4%, 국내 주식은 장기 평균 7~8%, 미국 S&P 500은 약 10% 정도예요. 당연히 수익률 높으면 리스크도 크고요. 분산 투자하고 오래 들고 있는 게 결국 제일 낫더라고요.</p>
+      </div>
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">궁금하실 만한 것들</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 72의 법칙이란 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 72의 법칙은 투자 원금이 2배가 되는 데 걸리는 시간을 간단히 구하는 방법입니다. 72를 연이율(%)로 나누면 됩니다. 예를 들어 연 8% 수익률이면 72 / 8 = 약 9년이 걸립니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 단리와 복리의 차이는 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 단리는 원금에만 이자가 붙고, 복리는 원금 + 이전 이자에도 이자가 붙습니다. 기간이 길어질수록 복리의 효과가 기하급수적으로 커집니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 월 적립식 투자는 어떻게 계산되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 매월 일정 금액을 추가 투자하는 방식입니다. 각 월 적립금에도 복리가 적용되어, 초기 목돈 없이도 장기적으로 큰 자산을 만들 수 있습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">단리랑 복리 차이가 뭐예요?</div><div className="text-sm text-[#4E5968] leading-relaxed">단리는 원금에만 이자가 붙어요. 복리는 이자에도 이자가 붙고요. 5년 정도까진 별 차이 없는데, 10년 넘어가면 복리가 압도적으로 커져요. 위에서 단리 vs 복리 비교 확인해보세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">목돈 없이 매달 적립만 해도 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">그럼요. 매달 넣는 돈에도 복리가 붙거든요. 초기 원금 0원으로 놓고 월 50만원씩 연 7%로 20년 넣어보세요. 생각보다 큰 금액이 됩니다. 일찍 시작하는 게 핵심이에요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">세금은 안 빠지나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">이 계산기는 세전 기준이에요. 실제로는 이자·배당에 15.4% 세금이 붙습니다. ISA나 연금저축 같은 절세 계좌를 활용하면 세금을 줄이거나 미룰 수 있어요.</div></div>
       </div>
     </Card>
   </>);

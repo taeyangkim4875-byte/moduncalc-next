@@ -103,15 +103,18 @@ export default function LoanCalculator(){
       <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">실제 대출 금리·조건은 금융기관마다 다릅니다. 참고용으로만 활용하세요.</div>
     </footer>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 대출 상환 방식 비교</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>원리금균등상환</b>은 매월 동일한 금액(원금+이자)을 납부하는 방식입니다. 초기 부담이 적고 예측 가능하지만, 총 이자가 더 많습니다. <b>원금균등상환</b>은 매월 동일한 원금에 잔액 이자를 더해 납부합니다. 초기 부담이 크지만 총 이자가 적어 장기적으로 유리합니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">일반적으로 대출 기간이 길수록 두 방식의 총 이자 차이가 커집니다. 30년 3억원 대출 시 원금균등이 수백만원 이상 이자를 절약할 수 있습니다.</p>
+      <h2 className="text-base font-extrabold mb-3">원리금균등 vs 원금균등, 뭐가 나을까</h2>
+      <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2.5">
+        <p>대출 받을 때 원리금균등이 나은지 원금균등이 나은지 항상 헷갈리잖아요. 총 이자 차이가 생각보다 커요.</p>
+        <p>원리금균등은 매달 같은 금액을 내니까 계획 세우기 편해요. 근데 총 이자를 더 많이 내게 됩니다. 원금균등은 처음에 많이 내고 점점 줄어드는 방식인데, 총 이자는 확실히 적어요.</p>
+        <p>3억원 30년 대출이면 두 방식의 이자 차이가 수백만원 이상 나거든요. 초반에 여유가 있으면 원금균등이 유리하고, 월 납입액을 일정하게 맞추고 싶으면 원리금균등을 선택하면 됩니다. 위에서 직접 비교해보세요.</p>
+      </div>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">대출할 때 궁금한 것들</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 어떤 상환 방식이 유리한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 총 이자만 보면 원금균등이 유리하지만, 초기 납입 부담이 크므로 소득 상황에 따라 선택하세요.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 거치기간이란 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 원금 상환 없이 이자만 납부하는 기간입니다. 거치기간 동안은 월 부담이 적지만, 이후 원금 상환 시 부담이 커집니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">결국 어떤 방식이 이득인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">총 이자만 보면 원금균등이 확실히 유리해요. 근데 초반에 납입액이 커서 생활비가 빠듯할 수 있거든요. 본인 소득 상황에 맞춰서 고르는 게 맞아요. 솔직히 여유가 되면 원금균등 추천합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">거치기간은 쓰는 게 좋나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">거치기간 동안은 이자만 내니까 월 부담이 적어 보여요. 근데 그 기간 동안 원금이 안 줄어드니까 이자가 계속 쌓여요. 아쉽긴 하지만, 꼭 필요한 경우가 아니면 거치기간 없이 바로 상환 시작하는 게 낫습니다.</div></div>
       </div>
     </Card>
 

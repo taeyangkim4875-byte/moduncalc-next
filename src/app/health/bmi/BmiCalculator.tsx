@@ -74,15 +74,18 @@ export default function BmiCalculator(){
       </table>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 BMI(체질량지수)란?</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">BMI(Body Mass Index)는 체중(kg)을 키(m)의 제곱으로 나눈 값으로, 비만도를 판정하는 가장 널리 쓰이는 지표입니다. WHO 아시아태평양 기준으로 23 이상이면 과체중, 25 이상이면 비만으로 분류합니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">다만 BMI는 근육량과 체지방률을 구분하지 못하므로, 운동선수처럼 근육이 많은 경우 BMI가 높아도 비만이 아닐 수 있습니다. 정확한 체지방 판정은 인바디 등 체성분 분석이 필요합니다.</p>
+      <h2 className="text-base font-extrabold mb-3">BMI, 참고는 하되 맹신은 금물</h2>
+      <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2.5">
+        <p>건강검진 받으면 BMI가 나오는데, 그게 뭔지 정확히 아는 사람이 별로 없더라고요. 간단해요. 체중(kg)을 키(m)의 제곱으로 나눈 거예요.</p>
+        <p>한국 기준으로는 23 넘으면 과체중, 25 넘으면 비만이에요. 서양 기준(25부터 과체중)이랑 다르니까, 인터넷에서 본 기준이랑 헷갈리지 마세요.</p>
+        <p>근데 솔직히 BMI만으로 건강을 판단하긴 어려워요. 헬스 다니는 분들은 근육 때문에 BMI가 높게 나오는데 비만은 아니잖아요. 정확하게 알려면 인바디 같은 체성분 분석을 받아보는 게 좋습니다.</p>
+      </div>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">많이 물어보시는 것</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 정상 BMI 범위는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. WHO 아시아태평양 기준 18.5~22.9가 정상 범위입니다. 서양 기준(18.5~24.9)과 다르므로 주의하세요.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. BMI가 과체중이면 어떻게 해야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 식이 조절과 규칙적인 운동을 권장합니다. 급격한 체중 감량보다 주당 0.5~1kg 감량이 건강에 좋습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">정상 BMI가 어디부터 어디까지예요?</div><div className="text-sm text-[#4E5968] leading-relaxed">한국(WHO 아시아태평양) 기준 18.5~22.9가 정상이에요. 서양 기준은 24.9까지 정상인데, 우리는 기준이 더 엄격하거든요. 검진 결과지에 과체중이라고 나와도 서양 기준으로는 정상인 경우도 있어요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">과체중이면 어떻게 해야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">급하게 빼려고 하지 마세요. 주당 0.5~1kg씩 천천히 줄이는 게 요요도 안 오고 건강에도 좋아요. 식단 조절이 70%, 운동이 30%라는 말이 있는데 실제로 그렇더라고요.</div></div>
       </div>
     </Card>
 
