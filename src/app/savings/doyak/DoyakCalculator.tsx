@@ -316,11 +316,11 @@ export default function DoyakCalculator() {
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 만기 수령액을 계산해 드려요.</Card>}
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 청년도약계좌란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">청년도약계좌는 만 19~34세 청년이 매월 최대 70만원을 5년간 납입하면 정부 기여금과 비과세 혜택을 받을 수 있는 정책 금융상품입니다. 1~3년차는 고정금리, 4~5년차는 변동금리가 적용되며, 우대금리는 충족 시점부터 적용됩니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">정부 기여금은 소득 구간에 따라 납입액의 3~6%가 매칭 지급됩니다. 총급여 6,000만원 초과~7,500만원 이하는 비과세 혜택만 적용됩니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>2026년 3년차 변동금리 전환:</b> 2024년 초에 가입한 1기 가입자부터 고정금리(연 4.5%) 기간이 종료되고, 4년차부터 변동금리로 전환됩니다. KB국민·신한·우리은행은 변동금리를 연 3.0%로 고시했으며, 우대금리 1.5%p를 합해도 최고 4.5%로 낮아집니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed"><b>현재 잔액 확인:</b> 위 계산기에서 &quot;현재까지 쌓인 금액&quot; 기능을 이용하면 만기 전이라도 지금까지 원금+이자+기여금이 얼마인지 확인할 수 있습니다. 변동금리 전환 시점(37개월차)을 기준으로 이자가 달라지는 것도 자동 반영됩니다.</p>
+        <h2 className="text-base font-extrabold mb-3">📖 이 계산기를 만든 이유</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">저도 청년도약계좌 가입자입니다. 주변 친구들도 거의 다 했고요. 근데 은행 앱에 들어가면 원금만 딱 보여요. 이자가 얼마나 붙었는지, 정부 기여금은 얼마나 쌓였는지 한눈에 안 보이더라고요.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">그래서 직접 만들었습니다. <b>&quot;지금 해지하면 얼마 받지?&quot;</b> 이 질문에 바로 답할 수 있는 계산기가 필요했거든요. 특히 변동금리로 바뀌면서 &quot;이대로 유지하는 게 맞나, 미래적금으로 갈아타야 하나&quot; 고민하는 분들이 많을 거라 생각했어요.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">위에서 경과 개월 수를 조절하면 지금까지 쌓인 원금+이자+기여금을 바로 확인할 수 있습니다. 37개월차(변동금리 전환 시점) 전후로 이자가 어떻게 달라지는지도 자동 반영되고요.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed"><b>솔직한 의견:</b> 변동금리 전환이 좀 아쉽긴 합니다. 4.5%에서 3.0%로 떨어지니까요. 그래도 정부 기여금 + 비과세까지 합치면 일반 적금보다는 여전히 이득이에요. 해지를 고민한다면 아래 특별중도해지 사유를 먼저 확인해보세요.</p>
       </Card>
       <Card>
         <h2 className="text-base font-extrabold mb-3">🚨 특별중도해지 사유 안내</h2>
@@ -363,9 +363,9 @@ export default function DoyakCalculator() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 중도해지하면 어떻게 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 정부 기여금 반환 + 이자 과세(15.4%). 특별중도해지 사유(결혼, 출산, 청년미래적금 환승 등) 시 기여금 유지 가능.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 미래적금으로 환승할 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 환승은 최초 신청 기간(2026.6.22~7.3)에 단 한 번만 가능했습니다. 미래적금 가입 신청 → 계좌 개설 후 도약계좌를 특별중도해지하는 순서입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 우대금리는 언제부터 적용되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. <b>소급 적용이 안 됩니다.</b> 조건을 충족한 시점부터 우대금리가 적용되며, 그 이전 기간에는 기본금리만 적용됩니다. 일부 은행은 만기 시 소급 적용하므로 반드시 은행별 상품설명서를 확인하세요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 그냥 해지하면 어떻게 돼요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 솔직히 손해가 큽니다. 정부 기여금을 전부 토해내야 하고, 이자에도 15.4% 세금이 붙어요. 원금+이자는 돌려받지만 &quot;왜 가입했지&quot; 후회할 수 있습니다. 해지 전에 위의 특별중도해지 사유에 해당하는지 꼭 확인하세요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 미래적금으로 갈아타야 할까요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 환승 신청은 2026년 6월 22일~7월 3일에 한 번만 가능했습니다. 이미 지났다면 갈아탈 수 없어요. 당시에 환승한 분들은 도약계좌를 특별중도해지 처리한 거라 기여금이 유지됩니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 우대금리, 지금 가입해도 소급 적용돼요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 대부분의 은행은 <b>소급 적용이 안 됩니다.</b> 조건을 충족한 시점부터 적용이에요. 다만 일부 은행(KB국민 등)은 만기 시 소급 적용하는 경우도 있어서, 본인 은행 상품설명서를 꼭 확인해보세요. 가입할 때 안 물어보면 나중에 손해 볼 수 있습니다.</div></div>
         </div>
       </Card>
 
