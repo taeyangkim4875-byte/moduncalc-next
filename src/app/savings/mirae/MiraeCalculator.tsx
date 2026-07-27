@@ -396,16 +396,18 @@ export default function MiraeCalculator() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 청년미래적금이란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">청년미래적금은 2026년 출시된 3년 만기 정책 적금으로, 기본금리 5.0%에 은행별 우대금리 최대 3.0%p를 더해 최대 연 8.0%의 고금리를 제공합니다. 정부 기여금도 소득 구간에 따라 납입액의 6~12%가 매칭 지급됩니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">가입 자격은 만 19~34세, 총급여 7,500만원 이하, 가구 중위소득 200% 이하입니다. 은행 선택 시 최고 금리보다 <b>3년간 우대 조건을 실제로 충족할 수 있는지</b>가 더 중요합니다.</p>
+        <h2 className="text-base font-extrabold mb-3">📖 도약계좌에서 환승한 후기</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">저는 도약계좌에서 미래적금으로 환승했습니다. KB국민은행으로 했고, 도약계좌에서 이미 우대금리 조건을 달성해둔 상태라 환승 결정이 비교적 수월했어요.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">환승을 결심한 이유는 간단합니다. 도약계좌는 5년인데 미래적금은 3년이에요. 같은 정부 지원인데 2년 빨리 끝나고, 기본금리가 5%로 더 높거든요. 물론 도약계좌의 정부 기여금이 더 크긴 하지만, 3년 뒤에 목돈을 한 번 만들고 다시 투자할 수 있다는 게 매력적이었습니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>은행 선택 팁:</b> 최고 금리에 현혹되지 마세요. 1그룹 은행은 전부 최대 8%인데, 중요한 건 3년 동안 우대 조건을 실제로 채울 수 있느냐입니다. 저는 이미 KB에서 급여이체를 하고 있어서 KB가 편했어요. 주거래 은행으로 가는 게 가장 현실적입니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed"><b>주의할 점:</b> 환승할 때 순서가 중요합니다. 미래적금 먼저 개설 → 그 다음 도약계좌 특별중도해지. 도약계좌를 먼저 해지하면 환승 혜택을 못 받아요. 실제로 주변에서 순서를 잘못 해서 낭패 본 사람이 있었습니다.</p>
       </Card>
       <Card>
         <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 우대금리를 중간에 못 채우면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 충족하지 못한 항목의 우대금리만 빠지고, 기본금리 5%와 나머지 우대금리는 유지됩니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 도약계좌에서 환승할 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 환승은 최초 신청 기간(2026.6.22~7.3)에 <b>단 한 번만</b> 가능했습니다. 반드시 미래적금 가입 신청 → 대상 확인 → 계좌 개설 후에 도약계좌를 특별중도해지해야 합니다. 도약계좌를 먼저 해지하면 환승 혜택을 받을 수 없습니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 어떤 은행이 가장 유리한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 금리 자체는 1그룹 은행이 동일(최대 8%)이지만, 우대 조건 달성 난이도가 다릅니다. 주거래 은행을 선택하는 것이 가장 현실적입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 우대금리를 중간에 못 채우면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 그 항목만 빠지고 나머지는 유지돼요. 예를 들어 급여이체 우대(1.0%)를 못 채워도 소득우대(0.5%)나 재무상담(0.2%)은 그대로 적용됩니다. 기본금리 5%는 무조건 보장이에요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 지금도 환승할 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 아쉽지만 환승 신청은 2026년 6월 22일~7월 3일에 끝났습니다. 한 번뿐인 기회였어요. 지금은 도약계좌와 미래적금을 동시에 가입하는 건 안 됩니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 어떤 은행이 제일 나아요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 금리만 보면 1그룹 은행이 전부 최대 8%로 같습니다. 차이는 우대 조건 달성 난이도예요. 급여이체, 카드 실적 등 본인이 이미 하고 있는 조건이 많은 은행을 선택하는 게 정답입니다. 3년이나 유지해야 하니까요.</div></div>
         </div>
       </Card>
 
