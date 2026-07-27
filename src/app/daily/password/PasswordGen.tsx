@@ -169,29 +169,20 @@ export default function PasswordGen() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">안전한 비밀번호 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>안전한 비밀번호 기준:</b> 최소 12자 이상, 대소문자 + 숫자 + 특수문자 조합이 권장됩니다. 16자 이상이면 현재 기술로 브루트포스 공격을 통한 해독이 사실상 불가능합니다. 생년월일, 전화번호, &apos;password123&apos; 같은 예측 가능한 비밀번호는 피하세요.</p>
-          <p><b>해킹 위험:</b> 8자리 숫자 비밀번호는 즉시 해독됩니다. 8자 소문자 비밀번호도 수초 내 크래킹이 가능합니다. 반면 12자 이상 복합 비밀번호는 수백 년 이상의 해독 시간이 소요됩니다. 데이터 유출 시 같은 비밀번호를 쓰는 모든 계정이 위험해지므로 사이트마다 다른 비밀번호를 사용하세요.</p>
-          <p><b>비밀번호 관리 팁:</b> 비밀번호 관리자(1Password, Bitwarden 등)를 사용하면 사이트별로 고유한 강력한 비밀번호를 쉽게 관리할 수 있습니다. 마스터 비밀번호 하나만 기억하면 됩니다. 2단계 인증(2FA)도 반드시 활성화하세요. OTP 앱(Google Authenticator, Authy)이 SMS보다 안전합니다.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">안전한 비밀번호를 랜덤으로 바로 생성해드려요. 브라우저에서만 처리되고 서버로 전송되지 않아요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 안전한 비밀번호 길이는 최소 몇 자인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 최소 12자 이상이 권장됩니다. 16자 이상이면 브루트포스 공격에 대한 안전성이 크게 높아집니다. 대소문자, 숫자, 특수문자를 모두 포함하는 것이 중요합니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 안전한 비밀번호 길이는?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 최소 12자, 가능하면 16자 이상이 좋아요. 대소문자+숫자+특수문자 조합이 중요해요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 비밀번호를 사이트마다 다르게 써야 하나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 반드시 다르게 사용해야 합니다. 하나의 사이트가 해킹되면 같은 비밀번호를 쓰는 다른 모든 계정이 위험해집니다. 비밀번호 관리자를 사용하면 편리합니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 생성된 비밀번호는 안전한가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 이 생성기는 브라우저의 crypto.getRandomValues()를 사용하여 암호학적으로 안전한 난수를 생성합니다. 비밀번호는 서버로 전송되지 않으며 브라우저에서만 처리됩니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 사이트마다 다른 비밀번호를 써야 하나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 한 사이트가 해킹되면 같은 비밀번호를 쓰는 모든 계정이 위험해져요. 비밀번호 관리자를 쓰면 편해요.</div>
           </div>
         </div>
       </Card>

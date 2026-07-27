@@ -75,16 +75,14 @@ export default function InterestCalc(){
     </div>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 적금·예금 이자 계산이란?</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">적금은 매달 일정 금액을 납입하고 만기에 이자와 함께 돌려받는 상품입니다. 이자는 단리 기준으로 월납입액 x (연이자율/12) x n(n+1)/2 공식으로 계산됩니다. 예금은 목돈을 한 번에 맡기고 만기에 이자를 받는 상품입니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">이자소득에는 소득세 14%와 주민세 1.4%를 합산한 15.4%의 세금이 부과됩니다. 비과세 상품이나 세금우대(9.5%) 상품을 활용하면 더 많은 이자를 받을 수 있습니다.</p>
+      <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">적금 만기 때 실제로 얼마 받는지 궁금하면 여기서 계산해보세요. 세금 떼고 나면 생각보다 적어요.</p>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 단리와 복리의 차이는 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 단리는 원금에 대해서만 이자를 계산하고, 복리는 이자에 대한 이자까지 계산합니다. 일반적인 은행 적금·예금은 단리로 계산됩니다. 이 계산기도 단리 기준입니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 비과세 혜택은 누가 받을 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 비과세종합저축은 만 65세 이상, 장애인, 국가유공자 등이 가입할 수 있으며, 1인당 5,000만원 한도 내에서 이자소득세가 면제됩니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 적금과 예금의 차이는 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 적금은 매달 일정 금액을 납입하는 방식이고, 예금은 목돈을 한 번에 맡기는 방식입니다. 같은 금리라면 예금이 이자가 더 많습니다. 적금은 목돈 마련에, 예금은 목돈 운용에 적합합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 단리와 복리 차이가 뭔가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 단리는 원금에만 이자가 붙고, 복리는 이자에도 이자가 붙어요. 일반 은행 적금·예금은 단리 기준이에요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 적금이랑 예금 뭐가 다른가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 적금은 매달 넣는 거고, 예금은 목돈을 한번에 맡기는 거예요. 같은 금리면 예금이 이자가 더 많아요.</div></div>
       </div>
     </Card>
 

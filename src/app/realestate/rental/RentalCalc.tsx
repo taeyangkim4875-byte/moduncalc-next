@@ -78,16 +78,14 @@ export default function RentalCalc(){
     </div>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 임대수익률이란?</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">임대수익률은 부동산 투자 시 임대 소득이 투자금 대비 어느 정도인지를 나타내는 지표입니다. 총수익률은 매매가(보증금 제외) 대비 연 임대소득 비율이고, 순수익률은 실투자금 대비 대출이자·관리비를 차감한 순수익 비율입니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">일반적으로 순수익률이 연 5% 이상이면 양호한 수준으로 평가되며, 대출 레버리지를 활용하면 순수익률이 높아질 수 있지만 금리 상승 리스크도 커집니다.</p>
+      <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">임대 수익률 몇 %인지 계산해보면 투자 판단에 도움돼요. 대출이자, 관리비까지 반영한 순수익률을 알려드려요.</p>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 총수익률과 순수익률의 차이는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 총수익률은 대출이자·관리비 등 비용을 고려하지 않은 단순 수익률이고, 순수익률은 모든 비용을 차감한 실질 수익률입니다. 투자 판단 시 순수익률이 더 중요합니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 적정 임대수익률은 어느 정도인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 지역과 물건에 따라 다르지만, 서울 아파트 기준 총수익률 3~4%, 순수익률 2~3% 수준입니다. 오피스텔이나 지방 물건은 총수익률 5~8%까지 나오기도 합니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 공실 리스크는 어떻게 대비하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 역세권, 대학가 등 임대 수요가 꾸준한 입지를 선택하고, 연 1~2개월 공실을 감안한 보수적 수익률로 판단하는 것이 안전합니다. 월세를 시세보다 약간 낮게 설정하면 공실 기간을 줄일 수 있습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 총수익률과 순수익률의 차이는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 총수익률은 비용 전 단순 수익률이고, 순수익률은 대출이자·관리비 뺀 실질 수익률이에요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 적정 수익률은 어느 정도인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 서울 아파트 기준 총수익률 3~4%, 순수익률 2~3% 수준이에요. 오피스텔은 5~8%까지도 나와요.</div></div>
       </div>
     </Card>
 

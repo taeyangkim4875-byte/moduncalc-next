@@ -208,31 +208,21 @@ export default function BmiChildCalc() {
         </Card>
       )}
 
-      {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 소아 BMI 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>소아 비만 기준이 성인과 다른 이유:</b> 어린이와 청소년은 성장기이므로 BMI가 나이·성별에 따라 크게 달라집니다. 성인은 BMI 25 이상을 비만으로 판정하지만, 소아는 같은 성별·나이 집단의 백분위를 사용합니다. 95백분위 이상이면 비만으로 분류합니다.</p>
-          <p><b>성장기 영양:</b> 성장기에는 단백질, 칼슘, 철분, 비타민D 등이 특히 중요합니다. 무리한 식이 제한은 성장 발달에 악영향을 줄 수 있으므로, 과체중·비만이라도 균형 잡힌 식단과 규칙적인 신체 활동으로 관리하는 것이 바람직합니다.</p>
-          <p><b>성장 곡선:</b> 아이의 성장은 한 시점의 수치보다 시간에 따른 추이(성장 곡선)가 더 중요합니다. 정기적으로 키와 체중을 측정하여 성장 곡선을 관찰하고, 급격한 변화가 있으면 소아과 전문의와 상담하세요. 질병관리청 소아 성장도표를 참고할 수 있습니다.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">어린이 BMI는 성인 기준이랑 달라요. 나이별 백분위로 봐야 합니다. 질병관리청 소아 성장도표 기준으로 판정해드려요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 어린이 BMI는 성인과 다른가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 어린이는 성별·나이에 따라 BMI 기준이 다릅니다. 같은 BMI라도 나이와 성별에 따라 정상일 수도, 비만일 수도 있어 백분위로 판정합니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 소아 비만 기준은 무엇인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 같은 성별·나이 집단에서 BMI가 85~95백분위이면 과체중, 95백분위 이상이면 비만으로 판정합니다. 5백분위 미만은 저체중입니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 같은 BMI라도 나이와 성별에 따라 판정이 달라져서 백분위로 봐야 해요.</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 성장기에 다이어트를 해도 되나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 성장기에는 극단적인 식이 제한보다 균형 잡힌 영양 섭취와 규칙적인 신체 활동이 권장됩니다. 소아 비만이 걱정된다면 소아과 전문의와 상담하세요.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 극단적인 식이 제한보다 균형 잡힌 식단과 규칙적인 신체 활동이 좋아요. 걱정되면 소아과 전문의와 상담하세요.</div>
           </div>
         </div>
       </Card>

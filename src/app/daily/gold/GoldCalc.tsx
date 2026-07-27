@@ -123,29 +123,20 @@ export default function GoldCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 금 거래 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>금 거래 단위:</b> 한국에서는 전통적으로 &apos;돈&apos;을 사용합니다. 1돈 = 3.75g, 1냥 = 10돈 = 37.5g입니다. 국제 시장에서는 트로이온스(oz = 31.1035g)를 사용하며, 한국 금은방에서는 돈 단위, KRX 금시장에서는 g 단위로 거래합니다.</p>
-          <p><b>금 투자 방법:</b> 골드바(실물 금) 구매, KRX 금시장(한국거래소), 금 ETF(KODEX 골드선물 등), 골드뱅킹(금 통장) 등이 있습니다. KRX 금시장은 부가세 면제, 양도세 비과세 혜택이 있어 투자 목적에 유리합니다. 골드바는 부가세 10%가 부과되지만 실물을 보유할 수 있습니다.</p>
-          <p><b>금 매매 세금:</b> 골드바 구매 시 부가가치세 10%가 부과됩니다. KRX 금시장은 부가세 면제, 양도소득세 비과세입니다. 금 ETF는 배당소득세 15.4%가 부과됩니다. 금 통장(골드뱅킹)은 매매차익에 배당소득세 15.4%가 적용됩니다.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">금 1돈이 얼마인지 바로 환산할 수 있어요. 1돈 = 3.75g이에요. 돈, g, oz 단위를 자유롭게 변환해드려요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 금 1돈은 몇 그램인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 금 1돈은 3.75g입니다. 1냥은 10돈(37.5g)이며, 국제 단위 1트로이온스(oz)는 31.1035g입니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 1돈 = 3.75g이에요. 1냥은 10돈(37.5g)이고요.</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 금 거래 시 세금이 있나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 골드바 구매 시 부가가치세 10%가 부과됩니다. KRX 금시장을 통해 거래하면 부가세 면제, 양도소득세 비과세 혜택이 있습니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 금 투자 방법에는 어떤 것이 있나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 골드바 구매, KRX 금시장, 금 ETF, 금 통장(골드뱅킹), 금 펀드 등이 있습니다. 실물 보유를 원하면 골드바, 세금 혜택을 원하면 KRX 금시장을 추천합니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 골드바는 부가세 10%가 붙어요. KRX 금시장은 부가세 면제, 양도세 비과세라 투자 목적이면 유리해요.</div>
           </div>
         </div>
       </Card>

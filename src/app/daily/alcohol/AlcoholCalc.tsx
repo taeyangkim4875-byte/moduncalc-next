@@ -101,21 +101,15 @@ export default function AlcoholCalc(){
     </Card>}
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 음주운전 처벌 기준 (2026)</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">대한민국 도로교통법상 혈중알코올농도 0.03% 이상이면 음주운전으로 처벌됩니다. 0.03~0.08% 미만은 면허정지 및 1년 이하 징역 또는 500만원 이하 벌금, 0.08% 이상은 면허취소 및 1~5년 징역 또는 500~2000만원 벌금이 부과됩니다.</p>
-      <h3 className="text-sm font-bold mb-2">알코올 분해 원리</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">섭취된 알코올은 간에서 알코올 탈수소효소(ADH)에 의해 아세트알데히드로, 다시 알데히드 탈수소효소(ALDH)에 의해 아세트산으로 분해됩니다. 평균적으로 시간당 약 0.015%의 혈중알코올이 분해되며, 이 속도는 체질, 간 건강, 유전적 요인에 따라 달라집니다.</p>
-      <h3 className="text-sm font-bold mb-2">해장에 도움이 되는 것 / 안 되는 것</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">도움이 되는 것: 충분한 수분 섭취(물, 이온음료), 충분한 수면, 가벼운 식사(죽, 수프). 알코올 분해를 직접 빠르게 하는 것은 아니지만 숙취 증상을 완화합니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">도움이 안 되는 것: 커피(탈수 악화), 해장술(알코올 추가 섭취), 사우나(탈수 및 심혈관 부담). 특히 해장술은 알코올을 추가로 섭취하는 것이므로 절대 금물입니다.</p>
+      <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">술 마시고 언제 운전할 수 있는지 궁금할 때 쓰세요. 소주 한 병이면 6시간은 기다려야 해요.</p>
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 혈중알코올농도 0.03%면 어떤 처벌을 받나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 혈중알코올농도 0.03% 이상 0.08% 미만은 면허정지 처분을 받으며, 1년 이하의 징역 또는 500만원 이하의 벌금이 부과됩니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 음주 후 해장국을 먹으면 알코올이 빨리 분해되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 해장국은 위장을 보호하고 수분을 보충해 숙취 해소에 도움이 되지만, 알코올 분해 속도 자체를 빠르게 하지는 않습니다. 시간만이 유일한 해결책입니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 이 계산기의 결과를 법적 근거로 사용할 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 아닙니다. 이 계산기는 Widmark 공식에 기반한 추정치이며, 실제 혈중알코올농도는 체질, 음식 섭취, 컨디션 등에 따라 크게 달라질 수 있습니다. 참고용으로만 사용하세요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 해장국 먹으면 빨리 깨나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 숙취 해소에는 도움이 되지만, 알코올 분해 속도 자체는 안 빨라져요. 시간만이 답이에요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 이 결과를 법적 근거로 쓸 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 아니요, 참고용 추정치예요. 실제 농도는 체질에 따라 크게 달라지거든요.</div></div>
       </div>
     </Card>
   </>);

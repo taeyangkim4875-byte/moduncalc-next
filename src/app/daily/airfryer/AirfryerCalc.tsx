@@ -78,21 +78,15 @@ export default function AirfryerCalc(){
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 에어프라이어 사용 팁</h2>
-      <h3 className="text-sm font-bold mb-2">예열의 중요성</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">에어프라이어를 3~5분 예열하면 처음부터 고온에서 조리가 시작되어 겉은 바삭하고 속은 촉촉한 결과를 얻을 수 있습니다. 예열 없이 바로 넣으면 조리 시간이 약간 더 필요할 수 있으며, 겉면이 덜 바삭해질 수 있습니다.</p>
-      <h3 className="text-sm font-bold mb-2">뒤집기 타이밍</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">대부분의 음식은 전체 조리 시간의 절반 지점(예: 12분이면 6분 후)에 한 번 뒤집어 주세요. 감자튀김이나 너겟처럼 작은 음식은 바스켓을 흔들어주는 것만으로 충분합니다. 스테이크나 생선처럼 두꺼운 음식은 집게로 뒤집어 주세요.</p>
-      <h3 className="text-sm font-bold mb-2">오븐과의 차이</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed">에어프라이어는 컨벡션 오븐의 소형 버전입니다. 좁은 공간에서 강력한 팬이 뜨거운 공기를 빠르게 순환시키므로, 같은 온도에서도 오븐보다 더 빠르고 바삭하게 조리됩니다. 반면 한 번에 조리할 수 있는 양이 적고, 큰 음식은 넣기 어렵습니다.</p>
+      <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">오븐 레시피를 에어프라이어로 바꿀 때 온도 15도 낮추고 시간 20% 줄이면 돼요. 중간에 한 번 뒤집어주면 골고루 익습니다.</p>
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 에어프라이어는 예열이 필요한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 대부분의 에어프라이어는 3~5분 예열하면 충분합니다. 예열 없이 바로 조리해도 되지만, 예열하면 더 바삭한 결과를 얻을 수 있습니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 에어프라이어와 오븐의 차이는 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 에어프라이어는 강력한 팬으로 뜨거운 공기를 빠르게 순환시켜 조리합니다. 오븐보다 공간이 작고 공기 순환이 빨라 같은 온도에서도 더 빨리, 더 바삭하게 조리됩니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 중간에 뒤집어야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 대부분의 음식은 조리 시간의 절반 지점에서 한 번 뒤집거나 흔들어주면 골고루 익습니다. 특히 감자튀김, 치킨너겟 등은 뒤집기가 중요합니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 에어프라이어는 예열이 필요한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 3~5분 예열하면 더 바삭하게 나오지만, 안 해도 괜찮아요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 오븐이랑 뭐가 다른가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 에어프라이어는 공기 순환이 빨라서 같은 온도에서도 더 빨리, 더 바삭하게 조리됩니다.</div></div>
       </div>
     </Card>
   </>);

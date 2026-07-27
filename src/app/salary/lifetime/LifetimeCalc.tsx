@@ -153,16 +153,14 @@ export default function LifetimeCalc() {
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 평생 근로소득을 계산해 드려요.</Card>}
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 평생 근로소득이란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">평생 근로소득은 직장 생활을 시작해서 은퇴할 때까지 받는 급여의 총합입니다. 매년 임금 상승률을 반영하면 초반에는 적지만 후반으로 갈수록 연봉이 커지는 복리 효과가 나타납니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">한국 직장인의 평균 근속 기간은 약 30년이며, 임금 상승률은 업종·직급에 따라 다르지만 평균 2~4% 수준입니다. 연봉 3,600만원(월 300만원)으로 30년간 연 3% 상승 시 평생 총 근로소득은 약 17억원입니다.</p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">은퇴까지 총 얼마를 벌 수 있을지 궁금하지 않으세요? 생각보다 큰 숫자가 나와요.</p>
       </Card>
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 임금 상승률은 어느 정도가 현실적인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 일반 직장인은 연 2~4%, 고성장 직군(IT, 금융)은 5~8%, 공무원·공기업은 1~3% 정도가 현실적입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 세후 실수령은 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 평균 실효세율로 추정한 값입니다. 정확한 세후 금액은 연봉 구간, 공제 항목에 따라 달라집니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 이직하면 어떻게 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 이직 시 연봉이 크게 오르면 임금 상승률을 높게, 현직 유지라면 낮게 설정해서 비교해보세요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 임금 상승률은 몇 %가 현실적인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 일반 직장인은 연 2~4%, IT/금융은 5~8% 정도가 현실적이에요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 세후 실수령은 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 평균 실효세율로 추정한 값이에요. 정확한 금액은 연봉 구간에 따라 달라질 수 있어요.</div></div>
         </div>
       </Card>
 

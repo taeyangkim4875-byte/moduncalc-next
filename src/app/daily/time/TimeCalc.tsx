@@ -243,29 +243,20 @@ export default function TimeCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">근무시간 관련 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>근로기준법 근무시간:</b> 법정 근로시간은 1주 40시간(1일 8시간)입니다. 연장근로는 당사자 합의 하에 주 12시간까지 가능하여 최대 주 52시간입니다. 5인 이상 사업장에 적용되며, 18세 미만 근로자는 1일 7시간, 주 35시간이 법정 근로시간입니다.</p>
-          <p><b>야간수당:</b> 22시~06시 사이의 근로에 대해 통상임금의 50%를 가산하여 지급합니다. 예를 들어 시급 10,000원이면 야간 시간대는 15,000원이 됩니다. 야간근로가 연장근로와 겹치면 100% 가산(통상임금의 2배)이 적용됩니다.</p>
-          <p><b>연장근로수당:</b> 법정 근로시간(1일 8시간, 주 40시간)을 초과하는 근로에 대해 통상임금의 50%를 가산합니다. 휴일근로도 8시간 이내 50%, 8시간 초과 100% 가산입니다. 2026년 최저시급 기준으로 연장근로수당을 정확히 계산하세요.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">출퇴근 시간 차이나 알바 근무시간 계산할 때 편해요. 시급 넣으면 일급·주급도 바로 나와요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 야간수당은 어떻게 계산하나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 근로기준법상 22시~06시 사이의 근로에 대해 통상임금의 50%를 가산하여 지급합니다. 시급 10,000원이면 야간 시간대는 15,000원이 됩니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 22시~06시 근로에 통상임금 50% 가산이에요. 시급 1만원이면 야간은 1.5만원이 돼요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 주 52시간제란 무엇인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 주 52시간제는 1주 법정근로시간 40시간 + 연장근로 12시간으로 최대 주 52시간까지 근무할 수 있는 제도입니다. 5인 이상 사업장에 적용됩니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 휴게시간은 법적으로 어떻게 되나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 근로기준법상 4시간 근무 시 30분 이상, 8시간 근무 시 1시간 이상의 휴게시간을 부여해야 합니다. 휴게시간은 근로시간에 포함되지 않습니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 휴게시간은 법적으로 얼마인가요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 4시간 근무 시 30분, 8시간 근무 시 1시간 이상이에요. 근로시간에 포함되지 않아요.</div>
           </div>
         </div>
       </Card>

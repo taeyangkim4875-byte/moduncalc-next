@@ -117,16 +117,14 @@ export default function ParentalCalc() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 육아휴직 급여란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">육아휴직 급여는 만 8세 이하 또는 초등학교 2학년 이하의 자녀를 가진 근로자가 육아휴직을 사용할 때 고용보험에서 지급하는 급여입니다. 2026년부터 최대 18개월까지 사용할 수 있으며, 사후지급금(25%)이 폐지되어 매월 전액 지급됩니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">2026년 하반기부터 일반 육아휴직 급여 상한이 단계적으로 인상되었습니다. 1~3개월차 월 최대 250만원, 4~6개월차 200만원, 7개월차 이후 160만원입니다. 6+6 부모육아휴직제를 적용하면 첫 6개월은 통상임금 100%(상한 월 450만원)까지 받을 수 있습니다.</p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">육아휴직 급여가 2026년 하반기부터 올랐어요. 1~3개월차 최대 250만원. 6+6이면 최대 450만원까지.</p>
       </Card>
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 6+6 부모육아휴직제란?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 생후 18개월 이내 자녀에 대해 부모가 동시 또는 순차적으로 육아휴직 시, 첫 6개월은 통상임금 100%(상한 월 450만원)를 지급하는 제도입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 사후지급금이 없어졌나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 2026년부터 사후지급금(25%)이 폐지되어 매월 급여 전액을 바로 받을 수 있습니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 최대 몇 개월까지 가능한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 2026년부터 최대 18개월(1년 6개월)까지 사용할 수 있습니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 6+6 부모육아휴직제가 뭔가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 부모가 동시에 또는 순차적으로 휴직하면 첫 6개월은 통상임금 100%(상한 450만원)를 받을 수 있어요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 사후지급금은 없어졌나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 2026년부터 폐지돼서 매월 전액 바로 받을 수 있어요.</div></div>
         </div>
       </Card>
 

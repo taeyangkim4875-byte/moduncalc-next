@@ -125,16 +125,14 @@ export default function AnnualCalc() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 연차휴가란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">연차유급휴가는 근로기준법 제60조에 따라 근로자에게 부여되는 유급 휴일입니다. 1년 미만 근무자는 1개월 개근 시 1일의 월차가 발생하며(최대 11일), 1년 이상 근무 시 80% 이상 출근 조건으로 15일의 연차가 부여됩니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">3년 이상 근속하면 매 2년마다 1일씩 가산되어 최대 25일까지 늘어납니다. 미사용 연차는 발생일로부터 1년 후 소멸되며, 소멸된 연차에 대해서는 연차수당을 청구할 수 있습니다.</p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">내 연차 며칠인지 헷갈릴 때 쓰세요. 입사일만 넣으면 됩니다.</p>
       </Card>
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1년 미만인데 연차가 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 1개월 개근 시 1일의 월차가 발생합니다. 첫 해에 최대 11일까지 사용할 수 있으며, 1년 근속 시 발생하는 15일에서 이미 사용한 월차를 차감합니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연차는 언제 소멸하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 발생일로부터 1년간 미사용 시 소멸됩니다. 미사용 연차에 대해서는 연차수당을 청구할 수 있습니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연차수당은 어떻게 계산하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 미사용 연차 1일당 통상임금 1일분이 지급됩니다. 통상임금 ÷ 209시간 × 8시간 = 1일 연차수당입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1년 미만인데 연차가 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 1개월 개근하면 1일씩 월차가 생겨요. 첫 해에 최대 11일까지 쓸 수 있어요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 연차는 언제 소멸하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 발생일로부터 1년 지나면 없어져요. 안 쓴 연차는 연차수당으로 청구할 수 있어요.</div></div>
         </div>
       </Card>
 

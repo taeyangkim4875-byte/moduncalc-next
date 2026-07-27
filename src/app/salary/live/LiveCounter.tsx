@@ -169,15 +169,14 @@ export default function LiveCounter() {
       )}
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 월급 카운터란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">연봉을 근무 시간으로 나누면 초당 얼마를 버는지 알 수 있습니다. 연간 근무일수 252일, 일 8시간 기준으로 계산합니다. 연봉 4,500만원이면 초당 약 6.2원, 시간당 약 22,321원을 벌고 있는 셈입니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">카운터를 켜놓으면 실시간으로 금액이 올라가는 걸 볼 수 있어요. 화장실 다녀오는 5분 동안에도, 커피를 마시는 15분 동안에도 돈을 벌고 있다는 걸 체감할 수 있습니다.</p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">초당 얼마 벌고 있는지 실시간으로 보여드려요. 화장실 갔다 오는 5분 동안에도 돈은 벌리고 있거든요.</p>
       </Card>
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 세전 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 세전 연봉 기준입니다. 실제 수령액은 4대보험과 소득세를 공제한 후 금액이므로, 실수령 기준으로 보려면 연봉 실수령액 계산기를 먼저 이용하세요.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 근무일수 252일은 어떻게 나온 건가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 연 365일에서 주말(104일)과 공휴일(약 15일)을 제외한 일반적인 근무일수입니다. 회사마다 다를 수 있습니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 세전 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 세전 연봉 기준이에요. 실수령 기준으로 보려면 연봉 실수령액 계산기를 먼저 이용해보세요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 근무일수 252일은 어떤 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 연 365일에서 주말과 공휴일을 뺀 평균 근무일수예요. 회사마다 다를 수 있어요.</div></div>
         </div>
       </Card>
 

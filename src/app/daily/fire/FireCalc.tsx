@@ -202,16 +202,14 @@ export default function FireCalc() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 FIRE란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>FIRE(Financial Independence, Retire Early)</b>는 경제적 독립을 달성하여 원하는 시점에 은퇴할 수 있는 상태를 만드는 운동입니다. 핵심은 <b>4% 룰</b>로, 연간 생활비의 25배를 모으면 자산의 4%만 매년 인출해도 자산이 고갈되지 않는다는 이론입니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">예를 들어 월 200만원(연 2,400만원)으로 생활할 수 있다면, 6억원이 FIRE 목표 자산입니다. 저축률이 가장 중요한 변수이며, 저축률 50%면 약 17년, 70%면 약 9년 만에 달성 가능합니다.</p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">몇 살에 은퇴할 수 있을지 궁금하면 한번 넣어보세요. 저축률이 핵심이에요.</p>
       </Card>
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 4% 룰이란?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 은퇴 자산에서 매년 4%만 인출하면 투자 수익으로 원금이 유지된다는 트리니티 연구 결과입니다. 연간 생활비 × 25 = 필요 자산.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 인플레이션은 반영되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 이 계산기는 명목 수익률 기준입니다. 실질 수익률로 계산하려면 투자 수익률에서 인플레이션(약 2~3%)을 빼고 입력하세요.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 국민연금은 포함되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 이 계산기는 국민연금을 별도로 반영하지 않습니다. 국민연금이 있으면 은퇴 후 필요 생활비가 줄어들어 FIRE 달성이 더 빨라집니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 4% 룰이 뭔가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 매년 자산의 4%만 쓰면 원금이 안 줄어든다는 이론이에요. 연간 생활비 x 25 = 필요 자산이에요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 인플레이션은 반영되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 명목 수익률 기준이에요. 실질로 보려면 수익률에서 인플레이션(2~3%)을 빼고 넣어보세요.</div></div>
         </div>
       </Card>
 

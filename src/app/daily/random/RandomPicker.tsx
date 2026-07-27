@@ -226,29 +226,20 @@ export default function RandomPicker() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">랜덤 추첨 활용 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>공정한 추첨 방법:</b> 이 생성기는 crypto.getRandomValues()를 사용하여 암호학적으로 안전한 난수를 생성합니다. Math.random()보다 더 균일한 분포를 보장하며, 모든 결과가 동일한 확률로 나타납니다. 발표 순서 정하기, 당첨자 추첨, 팀 나누기 등에 공정하게 활용할 수 있습니다.</p>
-          <p><b>로또 당첨 확률:</b> 로또 6/45의 1등 당첨 확률은 45C6 = 8,145,060분의 1입니다. 매주 1장(1,000원)을 구매하면 평균 15만 6천 년에 한 번 당첨됩니다. 2등(5개+보너스)은 1,357,510분의 1, 3등(5개)은 35,724분의 1입니다. 로또는 투자가 아닌 소액 여가로 즐기세요.</p>
-          <p><b>활용 예시:</b> 발표 순서 정하기(이름 목록 섞기), 팀 나누기(번호 부여 후 추첨), 메뉴 고르기(후보 목록 섞기), 좌석 배치(번호 추첨), 경품 추첨(참가자 목록 섞기), 운동 루틴(종목 섞기) 등 다양하게 활용할 수 있습니다.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">제비뽑기, 로또 번호, 순서 섞기가 필요할 때 쓰세요. 암호학적으로 안전한 난수를 사용해서 공정해요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 랜덤 추첨은 공정한가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 이 생성기는 crypto.getRandomValues()를 사용하여 암호학적으로 안전한 난수를 생성합니다. 모든 숫자가 동일한 확률로 선택되므로 공정한 추첨이 가능합니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. crypto.getRandomValues()로 안전한 난수를 생성해서 모든 결과가 동일한 확률로 나와요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 로또 당첨 확률은 얼마인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 로또 6/45의 1등 당첨 확률은 1/8,145,060(약 814만분의 1)입니다. 매주 1장씩 구매하면 평균 15만 6천 년에 한 번 당첨됩니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 목록 섞기는 어떤 알고리즘을 사용하나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. Fisher-Yates 셔플 알고리즘을 사용합니다. 모든 순열이 동일한 확률로 나타나는 편향 없는 셔플 방법입니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 로또 1등 당첨 확률은?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 약 814만분의 1이에요. 매주 1장씩 사면 평균 15만 6천 년에 한 번 당첨됩니다.</div>
           </div>
         </div>
       </Card>

@@ -229,29 +229,20 @@ export default function TipSplitCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 모임 정산 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>정산 앱 추천:</b> 토스 더치페이 기능은 링크 하나로 각자 자동 정산이 가능합니다. 카카오페이 송금은 카톡 대화방에서 바로 요청할 수 있어 편리합니다. 네이버페이 정산하기도 그룹 정산을 지원합니다.</p>
-          <p><b>효율적인 정산 팁:</b> 모임 전 정산 방식을 미리 정하면 불필요한 갈등을 피할 수 있습니다. 금액이 클 경우 각자 카드를 나눠서 결제하는 것도 방법입니다. 10원 단위 이하는 결제자가 부담하는 것이 매끄럽습니다.</p>
-          <p><b>차등 정산이 필요한 경우:</b> 술을 마신 사람과 안 마신 사람, 늦게 합류한 사람, 특별 메뉴를 시킨 사람 등 상황에 따라 차등 정산이 합리적일 수 있습니다. 미리 기준을 정하고, 차등 분배 모드로 정확하게 계산하세요.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">모임 정산할 때 누가 얼마 보내야 하는지 깔끔하게 계산해드려요. 균등, 차등, 결제자 정산 세 가지 모드가 있어요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 균등 분배와 차등 분배의 차이는 무엇인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 균등 분배는 총 금액을 참석자 수로 나누는 N분의1 계산이고, 차등 분배는 각 참석자가 다른 금액을 부담하는 방식입니다. 술을 마신 사람과 안 마신 사람의 금액을 다르게 설정할 수 있습니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 송금 최소화란 무엇인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 한 사람이 먼저 결제했을 때, 나머지 참석자들이 결제자에게 보내야 할 금액을 계산합니다. 송금 횟수를 최소화하여 정산을 간편하게 합니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 균등 분배와 차등 분배의 차이는?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 균등은 N분의1이고, 차등은 술 마신 사람과 안 마신 사람처럼 각자 다른 금액을 부담하는 방식이에요.</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 정산할 때 편리한 앱이 있나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 토스의 더치페이 기능, 카카오페이 송금, 네이버페이 정산하기 등을 활용하면 편리합니다. 링크를 공유하면 각자 자동으로 송금할 수 있습니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 토스 더치페이, 카카오페이 송금, 네이버페이 정산하기가 편해요.</div>
           </div>
         </div>
       </Card>

@@ -191,29 +191,20 @@ export default function CryptoCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 가상자산 투자 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>가상자산 세금:</b> 가상자산 소득세는 여러 차례 유예를 거쳐 2027년 시행 예정이었으나, 추가 유예 가능성이 있습니다. 시행 시 연 250만원 초과 수익에 대해 22%(지방세 포함)가 과세됩니다. 해외 거래소 이용 시에도 신고 의무가 있으므로 유의하세요.</p>
-          <p><b>주요 거래소 수수료:</b> 국내 최대 거래소인 업비트는 0.05%, 빗썸은 기본 0.04%(쿠폰 적용 시 0.01%까지 가능)입니다. 해외 거래소 바이낸스는 0.1%이며 BNB 토큰 결제 시 25% 할인됩니다. 원화 입출금 시 별도 수수료가 발생할 수 있습니다.</p>
-          <p><b>투자 주의사항:</b> 가상자산은 변동성이 매우 높아 원금 손실 가능성이 있습니다. 여유 자금으로만 투자하고, 분산 투자를 권장합니다. 레버리지·마진 거래는 손실이 투자금을 초과할 수 있으므로 초보자는 피하세요. 피싱·스캠에 주의하고 공식 사이트만 이용하세요.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">코인 수익률 계산할 때 수수료까지 빼면 생각보다 적어요. 매수·매도 수수료를 반영한 실수익을 바로 확인할 수 있어요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 가상자산 수익에 세금이 부과되나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 가상자산 과세는 여러 차례 유예되어 2027년 시행 예정이었으나 추가 유예 가능성이 있습니다. 시행 시 연 250만원 초과 수익에 22%(지방세 포함)가 과세됩니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 코인 수익에 세금이 붙나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 가상자산 과세는 여러 차례 유예 중이에요. 시행 시 연 250만원 초과 수익에 22%가 과세됩니다.</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 거래소 수수료는 얼마인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 업비트 0.05%, 빗썸 0.04%(쿠폰 적용 시 0.01%), 코인원 0.2%, 바이낸스 0.1%가 기본입니다. 거래소와 결제 수단에 따라 다를 수 있습니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 수익률은 어떻게 계산하나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 수익률 = (현재가 - 매수가) / 매수가 x 100입니다. 수수료를 반영한 실수익은 매수·매도 수수료를 차감한 후 계산됩니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 업비트 0.05%, 빗썸 0.04%, 바이낸스 0.1%가 기본이에요. 거래소마다 다를 수 있어요.</div>
           </div>
         </div>
       </Card>

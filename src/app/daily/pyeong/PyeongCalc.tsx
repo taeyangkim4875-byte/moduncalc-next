@@ -114,65 +114,20 @@ export default function PyeongCalc() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 평이란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>평(坪)</b>은 일본에서 유래한 면적 단위로, 약 3.3058㎡에 해당합니다. 한국에서는 2007년부터 법적으로 ㎡(제곱미터)를 공식 단위로 사용하지만, 부동산 거래에서는 여전히 &apos;평&apos;이 널리 쓰이고 있습니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          1평은 가로·세로 약 1.82m(6자)의 정사각형 면적입니다. 다다미 2장 크기에 해당하며, 약 3.3㎡의 공간입니다. 일상 대화에서는 &apos;평&apos;이 직관적이어서 여전히 많이 사용됩니다.
-        </p>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">33평이 몇 제곱미터인지 바로 변환돼요. 부동산 볼 때 필수. 1평 = 3.3058㎡ 기준이에요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 전용면적 vs 공급면적 vs 계약면적</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>전용면적</b>은 실제로 거주하는 공간의 면적입니다. 방, 거실, 주방, 화장실 등 세대 내부만 포함하며 벽체 중심선 기준으로 측정합니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>공급면적</b>은 전용면적에 주거 공용면적(복도, 계단, 엘리베이터 등)을 더한 것입니다. 분양 광고에서 &apos;84㎡&apos;라고 하면 보통 이 공급면적을 의미합니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>계약면적</b>은 공급면적에 기타 공용면적(주차장, 관리사무소 등)을 더한 것입니다. 분양 계약서에 기재되는 면적이지만, 실제 거주 공간과는 차이가 큽니다.
-        </p>
-      </Card>
-
-      <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 한국 부동산에서 평수가 중요한 이유</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          한국에서 아파트 가격은 평당 가격으로 비교하는 것이 일반적입니다. 같은 지역이라도 평형에 따라 평당 가격이 다를 수 있으며, 일반적으로 중소형(24~33평)이 대형(43평 이상)보다 평당 가격이 높은 경향이 있습니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          아파트 분양 시 &apos;전용 84㎡&apos;라고 표기하더라도, 실제 체감하는 크기를 파악하려면 평수로 환산하는 것이 직관적입니다. 전용 84㎡는 약 25.4평이지만, 공급면적 기준으로는 33평형으로 불립니다.
-        </p>
-      </Card>
-
-      <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 실제 아파트 크기 감잡기</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>24평형(전용 59㎡):</b> 방 2~3개, 화장실 1~2개. 신혼부부나 2인 가구에 적합합니다. 거실과 주방이 일체형인 경우가 많습니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>33평형(전용 84㎡):</b> 방 3개, 화장실 2개. 4인 가족에 가장 인기 있는 평형입니다. 거실이 넓고 주방이 분리되어 있습니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>43평형(전용 114㎡):</b> 방 4개, 화장실 2개. 넓은 거실과 별도의 다용도실이 있는 대형 평형입니다. 주방이 독립적으로 구성됩니다.
-        </p>
-      </Card>
-
-      <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 전용면적과 공급면적의 차이는?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 전용면적은 실제 거주하는 공간(방, 거실, 주방, 화장실)이고, 공급면적은 전용면적에 복도·계단·엘리베이터 등 공용면적을 더한 것입니다. 보통 전용면적은 공급면적의 70~80% 수준입니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 전용면적은 실제 거주 공간이고, 공급면적은 복도·계단 등 공용면적을 포함한 거예요. 전용면적이 공급면적의 70~80% 정도예요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1평은 몇 제곱미터인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 1평은 정확히 3.3058㎡입니다. 간편하게 3.3㎡로 계산하기도 합니다. 반대로 1㎡는 약 0.3025평입니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 24평 아파트의 실제 크기는?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. &apos;24평형&apos;은 공급면적 79㎡를 의미하며, 전용면적은 약 59㎡(약 17.8평)입니다. 실제 거주 공간은 방 2~3개, 화장실 1~2개 규모입니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 33평형 아파트의 실제 크기는?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 공급면적 109㎡, 전용면적은 약 84㎡(약 25.4평)예요. 방 3개, 화장실 2개 규모입니다.</div>
           </div>
         </div>
       </Card>

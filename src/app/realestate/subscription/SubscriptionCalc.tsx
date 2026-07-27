@@ -182,30 +182,20 @@ export default function SubscriptionCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">청약 가점제 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>청약 가점제란:</b> 무주택 기간(32점), 부양가족 수(35점), 청약통장 가입 기간(17점) 등 3개 항목의 점수를 합산하여 총 84점 만점으로 당첨자를 선정하는 제도입니다. 전용면적 85m2 이하 민영주택에 적용되며, 가점이 높은 순으로 당첨자가 결정됩니다.</p>
-          <p><b>가점제 vs 추첨제:</b> 가점제는 무주택 기간, 부양가족 수 등의 점수로 선정하고, 추첨제는 신청자 중 무작위로 선정합니다. 전용 85m2 이하는 가점제 40~100%, 추첨제 0~60%가 적용됩니다. 투기과열지구는 가점제 100%입니다. 가점이 낮다면 추첨제 비중이 높은 85m2 초과 또는 비규제지역을 노려보세요.</p>
-          <p><b>특별공급:</b> 신혼부부, 다자녀, 생애최초, 노부모 부양 등의 특별공급은 일반공급과 별도로 진행됩니다. 가점이 낮더라도 조건에 해당하면 특별공급으로 당첨 기회를 높일 수 있습니다. 특별공급은 평생 1회만 당첨 가능합니다.</p>
-          <p><b>청약 절차:</b> 1) 청약통장 가입 및 납입 2) 모집공고 확인(청약Home) 3) 청약 자격 확인 4) 청약 신청 5) 당첨자 발표 6) 서류 제출 및 계약. 당첨 후 부적격 사례가 많으므로 무주택 여부, 소득 기준, 자산 기준 등을 꼼꼼히 확인하세요.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">청약 가점 몇 점인지 미리 알아두세요. 84점 만점이에요. 무주택 기간, 부양가족, 통장 가입 기간으로 계산해요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 청약 가점제란 무엇인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 무주택 기간(32점), 부양가족 수(35점), 청약통장 가입 기간(17점) 등 3개 항목의 점수를 합산하여 총 84점 만점으로 당첨자를 선정하는 제도입니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 가점제와 추첨제의 차이는?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 가점제는 점수 높은 순, 추첨제는 랜덤이에요. 85㎡ 이하 민영주택은 가점제 40~100% 적용돼요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 가점제와 추첨제의 차이는 무엇인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 가점제는 무주택 기간, 부양가족 수, 통장 가입 기간의 점수 합계가 높은 순으로 당첨자를 선정합니다. 추첨제는 신청자 중 무작위로 당첨자를 선정합니다. 전용 85m2 이하 민영주택은 가점제 40~100% 적용됩니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 부양가족 수는 어떻게 산정하나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 배우자, 직계존속(부모/조부모), 직계비속(자녀) 중 세대원으로 등록된 가족 수입니다. 배우자는 주민등록 분리 시에도 인정됩니다. 직계존속은 3년 이상 동일 세대, 미혼 자녀는 30세 미만이어야 합니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 부양가족 수는 어떻게 세나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 배우자, 3년 이상 동일세대 부모, 30세 미만 미혼 자녀가 해당돼요. 배우자는 분리 시에도 인정돼요.</div>
           </div>
         </div>
       </Card>

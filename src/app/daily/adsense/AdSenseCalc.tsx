@@ -129,46 +129,20 @@ export default function AdSenseCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 RPM이란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>RPM(Revenue Per Mille)</b>은 페이지 1,000회 노출당 발생하는 수익입니다. 애드센스 대시보드에서 확인할 수 있으며, 블로그 주제와 방문자 품질에 따라 크게 달라집니다.
-        </p>
-        <h3 className="text-sm font-extrabold mb-2">한국 블로그 평균 RPM</h3>
-        <div className="flex flex-col gap-1.5 mb-3">
-          <div className="flex justify-between px-3 py-2 rounded-xl bg-[var(--bg)] text-sm">
-            <span>일반 (생활정보, 리뷰)</span><span className="font-bold">1,000~3,000원</span>
-          </div>
-          <div className="flex justify-between px-3 py-2 rounded-xl bg-[var(--bg)] text-sm">
-            <span>금융/보험/IT</span><span className="font-bold">5,000~15,000원</span>
-          </div>
-        </div>
-        <h3 className="text-sm font-extrabold mb-2">블로그 수익을 높이는 방법</h3>
-        <ul className="text-sm text-[#4E5968] leading-relaxed pl-4 mb-3" style={{ listStyleType: 'disc' }}>
-          <li>고단가 키워드(금융, 보험, IT) 콘텐츠 작성</li>
-          <li>검색 유입 최적화 (SEO)로 양질의 트래픽 확보</li>
-          <li>광고 배치 최적화 (본문 상단, 중간 삽입)</li>
-          <li>모바일 반응형 광고 적용</li>
-        </ul>
-        <h3 className="text-sm font-extrabold mb-2">애드센스 정책 주의사항</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          자체 클릭, 클릭 유도, 부정 트래픽은 계정 정지 사유입니다. 콘텐츠 품질과 자연 유입에 집중하는 것이 장기적으로 유리합니다.
-        </p>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">블로그 애드센스 수익이 궁금하면 PV랑 RPM 넣어보세요. 한국 블로그 평균 RPM은 1,000~3,000원 수준이에요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. RPM과 CPC 중 어떤 기준이 정확한가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. RPM은 전체적인 수익 효율을, CPC는 개별 클릭 수익을 나타냅니다. 두 지표를 함께 보면 더 정확한 예상이 가능합니다.</div>
-          </div>
-          <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 애드센스 수익은 언제 지급되나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 매월 21~26일 사이에 전월 수익이 지급됩니다. 최소 지급 기준액은 100달러(약 13만원)입니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 매월 21~26일에 전월 수익이 지급돼요. 최소 100달러 이상이어야 해요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 블로그 초보도 애드센스 승인을 받을 수 있나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 양질의 원본 콘텐츠 20~30개 이상, 개인정보처리방침 페이지, 충분한 텍스트가 있으면 승인 가능성이 높습니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 블로그 초보도 승인받을 수 있나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 양질의 원본 콘텐츠 20~30개 이상이면 승인 가능성이 높아요.</div>
           </div>
         </div>
       </Card>

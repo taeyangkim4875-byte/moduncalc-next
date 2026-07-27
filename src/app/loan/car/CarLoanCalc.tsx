@@ -168,16 +168,14 @@ export default function CarLoanCalc() {
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 할부 납입액과 취등록세를 계산해 드려요.</Card>}
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 자동차 할부 구매란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">자동차를 할부로 구매하면 차량 가격 외에 할부 이자, 취등록세(취득세 7% + 지방교육세), 공채 매입비 등 부대비용이 발생합니다. 할부 이자율은 캐피탈사(5~8%), 은행(4~6%), 제조사 무이자 프로모션(0%) 등 경로에 따라 크게 달라집니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">경차는 취득세 75만원까지, 전기차는 140만원까지 면제됩니다. 할부 기간이 길수록 월 부담은 줄지만 총 이자는 크게 늘어나므로 적정 기간을 선택하는 것이 중요합니다.</p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">자동차 할부 월 납입액이 궁금하면 여기서 바로 계산해보세요. 취등록세까지 포함이에요.</p>
       </Card>
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 무이자 할부는 정말 이자가 0원인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 제조사 프로모션 무이자 할부는 실제 이자 0%이지만, 대신 차량 할인이 적거나 없는 경우가 많습니다. 현금 구매 시 추가 할인과 비교해보세요.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 할부 기간은 몇 개월이 적당한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 일반적으로 36~48개월을 많이 선택합니다. 60개월 이상은 총 이자가 크게 늘어나므로 여유가 된다면 짧은 기간을 권장합니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 취등록세 외에 또 드는 비용은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 공채 매입비(지역별 차이), 번호판 비용, 보험료 등이 추가로 발생합니다. 총 부대비용은 차량 가격의 약 10~12% 수준입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 무이자 할부는 정말 이자가 0원인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 이자는 0%이지만 차량 할인이 적거나 없는 경우가 많아요. 현금 구매 할인이랑 비교해보세요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 할부 기간은 몇 개월이 적당한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 보통 36~48개월을 많이 선택해요. 60개월 넘으면 총 이자가 꽤 커지거든요.</div></div>
         </div>
       </Card>
 

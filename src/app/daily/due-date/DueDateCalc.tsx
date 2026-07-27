@@ -103,20 +103,15 @@ export default function DueDateCalc(){
     </>}
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 임신 주수 계산 방법</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">임신 주수는 마지막 생리 시작일(LMP)부터 계산합니다. 실제 수정은 배란일(생리 시작 약 14일 후) 즈음에 이루어지므로, 임신 1~2주차에는 실제로 아직 임신이 아닌 상태입니다. 이는 국제적으로 통일된 계산 방식입니다.</p>
-      <h3 className="text-sm font-bold mb-2">네겔레 공식</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">독일의 산부인과 의사 프란츠 네겔레가 고안한 공식으로, 마지막 생리 시작일에 280일(40주)을 더해 출산 예정일을 계산합니다. 간편하게는 생리 시작 월에서 3을 빼고(또는 9를 더하고), 날짜에 7을 더하는 방법도 있습니다.</p>
-      <h3 className="text-sm font-bold mb-2">실제 출산일과의 차이</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed">정확히 예정일에 출산하는 비율은 약 5%에 불과합니다. 예정일 전후 2주(38~42주) 내 출산이 정상 범위이며, 초산의 경우 예정일보다 늦어지는 경향이 있습니다. 초음파 측정으로 보정한 예정일이 더 정확할 수 있습니다.</p>
+      <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">마지막 생리일 넣으면 출산 예정일이랑 현재 임신 주수가 나와요. 네겔레 공식(생리 시작일 + 280일) 기준이에요.</p>
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 출산 예정일은 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 출산 예정일은 네겔레 공식에 의한 추정일입니다. 실제 출산일은 예정일 전후 2주 이내가 정상 범위이며, 정확히 예정일에 출산하는 비율은 약 5%입니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 배란일 기준과 생리일 기준 중 어느 것이 더 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 배란일을 정확히 알고 있다면 배란일 기준이 더 정확할 수 있습니다. 하지만 대부분 배란일을 정확히 알기 어려워 마지막 생리 시작일 기준을 많이 사용합니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 임신 주수는 어떻게 계산하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 마지막 생리 시작일부터 오늘까지의 일수를 7로 나누어 계산합니다. 생리일 기준이므로 실제 수정은 약 2주 후에 이루어진 것으로 봅니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 출산 예정일은 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 예정일 전후 2주가 정상 범위예요. 정확히 예정일에 출산하는 비율은 약 5%입니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 배란일 기준이 더 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 배란일을 정확히 안다면 더 정확할 수 있지만, 대부분 생리 시작일 기준을 많이 써요.</div></div>
       </div>
     </Card>
   </>);

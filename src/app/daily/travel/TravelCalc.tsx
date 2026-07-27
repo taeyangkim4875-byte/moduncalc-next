@@ -245,70 +245,21 @@ export default function TravelCalc() {
 
       {/* 여행 예산 절약 팁 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">여행 예산 절약 팁</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2">
-          <p>
-            <b>항공권:</b> 2~3개월 전 예약이 가장 저렴합니다. 스카이스캐너, 네이버 항공권 비교를
-            활용하고, 화·수요일 출발이 주말보다 20~30% 저렴합니다.
-          </p>
-          <p>
-            <b>숙소:</b> 에어비앤비, 호스텔월드를 비교하세요. 장기 숙박 할인(주간 할인)을 활용하면
-            1박당 비용을 크게 줄일 수 있습니다.
-          </p>
-          <p>
-            <b>식비:</b> 현지 시장, 편의점, 로컬 식당을 이용하면 관광지 레스토랑 대비 50% 이상
-            절약됩니다.
-          </p>
-          <p>
-            <b>교통:</b> 교통 패스(JR패스, 유레일패스 등)를 사전 구매하면 현지 구매보다 저렴합니다.
-            도시 내에서는 대중교통을 적극 활용하세요.
-          </p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">여행 경비 대충 얼마 들지 미리 계산해보세요. 목적지, 여행 스타일, 일수에 따라 예상 비용이 달라져요.</p>
       </Card>
 
-      {/* 목적지별 특징 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">목적지별 여행 특징</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2">
-          <p>
-            <b>국내:</b> 항공비 부담이 없어 전체 경비가 저렴합니다. KTX, 고속버스를 활용하면
-            교통비를 절약할 수 있습니다.
-          </p>
-          <p>
-            <b>일본:</b> 교통비가 비싼 편이므로 JR패스 등 교통 패스 활용이 필수입니다. 편의점 식사로
-            식비를 절약할 수 있습니다.
-          </p>
-          <p>
-            <b>동남아:</b> 숙소와 식비가 매우 저렴합니다. 다만 장거리 이동 시 국내선 항공을 이용해야
-            하는 경우가 있어 교통비가 추가될 수 있습니다.
-          </p>
-          <p>
-            <b>유럽:</b> 숙소비가 높은 편이지만 유레일패스로 교통비를 절약할 수 있습니다. 도시 간
-            이동이 많으면 패스가 유리합니다.
-          </p>
-          <p>
-            <b>미국:</b> 렌터카가 사실상 필수인 지역이 많습니다. 팁 문화(15~20%)가 있어 식비 예산을
-            넉넉히 잡아야 합니다.
-          </p>
-        </div>
-      </Card>
-
-      {/* 환율 참고 */}
-      <Card>
-        <h2 className="text-base font-extrabold mb-3">환율 참고 정보</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2">
-          <p>
-            본 계산기의 비용은 원화(KRW) 기준 평균 예상치입니다. 실제 여행 시 환율 변동에 따라
-            비용이 달라질 수 있습니다.
-          </p>
-          <p>
-            <b>환전 팁:</b> 트래블월렛, 트래블로그 등 여행 전용 카드를 사용하면 환전 수수료를 최소화할
-            수 있습니다. 대량 환전 시 은행 우대 환율도 활용해 보세요.
-          </p>
-          <p>
-            <b>결제 팁:</b> 해외 결제 시 현지 통화(DCC 거부)로 결제하는 것이 유리합니다. 신용카드
-            해외 결제 수수료도 카드사별로 비교하세요.
-          </p>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
+        <div className="flex flex-col gap-4">
+          <div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 항공권은 언제 예약하면 저렴한가요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 2~3개월 전이 보통 가장 저렴해요. 화~수요일 출발이 주말보다 20~30% 싸요.</div>
+          </div>
+          <div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 환전은 어떻게 하는 게 유리한가요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 트래블월렛 같은 여행 전용 카드를 쓰면 수수료를 줄일 수 있어요. 해외 결제 시 현지 통화로 결제하세요.</div>
+          </div>
         </div>
       </Card>
     </>

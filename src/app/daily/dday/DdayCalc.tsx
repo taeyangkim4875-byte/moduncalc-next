@@ -22,15 +22,14 @@ export default function DdayCalc(){
       <R v={da.date} l={`${da.day}요일`}/>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 D-day 계산이란?</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">D-day는 특정 날짜까지 남은 일수 또는 경과한 일수를 나타내는 표현입니다. D-0은 당일, D-30은 30일 남았다는 뜻이며, D+100은 100일이 지났다는 뜻입니다. 시험, 기념일, 프로젝트 마감 등 중요한 날짜를 관리할 때 유용합니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">날짜 더하기/빼기 기능을 이용하면 특정 날짜로부터 며칠 후 또는 며칠 전의 날짜를 쉽게 구할 수 있습니다. 100일 기념일, 출산 예정일 등을 계산할 때 편리합니다.</p>
+      <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">두 날짜 사이 며칠인지, 날짜 더하기 빼기 바로 계산해요. 시험, 기념일, 프로젝트 마감 관리할 때 유용해요.</p>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. D-day와 D+day의 차이는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. D-day(D-0)는 당일이며, D-30은 30일 남았다는 뜻입니다. D+100은 기준일로부터 100일이 지났다는 의미로, 커플 기념일이나 출생 후 일수를 셀 때 사용합니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 음수 일수를 입력하면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 날짜 더하기에 음수를 입력하면 과거 날짜를 계산할 수 있습니다. 예를 들어 -100을 입력하면 100일 전 날짜를 알 수 있습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. D-day와 D+day의 차이는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. D-30은 30일 남았다는 뜻이고, D+100은 100일이 지났다는 뜻이에요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 음수 일수를 입력하면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. -100을 입력하면 100일 전 날짜를 구할 수 있어요.</div></div>
       </div>
     </Card>
   </>);

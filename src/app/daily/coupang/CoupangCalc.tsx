@@ -122,59 +122,20 @@ export default function CoupangCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 쿠팡 파트너스란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>쿠팡 파트너스</b>는 쿠팡의 제휴 마케팅(어필리에이트) 프로그램입니다. 블로그, SNS 등에 쿠팡 상품 링크를 공유하고, 해당 링크를 통해 구매가 발생하면 수수료를 받습니다.
-        </p>
-        <h3 className="text-sm font-extrabold mb-2">카테고리별 수수료율</h3>
-        <table className="w-full border-collapse text-[13px] mb-3">
-          <thead>
-            <tr className="border-b-2 border-[var(--line)]">
-              <th className="py-2 text-left text-xs text-[var(--sub)] font-bold">카테고리</th>
-              <th className="py-2 text-right text-xs text-[var(--sub)] font-bold">수수료율</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ['가전/전자', '3%'],
-              ['식품/생활', '3%'],
-              ['패션/의류', '3%'],
-              ['뷰티/화장품', '3%'],
-            ].map(([cat, rate]) => (
-              <tr key={cat} className="border-b border-[var(--line)]">
-                <td className="py-2">{cat}</td>
-                <td className="py-2 text-right font-bold">{rate}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <h3 className="text-sm font-extrabold mb-2">수익을 높이는 팁</h3>
-        <ul className="text-sm text-[#4E5968] leading-relaxed pl-4 mb-3" style={{ listStyleType: 'disc' }}>
-          <li>고가 상품 (가전, 가구) 위주로 추천</li>
-          <li>실제 사용 후기와 함께 자연스럽게 링크 삽입</li>
-          <li>시즌별 인기 상품 (명절, 블프) 활용</li>
-          <li>비교 리뷰 콘텐츠로 전환율 높이기</li>
-        </ul>
-        <h3 className="text-sm font-extrabold mb-2">주의사항</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          24시간 내 구매 건에 대해서만 수수료가 발생하며, 본인 구매는 수수료 대상에서 제외됩니다. 링크 클릭 후 24시간 쿠키 기간을 활용하세요.
-        </p>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">쿠팡 파트너스 수익이 궁금하면 클릭수랑 전환율 넣어보세요. 카테고리별 수수료율은 보통 1~3% 수준이에요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 쿠팡 파트너스 수수료는 언제 지급되나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 매월 말 정산 후 익월 25일경에 지급됩니다. 최소 출금 금액은 1만원입니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 수수료는 언제 지급되나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 매월 말 정산 후 익월 25일경에 지급돼요. 최소 출금 금액은 1만원입니다.</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 전환율 3%는 현실적인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 블로그 품질과 상품 관련성에 따라 1~10%까지 다양합니다. 상품 리뷰 글은 5% 이상도 가능하며, 일반 배너는 1~2% 정도입니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 쿠팡 파트너스와 애드센스를 동시에 할 수 있나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 동시 운영이 가능합니다. 애드센스로 광고 수익을, 쿠팡 파트너스로 제휴 수익을 함께 올릴 수 있습니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 상품 리뷰 글은 5% 이상도 가능하고, 일반 배너는 1~2% 정도예요. 콘텐츠 품질에 따라 달라져요.</div>
           </div>
         </div>
       </Card>

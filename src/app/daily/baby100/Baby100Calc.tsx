@@ -116,30 +116,15 @@ export default function Baby100Calc() {
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">아기 생년월일을 입력하면 기념일을 자동 계산합니다.</Card>}
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 아기 기념일 가이드</h2>
-
-        <h3 className="text-sm font-extrabold mb-2">백일잔치 준비</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">백일은 태어난 날을 1일로 세어 100번째 되는 날입니다. 전통적으로 백설기, 수수팥떡, 오색송편 등을 준비합니다. 최근에는 가족끼리 소규모로 사진 촬영과 함께 진행하는 경우가 많습니다. 백일상은 보통 떡, 과일, 미역국으로 구성합니다.</p>
-
-        <h3 className="text-sm font-extrabold mb-2 mt-4">돌잔치 준비</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">돌잔치는 아기가 태어난 지 365일 되는 날 진행합니다. <b>돌잡이</b>는 실, 돈, 연필, 마이크, 공 등을 놓고 아기가 고르는 전통입니다. 한복을 입히고 돌잡이 사진을 찍는 것이 일반적입니다. 돌잔치 장소는 2~3개월 전에 예약하는 것을 추천합니다.</p>
-
-        <h3 className="text-sm font-extrabold mb-2 mt-4">개월 수 기준 발달 단계</h3>
-        <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 flex flex-col gap-1.5">
-          <li><b>3~4개월</b>: 목 가누기, 옹알이 시작</li>
-          <li><b>5~6개월</b>: 뒤집기, 이유식 시작</li>
-          <li><b>7~8개월</b>: 혼자 앉기, 낯가림 시작</li>
-          <li><b>9~10개월</b>: 기어다니기, 잡고 서기</li>
-          <li><b>11~12개월</b>: 첫 걸음마, 간단한 단어 ("맘마", "빠빠")</li>
-        </ul>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">아기 백일, 돌 날짜가 헷갈릴 때 생년월일만 넣으면 됩니다. 태어난 날을 1일로 세서 계산해요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 백일은 어떻게 세나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 태어난 날을 1일로 세어 100번째 되는 날입니다. 예를 들어 1월 1일생이면 4월 10일이 백일입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 돌과 첫 번째 생일은 같은 건가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 보통 같은 날이지만, 엄밀히 돌은 태어난 지 365일째 되는 날이고 생일은 같은 월일입니다. 윤년 등에 의해 하루 차이가 날 수 있습니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 아기 개월 수는 어떻게 계산하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 만 나이 기준으로, 태어난 달의 같은 날짜가 지나야 1개월이 됩니다. 예를 들어 3월 15일생은 4월 15일에 만 1개월입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 백일은 어떻게 세나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 태어난 날을 1일로 세서 100번째 날이에요. 1월 1일생이면 4월 10일이 백일입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 돌과 첫 번째 생일은 같은 건가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 보통 같지만, 윤년 등에 의해 하루 차이가 날 수 있어요.</div></div>
         </div>
       </Card>
 

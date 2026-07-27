@@ -183,63 +183,21 @@ export default function CalorieCalc() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 칼로리란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>칼로리(Calorie)</b>는 음식이 제공하는 에너지의 단위입니다. 우리 몸은 기초대사(호흡, 심장 박동, 체온 유지 등), 소화 활동, 신체 활동에 칼로리를 소비합니다. 섭취 칼로리가 소비 칼로리보다 많으면 체중이 증가하고, 적으면 감소합니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          이 계산기는 <b>Mifflin-St Jeor 공식</b>을 사용합니다. 이 공식은 1990년에 발표된 것으로, 현재 가장 정확한 BMR 추정 공식으로 인정받고 있습니다.
-        </p>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">다이어트 시작하려면 내가 하루에 몇 칼로리 먹어야 하는지부터 알아야 해요. Mifflin-St Jeor 공식으로 기초대사량과 일일 소비 칼로리를 계산해드려요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 BMR과 TDEE의 차이</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>BMR(기초대사량)</b>은 아무것도 하지 않고 가만히 있어도 소비되는 최소 칼로리입니다. 호흡, 혈액순환, 세포 활동 등 생명 유지에 필요한 에너지로, 전체 소비 칼로리의 약 60~75%를 차지합니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>TDEE(일일 총 에너지 소비량)</b>는 BMR에 활동량을 반영한 실제 하루 소비 칼로리입니다. 다이어트 시 TDEE보다 적게 먹으면 체중이 감소하며, 건강한 감량 속도는 <b>주 0.5kg(월 2kg)</b>입니다. 이를 위해 하루 약 500kcal의 칼로리 적자를 만들면 됩니다.
-        </p>
-      </Card>
-
-      <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 건강한 다이어트 가이드</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          급격한 칼로리 제한(TDEE 대비 1,000kcal 이상 적자)은 근손실, 영양 결핍, 요요현상의 원인이 됩니다. <b>TDEE 대비 300~500kcal 적자</b>가 지속 가능한 감량의 핵심입니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          단백질은 체중 1kg당 1.2~1.6g을 섭취하면 근손실을 방지할 수 있습니다. 70kg 성인의 경우 하루 84~112g의 단백질이 필요합니다. 운동과 병행하면 체중 감량과 함께 체성분 개선이 가능합니다.
-        </p>
-      </Card>
-
-      <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 하루 1,200kcal만 먹어도 괜찮나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 성인 여성의 최소 권장 섭취량이 1,200kcal이며, 남성은 1,500kcal입니다. 이보다 적게 먹으면 영양 결핍과 기초대사량 감소가 발생할 수 있어 전문가 상담을 권합니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 성인 여성 최소 1,200kcal, 남성 1,500kcal이 권장돼요. 이보다 적으면 영양 결핍 위험이 있어요.</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 운동 없이 식단만으로 감량 가능한가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 가능하지만 근손실이 동반될 수 있습니다. 근력 운동을 병행하면 기초대사량을 유지하며 지방만 감량하는 효과적인 다이어트가 됩니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 가능하지만 근손실이 동반될 수 있어요. 근력 운동을 병행하면 더 효과적입니다.</div>
           </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. BMR 계산 공식은 정확한가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. Mifflin-St Jeor 공식은 가장 널리 인정받는 추정식이지만, 개인의 근육량, 호르몬, 유전적 요인에 따라 실제 BMR과 10~15% 차이가 날 수 있습니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 활동량 선택 기준은?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 사무직으로 따로 운동하지 않으면 &apos;비활동적&apos;, 주 1~3회 가벼운 운동은 &apos;가벼운 활동&apos;, 주 3~5회 중강도 운동은 &apos;보통 활동&apos;을 선택하세요. 대부분의 사람들은 실제보다 활동량을 과대평가하는 경향이 있습니다.</div>
-          </div>
-        </div>
-      </Card>
-
-      <Card>
-        <h2 className="text-base font-extrabold mb-3">🔗 관련 계산기</h2>
-        <div className="flex flex-col gap-2">
-          <Link href="/health/bmi" className="text-sm text-[var(--primary)] font-bold hover:underline">BMI 계산기 - 체질량지수 확인</Link>
-          <Link href="/health/bmr" className="text-sm text-[var(--primary)] font-bold hover:underline">BMR 계산기 - 기초대사량 상세 계산</Link>
-          <Link href="/health/bodyfat" className="text-sm text-[var(--primary)] font-bold hover:underline">체지방률 계산기</Link>
         </div>
       </Card>
 

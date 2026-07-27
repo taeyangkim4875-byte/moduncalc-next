@@ -163,30 +163,20 @@ export default function RegistrationCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 등기비용 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>등기 절차:</b> 매매계약 체결 → 잔금 지급 → 취득세 신고·납부(잔금일로부터 60일 이내) → 소유권이전등기 신청. 등기 신청은 관할 등기소에서 하며, 인터넷등기소(iros.go.kr)에서 등기부등본 확인이 가능합니다.</p>
-          <p><b>셀프등기 vs 법무사:</b> 셀프등기는 법무사비 50~80만원을 절약할 수 있지만, 서류 준비(매도용 인감증명서, 위임장, 부동산거래계약신고필증 등)와 등기소 방문을 직접 해야 합니다. 서류 누락이나 오류 시 보정에 시간이 걸리므로, 첫 등기라면 법무사 의뢰를 권장합니다.</p>
-          <p><b>필요 서류:</b> 매수인 - 주민등록등본, 가족관계증명서, 인감증명서, 인감도장, 주민등록초본(전입 예정인 경우). 매도인 - 등기권리증, 매도용 인감증명서, 주민등록초본, 인감도장. 공동 서류 - 부동산거래계약신고필증, 취득세 납부영수증.</p>
-          <p><b>취득세 감면:</b> 생애 최초 주택 구입 시 200만원 한도 감면, 신혼부부(혼인 5년 이내) 추가 감면, 다자녀 가구(3자녀 이상) 감면 등이 있습니다. 전용면적 85㎡ 이하 주택은 농어촌특별세가 면제됩니다.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">등기비용이 생각보다 많이 나와요. 취득세에 법무사비까지 한번에 계산해드려요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 등기비용에는 어떤 항목이 포함되나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 취득세, 지방교육세, 농어촌특별세, 인지세, 증지대, 법무사 수수료가 포함됩니다. 매매가와 주택 수에 따라 세율이 달라지며, 가장 큰 비중은 취득세가 차지합니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 셀프등기로 비용을 아낄 수 있나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 법무사비 50~80만원을 절약할 수 있지만, 서류 준비를 직접 해야 해요. 첫 등기라면 법무사를 추천해요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 셀프등기와 법무사 등기의 차이는 무엇인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 셀프등기는 법무사비(50~80만원)를 절약할 수 있지만, 서류 준비와 등기소 방문을 직접 해야 합니다. 실수 시 보정 절차가 필요하므로 첫 등기는 법무사를 추천합니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 취득세 감면 혜택이 있나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 생애 첫 주택 구입 시 취득세 감면(200만원 한도), 신혼부부 감면, 다자녀 감면 등이 있습니다. 전용면적 85㎡ 이하 주택은 농어촌특별세가 면제됩니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 취득세 감면이 있나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 생애 첫 주택 200만원 한도 감면, 신혼부부 감면, 85㎡ 이하 농특세 면제 등이 있어요.</div>
           </div>
         </div>
       </Card>

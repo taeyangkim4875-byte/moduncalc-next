@@ -110,16 +110,14 @@ export default function GiftTaxCalc(){
     </Card>
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 증여세란?</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">증여세는 타인으로부터 재산을 무상으로 받을 때 수증자(받는 사람)가 납부하는 세금입니다. 증여재산가액에서 관계에 따른 공제를 차감한 과세표준에 누진세율(10~50%)을 적용하여 계산합니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">증여일로부터 3개월 이내에 자진 신고하면 산출세액의 3%를 공제받을 수 있습니다.</p>
+      <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">자녀한테 증여할 때 세금 얼마 나오는지 미리 계산해보세요. 관계별 공제 한도가 다르고, 10년 합산 기준이에요.</p>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 10년 합산이란 무엇인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 동일인(배우자 포함)으로부터 10년 이내에 받은 증여재산은 모두 합산하여 과세합니다. 예를 들어 5년 전에 3,000만원을 받았다면 이번 증여와 합산하여 공제를 적용합니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 혼인·출산 공제는 어떤 경우에 적용되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 2024년 1월 1일부터 시행된 제도로, 혼인신고일 전후 2년 이내 또는 자녀 출생일부터 2년 이내에 직계존속으로부터 증여받는 경우 기존 공제 외 1억원을 추가로 공제받을 수 있습니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 증여세 신고기한은 언제인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 증여받은 날이 속하는 달의 말일부터 3개월 이내에 신고·납부해야 합니다. 기한 내 자진 신고 시 3%의 신고세액공제를 받을 수 있습니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 10년 합산이란?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 같은 사람한테 10년 이내에 받은 증여는 모두 합산해서 과세해요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 혼인·출산 공제란?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 결혼이나 출산 전후 2년 이내에 부모님한테 증여받으면 1억원 추가 공제돼요.</div></div>
       </div>
     </Card>
 

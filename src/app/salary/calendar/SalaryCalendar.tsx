@@ -225,26 +225,20 @@ export default function SalaryCalendar() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 월급 달력이란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          월급날까지 남은 날을 카운트다운하고, 이번 달 지금까지 얼마를 벌었는지 시각적으로 보여줍니다.
-          매일 접속하면 진행률이 올라가는 걸 확인할 수 있어요.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          설정한 연봉과 월급날은 브라우저에 저장되어 다음에 방문해도 유지됩니다.
-        </p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">월급날까지 며칠 남았는지 매일 확인하고 싶어서 만들었어요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 근무일은 어떻게 계산하나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 해당 월의 주말(토·일)을 제외한 평일 수를 기준으로 합니다. 공휴일은 포함하지 않습니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 주말을 빼고 평일만 세요. 공휴일은 따로 반영하지 않아요.</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 데이터는 어디에 저장되나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 브라우저의 로컬 스토리지에만 저장되며, 서버로 전송되지 않습니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 브라우저에만 저장돼요. 서버로는 전송되지 않으니 안심하세요.</div>
           </div>
         </div>
       </Card>

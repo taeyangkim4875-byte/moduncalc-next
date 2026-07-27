@@ -140,28 +140,15 @@ export default function AnniversaryCalc() {
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">시작 날짜를 입력하면 기념일을 자동 계산합니다.</Card>}
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 연애 기념일 가이드</h2>
-
-        <h3 className="text-sm font-extrabold mb-2">한국 연애 기념일 문화</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">한국에서는 서양과 달리 <b>100일 단위</b>의 기념일을 중요하게 여깁니다. 이는 아기의 백일잔치에서 유래한 것으로, 관계가 100일 지속되었다는 것이 특별한 의미를 갖습니다. 특히 <b>100일, 200일, 300일, 1000일</b>이 주요 기념일이며, 커플들은 선물을 교환하고 데이트를 즐깁니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">100일은 보통 커플링을 교환하는 날로, 200일은 조금 더 의미 있는 선물을, 300일은 여행을 계획하는 경우가 많습니다. 1000일(약 2년 9개월)은 특별한 이벤트를 준비하는 커플이 많습니다.</p>
-
-        <h3 className="text-sm font-extrabold mb-2 mt-4">기념일 선물 팁</h3>
-        <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 flex flex-col gap-1.5">
-          <li><b>100일</b>: 커플링, 향수, 커플 아이템 (일상에서 매일 쓸 수 있는 것)</li>
-          <li><b>200일</b>: 지갑, 가방, 전자기기 등 실용적 선물</li>
-          <li><b>300일</b>: 여행 (1박 2일 여행, 스파 등 경험 선물)</li>
-          <li><b>1주년</b>: 기념 사진 촬영, 고급 레스토랑, 의미 있는 선물</li>
-          <li><b>1000일</b>: 깜짝 이벤트, 영상 편지, 특별한 경험</li>
-        </ul>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">100일, 200일, 1000일 기념일 언제인지 자동으로 알려드려요. 사귄 날을 1일로 세는 한국식 기준이에요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 기념일은 사귄 날을 1일로 세나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 한국에서는 사귄 날을 1일로 세는 것이 일반적입니다. 예를 들어 1월 1일에 사귀면 4월 10일이 100일입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 100일과 1주년 중 어떤 게 더 중요한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 보통 둘 다 중요하지만, 100일은 한국 특유의 문화이고 1주년은 세계 공통입니다. 커플마다 의미를 부여하는 기준이 다르니 서로 대화로 정하세요.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1000일은 몇 년 몇 개월인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 1000일은 약 2년 8~9개월입니다. 정확한 날짜는 시작일에 따라 달라지며, 이 계산기에서 자동으로 확인할 수 있습니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 기념일은 사귄 날을 1일로 세나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 1월 1일에 사귀면 4월 10일이 100일이에요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 1000일은 몇 년인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 약 2년 8~9개월이에요. 시작일에 따라 달라지는데 여기서 바로 확인할 수 있어요.</div></div>
         </div>
       </Card>
 

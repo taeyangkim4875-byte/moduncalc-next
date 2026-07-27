@@ -129,40 +129,20 @@ export default function YouTubeCalc() {
 
       {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 유튜브 수익 구조</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          유튜브 크리에이터의 수익은 크게 <b>광고 수익, 슈퍼챗, 멤버십, 후원</b>으로 나뉩니다. 이 계산기는 가장 기본적인 광고 수익(애드센스)을 기준으로 합니다.
-        </p>
-        <h3 className="text-sm font-extrabold mb-2">한국 유튜브 평균 CPM</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          한국 유튜브 평균 CPM은 약 2,000~5,000원 수준입니다. 금융, IT, 교육 분야는 5,000~15,000원까지 올라가고, 엔터테인먼트나 게임은 1,000~3,000원대입니다.
-        </p>
-        <h3 className="text-sm font-extrabold mb-2">수익화 조건</h3>
-        <ul className="text-sm text-[#4E5968] leading-relaxed pl-4 mb-3" style={{ listStyleType: 'disc' }}>
-          <li>구독자 500명 이상</li>
-          <li>최근 12개월 공개 동영상 시청 시간 3,000시간 이상</li>
-          <li>또는 최근 90일 쇼츠 조회수 300만 회 이상</li>
-        </ul>
-        <h3 className="text-sm font-extrabold mb-2">세금 안내</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          유튜브 수익은 사업소득으로 분류되며, 3.3% 원천징수 후 종합소득세 신고 대상입니다. 연 수익이 일정 금액 이상이면 사업자 등록이 필요할 수 있습니다.
-        </p>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">유튜브 수익이 궁금하면 조회수랑 CPM 넣어보세요. 한국 평균 CPM은 약 2,000~5,000원 수준이에요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 유튜브 수익은 언제 지급되나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 매월 21~26일 사이에 애드센스를 통해 전월 수익이 지급됩니다. 최소 지급 기준액은 100달러입니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 수익은 언제 지급되나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 매월 21~26일에 애드센스로 지급돼요. 최소 100달러 이상이어야 해요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 조회수 100만 회면 얼마를 벌 수 있나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. CPM 3,000원, 광고 노출 50% 기준으로 약 150만원입니다. 하지만 채널 주제와 시청자층에 따라 크게 달라집니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 쇼츠도 수익이 발생하나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 2023년부터 쇼츠에도 광고 수익이 배분됩니다. 다만 일반 영상보다 CPM이 낮은 편입니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 조회수 100만이면 얼마인가요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. CPM 3,000원, 광고 노출 50% 기준 약 150만원이에요. 채널 주제에 따라 크게 달라져요.</div>
           </div>
         </div>
       </Card>

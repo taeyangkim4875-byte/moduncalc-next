@@ -170,31 +170,21 @@ export default function SleepCalc() {
         <div className="text-[10px] text-[var(--sub)] mt-2">출처: 미국수면재단(National Sleep Foundation)</div>
       </Card>
 
-      {/* 가이드 */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">수면 가이드</h2>
-        <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-          <p><b>수면 주기란:</b> 수면은 NREM(비렘수면) 1~3단계와 REM(렘수면)으로 구성된 약 90분 단위의 사이클이 반복됩니다. NREM 3단계(깊은 수면)에서는 신체 회복이, REM 수면에서는 기억 정리와 학습이 이루어집니다. 수면 주기가 완료되는 시점(REM 수면 직후)에 일어나면 개운하고, 깊은 수면 중 일어나면 몽롱합니다.</p>
-          <p><b>수면의 질 높이는 방법:</b> 매일 같은 시간에 자고 일어나는 규칙적인 수면 습관이 가장 중요합니다. 취침 2시간 전 카페인, 알코올, 과식을 피하고, 침실은 어둡고 시원하게(18~20도) 유지하세요. 자기 전 1시간은 스마트폰, TV 등 블루라이트를 차단하고 독서나 스트레칭으로 대체하면 좋습니다.</p>
-          <p><b>수면 부족의 영향:</b> 만성적인 수면 부족은 집중력 저하, 면역력 약화, 비만, 심혈관 질환 위험 증가와 연관됩니다. 하루 6시간 미만 수면이 2주 이상 지속되면 48시간 수면 박탈과 비슷한 인지 저하가 나타납니다. 주말 몰아자기는 수면 부채를 완전히 해소하지 못하므로 평일 수면을 충분히 확보하세요.</p>
-        </div>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">알람 맞춰도 피곤한 건 수면 주기 때문이에요. 90분 단위로 맞추면 확실히 달라요.</p>
       </Card>
 
-      {/* FAQ */}
       <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 수면 주기란 무엇인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 수면 주기는 NREM(비렘수면)과 REM(렘수면)이 반복되는 약 90분 단위의 사이클입니다. 한 밤에 4~6회 반복되며, 수면 주기가 끝나는 시점에 일어나면 개운합니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 수면 주기가 뭔가요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 약 90분 단위로 얕은 잠과 깊은 잠이 반복돼요. 주기가 끝나는 시점에 일어나면 개운해요.</div>
           </div>
           <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 성인의 권장 수면 시간은 얼마인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 미국수면재단(NSF) 기준 성인(18~64세)은 7~9시간, 65세 이상은 7~8시간이 권장됩니다. 수면 주기(90분) 기준으로 5사이클(7.5시간)이 가장 이상적입니다.</div>
-          </div>
-          <div>
-            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 잠드는 데 걸리는 시간은 왜 고려하나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 보통 잠자리에 든 후 실제로 잠들기까지 평균 10~20분이 걸립니다. 이 시간을 고려하지 않으면 수면 주기 계산이 부정확해져 개운하게 일어나기 어렵습니다.</div>
+            <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 성인은 몇 시간 자야 하나요?</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 7~9시간이 권장돼요. 수면 주기 기준으로 5사이클(7.5시간)이 가장 이상적이에요.</div>
           </div>
         </div>
       </Card>

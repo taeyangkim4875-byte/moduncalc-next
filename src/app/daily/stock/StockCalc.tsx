@@ -294,18 +294,15 @@ export default function StockCalc() {
       {/* 레버리지 시뮬레이터 */}
       <LeverageSim />
 
-      {/* FAQ */}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 주식 수익률과 물타기란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>수익률</b>은 매수가 대비 현재가의 변화를 퍼센트로 나타낸 것입니다. 수익률(%) = (현재가 - 매수가) ÷ 매수가 × 100으로 계산합니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed"><b>물타기</b>는 주가가 하락했을 때 추가 매수하여 평균 매수 단가를 낮추는 전략입니다. 평단가가 낮아지면 이후 주가 반등 시 더 빠르게 손익분기점에 도달할 수 있지만, 추가 하락 시 손실이 더 커질 수 있으므로 신중한 판단이 필요합니다.</p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">주식 수익률 계산이 은근 헷갈리잖아요. 물타기하면 평단가 얼마 되는지도 바로 나옵니다.</p>
       </Card>
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 물타기는 언제 하는 게 좋나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 해당 종목의 펀더멘털(실적, 성장성)이 건전하고 일시적 하락이라고 판단될 때만 하는 것이 좋습니다. 하락 추세가 계속되는 종목에 물타기하면 손실이 커질 수 있습니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 손익분기 단가란?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 투자 원금을 회수하기 위해 주가가 도달해야 하는 가격입니다. 물타기 후 평균 매수 단가와 같습니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 세금과 수수료는 반영되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 이 계산기는 세금(양도세, 증권거래세)과 매매 수수료를 제외한 단순 수익률입니다. 실제 수익은 이보다 줄어들 수 있습니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 물타기는 언제 하는 게 좋나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 종목 실적이 괜찮고 일시적 하락일 때만 하세요. 하락 추세가 계속되면 손실만 커져요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 세금이랑 수수료는 반영되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 아니요, 단순 수익률이에요. 실제 수익은 세금이랑 수수료 빼면 좀 줄어들어요.</div></div>
         </div>
       </Card>
 

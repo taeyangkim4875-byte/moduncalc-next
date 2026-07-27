@@ -110,20 +110,14 @@ export default function LunarCalc(){
     <ShareButtons title="음력 양력 변환 결과" />
 
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 음력이란?</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">음력(陰曆)은 달의 위상 변화를 기준으로 만든 달력입니다. 초승달에서 다음 초승달까지를 한 달(약 29.5일)로 하여, 한 달이 29일 또는 30일이 됩니다. 순수 음력은 1년이 약 354일이므로 양력과 약 11일 차이가 나고, 이를 보정하기 위해 약 3년마다 윤달을 넣습니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">한국에서 실제로 사용하는 것은 태음태양력으로, 달의 위상(음력)과 태양의 움직임(양력)을 함께 반영합니다. 이 때문에 설날, 추석 같은 음력 명절의 양력 날짜가 매년 바뀝니다.</p>
-      <h3 className="text-sm font-extrabold mt-4 mb-2">한국 전통 명절과 음력</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">설날(음력 1.1)은 한 해의 시작을 축하하며 세배와 떡국을 먹는 날입니다. 정월대보름(음력 1.15)에는 오곡밥과 나물을 먹고 달맞이를 합니다. 단오(음력 5.5)에는 창포물에 머리를 감고 그네를 뜁니다. 추석(음력 8.15)은 한가위라고도 하며, 송편을 빚고 차례를 지내는 한국 최대 명절입니다.</p>
-      <h3 className="text-sm font-extrabold mt-4 mb-2">음력 생일 문화</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed">한국에서는 특히 어르신들이 음력 생일을 기준으로 나이를 먹고 생일잔치를 합니다. 음력 생일은 매년 양력 날짜가 달라지므로, 양력으로 변환하여 확인해야 합니다. 최근 젊은 세대는 양력 생일을 주로 사용하지만, 환갑(60세), 칠순(70세) 등 큰 생일잔치는 음력 기준으로 하는 경우가 많습니다.</p>
+      <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">올해 설날, 추석 날짜 확인하고 음력 생일도 양력으로 바꿔보세요. 2026년 음력 데이터 기준이에요.</p>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 윤달이 있는 해에 음력 생일은 어떻게 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 윤달이 내 음력 생일이 있는 달에 끼면 그해에 음력 생일이 2번 오게 됩니다. 일반적으로 원래 달(정달)의 날짜를 생일로 보며, 윤달의 같은 날은 '윤달 생일'이라고 합니다. 2026년에는 윤달이 없습니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 음력 30일생인데 29일까지만 있는 달이면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 음력 30일이 없는 달(작은달, 29일)에 해당하면, 관례적으로 그 달의 마지막 날인 29일을 생일로 봅니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 이 변환기는 얼마나 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 이 페이지는 2026년 음력 데이터를 기반으로 한 조회 서비스입니다. 2026년 날짜에 대해서는 정확하며, 다른 연도는 천문 데이터가 필요하므로 한국천문연구원의 음양력 변환 서비스를 이용하시기 바랍니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 음력 30일생인데 29일까지만 있는 달이면?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 관례적으로 그 달의 마지막 날인 29일을 생일로 봐요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 다른 연도 변환도 되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 이 페이지는 2026년 전용이에요. 다른 연도는 한국천문연구원 음양력 변환 서비스를 이용해보세요.</div></div>
       </div>
     </Card>
   </>);

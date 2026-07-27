@@ -129,27 +129,20 @@ export default function SalaryConverter() {
       </button>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 연봉 환산기란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          연봉을 근무 시간으로 나눠서, 원하는 물건을 사려면 순수하게 며칠을 일해야 하는지 보여줍니다.
-          연간 근무일수 252일, 일 8시간 기준입니다.
-        </p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">
-          세전 연봉 기준이므로, 실제로는 세금·보험료 공제 후 더 오래 일해야 합니다.
-          &quot;내가 이걸 사려면 이만큼 일해야 하는구나&quot; 하는 재미로 보세요.
-        </p>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">내 월급으로 아이폰 사려면 며칠 일해야 할까? 재미로 한번 계산해보세요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 세후 기준으로 볼 수 있나요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 현재는 세전 기준입니다. 실수령액 기준으로 보려면 연봉 실수령액 계산기에서 실수령액을 확인한 후 그 금액을 입력하세요.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 지금은 세전 기준이에요. 실수령액 기준으로 보려면 실수령액 계산기에서 먼저 확인해보세요.</div>
           </div>
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 근무일 252일은 어떤 기준인가요?</div>
-            <div className="text-sm text-[#4E5968] leading-relaxed">A. 연 365일에서 주말 104일, 공휴일 약 15일을 제외한 평균 근무일수입니다.</div>
+            <div className="text-sm text-[#4E5968] leading-relaxed">A. 연 365일에서 주말과 공휴일을 뺀 평균 근무일수예요.</div>
           </div>
         </div>
       </Card>

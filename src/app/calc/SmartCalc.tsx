@@ -259,18 +259,15 @@ export default function SmartCalc() {
         </Card>
       )}
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 스마트 계산기란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">스마트 계산기는 일반 사칙연산은 물론 <b>삼각함수, 로그, 제곱근, 거듭제곱</b> 등 공학 계산을 지원하는 무료 온라인 계산기입니다. 버튼을 누르거나 수식을 직접 타이핑할 수 있으며, <b>한국어로도 입력</b>할 수 있는 것이 특징입니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>실시간 계산:</b> 수식을 입력하는 즉시 결과가 표시됩니다. Enter 키를 누르면 계산 기록에 저장되어 이전 계산을 다시 불러올 수 있습니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed"><b>각도 기준:</b> 삼각함수(sin, cos, tan)는 도(degree) 기준입니다. cos(90)은 90도의 코사인으로 0을 반환합니다. 라디안이 필요하면 직접 변환하세요 (라디안 = 도 × π / 180).</p>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">수식 입력하면 바로 계산돼요. 한국어로 &apos;루트 16&apos; 이렇게도 돼요. 삼각함수는 도(degree) 기준이에요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 어떤 함수를 지원하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 삼각함수(sin, cos, tan), 제곱근(sqrt), 상용로그(log), 자연로그(ln), 절대값(abs), 반올림(round), 올림(ceil), 내림(floor), 거듭제곱(^), 원주율(π), 자연상수(e), 나머지(%) 등을 지원합니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 한국어로 어떻게 입력하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. &apos;루트 16&apos;, &apos;코사인 45&apos;, &apos;사인 30&apos;, &apos;탄젠트 45&apos;, &apos;파이&apos;, &apos;더하기&apos;, &apos;빼기&apos;, &apos;곱하기&apos;, &apos;나누기&apos; 등을 입력하면 자동으로 수식으로 변환됩니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 계산 기록은 저장되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 현재 세션 동안만 저장됩니다. 페이지를 닫으면 기록이 초기화됩니다. 모든 계산은 브라우저에서 처리되며 서버로 전송되지 않습니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 한국어로 어떻게 입력하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. &apos;루트 16&apos;, &apos;코사인 45&apos;, &apos;파이&apos;, &apos;더하기&apos; 등을 입력하면 자동 변환돼요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 계산 기록은 저장되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 현재 세션 동안만 저장돼요. 페이지 닫으면 초기화됩니다.</div></div>
         </div>
       </Card>
 

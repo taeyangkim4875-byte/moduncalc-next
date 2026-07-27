@@ -114,21 +114,14 @@ export default function BodyFatCalc(){
       </table>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">📖 체지방률 측정 방법 비교</h2>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">체지방률을 측정하는 방법은 여러 가지가 있습니다. 인바디(BIA, 생체전기저항법)는 가장 접근성이 좋은 방법으로, 체성분 분석기에 올라서면 미세 전류를 통해 체지방률을 추정합니다. 정확도는 3~5% 오차가 있을 수 있으며, 수분 섭취량에 따라 결과가 달라질 수 있습니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">캘리퍼(피부주름두께) 측정법은 집게 형태의 도구로 피하지방 두께를 측정하는 방법입니다. 숙련된 측정자가 사용하면 비교적 정확하지만, 측정 부위와 기술에 따라 오차가 발생합니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">미 해군(US Navy) 공식은 줄자만 있으면 쉽게 측정할 수 있는 방법입니다. 허리둘레, 목둘레, 키(여성은 엉덩이둘레 추가)를 이용해 체지방률을 추정합니다. 인바디와 비슷한 정확도를 보이며, 장비 없이 집에서 간편하게 측정할 수 있다는 장점이 있습니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">BMI는 체중과 키만으로 비만도를 판정하므로, 근육량이 많은 사람은 BMI가 높아도 실제 체지방률은 낮을 수 있습니다. 체지방률은 BMI보다 실질적인 건강 상태를 더 정확하게 반영합니다.</p>
-      <h3 className="text-sm font-extrabold mt-4 mb-2">체지방 줄이는 방법</h3>
-      <p className="text-sm text-[#4E5968] leading-relaxed mb-3">체지방을 효과적으로 줄이려면 유산소 운동과 근력 운동을 병행하는 것이 가장 좋습니다. 유산소 운동(달리기, 수영, 자전거)은 직접적으로 지방을 태우고, 근력 운동은 근육량을 늘려 기초대사량을 높여줍니다. 식단에서는 가공식품과 당분을 줄이고, 단백질 섭취를 늘리며, 전체 칼로리를 TDEE 대비 300~500kcal 정도 줄이는 것이 건강한 감량 속도입니다.</p>
-      <p className="text-sm text-[#4E5968] leading-relaxed">충분한 수면(7~8시간)과 스트레스 관리도 체지방 감량에 중요합니다. 수면 부족과 만성 스트레스는 코르티솔 분비를 증가시켜 복부 지방 축적을 촉진합니다.</p>
+      <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+      <p className="text-sm text-[#4E5968] leading-relaxed">BMI보다 체지방률이 더 정확해요. 허리랑 목 둘레만 재면 됩니다.</p>
     </Card>
     <Card>
-      <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+      <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
       <div className="flex flex-col gap-4">
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 체지방률과 BMI 중 어떤 것이 더 정확한가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 체지방률이 실제 비만도를 더 정확하게 반영합니다. BMI는 근육량과 체지방을 구분하지 못하므로, 근육이 많은 사람은 BMI가 높아도 건강할 수 있습니다. 반면 마른 비만(BMI 정상이지만 체지방률이 높은 경우)은 BMI로는 발견하기 어렵습니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 허리둘레는 어디서 재야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 배꼽 높이에서 줄자를 수평으로 돌려 측정합니다. 숨을 편하게 내쉰 상태에서, 줄자가 피부에 살짝 닿을 정도로 감아주세요. 너무 조이거나 느슨하지 않게 측정하는 것이 중요합니다.</div></div>
-        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 체지방률을 얼마나 빨리 줄일 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 건강하게 체지방을 줄이는 속도는 주당 0.5~1% 정도입니다. 급격한 감량은 근손실과 요요현상을 유발하므로, 3~6개월에 걸쳐 꾸준히 관리하는 것이 효과적입니다.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 허리둘레는 어디서 재야 하나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 배꼽 높이에서 줄자를 수평으로 돌려서 재세요. 숨을 편하게 내쉰 상태에서 측정하면 돼요.</div></div>
+        <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 체지방률은 얼마나 빨리 줄일 수 있나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 건강하게 줄이려면 주당 0.5~1% 정도가 적당해요. 급하게 빼면 요요가 오거든요.</div></div>
       </div>
     </Card>
 

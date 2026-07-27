@@ -169,45 +169,15 @@ export default function DsrCalc() {
       <ShareButtons title="DSR 계산 결과" />
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 DSR이란?</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>DSR(Debt Service Ratio, 총부채원리금상환비율)</b>은 대출을 받는 사람의 연소득 대비 모든 대출의 연간 원리금 상환액 비율입니다. 기존 대출뿐만 아니라 신규 대출의 원리금 상환액까지 합산하여 계산합니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">2024년부터 모든 금융권에서 DSR 규제가 적용되며, 은행(1금융권)은 <b>DSR 40%</b>, 2금융권(저축은행, 보험사 등)은 <b>DSR 50%</b>가 기준입니다. 이를 초과하면 대출이 거절됩니다.</p>
-        <h3 className="text-sm font-extrabold mb-2 mt-4">DSR 낮추는 방법</h3>
-        <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 flex flex-col gap-1.5">
-          <li><b>대출 기간 늘리기</b>: 30년 → 40년으로 늘리면 월 상환액이 줄어 DSR이 낮아집니다.</li>
-          <li><b>기존 대출 상환</b>: 신용대출이나 카드론을 먼저 갚으면 DSR 여유가 생깁니다.</li>
-          <li><b>소득 증빙 늘리기</b>: 부업 소득, 임대 소득 등을 추가 증빙하면 분모가 커집니다.</li>
-          <li><b>공동명의 활용</b>: 배우자의 소득을 합산하면 DSR이 낮아질 수 있습니다.</li>
-          <li><b>보금자리론 이용</b>: 한국주택금융공사 보금자리론은 DSR에서 제외될 수 있습니다.</li>
-        </ul>
+        <h2 className="text-base font-extrabold mb-2">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">대출 얼마까지 받을 수 있는지 DSR로 확인해보세요. 40% 넘으면 은행에서 안 해줘요.</p>
       </Card>
 
       <Card>
-        <SectionTitle num="📋">DSR 규제 기준표</SectionTitle>
-        <table className="w-full border-collapse text-[13px]">
-          <thead><tr className="border-b-2 border-[var(--line)]"><th className="py-2 text-left text-xs text-[var(--sub)] font-bold">구분</th><th className="py-2 text-right text-xs text-[var(--sub)] font-bold">DSR 기준</th><th className="py-2 text-right text-xs text-[var(--sub)] font-bold">적용 대상</th></tr></thead>
-          <tbody>
-            {[
-              ['1금융권 (은행)', '40%', '주담대·신용대출'],
-              ['2금융권', '50%', '저축은행·보험사'],
-              ['공공 특례', '60%', '디딤돌·보금자리론'],
-            ].map(([type, dsr, target]) => (
-              <tr key={type} className="border-b border-[var(--line)]">
-                <td className="py-2 font-bold">{type}</td>
-                <td className="py-2 text-right">{dsr}</td>
-                <td className="py-2 text-right text-[var(--sub)]">{target}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </Card>
-
-      <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. DSR과 DTI의 차이는?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. DTI는 주담대의 원리금 + 기타 대출의 이자만 합산하지만, DSR은 모든 대출의 원리금을 합산합니다. DSR이 더 엄격한 기준입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 전세자금대출도 DSR에 포함되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 전세자금대출의 원리금 상환액도 DSR 계산에 포함됩니다. 다만 일부 정책 대출은 예외가 있을 수 있습니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 카드론·마이너스통장도 포함되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 카드론은 만기 일시상환으로 간주해 원리금을 계산하며, 마이너스통장 한도도 DSR에 포함됩니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. DSR이랑 DTI 차이가 뭔가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. DSR은 모든 대출의 원리금을 합산하고, DTI는 주담대 원리금만 봐요. DSR이 더 엄격하거든요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 카드론이나 마이너스통장도 포함되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 다 포함돼요. 기존 대출을 먼저 갚으면 DSR 여유가 생겨요.</div></div>
         </div>
       </Card>
 

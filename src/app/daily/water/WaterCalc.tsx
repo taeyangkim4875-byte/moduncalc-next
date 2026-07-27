@@ -112,30 +112,15 @@ export default function WaterCalc() {
       <ShareButtons title="수도요금 계산 결과" />
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">📖 수도요금 구조</h2>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">수도요금은 크게 <b>상수도 요금</b>(기본료 + 사용료), <b>하수도 요금</b>, <b>물이용부담금</b>으로 구성됩니다. 상수도 사용료는 누진제가 적용되어 사용량이 많을수록 ㎥당 단가가 올라갑니다.</p>
-
-        <h3 className="text-sm font-extrabold mb-2 mt-4">수도요금 절약법</h3>
-        <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 flex flex-col gap-1.5">
-          <li><b>절수형 샤워헤드</b> 사용: 수압은 유지하면서 사용량 30~50% 절감 가능</li>
-          <li><b>빨래 모아서 하기</b>: 세탁기 물 사용량은 횟수에 비례합니다</li>
-          <li><b>설거지 물 받아서 하기</b>: 흘려보내는 것보다 60% 이상 절약</li>
-          <li><b>변기 절수 장치</b>: 화장실 물 사용이 전체의 약 25%를 차지합니다</li>
-        </ul>
-
-        <h3 className="text-sm font-extrabold mb-2 mt-4">수도 검침 읽는 법</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">수도 계량기의 검은색 숫자는 ㎥ 단위, 빨간색 숫자는 리터 단위입니다. 이번 달 검침 수치에서 지난달 수치를 빼면 월 사용량을 알 수 있습니다.</p>
-
-        <h3 className="text-sm font-extrabold mb-2 mt-4">누수 확인법</h3>
-        <p className="text-sm text-[#4E5968] leading-relaxed">모든 수도꼭지를 잠근 뒤 계량기를 확인하세요. 빨간 바늘이 움직이면 어딘가에서 누수가 발생하고 있는 것입니다. 변기에 식용 색소를 넣어 색이 변하면 변기 내부 누수입니다.</p>
+        <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed">수도요금 누진제라 사용량에 따라 단가가 달라져요. 사용량 넣으면 예상 요금이 바로 나와요.</p>
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">❓ 자주 묻는 질문</h2>
+        <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="flex flex-col gap-4">
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 수도요금은 지역마다 다른가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 지방자치단체마다 상수도 및 하수도 요금 체계가 다릅니다. 이 계산기는 서울 기준이며, 지방은 5~20% 차이가 날 수 있습니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 4인 가구 평균 수도 사용량은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 4인 가구 기준 월 평균 약 18~22㎥ 정도 사용합니다. 1인당 약 5㎥ 수준입니다.</div></div>
-          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 하수도 요금은 왜 따로 부과되나요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 사용한 물을 하수처리장에서 정화하는 비용입니다. 상수도와 별도로 부과되며, 대부분 상수도 요금과 비슷한 수준입니다.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 수도요금은 지역마다 다른가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 네, 이 계산기는 서울 기준이에요. 지방은 5~20% 차이가 날 수 있어요.</div></div>
+          <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 4인 가구 평균 사용량은?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 월 평균 약 18~22㎥이에요. 1인당 약 5㎥ 수준입니다.</div></div>
         </div>
       </Card>
 
