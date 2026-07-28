@@ -19,8 +19,8 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
         <h1 className="mt-1.5 mb-2 text-2xl font-extrabold leading-tight tracking-tight">{title}</h1>
         <p className="m-0 text-sm text-[var(--sub)]">{description}</p>
       </header>
-      {children}
       <KakaoAdFit />
+      {children}
       <RelatedGuides />
       <RelatedCalcs />
     </div>
