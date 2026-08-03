@@ -3,54 +3,47 @@
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
-export default function KakaoAdFit() {
-  const pcRef = useRef<HTMLDivElement>(null);
-  const mobileRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
-  const isEn = pathname.startsWith('/en');
+function AdUnit({ adUnit, width, height, className }: { adUnit: string; width: string; height: string; className?: string }) {
+  const adRef = useRef<HTMLDivElement>(null);
+  const loaded = useRef(false);
 
   useEffect(() => {
-    if (isEn) return;
+    if (loaded.current) return;
+    if (!adRef.current) return;
 
-    // PC 광고 (728x90)
-    if (pcRef.current && !pcRef.current.querySelector('ins.kakao_ad_area')) {
-      const ins = document.createElement('ins');
-      ins.className = 'kakao_ad_area';
-      ins.style.display = 'none';
-      ins.setAttribute('data-ad-unit', 'DAN-EAtJLC31kDhyGxRU');
-      ins.setAttribute('data-ad-width', '728');
-      ins.setAttribute('data-ad-height', '90');
-      pcRef.current.appendChild(ins);
+    const ins = document.createElement('ins');
+    ins.className = 'kakao_ad_area';
+    ins.style.display = 'none';
+    ins.setAttribute('data-ad-unit', adUnit);
+    ins.setAttribute('data-ad-width', width);
+    ins.setAttribute('data-ad-height', height);
+    adRef.current.appendChild(ins);
 
-      const script = document.createElement('script');
-      script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
-      script.async = true;
-      pcRef.current.appendChild(script);
-    }
+    const script = document.createElement('script');
+    script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
+    script.async = true;
+    adRef.current.appendChild(script);
 
-    // 모바일 광고 (320x100)
-    if (mobileRef.current && !mobileRef.current.querySelector('ins.kakao_ad_area')) {
-      const ins = document.createElement('ins');
-      ins.className = 'kakao_ad_area';
-      ins.style.display = 'none';
-      ins.setAttribute('data-ad-unit', 'DAN-n0I9aajSdMbc3qAt');
-      ins.setAttribute('data-ad-width', '320');
-      ins.setAttribute('data-ad-height', '100');
-      mobileRef.current.appendChild(ins);
+    loaded.current = true;
+  }, [adUnit, width, height]);
 
-      const script = document.createElement('script');
-      script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
-      script.async = true;
-      mobileRef.current.appendChild(script);
-    }
-  }, [isEn, pathname]);
+  return <div ref={adRef} className={className} />;
+}
+
+export default function KakaoAdFit() {
+  const pathname = usePathname();
+  const isEn = pathname.startsWith('/en');
 
   if (isEn) return null;
 
   return (
     <>
-      <div ref={pcRef} className="hidden md:flex justify-center my-4" />
-      <div ref={mobileRef} className="flex md:hidden justify-center my-4" />
+      <div className="hidden md:flex justify-center my-4">
+        <AdUnit adUnit="DAN-EAtJLC31kDhyGxRU" width="728" height="90" />
+      </div>
+      <div className="flex md:hidden justify-center my-4">
+        <AdUnit adUnit="DAN-n0I9aajSdMbc3qAt" width="320" height="100" />
+      </div>
     </>
   );
 }
