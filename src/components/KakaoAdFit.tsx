@@ -3,13 +3,12 @@
 import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
-function AdUnit({ adUnit, width, height, className }: { adUnit: string; width: string; height: string; className?: string }) {
+function AdSlot({ adUnit, width, height, id }: { adUnit: string; width: string; height: string; id: string }) {
   const adRef = useRef<HTMLDivElement>(null);
-  const loaded = useRef(false);
 
   useEffect(() => {
-    if (loaded.current) return;
     if (!adRef.current) return;
+    if (adRef.current.childNodes.length > 0) return;
 
     const ins = document.createElement('ins');
     ins.className = 'kakao_ad_area';
@@ -23,27 +22,44 @@ function AdUnit({ adUnit, width, height, className }: { adUnit: string; width: s
     script.src = '//t1.kakaocdn.net/kas/static/ba.min.js';
     script.async = true;
     adRef.current.appendChild(script);
-
-    loaded.current = true;
   }, [adUnit, width, height]);
 
-  return <div ref={adRef} className={className} />;
+  return <div ref={adRef} id={id} />;
 }
 
-export default function KakaoAdFit() {
+export function KakaoAdTop() {
   const pathname = usePathname();
-  const isEn = pathname.startsWith('/en');
-
-  if (isEn) return null;
+  if (pathname.startsWith('/en')) return null;
 
   return (
     <>
       <div className="hidden md:flex justify-center my-4">
-        <AdUnit adUnit="DAN-EAtJLC31kDhyGxRU" width="728" height="90" />
+        <AdSlot adUnit="DAN-EAtJLC31kDhyGxRU" width="728" height="90" id="ad-top-pc" />
       </div>
       <div className="flex md:hidden justify-center my-4">
-        <AdUnit adUnit="DAN-n0I9aajSdMbc3qAt" width="320" height="100" />
+        <AdSlot adUnit="DAN-n0I9aajSdMbc3qAt" width="320" height="100" id="ad-top-mobile" />
       </div>
     </>
   );
+}
+
+export function KakaoAdBottom() {
+  const pathname = usePathname();
+  if (pathname.startsWith('/en')) return null;
+
+  return (
+    <>
+      <div className="hidden md:flex justify-center my-4">
+        <AdSlot adUnit="DAN-EAtJLC31kDhyGxRU" width="728" height="90" id="ad-bottom-pc" />
+      </div>
+      <div className="flex md:hidden justify-center my-4">
+        <AdSlot adUnit="DAN-n0I9aajSdMbc3qAt" width="320" height="100" id="ad-bottom-mobile" />
+      </div>
+    </>
+  );
+}
+
+// 기본 export 유지 (호환성)
+export default function KakaoAdFit() {
+  return <KakaoAdTop />;
 }
