@@ -1,6 +1,84 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import VatCalc from "./VatCalc";
-export const metadata: Metadata = { title: "부가세 계산기 - 공급가액·부가세 역산", description: "공급가액 또는 합계금액에서 부가세를 계산하세요.", alternates: { canonical: "https://moduncalc.com/tax/vat" } };
-export default function Page() { return <PageLayout eyebrow="부가가치세 10%" title="부가세 계산기" description="공급가액 또는 합계금액에서 부가세를 역산해요."><CalculatorJsonLd name="부가세 계산기" description="공급가액 또는 합계금액에서 부가세를 계산하세요." url="https://moduncalc.com/tax/vat" /><FaqJsonLd items={[{q:"부가세 포함가에서 공급가를 구하는 공식은?",a:"합계금액 ÷ 1.1 = 공급가액, 합계금액 - 공급가액 = 부가세입니다."},{q:"부가세가 면제되는 품목이 있나요?",a:"기본 식료품, 의료, 교육, 도서 등은 부가세가 면제됩니다."}]} /><VatCalc /></PageLayout>; }
+
+export const metadata: Metadata = {
+  title: "부가세 계산기 - 공급가액·부가세 역산",
+  description: "공급가액 또는 합계금액에서 부가세를 계산하세요.",
+  alternates: { canonical: "https://moduncalc.com/tax/vat" },
+};
+
+export default function Page() {
+  return (
+    <PageLayout eyebrow="부가가치세 10%" title="부가세 계산기" description="공급가액 또는 합계금액에서 부가세를 역산해요.">
+      <CalculatorJsonLd name="부가세 계산기" description="공급가액 또는 합계금액에서 부가세를 계산하세요." url="https://moduncalc.com/tax/vat" />
+      <FaqJsonLd items={[{q:"부가세 포함가에서 공급가를 구하는 공식은?",a:"합계금액 ÷ 1.1 = 공급가액, 합계금액 - 공급가액 = 부가세입니다."},{q:"부가세가 면제되는 품목이 있나요?",a:"기본 식료품, 의료, 교육, 도서 등은 부가세가 면제됩니다."}]} />
+      <VatCalc />
+
+      <SeoSection title="부가가치세의 구조와 신고 일정">
+        <p>
+          부가가치세는 재화나 용역이 거래될 때 창출된 부가가치에 <strong>10%</strong>를 매기는 세금입니다.
+          사업자가 신고·납부하지만 실제 부담자는 최종 소비자이므로, 사업자는
+          받아둔 세금을 대신 내주는 <strong>징수 대리인</strong> 역할을 합니다.
+        </p>
+        <SeoList>
+          <li><strong>일반과세자</strong> — 연 매출 8,000만원 이상. 세율 10%, 매입세액 전액 공제, 세금계산서 발급 의무.</li>
+          <li><strong>간이과세자</strong> — 연 매출 8,000만원 미만. 업종별 부가가치율(15~40%)을 곱한 낮은 실효세율이 적용되며, 연 매출 4,800만원 미만이면 납부가 면제됩니다.</li>
+          <li><strong>면세사업자</strong> — 미가공 식료품, 의료·교육 서비스, 도서·신문, 주택 임대, 금융·보험 등은 과세 대상에서 제외됩니다.</li>
+        </SeoList>
+        <p>
+          신고는 법인이 연 4회(1·4·7·10월), 개인 일반과세자가 연 2회(1월·7월),
+          간이과세자가 연 1회(1월) 이루어집니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="부가세 계산 공식과 역산법">
+        <p>
+          실무에서 가장 많이 쓰이는 것이 <strong>역산</strong>입니다.
+          카드 전표나 영수증에 찍힌 금액은 보통 부가세가 포함된 합계금액이라,
+          공급가액을 따로 뽑아내야 하기 때문입니다.
+        </p>
+        <SeoFormula>
+          <div>공급가액 → 합계금액: 합계금액 = 공급가액 × 1.1</div>
+          <div>합계금액 → 공급가액: 공급가액 = 합계금액 ÷ 1.1</div>
+          <div>합계금액 → 부가세: 부가세 = 합계금액 ÷ 11 (= 합계금액 − 공급가액)</div>
+          <div>납부세액 = 매출세액 − 매입세액</div>
+        </SeoFormula>
+        <p>
+          합계금액 110,000원이라면 공급가액은 100,000원, 부가세는 10,000원입니다.
+          <strong>합계금액에서 10%를 빼면 안 된다</strong>는 점을 주의하세요.
+          110,000원의 10%는 11,000원이지만 실제 부가세는 10,000원입니다.
+          부가세는 공급가액 기준이지 합계금액 기준이 아니기 때문입니다.
+        </p>
+        <p>
+          실제 납부액은 <strong>매출세액에서 매입세액을 뺀 차액</strong>입니다.
+          매출 5,500만원(부가세 500만원), 매입 3,300만원(부가세 300만원)인 사업자의
+          납부세액은 500만 − 300만 = <strong>200만원</strong>입니다.
+        </p>
+      </SeoSection>
+
+      <SeoFaq
+        title="부가세, 이런 점도 확인하세요"
+        items={[
+          { q: '매입세액 공제를 받으려면 무엇이 필요한가요?', a: '세금계산서, 신용카드 매출전표, 현금영수증(지출증빙용) 등 적격증빙이 있어야 합니다. 간이영수증이나 거래명세서만으로는 공제받을 수 없습니다. 또한 접대비, 비영업용 승용차 관련 지출(구입·유지비), 면세사업 관련 매입은 증빙이 있어도 공제 대상에서 제외됩니다.' },
+          { q: '간이과세자가 무조건 유리한가요?', a: '아닙니다. 매출이 적고 매입이 거의 없는 서비스업이라면 간이과세가 유리합니다. 그러나 초기 설비 투자나 인테리어 비용이 큰 업종은 일반과세자여야 매입세액을 전액 환급받을 수 있습니다. 또 간이과세자는 세금계산서 발급이 제한되어 사업자를 상대로 거래하기 불리한 경우도 많습니다.' },
+          { q: '부가세를 미리 떼어두지 않으면 어떻게 되나요?', a: '매출에 포함된 부가세는 처음부터 내 돈이 아니라 보관 중인 세금입니다. 이를 운영 자금으로 쓰다가 신고 기한에 납부하지 못하는 사례가 매우 흔합니다. 매출 발생 시점에 합계금액의 1/11을 별도 계좌로 분리해 두는 습관이 안전합니다. 체납 시 납부지연가산세가 1일 0.022%씩 붙습니다.' },
+          { q: '해외 거래에도 부가세가 붙나요?', a: '수출은 영세율(0%)이 적용되어 매출세액은 없지만 매입세액은 환급받을 수 있어 수출기업에 유리합니다. 반대로 수입할 때는 세관에서 수입 부가세를 납부하고, 이후 신고 때 매입세액으로 공제받습니다. 해외 사업자로부터 받는 전자적 용역에는 별도의 대리납부 규정이 적용될 수 있습니다.' },
+        ]}
+      />
+
+      <SeoSection title="사업자가 함께 챙겨야 할 세금">
+        <p>
+          부가세 신고를 마쳤다면 다음은 5월 종합소득세입니다.{' '}
+          <SeoLink href="/tax/income">종합소득세 계산기</SeoLink>로 예상 세액을 미리 확인해 두면
+          자금 계획을 세우기 쉽습니다. 직원을 고용하고 있다면{' '}
+          <SeoLink href="/salary">연봉 실수령액 계산기</SeoLink>로 4대보험 부담분을 확인하고,{' '}
+          <SeoLink href="/guide/4-insurance">4대보험 완전 정리</SeoLink>에서 사업주 부담 요율도 함께 살펴보세요.
+          투자 수익이 있다면 <SeoLink href="/guide/investment-tax">주식·ETF 세금 총정리</SeoLink>가 도움이 됩니다.
+        </p>
+      </SeoSection>
+    </PageLayout>
+  );
+}

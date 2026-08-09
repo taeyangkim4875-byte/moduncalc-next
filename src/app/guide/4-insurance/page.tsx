@@ -71,7 +71,8 @@ export default function FourInsuranceGuidePage() {
           4대보험은 대한민국의 <b>사회안전망</b>을 구성하는 4가지 사회보험 제도입니다. 국민연금, 건강보험, 고용보험, 산재보험으로 구성되며, 질병·노령·실업·산업재해 등의 사회적 위험으로부터 국민을 보호하는 것이 목적입니다. 근로자와 사업주가 보험료를 분담하며, 가입이 법적으로 의무화되어 있습니다.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          매월 급여에서 자동으로 공제되기 때문에 &quot;세금&quot;처럼 느껴질 수 있지만, 실제로는 미래의 나를 위한 보험료이며 각 항목마다 고유한 혜택이 돌아옵니다. 아래에서 각 보험의 요율과 혜택을 자세히 살펴보겠습니다.
+          매월 급여에서 자동으로 공제되기 때문에 &quot;세금&quot;처럼 느껴질 수 있지만, 실제로는 미래의 나를 위한 보험료이며 각 항목마다 고유한 혜택이 돌아옵니다. 내 연봉에서 4대보험이 실제로 얼마나 빠지는지 먼저 확인하고 싶다면{" "}
+          <Link href="/salary/table" className="text-[var(--primary)] font-bold hover:underline">2026 연봉 실수령액표</Link>에서 구간별 공제액을 한눈에 비교해 볼 수 있습니다. 아래에서 각 보험의 요율과 혜택을 자세히 살펴보겠습니다.
         </p>
       </Card>
 
@@ -81,7 +82,7 @@ export default function FourInsuranceGuidePage() {
           <b>보험료율:</b> 총 9.5% (근로자 4.75% + 사업주 4.75%)
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          국민연금은 노후 소득 보장을 위한 공적 연금 제도입니다. 만 18세 이상 60세 미만의 국민이 의무 가입 대상이며, 최소 10년(120개월) 이상 납부하면 만 65세부터 매월 연금을 수령할 수 있습니다. 기준소득월액의 상한은 637만원이므로, 월급이 이를 초과하더라도 637만원 기준으로만 보험료가 산정됩니다.
+          국민연금은 노후 소득 보장을 위한 공적 연금 제도입니다. 만 18세 이상 60세 미만의 국민이 의무 가입 대상이며, 최소 10년(120개월) 이상 납부하면 만 65세부터 매월 연금을 수령할 수 있습니다. 기준소득월액의 상한은 659만원이므로, 월급이 이를 초과하더라도 659만원 기준으로만 보험료가 산정됩니다.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           예를 들어 월급 300만원인 경우 국민연금 본인 부담은 300만원 x 4.75% = 142,500원입니다. 납부 기간과 평균소득에 따라 수령액이 결정되며,{" "}
@@ -116,7 +117,8 @@ export default function FourInsuranceGuidePage() {
           <Link href="/pension/jobless" className="text-[var(--primary)] font-bold hover:underline">실업급여 계산기</Link>에서 예상 수급액을 확인해보세요.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          사업주는 실업급여 분 외에 고용안정·직업능력개발 사업 보험료를 추가로 부담합니다(사업 규모에 따라 0.25~0.85%).
+          사업주는 실업급여 분 외에 고용안정·직업능력개발 사업 보험료를 추가로 부담합니다(사업 규모에 따라 0.25~0.85%). 참고로 퇴사 시에는 실업급여와 별개로 퇴직금을 받을 수 있으므로,{" "}
+          <Link href="/salary/severance" className="text-[var(--primary)] font-bold hover:underline">퇴직금 계산기</Link>로 예상 금액을 함께 확인해 두면 좋습니다.
         </p>
       </Card>
 
@@ -137,7 +139,7 @@ export default function FourInsuranceGuidePage() {
           <li><b>건강보험료율:</b> 7.09% → 7.19%로 소폭 인상되었습니다.</li>
           <li><b>장기요양보험료율:</b> 12.95% → 13.14%로 조정되었습니다.</li>
           <li><b>고용보험료율:</b> 0.9%로 동결되었습니다.</li>
-          <li><b>국민연금 기준소득월액 상한:</b> 617만원 → 637만원으로 상향 조정되었습니다.</li>
+          <li><b>국민연금 기준소득월액 상한:</b> 637만원 → 659만원으로 상향 조정되었습니다(2026년 7월 적용).</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           이러한 변경사항이 반영된 정확한 실수령액은{" "}

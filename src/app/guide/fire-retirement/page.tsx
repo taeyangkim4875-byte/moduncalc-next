@@ -50,7 +50,9 @@ export default function Page() {
         <p className="text-sm leading-relaxed text-[var(--sub)]">
           다만 4% 룰은 미국 시장 데이터에 기반한 것으로, 한국 시장이나 현재 저금리 환경에서는
           3~3.5% 인출률이 더 안전하다는 의견도 있습니다. 보수적으로 계획하려면
-          연간 지출의 30~33배를 목표로 하는 것이 좋습니다.
+          연간 지출의 30~33배를 목표로 하는 것이 좋습니다. 목표 자산까지 얼마나 걸릴지는 복리 효과에 크게 좌우되므로,{" "}
+          <Link href="/daily/compound" className="text-[var(--primary)] font-bold hover:underline">복리 계산기</Link>로
+          수익률과 기간에 따른 자산 곡선을 먼저 그려보는 것을 권합니다.
         </p>
       </Card>
 
@@ -80,6 +82,9 @@ export default function Page() {
         <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
           FIRE 달성까지 걸리는 시간은 소득이 아닌 <strong>저축률</strong>에 의해 결정됩니다.
           연 투자 수익률 5%(실질 수익률) 기준으로 저축률에 따른 은퇴 시기는 다음과 같습니다.
+          저축률의 분모는 세전 연봉이 아니라 실제로 통장에 들어오는 금액이므로,{" "}
+          <Link href="/salary" className="text-[var(--primary)] font-bold hover:underline">연봉 실수령액 계산기</Link>로
+          기준이 되는 세후 소득부터 확정하고 계산하세요.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">

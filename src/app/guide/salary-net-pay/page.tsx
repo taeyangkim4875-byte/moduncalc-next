@@ -80,6 +80,9 @@ export default function SalaryNetPayGuidePage() {
         <h2 className="text-base font-extrabold mb-3">4대보험 공제 항목 (2026년 요율)</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
           4대보험은 국민연금, 건강보험, 장기요양보험, 고용보험으로 구성되며, 근로자와 사업주가 각각 일정 비율을 부담합니다. 2026년 기준 근로자 본인 부담 요율은 다음과 같습니다.
+          각 보험이 어떤 혜택으로 돌아오는지는{" "}
+          <Link href="/guide/4-insurance" className="text-[var(--primary)] font-bold hover:underline">4대보험 완전 정리</Link>에서
+          항목별로 자세히 다루고 있습니다.
         </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">
@@ -161,6 +164,12 @@ export default function SalaryNetPayGuidePage() {
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">연봉 구간별 실수령액 예시 (2026년, 독신 기준)</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          아래는 대표 구간만 추린 표입니다. 100만원 단위로 촘촘하게 비교하려면{" "}
+          <Link href="/salary/table" className="text-[var(--primary)] font-bold hover:underline">2026 연봉 실수령액표</Link>를,
+          부양가족 수나 비과세 식대 같은 개인 조건을 반영하려면{" "}
+          <Link href="/salary" className="text-[var(--primary)] font-bold hover:underline">연봉 실수령액 계산기</Link>를 이용하세요.
+        </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">
             <thead>

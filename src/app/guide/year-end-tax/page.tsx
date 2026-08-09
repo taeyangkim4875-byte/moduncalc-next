@@ -117,6 +117,13 @@ export default function YearEndTaxGuidePage() {
             </p>
           </div>
         </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          소득공제의 효과는 내가 어느 세율 구간에 있느냐에 따라 달라집니다. 과세표준 15% 구간이라면 소득공제 100만원의 절세액은
+          지방소득세 포함 약 16만 5천원이지만, 35% 구간이라면 약 38만 5천원이 됩니다. 내 구간을 확인하려면{" "}
+          <Link href="/tax/income" className="text-[var(--primary)] font-bold hover:underline">종합소득세 계산기</Link>에서
+          8구간 누진세율을, 세전·세후 급여 구조는{" "}
+          <Link href="/salary" className="text-[var(--primary)] font-bold hover:underline">연봉 실수령액 계산기</Link>에서 확인해 보세요.
+        </p>
       </Card>
 
       <Card>
@@ -196,6 +203,12 @@ export default function YearEndTaxGuidePage() {
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           <b>월세 세액공제</b>는 총급여 7,000만원 이하(종합소득 6,000만원 이하) 무주택 세대주가 받을 수 있습니다. 총급여 5,500만원 이하는 월세의 <b>17%</b>, 5,500~7,000만원은 <b>15%</b>를 세액공제합니다. 연간 한도는 1,000만원이며, 임대차계약서와 주민등록등본, 이체 내역이 필요합니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          공제 규모가 큰 만큼 전세와 월세 중 어느 쪽이 유리한지 다시 따져볼 만합니다.{" "}
+          <Link href="/realestate/convert" className="text-[var(--primary)] font-bold hover:underline">전월세 전환율 계산기</Link>로
+          두 조건을 비교해 보고, 계약 시 유의사항은{" "}
+          <Link href="/guide/jeonse" className="text-[var(--primary)] font-bold hover:underline">전세 계약 완전 가이드</Link>에서 확인하세요.
         </p>
       </Card>
 

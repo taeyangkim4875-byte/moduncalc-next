@@ -77,6 +77,9 @@ export default function Page() {
         <p className="text-sm leading-relaxed text-[var(--sub)]">
           다만 배당소득을 포함한 연간 금융소득(이자 + 배당)이 <strong>2,000만원을 초과</strong>하면
           금융소득종합과세 대상이 되어 다른 소득과 합산하여 6.6~49.5%의 누진세율이 적용될 수 있습니다.
+          합산 시 세부담이 얼마나 늘어나는지는{" "}
+          <Link href="/tax/income" className="text-[var(--primary)] font-bold hover:underline">종합소득세 계산기</Link>에
+          근로소득과 금융소득을 합한 금액을 넣어 미리 확인해 볼 수 있습니다.
         </p>
       </Card>
 
@@ -145,6 +148,12 @@ export default function Page() {
           <li><strong>연금저축·IRP</strong>: 연금저축과 IRP(개인형 퇴직연금)에서 ETF에 투자하면 연간 최대 900만원까지 세액공제(13.2~16.5%)를 받을 수 있으며, 운용 수익에 대한 과세가 인출 시까지 이연됩니다.</li>
           <li><strong>기본공제 활용</strong>: 해외주식 250만원 공제를 매년 활용하기 위해 매년 일부 차익을 실현하는 방법도 고려해 볼 수 있습니다.</li>
         </ul>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
+          예금·적금 이자에도 같은 15.4%가 적용되므로, 세금우대나 비과세 상품을 활용하면 체감 수익률이 달라집니다.{" "}
+          <Link href="/savings/interest" className="text-[var(--primary)] font-bold hover:underline">적금 이자 계산기</Link>에서
+          과세 유형별 세후 수령액을 비교해 보고, 부동산 매각 차익이 있다면{" "}
+          <Link href="/realestate/transfer" className="text-[var(--primary)] font-bold hover:underline">양도소득세 계산기</Link>도 함께 확인하세요.
+        </p>
       </Card>
 
       <Card>

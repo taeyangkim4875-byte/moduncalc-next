@@ -126,6 +126,9 @@ export default function JeonseGuidePage() {
         <h2 className="text-base font-extrabold mb-3">보증금 보호 3대 장치</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
           전세 보증금을 안전하게 지키기 위해서는 다음 3가지를 반드시 갖추어야 합니다.
+          한편 전세자금대출을 낀다면 그 원리금도 DSR에 잡히므로,{" "}
+          <Link href="/loan/dsr" className="text-[var(--primary)] font-bold hover:underline">DSR 계산기</Link>로
+          한도를 먼저 확인한 뒤 보증금 규모를 정하는 편이 안전합니다.
         </p>
         <div className="space-y-3">
           <div className="p-3 bg-[var(--bg)] rounded-xl">
@@ -158,6 +161,13 @@ export default function JeonseGuidePage() {
           <li><b>국세·지방세 완납증명:</b> 임대인의 세금 체납 여부를 확인합니다. 체납이 있으면 보증금보다 세금이 우선 변제될 수 있습니다.</li>
           <li><b>시세 대비 전세가율:</b> 전세가율(전세가/매매가)이 80%를 초과하면 깡통전세 위험이 높습니다. 주변 시세와 비교하여 비정상적으로 높은 전세가는 피하세요.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          계약이 확정되면 중개보수도 준비해야 합니다. 임대차는 매매보다 요율이 낮지만 보증금 규모에 따라 수십만원이 오가므로,{" "}
+          <Link href="/realestate/commission" className="text-[var(--primary)] font-bold hover:underline">복비 계산기</Link>로
+          법정 상한을 미리 확인하고 협의에 들어가는 것이 좋습니다. 면적이 헷갈린다면{" "}
+          <Link href="/daily/pyeong" className="text-[var(--primary)] font-bold hover:underline">평수 계산기</Link>에서
+          전용면적과 공급면적을 환산해 보세요.
+        </p>
       </Card>
 
       <Card>

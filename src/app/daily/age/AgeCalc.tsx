@@ -48,7 +48,7 @@ export default function AgeCalc(){
         </div>
       </div>
       {r&&<>
-        <div className="grid grid-cols-2 gap-2.5 mt-3"><R v={`${r.manAge}세`} l="만 나이"/><R v={`${r.korAge}세`} l="한국 나이(연 나이)"/></div>
+        <div className="grid grid-cols-2 gap-2.5 mt-3"><R v={`${r.manAge}세`} l="만 나이"/><R v={`${r.korAge}세`} l="한국 나이(세는 나이)"/></div>
         <R v={`${r.daysLeft}일`} l={`다음 생일까지 (${r.nextBday})`}/>
       </>}
     </Card>

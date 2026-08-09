@@ -129,6 +129,10 @@ export default function DoyakVsMiraeGuidePage() {
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
           <b>청년미래적금</b>은 기본금리 연 5%에 우대금리 최대 3%를 더해 최대 연 8%의 금리를 제공합니다. 우대금리 조건은 급여이체, 카드 실적, 자동이체 등 은행별로 다릅니다. 이자소득 역시 비과세 혜택이 적용됩니다.
         </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          두 상품의 비과세 혜택이 얼마나 큰지 체감하려면 일반 적금과 비교해 보는 것이 빠릅니다. 시중은행 적금은 이자에서 <b>15.4%</b>가 원천징수되므로,{" "}
+          <Link href="/savings/interest" className="text-[var(--primary)] font-bold hover:underline">적금 이자 계산기</Link>에 같은 금리와 납입액을 넣어 세후 수령액을 비교해 보세요.
+        </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">
             <thead>
@@ -177,7 +181,9 @@ export default function DoyakVsMiraeGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">만기 수령액 시뮬레이션 비교</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          월 50만원을 납입한다고 가정했을 때의 만기 수령액을 비교해보겠습니다.
+          월 50만원을 납입한다고 가정했을 때의 만기 수령액을 비교해보겠습니다. 아래 표는 예시이므로, 본인 소득 구간과 납입액을 넣은 결과는{" "}
+          <Link href="/savings/doyak" className="text-[var(--primary)] font-bold hover:underline">청년도약계좌 계산기</Link>와{" "}
+          <Link href="/savings/mirae" className="text-[var(--primary)] font-bold hover:underline">청년미래적금 계산기</Link>에서 각각 확인하는 편이 정확합니다.
         </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">

@@ -19,23 +19,29 @@ export default function Page() {
     >
       <FaqJsonLd
         items={[
-          { q: "2026년 최저시급은 얼마인가요?", a: "2026년 최저시급은 10,030원입니다. 전년 대비 약 1.7% 인상되었습니다." },
-          { q: "주휴수당 포함하면 실질 시급은 얼마인가요?", a: "주 40시간 근무 기준, 주휴수당을 포함한 실질 시급은 약 12,036원입니다. 주휴 8시간분이 추가로 지급되기 때문입니다." },
-          { q: "수습기간에도 최저시급을 받나요?", a: "1년 이상 근로계약을 체결한 경우, 수습 시작일부터 3개월간 최저임금의 90%(9,027원)를 적용할 수 있습니다. 단순노무직은 감액 적용이 불가합니다." },
+          { q: "2026년 최저시급은 얼마인가요?", a: "2026년 최저시급은 10,320원입니다. 2025년 10,030원 대비 290원(약 2.9%) 인상되었습니다." },
+          { q: "주휴수당 포함하면 실질 시급은 얼마인가요?", a: "주 40시간 근무 기준, 주휴수당을 포함한 실질 시급은 약 12,384원입니다. 주휴 8시간분이 추가로 지급되기 때문입니다." },
+          { q: "수습기간에도 최저시급을 받나요?", a: "1년 이상 근로계약을 체결한 경우, 수습 시작일부터 3개월간 최저임금의 90%(9,288원)를 적용할 수 있습니다. 단순노무직은 감액 적용이 불가합니다." },
         ]}
       />
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">2026년 최저시급</h2>
         <div className="bg-[var(--bg-alt)] rounded-lg p-4 mb-3 text-center">
-          <p className="text-2xl font-extrabold text-[var(--primary)]">10,030원</p>
+          <p className="text-2xl font-extrabold text-[var(--primary)]">10,320원</p>
           <p className="text-xs text-[var(--sub)] mt-1">2026년 1월 1일부터 12월 31일까지 적용</p>
         </div>
-        <p className="text-sm leading-relaxed text-[var(--sub)]">
-          최저임금위원회의 심의를 거쳐 결정된 2026년 최저시급은 <strong>10,030원</strong>입니다.
-          전년도 9,860원 대비 170원(약 1.7%) 인상되었습니다. 최저임금은 업종이나 지역에 관계없이
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          최저임금위원회의 심의를 거쳐 결정된 2026년 최저시급은 <strong>10,320원</strong>입니다.
+          전년도 10,030원 대비 290원(약 2.9%) 인상되었습니다. 최저임금은 업종이나 지역에 관계없이
           모든 사업장에 동일하게 적용되며, 정규직, 비정규직, 아르바이트 등 고용 형태와 무관하게
           모든 근로자에게 적용됩니다.
+        </p>
+        <p className="text-sm leading-relaxed text-[var(--sub)]">
+          참고로 <strong>2027년 최저시급은 10,700원</strong>으로 이미 확정되었습니다. 2026년 대비 380원(약 3.7%) 인상된
+          금액으로 2027년 1월 1일부터 적용됩니다. 두 연도를 나란히 비교하려면{" "}
+          <Link href="/salary/minimum" className="text-[var(--primary)] font-bold hover:underline">최저시급 계산기</Link>에서
+          연도별 월급·연봉 환산표를 확인할 수 있습니다.
         </p>
       </Card>
 
@@ -59,11 +65,11 @@ export default function Page() {
         </p>
         <div className="bg-[var(--bg-alt)] rounded-lg p-4 mb-3">
           <p className="text-sm"><strong>주당 총 유급시간</strong> = 근로 40시간 + 주휴 8시간 = 48시간</p>
-          <p className="text-sm mt-1"><strong>주당 총 급여</strong> = 10,030원 x 48시간 = 481,440원</p>
-          <p className="text-sm mt-1"><strong>실질 시급(주휴 포함)</strong> = 481,440원 / 40시간 = <strong>약 12,036원</strong></p>
+          <p className="text-sm mt-1"><strong>주당 총 급여</strong> = 10,320원 x 48시간 = 495,360원</p>
+          <p className="text-sm mt-1"><strong>실질 시급(주휴 포함)</strong> = 495,360원 / 40시간 = <strong>약 12,384원</strong></p>
         </div>
         <p className="text-sm leading-relaxed text-[var(--sub)]">
-          즉, 사용자 입장에서 실제 지출하는 시간당 인건비는 약 12,036원이며,
+          즉, 사용자 입장에서 실제 지출하는 시간당 인건비는 약 12,384원이며,
           근로자 입장에서도 주휴수당을 포함하면 실질적으로 이 금액을 수령하는 셈입니다.
         </p>
       </Card>
@@ -75,12 +81,14 @@ export default function Page() {
         </p>
         <div className="bg-[var(--bg-alt)] rounded-lg p-4 mb-3">
           <p className="text-sm"><strong>월 소정근로시간</strong> = (40시간 + 주휴 8시간) x 4.345주 = 약 209시간</p>
-          <p className="text-sm mt-1"><strong>월급</strong> = 10,030원 x 209시간 = <strong>약 2,096,270원</strong></p>
-          <p className="text-sm mt-1"><strong>연봉</strong> = 2,096,270원 x 12개월 = <strong>약 25,155,240원</strong></p>
+          <p className="text-sm mt-1"><strong>월급</strong> = 10,320원 x 209시간 = <strong>약 2,156,880원</strong></p>
+          <p className="text-sm mt-1"><strong>연봉</strong> = 2,156,880원 x 12개월 = <strong>약 25,882,560원</strong></p>
         </div>
         <p className="text-sm leading-relaxed text-[var(--sub)]">
           위 금액은 세전 기준이며, 4대 보험료와 소득세를 공제하면 실수령액은 이보다 적어집니다.
-          최저시급 기준 월 실수령액은 약 190만원 내외입니다.
+          최저시급 기준 월 실수령액은 약 196만원 내외입니다. 공제 내역을 항목별로 뜯어보려면{" "}
+          <Link href="/salary" className="text-[var(--primary)] font-bold hover:underline">연봉 실수령액 계산기</Link>에,
+          공제의 근거가 되는 요율은 <Link href="/guide/4-insurance" className="text-[var(--primary)] font-bold hover:underline">4대보험 완전 정리</Link>에 자세히 정리되어 있습니다.
         </p>
       </Card>
 
@@ -88,7 +96,7 @@ export default function Page() {
         <h2 className="text-base font-extrabold mb-3">수습기간 급여 감액</h2>
         <p className="text-sm leading-relaxed text-[var(--sub)]">
           <strong>1년 이상의 근로계약</strong>을 체결한 경우, 수습 시작일로부터 <strong>3개월간</strong> 최저임금의
-          <strong>90%</strong>를 적용할 수 있습니다. 2026년 기준 수습기간 시급은 <strong>9,027원</strong>입니다.
+          <strong>90%</strong>를 적용할 수 있습니다. 2026년 기준 수습기간 시급은 <strong>9,288원</strong>(2027년은 9,630원)입니다.
           다만, 단순노무업무(청소, 경비, 주유원 등)로 고용노동부장관이 고시한 직종은 감액 적용이
           불가능하며 처음부터 100% 최저시급을 지급해야 합니다. 또한 1년 미만의 기간제 근로계약인 경우에도
           수습 감액이 적용되지 않습니다.

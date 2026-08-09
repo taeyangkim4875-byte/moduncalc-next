@@ -48,6 +48,9 @@ export default function Page() {
         <h2 className="text-base font-extrabold mb-3">총 이자 비교 (구체적 예시)</h2>
         <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
           대출금 <strong>3억원</strong>, 연이율 <strong>3.5%</strong>, 상환기간 <strong>30년</strong> 기준으로 비교해 보겠습니다.
+          아래는 예시 조건이므로, 본인의 대출금과 금리를 넣은 결과는{" "}
+          <Link href="/loan" className="text-[var(--primary)] font-bold hover:underline">대출 이자 계산기</Link>에서
+          두 방식을 나란히 비교해 볼 수 있습니다.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border-collapse">
@@ -141,6 +144,14 @@ export default function Page() {
           <li><strong>총 이자를 최소화하고 싶다면</strong>: 원금균등 상환을 선택하세요. 초기 부담을 감당할 수 있다면 장기적으로 유리합니다.</li>
           <li><strong>당장 여유가 없지만 소득 증가가 예상된다면</strong>: 거치기간을 활용한 원리금균등 상환을 고려해 보세요.</li>
         </ul>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
+          어떤 방식을 택하든 먼저 확인해야 할 것은 <strong>빌릴 수 있는 한도</strong>입니다. 연소득과 기존 대출에 따라
+          한도가 먼저 제한되는 경우가 많으므로,{" "}
+          <Link href="/loan/dsr" className="text-[var(--primary)] font-bold hover:underline">DSR 계산기</Link>로
+          가능 금액을 확인한 뒤 상환 방식을 정하세요. 주택 구입이라면{" "}
+          <Link href="/realestate/acqtax" className="text-[var(--primary)] font-bold hover:underline">취득세 계산기</Link>로
+          부대비용까지 합산해 자금 계획을 세우는 것이 좋습니다.
+        </p>
       </Card>
 
       <Card>

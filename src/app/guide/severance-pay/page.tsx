@@ -55,7 +55,9 @@ export default function Page() {
         <p className="text-sm leading-relaxed text-[var(--sub)]">
           평균임금은 퇴직일 이전 <strong>3개월간 지급받은 총 급여</strong>를 해당 기간의 <strong>총 일수</strong>로 나누어
           계산합니다. 예를 들어 최근 3개월 총급여가 900만원이고 총 일수가 92일이라면, 1일 평균임금은
-          약 97,826원이 됩니다.
+          약 97,826원이 됩니다. 입사일과 퇴사일, 최근 3개월 급여만 넣으면{" "}
+          <Link href="/salary/severance" className="text-[var(--primary)] font-bold hover:underline">퇴직금 계산기</Link>가
+          재직일수와 평균임금을 자동으로 계산해 줍니다.
         </p>
         <h3 className="text-sm font-bold mt-4 mb-2">상여금, 연차수당 포함 여부</h3>
         <p className="text-sm leading-relaxed text-[var(--sub)]">
@@ -111,7 +113,11 @@ export default function Page() {
         </ul>
         <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
           퇴직금 미지급은 근로기준법 위반으로 <strong>3년 이하 징역 또는 3천만원 이하 벌금</strong>에
-          처해질 수 있습니다.
+          처해질 수 있습니다. 비자발적 퇴사라면 퇴직금과 별개로 실업급여도 신청할 수 있으니{" "}
+          <Link href="/pension/jobless" className="text-[var(--primary)] font-bold hover:underline">실업급여 계산기</Link>로
+          예상 수급액과 기간을, 미사용 연차가 남았다면{" "}
+          <Link href="/salary/annual" className="text-[var(--primary)] font-bold hover:underline">연차 계산기</Link>로
+          정산받을 일수를 함께 확인하세요.
         </p>
       </Card>
 
