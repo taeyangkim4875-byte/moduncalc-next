@@ -81,7 +81,8 @@ export default function HealthInsuranceGuidePage() {
           <div className="p-3 bg-[var(--bg)] rounded-xl">
             <h3 className="text-sm font-bold mb-1">Employed (직장가입자)</h3>
             <p className="text-sm text-[#4E5968] leading-relaxed">
-              Your employer enrolls you automatically. Premiums are calculated based on your salary and split 50/50 between you and your employer. The premium is deducted from your monthly paycheck. Your dependents (spouse, children) can be added to your plan at no extra cost as long as they meet the income and property criteria.
+              Your employer enrolls you automatically. Premiums are calculated based on your salary and split 50/50 between you and your employer. The premium is deducted from your monthly paycheck. Your dependents (spouse, children) can be added to your plan at no extra cost as long as they meet the income and property criteria. To see the premium alongside your other payroll deductions, run your gross pay through our{" "}
+              <Link href="/en/salary" className="text-[var(--primary)] font-bold hover:underline">Korea Salary Calculator</Link>.
             </p>
           </div>
           <div className="p-3 bg-[var(--bg)] rounded-xl">
@@ -191,14 +192,16 @@ export default function HealthInsuranceGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          As the table shows, NHI provides substantial savings. Even with monthly premiums, the insurance pays for itself with just one or two medical visits per year.
+          As the table shows, NHI provides substantial savings. Even with monthly premiums, the insurance pays for itself with just one or two medical visits per year. For treatment-by-treatment pricing, our{" "}
+          <Link href="/en/hospital" className="text-[var(--primary)] font-bold hover:underline">Korea Hospital Cost Guide</Link> breaks down what foreigners typically pay at clinics and general hospitals.
         </p>
       </Card>
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">Using NHI at Hospitals</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Using your health insurance is straightforward. When you visit a hospital or clinic, present your <b>Health Insurance Card</b> (건강보험증) or your <b>Alien Registration Card (ARC)</b> at the reception desk. The hospital automatically processes your insurance, and you only pay the copayment portion.
+          Using your health insurance is straightforward. When you visit a hospital or clinic, present your <b>Health Insurance Card</b> (건강보험증) or your <b>Alien Registration Card (ARC)</b> at the reception desk. The hospital automatically processes your insurance, and you only pay the copayment portion. Our{" "}
+          <Link href="/en/guide/healthcare-guide" className="text-[var(--primary)] font-bold hover:underline">Korea Healthcare Guide</Link> walks through the clinic-to-hospital referral system and how to find English-speaking doctors.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
           <b>Emergency room visits:</b> Go to any hospital ER (응급실). You do not need a referral. Present your ARC, and NHI will cover the standard portion. ER copayments are higher than regular outpatient visits. If you are unconscious or unable to present ID, the hospital will still treat you and sort out insurance later.

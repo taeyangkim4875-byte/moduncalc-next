@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
@@ -116,18 +117,25 @@ export default function DatingCulturePage() {
             <span className="text-sm text-[#4E5968]">Younger couples increasingly split everything 50/50 (더치페이). This is becoming more accepted and is common among couples where both partners earn similar incomes.</span>
           </div>
         </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          Whichever arrangement you land on, dating in Seoul adds up quickly once cafes, dinners, and weekend trips are in the mix. Our{" "}
+          <Link href="/en/cost-of-living" className="text-[var(--primary)] font-bold hover:underline">Cost of Living Calculator</Link> makes it easy to set aside a realistic entertainment budget each month.
+        </p>
       </Card>
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">Age & Family Dynamics</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>Age hierarchy (나이):</b> Age plays a significant role in Korean relationships. Knowing your partner&apos;s age early is normal — it determines the language register (반말 vs. 존댓말) and social dynamics. Age gaps of 2-5 years are common and accepted, though very large gaps may attract attention. Same-age couples (동갑) often use casual speech (반말) from the start, while couples with age differences may use respectful speech longer.
+          <b>Age hierarchy (나이):</b> Age plays a significant role in Korean relationships. Knowing your partner&apos;s age early is normal — it determines the language register (반말 vs. 존댓말) and social dynamics. Age gaps of 2-5 years are common and accepted, though very large gaps may attract attention. Same-age couples (동갑) often use casual speech (반말) from the start, while couples with age differences may use respectful speech longer. If you are unsure how your age is counted here, our{" "}
+          <Link href="/en/korean-age" className="text-[var(--primary)] font-bold hover:underline">Korean Age Calculator</Link> shows the number a Korean date will have in mind when they ask.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
           <b>Meeting the family:</b> This is a significant step and usually happens only when the relationship is serious. Korean families may have concerns about intercultural relationships, particularly regarding language barriers, cultural differences, and long-term plans (especially regarding which country you will live in). Being respectful, learning basic Korean greetings, and showing genuine interest in Korean culture goes a long way.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Marriage considerations:</b> If the relationship progresses toward marriage, understanding the F-6 (marriage visa / 결혼이민 비자) process is important. Korean weddings involve both families significantly, and there are financial expectations like 혼수 (wedding preparations) and 전세/집 (housing) that are discussed between families.
+          <b>Marriage considerations:</b> If the relationship progresses toward marriage, understanding the F-6 (marriage visa / 결혼이민 비자) process is important. Korean weddings involve both families significantly, and there are financial expectations like 혼수 (wedding preparations) and 전세/집 (housing) that are discussed between families. Our{" "}
+          <Link href="/en/visa-check" className="text-[var(--primary)] font-bold hover:underline">Visa Checker</Link> will tell you whether F-6 is the right track for your situation, and the{" "}
+          <Link href="/en/guide/visa-guide" className="text-[var(--primary)] font-bold hover:underline">Korea Visa Guide</Link> explains the documents involved.
         </p>
       </Card>
 

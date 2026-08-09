@@ -103,7 +103,8 @@ export default function PhoneGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Tip:</b> Signing up at a carrier store requires your ARC (외국인등록증) and passport. Contracts are typically 24 months with device subsidies, but you can also bring your own unlocked phone and get a SIM-only plan for lower monthly costs.
+          <b>Tip:</b> Signing up at a carrier store requires your ARC (외국인등록증) and passport. Contracts are typically 24 months with device subsidies, but you can also bring your own unlocked phone and get a SIM-only plan for lower monthly costs. Our{" "}
+          <Link href="/en/phone-cost" className="text-[var(--primary)] font-bold hover:underline">Korea Phone Plan Calculator</Link> puts carrier and SIM-only pricing side by side so you can see the two-year difference before you commit.
         </p>
       </Card>
 
@@ -118,7 +119,8 @@ export default function PhoneGuidePage() {
           <li><b>여유모바일 (Yeoyu Mobile):</b> Budget-friendly plans with good unlimited data options. Popular for its straightforward pricing with no hidden fees.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Important:</b> Some MVNOs allow online sign-up with ARC verification, while others require visiting a partner store. Check the carrier&apos;s website for foreigner enrollment options. Most MVNO customer service is Korean-only, so consider having a Korean-speaking friend help with the initial setup.
+          <b>Important:</b> Some MVNOs allow online sign-up with ARC verification, while others require visiting a partner store. Check the carrier&apos;s website for foreigner enrollment options. Most MVNO customer service is Korean-only, so consider having a Korean-speaking friend help with the initial setup. If you are setting up home broadband at the same time, our{" "}
+          <Link href="/en/internet-speed" className="text-[var(--primary)] font-bold hover:underline">Korea Internet Plans Guide</Link> explains which speed tier is actually worth paying for.
         </p>
       </Card>
 
@@ -199,7 +201,8 @@ export default function PhoneGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Pro tip:</b> KakaoTalk is not optional -- it is the default communication method in Korea for everything from work chats to government notifications. Install it and register with your Korean number on your first day.
+          <b>Pro tip:</b> KakaoTalk is not optional -- it is the default communication method in Korea for everything from work chats to government notifications. Install it and register with your Korean number on your first day. The delivery apps in the table above take a little more setup, so see our{" "}
+          <Link href="/en/guide/delivery-apps" className="text-[var(--primary)] font-bold hover:underline">Korean Delivery Apps Guide</Link> for a walkthrough of your first order.
         </p>
       </Card>
 

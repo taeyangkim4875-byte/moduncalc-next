@@ -164,6 +164,7 @@ const MENUS_EN: MenuItem[] = [
     { label: 'Lunar Calendar', href: '/en/lunar-calendar' },
     { label: 'Blood Alcohol (DUI)', href: '/en/alcohol' },
     { label: 'Visa Checker', href: '/en/visa-check' },
+    { label: 'F-2-7 Points Calculator', href: '/en/f2-visa-points' },
     { label: 'Hospital Costs', href: '/en/hospital' },
     { label: 'Phone Plans', href: '/en/phone-cost' },
     { label: 'Delivery Cost', href: '/en/delivery-fee' },

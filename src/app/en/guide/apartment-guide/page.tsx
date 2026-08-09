@@ -114,7 +114,8 @@ export default function ApartmentGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>For most foreigners arriving in Korea</b>, wolse (monthly rent) is the most practical option. It requires a manageable deposit and offers flexibility. Gosiwon rooms are a good temporary solution while you search for long-term housing -- they are small (3-7 pyeong / 10-23 sqm) but require no deposit and offer month-to-month contracts.
+          <b>For most foreigners arriving in Korea</b>, wolse (monthly rent) is the most practical option. It requires a manageable deposit and offers flexibility. Gosiwon rooms are a good temporary solution while you search for long-term housing -- they are small (3-7 pyeong / 10-23 sqm) but require no deposit and offer month-to-month contracts. Korean listings almost always quote floor area in pyeong (평) rather than square meters, so check a room&apos;s real size with our{" "}
+          <Link href="/en/pyeong" className="text-[var(--primary)] font-bold hover:underline">Pyeong Converter</Link> before you decide whether it will fit your furniture.
         </p>
       </Card>
 
@@ -143,6 +144,10 @@ export default function ApartmentGuidePage() {
           <li><b>Bank balance certificate (잔고증명서):</b> Shows you have sufficient funds for the deposit. Request this from your Korean bank. Especially important for jeonse contracts.</li>
           <li><b>Income proof (소득증명원):</b> Some landlords request a tax withholding receipt (원천징수영수증) to verify your income level.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          Paperwork aside, the bigger hurdle is usually the cash you need on signing day: the deposit, the agent commission (중개보수), the first month of rent, and utility hook-up fees. Add them all up in advance with our{" "}
+          <Link href="/en/move-in-cost" className="text-[var(--primary)] font-bold hover:underline">Move-in Cost Calculator</Link> so nothing catches you by surprise at the contract table.
+        </p>
       </Card>
 
       <Card>
@@ -231,7 +236,8 @@ export default function ApartmentGuidePage() {
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5 mb-3">
           <li><b>Maintenance fee (관리비):</b> ₩50,000-200,000/month for apartments and officetels. May include water, internet, or elevator maintenance. Always ask what is included.</li>
-          <li><b>Electricity (전기):</b> KEPCO (한전) handles electricity. Average ₩30,000-80,000/month. Progressive pricing means heavy usage gets expensive fast, especially with air conditioning in summer.</li>
+          <li><b>Electricity (전기):</b> KEPCO (한전) handles electricity. Average ₩30,000-80,000/month. Progressive pricing means heavy usage gets expensive fast, especially with air conditioning in summer. Our{" "}
+            <Link href="/en/electricity" className="text-[var(--primary)] font-bold hover:underline">Electricity Bill Calculator</Link> shows how quickly the tiers escalate once you cross the summer thresholds.</li>
           <li><b>Gas (가스):</b> Used for heating (온돌) and cooking. ₩10,000-30,000 in summer, ₩50,000-150,000+ in winter with floor heating (바닥난방). Winter gas bills are the biggest surprise for most foreigners.</li>
           <li><b>Water (수도):</b> ₩10,000-20,000/month. Often included in maintenance fee for apartment complexes.</li>
           <li><b>Internet (인터넷):</b> ₩20,000-35,000/month for 100Mbps-1Gbps. KT, SK Broadband, LG U+ are the main providers. Installation takes 1-3 days after sign-up.</li>

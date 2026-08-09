@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
@@ -101,6 +102,10 @@ export default function NightlifeGuidePage() {
           <li><b>Never refuse the first drink:</b> It is polite to accept at least the first drink offered. After that, you can pace yourself. Saying you cannot drink for health reasons is an acceptable way to decline.</li>
           <li><b>Don&apos;t pour into a glass that still has drink:</b> Wait until the glass is empty before refilling — pouring into a partially full glass is considered bad luck.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          Korea enforces a 0.03% blood alcohol limit, which a single round of somaek can easily push you past. Our{" "}
+          <Link href="/en/alcohol" className="text-[var(--primary)] font-bold hover:underline">Blood Alcohol Calculator</Link> estimates how long you need before it is safe to drive again.
+        </p>
       </Card>
 
       <Card>
@@ -142,11 +147,13 @@ export default function NightlifeGuidePage() {
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>Kakao Taxi (카카오택시):</b> Essential app. Call a taxi from anywhere, pay by card. Regular taxi, luxury (모범택시), and carpool options. Late-night surge pricing applies on weekends. Download before you go out.</li>
           <li><b>Night buses (심야버스):</b> Seoul operates special night bus lines (N-routes) from midnight to 5 AM, running through major nightlife areas. Routes N13, N26, N30, and N37 cover popular districts.</li>
-          <li><b>Last subway:</b> Seoul subway last trains depart around 11:30 PM - 12:30 AM depending on the line and station. Check the Naver Map app for exact times from your station. Missing the last train is a common experience — plan for taxi fare.</li>
+          <li><b>Last subway:</b> Seoul subway last trains depart around 11:30 PM - 12:30 AM depending on the line and station. Check the Naver Map app for exact times from your station. Missing the last train is a common experience — plan for taxi fare. Our{" "}
+            <Link href="/en/subway" className="text-[var(--primary)] font-bold hover:underline">Seoul Subway Fare Calculator</Link> gives you the fare and travel time for the ride home while the trains are still running.</li>
           <li><b>Jjimjilbang (찜질방):</b> 24-hour bathhouses/saunas are a uniquely Korean &quot;plan B&quot; for getting stranded. For ₩10,000-15,000, you get a sleeping area, hot baths, sauna, and snacks until the first subway. Dragon Hill Spa in Itaewon is popular with foreigners.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
-          <b>Emergency:</b> Police: 112 | Ambulance: 119 | Tourist helpline (English): 1330
+          <b>Emergency:</b> Police: 112 | Ambulance: 119 | Tourist helpline (English): 1330. Our{" "}
+          <Link href="/en/emergency" className="text-[var(--primary)] font-bold hover:underline">Korea Emergency Numbers</Link> page has the full list, including the multilingual helplines worth saving before you head out.
         </p>
       </Card>
 

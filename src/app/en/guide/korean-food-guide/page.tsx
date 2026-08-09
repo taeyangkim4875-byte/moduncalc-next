@@ -91,6 +91,10 @@ export default function KoreanFoodGuidePage() {
           <li><b>Tablet ordering (태블릿 주문):</b> Some restaurants have tablets at each table. Browse the menu, select items, and submit your order digitally. Popular at BBQ and izakaya-style restaurants.</li>
           <li><b>Useful ordering phrases:</b> &quot;메뉴판 주세요&quot; (menupan juseyo = menu please), &quot;추천 메뉴 뭐예요?&quot; (chucheon menu mwoyeyo = what do you recommend?), &quot;안 맵게 해주세요&quot; (an maepge haejuseyo = not spicy please), &quot;계산이요&quot; (gyesaniyo = check please).</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          A handful of memorised lines goes a long way at the table. Our{" "}
+          <Link href="/en/korean-phrases" className="text-[var(--primary)] font-bold hover:underline">Essential Korean Phrases</Link> page collects the restaurant expressions along with the rest of the daily-life basics.
+        </p>
       </Card>
 
       <Card>
@@ -204,7 +208,8 @@ export default function KoreanFoodGuidePage() {
           <li><b>Yogiyo (요기요):</b> Another major delivery platform with a wide selection. Frequently offers discount coupons. Similar to Baemin in functionality.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
-          <b>Tip:</b> Delivery minimums are typically ₩10,000-15,000. Delivery fees range from free to ₩4,000. Late-night delivery (야간 배달) after 12 AM may have higher fees. Most delivery drivers will bring the food directly to your door -- leave detailed address notes including apartment building number and unit.
+          <b>Tip:</b> Delivery minimums are typically ₩10,000-15,000. Delivery fees range from free to ₩4,000. Late-night delivery (야간 배달) after 12 AM may have higher fees. Most delivery drivers will bring the food directly to your door -- leave detailed address notes including apartment building number and unit. For a walkthrough of signing up and placing your first order in a Korean-language app, see our{" "}
+          <Link href="/en/guide/delivery-apps" className="text-[var(--primary)] font-bold hover:underline">Korean Delivery Apps Guide</Link>.
         </p>
       </Card>
 
@@ -221,7 +226,8 @@ export default function KoreanFoodGuidePage() {
           <li><b>Frozen meals:</b> ₩2,500-4,500. Frozen dumplings (만두), fried rice (볶음밥), and pasta that you microwave at the store.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
-          <b>Money-saving tip:</b> Convenience stores run &quot;1+1&quot; (buy one get one free) and &quot;2+1&quot; promotions constantly. Check the promotional tags on products. The CU, GS25, and 7-Eleven apps show current deals.
+          <b>Money-saving tip:</b> Convenience stores run &quot;1+1&quot; (buy one get one free) and &quot;2+1&quot; promotions constantly. Check the promotional tags on products. The CU, GS25, and 7-Eleven apps show current deals. If you want to see how a convenience-store habit compares with cooking for yourself, our{" "}
+          <Link href="/en/cost-of-living" className="text-[var(--primary)] font-bold hover:underline">Cost of Living Calculator</Link> puts a monthly figure on your food budget.
         </p>
       </Card>
 

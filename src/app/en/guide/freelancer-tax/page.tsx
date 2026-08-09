@@ -130,14 +130,16 @@ export default function FreelancerTaxPage() {
           For example, if you earn 5,000,000 KRW from a freelance project, the company withholds 165,000 KRW (3.3%) and pays you 4,835,000 KRW. That 165,000 KRW is reported to the National Tax Service (국세청) and credited to your account. When you file in May, if your actual tax liability is higher than the total withheld throughout the year, you pay the difference. If it is lower, you receive a refund.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Important:</b> If your annual freelance income is low enough that your effective tax rate after deductions is below 3.3%, you will receive a refund when you file. Many freelancers with modest income actually get money back in May.
+          <b>Important:</b> If your annual freelance income is low enough that your effective tax rate after deductions is below 3.3%, you will receive a refund when you file. Many freelancers with modest income actually get money back in May. To see roughly where you will land before filing, run your expected annual figure through our{" "}
+          <Link href="/en/income-tax" className="text-[var(--primary)] font-bold hover:underline">Korea Income Tax Calculator</Link> and compare it against the 3.3% already withheld.
         </p>
       </Card>
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">Comprehensive Income Tax Filing in May (종합소득세)</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Unlike employees whose taxes are settled by their employer in January-February, freelancers must file their own Comprehensive Income Tax return (종합소득세 신고) during May 1-31 each year, reporting the previous year&apos;s income. This is done through Hometax (홈택스) online or at your local tax office (세무서).
+          Unlike employees whose taxes are settled by their employer in January-February, freelancers must file their own Comprehensive Income Tax return (종합소득세 신고) during May 1-31 each year, reporting the previous year&apos;s income. This is done through Hometax (홈택스) online or at your local tax office (세무서). The May window is only one of several dates that matter to the self-employed -- our{" "}
+          <Link href="/en/tax-calendar" className="text-[var(--primary)] font-bold hover:underline">Korea Tax Calendar</Link> lists the VAT and estimated-payment deadlines alongside it.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
           Korea&apos;s progressive tax brackets apply to your net taxable income after deductions:
@@ -237,7 +239,8 @@ export default function FreelancerTaxPage() {
           <li><b>Thinking 3.3% is the final tax:</b> The most common mistake. Many freelancers assume the 3.3% withheld is all they owe and skip the May filing. This can result in penalties, interest, and a much larger tax bill when the NTS catches up.</li>
           <li><b>Not filing in May:</b> Even if you expect a refund, you must file the Comprehensive Income Tax return. Failure to file results in penalties of 20% of the unpaid tax plus daily interest charges.</li>
           <li><b>Missing the deduction for National Pension:</b> Freelancers paying National Pension as regional subscribers can deduct these contributions, but many forget to include them.</li>
-          <li><b>Not registering for social insurance:</b> Freelancers are still required to enroll in National Pension and Health Insurance. Avoiding enrollment can lead to back-payments with penalties when discovered.</li>
+          <li><b>Not registering for social insurance:</b> Freelancers are still required to enroll in National Pension and Health Insurance. Avoiding enrollment can lead to back-payments with penalties when discovered. Regional subscribers pay the full premium themselves, so budget for it using our{" "}
+            <Link href="/en/health-insurance" className="text-[var(--primary)] font-bold hover:underline">Health Insurance Calculator</Link>.</li>
           <li><b>Assuming the 19% flat tax applies:</b> The foreign worker flat tax is for employed workers (근로소득), not freelance business income (사업소득). Filing under the wrong category creates serious tax issues.</li>
           <li><b>Poor record keeping:</b> Not keeping receipts and contracts makes it impossible to claim actual expense deductions during an audit. Digital copies of all documents are strongly recommended.</li>
         </ul>

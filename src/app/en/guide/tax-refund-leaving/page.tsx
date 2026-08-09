@@ -117,7 +117,8 @@ export default function TaxRefundLeavingPage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Health Insurance, Employment Insurance & Severance</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>Health Insurance (건강보험):</b> There is no refund for health insurance premiums -- they paid for your medical coverage while you were in Korea. However, you must cancel your health insurance to avoid continued billing. Contact the NHIS (국민건강보험공단) at 1577-1000 or visit a local branch before leaving. If you have unpaid medical bills, settle them before departure.
+          <b>Health Insurance (건강보험):</b> There is no refund for health insurance premiums -- they paid for your medical coverage while you were in Korea. However, you must cancel your health insurance to avoid continued billing. Contact the NHIS (국민건강보험공단) at 1577-1000 or visit a local branch before leaving. If you have unpaid medical bills, settle them before departure. Our{" "}
+          <Link href="/en/guide/health-insurance-guide" className="text-[var(--primary)] font-bold hover:underline">Korean Health Insurance Guide</Link> explains how the premiums were calculated in the first place, which helps if you are disputing a final bill.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
           <b>Employment Insurance (고용보험):</b> In most cases, foreigners leaving Korea voluntarily cannot claim unemployment benefits. However, if you were involuntarily terminated (layoff, contract expiration, company closure), you may qualify for jobseeker&apos;s allowance (구직급여) even as a foreigner. Consult your local Employment Center (고용센터) before departure.
@@ -134,7 +135,8 @@ export default function TaxRefundLeavingPage() {
           If you worked only part of the year in Korea, your tax situation requires special attention. Your employer withholds tax monthly based on the assumption you will work the full year. When you leave mid-year, the total tax withheld may exceed your actual tax liability for the months worked, resulting in a refund.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          If you chose the 19% flat tax rate (외국인 단일세율), your calculation is straightforward -- 19% of your actual earned income with no deductions. If you chose progressive tax rates, your partial-year income may fall into a lower tax bracket, potentially resulting in a larger refund. Use our{" "}
+          If you chose the 19% flat tax rate (외국인 단일세율), your calculation is straightforward -- 19% of your actual earned income with no deductions. If you chose progressive tax rates, your partial-year income may fall into a lower tax bracket, potentially resulting in a larger refund. Our{" "}
+          <Link href="/en/income-tax" className="text-[var(--primary)] font-bold hover:underline">Korea Income Tax Calculator</Link> is the quickest way to check what you should have owed on the months you actually worked. Use our{" "}
           <Link href="/en/tax-comparison" className="text-[var(--primary)] font-bold hover:underline">Tax Comparison Calculator</Link> to compare flat vs progressive tax for your situation.
         </p>
       </Card>
@@ -166,6 +168,10 @@ export default function TaxRefundLeavingPage() {
             <span className="text-sm text-[#4E5968]">Monitor your Korean bank account for refund deposits. If needed, apply for NPS refund from overseas within 5 years. Close Korean bank account once all payments are received (can be done remotely with some banks).</span>
           </div>
         </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          Once the refunds land, you still have to get the money home without losing a chunk to fees. Our{" "}
+          <Link href="/en/guide/remittance-guide" className="text-[var(--primary)] font-bold hover:underline">Sending Money from Korea Guide</Link> compares the cheapest transfer routes for a final lump sum.
+        </p>
       </Card>
 
       <Card>

@@ -71,14 +71,16 @@ export default function YearEndSettlementPage() {
           Year-end settlement (연말정산 / yeonmal-jeonsan) is Korea&apos;s annual process of reconciling the income taxes withheld from your paychecks throughout the year against what you actually owe. Every month, your employer withholds estimated income tax based on your salary and a standard deduction assumption. At year-end, the actual calculation is done considering your real deductions and credits. If too much tax was withheld, you receive a refund; if too little was withheld, you owe additional tax.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Timeline:</b> The process runs from mid-January through February. Your employer will ask you to submit documents in January, then process the settlement and include any refund or additional tax in your February (sometimes March) paycheck. The key dates are: mid-January for Hometax Simplified Service (간소화서비스) opening, late January for document submission to your employer, and February for receiving your result.
+          <b>Timeline:</b> The process runs from mid-January through February. Your employer will ask you to submit documents in January, then process the settlement and include any refund or additional tax in your February (sometimes March) paycheck. The key dates are: mid-January for Hometax Simplified Service (간소화서비스) opening, late January for document submission to your employer, and February for receiving your result. Our{" "}
+          <Link href="/en/tax-calendar" className="text-[var(--primary)] font-bold hover:underline">Korea Tax Calendar</Link> puts these dates alongside the other filing deadlines that may apply to you.
         </p>
       </Card>
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">Flat Tax vs Progressive Tax: How Settlement Differs</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          As a foreign worker in Korea, your year-end settlement experience depends entirely on which tax method you chose:
+          As a foreign worker in Korea, your year-end settlement experience depends entirely on which tax method you chose. If you want the raw numbers first, our{" "}
+          <Link href="/en/income-tax" className="text-[var(--primary)] font-bold hover:underline">Korea Income Tax Calculator</Link> works out the progressive liability on your annual income:
         </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">
@@ -135,7 +137,8 @@ export default function YearEndSettlementPage() {
           <li><b>Dependent exemption (부양가족 공제):</b> 1,500,000 KRW per qualifying dependent (children, parents) living with you in Korea.</li>
           <li><b>National Pension contributions (국민연금 납입액):</b> Your 4.5% National Pension contributions are fully deductible from your income.</li>
           <li><b>Health Insurance premiums (건강보험료):</b> Both your health insurance and long-term care insurance premiums are deductible.</li>
-          <li><b>Housing rent deduction (월세 세액공제):</b> If you pay rent and earn 70 million KRW or less annually, you can claim 15-17% of your annual rent as a tax credit (up to 10 million KRW in rent).</li>
+          <li><b>Housing rent deduction (월세 세액공제):</b> If you pay rent and earn 70 million KRW or less annually, you can claim 15-17% of your annual rent as a tax credit (up to 10 million KRW in rent). Our{" "}
+            <Link href="/en/rent" className="text-[var(--primary)] font-bold hover:underline">Jeonse vs Wolse Calculator</Link> is useful here, since only wolse rent payments qualify for the credit.</li>
           <li><b>Retirement pension contributions (연금저축):</b> Voluntary contributions to qualified retirement pension plans are deductible up to certain limits.</li>
         </ul>
       </Card>
@@ -170,7 +173,7 @@ export default function YearEndSettlementPage() {
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           <b>Using Hometax Simplified Service (간소화서비스):</b> Log into{" "}
-          <Link href="https://www.hometax.go.kr" className="text-[var(--primary)] font-bold hover:underline">Hometax</Link> with your ARC-linked account from mid-January. Navigate to 연말정산 간소화 and download your consolidated deduction data as a PDF. Submit this PDF to your employer&apos;s HR/accounting department along with any additional documents not captured by the automated system. Check your{" "}
+          <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer" className="text-[var(--primary)] font-bold hover:underline">Hometax</a> with your ARC-linked account from mid-January. Navigate to 연말정산 간소화 and download your consolidated deduction data as a PDF. Submit this PDF to your employer&apos;s HR/accounting department along with any additional documents not captured by the automated system. Check your{" "}
           <Link href="/en/salary" className="text-[var(--primary)] font-bold hover:underline">Salary Calculator</Link> results to understand your current withholding amounts.
         </p>
       </Card>

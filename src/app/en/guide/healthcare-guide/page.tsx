@@ -56,7 +56,8 @@ export default function HealthcareGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">National Health Insurance (국민건강보험)</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Korea&apos;s <b>National Health Insurance (NHI / 국민건강보험)</b> provides universal healthcare coverage to all residents, including foreigners with an ARC staying more than 6 months. NHI covers approximately 60-70% of medical costs, making healthcare in Korea both high-quality and affordable.
+          Korea&apos;s <b>National Health Insurance (NHI / 국민건강보험)</b> provides universal healthcare coverage to all residents, including foreigners with an ARC staying more than 6 months. NHI covers approximately 60-70% of medical costs, making healthcare in Korea both high-quality and affordable. Our{" "}
+          <Link href="/en/guide/health-insurance-guide" className="text-[var(--primary)] font-bold hover:underline">Health Insurance Guide</Link> explains how premiums differ between workplace and regional subscribers.
         </p>
         <div className="space-y-2">
           <div className="flex items-start gap-3 p-2.5 bg-[var(--bg)] rounded-lg">
@@ -97,7 +98,8 @@ export default function HealthcareGuidePage() {
           </div>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Emergency:</b> Go directly to any hospital emergency room (응급실) — no referral needed. Call 119 for ambulance. ER copay is higher but waived for genuine emergencies.
+          <b>Emergency:</b> Go directly to any hospital emergency room (응급실) — no referral needed. Call 119 for ambulance. ER copay is higher but waived for genuine emergencies. Keep our{" "}
+          <Link href="/en/emergency" className="text-[var(--primary)] font-bold hover:underline">Korea Emergency Numbers</Link> page saved on your phone -- it lists the English-language medical hotlines as well.
         </p>
       </Card>
 
@@ -140,6 +142,10 @@ export default function HealthcareGuidePage() {
           <li>Urinalysis</li>
           <li>Oral health screening</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          The results sheet reports your BMI and waist measurement in Korean units, so if you want a fuller picture of your body composition beforehand, try our{" "}
+          <Link href="/en/body-fat" className="text-[var(--primary)] font-bold hover:underline">Body Fat Calculator</Link>.
+        </p>
         <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
           <b>Cancer screenings</b> by age: stomach cancer (위암검진, age 40+, every 2 years), colon cancer (대장암, age 50+), breast cancer (유방암, women 40+), cervical cancer (자궁경부암, women 20+), and liver cancer (간암, age 40+ with hepatitis B/C). These are free through NHI.
         </p>

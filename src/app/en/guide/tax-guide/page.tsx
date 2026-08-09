@@ -78,7 +78,8 @@ export default function TaxGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Progressive Tax Brackets (2026)</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Korea uses a progressive tax system with 8 brackets. The rates below apply to <b>taxable income</b> (총급여 minus deductions), not gross salary. Local income tax (지방소득세) adds an additional 10% of your income tax.
+          Korea uses a progressive tax system with 8 brackets. The rates below apply to <b>taxable income</b> (총급여 minus deductions), not gross salary. Local income tax (지방소득세) adds an additional 10% of your income tax. Our{" "}
+          <Link href="/en/income-tax" className="text-[var(--primary)] font-bold hover:underline">Korea Income Tax Calculator</Link> applies these brackets to your own figures so you do not have to work through the cumulative column by hand.
         </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">
@@ -152,7 +153,8 @@ export default function TaxGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Year-End Settlement (연말정산) for Foreigners</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Year-end settlement happens every January-February. Your employer collects documentation of your deductions and calculates your actual tax liability for the previous year. If you overpaid through monthly withholdings, you receive a refund in your February or March paycheck. If you underpaid, the difference is deducted.
+          Year-end settlement happens every January-February. Your employer collects documentation of your deductions and calculates your actual tax liability for the previous year. If you overpaid through monthly withholdings, you receive a refund in your February or March paycheck. If you underpaid, the difference is deducted. Our{" "}
+          <Link href="/en/guide/year-end-settlement" className="text-[var(--primary)] font-bold hover:underline">Year-End Settlement Guide</Link> walks through the Hometax screens and the documents foreigners most often forget.
         </p>
         <div className="space-y-2 mb-3">
           <div className="flex items-start gap-3 p-2.5 bg-[var(--bg)] rounded-lg">
@@ -245,6 +247,10 @@ export default function TaxGuidePage() {
             </tbody>
           </table>
         </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          Our{" "}
+          <Link href="/en/tax-calendar" className="text-[var(--primary)] font-bold hover:underline">Korea Tax Calendar</Link> lists these alongside the VAT and property tax dates, which matter if you also have business or rental income.
+        </p>
       </Card>
 
       <Card>

@@ -96,7 +96,8 @@ export default function SeveranceGuidePage() {
         </div>
         <h3 className="text-sm font-bold mt-4 mb-2">How to Calculate Your Average Daily Wage</h3>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Your average daily wage is based on your <b>last 3 months of earnings</b> before your final day. Take the total gross pay you received during those 3 months and divide it by the total number of calendar days in that period (typically 89-92 days).
+          Your average daily wage is based on your <b>last 3 months of earnings</b> before your final day. Take the total gross pay you received during those 3 months and divide it by the total number of calendar days in that period (typically 89-92 days). Use the gross figure from your payslip, not your take-home pay -- if you are unsure which line that is, our{" "}
+          <Link href="/en/salary" className="text-[var(--primary)] font-bold hover:underline">Korea Salary Calculator</Link> shows how gross and net relate.
         </p>
         <h3 className="text-sm font-bold mt-4 mb-2">What Counts as &quot;Wages&quot;</h3>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5 mb-3">
@@ -155,7 +156,8 @@ export default function SeveranceGuidePage() {
           </div>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Tip:</b> You can file a labor complaint even after leaving Korea. Contact the nearest Korean embassy or consult with a Korean labor attorney. The statute of limitations for severance claims is 3 years.
+          <b>Tip:</b> You can file a labor complaint even after leaving Korea. Contact the nearest Korean embassy or consult with a Korean labor attorney. The statute of limitations for severance claims is 3 years. Our{" "}
+          <Link href="/en/guide/working-rights" className="text-[var(--primary)] font-bold hover:underline">Working Rights Guide</Link> explains the other protections you can raise at the same complaint, from unpaid overtime to unlawful dismissal.
         </p>
       </Card>
 
@@ -168,6 +170,10 @@ export default function SeveranceGuidePage() {
           <li><b>DB (Defined Benefit / 확정급여형):</b> The employer bears the investment risk. Your payout is calculated the same way as traditional severance -- based on your final average wage and service period. This is generally better if your salary increases steadily over time.</li>
           <li><b>DC (Defined Contribution / 확정기여형):</b> The employer deposits at least 1/12 of your annual salary into your pension account each year, and you manage the investments. Your final payout depends on investment performance. This can be better if you expect your salary to remain flat or decrease.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          Neither system replaces the National Pension, which is a separate deduction with its own refund rules for departing foreigners -- see our{" "}
+          <Link href="/en/guide/pension-guide" className="text-[var(--primary)] font-bold hover:underline">Korean National Pension Guide</Link>.
+        </p>
       </Card>
 
       <Card>

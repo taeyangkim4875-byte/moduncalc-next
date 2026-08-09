@@ -75,7 +75,8 @@ export default function TransportationGuidePage() {
           <li><b>How to charge:</b> Add money (충전) at convenience store counters (just hand the card and say the amount, e.g., &quot;만 원 충전해 주세요&quot; = charge 10,000 won please), or at subway station charging machines that accept cash and cards. Charge in increments of ₩1,000.</li>
           <li><b>How to use:</b> Tap the card on the reader when entering AND exiting the subway, or when boarding AND alighting the bus. The fare is calculated based on distance traveled. Always tap off -- if you forget, you will be charged the maximum fare.</li>
           <li><b>Mobile T-money:</b> If you have a supported Samsung phone with NFC, you can use Mobile T-money through Samsung Pay or the T-money app, eliminating the need for a physical card.</li>
-          <li><b>Refund:</b> When leaving Korea, you can get a refund of the remaining balance (minus a ₩500 processing fee) at convenience stores if the balance is under ₩20,000.</li>
+          <li><b>Refund:</b> When leaving Korea, you can get a refund of the remaining balance (minus a ₩500 processing fee) at convenience stores if the balance is under ₩20,000. It is a small sum next to the other refunds due on departure -- our{" "}
+            <Link href="/en/guide/tax-refund-leaving" className="text-[var(--primary)] font-bold hover:underline">Tax Refund When Leaving Korea Guide</Link> lists the rest.</li>
         </ul>
       </Card>
 
@@ -232,6 +233,10 @@ export default function TransportationGuidePage() {
           <li><b>Discounts:</b> Book early for up to 10-30% off. The KR Pass (Korea Rail Pass) is available exclusively to foreigners for unlimited travel over 2-5 consecutive days.</li>
           <li><b>Luggage:</b> No strict luggage limits, but overhead racks and space behind seats accommodate standard suitcases. No extra charge for luggage.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          KTX seats sell out weeks ahead around Seollal and Chuseok, when the whole country travels at once. Check our{" "}
+          <Link href="/en/public-holiday" className="text-[var(--primary)] font-bold hover:underline">Korea Public Holidays</Link> calendar before you plan an intercity trip.
+        </p>
       </Card>
 
       <Card>
@@ -259,6 +264,10 @@ export default function TransportationGuidePage() {
           <li><b>Kakao T (카카오 T):</b> The most popular taxi-hailing app. Enter your destination, get a fare estimate, and a driver is dispatched. Payment can be cashless through the app. Highly recommended for foreigners as it eliminates communication issues with drivers -- just show the app screen.</li>
           <li><b>Tipping:</b> No tipping for taxis. The metered fare is the total amount.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          Between the subway, buses, and Kakao T, most foreigners never need a car in Seoul. If you are considering one anyway, our{" "}
+          <Link href="/en/guide/drivers-license" className="text-[var(--primary)] font-bold hover:underline">Korean Driver&apos;s License Guide</Link> explains how to convert your existing licence.
+        </p>
       </Card>
 
       <Card>

@@ -71,7 +71,8 @@ export default function ShoppingGuidePage() {
           <div>
             <h3 className="text-sm font-bold mb-1">Naver Shopping (네이버 쇼핑)</h3>
             <p className="text-sm text-[#4E5968] leading-relaxed">
-              Price comparison engine that aggregates listings from multiple shopping sites. Great for finding the best price on any product. <b>Naver Pay (네이버페이)</b> offers cashback points on purchases. Many small Korean businesses sell exclusively through their Naver Smart Store (스마트스토어).
+              Price comparison engine that aggregates listings from multiple shopping sites. Great for finding the best price on any product. <b>Naver Pay (네이버페이)</b> offers cashback points on purchases. Many small Korean businesses sell exclusively through their Naver Smart Store (스마트스토어). Shipping is charged separately by most sellers, so our{" "}
+              <Link href="/en/delivery-fee" className="text-[var(--primary)] font-bold hover:underline">Delivery &amp; Shipping Cost Calculator</Link> is useful for working out the true total before you check out.
             </p>
           </div>
         </div>
@@ -113,7 +114,8 @@ export default function ShoppingGuidePage() {
           <li><b>Noryangjin Fish Market (노량진수산시장):</b> Pick fresh seafood and have it sliced on the spot. Sea urchin, live octopus, and sashimi at market prices.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
-          <b>Bargaining tip:</b> Politely ask &quot;깎아주세요&quot; (kkakkajuseyo — please give me a discount). Works best when buying multiple items or at clothing/accessory stalls. Not appropriate at food stalls with fixed prices.
+          <b>Bargaining tip:</b> Politely ask &quot;깎아주세요&quot; (kkakkajuseyo — please give me a discount). Works best when buying multiple items or at clothing/accessory stalls. Not appropriate at food stalls with fixed prices. To judge whether a market price is actually a bargain, check the typical supermarket rates in our{" "}
+          <Link href="/en/grocery" className="text-[var(--primary)] font-bold hover:underline">Korea Grocery Price Guide</Link> first.
         </p>
       </Card>
 
@@ -141,7 +143,8 @@ export default function ShoppingGuidePage() {
           <li><b>KakaoPay (카카오페이):</b> QR-code payments linked to your Korean bank account. Also for online payments, money transfers, and bill splitting with friends.</li>
           <li><b>Toss Pay (토스페이):</b> Similar to KakaoPay, popular with younger Koreans. Also offers banking, investment, and insurance services.</li>
           <li><b>Samsung Pay / Apple Pay:</b> Samsung Pay works at virtually every card terminal in Korea (uses MST technology). Apple Pay works at NFC terminals, which are now widespread.</li>
-          <li><b>T-money card (티머니):</b> Transportation card that also works at convenience stores and vending machines. Buy at any convenience store for ₩2,500.</li>
+          <li><b>T-money card (티머니):</b> Transportation card that also works at convenience stores and vending machines. Buy at any convenience store for ₩2,500. The same card covers your commute -- our{" "}
+            <Link href="/en/subway" className="text-[var(--primary)] font-bold hover:underline">Seoul Subway Fare Calculator</Link> shows what each trip will deduct.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
           Convert clothing sizes for Korean shopping with our <Link href="/en/size-converter" className="text-[var(--primary)] font-bold hover:underline">Size Converter</Link>.

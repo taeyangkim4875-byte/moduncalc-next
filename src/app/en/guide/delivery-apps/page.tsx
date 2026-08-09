@@ -161,14 +161,17 @@ export default function DeliveryAppsGuidePage() {
           <b>Delivery fees (배달비):</b> Typically range from 0-4,000 KRW per order. Some apps offer free delivery promotions or subscription plans -- 쿠팡이츠 has a &quot;Coupang Rocket&quot; membership and 배달의민족 has &quot;배민1&quot; for reduced delivery fees.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Tipping:</b> There is NO tipping culture in Korea. Do not tip your delivery driver -- it is not expected and can cause confusion. The delivery fee is the only additional cost beyond your food price.
+          <b>Tipping:</b> There is NO tipping culture in Korea. Do not tip your delivery driver -- it is not expected and can cause confusion. The delivery fee is the only additional cost beyond your food price. If you are coming from a tipping country and the habit is hard to break, our{" "}
+          <Link href="/en/tip-calculator" className="text-[var(--primary)] font-bold hover:underline">Korea Tipping Guide</Link> explains where the no-tipping rule applies and the rare exceptions. Parcels are billed on a different scale entirely -- see the{" "}
+          <Link href="/en/delivery-fee" className="text-[var(--primary)] font-bold hover:underline">Delivery &amp; Shipping Cost Calculator</Link> for 택배 rates.
         </p>
       </Card>
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">Useful Korean Phrases for Delivery</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          If a delivery driver calls you (which is common when they cannot find your building), these phrases will help:
+          If a delivery driver calls you (which is common when they cannot find your building), these phrases will help -- and our{" "}
+          <Link href="/en/korean-phrases" className="text-[var(--primary)] font-bold hover:underline">Essential Korean Phrases</Link> page covers the rest of the everyday expressions you will need on the phone:
         </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">

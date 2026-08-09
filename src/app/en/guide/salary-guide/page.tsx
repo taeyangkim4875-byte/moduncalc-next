@@ -131,6 +131,10 @@ export default function SalaryGuidePage() {
             </tbody>
           </table>
         </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          The health insurance and long-term care lines are the ones foreigners most often find confusing, since they are calculated on top of each other. Our{" "}
+          <Link href="/en/health-insurance" className="text-[var(--primary)] font-bold hover:underline">Health Insurance Calculator</Link> works out both figures from your salary.
+        </p>
       </Card>
 
       <Card>
@@ -281,7 +285,8 @@ export default function SalaryGuidePage() {
           <li><b>Missing non-taxable separation:</b> If your meal allowance is being taxed (included in taxable income rather than listed separately as 비과세), you are overpaying tax. Ask HR to correct this.</li>
           <li><b>Incorrect pension base:</b> National Pension should be calculated on your standard monthly income (기준월소득), which is set once per year based on the previous year&apos;s income. If you got a significant raise, the pension base might still reflect your old salary until the annual adjustment in July.</li>
           <li><b>Overtime not paid at premium rate:</b> If you work overtime but your payslip shows it at the regular hourly rate (100% instead of 150%), this is a labor law violation. Document the discrepancy and raise it with HR or the Labor Board (고용노동부).</li>
-          <li><b>Tax withholding selection:</b> You can choose 80%, 100%, or 120% of the standard withholding rate. Choosing 80% means more take-home pay monthly but potentially a tax bill at year-end settlement. Check with HR which option is selected for you.</li>
+          <li><b>Tax withholding selection:</b> You can choose 80%, 100%, or 120% of the standard withholding rate. Choosing 80% means more take-home pay monthly but potentially a tax bill at year-end settlement. Check with HR which option is selected for you. Whatever you pick is reconciled in February -- our{" "}
+            <Link href="/en/guide/year-end-settlement" className="text-[var(--primary)] font-bold hover:underline">Year-End Settlement Guide</Link> explains how that reconciliation works.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           Compare your payslip against our calculators:{" "}
@@ -293,7 +298,8 @@ export default function SalaryGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Your Rights as an Employee</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Korean labor law provides strong protections for all workers, including foreigners. Key rights related to your payslip and compensation include:
+          Korean labor law provides strong protections for all workers, including foreigners -- our{" "}
+          <Link href="/en/guide/working-rights" className="text-[var(--primary)] font-bold hover:underline">Working Rights Guide</Link> covers contracts, leave, and dismissal in detail. Key rights related to your payslip and compensation include:
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li>Your employer <b>must provide a written payslip</b> every pay period (violation penalty: up to 5M KRW fine).</li>

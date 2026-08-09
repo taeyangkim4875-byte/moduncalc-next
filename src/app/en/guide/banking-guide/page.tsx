@@ -147,6 +147,10 @@ export default function BankingGuidePage() {
           <li><b>Time deposit (예금 / yegeum):</b> A lump-sum deposit locked for a fixed period (3 months to 3 years). Higher interest rates than regular savings. Good for parking your emergency fund or severance pay.</li>
           <li><b>Foreign currency account (외화예금):</b> An account that holds foreign currency (USD, EUR, JPY, etc.). Useful if you receive income in foreign currency or want to save on exchange rate conversions when remitting money home.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          Before you lock money into a 적금 or 예금, it helps to see what the advertised rate actually earns you over the term. Our{" "}
+          <Link href="/en/compound" className="text-[var(--primary)] font-bold hover:underline">Compound Interest Calculator</Link> turns a monthly deposit and an annual rate into a maturity figure in seconds.
+        </p>
       </Card>
 
       <Card>
@@ -238,7 +242,9 @@ export default function BankingGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Pro tip:</b> Always check the total cost of a transfer, not just the stated fee. Some services advertise low fees but use unfavorable exchange rates, which can cost you far more than a higher-fee service with a better rate. For large transfers (over 1 million KRW), even a 0.5% difference in exchange rate matters significantly.
+          <b>Pro tip:</b> Always check the total cost of a transfer, not just the stated fee. Some services advertise low fees but use unfavorable exchange rates, which can cost you far more than a higher-fee service with a better rate. For large transfers (over 1 million KRW), even a 0.5% difference in exchange rate matters significantly. Our{" "}
+          <Link href="/en/exchange-tip" className="text-[var(--primary)] font-bold hover:underline">Won Exchange Tips</Link> page explains where the hidden spread usually sits, and the{" "}
+          <Link href="/en/guide/remittance-guide" className="text-[var(--primary)] font-bold hover:underline">Remittance Guide</Link> covers the paperwork Korean banks ask for on outbound transfers.
         </p>
       </Card>
 

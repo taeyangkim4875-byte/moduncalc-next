@@ -88,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/password', priority: 0.8 },
     { path: '/en/random', priority: 0.7 },
     { path: '/en/visa-check', priority: 0.9 },
+    { path: '/en/f2-visa-points', priority: 0.9 },
     { path: '/en/hospital', priority: 0.8 },
     { path: '/en/phone-cost', priority: 0.8 },
     { path: '/en/delivery-fee', priority: 0.7 },

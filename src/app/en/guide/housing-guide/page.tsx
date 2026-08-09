@@ -147,6 +147,10 @@ export default function HousingGuidePage() {
           <li><b>Local real estate agents (부동산):</b> Walking into a neighborhood 부동산 office is still one of the best ways to find housing. They know the local inventory and can arrange viewings immediately. Agent fees are legally regulated (typically 0.3-0.5% of the deposit).</li>
           <li><b>Facebook/community groups:</b> Expat groups like &quot;Seoul Housing&quot; or &quot;Foreigners in Seoul&quot; sometimes have direct listings.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          Every listing you see will state the floor area in pyeong (평) rather than square meters, so keep our{" "}
+          <Link href="/en/pyeong" className="text-[var(--primary)] font-bold hover:underline">Pyeong Converter</Link> open while you browse to get a feel for how big each unit really is.
+        </p>
       </Card>
 
       <Card>
@@ -190,7 +194,8 @@ export default function HousingGuidePage() {
           <li><b>Electricity (전기):</b> Usually auto-transferred. Bills come from KEPCO. Pay via auto-debit or at convenience stores.</li>
           <li><b>Gas (가스):</b> Call the local city gas company to register. An inspector will visit to turn on the gas.</li>
           <li><b>Water (수도):</b> Usually managed by the building or local water authority. Often included in 관리비.</li>
-          <li><b>Internet (인터넷):</b> Sign up with KT, SK Broadband, or LG U+. Plans typically run 20,000-35,000 KRW/month for high-speed fiber. Installation takes 1-3 days.</li>
+          <li><b>Internet (인터넷):</b> Sign up with KT, SK Broadband, or LG U+. Plans typically run 20,000-35,000 KRW/month for high-speed fiber. Installation takes 1-3 days. Our{" "}
+            <Link href="/en/internet-speed" className="text-[var(--primary)] font-bold hover:underline">Korea Internet Plans Guide</Link> compares the speed tiers so you do not overpay for bandwidth you will never use.</li>
         </ul>
       </Card>
 
@@ -198,7 +203,8 @@ export default function HousingGuidePage() {
         <h2 className="text-base font-extrabold mb-3">Common Scams and How to Avoid Them</h2>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>Fake landlords:</b> Always verify ownership through a 등기부등본 before signing or paying any deposit. Never wire money before confirming the landlord&apos;s identity.</li>
-          <li><b>Excessive agent fees:</b> Agent commissions are regulated by law. For deposits under 50M KRW, the maximum fee is 0.5% (up to 200,000 KRW). Ask for a receipt.</li>
+          <li><b>Excessive agent fees:</b> Agent commissions are regulated by law. For deposits under 50M KRW, the maximum fee is 0.5% (up to 200,000 KRW). Ask for a receipt. Our{" "}
+            <Link href="/en/move-in-cost" className="text-[var(--primary)] font-bold hover:underline">Move-in Cost Calculator</Link> works out the legal commission for your deposit so you know what a fair invoice looks like.</li>
           <li><b>Hidden damage charges:</b> Take photos and video of the entire property on move-in day and send them to your landlord via KakaoTalk (for a timestamped record). This protects you from being charged for pre-existing damage.</li>
           <li><b>Deposit withholding:</b> Some landlords try to deduct excessive &quot;cleaning fees&quot; or &quot;repair costs.&quot; Normal wear and tear is the landlord&apos;s responsibility. Know your rights under the 주택임대차보호법 (Housing Lease Protection Act).</li>
         </ul>

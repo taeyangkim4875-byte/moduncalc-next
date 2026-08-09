@@ -119,7 +119,8 @@ export default function VisaGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Key point:</b> Only E-series, F-series (except F-1), H-series, and some D-series visas permit employment in Korea. Working on a tourist visa (C-3) or student visa (D-2) without proper authorization is illegal and can result in deportation, fines, and re-entry bans.
+          <b>Key point:</b> Only E-series, F-series (except F-1), H-series, and some D-series visas permit employment in Korea. Working on a tourist visa (C-3) or student visa (D-2) without proper authorization is illegal and can result in deportation, fines, and re-entry bans. If you are not sure where you fit, our{" "}
+          <Link href="/en/visa-check" className="text-[var(--primary)] font-bold hover:underline">Korea Visa Checker</Link> narrows the categories down to the one or two that match your circumstances.
         </p>
       </Card>
 
@@ -209,6 +210,10 @@ export default function VisaGuidePage() {
           <li><b>Less than 1 year experience:</b> New graduates or those with less than 1 year of relevant experience may qualify at 80% of the standard threshold under certain conditions.</li>
           <li><b>Regional exceptions:</b> Companies outside the Seoul Metropolitan Area may qualify for reduced salary thresholds, especially in government-designated innovation zones (혁신도시).</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          Meeting the threshold and being paid the market rate are two different things. Our{" "}
+          <Link href="/en/salary-negotiation" className="text-[var(--primary)] font-bold hover:underline">Korea Salary Guide by Industry</Link> shows what foreigners in comparable roles actually earn.
+        </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           Use our <Link href="/en/salary" className="text-[var(--primary)] font-bold hover:underline">Salary Calculator</Link> to calculate your net pay after deductions and verify that your offered salary meets the E-7 threshold.
         </p>
@@ -217,7 +222,8 @@ export default function VisaGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Alien Registration Card (ARC / 외국인등록증)</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Within 90 days of arriving in Korea on a long-term visa, you must register at your local immigration office (출입국관리사무소) and obtain an Alien Registration Card (외국인등록증). The ARC is your primary ID in Korea and is required for virtually everything: opening a bank account, getting a phone, signing a lease, and receiving medical care.
+          Within 90 days of arriving in Korea on a long-term visa, you must register at your local immigration office (출입국관리사무소) and obtain an Alien Registration Card (외국인등록증). The ARC is your primary ID in Korea and is required for virtually everything: opening a bank account, getting a phone, signing a lease, and receiving medical care. Our{" "}
+          <Link href="/en/guide/arc-guide" className="text-[var(--primary)] font-bold hover:underline">ARC Guide</Link> covers the appointment booking, the documents, and the new Mobile Residence Card in detail.
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5 mb-3">
           <li><b>Application:</b> Visit your local immigration office with your passport, visa, a passport photo (3.5cm x 4.5cm), completed application form, and the fee of 30,000 KRW.</li>
@@ -231,7 +237,8 @@ export default function VisaGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Work Hour Restrictions by Visa Type</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Not all visas allow the same working hours. Violating these restrictions can jeopardize your visa status:
+          Not all visas allow the same working hours. Violating these restrictions can jeopardize your visa status, and our{" "}
+          <Link href="/en/guide/working-rights" className="text-[var(--primary)] font-bold hover:underline">Working Rights Guide</Link> explains the protections that apply once you are working legally:
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5 mb-3">
           <li><b>E-2, E-7, E-9 (full work visas):</b> Standard Korean labor law applies. Maximum 52 hours per week (40 regular + 12 overtime). Overtime must be compensated at 1.5x the regular hourly rate.</li>

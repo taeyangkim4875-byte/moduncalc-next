@@ -118,7 +118,8 @@ export default function PensionGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          There is a monthly income cap for contribution calculation purposes. In 2026, the upper limit is <b>6,370,000 KRW per month</b>. If your monthly salary is higher than this, you only pay pension on 6,370,000 KRW. The lower limit is 390,000 KRW. Your maximum monthly employee contribution is therefore 302,575 KRW (6,370,000 x 4.75%).
+          There is a monthly income cap for contribution calculation purposes. In 2026, the upper limit is <b>6,370,000 KRW per month</b>. If your monthly salary is higher than this, you only pay pension on 6,370,000 KRW. The lower limit is 390,000 KRW. Your maximum monthly employee contribution is therefore 302,575 KRW (6,370,000 x 4.75%). To see the pension line next to your tax and insurance deductions, enter your salary into our{" "}
+          <Link href="/en/salary" className="text-[var(--primary)] font-bold hover:underline">Korea Salary Calculator</Link>.
         </p>
       </Card>
 
@@ -171,6 +172,11 @@ export default function PensionGuidePage() {
             <span className="text-sm text-[#4E5968]">Wait 2-4 weeks for processing. Funds are deposited into your Korean or overseas bank account.</span>
           </div>
         </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          The pension refund is only one of the payouts due when you leave. Our{" "}
+          <Link href="/en/guide/tax-refund-leaving" className="text-[var(--primary)] font-bold hover:underline">Tax Refund When Leaving Korea Guide</Link> sets out the order to handle everything in, and the{" "}
+          <Link href="/en/severance" className="text-[var(--primary)] font-bold hover:underline">Severance Calculator</Link> covers the retirement allowance your employer owes you.
+        </p>
       </Card>
 
       <Card>

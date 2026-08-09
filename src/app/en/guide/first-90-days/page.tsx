@@ -97,7 +97,8 @@ export default function First90DaysPage() {
           </div>
           <div className="flex items-start gap-3 p-2.5 bg-[var(--bg)] rounded-lg">
             <span className="text-sm font-bold text-[var(--primary)] whitespace-nowrap">Phone</span>
-            <span className="text-sm text-[#4E5968]">With your ARC, you can now sign up for a postpaid phone plan (후불제) at SKT, KT, or LG U+ for ₩30,000-55,000/month with unlimited data. Having a Korean phone number is essential for banking apps, delivery apps, and identity verification on Korean websites.</span>
+            <span className="text-sm text-[#4E5968]">With your ARC, you can now sign up for a postpaid phone plan (후불제) at SKT, KT, or LG U+ for ₩30,000-55,000/month with unlimited data. Having a Korean phone number is essential for banking apps, delivery apps, and identity verification on Korean websites. Compare carrier and budget (알뜰폰) pricing with our{" "}
+              <Link href="/en/phone-cost" className="text-[var(--primary)] font-bold hover:underline">Phone Plan Calculator</Link> before you sign a 24-month contract.</span>
           </div>
         </div>
       </Card>
@@ -124,7 +125,8 @@ export default function First90DaysPage() {
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>National Health Insurance (국민건강보험):</b> If you are employed, your employer enrolls you automatically and you share the premium 50/50. If self-employed or not working, you must enroll yourself at the NHI office within 6 months of getting your ARC. Premiums are based on income and property. Use our{" "}
             <Link href="/en/health-insurance" className="text-[var(--primary)] font-bold hover:underline">Health Insurance Calculator</Link> to estimate your premium.</li>
-          <li><b>National Pension (국민연금):</b> Employees contribute 4.5% of salary (employer matches 4.5%). Citizens of countries with a pension totalization agreement with Korea can claim a lump-sum refund when they leave. Check if your country qualifies.</li>
+          <li><b>National Pension (국민연금):</b> Employees contribute 4.5% of salary (employer matches 4.5%). Citizens of countries with a pension totalization agreement with Korea can claim a lump-sum refund when they leave. Check if your country qualifies, then estimate the payout with our{" "}
+            <Link href="/en/pension-refund" className="text-[var(--primary)] font-bold hover:underline">Pension Refund Calculator</Link>.</li>
           <li><b>Understand your payslip:</b> Korean payslips list deductions for income tax (소득세), NHI (건강보험), pension (국민연금), and employment insurance (고용보험). Use our{" "}
             <Link href="/en/salary" className="text-[var(--primary)] font-bold hover:underline">Salary Calculator</Link> to verify your deductions are correct.</li>
           <li><b>Find a local hospital/clinic:</b> Register at a nearby clinic (병원/의원) and pharmacy (약국). With NHI, you pay only 30% of outpatient costs. Many clinics in Seoul have English-speaking doctors -- search on the NHIS website for foreigner-friendly medical facilities.</li>
@@ -137,7 +139,8 @@ export default function First90DaysPage() {
           By month three, the administrative heavy lifting is done. Now focus on quality of life and building your routine.
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
-          <li><b>Learn basic Korean:</b> Even basic phrases make a huge difference. Start with greetings, numbers, ordering food, and directions. Free resources include Talk To Me In Korean (TTMIK), King Sejong Institute classes (세종학당, free government Korean classes), and language exchange meetups.</li>
+          <li><b>Learn basic Korean:</b> Even basic phrases make a huge difference. Start with greetings, numbers, ordering food, and directions. Free resources include Talk To Me In Korean (TTMIK), King Sejong Institute classes (세종학당, free government Korean classes), and language exchange meetups. Our{" "}
+            <Link href="/en/korean-phrases" className="text-[var(--primary)] font-bold hover:underline">Essential Korean Phrases</Link> page is a good place to pick up the survival expressions first.</li>
           <li><b>Explore your neighborhood:</b> Find your local market (시장), convenience stores, laundromat (빨래방), gym (헬스장), and favorite restaurants. Korea rewards those who explore beyond the tourist areas.</li>
           <li><b>Join communities:</b> Expat groups on Facebook, Reddit (r/korea), and local meetup groups help you build a social network. Many cities have international centers (글로벌센터) offering free Korean classes and cultural events.</li>
           <li><b>Set up financial goals:</b> Now that you understand your after-tax income and expenses, create a budget. Use our{" "}
@@ -203,7 +206,8 @@ export default function First90DaysPage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Emergency Numbers & Important Contacts</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Save these numbers in your phone immediately upon arrival:
+          Save these numbers in your phone immediately upon arrival -- our{" "}
+          <Link href="/en/emergency" className="text-[var(--primary)] font-bold hover:underline">Korea Emergency Numbers</Link> page lists the full set along with the helplines that offer English support:
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>112 -- Police (경찰):</b> For emergencies and crime reporting. English interpretation available.</li>

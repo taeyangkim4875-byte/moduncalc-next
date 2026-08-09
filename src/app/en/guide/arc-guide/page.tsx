@@ -90,7 +90,9 @@ export default function ArcGuidePage() {
           <li><b>H-1 (Working Holiday):</b> Working holiday visa holders from eligible countries</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
-          <b>Note:</b> Short-term visitors on tourist visas (B-1, B-2, C-series) staying less than 90 days do not need and cannot apply for an ARC.
+          <b>Note:</b> Short-term visitors on tourist visas (B-1, B-2, C-series) staying less than 90 days do not need and cannot apply for an ARC. If you are still deciding which long-term visa fits your situation, our{" "}
+          <Link href="/en/visa-check" className="text-[var(--primary)] font-bold hover:underline">Visa Checker</Link> narrows down the right category in a few questions, and the{" "}
+          <Link href="/en/guide/visa-guide" className="text-[var(--primary)] font-bold hover:underline">Korea Visa Guide</Link> explains each type in depth.
         </p>
       </Card>
 
@@ -156,7 +158,8 @@ export default function ArcGuidePage() {
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>Opening a bank account (은행 계좌개설):</b> All banks require an ARC. See our{" "}
             <Link href="/en/guide/banking-guide" className="text-[var(--primary)] font-bold hover:underline">Banking Guide</Link> for details.</li>
-          <li><b>Getting a phone contract (휴대폰 개통):</b> Needed for postpaid plans at SKT, KT, and LG U+. Prepaid SIMs may work with just a passport.</li>
+          <li><b>Getting a phone contract (휴대폰 개통):</b> Needed for postpaid plans at SKT, KT, and LG U+. Prepaid SIMs may work with just a passport. Compare monthly costs first with our{" "}
+            <Link href="/en/phone-cost" className="text-[var(--primary)] font-bold hover:underline">Phone Plan Calculator</Link>.</li>
           <li><b>Signing a lease (임대차계약):</b> Landlords and real estate agents require your ARC number for the rental contract.</li>
           <li><b>National Health Insurance (국민건강보험):</b> You will be enrolled in NHI based on your ARC. Use our{" "}
             <Link href="/en/health-insurance" className="text-[var(--primary)] font-bold hover:underline">Health Insurance Calculator</Link> to estimate your premiums.</li>

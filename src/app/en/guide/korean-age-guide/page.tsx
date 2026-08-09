@@ -132,7 +132,8 @@ export default function KoreanAgeGuidePage() {
           <b>What changed:</b> All laws, regulations, contracts, and official documents now use international age. This means age-based rights and obligations -- like voting age, drinking age, military service age, pension eligibility, and school enrollment -- are all calculated using your actual date of birth.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>What did not change:</b> The law cannot regulate casual conversation. Many Koreans, especially older generations, still instinctively use Korean age when discussing age in social settings. If a Korean person asks your age (나이가 어떻게 되세요?), they are usually asking for your birth year so they can determine the social hierarchy between you.
+          <b>What did not change:</b> The law cannot regulate casual conversation. Many Koreans, especially older generations, still instinctively use Korean age when discussing age in social settings. If a Korean person asks your age (나이가 어떻게 되세요?), they are usually asking for your birth year so they can determine the social hierarchy between you. When you write that birth year on a Korean form it follows the 년/월/일 order, which our{" "}
+          <Link href="/en/date-converter" className="text-[var(--primary)] font-bold hover:underline">Korean Date Format Converter</Link> explains.
         </p>
       </Card>
 
@@ -156,7 +157,8 @@ export default function KoreanAgeGuidePage() {
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>East Asian tradition:</b> Historically, many East Asian cultures (China, Japan, Vietnam) used similar age-counting systems. Korea was the last to officially abandon it.</li>
           <li><b>Womb time counts:</b> In traditional Korean (and Confucian) thought, the approximately 10 months (열 달) spent in the womb were considered part of your life, so you were born at age 1.</li>
-          <li><b>Lunar New Year tradition:</b> The age increase was originally tied to the Lunar New Year (설날), not January 1st. As Korea adopted the Gregorian calendar, the age-up date shifted to January 1st.</li>
+          <li><b>Lunar New Year tradition:</b> The age increase was originally tied to the Lunar New Year (설날), not January 1st. As Korea adopted the Gregorian calendar, the age-up date shifted to January 1st. Seollal still moves every year -- see our{" "}
+            <Link href="/en/lunar-calendar" className="text-[var(--primary)] font-bold hover:underline">Korean Lunar Calendar</Link> for the current dates.</li>
           <li><b>Hierarchy and social order:</b> Korean culture places enormous importance on age-based hierarchy. Knowing someone&apos;s birth year immediately tells you how to speak to them (formal vs informal language) and how to behave around them.</li>
         </ul>
       </Card>
@@ -168,7 +170,8 @@ export default function KoreanAgeGuidePage() {
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>Speech formality (존댓말/반말):</b> Koreans use formal language (존댓말) with people older than them and informal language (반말) with people the same age or younger. Using 반말 with someone older is considered extremely rude unless they explicitly permit it.</li>
-          <li><b>Age hierarchy (서열):</b> Older people are expected to pay for meals, give advice, and lead in social situations. Younger people are expected to pour drinks for elders, use two hands when receiving something, and show deference.</li>
+          <li><b>Age hierarchy (서열):</b> Older people are expected to pay for meals, give advice, and lead in social situations. Younger people are expected to pour drinks for elders, use two hands when receiving something, and show deference. Age plays a similar role in relationships -- our{" "}
+            <Link href="/en/guide/dating-culture" className="text-[var(--primary)] font-bold hover:underline">Korea Dating Culture Guide</Link> covers how couples handle age gaps and speech levels.</li>
           <li><b>Military service:</b> Korean men must complete military service, typically between ages 18 and 28 (international age). This is a significant life milestone that affects education and career timing.</li>
           <li><b>School enrollment:</b> Since the 2023 reform, school enrollment age is based on international age (만 나이). Children enter elementary school in the year they turn 6 (international age).</li>
         </ul>

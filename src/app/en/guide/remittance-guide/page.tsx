@@ -233,7 +233,8 @@ export default function RemittanceGuidePage() {
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5 mb-3">
           <li><b>Alien Registration Card (ARC / 외국인등록증):</b> Required by all services for identity verification.</li>
           <li><b>Passport:</b> Your original passport matching the name on your ARC.</li>
-          <li><b>Korean bank account:</b> Needed for digital services like Wise and SentBe. Not required for Western Union cash transfers.</li>
+          <li><b>Korean bank account:</b> Needed for digital services like Wise and SentBe. Not required for Western Union cash transfers. If you have not opened one yet, our{" "}
+            <Link href="/en/guide/banking-guide" className="text-[var(--primary)] font-bold hover:underline">Korea Banking Guide</Link> covers which banks are easiest for foreigners.</li>
           <li><b>Recipient&apos;s bank details:</b> Account number, bank name, branch name, and SWIFT/BIC code for international bank transfers. For services like Western Union or GME, the recipient may need only a phone number and ID to pick up cash.</li>
           <li><b>Employment verification (for large amounts):</b> Certificate of employment (재직증명서) or salary statement may be required for transfers exceeding certain thresholds.</li>
         </ul>
@@ -242,10 +243,12 @@ export default function RemittanceGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Tips for Getting the Best Exchange Rate</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Small improvements in your exchange rate can save significant money over time. Here are practical tips:
+          Small improvements in your exchange rate can save significant money over time. Our{" "}
+          <Link href="/en/exchange-tip" className="text-[var(--primary)] font-bold hover:underline">Korea Won Exchange Tips</Link> page goes deeper on where the spread hides, but here are the practical basics:
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5 mb-3">
-          <li><b>Avoid weekends and holidays:</b> Foreign exchange markets are closed on weekends, so services often use Friday&apos;s rate with an additional margin. Send money during weekday business hours (월-금 오전 9시-오후 3시) for the best rates.</li>
+          <li><b>Avoid weekends and holidays:</b> Foreign exchange markets are closed on weekends, so services often use Friday&apos;s rate with an additional margin. Send money during weekday business hours (월-금 오전 9시-오후 3시) for the best rates. Our{" "}
+            <Link href="/en/timezone" className="text-[var(--primary)] font-bold hover:underline">Korea Time Zone Converter</Link> makes it easy to see when that window falls in your home country.</li>
           <li><b>Use rate alerts:</b> Wise and other services offer rate alerts that notify you when the KRW exchange rate hits your target. Set an alert and transfer when the rate is favorable.</li>
           <li><b>Batch your transfers:</b> Sending fewer, larger transfers is usually cheaper than many small ones because fixed fees are spread over a larger amount. Consider sending monthly instead of weekly.</li>
           <li><b>Compare before every transfer:</b> Exchange rates fluctuate daily. Check at least 2-3 services before each transfer. A service that was cheapest last month may not be cheapest this month.</li>

@@ -91,7 +91,8 @@ export default function DriversLicensePage() {
           <li><b>Valid foreign driver&apos;s license:</b> Original, not a copy. Must be current and not expired.</li>
           <li><b>Official translation of your license:</b> Must be translated into Korean by your embassy or consulate, a certified translation agency, or a notarized translator. Some exam centers accept translations from the Korean Automobile Association (대한자동차운전전문학원연합회).</li>
           <li><b>Passport:</b> Your original passport. The exam center will verify your entry and exit records to confirm that you held the license in your home country for a valid period.</li>
-          <li><b>Alien Registration Card (ARC / 외국인등록증):</b> Your current, valid ARC.</li>
+          <li><b>Alien Registration Card (ARC / 외국인등록증):</b> Your current, valid ARC. If you have not applied for one yet, start with our{" "}
+            <Link href="/en/guide/arc-guide" className="text-[var(--primary)] font-bold hover:underline">ARC Guide</Link> -- the card takes 2-3 weeks to arrive and no exam center will process a conversion without it.</li>
           <li><b>Passport-sized photos:</b> 3 photos (3.5cm x 4.5cm). Some exam centers have photo booths on-site for about 5,000 KRW.</li>
           <li><b>Application form:</b> Available at the exam center. Fill it out on-site.</li>
           <li><b>Fee:</b> Approximately 12,000 KRW for the aptitude test and license issuance combined.</li>
@@ -137,7 +138,8 @@ export default function DriversLicensePage() {
           <li><b>Retests:</b> Many academy packages include free retests if you fail on the first attempt. Without an academy, each retest costs the full test fee again.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Tip:</b> Search for &quot;외국인 운전학원&quot; (foreigner driving academy) in your area. Word of mouth from fellow expats is often the best way to find an academy with good English-speaking instructors.
+          <b>Tip:</b> Search for &quot;외국인 운전학원&quot; (foreigner driving academy) in your area. Word of mouth from fellow expats is often the best way to find an academy with good English-speaking instructors. Before committing to that cost, it is worth checking whether you actually need to drive -- our{" "}
+          <Link href="/en/guide/transportation-guide" className="text-[var(--primary)] font-bold hover:underline">Korea Transportation Guide</Link> covers how far the subway, bus, and KTX network will take you without a car.
         </p>
       </Card>
 
@@ -175,7 +177,8 @@ export default function DriversLicensePage() {
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5 mb-3">
           <li><b>Right-hand traffic:</b> Korea drives on the right side of the road, same as the US, Canada, and most of Europe. If you are from a left-hand traffic country (UK, Japan, Australia), take extra care at intersections and when turning.</li>
           <li><b>Speed limits (제한속도):</b> Generally 60 km/h in urban areas (시내), 80 km/h on urban expressways (도시고속도로), and 100-120 km/h on highways (고속도로). Speed cameras (과속카메라) are extremely common and fines are automatically issued.</li>
-          <li><b>Blood alcohol limit:</b> 0.03% BAC -- one of the strictest in the world. Even one glass of beer can put you over the limit. Penalties include license suspension (0.03-0.08%), license revocation and criminal charges (0.08%+), and up to 5 years imprisonment for repeat offenders. Drunk driving is taken very seriously in Korea.</li>
+          <li><b>Blood alcohol limit:</b> 0.03% BAC -- one of the strictest in the world. Even one glass of beer can put you over the limit. Penalties include license suspension (0.03-0.08%), license revocation and criminal charges (0.08%+), and up to 5 years imprisonment for repeat offenders. Drunk driving is taken very seriously in Korea. Our{" "}
+            <Link href="/en/alcohol" className="text-[var(--primary)] font-bold hover:underline">Blood Alcohol Calculator</Link> gives you a rough idea of how long it takes to drop back under the Korean limit after drinking.</li>
           <li><b>Seat belts:</b> Mandatory for all passengers in all seats. Fines of 30,000 KRW for the driver and 30,000 KRW per unbelted passenger.</li>
           <li><b>Phone use:</b> Using a handheld phone while driving is illegal. Fines of 60,000-70,000 KRW. Hands-free devices and navigation mounts are permitted.</li>
           <li><b>Right turn on red:</b> Unlike in the US, right turns on red are generally not permitted in Korea unless there is a specific green arrow signal. Many intersections have a separate right-turn signal.</li>

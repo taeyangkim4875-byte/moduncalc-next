@@ -119,7 +119,8 @@ export default function WorkingRightsPage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          The 209 monthly hours include 40 working hours per week plus 8 hours of paid weekly holiday (주휴시간), averaged over a month: (40 + 8) x (365 / 7) / 12 = 209 hours.
+          The 209 monthly hours include 40 working hours per week plus 8 hours of paid weekly holiday (주휴시간), averaged over a month: (40 + 8) x (365 / 7) / 12 = 209 hours. The minimum is a floor, not a benchmark -- our{" "}
+          <Link href="/en/salary-negotiation" className="text-[var(--primary)] font-bold hover:underline">Korea Salary Guide by Industry</Link> shows what foreigners are typically paid in each field.
         </p>
       </Card>
 
@@ -171,7 +172,8 @@ export default function WorkingRightsPage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          These premium rates are cumulative. For example, if you work overtime during a night shift on a public holiday, the rates stack. Your employer cannot substitute overtime pay with compensatory time off unless you both agree to it.
+          These premium rates are cumulative. For example, if you work overtime during a night shift on a public holiday, the rates stack. Your employer cannot substitute overtime pay with compensatory time off unless you both agree to it. Which days count as public holidays changes each year, so check our{" "}
+          <Link href="/en/public-holiday" className="text-[var(--primary)] font-bold hover:underline">Korea Public Holidays</Link> calendar before working out what you are owed.
         </p>
       </Card>
 
@@ -186,7 +188,8 @@ export default function WorkingRightsPage() {
           <li><b>After 3+ years:</b> You gain 1 additional day for every 2 years of service beyond the first year, up to a maximum of 25 days.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          If you do not use your annual leave within the year, your employer must either allow you to carry it over or pay you for the unused days (미사용 연차수당). Many employers encourage using leave rather than paying it out. Your employer cannot unilaterally force you to use annual leave on specific dates without your consent, except in limited circumstances.
+          If you do not use your annual leave within the year, your employer must either allow you to carry it over or pay you for the unused days (미사용 연차수당). Many employers encourage using leave rather than paying it out. Your employer cannot unilaterally force you to use annual leave on specific dates without your consent, except in limited circumstances. Unused leave pay from your final year also feeds into your severance calculation -- our{" "}
+          <Link href="/en/guide/severance-guide" className="text-[var(--primary)] font-bold hover:underline">Severance Pay Guide</Link> explains which payments count toward the average wage.
         </p>
       </Card>
 

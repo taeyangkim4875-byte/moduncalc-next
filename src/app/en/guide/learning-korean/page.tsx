@@ -59,7 +59,8 @@ export default function LearningKoreanPage() {
           Hangeul (한글), the Korean alphabet, was scientifically designed by King Sejong the Great (세종대왕) in 1443 to be easy for common people to learn. Unlike Chinese characters or Japanese kanji, Hangeul has only <b>24 basic letters</b> (14 consonants + 10 vowels) that combine into syllable blocks. You can genuinely learn to read Korean in <b>1-2 days</b> — this is not an exaggeration.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>Why learn Hangeul first:</b> Romanization (writing Korean in English letters) is inconsistent and misleading. The same Korean sound might be romanized as &quot;eo&quot;, &quot;u&quot;, or &quot;o&quot; depending on the system. Once you read Hangeul, you can pronounce Korean words correctly, read menus, signs, subway stations, and your Korean study becomes dramatically more effective.
+          <b>Why learn Hangeul first:</b> Romanization (writing Korean in English letters) is inconsistent and misleading. The same Korean sound might be romanized as &quot;eo&quot;, &quot;u&quot;, or &quot;o&quot; depending on the system. Once you read Hangeul, you can pronounce Korean words correctly, read menus, signs, subway stations, and your Korean study becomes dramatically more effective. Menus are a good first test -- our{" "}
+          <Link href="/en/guide/korean-food-guide" className="text-[var(--primary)] font-bold hover:underline">Korean Food Guide</Link> lists the dish names you will see most often, written in Hangeul.
         </p>
         <div className="p-3 bg-[var(--bg)] rounded-xl">
           <h3 className="text-sm font-bold mb-2">Best free Hangeul resources:</h3>
@@ -96,7 +97,8 @@ export default function LearningKoreanPage() {
           <div className="p-3 bg-[var(--bg)] rounded-xl">
             <h3 className="text-sm font-bold mb-1">KIIP (사회통합프로그램) — Free Government Program</h3>
             <p className="text-sm text-[#4E5968] leading-relaxed">
-              <b>The best free Korean class option for long-term residents.</b> Korea Immigration &amp; Integration Program (KIIP) provides free in-person Korean classes at education centers across Korea. 5 levels of Korean + Korean society/culture course. Completing KIIP earns visa points for F-2 and exemptions for F-5 applications. Register at socinet.go.kr with your ARC. Classes are typically 2-3 times per week, often in the evening for working professionals.
+              <b>The best free Korean class option for long-term residents.</b> Korea Immigration &amp; Integration Program (KIIP) provides free in-person Korean classes at education centers across Korea. 5 levels of Korean + Korean society/culture course. Completing KIIP earns visa points for F-2 and exemptions for F-5 applications -- our{" "}
+              <Link href="/en/guide/visa-guide" className="text-[var(--primary)] font-bold hover:underline">Korea Visa Guide</Link> explains how those residency tracks work. Register at socinet.go.kr with your ARC. Classes are typically 2-3 times per week, often in the evening for working professionals.
             </p>
           </div>
         </div>
@@ -169,7 +171,8 @@ export default function LearningKoreanPage() {
           <li><b>Korea University (고려대):</b> Competitive program with scholarship opportunities for top students.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
-          <b>Scholarships:</b> The Korean Government Scholarship Program (KGSP/GKS) covers tuition, living expenses, and Korean language training for international students. Apply through your country&apos;s Korean embassy.
+          <b>Scholarships:</b> The Korean Government Scholarship Program (KGSP/GKS) covers tuition, living expenses, and Korean language training for international students. Apply through your country&apos;s Korean embassy. If you are self-funding a term, factor tuition in alongside rent and food using our{" "}
+          <Link href="/en/cost-of-living" className="text-[var(--primary)] font-bold hover:underline">Cost of Living Calculator</Link>.
         </p>
       </Card>
 

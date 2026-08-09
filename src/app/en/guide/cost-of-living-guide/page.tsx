@@ -208,6 +208,10 @@ export default function CostOfLivingGuidePage() {
           <li><b>Taxi:</b> Base fare of 4,800 KRW in Seoul (as of 2026). Late-night surcharge (20-40%) applies between midnight and 4 AM. Use Kakao T app for easy booking.</li>
           <li><b>KTX (high-speed train):</b> Seoul to Busan in about 2.5 hours for 59,800 KRW (standard class). Book via the Korail app or SRT app for the best prices.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          Whether the monthly pass beats pay-as-you-go depends entirely on your commute distance, so price your usual route with our{" "}
+          <Link href="/en/subway" className="text-[var(--primary)] font-bold hover:underline">Seoul Subway Fare Calculator</Link> before you buy one.
+        </p>
       </Card>
 
       <Card>
@@ -222,7 +226,8 @@ export default function CostOfLivingGuidePage() {
           <li><b>Internet (인터넷):</b> 30,000-40,000 KRW for high-speed fiber. Korea has some of the fastest and cheapest internet in the world. Major providers include KT, SK Broadband, and LG U+.</li>
         </ul>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          Many officetels include management fees (관리비) that cover water, common area electricity, security, and building maintenance. This can add 50,000-150,000 KRW per month but simplifies billing.
+          Many officetels include management fees (관리비) that cover water, common area electricity, security, and building maintenance. This can add 50,000-150,000 KRW per month but simplifies billing. Because the electricity tiers (누진제) punish heavy months so sharply, it is worth estimating your bill with our{" "}
+          <Link href="/en/electricity" className="text-[var(--primary)] font-bold hover:underline">Electricity Bill Calculator</Link> before you leave the air conditioner running all August.
         </p>
       </Card>
 
@@ -235,6 +240,10 @@ export default function CostOfLivingGuidePage() {
           <li><b>Major carriers (SKT, KT, LG U+):</b> Plans range from 40,000-80,000 KRW/month with unlimited data, calls, and texts. Better network coverage and faster speeds, but more expensive. Most plans include a phone subsidy if you sign a 24-month contract.</li>
           <li><b>MVNOs / budget carriers (알뜰폰):</b> Brands like Tplus, KT M Mobile, and Helio offer plans from 10,000-35,000 KRW/month. They use the same networks as the big three but at lower prices. Data limits are lower (3-15 GB per month) but sufficient for most users. You can sign up with just your ARC (Alien Registration Card) and passport at most convenience stores or online.</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          The gap between the two routes is often 300,000-500,000 KRW a year. Our{" "}
+          <Link href="/en/phone-cost" className="text-[var(--primary)] font-bold hover:underline">Phone Plan Calculator</Link> compares carrier and 알뜰폰 pricing side by side so you can see the real difference for your data usage.
+        </p>
       </Card>
 
       <Card>
