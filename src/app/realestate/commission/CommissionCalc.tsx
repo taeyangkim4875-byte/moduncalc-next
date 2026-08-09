@@ -44,6 +44,10 @@ export default function CommissionCalc() {
   const [result, setResult] = useState<{ rate: number; fee: number; vat: number; total: number } | null>(null);
   const [autoCalc, setAutoCalc] = useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const p = getParams();
     if (!Object.keys(p).length) return;
@@ -57,8 +61,9 @@ export default function CommissionCalc() {
     if (autoCalc) { calc(); setAutoCalc(false); }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const calc = () => {
+  function calc() {
     let amount = price || 0;
     const table = dealType === '매매' ? SALE_RATES : RENT_RATES;
     if (dealType === '월세') {
@@ -69,7 +74,7 @@ export default function CommissionCalc() {
     setResult({ rate, fee, vat, total: fee + vat });
     setParams({ dealType, price, monthly });
     scrollToResult();
-  };
+  }
 
   const types: DealType[] = ['매매', '전세', '월세'];
 

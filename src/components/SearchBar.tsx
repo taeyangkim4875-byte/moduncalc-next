@@ -180,7 +180,14 @@ export default function SearchBar() {
     return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
-  useEffect(() => { setSelectedIndex(-1); }, [query]);
+  // 검색어가 바뀌면 키보드 선택 위치를 초기화한다.
+  // effect 대신 렌더 중 조정하는 React 권장 패턴을 사용한다.
+  // https://react.dev/learn/you-might-not-need-an-effect
+  const [prevQuery, setPrevQuery] = useState(query);
+  if (prevQuery !== query) {
+    setPrevQuery(query);
+    setSelectedIndex(-1);
+  }
 
   return (
     <div className="relative mb-4">

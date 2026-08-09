@@ -15,13 +15,6 @@ function calcAgentFee(deposit: number, monthlyRent: number, type: RentType): { f
   else if (base < 900_000_000) rate = 0.005;
   else rate = 0.009;
 
-  const maxFee: Record<number, number> = {
-    0.005: 250_000,
-    0.004: 300_000,
-    0.003: Infinity,
-    0.009: Infinity,
-  };
-
   let fee = Math.round(base * rate);
   if (base < 50_000_000 && fee > 250_000) fee = 250_000;
   else if (base < 100_000_000 && fee > 300_000) fee = 300_000;

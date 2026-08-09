@@ -27,6 +27,10 @@ export default function SalaryCalendar() {
   const [payday, setPayday] = useState(25);
   const [mounted, setMounted] = useState(false);
 
+  /* localStorage(외부 시스템)에서 이전 입력값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 이 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const saved = localStorage.getItem('salary-calendar');
     if (saved) {
@@ -38,6 +42,7 @@ export default function SalaryCalendar() {
     }
     setMounted(true);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
     if (mounted) {
@@ -71,16 +76,6 @@ export default function SalaryCalendar() {
   const dDay = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
 
   // 이번 기간 동안 번 돈 계산
-  let lastPayday: number;
-  if (day > paydayThisMonth) {
-    lastPayday = paydayThisMonth;
-  } else {
-    const prevMonth = month - 1;
-    const prevYear = prevMonth < 0 ? year - 1 : year;
-    const actualPrevMonth = prevMonth < 0 ? 11 : prevMonth;
-    lastPayday = Math.min(payday, new Date(prevYear, actualPrevMonth + 1, 0).getDate());
-  }
-
   const startDay = day > paydayThisMonth ? paydayThisMonth + 1 : 1;
   const workDaysElapsed = getWorkDaysBetween(year, month, startDay, day);
   const earnedSoFar = workDaysElapsed * dailyPay;

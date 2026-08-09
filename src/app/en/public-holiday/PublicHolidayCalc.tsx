@@ -31,8 +31,10 @@ const HOLIDAYS_2026: Holiday[] = [
 export default function PublicHolidayCalc() {
   const [filter, setFilter] = useState<'all' | 'upcoming'>('all');
 
-  const now = new Date();
-  const today = useMemo(() => new Date(now.getFullYear(), now.getMonth(), now.getDate()), []);
+  const today = useMemo(() => {
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  }, []);
 
   const nextHoliday = useMemo(() => {
     return HOLIDAYS_2026.find(h => h.endDate >= today) || HOLIDAYS_2026[HOLIDAYS_2026.length - 1];

@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ShareButtons from '@/components/ShareButtons';
-import Link from 'next/link';
 
 export default function InheritTaxCalc() {
   const [totalAsset, setTotalAsset] = useState(100000); // 만원 단위 (10억)

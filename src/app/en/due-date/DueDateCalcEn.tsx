@@ -30,7 +30,6 @@ export default function DueDateCalcEn() {
   const currentWeek = Math.floor(diffDays / 7);
   const currentDay = diffDays % 7;
   const daysRemaining = Math.max(0, 280 - diffDays);
-  const weeksRemaining = Math.floor(daysRemaining / 7);
 
   const trimester = currentWeek < 13 ? 1 : currentWeek < 28 ? 2 : 3;
   const progressPercent = Math.min(100, Math.max(0, (diffDays / 280) * 100));

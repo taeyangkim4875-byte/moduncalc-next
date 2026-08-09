@@ -66,7 +66,6 @@ export default function PasswordGenEn() {
   if (poolSize === 0) poolSize = 26;
   const entropy = Math.round((length || 0) * Math.log2(poolSize));
 
-  const inputClass = "w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center";
 
   return (
     <>

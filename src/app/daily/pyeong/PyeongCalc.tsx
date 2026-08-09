@@ -16,18 +16,6 @@ export default function PyeongCalc() {
 
   const fmt = (n: number) => parseFloat(n.toFixed(2)).toLocaleString();
 
-  const quickRef = [
-    { pyeong: 10, sqm: 33 },
-    { pyeong: 15, sqm: 50 },
-    { pyeong: 20, sqm: 66 },
-    { pyeong: 24, sqm: 79 },
-    { pyeong: 30, sqm: 99 },
-    { pyeong: 33, sqm: 109 },
-    { pyeong: 40, sqm: 132 },
-    { pyeong: 50, sqm: 165 },
-    { pyeong: 60, sqm: 198 },
-  ];
-
   const aptRef = [
     { name: '24평형 (국민주택)', supply: '79㎡', exclusive: '59㎡', desc: '방 2~3개, 신혼부부 선호' },
     { name: '33평형', supply: '109㎡', exclusive: '84㎡', desc: '방 3개, 가장 인기 평형' },

@@ -35,7 +35,6 @@ export default function AlcoholCalcEn() {
   const rawBac = alcoholGrams / ((weight || 70) * r * 10);
   const metabolized = (elapsed || 0) * 0.015;
   const currentBac = Math.max(0, rawBac - metabolized);
-  const hoursToSafe = currentBac > 0 ? Math.ceil((currentBac / 0.015) * 10) / 10 : 0;
   const hoursToZero = currentBac > 0 ? Math.ceil((currentBac / 0.015) * 10) / 10 : 0;
 
   const penaltyLevel = currentBac >= 0.08 ? 'revocation' : currentBac >= 0.03 ? 'suspension' : 'safe';

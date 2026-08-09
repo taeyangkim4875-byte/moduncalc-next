@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import Card, { SectionTitle } from '@/components/Card';
+import Card from '@/components/Card';
 import { won, fmtSalary } from '@/utils/format';
 import { netPay } from '@/utils/tax';
 

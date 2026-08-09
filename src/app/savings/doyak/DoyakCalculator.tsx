@@ -57,6 +57,10 @@ export default function DoyakCalculator() {
   const [elapsedMonths, setElapsedMonths] = useState(12);
   const [autoCalc, setAutoCalc] = useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const p = getParams();
     if (!Object.keys(p).length) return;
@@ -78,6 +82,7 @@ export default function DoyakCalculator() {
     if (autoCalc) { calculate(); setAutoCalc(false); }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const update = (key: string, val: number) => setState(prev => ({ ...prev, [key]: val }));
 
@@ -86,7 +91,7 @@ export default function DoyakCalculator() {
     return median ? ((state.houseIncome || 0) * 10000 / median * 100) : 0;
   };
 
-  const calculate = () => {
+  function calculate() {
     const s = state;
     const payM = (s.pay || 0) * 10000;
     const tier = dohyakTier(s.salary || 0);
@@ -125,7 +130,6 @@ export default function DoyakCalculator() {
       let interestC = 0;
       for (let k = 1; k <= em; k++) {
         const monthRate = sched[k - 1] / 12; // 해당 월의 월이율
-        const remaining = em - k; // 납입 후 경과 개월 (납입월 미포함이 일반적이나, 만기 시 포함)
         // 은행 적금 이자 계산: 적수 = 납입액 × 잔여개월수 (납입월 다음달부터 계산)
         // 단, 간소화를 위해 (em - k + 1)을 쓰면 만기 계산과 일치
         interestP += payM * monthRate * (em - k + 1);
@@ -139,8 +143,8 @@ export default function DoyakCalculator() {
       snapshots.sort((a, b) => a - b);
 
       for (const sm of snapshots) {
-        let p2 = payM * sm;
-        let c2 = cm * sm;
+        const p2 = payM * sm;
+        const c2 = cm * sm;
         let ip2 = 0, ic2 = 0;
         for (let k = 1; k <= sm; k++) {
           const mr = sched[k - 1] / 12;
@@ -157,7 +161,7 @@ export default function DoyakCalculator() {
 
     setParams({ size: s.size, salary: s.salary, houseIncome: s.houseIncome, pay: s.pay, baseRate: s.baseRate, varRate: s.varRate, dohyakBonus: s.dohyakBonus, bonusStart: s.bonusStart });
     scrollToResult();
-  };
+  }
 
   return (
     <>

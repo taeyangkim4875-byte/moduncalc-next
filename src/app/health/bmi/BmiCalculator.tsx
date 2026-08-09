@@ -14,6 +14,10 @@ export default function BmiCalculator(){
   const [result,setResult]=useState<{bmi:number;category:string;color:string;normalRange:[number,number];standard:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
     const p=getParams();
     if(!Object.keys(p).length)return;
@@ -26,8 +30,9 @@ export default function BmiCalculator(){
     if(autoCalc){calc();setAutoCalc(false);}
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const calc=()=>{
+  function calc() {
     if(height<=0||weight<=0)return;
     const h=height/100,bmi=weight/(h*h);
     const cat=CATEGORIES.find(c=>bmi<c.max)||CATEGORIES[CATEGORIES.length-1];
@@ -36,7 +41,7 @@ export default function BmiCalculator(){
     setResult({bmi,category:cat.label,color:cat.color,normalRange,standard});
     setParams({height,weight});
     scrollToResult();
-  };
+  }
 
   return(<>
     <Card><SectionTitle num="1">신체 정보</SectionTitle>

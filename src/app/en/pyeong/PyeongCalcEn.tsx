@@ -9,12 +9,8 @@ export default function PyeongCalcEn() {
   const [mode, setMode] = useState<'toSqm' | 'toPyeong'>('toSqm');
   const [value, setValue] = useState(33);
 
-  const sqm = mode === 'toSqm' ? (value || 0) * PYEONG_TO_SQM : (value || 0);
-  const pyeong = mode === 'toPyeong' ? (value || 0) : (value || 0);
   const resultSqm = mode === 'toSqm' ? (value || 0) * PYEONG_TO_SQM : (value || 0);
-  const resultPyeong = mode === 'toPyeong' ? (value || 0) : (value || 0);
   const converted = mode === 'toSqm' ? resultSqm : (value || 0) / PYEONG_TO_SQM;
-  const sqft = mode === 'toSqm' ? resultSqm * 10.7639 : (value || 0) * 10.7639;
 
   const displaySqm = mode === 'toSqm' ? resultSqm : (value || 0);
   const displayPyeong = mode === 'toSqm' ? (value || 0) : converted;

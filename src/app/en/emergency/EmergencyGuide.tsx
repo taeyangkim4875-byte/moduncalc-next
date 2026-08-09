@@ -97,7 +97,7 @@ export default function EmergencyGuide() {
         <Card>
           <SectionTitle num="1">Medical Emergencies (응급 의료)</SectionTitle>
           <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
-            <p><b>Call 119 for an ambulance.</b> It is free in Korea. Say your location clearly. If you cannot speak Korean, say "English please" and they will connect you to a translator or transfer you to 1339.</p>
+            <p><b>Call 119 for an ambulance.</b> It is free in Korea. Say your location clearly. If you cannot speak Korean, say &ldquo;English please&rdquo; and they will connect you to a translator or transfer you to 1339.</p>
             <p><b>International Clinics:</b> Major hospitals in Seoul have international clinics with English-speaking staff. Key options include:</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Severance Hospital International Health Care Center (세브란스병원)</li>

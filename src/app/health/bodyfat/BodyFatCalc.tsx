@@ -19,6 +19,10 @@ export default function BodyFatCalc(){
   const [result,setResult]=useState<{bf:number;category:string;color:string;leanMass:number;fatMass:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
     const p=getParams();
     if(!Object.keys(p).length)return;
@@ -35,8 +39,9 @@ export default function BodyFatCalc(){
     if(autoCalc){calc();setAutoCalc(false);}
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const calc=()=>{
+  function calc() {
     const h=height||0,w=waist||0,n=neck||0,hp=hip||0,wt=weight||0;
     if(h<=0||w<=0||n<=0||wt<=0)return;
     if(w-n<=0)return;
@@ -55,7 +60,7 @@ export default function BodyFatCalc(){
     setResult({bf:Math.round(bf*10)/10,category:cat.label,color:cat.color,leanMass,fatMass});
     setParams({gender,height,waist,neck,hip,weight});
     scrollToResult();
-  };
+  }
 
   return(<>
     <Card><SectionTitle num="1">신체 정보</SectionTitle>

@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ShareButtons from '@/components/ShareButtons';
-import Link from 'next/link';
 
 export default function CalorieCalc() {
   const [gender, setGender] = useState<'male' | 'female'>('male');

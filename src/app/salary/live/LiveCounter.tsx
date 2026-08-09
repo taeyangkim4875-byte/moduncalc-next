@@ -16,7 +16,6 @@ export default function LiveCounter() {
   const perMinute = perSecond * 60;
   const perHour = perSecond * 3600;
   const perDay = (salary || 0) * 10000 / 252;
-  const perMonth = (salary || 0) * 10000 / 12;
 
   const earned = perSecond * elapsed;
 

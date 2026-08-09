@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import { won } from '@/utils/format';
 
+const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
+
 export default function RentalCalc(){
   const [buyPrice,setBuyPrice]=useState(50000);
   const [deposit,setDeposit]=useState(10000);
@@ -19,8 +21,6 @@ export default function RentalCalc(){
   const netYield=investment>0?((annualNet/investment)*100):0;
   const monthlyNet=Math.round(annualNet/12);
   const paybackYears=annualNet>0?(investment/annualNet):Infinity;
-
-  const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
 
   return(<>
     <Card><SectionTitle num="1">매매·임대 정보</SectionTitle>

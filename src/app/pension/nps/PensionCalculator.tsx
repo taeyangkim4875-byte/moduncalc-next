@@ -17,6 +17,10 @@ export default function PensionCalculator(){
   const [result,setResult]=useState<{monthly:number;basicYear:number;replaceRate:number;startAge:number;birthYear:number;tooShort:boolean}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
     const p=getParams();
     if(!Object.keys(p).length)return;
@@ -30,8 +34,9 @@ export default function PensionCalculator(){
     if(autoCalc){calc();setAutoCalc(false);}
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const calc=()=>{
+  function calc() {
     const B=Math.min(Math.max(income*10000,NPS_FLOOR),NPS_CAP);
     const n=Math.max(0,(years-20))*12;
     const baseRatio=Math.min(years,20)/20;
@@ -43,7 +48,7 @@ export default function PensionCalculator(){
     setResult({monthly,basicYear,replaceRate,startAge,birthYear,tooShort:years<10});
     setParams({age,income,years});
     scrollToResult();
-  };
+  }
 
   return (<>
     <Card>

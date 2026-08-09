@@ -22,6 +22,10 @@ export default function JoblessCalculator(){
   const [result,setResult]=useState<{daily:number;days:number;total:number;dailyAvg:number;cap:string}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
     const p=getParams();
     if(!Object.keys(p).length)return;
@@ -35,8 +39,9 @@ export default function JoblessCalculator(){
     if(autoCalc){calc();setAutoCalc(false);}
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const calc=()=>{
+  function calc() {
     const wageM=wage*10000, dailyAvg=wageM/30.4, raw=dailyAvg*JB_RATE;
     const daily=Math.round(Math.min(Math.max(raw,JB_LOWER),JB_UPPER));
     const days=joblessDays(years,age), total=daily*days;
@@ -44,7 +49,7 @@ export default function JoblessCalculator(){
     setResult({daily,days,total,dailyAvg,cap});
     setParams({age,wage,years});
     scrollToResult();
-  };
+  }
 
   return (<>
     <Card>

@@ -20,6 +20,10 @@ export default function CarLoanCalc() {
   } | null>(null);
   const [autoCalc, setAutoCalc] = useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const p = getParams();
     if (!Object.keys(p).length) return;
@@ -35,14 +39,15 @@ export default function CarLoanCalc() {
     if (autoCalc) { calc(); setAutoCalc(false); }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const calc = () => {
+  function calc() {
     const priceWon = (price || 0) * 10000;
     const downWon = (downPay || 0) * 10000;
     const loanAmt = Math.max(0, priceWon - downWon);
 
     // 취득세 계산 (2026 기준)
-    let acqTaxRate = 0.07; // 일반 승용차 7%
+    const acqTaxRate = 0.07; // 일반 승용차 7%
     let acqTax = Math.round(priceWon * acqTaxRate);
 
     if (carType === 'light') {
@@ -74,7 +79,7 @@ export default function CarLoanCalc() {
     setResult({ loanAmt, monthly: Math.round(monthly), totalInt: Math.round(totalInt), totalRepay: Math.round(totalRepay), acqTax, eduTax, totalTax, totalCost: Math.round(totalCost) });
     setParams({ price, carType, downPay, rate, term });
     scrollToResult();
-  };
+  }
 
   return (
     <>

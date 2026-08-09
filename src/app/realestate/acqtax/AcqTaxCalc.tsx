@@ -15,6 +15,10 @@ export default function AcqTaxCalc(){
   const [result,setResult]=useState<{acqTax:number;nongTax:number;eduTax:number;total:number;rate:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
     const p=getParams();
     if(!Object.keys(p).length)return;
@@ -29,8 +33,9 @@ export default function AcqTaxCalc(){
     if(autoCalc){calc();setAutoCalc(false);}
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const calc=()=>{
+  function calc(){
     const priceWon=price*10000;
     let rate:number;
     if(houseCount===1){
@@ -45,7 +50,7 @@ export default function AcqTaxCalc(){
     setResult({acqTax,nongTax,eduTax,total:acqTax+nongTax+eduTax,rate});
     setParams({price,houseType,houseCount,area});
     scrollToResult();
-  };
+  }
 
   const seg=(opts:{label:string;value:number|string}[],current:number|string,set:(v:number|string)=>void)=>
     <div className="flex flex-wrap gap-2">{opts.map(o=><button key={String(o.value)} onClick={()=>set(o.value)} className={`flex-1 min-w-[60px] py-2.5 px-2 border-[1.5px] rounded-xl text-sm font-bold cursor-pointer transition-all ${current===o.value?'bg-[var(--primary-weak)] border-[var(--primary)] text-[var(--primary-dark)]':'bg-white border-[var(--line)] text-[var(--sub)]'}`}>{o.label}</button>)}</div>;

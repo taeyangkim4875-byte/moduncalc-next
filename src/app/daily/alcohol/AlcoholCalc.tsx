@@ -37,7 +37,6 @@ export default function AlcoholCalc(){
   const fmt=(d:Date)=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
   const hasInput=m>0&&w>0&&a>0;
 
-  const dangerLevel=currentBac>=0.08?'취소':currentBac>=0.03?'정지':'안전';
   const dangerColor=currentBac>=0.08?'text-red-600':currentBac>=0.03?'text-orange-500':'text-green-600';
 
   return(<>

@@ -54,6 +54,9 @@ export default function PasswordGen() {
     setCopied(null);
   }, [length, upper, lower, digits, special, count]);
 
+  /* 비밀번호는 crypto 난수라 렌더 중에 만들면 서버/클라이언트 결과가 달라져
+     hydration이 깨진다. 마운트 이후 effect에서 생성해야 하므로 규칙을 해제한다. */
+  /* eslint-disable-next-line react-hooks/set-state-in-effect */
   useEffect(() => { generate(); }, [generate]);
 
   const copyToClipboard = (text: string, idx: number) => {

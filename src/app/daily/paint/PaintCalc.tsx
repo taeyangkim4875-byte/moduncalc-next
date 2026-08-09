@@ -17,6 +17,10 @@ export default function PaintCalc(){
   const [result,setResult]=useState<{wallArea:number;ceilArea:number;totalArea:number;paintL:number;wallpaperRolls:number;paintCans:{s1:number;s4:number;s18:number};paintCost:number;wallpaperCost:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
 
+  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
+     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
+     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
     const p=getParams();
     if(!Object.keys(p).length)return;
@@ -32,8 +36,9 @@ export default function PaintCalc(){
     if(autoCalc){calc();setAutoCalc(false);}
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[autoCalc]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
-  const calc=()=>{
+  function calc() {
     const w=roomW||0,d=roomD||0,h=ceilH||0,dr=doors||0,ct=coats||0;
     if(w<=0||d<=0||h<=0||ct<=0)return;
     const wallArea=Math.round(((w+d)*2*h-(dr*2))*10)/10;
@@ -51,7 +56,7 @@ export default function PaintCalc(){
     setResult({wallArea,ceilArea,totalArea:totalPaintArea,paintL,wallpaperRolls,paintCans:{s1,s4,s18},paintCost,wallpaperCost});
     setParams({roomW,roomD,ceilH,doors,coats});
     scrollToResult();
-  };
+  }
 
   return(<>
     <Card><SectionTitle num="1">방 크기</SectionTitle>

@@ -30,7 +30,6 @@ export default function WaterIntakeEn() {
   const adjustedML = Math.round(baseML * ACTIVITY_MULTIPLIER[activity]);
   const totalML = season === 'summer' ? adjustedML + 500 : adjustedML;
   const cups = Math.ceil(totalML / 250);
-  const bottles = Math.round((totalML / 500) * 10) / 10;
   const oz = Math.round(totalML * 0.033814 * 10) / 10;
 
   return (
