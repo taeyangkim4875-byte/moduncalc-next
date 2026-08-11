@@ -46,11 +46,11 @@ export default function AirFryerCalcEn() {
         <div className="grid grid-cols-2 gap-3 mb-4">
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Oven Temp (°C)</label>
-            <input type="number" value={ovenTemp} onChange={e => handleTempChange(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={ovenTemp || ''} onChange={e => handleTempChange(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Oven Time (min)</label>
-            <input type="number" value={ovenTime} onChange={e => handleTimeChange(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={ovenTime || ''} onChange={e => handleTimeChange(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
         </div>
       </Card>

@@ -30,7 +30,7 @@ export default function KoreanAgeCalc() {
         <div className="grid grid-cols-3 gap-2 mb-4">
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Year</label>
-            <input type="number" value={year} onChange={e => setYear(+e.target.value || 1990)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={year || ''} onChange={e => setYear(+e.target.value || 1990)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Month</label>
@@ -40,7 +40,7 @@ export default function KoreanAgeCalc() {
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Day</label>
-            <input type="number" min={1} max={31} value={day} onChange={e => setDay(+e.target.value || 1)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" min={1} max={31} value={day || ''} onChange={e => setDay(+e.target.value || 1)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
         </div>
       </Card>

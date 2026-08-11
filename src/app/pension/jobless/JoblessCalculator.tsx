@@ -57,14 +57,14 @@ export default function JoblessCalculator(){
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">퇴사 당시 나이 <span className="text-xs text-[var(--sub)] font-medium ml-1">만 나이</span></label>
         <div className="flex items-center gap-2.5">
-          <input type="number" value={age} min={15} max={64} onChange={e=>setAge(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/>
+          <input type="number" value={age || ''} min={15} max={64} onChange={e=>setAge(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/>
           <span className="text-sm font-bold text-[var(--sub)]">세</span>
         </div>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">퇴사 전 월 평균임금 <span className="text-xs text-[var(--sub)] font-medium ml-1">{wage.toLocaleString()}만원</span></label>
         <div className="flex items-center gap-2.5">
-          <input type="number" value={wage} min={0} onChange={e=>setWage(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/>
+          <input type="number" value={wage || ''} min={0} onChange={e=>setWage(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/>
           <span className="text-sm font-bold text-[var(--sub)]">만원/월</span>
         </div>
         <input type="range" min={0} max={1000} step={10} value={wage} onChange={e=>setWage(+e.target.value)} className="w-full mt-3.5"/>

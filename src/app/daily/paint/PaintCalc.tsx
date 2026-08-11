@@ -62,22 +62,22 @@ export default function PaintCalc(){
     <Card><SectionTitle num="1">방 크기</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">방 가로 <span className="text-xs text-[var(--sub)] font-medium ml-1">{roomW}m</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={roomW} onChange={e=>setRoomW(+e.target.value||0)} step={0.1} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">m</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={roomW || ''} onChange={e=>setRoomW(+e.target.value||0)} step={0.1} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">m</span></div>
         <input type="range" min={1} max={20} step={0.1} value={roomW} onChange={e=>setRoomW(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">방 세로 <span className="text-xs text-[var(--sub)] font-medium ml-1">{roomD}m</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={roomD} onChange={e=>setRoomD(+e.target.value||0)} step={0.1} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">m</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={roomD || ''} onChange={e=>setRoomD(+e.target.value||0)} step={0.1} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">m</span></div>
         <input type="range" min={1} max={20} step={0.1} value={roomD} onChange={e=>setRoomD(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">천장 높이 <span className="text-xs text-[var(--sub)] font-medium ml-1">{ceilH}m</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={ceilH} onChange={e=>setCeilH(+e.target.value||0)} step={0.1} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">m</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={ceilH || ''} onChange={e=>setCeilH(+e.target.value||0)} step={0.1} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">m</span></div>
         <input type="range" min={2.0} max={4.0} step={0.1} value={ceilH} onChange={e=>setCeilH(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">문/창문 수 <span className="text-xs text-[var(--sub)] font-medium ml-1">개당 약 2m&sup2; 제외</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={doors} onChange={e=>setDoors(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">개</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={doors || ''} onChange={e=>setDoors(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">개</span></div>
         <input type="range" min={0} max={10} value={doors} onChange={e=>setDoors(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-0">

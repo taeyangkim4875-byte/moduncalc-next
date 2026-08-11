@@ -42,7 +42,7 @@ export default function AdSenseCalc() {
           </label>
           <input type="range" min={100} max={100000} step={100} value={pageviews} onChange={e => setPageviews(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={pageviews} onChange={e => setPageviews(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={pageviews || ''} onChange={e => setPageviews(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">회/일</span>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function AdSenseCalc() {
           </div>
           <input type="range" min={500} max={30000} step={100} value={rpm} onChange={e => setRpm(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={rpm} onChange={e => setRpm(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={rpm || ''} onChange={e => setRpm(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
@@ -70,7 +70,7 @@ export default function AdSenseCalc() {
           </label>
           <input type="range" min={0.5} max={10} step={0.1} value={ctr} onChange={e => setCtr(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={ctr} onChange={e => setCtr(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" step={0.1} />
+            <input type="number" value={ctr || ''} onChange={e => setCtr(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" step={0.1} />
             <span className="text-sm font-bold text-[var(--sub)]">%</span>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function AdSenseCalc() {
           </label>
           <input type="range" min={50} max={3000} step={10} value={cpc} onChange={e => setCpc(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={cpc} onChange={e => setCpc(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={cpc || ''} onChange={e => setCpc(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>

@@ -36,7 +36,7 @@ export default function PyeongCalcEn() {
         </div>
         <div>
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">{mode === 'toSqm' ? 'Pyeong (평)' : 'Square Meters (㎡)'}</label>
-          <input type="number" value={value} onChange={e => setValue(+e.target.value)} className={inputClass} />
+          <input type="number" value={value || ''} onChange={e => setValue(+e.target.value)} className={inputClass} />
         </div>
       </Card>
 

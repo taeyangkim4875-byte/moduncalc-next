@@ -53,21 +53,21 @@ export default function CompoundCalcEn() {
         <div className="grid grid-cols-2 gap-3 mb-3">
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Initial Amount (won)</label>
-            <input type="number" value={principal} onChange={e => setPrincipal(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={principal || ''} onChange={e => setPrincipal(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Monthly (won)</label>
-            <input type="number" value={monthly} onChange={e => setMonthly(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={monthly || ''} onChange={e => setMonthly(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Annual Rate (%)</label>
-            <input type="number" step={0.1} value={rate} onChange={e => setRate(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" step={0.1} value={rate || ''} onChange={e => setRate(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Years</label>
-            <input type="number" min={1} max={50} value={years} onChange={e => setYears(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" min={1} max={50} value={years || ''} onChange={e => setYears(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
         </div>
       </Card>

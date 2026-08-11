@@ -84,9 +84,9 @@ export default function SleepCalc() {
           <div>
             <label className="text-xs font-bold text-[var(--sub)] block mb-1">{mode === 'sleep' ? '몇 시에 자나요?' : '몇 시에 일어나야 하나요?'}</label>
             <div className="flex gap-2 items-center">
-              <input type="number" min={0} max={23} value={inputH} onChange={(e) => setInputH(+e.target.value)} className="flex-1 py-2.5 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-lg font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
+              <input type="number" min={0} max={23} value={inputH || ''} onChange={(e) => setInputH(+e.target.value)} className="flex-1 py-2.5 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-lg font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
               <span className="text-sm font-bold text-[var(--sub)]">시</span>
-              <input type="number" min={0} max={59} value={inputM} onChange={(e) => setInputM(+e.target.value)} className="flex-1 py-2.5 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-lg font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
+              <input type="number" min={0} max={59} value={inputM || ''} onChange={(e) => setInputM(+e.target.value)} className="flex-1 py-2.5 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-lg font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
               <span className="text-sm font-bold text-[var(--sub)]">분</span>
             </div>
           </div>

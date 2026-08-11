@@ -39,7 +39,7 @@ export default function CoupangCalc() {
           </label>
           <input type="range" min={10} max={10000} step={10} value={dailyClicks} onChange={e => setDailyClicks(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={dailyClicks} onChange={e => setDailyClicks(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={dailyClicks || ''} onChange={e => setDailyClicks(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">회/일</span>
           </div>
         </div>
@@ -49,7 +49,7 @@ export default function CoupangCalc() {
           </label>
           <input type="range" min={0.5} max={15} step={0.1} value={convRate} onChange={e => setConvRate(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={convRate} onChange={e => setConvRate(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" step={0.1} />
+            <input type="number" value={convRate || ''} onChange={e => setConvRate(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" step={0.1} />
             <span className="text-sm font-bold text-[var(--sub)]">%</span>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function CoupangCalc() {
           </label>
           <input type="range" min={5000} max={200000} step={1000} value={avgOrder} onChange={e => setAvgOrder(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={avgOrder} onChange={e => setAvgOrder(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={avgOrder || ''} onChange={e => setAvgOrder(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function CoupangCalc() {
           <div className="text-[11px] text-[var(--sub)] mb-1.5">쿠팡 카테고리별 1~3%</div>
           <input type="range" min={1} max={10} step={0.1} value={commRate} onChange={e => setCommRate(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={commRate} onChange={e => setCommRate(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" step={0.1} />
+            <input type="number" value={commRate || ''} onChange={e => setCommRate(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" step={0.1} />
             <span className="text-sm font-bold text-[var(--sub)]">%</span>
           </div>
         </div>

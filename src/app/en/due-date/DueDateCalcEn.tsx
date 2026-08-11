@@ -44,7 +44,7 @@ export default function DueDateCalcEn() {
         <div className="grid grid-cols-3 gap-2 mb-2">
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Year</label>
-            <input type="number" value={lmpYear} onChange={e => setLmpYear(+e.target.value || today.getFullYear())} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={lmpYear || ''} onChange={e => setLmpYear(+e.target.value || today.getFullYear())} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Month</label>
@@ -54,7 +54,7 @@ export default function DueDateCalcEn() {
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Day</label>
-            <input type="number" min={1} max={31} value={lmpDay} onChange={e => setLmpDay(+e.target.value || 1)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" min={1} max={31} value={lmpDay || ''} onChange={e => setLmpDay(+e.target.value || 1)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
         </div>
         <p className="text-[11px] text-[var(--sub)] mt-1">Enter the first day of your last menstrual period (마지막 생리 시작일)</p>

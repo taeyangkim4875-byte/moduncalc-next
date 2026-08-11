@@ -30,12 +30,12 @@ export default function AirfryerCalc(){
       <div className="flex gap-2">
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">오븐 온도 (°C)</label>
-          <input type="number" value={ovenTemp} onChange={e=>setOvenTemp(e.target.value)} min={100} max={250} inputMode="numeric"
+          <input type="number" value={ovenTemp || ''} onChange={e=>setOvenTemp(e.target.value)} min={100} max={250} inputMode="numeric"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">오븐 시간 (분)</label>
-          <input type="number" value={ovenMin} onChange={e=>setOvenMin(e.target.value)} min={5} max={120} inputMode="numeric"
+          <input type="number" value={ovenMin || ''} onChange={e=>setOvenMin(e.target.value)} min={5} max={120} inputMode="numeric"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
       </div>

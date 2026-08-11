@@ -82,9 +82,9 @@ export default function SleepCalcEn() {
           <div>
             <label className="text-xs font-bold text-[var(--sub)] block mb-1">{mode === 'sleep' ? 'What time are you going to bed?' : 'What time do you need to wake up?'}</label>
             <div className="flex gap-2 items-center">
-              <input type="number" min={0} max={23} value={inputH} onChange={(e) => setInputH(+e.target.value)} className="flex-1 py-2.5 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-lg font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
+              <input type="number" min={0} max={23} value={inputH || ''} onChange={(e) => setInputH(+e.target.value)} className="flex-1 py-2.5 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-lg font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
               <span className="text-sm font-bold text-[var(--sub)]">:</span>
-              <input type="number" min={0} max={59} value={inputM} onChange={(e) => setInputM(+e.target.value)} className="flex-1 py-2.5 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-lg font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
+              <input type="number" min={0} max={59} value={inputM || ''} onChange={(e) => setInputM(+e.target.value)} className="flex-1 py-2.5 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-lg font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
               <span className="text-xs font-bold text-[var(--sub)]">(24h)</span>
             </div>
           </div>

@@ -42,7 +42,7 @@ export default function YouTubeCalc() {
           </label>
           <input type="range" min={1000} max={10000000} step={1000} value={monthlyViews} onChange={e => setMonthlyViews(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={monthlyViews} onChange={e => setMonthlyViews(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={monthlyViews || ''} onChange={e => setMonthlyViews(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">회/월</span>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function YouTubeCalc() {
           </div>
           <input type="range" min={500} max={20000} step={100} value={cpm} onChange={e => setCpm(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={cpm} onChange={e => setCpm(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={cpm || ''} onChange={e => setCpm(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function YouTubeCalc() {
           <div className="text-[11px] text-[var(--sub)] mb-1.5">모든 시청에 광고가 붙진 않습니다</div>
           <input type="range" min={20} max={80} step={1} value={adRate} onChange={e => setAdRate(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={adRate} onChange={e => setAdRate(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={adRate || ''} onChange={e => setAdRate(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">%</span>
           </div>
         </div>
@@ -81,7 +81,7 @@ export default function YouTubeCalc() {
           </label>
           <input type="range" min={1} max={30} step={1} value={monthlyUploads} onChange={e => setMonthlyUploads(+e.target.value)} className="w-full" />
           <div className="flex items-center gap-2.5 mt-2">
-            <input type="number" value={monthlyUploads} onChange={e => setMonthlyUploads(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={monthlyUploads || ''} onChange={e => setMonthlyUploads(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">개/월</span>
           </div>
         </div>

@@ -84,7 +84,7 @@ export default function DsrCalc() {
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">기존 대출 연간 원리금 상환액</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={existingPayment} onChange={e => setExistingPayment(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={existingPayment || ''} onChange={e => setExistingPayment(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function DsrCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">신규 대출 희망액</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={loanAmount} onChange={e => setLoanAmount(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={loanAmount || ''} onChange={e => setLoanAmount(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <div className="text-xs text-[var(--sub)] mt-1">{fmtAmt((loanAmount || 0) * 10000)}</div>

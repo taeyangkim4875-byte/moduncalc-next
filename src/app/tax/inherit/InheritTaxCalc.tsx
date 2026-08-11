@@ -68,7 +68,7 @@ export default function InheritTaxCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">상속재산 총액</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={totalAsset} onChange={e => setTotalAsset(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={totalAsset || ''} onChange={e => setTotalAsset(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
           <div className="text-xs text-[var(--sub)] mt-1">{fmtMan((totalAsset || 0) * 10000)}</div>
@@ -76,7 +76,7 @@ export default function InheritTaxCalc() {
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">채무 (빚)</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={debt} onChange={e => setDebt(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={debt || ''} onChange={e => setDebt(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">만원</span>
           </div>
         </div>

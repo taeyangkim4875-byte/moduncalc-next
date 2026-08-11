@@ -76,7 +76,7 @@ export default function GasCalc() {
         </div>
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">열량환산계수 <span className="text-xs text-[var(--sub)] font-medium ml-1">{heatFactor} MJ/㎥</span></label>
-          <input type="number" value={heatFactor} onChange={e => setHeatFactor(+e.target.value)} className="w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+          <input type="number" value={heatFactor || ''} onChange={e => setHeatFactor(+e.target.value)} className="w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
           <div className="text-xs text-[var(--sub)] mt-1">고시 열량 = {result.mj.toFixed(0)} MJ ({usage}㎥ × {heatFactor} MJ/㎥)</div>
         </div>
       </Card>

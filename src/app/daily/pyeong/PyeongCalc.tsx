@@ -34,7 +34,7 @@ export default function PyeongCalc() {
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">{direction === 'toSqm' ? '평수' : '제곱미터(㎡)'}</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={value} onChange={e => setValue(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={value || ''} onChange={e => setValue(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">{direction === 'toSqm' ? '평' : '㎡'}</span>
           </div>
         </div>

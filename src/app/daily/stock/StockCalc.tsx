@@ -162,21 +162,21 @@ export default function StockCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">매수 단가</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={buyPrice} onChange={e => setBuyPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={buyPrice || ''} onChange={e => setBuyPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">현재가</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={curPrice} onChange={e => setCurPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={curPrice || ''} onChange={e => setCurPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">보유 수량</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={qty} onChange={e => setQty(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={qty || ''} onChange={e => setQty(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">주</span>
           </div>
         </div>
@@ -258,14 +258,14 @@ export default function StockCalc() {
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">추가 매수 단가</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={addPrice} onChange={e => setAddPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={addPrice || ''} onChange={e => setAddPrice(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">원</span>
           </div>
         </div>
         <div className="mb-0">
           <label className="block text-sm font-bold mb-2">추가 매수 수량</label>
           <div className="flex items-center gap-2.5">
-            <input type="number" value={addQty} onChange={e => setAddQty(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
+            <input type="number" value={addQty || ''} onChange={e => setAddQty(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
             <span className="text-sm font-bold text-[var(--sub)]">주</span>
           </div>
         </div>

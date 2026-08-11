@@ -39,12 +39,12 @@ export default function InterestCalc(){
       <div className="mb-4"><label className="block text-sm font-bold mb-2">거래유형</label>{seg([{label:'적금',value:'savings'},{label:'예금',value:'deposit'}],type,v=>setType(v as 'savings'|'deposit'))}</div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">{type==='savings'?'월 납입액':'원금'} <span className="text-xs text-[var(--sub)] font-medium ml-1">{principal.toLocaleString()}만원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={principal} min={0} onChange={e=>setPrincipal(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={principal || ''} min={0} onChange={e=>setPrincipal(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
         <input type="range" min={0} max={1000} step={10} value={principal} onChange={e=>setPrincipal(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">연 이자율 <span className="text-xs text-[var(--sub)] font-medium ml-1">{rate}%</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={rate} min={0} max={10} step={0.1} onChange={e=>setRate(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">%</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={rate || ''} min={0} max={10} step={0.1} onChange={e=>setRate(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">%</span></div>
         <input type="range" min={0} max={10} step={0.1} value={rate} onChange={e=>setRate(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">

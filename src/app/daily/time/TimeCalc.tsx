@@ -105,9 +105,9 @@ export default function TimeCalc() {
     <div>
       <label className="text-xs font-bold text-[var(--sub)] block mb-1">{label}</label>
       <div className="flex gap-2 items-center">
-        <input type="number" min={0} max={23} value={h} onChange={(e) => setH(+e.target.value)} className="flex-1 py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
+        <input type="number" min={0} max={23} value={h || ''} onChange={(e) => setH(+e.target.value)} className="flex-1 py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
         <span className="text-sm font-bold text-[var(--sub)]">시</span>
-        <input type="number" min={0} max={59} value={m} onChange={(e) => setM(+e.target.value)} className="flex-1 py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
+        <input type="number" min={0} max={59} value={m || ''} onChange={(e) => setM(+e.target.value)} className="flex-1 py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums text-center" />
         <span className="text-sm font-bold text-[var(--sub)]">분</span>
       </div>
     </div>
@@ -190,11 +190,11 @@ export default function TimeCalc() {
               {timeInput('퇴근 시간', workEndH, setWorkEndH, workEndM, setWorkEndM)}
               <div>
                 <label className="text-xs font-bold text-[var(--sub)] block mb-1">휴게시간 (분)</label>
-                <input type="number" min={0} value={breakMin} onChange={(e) => setBreakMin(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
+                <input type="number" min={0} value={breakMin || ''} onChange={(e) => setBreakMin(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
               </div>
               <div>
                 <label className="text-xs font-bold text-[var(--sub)] block mb-1">시급 (원)</label>
-                <input type="number" min={0} value={hourlyWage} onChange={(e) => setHourlyWage(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
+                <input type="number" min={0} value={hourlyWage || ''} onChange={(e) => setHourlyWage(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
               </div>
             </div>
           </Card>

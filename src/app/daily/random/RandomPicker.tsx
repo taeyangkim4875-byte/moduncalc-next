@@ -108,16 +108,16 @@ export default function RandomPicker() {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="text-xs font-bold text-[var(--sub)] block mb-1">최솟값</label>
-                  <input type="number" value={min} onChange={(e) => setMin(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
+                  <input type="number" value={min || ''} onChange={(e) => setMin(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
                 </div>
                 <div>
                   <label className="text-xs font-bold text-[var(--sub)] block mb-1">최댓값</label>
-                  <input type="number" value={max} onChange={(e) => setMax(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
+                  <input type="number" value={max || ''} onChange={(e) => setMax(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
                 </div>
               </div>
               <div>
                 <label className="text-xs font-bold text-[var(--sub)] block mb-1">뽑을 개수</label>
-                <input type="number" value={count} min={1} max={100} onChange={(e) => setCount(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
+                <input type="number" value={count || ''} min={1} max={100} onChange={(e) => setCount(+e.target.value)} className="w-full py-2 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-sm font-bold outline-none focus:border-[var(--primary)] tabular-nums" />
               </div>
               <button
                 onClick={() => setAllowDup(!allowDup)}

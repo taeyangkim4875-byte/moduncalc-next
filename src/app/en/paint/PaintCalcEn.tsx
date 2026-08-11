@@ -69,25 +69,25 @@ export default function PaintCalcEn() {
           <div className="grid grid-cols-2 gap-2">
             <div>
               <label className="block text-xs font-bold text-[var(--sub)] mb-1">Width (m)</label>
-              <input type="number" step="0.1" value={roomWidth} onChange={e => setRoomWidth(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+              <input type="number" step="0.1" value={roomWidth || ''} onChange={e => setRoomWidth(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
             </div>
             <div>
               <label className="block text-xs font-bold text-[var(--sub)] mb-1">Length (m)</label>
-              <input type="number" step="0.1" value={roomLength} onChange={e => setRoomLength(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+              <input type="number" step="0.1" value={roomLength || ''} onChange={e => setRoomLength(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
             </div>
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Ceiling Height (m)</label>
-            <input type="number" step="0.1" value={roomHeight} onChange={e => setRoomHeight(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" step="0.1" value={roomHeight || ''} onChange={e => setRoomHeight(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div className="grid grid-cols-2 gap-2">
             <div>
               <label className="block text-xs font-bold text-[var(--sub)] mb-1">Doors</label>
-              <input type="number" min={0} value={doors} onChange={e => setDoors(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+              <input type="number" min={0} value={doors || ''} onChange={e => setDoors(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
             </div>
             <div>
               <label className="block text-xs font-bold text-[var(--sub)] mb-1">Windows</label>
-              <input type="number" min={0} value={windows} onChange={e => setWindows(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+              <input type="number" min={0} value={windows || ''} onChange={e => setWindows(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
             </div>
           </div>
           {mode === 'paint' && (

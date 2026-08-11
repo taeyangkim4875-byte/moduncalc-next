@@ -53,7 +53,7 @@ export default function AlcoholCalcEn() {
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Weight (kg)</label>
-            <input type="number" value={weight} onChange={e => setWeight(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={weight || ''} onChange={e => setWeight(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
         </div>
       </Card>
@@ -71,20 +71,20 @@ export default function AlcoholCalcEn() {
         <div className="grid grid-cols-3 gap-2 mb-3">
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Qty</label>
-            <input type="number" min={1} value={drinks} onChange={e => setDrinks(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" min={1} value={drinks || ''} onChange={e => setDrinks(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">ml each</label>
-            <input type="number" value={ml} onChange={e => setMl(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={ml || ''} onChange={e => setMl(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">ABV %</label>
-            <input type="number" step={0.1} value={abv} onChange={e => setAbv(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" step={0.1} value={abv || ''} onChange={e => setAbv(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
         </div>
         <div>
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">Hours since first drink</label>
-          <input type="number" step={0.5} min={0} value={elapsed} onChange={e => setElapsed(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+          <input type="number" step={0.5} min={0} value={elapsed || ''} onChange={e => setElapsed(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
         </div>
       </Card>
 

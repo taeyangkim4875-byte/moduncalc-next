@@ -70,20 +70,20 @@ export default function BodyFatCalcEn() {
         <div className="flex flex-col gap-3">
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Height</label>
-            <input type="number" value={height} onChange={e => setHeight(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={height || ''} onChange={e => setHeight(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Waist circumference (at navel level)</label>
-            <input type="number" value={waist} onChange={e => setWaist(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={waist || ''} onChange={e => setWaist(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           <div>
             <label className="block text-xs font-bold text-[var(--sub)] mb-1">Neck circumference (below Adam&apos;s apple)</label>
-            <input type="number" value={neck} onChange={e => setNeck(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+            <input type="number" value={neck || ''} onChange={e => setNeck(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
           </div>
           {gender === 'female' && (
             <div>
               <label className="block text-xs font-bold text-[var(--sub)] mb-1">Hip circumference (widest point)</label>
-              <input type="number" value={hip} onChange={e => setHip(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
+              <input type="number" value={hip || ''} onChange={e => setHip(+e.target.value)} className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center" />
             </div>
           )}
         </div>

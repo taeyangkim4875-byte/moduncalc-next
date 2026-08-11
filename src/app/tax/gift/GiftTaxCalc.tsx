@@ -45,7 +45,7 @@ export default function GiftTaxCalc(){
     <Card><SectionTitle num="1">증여 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">증여재산가액 <span className="text-xs text-[var(--sub)] font-medium ml-1">{amount>=10000?`${Math.floor(amount/10000)}억${amount%10000?` ${(amount%10000).toLocaleString()}만`:''}`:amount.toLocaleString()+'만'}원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={amount} min={0} onChange={e=>setAmount(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={amount || ''} min={0} onChange={e=>setAmount(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
         <input type="range" min={0} max={200000} step={1000} value={amount} onChange={e=>setAmount(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">증여자와의 관계</label>{seg([{label:'배우자',value:'spouse'},{label:'성인 자녀',value:'adult'},{label:'미성년 자녀',value:'minor'},{label:'기타 친족',value:'other'}],relation,v=>setRelation(v as Relation))}</div>

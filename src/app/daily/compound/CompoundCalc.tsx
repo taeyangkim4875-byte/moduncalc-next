@@ -53,24 +53,24 @@ export default function CompoundCalc(){
       <div className="flex gap-2 mb-4">
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">초기 원금 (만원)</label>
-          <input type="number" value={principal} onChange={e=>setPrincipal(e.target.value)} min={0} max={100000} inputMode="numeric"
+          <input type="number" value={principal || ''} onChange={e=>setPrincipal(e.target.value)} min={0} max={100000} inputMode="numeric"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">월 적립액 (만원)</label>
-          <input type="number" value={monthly} onChange={e=>setMonthly(e.target.value)} min={0} max={1000} inputMode="numeric"
+          <input type="number" value={monthly || ''} onChange={e=>setMonthly(e.target.value)} min={0} max={1000} inputMode="numeric"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
       </div>
       <div className="flex gap-2">
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">연 수익률 (%)</label>
-          <input type="number" value={rate} onChange={e=>setRate(e.target.value)} min={1} max={30} step={0.1} inputMode="decimal"
+          <input type="number" value={rate || ''} onChange={e=>setRate(e.target.value)} min={1} max={30} step={0.1} inputMode="decimal"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">투자 기간 (년)</label>
-          <input type="number" value={years} onChange={e=>setYears(e.target.value)} min={1} max={40} inputMode="numeric"
+          <input type="number" value={years || ''} onChange={e=>setYears(e.target.value)} min={1} max={40} inputMode="numeric"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
       </div>

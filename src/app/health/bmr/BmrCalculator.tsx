@@ -54,15 +54,15 @@ export default function BmrCalculator(){
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">나이</label>
-        <div className="flex items-center gap-2.5"><input type="number" value={age} onChange={e=>setAge(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">세</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={age || ''} onChange={e=>setAge(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">세</span></div>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">키</label>
-        <div className="flex items-center gap-2.5"><input type="number" value={height} onChange={e=>setHeight(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={height || ''} onChange={e=>setHeight(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">체중</label>
-        <div className="flex items-center gap-2.5"><input type="number" value={weight} onChange={e=>setWeight(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">kg</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={weight || ''} onChange={e=>setWeight(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">kg</span></div>
       </div>
       <div className="mb-0">
         <label className="block text-sm font-bold mb-2">활동량</label>

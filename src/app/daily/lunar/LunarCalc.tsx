@@ -87,7 +87,7 @@ export default function LunarCalc(){
         </div>
         <div className="flex-1">
           <label className="block text-sm font-bold mb-2">음력 일</label>
-          <div className="flex items-center gap-2.5"><input type="number" value={lunarDay} onChange={e=>setLunarDay(+e.target.value||0)} min={1} max={30} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">일</span></div>
+          <div className="flex items-center gap-2.5"><input type="number" value={lunarDay || ''} onChange={e=>setLunarDay(+e.target.value||0)} min={1} max={30} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">일</span></div>
         </div>
       </div>
       {birthdaySolar&&<div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center">

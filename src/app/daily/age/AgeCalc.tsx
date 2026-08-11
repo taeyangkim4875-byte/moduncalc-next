@@ -33,17 +33,17 @@ export default function AgeCalc(){
       <div className="flex gap-2 items-end">
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">년</label>
-          <input type="number" value={year} onChange={e=>setYear(e.target.value)} placeholder="1995" inputMode="numeric"
+          <input type="number" value={year || ''} onChange={e=>setYear(e.target.value)} placeholder="1995" inputMode="numeric"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
         <div className="flex-none w-[72px]">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">월</label>
-          <input type="number" value={month} onChange={e=>setMonth(e.target.value)} placeholder="1" min={1} max={12} inputMode="numeric"
+          <input type="number" value={month || ''} onChange={e=>setMonth(e.target.value)} placeholder="1" min={1} max={12} inputMode="numeric"
             className="w-full py-3 px-2 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
         <div className="flex-none w-[72px]">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">일</label>
-          <input type="number" value={day} onChange={e=>setDay(e.target.value)} placeholder="1" min={1} max={31} inputMode="numeric"
+          <input type="number" value={day || ''} onChange={e=>setDay(e.target.value)} placeholder="1" min={1} max={31} inputMode="numeric"
             className="w-full py-3 px-2 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
       </div>

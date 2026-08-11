@@ -49,7 +49,7 @@ export default function ElectricCalc(){
     <Card><SectionTitle num="1">사용량 입력</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">월 사용량 <span className="text-xs text-[var(--sub)] font-medium ml-1">{kwh.toLocaleString()}kWh</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={kwh} min={0} max={1000} onChange={e=>setKwh(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">kWh</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={kwh || ''} min={0} max={1000} onChange={e=>setKwh(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">kWh</span></div>
         <input type="range" min={0} max={1000} step={10} value={kwh} onChange={e=>setKwh(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-0"><label className="block text-sm font-bold mb-2">적용 시기</label>{seg([{label:'일반 (3~6,9~11월)',value:'normal'},{label:'하계 (7~8월)',value:'summer'},{label:'동계 (12~2월)',value:'winter'}],season,v=>setSeason(v as Season))}</div>

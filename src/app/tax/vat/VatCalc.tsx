@@ -17,7 +17,7 @@ export default function VatCalc(){
         </div>
       </div>
       <div className="mb-0"><label className="block text-sm font-bold mb-2">{mode==='supply'?'공급가액':'합계금액'}</label>
-        <div className="flex items-center gap-2.5"><input type="number" value={amount} onChange={e=>setAmount(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">원</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={amount || ''} onChange={e=>setAmount(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">원</span></div>
       </div>
     </Card>
     <div className="grid grid-cols-3 gap-2.5">

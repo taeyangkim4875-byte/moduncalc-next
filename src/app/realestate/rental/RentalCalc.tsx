@@ -26,17 +26,17 @@ export default function RentalCalc(){
     <Card><SectionTitle num="1">매매·임대 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">매매가 <span className="text-xs text-[var(--sub)] font-medium ml-1">{buyPrice>=10000?`${Math.floor(buyPrice/10000)}억${buyPrice%10000?` ${(buyPrice%10000).toLocaleString()}만`:''}`:buyPrice.toLocaleString()+'만'}원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={buyPrice} min={0} onChange={e=>setBuyPrice(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={buyPrice || ''} min={0} onChange={e=>setBuyPrice(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
         <input type="range" min={0} max={200000} step={1000} value={buyPrice} onChange={e=>setBuyPrice(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">보증금 <span className="text-xs text-[var(--sub)] font-medium ml-1">{deposit.toLocaleString()}만원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={deposit} min={0} onChange={e=>setDeposit(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={deposit || ''} min={0} onChange={e=>setDeposit(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
         <input type="range" min={0} max={100000} step={500} value={deposit} onChange={e=>setDeposit(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">월세 <span className="text-xs text-[var(--sub)] font-medium ml-1">{monthlyRent.toLocaleString()}만원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={monthlyRent} min={0} onChange={e=>setMonthlyRent(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원/월</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={monthlyRent || ''} min={0} onChange={e=>setMonthlyRent(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원/월</span></div>
         <input type="range" min={0} max={500} step={5} value={monthlyRent} onChange={e=>setMonthlyRent(+e.target.value)} className="w-full mt-3.5"/>
       </div>
     </Card>
@@ -44,17 +44,17 @@ export default function RentalCalc(){
     <Card><SectionTitle num="2">대출·비용 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">대출금 <span className="text-xs text-[var(--sub)] font-medium ml-1">{loan.toLocaleString()}만원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={loan} min={0} onChange={e=>setLoan(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={loan || ''} min={0} onChange={e=>setLoan(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
         <input type="range" min={0} max={100000} step={500} value={loan} onChange={e=>setLoan(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">대출 금리 <span className="text-xs text-[var(--sub)] font-medium ml-1">{loanRate}%</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={loanRate} min={0} max={10} step={0.1} onChange={e=>setLoanRate(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">%</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={loanRate || ''} min={0} max={10} step={0.1} onChange={e=>setLoanRate(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">%</span></div>
         <input type="range" min={0} max={10} step={0.1} value={loanRate} onChange={e=>setLoanRate(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-0">
         <label className="block text-sm font-bold mb-2">연 관리비·세금 <span className="text-xs text-[var(--sub)] font-medium ml-1">{annualCost.toLocaleString()}만원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={annualCost} min={0} onChange={e=>setAnnualCost(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원/년</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={annualCost || ''} min={0} onChange={e=>setAnnualCost(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원/년</span></div>
         <input type="range" min={0} max={2000} step={10} value={annualCost} onChange={e=>setAnnualCost(+e.target.value)} className="w-full mt-3.5"/>
       </div>
     </Card>

@@ -18,7 +18,7 @@ export default function DdayCalc(){
     </Card>
     <Card><SectionTitle num="📆">날짜 더하기/빼기</SectionTitle>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">시작 날짜</label><input type="date" value={addFrom} onChange={e=>setAddFrom(e.target.value)} className="w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-[15px] font-bold outline-none focus:border-[var(--primary)]"/></div>
-      <div className="mb-0"><label className="block text-sm font-bold mb-2">더할 일수</label><div className="flex items-center gap-2.5"><input type="number" value={addDays} onChange={e=>setAddDays(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">일</span></div></div>
+      <div className="mb-0"><label className="block text-sm font-bold mb-2">더할 일수</label><div className="flex items-center gap-2.5"><input type="number" value={addDays || ''} onChange={e=>setAddDays(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">일</span></div></div>
       <R v={da.date} l={`${da.day}요일`}/>
     </Card>
     <Card>

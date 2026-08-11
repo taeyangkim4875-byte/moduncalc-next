@@ -55,12 +55,12 @@ export default function LoanCalculator(){
     <Card><SectionTitle num="1">대출 정보 입력</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">대출 금액 <span className="text-xs text-[var(--sub)] font-medium ml-1">{amount>=10000?`${Math.floor(amount/10000)}억${amount%10000?` ${(amount%10000).toLocaleString()}만`:''}`:amount.toLocaleString()+'만'}원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={amount} onChange={e=>setAmount(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={amount || ''} onChange={e=>setAmount(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
         <input type="range" min={0} max={100000} step={500} value={amount} onChange={e=>setAmount(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">연 이자율</label>
-        <div className="flex items-center gap-2.5"><input type="number" value={rate} min={0} max={20} step={0.1} onChange={e=>setRate(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">%</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={rate || ''} min={0} max={20} step={0.1} onChange={e=>setRate(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">%</span></div>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">대출 기간</label>

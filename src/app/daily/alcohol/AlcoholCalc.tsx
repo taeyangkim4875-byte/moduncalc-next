@@ -50,7 +50,7 @@ export default function AlcoholCalc(){
       </div>
       <div className="mb-4">
         <label className="block text-xs font-bold text-[var(--sub)] mb-1">체중 (kg)</label>
-        <input type="number" value={weight} onChange={e=>setWeight(e.target.value)} min={40} max={120} inputMode="numeric"
+        <input type="number" value={weight || ''} onChange={e=>setWeight(e.target.value)} min={40} max={120} inputMode="numeric"
           className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
       </div>
       <div className="mb-4">
@@ -64,18 +64,18 @@ export default function AlcoholCalc(){
       <div className="flex gap-2 mb-4">
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">알코올 도수 (%)</label>
-          <input type="number" value={abv} onChange={e=>setAbv(e.target.value)} step={0.1} inputMode="decimal"
+          <input type="number" value={abv || ''} onChange={e=>setAbv(e.target.value)} step={0.1} inputMode="decimal"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
         <div className="flex-1">
           <label className="block text-xs font-bold text-[var(--sub)] mb-1">음주량 (ml)</label>
-          <input type="number" value={ml} onChange={e=>setMl(e.target.value)} inputMode="numeric"
+          <input type="number" value={ml || ''} onChange={e=>setMl(e.target.value)} inputMode="numeric"
             className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
         </div>
       </div>
       <div>
         <label className="block text-xs font-bold text-[var(--sub)] mb-1">마지막 음주 후 경과 시간</label>
-        <input type="number" value={elapsed} onChange={e=>setElapsed(e.target.value)} min={0} max={24} step={0.5} inputMode="decimal"
+        <input type="number" value={elapsed || ''} onChange={e=>setElapsed(e.target.value)} min={0} max={24} step={0.5} inputMode="decimal"
           className="w-full py-3 px-3 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)] text-center"/>
       </div>
     </Card>

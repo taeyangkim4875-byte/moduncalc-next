@@ -72,27 +72,27 @@ export default function BodyFatCalc(){
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">키 <span className="text-xs text-[var(--sub)] font-medium ml-1">{height}cm</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={height} onChange={e=>setHeight(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={height || ''} onChange={e=>setHeight(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
         <input type="range" min={140} max={200} value={height} onChange={e=>setHeight(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">체중 <span className="text-xs text-[var(--sub)] font-medium ml-1">{weight}kg</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={weight} onChange={e=>setWeight(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">kg</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={weight || ''} onChange={e=>setWeight(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">kg</span></div>
         <input type="range" min={30} max={150} value={weight} onChange={e=>setWeight(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">허리둘레 (배꼽 높이) <span className="text-xs text-[var(--sub)] font-medium ml-1">{waist}cm</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={waist} onChange={e=>setWaist(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={waist || ''} onChange={e=>setWaist(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
         <input type="range" min={50} max={150} value={waist} onChange={e=>setWaist(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">목둘레 <span className="text-xs text-[var(--sub)] font-medium ml-1">{neck}cm</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={neck} onChange={e=>setNeck(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={neck || ''} onChange={e=>setNeck(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
         <input type="range" min={25} max={55} value={neck} onChange={e=>setNeck(+e.target.value)} className="w-full mt-3.5"/>
       </div>
       {gender==='female'&&<div className="mb-0">
         <label className="block text-sm font-bold mb-2">엉덩이둘레 <span className="text-xs text-[var(--sub)] font-medium ml-1">{hip}cm</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={hip} onChange={e=>setHip(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
+        <div className="flex items-center gap-2.5"><input type="number" value={hip || ''} onChange={e=>setHip(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">cm</span></div>
         <input type="range" min={60} max={150} value={hip} onChange={e=>setHip(+e.target.value)} className="w-full mt-3.5"/>
       </div>}
     </Card>

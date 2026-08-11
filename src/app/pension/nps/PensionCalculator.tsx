@@ -56,14 +56,14 @@ export default function PensionCalculator(){
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">현재 나이 <span className="text-xs text-[var(--sub)] font-medium ml-1">만 나이</span></label>
         <div className="flex items-center gap-2.5">
-          <input type="number" value={age} min={18} max={64} onChange={e=>setAge(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/>
+          <input type="number" value={age || ''} min={18} max={64} onChange={e=>setAge(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/>
           <span className="text-sm font-bold text-[var(--sub)]">세</span>
         </div>
       </div>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">월 평균소득 <span className="text-xs text-[var(--sub)] font-medium ml-1">{income.toLocaleString()}만원</span></label>
         <div className="flex items-center gap-2.5">
-          <input type="number" value={income} min={0} onChange={e=>setIncome(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/>
+          <input type="number" value={income || ''} min={0} onChange={e=>setIncome(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/>
           <span className="text-sm font-bold text-[var(--sub)]">만원/월</span>
         </div>
         <input type="range" min={0} max={700} step={10} value={income} onChange={e=>setIncome(+e.target.value)} className="w-full mt-3.5"/>
