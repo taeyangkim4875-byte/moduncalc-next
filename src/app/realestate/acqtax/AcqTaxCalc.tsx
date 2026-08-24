@@ -11,6 +11,7 @@ import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
 import ProfileBanner from '@/components/ProfileBanner';
 import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
+import ModeToggle from '@/components/ModeToggle';
 
 export default function AcqTaxCalc(){
   const [price,setPrice]=useState(50000);
@@ -66,6 +67,7 @@ export default function AcqTaxCalc(){
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/realestate/acqtax" />
     <ProfileBanner filledKeys={profileFilled} />
+    <ModeToggle forwardHref="/realestate/acqtax" reverseHref="/realestate/acqtax/reverse" mode="forward" forwardLabel="매매가 → 취득세" reverseLabel="취득세 → 매수한도" />
     <Card><SectionTitle num="1">매매 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">매매가격 <span className="text-xs text-[var(--sub)] font-medium ml-1">{price>=10000?`${Math.floor(price/10000)}억${price%10000?` ${(price%10000).toLocaleString()}만`:''}`:price.toLocaleString()+'만'}원</span></label>

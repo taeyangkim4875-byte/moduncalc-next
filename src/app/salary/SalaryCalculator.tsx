@@ -16,6 +16,7 @@ import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
 import NextStepCards from '@/components/NextStepCards';
 import ProfileBanner from '@/components/ProfileBanner';
 import SavePrompt from '@/components/SavePrompt';
+import ModeToggle from '@/components/ModeToggle';
 
 /* ── 연령대 구간 ── */
 const AGE5 = ['20~24', '25~29', '30~34', '35~39', '40~44', '45~49', '50~54', '55~59'] as const;
@@ -122,6 +123,7 @@ export default function SalaryCalculator() {
       <ChainBanner />
       <JourneyBreadcrumb currentHref="/salary" />
       <ProfileBanner filledKeys={profileFilled} />
+      <ModeToggle forwardHref="/salary" reverseHref="/salary/reverse" mode="forward" forwardLabel="연봉 → 실수령액" reverseLabel="실수령액 → 연봉" />
       <Card>
         <SectionTitle num="1">기본 정보</SectionTitle>
 

@@ -13,6 +13,7 @@ import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
 import ProfileBanner from '@/components/ProfileBanner';
 import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
+import ModeToggle from '@/components/ModeToggle';
 
 export default function LoanCalculator(){
   const [amount,setAmount]=useState(30000);
@@ -64,6 +65,7 @@ export default function LoanCalculator(){
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/loan" />
     <ProfileBanner filledKeys={profileFilled} />
+    <ModeToggle forwardHref="/loan" reverseHref="/loan/reverse" mode="forward" forwardLabel="대출금 → 월 상환액" reverseLabel="월 상환액 → 대출 한도" />
     <Card><SectionTitle num="1">대출 정보 입력</SectionTitle>
       <SliderInput
         label="대출 금액"

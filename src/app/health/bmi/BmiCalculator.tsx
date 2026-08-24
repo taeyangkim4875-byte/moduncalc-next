@@ -10,6 +10,7 @@ import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
 import ProfileBanner from '@/components/ProfileBanner';
 import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
+import ModeToggle from '@/components/ModeToggle';
 
 const CATEGORIES=[{max:18.5,label:'저체중',color:'#3182F6'},{max:23,label:'정상',color:'#00C271'},{max:25,label:'과체중',color:'#F59E0B'},{max:30,label:'비만 1단계',color:'#E5484D'},{max:35,label:'비만 2단계',color:'#E5484D'},{max:Infinity,label:'고도비만',color:'#C62828'}];
 
@@ -54,6 +55,7 @@ export default function BmiCalculator(){
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/health/bmi" />
     <ProfileBanner filledKeys={profileFilled} />
+    <ModeToggle forwardHref="/health/bmi" reverseHref="/health/bmi/reverse" mode="forward" forwardLabel="체중 → BMI" reverseLabel="목표 BMI → 체중" />
     <Card><SectionTitle num="1">신체 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">키 <span className="text-xs text-[var(--sub)] font-medium ml-1">{height}cm</span></label>

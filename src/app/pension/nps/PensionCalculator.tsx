@@ -11,6 +11,7 @@ import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
 import ProfileBanner from '@/components/ProfileBanner';
 import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
+import ModeToggle from '@/components/ModeToggle';
 
 const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6370000, NPS_FLOOR=400000;
 function pensionAge(by:number){if(by<=1952)return 60;if(by<=1956)return 61;if(by<=1960)return 62;if(by<=1964)return 63;if(by<=1968)return 64;return 65;}
@@ -61,6 +62,7 @@ export default function PensionCalculator(){
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/pension/nps" />
     <ProfileBanner filledKeys={profileFilled} />
+    <ModeToggle forwardHref="/pension/nps" reverseHref="/pension/nps/reverse" mode="forward" forwardLabel="가입기간 → 연금액" reverseLabel="연금액 → 필요기간" />
     <Card>
       <SectionTitle num="1">가입 정보</SectionTitle>
       <div className="mb-4">
