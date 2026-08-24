@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import SliderInput from '@/components/SliderInput';
@@ -26,6 +26,7 @@ export default function LoanCalculator(){
   const [result,setResult]=useState<{eq:{monthly:number;totalInt:number;total:number};pr:{first:number;last:number;totalInt:number;total:number};graceInt:number;saving:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
   const [profileFilled, setProfileFilled] = useState<string[]>([]);
+  const calcSource = useRef<'manual'|'chain'|'profile'>('manual');
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
@@ -41,6 +42,7 @@ export default function LoanCalculator(){
     const filled = profileKeys.filter(k => ['amount', 'rate', 'term'].includes(k));
     setProfileFilled(filled);
     trackPrefillUsed(filled);
+    calcSource.current = filled.length > 0 ? 'profile' : 'chain';
     setAutoCalc(true);
   },[]);
 
@@ -63,7 +65,8 @@ export default function LoanCalculator(){
     const saving=eqTotalInt-prTotalInt;
     setResult({eq:{monthly:eqM,totalInt:eqTotalInt+graceInt,total:P+eqTotalInt+graceInt},pr:{first:prFirst,last:prLast,totalInt:prTotalInt+graceInt,total:P+prTotalInt+graceInt},graceInt,saving});
     setParams({amount,rate,term,grace}, { primaryOutput: `월 ${won(eqM)}` });
-    trackCalcComplete('loan', `월 ${won(eqM)}`);
+    trackCalcComplete('loan', `월 ${won(eqM)}`, calcSource.current);
+    calcSource.current = 'manual';
     scrollToResult();
   }
 
@@ -83,6 +86,7 @@ export default function LoanCalculator(){
         max={100000}
         step={500}
         unit="만원"
+        trackId="loan.amount"
       />
       <SliderInput
         label="연 이자율"
@@ -92,6 +96,7 @@ export default function LoanCalculator(){
         max={20}
         step={0.1}
         unit="%"
+        trackId="loan.rate"
       />
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">대출 기간</label>

@@ -1,5 +1,8 @@
 'use client';
 
+import { useRef, useCallback } from 'react';
+import { trackSliderInteract } from '@/utils/analytics';
+
 interface SliderInputProps {
   label: string;
   value: number;
@@ -12,12 +15,27 @@ interface SliderInputProps {
   minLabel?: string;
   maxLabel?: string;
   className?: string;
+  trackId?: string;
 }
 
 export default function SliderInput({
   label, value, onChange, min, max, step = 1,
-  unit, hint, minLabel, maxLabel, className = 'mb-4',
+  unit, hint, minLabel, maxLabel, className = 'mb-4', trackId,
 }: SliderInputProps) {
+  const moveCount = useRef(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout>>(null);
+
+  const handleSliderChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(+e.target.value);
+    if (!trackId) return;
+    moveCount.current++;
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      trackSliderInteract(trackId, String(moveCount.current));
+      moveCount.current = 0;
+    }, 1000);
+  }, [onChange, trackId]);
+
   return (
     <div className={className}>
       <label className="block text-sm font-bold mb-2">
@@ -42,7 +60,7 @@ export default function SliderInput({
         max={max}
         step={step}
         value={value}
-        onChange={e => onChange(+e.target.value)}
+        onChange={handleSliderChange}
         className="w-full mt-3.5"
       />
       {(minLabel || maxLabel) && (

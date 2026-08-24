@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import SliderInput from '@/components/SliderInput';
@@ -142,6 +142,7 @@ export default function SalaryCalculator() {
           min={20}
           max={59}
           unit="세"
+          trackId="salary.age"
         />
 
         <SliderInput
@@ -152,6 +153,7 @@ export default function SalaryCalculator() {
           min={2000}
           max={15000}
           step={100}
+          trackId="salary.amount"
           unit="만원"
         />
 

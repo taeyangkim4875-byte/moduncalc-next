@@ -12,12 +12,12 @@ function send(event: string, params?: EventParams) {
   }
 }
 
-export function trackCalcComplete(calculator: string, result: string) {
-  send('calc_complete', { calculator, result });
+export function trackCalcComplete(calculator: string, result: string, source: 'manual' | 'chain' | 'profile' = 'manual') {
+  send('calc_complete', { calculator, result, source });
 }
 
-export function trackSliderInteract(calculator: string, field: string) {
-  send('slider_interact', { calculator, field });
+export function trackSliderInteract(field: string, moves: string) {
+  send('slider_interact', { field, moves: +moves });
 }
 
 export function trackChainClick(from: string, to: string) {
