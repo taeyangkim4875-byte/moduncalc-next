@@ -5,7 +5,7 @@ import Card from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "소개 - 모든 계산기 (moduncalc.com)",
-  description: "모든 계산기(moduncalc.com)는 2026년 최신 세법·요율을 반영한 무료 계산기 51종을 제공하는 웹 서비스입니다. 운영자 소개, 계산 기준, 출처를 안내합니다.",
+  description: "모든 계산기(moduncalc.com)는 2026년 최신 세법·요율을 반영한 무료 계산기 80종 이상을 제공하는 웹 서비스입니다. 운영자 소개, 계산 기준, 출처를 안내합니다.",
   alternates: { canonical: "https://moduncalc.com/about" },
 };
 
@@ -19,7 +19,7 @@ export default function Page() {
           2026년 최신 세법·보험 요율·정책을 반영하여 정확한 계산 결과를 제공합니다.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          현재 <b>한국어 계산기 51종</b>과 <b>영어 계산기 16종</b>, 그리고 <b>가이드 글 30편</b>을 제공하고 있으며, 새로운 계산기와 콘텐츠를 지속적으로 추가하고 있습니다.
+          현재 <b>한국어 계산기 80종 이상</b>과 <b>영어 계산기·가이드 60종 이상</b>을 제공하고 있으며, 새로운 계산기와 콘텐츠를 지속적으로 추가하고 있습니다.
         </p>
       </Card>
 
@@ -54,8 +54,8 @@ export default function Page() {
             <p className="mt-1">한국어 사용자와 한국에 거주하는 외국인 모두를 위한 계산기와 가이드를 제공합니다.</p>
           </div>
           <div className="bg-[var(--bg)] rounded-xl p-3">
-            <b className="text-[var(--ink)]">💯 무료 · 광고 없음</b>
-            <p className="mt-1">모든 계산기는 무료이며, 회원가입이 필요 없습니다.</p>
+            <b className="text-[var(--ink)]">💯 무료 · 회원가입 없음</b>
+            <p className="mt-1">모든 계산기는 무료이며, 회원가입이 필요 없습니다. 운영비 충당을 위해 일부 광고가 포함될 수 있습니다.</p>
           </div>
         </div>
       </Card>
@@ -68,7 +68,7 @@ export default function Page() {
         <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 flex flex-col gap-1.5">
           <li><b>소득세법 제55조</b> — 종합소득세 8구간 누진세율 (6%~45%)</li>
           <li><b>국민연금공단 고시</b> — 2026년 보험료율 9.5% (본인 4.75%), 기준소득월액 상한 637만원</li>
-          <li><b>건강보험공단 고시</b> — 2026년 보험료율 7.09% (본인 3.545%), 장기요양 13.14%</li>
+          <li><b>건강보험공단 고시</b> — 2026년 보험료율 7.19% (본인 3.595%), 장기요양 13.14%</li>
           <li><b>고용보험법</b> — 근로자 부담 0.9%</li>
           <li><b>조세특례제한법 제18조의2</b> — 외국인 근로자 flat tax 19%</li>
           <li><b>금융위원회</b> — 청년도약계좌·청년미래적금 정부기여금 기준</li>

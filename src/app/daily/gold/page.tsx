@@ -6,7 +6,7 @@ import GoldCalc from "./GoldCalc";
 export const metadata: Metadata = {
   title: "금 시세 계산기 - 금 1돈·1g 가격 환산 (2026)",
   description: "금 무게(돈, g, oz)를 입력하면 현재 시세 기준 금액을 환산합니다. 1돈=3.75g.",
-  robots: { index: false, follow: false }, alternates: { canonical: "https://moduncalc.com/daily/gold" },
+  alternates: { canonical: "https://moduncalc.com/daily/gold" },
   openGraph: {
     title: "금 시세 계산기 - 금 1돈·1g 가격 환산 (2026)",
     description: "금 무게(돈, g, oz)를 입력하면 현재 시세 기준 금액을 환산합니다. 1돈=3.75g.",

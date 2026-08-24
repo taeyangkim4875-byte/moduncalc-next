@@ -6,7 +6,7 @@ import GpaCalc from "./GpaCalc";
 export const metadata: Metadata = {
   title: "학점 계산기 - GPA 평점 계산",
   description: "과목별 학점과 성적을 입력하면 4.5 만점 기준 평균 평점(GPA)을 자동 계산합니다.",
-  robots: { index: false, follow: false }, alternates: { canonical: "https://moduncalc.com/daily/gpa" },
+  alternates: { canonical: "https://moduncalc.com/daily/gpa" },
 };
 
 export default function Page() {

@@ -6,7 +6,7 @@ import AdSenseCalc from "./AdSenseCalc";
 export const metadata: Metadata = {
   title: "애드센스 수익 계산기 - 블로그 예상 수익 시뮬레이션",
   description: "일일 방문자 수와 페이지 RPM으로 블로그 애드센스 예상 수익을 계산하세요.",
-  robots: { index: false, follow: false }, alternates: { canonical: "https://moduncalc.com/daily/adsense" },
+  alternates: { canonical: "https://moduncalc.com/daily/adsense" },
 };
 
 export default function Page() {
