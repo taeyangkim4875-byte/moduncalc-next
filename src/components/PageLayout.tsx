@@ -2,6 +2,7 @@ import SearchBar from './SearchBar';
 import RelatedCalcs from './RelatedCalcs';
 import RelatedGuides from './RelatedGuides';
 import { KakaoAdTop, KakaoAdBottom } from './KakaoAdFit';
+import FirstSaveNotice from './FirstSaveNotice';
 
 interface PageLayoutProps {
   eyebrow: string;
@@ -24,6 +25,7 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
       <RelatedGuides />
       <RelatedCalcs />
       <KakaoAdBottom />
+      <FirstSaveNotice />
     </div>
   );
 }

@@ -6,10 +6,12 @@ import { won } from '@/utils/format';
 import { progressiveTax } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
 import NextStepCards from '@/components/NextStepCards';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 
 export default function IncomeTaxCalc(){
   const [income,setIncome]=useState(5000);
@@ -17,17 +19,19 @@ export default function IncomeTaxCalc(){
   const [dependents,setDependents]=useState(1);
   const [result,setResult]=useState<{base:number;tax:number;local:number;total:number;effectiveRate:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled,setProfileFilled]=useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys } = getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.income)setIncome(+p.income);
     if(p.deduction)setDeduction(+p.deduction);
     if(p.dependents)setDependents(+p.dependents);
+    setProfileFilled(profileKeys.filter(k=>['income','dependents'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -44,13 +48,14 @@ export default function IncomeTaxCalc(){
     const total=Math.round(tax)+local;
     const effectiveRate=income>0?(total/(income*10000)*100):0;
     setResult({base,tax:Math.round(tax),local,total,effectiveRate});
-    setParams({income,deduction,dependents});
+    setParams({income,deduction,dependents}, { primaryOutput: won(total) });
     scrollToResult();
   }
 
   return(<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/tax/income" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card><SectionTitle num="1">소득 정보</SectionTitle>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">총 수입금액</label><div className="flex items-center gap-2.5"><input type="number" value={income || ''} onChange={e=>setIncome(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div></div>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">필요경비/소득공제</label><div className="flex items-center gap-2.5"><input type="number" value={deduction || ''} onChange={e=>setDeduction(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div></div>
@@ -76,6 +81,7 @@ export default function IncomeTaxCalc(){
       </div>
     </div>}
     {result && <NextStepCards from="/tax/income" outputs={{ income }} />}
+    <SavePrompt />
     {result && <ShareButtons title="종합소득세 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 세액을 계산해 드려요.</Card>}
     <Card>

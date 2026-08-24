@@ -5,9 +5,11 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 type DealType = '매매' | '전세' | '월세';
@@ -46,17 +48,19 @@ export default function CommissionCalc() {
   const [monthly, setMonthly] = useState(50);
   const [result, setResult] = useState<{ rate: number; fee: number; vat: number; total: number } | null>(null);
   const [autoCalc, setAutoCalc] = useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
-    const p = getParams();
+    const { params: p, profileKeys } = getParamsWithProfile();
     if (!Object.keys(p).length) return;
     if (p.dealType) setDealType(p.dealType as DealType);
     if (p.price) setPrice(+p.price);
     if (p.monthly) setMonthly(+p.monthly);
+    setProfileFilled(profileKeys.filter(k => ['price'].includes(k)));
     setAutoCalc(true);
   }, []);
 
@@ -75,7 +79,7 @@ export default function CommissionCalc() {
     const { rate, fee } = getRate(amount, table);
     const vat = Math.round(fee * 0.1);
     setResult({ rate, fee, vat, total: fee + vat });
-    setParams({ dealType, price, monthly });
+    setParams({ dealType, price, monthly }, { primaryOutput: won(fee + vat) });
     scrollToResult();
   }
 
@@ -84,6 +88,7 @@ export default function CommissionCalc() {
   return (<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/realestate/commission" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card>
       <SectionTitle num="1">거래 정보</SectionTitle>
       <div className="mb-4">
@@ -137,6 +142,7 @@ export default function CommissionCalc() {
       </div>
     )}
     {result && <NextStepCards from="/realestate/commission" outputs={{ price }} />}
+    <SavePrompt />
     {result && <ShareButtons title="복비 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 중개수수료를 계산해 드려요.</Card>}

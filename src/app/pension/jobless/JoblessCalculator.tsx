@@ -5,9 +5,11 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 const JB_RATE=0.60, JB_UPPER=68100, JB_LOWER=66048, JB_WAIT=7;
@@ -24,17 +26,19 @@ export default function JoblessCalculator(){
   const [years,setYears]=useState(2);
   const [result,setResult]=useState<{daily:number;days:number;total:number;dailyAvg:number;cap:string}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys }=getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.age)setAge(+p.age);
     if(p.wage)setWage(+p.wage);
     if(p.years)setYears(+p.years);
+    setProfileFilled(profileKeys.filter(k => ['age', 'wage'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -50,13 +54,14 @@ export default function JoblessCalculator(){
     const days=joblessDays(years,age), total=daily*days;
     const cap=raw>JB_UPPER?'상한 적용':raw<JB_LOWER?'하한 적용':'';
     setResult({daily,days,total,dailyAvg,cap});
-    setParams({age,wage,years});
+    setParams({age,wage,years}, { primaryOutput: won(total) });
     scrollToResult();
   }
 
   return (<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/pension/jobless" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card>
       <SectionTitle num="1">퇴사·고용보험 정보</SectionTitle>
       <div className="mb-4">
@@ -113,6 +118,7 @@ export default function JoblessCalculator(){
       </div>
     )}
     {result && <NextStepCards from="/pension/jobless" outputs={{ wage, age }} />}
+    {result && <SavePrompt />}
     {result && <ShareButtons title="실업급여 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 구직급여를 계산해 드려요.</Card>}

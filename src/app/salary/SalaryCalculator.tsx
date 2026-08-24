@@ -10,10 +10,12 @@ import { won, fmtSalary } from '@/utils/format';
 import { netPay, type NetPayResult } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
 import NextStepCards from '@/components/NextStepCards';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 
 /* ── 연령대 구간 ── */
 const AGE5 = ['20~24', '25~29', '30~34', '35~39', '40~44', '45~49', '50~54', '55~59'] as const;
@@ -80,10 +82,11 @@ export default function SalaryCalculator() {
   });
   const [result, setResult] = useState<CalcResult | null>(null);
   const [autoCalc, setAutoCalc] = useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
-    const p = getParams();
+    const { params: p, profileKeys } = getParamsWithProfile();
     if (!Object.keys(p).length) return;
     setState(prev => ({
       ...prev,
@@ -92,6 +95,7 @@ export default function SalaryCalculator() {
       ...(p.nontax !== undefined ? { nontax: p.nontax === 'true' } : {}),
       ...(p.dependents ? { dependents: +p.dependents } : {}),
     }));
+    setProfileFilled(profileKeys.filter(k => ['age', 'salary', 'dependents'].includes(k)));
     setAutoCalc(true);
   }, []);
 
@@ -109,7 +113,7 @@ export default function SalaryCalculator() {
     const band = ageBand(state.age);
     const percentile = band ? calcPercentile(band, state.salary) : null;
     setResult({ pay, percentile, band });
-    setParams({ age: state.age, salary: state.salary, nontax: state.nontax, dependents: state.dependents });
+    setParams({ age: state.age, salary: state.salary, nontax: state.nontax, dependents: state.dependents }, { primaryOutput: `월 ${won(pay.netMonth)}` });
     scrollToResult();
   }
 
@@ -117,6 +121,7 @@ export default function SalaryCalculator() {
     <>
       <ChainBanner />
       <JourneyBreadcrumb currentHref="/salary" />
+      <ProfileBanner filledKeys={profileFilled} />
       <Card>
         <SectionTitle num="1">기본 정보</SectionTitle>
 
@@ -320,6 +325,7 @@ export default function SalaryCalculator() {
         </Card>
       )}
       {result && <NextStepCards from="/salary" outputs={{ salary: state.salary, age: state.age }} />}
+      <SavePrompt />
       {result && <ShareButtons title="연봉 분석 결과" />}
 
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">

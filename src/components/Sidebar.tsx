@@ -17,6 +17,10 @@ interface MenuItem {
 }
 
 const MENUS_KO: MenuItem[] = [
+  { href: '/history', ico: '📋', label: '계산 기록', sub: [
+    { label: '계산 기록', href: '/history' },
+    { label: '연결 지도', href: '/map' },
+  ]},
   { href: '/calc', ico: '🧮', label: '스마트 계산기', sub: [
     { label: '수식 입력 계산기', href: '/calc' }
   ]},

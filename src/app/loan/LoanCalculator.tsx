@@ -7,9 +7,11 @@ import ResultRow from '@/components/ResultRow';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 export default function LoanCalculator(){
@@ -19,18 +21,20 @@ export default function LoanCalculator(){
   const [grace,setGrace]=useState(0);
   const [result,setResult]=useState<{eq:{monthly:number;totalInt:number;total:number};pr:{first:number;last:number;totalInt:number;total:number};graceInt:number;saving:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys } = getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.amount)setAmount(+p.amount);
     if(p.rate)setRate(+p.rate);
     if(p.term)setTerm(+p.term);
     if(p.grace)setGrace(+p.grace);
+    setProfileFilled(profileKeys.filter(k => ['amount', 'rate', 'term'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -52,13 +56,14 @@ export default function LoanCalculator(){
     const prTotalInt=P*r*(payM+1)/2;
     const saving=eqTotalInt-prTotalInt;
     setResult({eq:{monthly:eqM,totalInt:eqTotalInt+graceInt,total:P+eqTotalInt+graceInt},pr:{first:prFirst,last:prLast,totalInt:prTotalInt+graceInt,total:P+prTotalInt+graceInt},graceInt,saving});
-    setParams({amount,rate,term,grace});
+    setParams({amount,rate,term,grace}, { primaryOutput: `월 ${won(eqM)}` });
     scrollToResult();
   }
 
   return(<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/loan" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card><SectionTitle num="1">대출 정보 입력</SectionTitle>
       <SliderInput
         label="대출 금액"
@@ -120,6 +125,7 @@ export default function LoanCalculator(){
       {grace>0&&<div className="text-xs text-[var(--sub)] text-center">거치기간 {grace}개월 이자: {won(result.graceInt)}</div>}
     </div>}
     {result && <NextStepCards from="/loan" outputs={{ amount }} />}
+    <SavePrompt />
     {result && <ShareButtons title="대출 상환 비교" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 상환 방식별 납입액을 비교해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">

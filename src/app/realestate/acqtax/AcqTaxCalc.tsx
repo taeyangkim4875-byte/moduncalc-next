@@ -5,9 +5,11 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 export default function AcqTaxCalc(){
@@ -17,18 +19,20 @@ export default function AcqTaxCalc(){
   const [area,setArea]=useState(85);
   const [result,setResult]=useState<{acqTax:number;nongTax:number;eduTax:number;total:number;rate:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys } = getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.price)setPrice(+p.price);
     if(p.houseType)setHouseType(p.houseType);
     if(p.houseCount)setHouseCount(+p.houseCount);
     if(p.area)setArea(+p.area);
+    setProfileFilled(profileKeys.filter(k => ['price'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -51,7 +55,7 @@ export default function AcqTaxCalc(){
     const nongTax=area<=85?0:Math.round(priceWon*0.002);
     const eduTax=Math.round(acqTax*0.1);
     setResult({acqTax,nongTax,eduTax,total:acqTax+nongTax+eduTax,rate});
-    setParams({price,houseType,houseCount,area});
+    setParams({price,houseType,houseCount,area}, { primaryOutput: won(acqTax+nongTax+eduTax) });
     scrollToResult();
   }
 
@@ -61,6 +65,7 @@ export default function AcqTaxCalc(){
   return(<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/realestate/acqtax" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card><SectionTitle num="1">매매 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">매매가격 <span className="text-xs text-[var(--sub)] font-medium ml-1">{price>=10000?`${Math.floor(price/10000)}억${price%10000?` ${(price%10000).toLocaleString()}만`:''}`:price.toLocaleString()+'만'}원</span></label>
@@ -90,6 +95,7 @@ export default function AcqTaxCalc(){
       </div>
     </div>}
     {result && <NextStepCards from="/realestate/acqtax" outputs={{ price }} />}
+    <SavePrompt />
     {result && <ShareButtons title="취득세 계산 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 취득세를 계산해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">

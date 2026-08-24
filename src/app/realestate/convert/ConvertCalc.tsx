@@ -5,9 +5,11 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 export default function ConvertCalc(){
@@ -18,19 +20,21 @@ export default function ConvertCalc(){
   const [rate,setRate]=useState(4.5);
   const [result,setResult]=useState<{value:number;label:string;annual:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys } = getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.dir)setDir(p.dir as 'j2m'|'m2j');
     if(p.jeonse)setJeonse(+p.jeonse);
     if(p.deposit)setDeposit(+p.deposit);
     if(p.rent)setRent(+p.rent);
     if(p.rate)setRate(+p.rate);
+    setProfileFilled(profileKeys.filter(k => ['jeonse','deposit'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -44,13 +48,13 @@ export default function ConvertCalc(){
     if(dir==='j2m'){
       const monthly=(jeonse-deposit)*10000*rate/100/12;
       setResult({value:monthly,label:'월세',annual:monthly*12});
-      setParams({dir,jeonse,deposit,rate});
+      setParams({dir,jeonse,deposit,rate}, { primaryOutput: won(monthly) });
       scrollToResult();
     }else{
       const r=rate>0?rate/100:0.01;
       const total=deposit*10000+rent*10000*12/r;
       setResult({value:total,label:'전세 환산금',annual:rent*10000*12});
-      setParams({dir,deposit,rent,rate});
+      setParams({dir,deposit,rent,rate}, { primaryOutput: won(total) });
       scrollToResult();
     }
   }
@@ -58,6 +62,7 @@ export default function ConvertCalc(){
   return(<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/realestate/convert" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card><SectionTitle num="1">전환 정보</SectionTitle>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">전환 방향</label>
         <div className="flex gap-2">
@@ -81,6 +86,7 @@ export default function ConvertCalc(){
       </div>
     </div>}
     {result && <NextStepCards from="/realestate/convert" outputs={{ jeonse }} />}
+    <SavePrompt />
     {result && <ShareButtons title="전월세 전환 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 전환 결과를 알려드려요.</Card>}
     <Card>

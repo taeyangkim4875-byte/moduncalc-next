@@ -4,9 +4,11 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 export default function BmrCalculator(){
@@ -17,19 +19,21 @@ export default function BmrCalculator(){
   const [activity,setActivity]=useState(1.55);
   const [result,setResult]=useState<{bmr:number;tdee:number;diet:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys }=getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.gender)setGender(p.gender as 'male'|'female');
     if(p.age)setAge(+p.age);
     if(p.height)setHeight(+p.height);
     if(p.weight)setWeight(+p.weight);
     if(p.activity)setActivity(+p.activity);
+    setProfileFilled(profileKeys.filter(k => ['height','weight','age'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -43,13 +47,14 @@ export default function BmrCalculator(){
     const bmr=gender==='male'?10*weight+6.25*height-5*age+5:10*weight+6.25*height-5*age-161;
     const tdee=bmr*activity;
     setResult({bmr:Math.round(bmr),tdee:Math.round(tdee),diet:Math.round(tdee-500)});
-    setParams({gender,age,height,weight,activity});
+    setParams({gender,age,height,weight,activity}, { primaryOutput: `${Math.round(bmr)} kcal` });
     scrollToResult();
   }
 
   return(<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/health/bmr" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card><SectionTitle num="1">신체 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">성별</label>
@@ -85,6 +90,7 @@ export default function BmrCalculator(){
       </div>
     </div>}
     {result && <NextStepCards from="/health/bmr" outputs={{ height, weight }} />}
+    <SavePrompt />
     {result && <ShareButtons title="칼로리 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 칼로리를 계산해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">

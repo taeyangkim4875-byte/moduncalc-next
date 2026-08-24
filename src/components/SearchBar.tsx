@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { searchCalcs } from '@/data/calculators';
+import ProfilePanel from './ProfilePanel';
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
@@ -63,7 +64,8 @@ export default function SearchBar() {
 
   return (
     <div className="relative mb-4">
-      <div className="relative">
+      <div className="flex gap-2">
+      <div className="relative flex-1">
         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[var(--sub)] text-base pointer-events-none">🔍</span>
         <input
           ref={inputRef}
@@ -81,6 +83,8 @@ export default function SearchBar() {
             className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--sub)] text-sm cursor-pointer bg-transparent border-0 hover:text-[var(--ink)]"
           >✕</button>
         )}
+      </div>
+      <ProfilePanel />
       </div>
 
       {showResults && (

@@ -5,9 +5,11 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6370000, NPS_FLOOR=400000;
@@ -19,17 +21,19 @@ export default function PensionCalculator(){
   const [years,setYears]=useState(30);
   const [result,setResult]=useState<{monthly:number;basicYear:number;replaceRate:number;startAge:number;birthYear:number;tooShort:boolean}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys }=getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.age)setAge(+p.age);
     if(p.income)setIncome(+p.income);
     if(p.years)setYears(+p.years);
+    setProfileFilled(profileKeys.filter(k => ['age', 'income', 'years'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -49,13 +53,14 @@ export default function PensionCalculator(){
     const birthYear=2026-age;
     const startAge=pensionAge(birthYear);
     setResult({monthly,basicYear,replaceRate,startAge,birthYear,tooShort:years<10});
-    setParams({age,income,years});
+    setParams({age,income,years}, { primaryOutput: `${won(monthly)}/월` });
     scrollToResult();
   }
 
   return (<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/pension/nps" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card>
       <SectionTitle num="1">가입 정보</SectionTitle>
       <div className="mb-4">
@@ -109,6 +114,7 @@ export default function PensionCalculator(){
       </div>
     )}
     {result && <NextStepCards from="/pension/nps" outputs={{ income, age }} />}
+    {result && <SavePrompt />}
     {result && <ShareButtons title="국민연금 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 월 수령액을 계산해 드려요.</Card>}

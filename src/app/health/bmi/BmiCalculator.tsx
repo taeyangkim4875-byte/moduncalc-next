@@ -4,9 +4,11 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 const CATEGORIES=[{max:18.5,label:'저체중',color:'#3182F6'},{max:23,label:'정상',color:'#00C271'},{max:25,label:'과체중',color:'#F59E0B'},{max:30,label:'비만 1단계',color:'#E5484D'},{max:35,label:'비만 2단계',color:'#E5484D'},{max:Infinity,label:'고도비만',color:'#C62828'}];
@@ -16,16 +18,18 @@ export default function BmiCalculator(){
   const [weight,setWeight]=useState(70);
   const [result,setResult]=useState<{bmi:number;category:string;color:string;normalRange:[number,number];standard:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys } = getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.height)setHeight(+p.height);
     if(p.weight)setWeight(+p.weight);
+    setProfileFilled(profileKeys.filter(k => ['height', 'weight'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -42,13 +46,14 @@ export default function BmiCalculator(){
     const normalRange:[number,number]=[Math.round(18.5*h*h*10)/10,Math.round(22.9*h*h*10)/10];
     const standard=Math.round((height-100)*0.9*10)/10;
     setResult({bmi,category:cat.label,color:cat.color,normalRange,standard});
-    setParams({height,weight});
+    setParams({height,weight}, { primaryOutput: `BMI ${bmi.toFixed(1)}` });
     scrollToResult();
   }
 
   return(<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/health/bmi" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card><SectionTitle num="1">신체 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">키 <span className="text-xs text-[var(--sub)] font-medium ml-1">{height}cm</span></label>
@@ -76,6 +81,7 @@ export default function BmiCalculator(){
     </div>}
     {result && <NextStepCards from="/health/bmi" outputs={{ height, weight }} />}
     {result && <NextStepCards from="/health/bmi" outputs={{ height, weight }} />}
+    <SavePrompt />
     {result && <ShareButtons title="BMI 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 BMI를 계산해 드려요.</Card>}
     <Card>

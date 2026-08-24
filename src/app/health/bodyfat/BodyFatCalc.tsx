@@ -4,9 +4,11 @@ import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
-import { getParams, setParams } from '@/utils/params';
+import { getParamsWithProfile, setParams } from '@/utils/params';
 import ChainBanner from '@/components/ChainBanner';
 import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import ProfileBanner from '@/components/ProfileBanner';
+import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 
 const MALE_CATS=[{min:2,max:5,label:'필수지방',color:'#3182F6'},{min:6,max:13,label:'운동선수',color:'#00C271'},{min:14,max:17,label:'보통',color:'#22C55E'},{min:18,max:24,label:'평균',color:'#F59E0B'},{min:25,max:Infinity,label:'비만',color:'#E5484D'}];
@@ -21,13 +23,14 @@ export default function BodyFatCalc(){
   const [weight,setWeight]=useState(75);
   const [result,setResult]=useState<{bf:number;category:string;color:string;leanMass:number;fatMass:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
+  const [profileFilled, setProfileFilled] = useState<string[]>([]);
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
      effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(()=>{
-    const p=getParams();
+    const { params: p, profileKeys }=getParamsWithProfile();
     if(!Object.keys(p).length)return;
     if(p.gender)setGender(p.gender as 'male'|'female');
     if(p.height)setHeight(+p.height);
@@ -35,6 +38,7 @@ export default function BodyFatCalc(){
     if(p.neck)setNeck(+p.neck);
     if(p.hip)setHip(+p.hip);
     if(p.weight)setWeight(+p.weight);
+    setProfileFilled(profileKeys.filter(k => ['height','weight'].includes(k)));
     setAutoCalc(true);
   },[]);
 
@@ -61,13 +65,14 @@ export default function BodyFatCalc(){
     const fatMass=Math.round(wt*bf/100*10)/10;
     const leanMass=Math.round((wt-fatMass)*10)/10;
     setResult({bf:Math.round(bf*10)/10,category:cat.label,color:cat.color,leanMass,fatMass});
-    setParams({gender,height,waist,neck,hip,weight});
+    setParams({gender,height,waist,neck,hip,weight}, { primaryOutput: `${Math.round(bf*10)/10}%` });
     scrollToResult();
   }
 
   return(<>
     <ChainBanner />
     <JourneyBreadcrumb currentHref="/health/bodyfat" />
+    <ProfileBanner filledKeys={profileFilled} />
     <Card><SectionTitle num="1">신체 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">성별</label>
@@ -115,6 +120,7 @@ export default function BodyFatCalc(){
       </div>
     </div>}
     {result && <NextStepCards from="/health/bodyfat" outputs={{ height, weight }} />}
+    <SavePrompt />
     {result && <ShareButtons title="체지방률 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 체지방률을 계산해 드려요.</Card>}
     <Card>
