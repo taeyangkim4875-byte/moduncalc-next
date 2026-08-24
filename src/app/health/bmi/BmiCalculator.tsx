@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
@@ -23,6 +23,7 @@ export default function BmiCalculator(){
   const [result,setResult]=useState<{bmi:number;category:string;color:string;normalRange:[number,number];standard:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
   const [profileFilled, setProfileFilled] = useState<string[]>([]);
+  const calcSource = useRef<'manual'|'chain'|'profile'>('manual');
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
@@ -36,6 +37,7 @@ export default function BmiCalculator(){
     const filled = profileKeys.filter(k => ['height', 'weight'].includes(k));
     setProfileFilled(filled);
     trackPrefillUsed(filled);
+    calcSource.current = filled.length > 0 ? 'profile' : 'chain';
     setAutoCalc(true);
   },[]);
 
@@ -53,7 +55,8 @@ export default function BmiCalculator(){
     const standard=Math.round((height-100)*0.9*10)/10;
     setResult({bmi,category:cat.label,color:cat.color,normalRange,standard});
     setParams({height,weight}, { primaryOutput: `BMI ${bmi.toFixed(1)}` });
-    trackCalcComplete('bmi', `BMI ${bmi.toFixed(1)}`);
+    trackCalcComplete('bmi', `BMI ${bmi.toFixed(1)}`, calcSource.current);
+    calcSource.current = 'manual';
     scrollToResult();
   }
 

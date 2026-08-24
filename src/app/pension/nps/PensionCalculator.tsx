@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
@@ -26,6 +26,7 @@ export default function PensionCalculator(){
   const [result,setResult]=useState<{monthly:number;basicYear:number;replaceRate:number;startAge:number;birthYear:number;tooShort:boolean}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
   const [profileFilled, setProfileFilled] = useState<string[]>([]);
+  const calcSource = useRef<'manual'|'chain'|'profile'>('manual');
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
@@ -40,6 +41,7 @@ export default function PensionCalculator(){
     const filled = profileKeys.filter(k => ['age', 'income', 'years'].includes(k));
     setProfileFilled(filled);
     trackPrefillUsed(filled);
+    calcSource.current = filled.length > 0 ? 'profile' : 'chain';
     setAutoCalc(true);
   },[]);
 
@@ -60,7 +62,8 @@ export default function PensionCalculator(){
     const startAge=pensionAge(birthYear);
     setResult({monthly,basicYear,replaceRate,startAge,birthYear,tooShort:years<10});
     setParams({age,income,years}, { primaryOutput: `${won(monthly)}/월` });
-    trackCalcComplete('pension-nps', `${won(monthly)}/월`);
+    trackCalcComplete('pension-nps', `${won(monthly)}/월`, calcSource.current);
+    calcSource.current = 'manual';
     scrollToResult();
   }
 

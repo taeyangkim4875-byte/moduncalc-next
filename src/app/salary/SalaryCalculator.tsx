@@ -87,6 +87,7 @@ export default function SalaryCalculator() {
   const [result, setResult] = useState<CalcResult | null>(null);
   const [autoCalc, setAutoCalc] = useState(false);
   const [profileFilled, setProfileFilled] = useState<string[]>([]);
+  const calcSource = useRef<'manual'|'chain'|'profile'>('manual');
 
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
@@ -102,6 +103,7 @@ export default function SalaryCalculator() {
     const filled = profileKeys.filter(k => ['age', 'salary', 'dependents'].includes(k));
     setProfileFilled(filled);
     trackPrefillUsed(filled);
+    calcSource.current = filled.length > 0 ? 'profile' : 'chain';
     setAutoCalc(true);
   }, []);
 
@@ -120,7 +122,8 @@ export default function SalaryCalculator() {
     const percentile = band ? calcPercentile(band, state.salary) : null;
     setResult({ pay, percentile, band });
     setParams({ age: state.age, salary: state.salary, nontax: state.nontax, dependents: state.dependents }, { primaryOutput: `월 ${won(pay.netMonth)}` });
-    trackCalcComplete('salary', `월 ${won(pay.netMonth)}`);
+    trackCalcComplete('salary', `월 ${won(pay.netMonth)}`, calcSource.current);
+    calcSource.current = 'manual';
     scrollToResult();
   }
 

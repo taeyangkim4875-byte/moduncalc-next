@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
@@ -24,6 +24,7 @@ export default function AcqTaxCalc(){
   const [result,setResult]=useState<{acqTax:number;nongTax:number;eduTax:number;total:number;rate:number}|null>(null);
   const [autoCalc,setAutoCalc]=useState(false);
   const [profileFilled, setProfileFilled] = useState<string[]>([]);
+  const calcSource = useRef<'manual'|'chain'|'profile'>('manual');
 
   /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
      브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
@@ -39,6 +40,7 @@ export default function AcqTaxCalc(){
     const filled = profileKeys.filter(k => ['price'].includes(k));
     setProfileFilled(filled);
     trackPrefillUsed(filled);
+    calcSource.current = filled.length > 0 ? 'profile' : 'chain';
     setAutoCalc(true);
   },[]);
 
@@ -62,7 +64,8 @@ export default function AcqTaxCalc(){
     const eduTax=Math.round(acqTax*0.1);
     setResult({acqTax,nongTax,eduTax,total:acqTax+nongTax+eduTax,rate});
     setParams({price,houseType,houseCount,area}, { primaryOutput: won(acqTax+nongTax+eduTax) });
-    trackCalcComplete('acqtax', won(acqTax+nongTax+eduTax));
+    trackCalcComplete('acqtax', won(acqTax+nongTax+eduTax), calcSource.current);
+    calcSource.current = 'manual';
     scrollToResult();
   }
 
