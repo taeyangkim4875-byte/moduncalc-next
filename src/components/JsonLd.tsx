@@ -27,6 +27,20 @@ export function FaqJsonLd({ items }: { items: { q: string; a: string }[] }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
 }
 
+export function BreadcrumbJsonLd({ items }: { items: { name: string; href: string }[] }) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: item.name,
+      item: `https://moduncalc.com${item.href}`,
+    })),
+  };
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />;
+}
+
 export function CalculatorJsonLd({ name, description, url }: { name: string; description: string; url: string }) {
   const data = {
     '@context': 'https://schema.org',

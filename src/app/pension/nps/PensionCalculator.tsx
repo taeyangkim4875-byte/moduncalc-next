@@ -12,6 +12,8 @@ import ProfileBanner from '@/components/ProfileBanner';
 import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 import ModeToggle from '@/components/ModeToggle';
+import TrustBadge from '@/components/TrustBadge';
+import EmbedCode from '@/components/EmbedCode';
 
 const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6370000, NPS_FLOOR=400000;
 function pensionAge(by:number){if(by<=1952)return 60;if(by<=1956)return 61;if(by<=1960)return 62;if(by<=1964)return 63;if(by<=1968)return 64;return 65;}
@@ -63,6 +65,7 @@ export default function PensionCalculator(){
     <JourneyBreadcrumb currentHref="/pension/nps" />
     <ProfileBanner filledKeys={profileFilled} />
     <ModeToggle forwardHref="/pension/nps" reverseHref="/pension/nps/reverse" mode="forward" forwardLabel="가입기간 → 연금액" reverseLabel="연금액 → 필요기간" />
+    <TrustBadge />
     <Card>
       <SectionTitle num="1">가입 정보</SectionTitle>
       <div className="mb-4">
@@ -118,6 +121,7 @@ export default function PensionCalculator(){
     {result && <NextStepCards from="/pension/nps" outputs={{ income, age }} />}
     {result && <SavePrompt />}
     {result && <ShareButtons title="국민연금 계산 결과" />}
+    <EmbedCode href="/pension/nps" />
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 월 수령액을 계산해 드려요.</Card>}
 

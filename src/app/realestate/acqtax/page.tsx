@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import { ogImageUrl } from "@/utils/og";
 import { won } from "@/utils/format";
@@ -53,6 +53,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 export default function Page() {
   return (
     <PageLayout eyebrow="2026 세율 기준" title="취득세 계산기" description="주택 매매 시 납부할 취득세를 계산해 드려요.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '부동산', href: '/realestate' }, { name: '취득세', href: '/realestate/acqtax' }]} />
       <CalculatorJsonLd name="취득세 계산기" description="주택 매매 시 납부할 취득세, 농어촌특별세, 지방교육세를 계산하세요." url="https://moduncalc.com/realestate/acqtax" />
       <FaqJsonLd items={[{q:"생애 첫 주택 취득세 감면이 있나요?",a:"생애최초로 주택을 취득하는 경우 요건을 충족하면 취득세를 최대 200만원까지 감면받을 수 있습니다. 소득·주택가액 요건이 적용되며 감면 요건은 수시로 바뀌므로 계약 전 관할 시군구청에 확인해야 합니다."},{q:"다주택자 중과세율은 어떻게 되나요?",a:"조정대상지역 2주택은 8%, 3주택 이상은 12%가 적용됩니다."},{q:"전용면적 85㎡ 이하이면 어떤 혜택이 있나요?",a:"농어촌특별세 0.2%가 면제됩니다."}]} />
       <AcqTaxCalc />

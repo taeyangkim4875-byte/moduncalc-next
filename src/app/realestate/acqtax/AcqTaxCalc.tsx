@@ -12,6 +12,8 @@ import ProfileBanner from '@/components/ProfileBanner';
 import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 import ModeToggle from '@/components/ModeToggle';
+import TrustBadge from '@/components/TrustBadge';
+import EmbedCode from '@/components/EmbedCode';
 
 export default function AcqTaxCalc(){
   const [price,setPrice]=useState(50000);
@@ -68,6 +70,7 @@ export default function AcqTaxCalc(){
     <JourneyBreadcrumb currentHref="/realestate/acqtax" />
     <ProfileBanner filledKeys={profileFilled} />
     <ModeToggle forwardHref="/realestate/acqtax" reverseHref="/realestate/acqtax/reverse" mode="forward" forwardLabel="매매가 → 취득세" reverseLabel="취득세 → 매수한도" />
+    <TrustBadge />
     <Card><SectionTitle num="1">매매 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">매매가격 <span className="text-xs text-[var(--sub)] font-medium ml-1">{price>=10000?`${Math.floor(price/10000)}억${price%10000?` ${(price%10000).toLocaleString()}만`:''}`:price.toLocaleString()+'만'}원</span></label>
@@ -99,6 +102,7 @@ export default function AcqTaxCalc(){
     {result && <NextStepCards from="/realestate/acqtax" outputs={{ price }} />}
     <SavePrompt />
     {result && <ShareButtons title="취득세 계산 결과" />}
+    <EmbedCode href="/realestate/acqtax" />
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 취득세를 계산해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
       <div className="bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">참고용 추정치입니다. 정확한 세액은 관할 지자체에 확인하세요.</div>

@@ -10,7 +10,16 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+
+  if (pathname.startsWith('/embed')) {
+    response.headers.set('X-Frame-Options', 'ALLOWALL');
+    response.headers.set('Content-Security-Policy', "frame-ancestors *");
+  } else {
+    response.headers.set('X-Frame-Options', 'SAMEORIGIN');
+  }
+
+  return response;
 }
 
 export const config = {

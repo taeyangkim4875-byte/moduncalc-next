@@ -14,6 +14,8 @@ import ProfileBanner from '@/components/ProfileBanner';
 import SavePrompt from '@/components/SavePrompt';
 import NextStepCards from '@/components/NextStepCards';
 import ModeToggle from '@/components/ModeToggle';
+import TrustBadge from '@/components/TrustBadge';
+import EmbedCode from '@/components/EmbedCode';
 
 export default function LoanCalculator(){
   const [amount,setAmount]=useState(30000);
@@ -66,6 +68,7 @@ export default function LoanCalculator(){
     <JourneyBreadcrumb currentHref="/loan" />
     <ProfileBanner filledKeys={profileFilled} />
     <ModeToggle forwardHref="/loan" reverseHref="/loan/reverse" mode="forward" forwardLabel="대출금 → 월 상환액" reverseLabel="월 상환액 → 대출 한도" />
+    <TrustBadge />
     <Card><SectionTitle num="1">대출 정보 입력</SectionTitle>
       <SliderInput
         label="대출 금액"
@@ -129,6 +132,7 @@ export default function LoanCalculator(){
     {result && <NextStepCards from="/loan" outputs={{ amount }} />}
     <SavePrompt />
     {result && <ShareButtons title="대출 상환 비교" />}
+    <EmbedCode href="/loan" />
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 상환 방식별 납입액을 비교해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
       <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">실제 대출 금리·조건은 금융기관마다 다릅니다. 참고용으로만 활용하세요.</div>
