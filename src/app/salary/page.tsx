@@ -2,14 +2,44 @@ import type { Metadata } from 'next';
 import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd } from '@/components/JsonLd';
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
+import { ogImageUrl } from '@/utils/og';
+import { won, fmtSalary } from '@/utils/format';
+import { netPay } from '@/utils/tax';
 import SalaryCalculator from './SalaryCalculator';
 
-export const metadata: Metadata = {
-  title: '연봉 실수령액 계산기 · 2026',
-  description: '내 연봉 실수령액은 얼마? 연봉 입력하면 4대보험·소득세 공제 후 월 실수령액과 상위 몇 %인지 바로 확인. 2026 최신 요율.',
-  alternates: { canonical: "https://moduncalc.com/salary" },
-  openGraph: { title: "2026 연봉 실수령액 계산기 - 4대보험 공제 후 실수령액", description: "연봉만 입력하면 실수령액 + 동 연령대 백분위 바로 확인. 2026 4대보험 요율 반영.", url: "https://moduncalc.com/salary" },
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const sp = await searchParams;
+  const salary = sp.salary ? +sp.salary : 0;
+  const dependents = sp.dependents ? +sp.dependents : 1;
+  const nontax = sp.nontax !== 'false';
+
+  const base: Metadata = {
+    title: '연봉 실수령액 계산기 · 2026',
+    description: '내 연봉 실수령액은 얼마? 연봉 입력하면 4대보험·소득세 공제 후 월 실수령액과 상위 몇 %인지 바로 확인. 2026 최신 요율.',
+    alternates: { canonical: "https://moduncalc.com/salary" },
+    openGraph: {
+      title: "2026 연봉 실수령액 계산기 - 4대보험 공제 후 실수령액",
+      description: "연봉만 입력하면 실수령액 + 동 연령대 백분위 바로 확인. 2026 4대보험 요율 반영.",
+      url: "https://moduncalc.com/salary",
+    },
+  };
+
+  if (salary > 0) {
+    const pay = netPay(salary, dependents, nontax);
+    const resultText = `월 ${won(pay.netMonth)}`;
+    const inputsText = `연봉 ${fmtSalary(salary)}원`;
+    base.openGraph = {
+      ...base.openGraph,
+      images: [{ url: ogImageUrl({ title: '연봉 실수령액 계산기', result: resultText, inputs: inputsText, desc: '4대보험·소득세 공제 후' }), width: 1200, height: 630 }],
+    };
+  }
+
+  return base;
+}
 
 export default function SalaryPage() {
   return (

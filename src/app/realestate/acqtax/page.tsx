@@ -2,14 +2,53 @@ import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { ogImageUrl } from "@/utils/og";
+import { won } from "@/utils/format";
 import AcqTaxCalc from "./AcqTaxCalc";
 
-export const metadata: Metadata = {
-  title: "취득세 계산기 - 주택 매매 취득세·농특세·교육세",
-  description: "집 사면 취득세 얼마? 매매가·주택 수 입력하면 취득세+농특세+교육세 바로 계산.",
-  alternates: { canonical: "https://moduncalc.com/realestate/acqtax" },
-  openGraph: { title: "취득세 계산기 - 주택 매매 취득세·농특세·교육세 (2026)", description: "주택 매매가와 주택 수를 입력하면 취득세·농어촌특별세·지방교육세를 자동 계산. 다주택 중과세율 반영.", url: "https://moduncalc.com/realestate/acqtax" },
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const sp = await searchParams;
+  const price = sp.price ? +sp.price : 0;
+  const houseCount = sp.houseCount ? +sp.houseCount : 1;
+  const area = sp.area ? +sp.area : 85;
+
+  const base: Metadata = {
+    title: "취득세 계산기 - 주택 매매 취득세·농특세·교육세",
+    description: "집 사면 취득세 얼마? 매매가·주택 수 입력하면 취득세+농특세+교육세 바로 계산.",
+    alternates: { canonical: "https://moduncalc.com/realestate/acqtax" },
+    openGraph: {
+      title: "취득세 계산기 - 주택 매매 취득세·농특세·교육세 (2026)",
+      description: "주택 매매가와 주택 수를 입력하면 취득세·농어촌특별세·지방교육세를 자동 계산. 다주택 중과세율 반영.",
+      url: "https://moduncalc.com/realestate/acqtax",
+    },
+  };
+
+  if (price > 0) {
+    const priceWon = price * 10000;
+    let rate: number;
+    if (houseCount === 1) {
+      if (price <= 60000) rate = 0.01;
+      else if (price <= 90000) { const r = (price / 10000 * 2 / 3 - 3) / 100; rate = Math.max(0.01, Math.min(0.03, r)); }
+      else rate = 0.03;
+    } else if (houseCount === 2) rate = 0.08;
+    else rate = 0.12;
+    const acqTax = Math.round(priceWon * rate);
+    const nongTax = area <= 85 ? 0 : Math.round(priceWon * 0.002);
+    const eduTax = Math.round(acqTax * 0.1);
+    const total = acqTax + nongTax + eduTax;
+
+    base.openGraph = {
+      ...base.openGraph,
+      images: [{ url: ogImageUrl({ title: '취득세 계산기', result: won(total), inputs: `매매가 ${price.toLocaleString()}만원 · ${houseCount}주택` }), width: 1200, height: 630 }],
+    };
+  }
+
+  return base;
+}
 
 export default function Page() {
   return (

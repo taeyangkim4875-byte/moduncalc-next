@@ -1,14 +1,46 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { ogImageUrl } from "@/utils/og";
+import { won } from "@/utils/format";
 import PensionCalculator from "./PensionCalculator";
 
-export const metadata: Metadata = {
-  title: "2026 국민연금 계산기 - 예상 월 수령액",
-  description: "내 국민연금 월 얼마 받을까? 소득·가입기간 입력하면 예상 수령액 바로 계산. 2026 연금개혁 반영.",
-  alternates: { canonical: "https://moduncalc.com/pension/nps" },
-  openGraph: { title: "2026 국민연금 계산기 - 예상 월 수령액 조회", description: "현재 소득과 가입기간으로 노후 국민연금 예상 수령액을 계산. 2026 연금개혁 보험료율 9.5% 반영.", url: "https://moduncalc.com/pension/nps" },
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const sp = await searchParams;
+  const income = sp.income ? +sp.income : 0;
+  const years = sp.years ? +sp.years : 0;
+
+  const base: Metadata = {
+    title: "2026 국민연금 계산기 - 예상 월 수령액",
+    description: "내 국민연금 월 얼마 받을까? 소득·가입기간 입력하면 예상 수령액 바로 계산. 2026 연금개혁 반영.",
+    alternates: { canonical: "https://moduncalc.com/pension/nps" },
+    openGraph: {
+      title: "2026 국민연금 계산기 - 예상 월 수령액 조회",
+      description: "현재 소득과 가입기간으로 노후 국민연금 예상 수령액을 계산. 2026 연금개혁 보험료율 9.5% 반영.",
+      url: "https://moduncalc.com/pension/nps",
+    },
+  };
+
+  if (income > 0 && years >= 10) {
+    const NPS_CONST = 1.29, NPS_A = 3193511, NPS_CAP = 6370000, NPS_FLOOR = 400000;
+    const B = Math.min(Math.max(income * 10000, NPS_FLOOR), NPS_CAP);
+    const n = Math.max(0, (years - 20)) * 12;
+    const baseRatio = Math.min(years, 20) / 20;
+    const basicYear = NPS_CONST * (NPS_A + B) * baseRatio * (1 + 0.05 * n / 12);
+    const monthly = basicYear / 12;
+
+    base.openGraph = {
+      ...base.openGraph,
+      images: [{ url: ogImageUrl({ title: '국민연금 계산기', result: `월 ${won(monthly)}`, inputs: `월 소득 ${income}만원 · ${years}년 가입` }), width: 1200, height: 630 }],
+    };
+  }
+
+  return base;
+}
 
 export default function Page() {
   return (

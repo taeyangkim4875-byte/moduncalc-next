@@ -2,14 +2,46 @@ import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { ogImageUrl } from "@/utils/og";
+import { won } from "@/utils/format";
 import LoanCalculator from "./LoanCalculator";
 
-export const metadata: Metadata = {
-  title: "대출 이자 계산기 - 원리금균등·원금균등 상환",
-  description: "대출 월 납입액 얼마? 원리금균등 vs 원금균등 비교, 총 이자 차이까지 한눈에. 거치기간 포함.",
-  alternates: { canonical: "https://moduncalc.com/loan" },
-  openGraph: { title: "대출 이자 계산기 - 원리금균등 vs 원금균등 비교 (2026)", description: "대출 금액·금리·기간 입력하면 월 납입액과 총 이자를 원리금균등·원금균등으로 비교. 거치기간 포함.", url: "https://moduncalc.com/loan" },
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
+
+export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
+  const sp = await searchParams;
+  const amount = sp.amount ? +sp.amount : 0;
+  const rate = sp.rate ? +sp.rate : 0;
+  const term = sp.term ? +sp.term : 0;
+
+  const base: Metadata = {
+    title: "대출 이자 계산기 - 원리금균등·원금균등 상환",
+    description: "대출 월 납입액 얼마? 원리금균등 vs 원금균등 비교, 총 이자 차이까지 한눈에. 거치기간 포함.",
+    alternates: { canonical: "https://moduncalc.com/loan" },
+    openGraph: {
+      title: "대출 이자 계산기 - 원리금균등 vs 원금균등 비교 (2026)",
+      description: "대출 금액·금리·기간 입력하면 월 납입액과 총 이자를 원리금균등·원금균등으로 비교. 거치기간 포함.",
+      url: "https://moduncalc.com/loan",
+    },
+  };
+
+  if (amount > 0 && rate > 0 && term > 0) {
+    const P = amount * 10000;
+    const r = rate / 100 / 12;
+    const n = term * 12;
+    const monthly = r > 0 ? P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1) : P / n;
+    const resultText = `월 ${won(monthly)}`;
+    const inputsText = `${amount.toLocaleString()}만원 · 연 ${rate}% · ${term}년`;
+    base.openGraph = {
+      ...base.openGraph,
+      images: [{ url: ogImageUrl({ title: '대출 이자 계산기', result: resultText, inputs: inputsText, desc: '원리금균등 월 상환액' }), width: 1200, height: 630 }],
+    };
+  }
+
+  return base;
+}
 
 export default function Page() {
   return (

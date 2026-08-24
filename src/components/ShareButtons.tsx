@@ -11,12 +11,14 @@ export default function ShareButtons({ title, resultId = 'calc-result' }: ShareB
   const [copied, setCopied] = useState(false);
   const [saving, setSaving] = useState(false);
 
+  const getShareUrl = useCallback(() => window.location.href, []);
+
   const copyLink = useCallback(async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href);
+      await navigator.clipboard.writeText(getShareUrl());
     } catch {
       const input = document.createElement('input');
-      input.value = window.location.href;
+      input.value = getShareUrl();
       document.body.appendChild(input);
       input.select();
       document.execCommand('copy');
@@ -24,7 +26,18 @@ export default function ShareButtons({ title, resultId = 'calc-result' }: ShareB
     }
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  }, []);
+  }, [getShareUrl]);
+
+  const nativeShare = useCallback(async () => {
+    try {
+      await navigator.share({
+        title: `${title} | 모든 계산기`,
+        url: getShareUrl(),
+      });
+    } catch {
+      /* user cancelled or not supported */
+    }
+  }, [title, getShareUrl]);
 
   const saveImage = useCallback(async () => {
     const el = document.getElementById(resultId);
@@ -48,6 +61,8 @@ export default function ShareButtons({ title, resultId = 'calc-result' }: ShareB
     setSaving(false);
   }, [resultId, title]);
 
+  const hasNativeShare = typeof navigator !== 'undefined' && !!navigator.share;
+
   return (
     <div className="flex gap-2 mt-3 mb-2">
       <button onClick={copyLink} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-[1.5px] border-[var(--line)] bg-white text-[13px] font-bold text-[var(--ink)] cursor-pointer transition-all hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[.97]">
@@ -56,6 +71,11 @@ export default function ShareButtons({ title, resultId = 'calc-result' }: ShareB
       <button onClick={saveImage} disabled={saving} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-[1.5px] border-[var(--line)] bg-white text-[13px] font-bold text-[var(--ink)] cursor-pointer transition-all hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[.97] disabled:opacity-50">
         {saving ? '저장 중...' : '📷 이미지 저장'}
       </button>
+      {hasNativeShare && (
+        <button onClick={nativeShare} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-[1.5px] border-[var(--line)] bg-white text-[13px] font-bold text-[var(--ink)] cursor-pointer transition-all hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[.97]">
+          📤 공유
+        </button>
+      )}
     </div>
   );
 }
