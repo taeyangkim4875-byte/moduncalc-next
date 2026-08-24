@@ -1,3 +1,5 @@
+import { trackProfileSave } from '@/utils/analytics';
+
 const STORAGE_KEY = 'modun_profile';
 const SCHEMA_VERSION = 1;
 const STALE_MS = 6 * 30 * 24 * 60 * 60 * 1000; // ~6 months
@@ -75,6 +77,7 @@ export function saveProfile(
     };
   }
   write(store);
+  trackProfileSave();
 }
 
 export function getProfileValues(): Record<string, ProfileEntry> {

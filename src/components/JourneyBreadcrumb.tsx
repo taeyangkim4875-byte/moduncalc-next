@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { getCalc } from '@/data/calculators';
 import { getChainLinks } from '@/data/chains';
+import { trackJourneyDepth } from '@/utils/analytics';
 
 interface JourneyStep {
   href: string;
@@ -71,6 +72,9 @@ export default function JourneyBreadcrumb({
 
     saveJourney(updated);
     setJourney(updated);
+    if (updated.length >= 2) {
+      trackJourneyDepth(updated.length, updated.map(s => s.href).join(' → '));
+    }
   }, [currentHref]);
 
   if (journey.length < 2) return null;

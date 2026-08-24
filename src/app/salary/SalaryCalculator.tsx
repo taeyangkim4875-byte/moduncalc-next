@@ -19,6 +19,7 @@ import SavePrompt from '@/components/SavePrompt';
 import ModeToggle from '@/components/ModeToggle';
 import TrustBadge from '@/components/TrustBadge';
 import EmbedCode from '@/components/EmbedCode';
+import { trackCalcComplete, trackPrefillUsed } from '@/utils/analytics';
 
 /* ── 연령대 구간 ── */
 const AGE5 = ['20~24', '25~29', '30~34', '35~39', '40~44', '45~49', '50~54', '55~59'] as const;
@@ -98,7 +99,9 @@ export default function SalaryCalculator() {
       ...(p.nontax !== undefined ? { nontax: p.nontax === 'true' } : {}),
       ...(p.dependents ? { dependents: +p.dependents } : {}),
     }));
-    setProfileFilled(profileKeys.filter(k => ['age', 'salary', 'dependents'].includes(k)));
+    const filled = profileKeys.filter(k => ['age', 'salary', 'dependents'].includes(k));
+    setProfileFilled(filled);
+    trackPrefillUsed(filled);
     setAutoCalc(true);
   }, []);
 
@@ -117,6 +120,7 @@ export default function SalaryCalculator() {
     const percentile = band ? calcPercentile(band, state.salary) : null;
     setResult({ pay, percentile, band });
     setParams({ age: state.age, salary: state.salary, nontax: state.nontax, dependents: state.dependents }, { primaryOutput: `월 ${won(pay.netMonth)}` });
+    trackCalcComplete('salary', `월 ${won(pay.netMonth)}`);
     scrollToResult();
   }
 

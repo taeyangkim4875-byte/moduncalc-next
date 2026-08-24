@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackEmbedCopy } from '@/utils/analytics';
 
 const SLUG_MAP: Record<string, string> = {
   '/loan': 'loan',
@@ -35,6 +36,7 @@ export default function EmbedCode({ href }: { href: string }) {
       document.body.removeChild(input);
     }
     setCopied(true);
+    trackEmbedCopy(slug);
     setTimeout(() => setCopied(false), 2000);
   };
 

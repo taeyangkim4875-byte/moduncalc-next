@@ -16,6 +16,7 @@ import NextStepCards from '@/components/NextStepCards';
 import ModeToggle from '@/components/ModeToggle';
 import TrustBadge from '@/components/TrustBadge';
 import EmbedCode from '@/components/EmbedCode';
+import { trackCalcComplete, trackPrefillUsed } from '@/utils/analytics';
 
 export default function LoanCalculator(){
   const [amount,setAmount]=useState(30000);
@@ -37,7 +38,9 @@ export default function LoanCalculator(){
     if(p.rate)setRate(+p.rate);
     if(p.term)setTerm(+p.term);
     if(p.grace)setGrace(+p.grace);
-    setProfileFilled(profileKeys.filter(k => ['amount', 'rate', 'term'].includes(k)));
+    const filled = profileKeys.filter(k => ['amount', 'rate', 'term'].includes(k));
+    setProfileFilled(filled);
+    trackPrefillUsed(filled);
     setAutoCalc(true);
   },[]);
 
@@ -60,6 +63,7 @@ export default function LoanCalculator(){
     const saving=eqTotalInt-prTotalInt;
     setResult({eq:{monthly:eqM,totalInt:eqTotalInt+graceInt,total:P+eqTotalInt+graceInt},pr:{first:prFirst,last:prLast,totalInt:prTotalInt+graceInt,total:P+prTotalInt+graceInt},graceInt,saving});
     setParams({amount,rate,term,grace}, { primaryOutput: `월 ${won(eqM)}` });
+    trackCalcComplete('loan', `월 ${won(eqM)}`);
     scrollToResult();
   }
 

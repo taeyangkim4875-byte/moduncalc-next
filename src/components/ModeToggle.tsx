@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { trackReverseModeUsed } from '@/utils/analytics';
 
 interface ModeToggleProps {
   forwardHref: string;
@@ -30,6 +31,7 @@ export default function ModeToggle({
       </Link>
       <Link
         href={reverseHref}
+        onClick={() => { if (mode === 'forward') trackReverseModeUsed(reverseHref); }}
         className={`flex-1 py-2.5 rounded-[10px] text-sm font-bold text-center no-underline transition-all ${
           mode === 'reverse'
             ? 'bg-white text-[var(--primary)] shadow-sm'

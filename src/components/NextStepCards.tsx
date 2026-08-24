@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { getChainLinks, buildChainUrl } from '@/data/chains';
 import { getCalc } from '@/data/calculators';
+import { trackChainClick } from '@/utils/analytics';
 
 interface NextStepCardsProps {
   from: string;
@@ -26,6 +27,7 @@ export default function NextStepCards({ from, outputs }: NextStepCardsProps) {
             <Link
               key={link.to}
               href={url}
+              onClick={() => trackChainClick(from, link.to)}
               className="block bg-white rounded-2xl border-[1.5px] border-[var(--line)] p-4 hover:border-[var(--primary)] hover:shadow-sm transition-all group"
             >
               <div className="flex items-center gap-3">

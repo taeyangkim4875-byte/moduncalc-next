@@ -14,6 +14,7 @@ import NextStepCards from '@/components/NextStepCards';
 import ModeToggle from '@/components/ModeToggle';
 import TrustBadge from '@/components/TrustBadge';
 import EmbedCode from '@/components/EmbedCode';
+import { trackCalcComplete, trackPrefillUsed } from '@/utils/analytics';
 
 export default function AcqTaxCalc(){
   const [price,setPrice]=useState(50000);
@@ -35,7 +36,9 @@ export default function AcqTaxCalc(){
     if(p.houseType)setHouseType(p.houseType);
     if(p.houseCount)setHouseCount(+p.houseCount);
     if(p.area)setArea(+p.area);
-    setProfileFilled(profileKeys.filter(k => ['price'].includes(k)));
+    const filled = profileKeys.filter(k => ['price'].includes(k));
+    setProfileFilled(filled);
+    trackPrefillUsed(filled);
     setAutoCalc(true);
   },[]);
 
@@ -59,6 +62,7 @@ export default function AcqTaxCalc(){
     const eduTax=Math.round(acqTax*0.1);
     setResult({acqTax,nongTax,eduTax,total:acqTax+nongTax+eduTax,rate});
     setParams({price,houseType,houseCount,area}, { primaryOutput: won(acqTax+nongTax+eduTax) });
+    trackCalcComplete('acqtax', won(acqTax+nongTax+eduTax));
     scrollToResult();
   }
 

@@ -13,6 +13,7 @@ import NextStepCards from '@/components/NextStepCards';
 import ModeToggle from '@/components/ModeToggle';
 import TrustBadge from '@/components/TrustBadge';
 import EmbedCode from '@/components/EmbedCode';
+import { trackCalcComplete, trackPrefillUsed } from '@/utils/analytics';
 
 const CATEGORIES=[{max:18.5,label:'저체중',color:'#3182F6'},{max:23,label:'정상',color:'#00C271'},{max:25,label:'과체중',color:'#F59E0B'},{max:30,label:'비만 1단계',color:'#E5484D'},{max:35,label:'비만 2단계',color:'#E5484D'},{max:Infinity,label:'고도비만',color:'#C62828'}];
 
@@ -32,7 +33,9 @@ export default function BmiCalculator(){
     if(!Object.keys(p).length)return;
     if(p.height)setHeight(+p.height);
     if(p.weight)setWeight(+p.weight);
-    setProfileFilled(profileKeys.filter(k => ['height', 'weight'].includes(k)));
+    const filled = profileKeys.filter(k => ['height', 'weight'].includes(k));
+    setProfileFilled(filled);
+    trackPrefillUsed(filled);
     setAutoCalc(true);
   },[]);
 
@@ -50,6 +53,7 @@ export default function BmiCalculator(){
     const standard=Math.round((height-100)*0.9*10)/10;
     setResult({bmi,category:cat.label,color:cat.color,normalRange,standard});
     setParams({height,weight}, { primaryOutput: `BMI ${bmi.toFixed(1)}` });
+    trackCalcComplete('bmi', `BMI ${bmi.toFixed(1)}`);
     scrollToResult();
   }
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { trackShareClick } from '@/utils/analytics';
 
 interface ShareButtonsProps {
   title: string;
@@ -25,11 +26,13 @@ export default function ShareButtons({ title, resultId = 'calc-result' }: ShareB
       document.body.removeChild(input);
     }
     setCopied(true);
+    trackShareClick('copy_link', title);
     setTimeout(() => setCopied(false), 2000);
-  }, [getShareUrl]);
+  }, [getShareUrl, title]);
 
   const nativeShare = useCallback(async () => {
     try {
+      trackShareClick('native_share', title);
       await navigator.share({
         title: `${title} | 모든 계산기`,
         url: getShareUrl(),
@@ -55,6 +58,7 @@ export default function ShareButtons({ title, resultId = 'calc-result' }: ShareB
       link.download = `모든계산기_${title.replace(/[^가-힣a-zA-Z0-9]/g, '_')}.png`;
       link.href = canvas.toDataURL('image/png');
       link.click();
+      trackShareClick('save_image', title);
     } catch {
       alert('이미지 저장에 실패했습니다.');
     }
