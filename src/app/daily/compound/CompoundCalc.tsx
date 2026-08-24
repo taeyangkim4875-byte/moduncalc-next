@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
-const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center mt-3"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
+import ResultPanel from '@/components/ResultPanel';
 
 const fmtW=(n:number)=>{
   if(n>=10000)return `${(n/10000).toFixed(1)}억원`;
@@ -78,12 +78,12 @@ export default function CompoundCalc(){
 
     {hasInput&&<>
       <Card><SectionTitle num="📊">복리 수익 결과</SectionTitle>
-        <R v={fmtW(Math.round(compoundTotal/10000))} l="최종 금액 (복리)"/>
+        <ResultPanel className="mt-3" value={fmtW(Math.round(compoundTotal/10000))} sub="최종 금액 (복리)"/>
         <div className="grid grid-cols-2 gap-2.5 mt-3">
-          <R v={fmtW(Math.round(totalInvested/10000))} l="총 투자 원금"/>
-          <R v={fmtW(Math.round(totalProfit/10000))} l="총 수익 (이자)"/>
+          <ResultPanel value={fmtW(Math.round(totalInvested/10000))} sub="총 투자 원금"/>
+          <ResultPanel value={fmtW(Math.round(totalProfit/10000))} sub="총 수익 (이자)"/>
         </div>
-        <R v={`${profitRate.toFixed(1)}%`} l="수익률"/>
+        <ResultPanel className="mt-3" value={`${profitRate.toFixed(1)}%`} sub="수익률"/>
 
         <div className="mt-4 bg-gray-50 rounded-xl p-4">
           <h3 className="text-sm font-bold mb-2">단리 vs 복리 비교</h3>

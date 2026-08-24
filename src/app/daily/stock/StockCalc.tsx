@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import ResultRow from '@/components/ResultRow';
 
 const fmt = (n: number) => parseFloat(n.toFixed(2)).toLocaleString('ko-KR');
 const fmtWon = (n: number) => Math.round(n).toLocaleString('ko-KR');
@@ -192,13 +193,10 @@ export default function StockCalc() {
           </div>
         </div>
 
-        <div className="mt-3 flex flex-col gap-2 text-[13.5px]">
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">매수 총액</span><span className="font-bold">{fmtWon(totalBuy)}원</span></div>
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">평가 금액</span><span className="font-bold">{fmtWon(totalCur)}원</span></div>
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2">
-            <span className="text-[var(--sub)] font-semibold">평가 손익</span>
-            <span className="font-bold" style={{ color: profit >= 0 ? 'var(--green)' : '#E5484D' }}>{profit >= 0 ? '+' : ''}{fmtWon(profit)}원</span>
-          </div>
+        <div className="mt-3 flex flex-col gap-2">
+          <ResultRow label="매수 총액" value={`${fmtWon(totalBuy)}원`} bg />
+          <ResultRow label="평가 금액" value={`${fmtWon(totalCur)}원`} bg />
+          <ResultRow label="평가 손익" value={`${profit >= 0 ? '+' : ''}${fmtWon(profit)}원`} color={profit >= 0 ? 'var(--green)' : '#E5484D'} bg />
         </div>
       </Card>
 
@@ -283,11 +281,11 @@ export default function StockCalc() {
           </div>
         </div>
 
-        <div className="mt-3 flex flex-col gap-2 text-[13.5px]">
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">총 보유 수량</span><span className="font-bold">{fmtWon(totalQty)}주</span></div>
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">총 투자 금액</span><span className="font-bold">{fmtWon(totalBuy + ap * aq)}원</span></div>
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">손익분기 단가</span><span className="font-bold">{fmtWon(breakEvenPrice)}원</span></div>
-          <div className="flex justify-between bg-[var(--bg)] rounded-lg px-3 py-2"><span className="text-[var(--sub)] font-semibold">평단가 변화</span><span className={`font-bold ${avgPrice<=bp?'text-[var(--green)]':'text-[#E5484D]'}`}>{avgPrice<=bp?'▼':'▲'} {fmtWon(Math.abs(bp - avgPrice))}원 ({fmt(bp>0?Math.abs((bp - avgPrice) / bp) * 100:0)}%{avgPrice<=bp?'↓':'↑'})</span></div>
+        <div className="mt-3 flex flex-col gap-2">
+          <ResultRow label="총 보유 수량" value={`${fmtWon(totalQty)}주`} bg />
+          <ResultRow label="총 투자 금액" value={`${fmtWon(totalBuy + ap * aq)}원`} bg />
+          <ResultRow label="손익분기 단가" value={`${fmtWon(breakEvenPrice)}원`} bg />
+          <ResultRow label="평단가 변화" value={`${avgPrice<=bp?'▼':'▲'} ${fmtWon(Math.abs(bp - avgPrice))}원 (${fmt(bp>0?Math.abs((bp - avgPrice) / bp) * 100:0)}%${avgPrice<=bp?'↓':'↑'})`} color={avgPrice<=bp?'var(--green)':'#E5484D'} bg />
         </div>
       </Card>
 

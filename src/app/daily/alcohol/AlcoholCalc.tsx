@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
-const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center mt-3"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
+import ResultPanel from '@/components/ResultPanel';
 
 const PRESETS=[
   {name:'소주 1잔',ml:50,abv:16.5},
@@ -81,10 +81,10 @@ export default function AlcoholCalc(){
     </Card>
 
     {hasInput&&<Card><SectionTitle num="📊">계산 결과</SectionTitle>
-      <R v={`${currentBac.toFixed(4)}%`} l="현재 추정 혈중알코올농도"/>
+      <ResultPanel className="mt-3" value={`${currentBac.toFixed(4)}%`} sub="현재 추정 혈중알코올농도"/>
       <div className="grid grid-cols-2 gap-2.5 mt-3">
-        <R v={remainHours>0?`${Math.floor(remainHours)}시간 ${Math.round((remainHours%1)*60)}분`:'즉시 가능'} l="운전 가능까지 남은 시간"/>
-        <R v={remainHours>0?fmt(driveTime):'지금 가능'} l="운전 가능 예상 시점"/>
+        <ResultPanel value={remainHours>0?`${Math.floor(remainHours)}시간 ${Math.round((remainHours%1)*60)}분`:'즉시 가능'} sub="운전 가능까지 남은 시간"/>
+        <ResultPanel value={remainHours>0?fmt(driveTime):'지금 가능'} sub="운전 가능 예상 시점"/>
       </div>
       <div className={`mt-4 p-3 rounded-xl text-center font-bold text-sm ${currentBac>=0.03?'bg-red-50':'bg-green-50'}`}>
         <span className={dangerColor}>

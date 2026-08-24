@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
-const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center mt-3"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
+import ResultPanel from '@/components/ResultPanel';
 const ANIMALS=['원숭이','닭','개','돼지','쥐','소','호랑이','토끼','용','뱀','말','양'];
 const SIGNS:[string,number][]=[['염소',119],['물병',218],['물고기',320],['양',419],['황소',520],['쌍둥이',620],['게',722],['사자',822],['처녀',922],['천칭',1022],['전갈',1121],['사수',1221],['염소',1231]];
 
@@ -48,12 +48,12 @@ export default function AgeCalc(){
         </div>
       </div>
       {r&&<>
-        <div className="grid grid-cols-2 gap-2.5 mt-3"><R v={`${r.manAge}세`} l="만 나이"/><R v={`${r.korAge}세`} l="한국 나이(세는 나이)"/></div>
-        <R v={`${r.daysLeft}일`} l={`다음 생일까지 (${r.nextBday})`}/>
+        <div className="grid grid-cols-2 gap-2.5 mt-3"><ResultPanel value={`${r.manAge}세`} sub="만 나이"/><ResultPanel value={`${r.korAge}세`} sub="한국 나이(세는 나이)"/></div>
+        <ResultPanel className="mt-3" value={`${r.daysLeft}일`} sub={`다음 생일까지 (${r.nextBday})`}/>
       </>}
     </Card>
     {r&&<Card><SectionTitle num="🐲">띠 · 별자리</SectionTitle>
-      <R v={`${r.animal}띠 · ${r.star}자리`} l={`${r.year}년생`}/>
+      <ResultPanel className="mt-3" value={`${r.animal}띠 · ${r.star}자리`} sub={`${r.year}년생`}/>
     </Card>}
     <Card>
       <h2 className="text-base font-extrabold mb-3">이 계산기는요</h2>

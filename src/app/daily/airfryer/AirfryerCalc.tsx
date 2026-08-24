@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
-const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center mt-3"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
+import ResultPanel from '@/components/ResultPanel';
 
 const RECIPES=[
   {name:'치킨너겟',ovenTemp:200,ovenMin:15,afTemp:185,afMin:12},
@@ -43,8 +43,8 @@ export default function AirfryerCalc(){
 
     {hasInput&&<Card><SectionTitle num="✅">변환 결과</SectionTitle>
       <div className="grid grid-cols-2 gap-2.5">
-        <R v={`${afTemp}°C`} l="에어프라이어 온도"/>
-        <R v={`${afMin}분`} l="에어프라이어 시간"/>
+        <ResultPanel value={`${afTemp}°C`} sub="에어프라이어 온도"/>
+        <ResultPanel value={`${afMin}분`} sub="에어프라이어 시간"/>
       </div>
       <div className="mt-4 bg-gray-50 rounded-xl p-4">
         <h3 className="text-sm font-bold mb-2">변환 팁</h3>

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
-const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center mt-3"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
+import ResultPanel from '@/components/ResultPanel';
 
 const CHECKUPS=[
   {week:8,name:'초기 초음파',desc:'임신 확인, 태아 심박 확인'},
@@ -57,8 +57,8 @@ export default function DueDateCalc(){
 
     {valid&&dueDate&&<>
       <Card><SectionTitle num="📅">계산 결과</SectionTitle>
-        <R v={fmt(dueDate)} l="출산 예정일"/>
-        <R v={`${weeks}주 ${days}일`} l="현재 임신 주수"/>
+        <ResultPanel className="mt-3" value={fmt(dueDate)} sub="출산 예정일"/>
+        <ResultPanel className="mt-3" value={`${weeks}주 ${days}일`} sub="현재 임신 주수"/>
         <div className="mt-4">
           <div className="flex justify-between text-xs text-[var(--sub)] mb-1">
             <span>0주</span><span>임신 진행률 {progress.toFixed(1)}%</span><span>40주</span>

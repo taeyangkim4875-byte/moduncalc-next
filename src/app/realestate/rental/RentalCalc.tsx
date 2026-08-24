@@ -1,9 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import ResultPanel from '@/components/ResultPanel';
 import { won } from '@/utils/format';
-
-const R=({v,l}:{v:string;l:string})=><div className="bg-[var(--primary-weak)] rounded-[14px] p-4 text-center"><div className="text-[28px] font-extrabold text-[var(--primary-dark)] tracking-tight">{v}</div><div className="text-xs text-[var(--sub)] mt-1">{l}</div></div>;
 
 export default function RentalCalc(){
   const [buyPrice,setBuyPrice]=useState(50000);
@@ -61,10 +60,10 @@ export default function RentalCalc(){
 
     <div className="text-lg font-extrabold mt-4 mb-3 px-1">투자 수익 분석</div>
     <div className="grid grid-cols-2 gap-2.5 mb-3.5">
-      <R v={`${grossYield.toFixed(1)}%`} l="총 수익률"/>
-      <R v={`${netYield.toFixed(1)}%`} l="순 수익률"/>
-      <R v={won(monthlyNet*10000)} l="월 순수익"/>
-      <R v={paybackYears===Infinity?'-':`${paybackYears.toFixed(1)}년`} l="투자금 회수기간"/>
+      <ResultPanel value={`${grossYield.toFixed(1)}%`} sub="총 수익률"/>
+      <ResultPanel value={`${netYield.toFixed(1)}%`} sub="순 수익률"/>
+      <ResultPanel value={won(monthlyNet*10000)} sub="월 순수익"/>
+      <ResultPanel value={paybackYears===Infinity?'-':`${paybackYears.toFixed(1)}년`} sub="투자금 회수기간"/>
     </div>
 
     <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-[var(--primary)]">

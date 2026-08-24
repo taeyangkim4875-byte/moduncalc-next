@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
+import SliderInput from '@/components/SliderInput';
+import ResultPanel from '@/components/ResultPanel';
+import ResultRow from '@/components/ResultRow';
 import { won, fmtSalary } from '@/utils/format';
 import { netPay, type NetPayResult } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
@@ -20,7 +23,6 @@ function ageBand(age: number): AgeBand | null {
 }
 
 /* ── 백분위 앵커 (2024 귀속 국세청 전체 근로자 기준, 연 만원) ── */
-/* 전체 평균 4,500만, 중위 3,417만 (출처: 국회 기재위 박성훈 의원실) */
 const PCT_ANCHORS: Record<AgeBand, [number, number, number, number, number]> = {
   '20~24': [1300, 1800, 2400, 3000, 3800],
   '25~29': [2100, 2700, 3400, 4100, 5200],
@@ -32,7 +34,6 @@ const PCT_ANCHORS: Record<AgeBand, [number, number, number, number, number]> = {
   '55~59': [1800, 2500, 3500, 5000, 7500],
 };
 
-/* ── 구간별 백분위 보간 ── */
 const BAND_ANCHORS = [10, 25, 50, 75, 90] as const;
 
 function calcPercentile(band: AgeBand, salaryMan: number): number {
@@ -77,9 +78,6 @@ export default function SalaryCalculator() {
   const [result, setResult] = useState<CalcResult | null>(null);
   const [autoCalc, setAutoCalc] = useState(false);
 
-  /* URL 쿼리스트링(외부 시스템)에서 초기값을 복원하는 구간.
-     브라우저 전용 값이라 렌더 중에는 읽을 수 없고(정적 프리렌더와 hydration 불일치),
-     effect 안에서 state를 채우는 방법뿐이라 아래 두 effect에 한해 규칙을 해제한다. */
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const p = getParams();
@@ -117,53 +115,26 @@ export default function SalaryCalculator() {
       <Card>
         <SectionTitle num="1">기본 정보</SectionTitle>
 
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">
-            나이 (만) <span className="text-xs text-[var(--sub)] font-medium ml-1">{state.age}세</span>
-          </label>
-          <div className="flex items-center gap-2.5">
-            <input
-              type="number"
-              value={state.age}
-              onChange={e => update('age', +e.target.value)}
-              className="flex-1 w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)]"
-            />
-            <span className="text-sm font-bold text-[var(--sub)]">세</span>
-          </div>
-          <input
-            type="range"
-            min={20}
-            max={59}
-            step={1}
-            value={state.age}
-            onChange={e => update('age', +e.target.value)}
-            className="w-full mt-3.5"
-          />
-        </div>
+        <SliderInput
+          label="나이 (만)"
+          hint={`${state.age}세`}
+          value={state.age}
+          onChange={v => update('age', v)}
+          min={20}
+          max={59}
+          unit="세"
+        />
 
-        <div className="mb-4">
-          <label className="block text-sm font-bold mb-2">
-            연봉 (세전) <span className="text-xs text-[var(--sub)] font-medium ml-1">{fmtSalary(state.salary)}원</span>
-          </label>
-          <div className="flex items-center gap-2.5">
-            <input
-              type="number"
-              value={state.salary}
-              onChange={e => update('salary', +e.target.value)}
-              className="flex-1 w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold text-[var(--ink)] outline-none bg-white focus:border-[var(--primary)]"
-            />
-            <span className="text-sm font-bold text-[var(--sub)]">만원</span>
-          </div>
-          <input
-            type="range"
-            min={2000}
-            max={15000}
-            step={100}
-            value={state.salary}
-            onChange={e => update('salary', +e.target.value)}
-            className="w-full mt-3.5"
-          />
-        </div>
+        <SliderInput
+          label="연봉 (세전)"
+          hint={`${fmtSalary(state.salary)}원`}
+          value={state.salary}
+          onChange={v => update('salary', v)}
+          min={2000}
+          max={15000}
+          step={100}
+          unit="만원"
+        />
 
         <div className="mb-4">
           <label className="block text-sm font-bold mb-2">부양가족 수 (본인 포함)</label>
@@ -229,7 +200,6 @@ export default function SalaryCalculator() {
                 {result.band}세 근로자 기준
               </div>
 
-              {/* gauge bar */}
               <div className="relative h-5 bg-[#F2F4F6] rounded-full overflow-hidden mb-2">
                 <div
                   className="absolute left-0 top-0 h-full rounded-full transition-all"
@@ -257,7 +227,6 @@ export default function SalaryCalculator() {
                 </div>
               </div>
 
-              {/* chips */}
               <div className="flex flex-wrap gap-1.5 mt-4 justify-center">
                 {BAND_ANCHORS.map((pct, i) => (
                   <span
@@ -274,22 +243,14 @@ export default function SalaryCalculator() {
           {/* ── 실수령액 결과 ── */}
           <Card>
             <SectionTitle num="2">실수령액</SectionTitle>
-            <div className="text-3xl font-extrabold tracking-tight">
-              월 {won(result.pay.netMonth)}
-            </div>
-            <div className="text-[12.5px] text-[var(--sub)] mt-1 mb-3.5">
-              연 {won(result.pay.netYear)}
-            </div>
-
+            <ResultPanel
+              value={`월 ${won(result.pay.netMonth)}`}
+              sub={`연 ${won(result.pay.netYear)}`}
+              size="lg"
+            />
             <div className="mt-4 border-t border-[var(--line)] pt-3.5 flex flex-col gap-2.5">
-              <div className="flex justify-between items-center text-[13.5px]">
-                <span className="text-[var(--sub)] font-semibold">세전 월급</span>
-                <span className="font-bold">{won((state.salary * 10000) / 12)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[13.5px]">
-                <span className="text-[var(--sub)] font-semibold">공제 합계</span>
-                <span className="font-bold text-[#E8344E]">-{won(result.pay.deductMonth)}</span>
-              </div>
+              <ResultRow label="세전 월급" value={won((state.salary * 10000) / 12)} />
+              <ResultRow label="공제 합계" value={`-${won(result.pay.deductMonth)}`} color="#E8344E" />
             </div>
           </Card>
 
@@ -297,34 +258,13 @@ export default function SalaryCalculator() {
           <Card>
             <SectionTitle num="3">공제 내역 (월)</SectionTitle>
             <div className="flex flex-col gap-2.5">
-              <div className="flex justify-between items-center text-[13.5px]">
-                <span className="text-[var(--sub)] font-semibold">국민연금</span>
-                <span className="font-bold">{won(result.pay.np / 12)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[13.5px]">
-                <span className="text-[var(--sub)] font-semibold">건강보험 + 장기요양</span>
-                <span className="font-bold">{won(result.pay.hi / 12)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[13.5px]">
-                <span className="text-[var(--sub)] font-semibold">고용보험</span>
-                <span className="font-bold">{won(result.pay.ei / 12)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[13.5px] border-t border-[var(--line)] pt-2.5">
-                <span className="text-[var(--sub)] font-semibold">4대보험 소계</span>
-                <span className="font-bold">{won(result.pay.insurance / 12)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[13.5px]">
-                <span className="text-[var(--sub)] font-semibold">소득세</span>
-                <span className="font-bold">{won(result.pay.incomeTax / 12)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[13.5px]">
-                <span className="text-[var(--sub)] font-semibold">지방소득세</span>
-                <span className="font-bold">{won(result.pay.localTax / 12)}</span>
-              </div>
-              <div className="flex justify-between items-center text-[13.5px] border-t border-[var(--line)] pt-2.5">
-                <span className="font-bold">공제 합계</span>
-                <span className="font-extrabold text-[#E8344E]">-{won(result.pay.deductMonth)}</span>
-              </div>
+              <ResultRow label="국민연금" value={won(result.pay.np / 12)} />
+              <ResultRow label="건강보험 + 장기요양" value={won(result.pay.hi / 12)} />
+              <ResultRow label="고용보험" value={won(result.pay.ei / 12)} />
+              <ResultRow label="4대보험 소계" value={won(result.pay.insurance / 12)} separator />
+              <ResultRow label="소득세" value={won(result.pay.incomeTax / 12)} />
+              <ResultRow label="지방소득세" value={won(result.pay.localTax / 12)} />
+              <ResultRow label="공제 합계" value={`-${won(result.pay.deductMonth)}`} bold color="#E8344E" separator />
             </div>
           </Card>
 

@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import CtaButton from '@/components/CtaButton';
+import SliderInput from '@/components/SliderInput';
+import ResultRow from '@/components/ResultRow';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
@@ -53,15 +55,25 @@ export default function LoanCalculator(){
 
   return(<>
     <Card><SectionTitle num="1">대출 정보 입력</SectionTitle>
-      <div className="mb-4">
-        <label className="block text-sm font-bold mb-2">대출 금액 <span className="text-xs text-[var(--sub)] font-medium ml-1">{amount>=10000?`${Math.floor(amount/10000)}억${amount%10000?` ${(amount%10000).toLocaleString()}만`:''}`:amount.toLocaleString()+'만'}원</span></label>
-        <div className="flex items-center gap-2.5"><input type="number" value={amount || ''} onChange={e=>setAmount(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div>
-        <input type="range" min={0} max={100000} step={500} value={amount} onChange={e=>setAmount(+e.target.value)} className="w-full mt-3.5"/>
-      </div>
-      <div className="mb-4">
-        <label className="block text-sm font-bold mb-2">연 이자율</label>
-        <div className="flex items-center gap-2.5"><input type="number" value={rate || ''} min={0} max={20} step={0.1} onChange={e=>setRate(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">%</span></div>
-      </div>
+      <SliderInput
+        label="대출 금액"
+        hint={`${amount>=10000?`${Math.floor(amount/10000)}억${amount%10000?` ${(amount%10000).toLocaleString()}만`:''}`:amount.toLocaleString()+'만'}원`}
+        value={amount}
+        onChange={v=>setAmount(v||0)}
+        min={0}
+        max={100000}
+        step={500}
+        unit="만원"
+      />
+      <SliderInput
+        label="연 이자율"
+        value={rate}
+        onChange={v=>setRate(v||0)}
+        min={0}
+        max={20}
+        step={0.1}
+        unit="%"
+      />
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">대출 기간</label>
         <select value={term} onChange={e=>setTerm(+e.target.value)} className="w-full py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-[15px] font-bold outline-none appearance-none bg-white">
@@ -81,19 +93,19 @@ export default function LoanCalculator(){
         <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--primary-weak)] text-[var(--primary-dark)]">원리금균등상환</span>
         <div className="text-sm text-[var(--sub)] mb-1">매월 동일한 금액 납부</div>
         <div className="text-3xl font-extrabold tracking-tight">{won(result.eq.monthly)}<span className="text-base font-bold ml-1">/월</span></div>
-        <div className="mt-4 border-t border-[var(--line)] pt-3.5 flex flex-col gap-2 text-[13.5px]">
-          <div className="flex justify-between"><span className="text-[var(--sub)] font-semibold">총 이자</span><span className="font-bold text-[#E5484D]">{won(result.eq.totalInt)}</span></div>
-          <div className="flex justify-between"><span className="text-[var(--sub)] font-semibold">총 상환액</span><span className="font-bold">{won(result.eq.total)}</span></div>
+        <div className="mt-4 border-t border-[var(--line)] pt-3.5 flex flex-col gap-2">
+          <ResultRow label="총 이자" value={won(result.eq.totalInt)} color="#E5484D" />
+          <ResultRow label="총 상환액" value={won(result.eq.total)} />
         </div>
       </div>
       <div className="bg-white rounded-[18px] shadow-[var(--shadow)] p-5 mb-3.5 border-[1.5px] border-transparent">
         <span className="inline-flex text-[11px] font-extrabold py-1 px-2.5 rounded-lg mb-2.5 bg-[var(--violet-weak)] text-[var(--violet)]">원금균등상환</span>
         <div className="text-sm text-[var(--sub)] mb-1">매월 줄어드는 금액 납부</div>
         <div className="text-3xl font-extrabold tracking-tight">{won(result.pr.first)}<span className="text-base font-bold ml-1">/첫 달</span></div>
-        <div className="mt-4 border-t border-[var(--line)] pt-3.5 flex flex-col gap-2 text-[13.5px]">
-          <div className="flex justify-between"><span className="text-[var(--sub)] font-semibold">마지막 달</span><span className="font-bold">{won(result.pr.last)}</span></div>
-          <div className="flex justify-between"><span className="text-[var(--sub)] font-semibold">총 이자</span><span className="font-bold text-[#E5484D]">{won(result.pr.totalInt)}</span></div>
-          <div className="flex justify-between"><span className="text-[var(--sub)] font-semibold">총 상환액</span><span className="font-bold">{won(result.pr.total)}</span></div>
+        <div className="mt-4 border-t border-[var(--line)] pt-3.5 flex flex-col gap-2">
+          <ResultRow label="마지막 달" value={won(result.pr.last)} />
+          <ResultRow label="총 이자" value={won(result.pr.totalInt)} color="#E5484D" />
+          <ResultRow label="총 상환액" value={won(result.pr.total)} />
         </div>
       </div>
       {result.saving>0&&<div className="bg-[var(--green-weak)] rounded-xl p-3.5 text-center mb-3.5">
