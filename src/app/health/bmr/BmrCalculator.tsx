@@ -5,6 +5,9 @@ import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 export default function BmrCalculator(){
   const [gender,setGender]=useState<'male'|'female'>('male');
@@ -45,6 +48,8 @@ export default function BmrCalculator(){
   }
 
   return(<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/health/bmr" />
     <Card><SectionTitle num="1">신체 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">성별</label>
@@ -79,6 +84,7 @@ export default function BmrCalculator(){
         <div className="bg-white rounded-[14px] shadow-[var(--shadow)] p-4 text-center"><div className="text-xs text-[var(--sub)] font-bold">다이어트</div><div className="text-xl font-extrabold text-[#E5484D] mt-1">{result.diet}</div><div className="text-[10px] text-[var(--sub)]">kcal (-500)</div></div>
       </div>
     </div>}
+    {result && <NextStepCards from="/health/bmr" outputs={{ height, weight }} />}
     {result && <ShareButtons title="칼로리 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 칼로리를 계산해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">

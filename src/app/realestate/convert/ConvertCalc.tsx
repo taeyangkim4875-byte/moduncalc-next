@@ -6,6 +6,9 @@ import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 export default function ConvertCalc(){
   const [dir,setDir]=useState<'j2m'|'m2j'>('j2m');
@@ -53,6 +56,8 @@ export default function ConvertCalc(){
   }
 
   return(<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/realestate/convert" />
     <Card><SectionTitle num="1">전환 정보</SectionTitle>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">전환 방향</label>
         <div className="flex gap-2">
@@ -75,6 +80,7 @@ export default function ConvertCalc(){
         <div className="text-sm text-[var(--sub)]">연간 {won(result.annual)}</div>
       </div>
     </div>}
+    {result && <NextStepCards from="/realestate/convert" outputs={{ jeonse }} />}
     {result && <ShareButtons title="전월세 전환 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 전환 결과를 알려드려요.</Card>}
     <Card>

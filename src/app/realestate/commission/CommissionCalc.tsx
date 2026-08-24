@@ -6,6 +6,9 @@ import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 type DealType = '매매' | '전세' | '월세';
 
@@ -79,6 +82,8 @@ export default function CommissionCalc() {
   const types: DealType[] = ['매매', '전세', '월세'];
 
   return (<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/realestate/commission" />
     <Card>
       <SectionTitle num="1">거래 정보</SectionTitle>
       <div className="mb-4">
@@ -131,6 +136,7 @@ export default function CommissionCalc() {
         </div>
       </div>
     )}
+    {result && <NextStepCards from="/realestate/commission" outputs={{ price }} />}
     {result && <ShareButtons title="복비 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 중개수수료를 계산해 드려요.</Card>}

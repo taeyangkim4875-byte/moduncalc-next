@@ -7,6 +7,9 @@ import { progressiveTax } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 export default function IncomeTaxCalc(){
   const [income,setIncome]=useState(5000);
@@ -46,6 +49,8 @@ export default function IncomeTaxCalc(){
   }
 
   return(<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/tax/income" />
     <Card><SectionTitle num="1">소득 정보</SectionTitle>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">총 수입금액</label><div className="flex items-center gap-2.5"><input type="number" value={income || ''} onChange={e=>setIncome(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div></div>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">필요경비/소득공제</label><div className="flex items-center gap-2.5"><input type="number" value={deduction || ''} onChange={e=>setDeduction(+e.target.value||0)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"/><span className="text-sm font-bold text-[var(--sub)]">만원</span></div></div>
@@ -70,6 +75,7 @@ export default function IncomeTaxCalc(){
         </div>
       </div>
     </div>}
+    {result && <NextStepCards from="/tax/income" outputs={{ income }} />}
     {result && <ShareButtons title="종합소득세 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 세액을 계산해 드려요.</Card>}
     <Card>

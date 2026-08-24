@@ -6,6 +6,9 @@ import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 export default function AcqTaxCalc(){
   const [price,setPrice]=useState(50000);
@@ -56,6 +59,8 @@ export default function AcqTaxCalc(){
     <div className="flex flex-wrap gap-2">{opts.map(o=><button key={String(o.value)} onClick={()=>set(o.value)} className={`flex-1 min-w-[60px] py-2.5 px-2 border-[1.5px] rounded-xl text-sm font-bold cursor-pointer transition-all ${current===o.value?'bg-[var(--primary-weak)] border-[var(--primary)] text-[var(--primary-dark)]':'bg-white border-[var(--line)] text-[var(--sub)]'}`}>{o.label}</button>)}</div>;
 
   return(<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/realestate/acqtax" />
     <Card><SectionTitle num="1">매매 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">매매가격 <span className="text-xs text-[var(--sub)] font-medium ml-1">{price>=10000?`${Math.floor(price/10000)}억${price%10000?` ${(price%10000).toLocaleString()}만`:''}`:price.toLocaleString()+'만'}원</span></label>
@@ -84,6 +89,7 @@ export default function AcqTaxCalc(){
         </div>
       </div>
     </div>}
+    {result && <NextStepCards from="/realestate/acqtax" outputs={{ price }} />}
     {result && <ShareButtons title="취득세 계산 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 취득세를 계산해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">

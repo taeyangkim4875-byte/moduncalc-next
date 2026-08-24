@@ -8,6 +8,9 @@ import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 export default function LoanCalculator(){
   const [amount,setAmount]=useState(30000);
@@ -54,6 +57,8 @@ export default function LoanCalculator(){
   }
 
   return(<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/loan" />
     <Card><SectionTitle num="1">대출 정보 입력</SectionTitle>
       <SliderInput
         label="대출 금액"
@@ -114,6 +119,7 @@ export default function LoanCalculator(){
       </div>}
       {grace>0&&<div className="text-xs text-[var(--sub)] text-center">거치기간 {grace}개월 이자: {won(result.graceInt)}</div>}
     </div>}
+    {result && <NextStepCards from="/loan" outputs={{ amount }} />}
     {result && <ShareButtons title="대출 상환 비교" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 상환 방식별 납입액을 비교해 드려요.</Card>}
     <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">

@@ -6,6 +6,9 @@ import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 const JB_RATE=0.60, JB_UPPER=68100, JB_LOWER=66048, JB_WAIT=7;
 function joblessDays(years:number, age:number){
@@ -52,6 +55,8 @@ export default function JoblessCalculator(){
   }
 
   return (<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/pension/jobless" />
     <Card>
       <SectionTitle num="1">퇴사·고용보험 정보</SectionTitle>
       <div className="mb-4">
@@ -107,6 +112,7 @@ export default function JoblessCalculator(){
         </div>
       </div>
     )}
+    {result && <NextStepCards from="/pension/jobless" outputs={{ wage, age }} />}
     {result && <ShareButtons title="실업급여 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 구직급여를 계산해 드려요.</Card>}

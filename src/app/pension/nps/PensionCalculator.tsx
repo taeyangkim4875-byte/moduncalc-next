@@ -6,6 +6,9 @@ import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6370000, NPS_FLOOR=400000;
 function pensionAge(by:number){if(by<=1952)return 60;if(by<=1956)return 61;if(by<=1960)return 62;if(by<=1964)return 63;if(by<=1968)return 64;return 65;}
@@ -51,6 +54,8 @@ export default function PensionCalculator(){
   }
 
   return (<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/pension/nps" />
     <Card>
       <SectionTitle num="1">가입 정보</SectionTitle>
       <div className="mb-4">
@@ -103,6 +108,7 @@ export default function PensionCalculator(){
         )}
       </div>
     )}
+    {result && <NextStepCards from="/pension/nps" outputs={{ income, age }} />}
     {result && <ShareButtons title="국민연금 계산 결과" />}
 
     {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 예상 월 수령액을 계산해 드려요.</Card>}

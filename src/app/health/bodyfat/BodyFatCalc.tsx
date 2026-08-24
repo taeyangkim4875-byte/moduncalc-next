@@ -5,6 +5,9 @@ import CtaButton from '@/components/CtaButton';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 const MALE_CATS=[{min:2,max:5,label:'필수지방',color:'#3182F6'},{min:6,max:13,label:'운동선수',color:'#00C271'},{min:14,max:17,label:'보통',color:'#22C55E'},{min:18,max:24,label:'평균',color:'#F59E0B'},{min:25,max:Infinity,label:'비만',color:'#E5484D'}];
 const FEMALE_CATS=[{min:10,max:13,label:'필수지방',color:'#3182F6'},{min:14,max:20,label:'운동선수',color:'#00C271'},{min:21,max:24,label:'보통',color:'#22C55E'},{min:25,max:31,label:'평균',color:'#F59E0B'},{min:32,max:Infinity,label:'비만',color:'#E5484D'}];
@@ -63,6 +66,8 @@ export default function BodyFatCalc(){
   }
 
   return(<>
+    <ChainBanner />
+    <JourneyBreadcrumb currentHref="/health/bodyfat" />
     <Card><SectionTitle num="1">신체 정보</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">성별</label>
@@ -109,6 +114,7 @@ export default function BodyFatCalc(){
         </div>
       </div>
     </div>}
+    {result && <NextStepCards from="/health/bodyfat" outputs={{ height, weight }} />}
     {result && <ShareButtons title="체지방률 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 체지방률을 계산해 드려요.</Card>}
     <Card>

@@ -11,6 +11,9 @@ import { netPay, type NetPayResult } from '@/utils/tax';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import ChainBanner from '@/components/ChainBanner';
+import JourneyBreadcrumb from '@/components/JourneyBreadcrumb';
+import NextStepCards from '@/components/NextStepCards';
 
 /* ── 연령대 구간 ── */
 const AGE5 = ['20~24', '25~29', '30~34', '35~39', '40~44', '45~49', '50~54', '55~59'] as const;
@@ -112,6 +115,8 @@ export default function SalaryCalculator() {
 
   return (
     <>
+      <ChainBanner />
+      <JourneyBreadcrumb currentHref="/salary" />
       <Card>
         <SectionTitle num="1">기본 정보</SectionTitle>
 
@@ -314,6 +319,7 @@ export default function SalaryCalculator() {
           계산하기 버튼을 누르면 실수령액과 백분위를 알려드려요.
         </Card>
       )}
+      {result && <NextStepCards from="/salary" outputs={{ salary: state.salary, age: state.age }} />}
       {result && <ShareButtons title="연봉 분석 결과" />}
 
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
