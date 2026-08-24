@@ -80,7 +80,6 @@ export default function BmiCalculator(){
       </div>
     </div>}
     {result && <NextStepCards from="/health/bmi" outputs={{ height, weight }} />}
-    {result && <NextStepCards from="/health/bmi" outputs={{ height, weight }} />}
     <SavePrompt />
     {result && <ShareButtons title="BMI 결과" />}
     {!result&&<Card className="text-center text-[var(--sub)] text-sm py-8">버튼을 누르면 BMI를 계산해 드려요.</Card>}
