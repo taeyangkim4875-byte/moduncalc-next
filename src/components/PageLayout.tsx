@@ -1,7 +1,6 @@
 import SearchBar from './SearchBar';
 import RelatedCalcs from './RelatedCalcs';
 import RelatedGuides from './RelatedGuides';
-import { KakaoAdTop, KakaoAdBottom } from './KakaoAdFit';
 import FirstSaveNotice from './FirstSaveNotice';
 
 interface PageLayoutProps {
@@ -15,7 +14,6 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
   return (
     <div className="max-w-[560px] mx-auto px-4 py-5">
       <SearchBar />
-      <KakaoAdTop />
       <header className="px-1 pb-5">
         <div className="text-[13px] font-bold text-[var(--primary)] tracking-wide">{eyebrow}</div>
         <h1 className="mt-1.5 mb-2 text-2xl font-extrabold leading-tight tracking-tight">{title}</h1>
@@ -24,7 +22,6 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
       {children}
       <RelatedGuides />
       <RelatedCalcs />
-      <KakaoAdBottom />
       <FirstSaveNotice />
     </div>
   );

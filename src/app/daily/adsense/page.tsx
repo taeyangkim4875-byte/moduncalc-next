@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "애드센스 수익 계산기 - 블로그 예상 수익 시뮬레이션",
   description: "일일 방문자 수와 페이지 RPM, CTR, CPC로 블로그 애드센스 예상 수익을 시뮬레이션하세요.",
   alternates: { canonical: "https://moduncalc.com/daily/adsense" },
+  robots: { index: false, follow: true },
 };
 
 export default function Page() {
