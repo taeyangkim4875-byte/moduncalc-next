@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { FaqJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "2026 최저시급 완전 정리 - 주휴수당·월급·연봉 환산",
   description: "2026년 최저시급과 주휴수당, 월급 계산법을 상세히 알려드립니다.",
   alternates: { canonical: "https://moduncalc.com/guide/minimum-wage" },
+  openGraph: {
+    title: "2026 최저시급 완전 정리 - 주휴수당·월급·연봉 환산",
+    description: "2026년 최저시급과 주휴수당, 월급 계산법을 상세히 알려드립니다.",
+    url: "https://moduncalc.com/guide/minimum-wage",
+  },
 };
 
 export default function Page() {
@@ -17,6 +22,7 @@ export default function Page() {
       title="2026 최저시급 완전 정리"
       description="주휴수당, 월급, 연봉 환산까지 최저임금의 모든 것을 알려드립니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'minimum-wage', href: '/guide/minimum-wage' }]} />
       <FaqJsonLd
         items={[
           { q: "2026년 최저시급은 얼마인가요?", a: "2026년 최저시급은 10,320원입니다. 2025년 10,030원 대비 290원(약 2.9%) 인상되었습니다." },

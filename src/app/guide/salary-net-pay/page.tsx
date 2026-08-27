@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { CalculatorJsonLd, FaqJsonLd } from "@/components/JsonLd";
+import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "2026 연봉 실수령액 완전 정리 - 4대보험·소득세 공제 후 실수령액",
@@ -39,6 +39,7 @@ export default function SalaryNetPayGuidePage() {
       title="2026 연봉 실수령액 완전 정리"
       description="4대보험·소득세 공제 후 내 손에 실제로 들어오는 금액을 꼼꼼히 알아봅니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'salary-net-pay', href: '/guide/salary-net-pay' }]} />
       <CalculatorJsonLd
         name="연봉 실수령액 가이드"
         description="2026년 연봉별 실수령액과 공제 항목을 상세히 설명합니다."

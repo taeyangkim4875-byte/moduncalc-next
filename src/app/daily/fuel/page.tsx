@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import FuelCalc from "./FuelCalc";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="자동차 · 전기차 전비 포함" title="자동차 연비 · 전비 계산기" description="내연차 연비 + 전기차 전비 + 비용 비교까지 한번에.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '연비', href: '/daily/fuel' }]} />
       <CalculatorJsonLd name="자동차 연비·전비 계산기" description="내연차 연비(km/L) 측정, 유류비 계산, 전기차 전비(km/kWh) 충전비 계산, 내연차 vs 전기차 비용 비교." url="https://moduncalc.com/daily/fuel" />
       <FaqJsonLd items={[
         {q:"자동차 연비는 어떻게 계산하나요?",a:"연비(km/L) = 주행 거리(km) ÷ 사용 연료(L)입니다. 주유 후 트립미터를 0으로 초기화하고, 다음 주유 시 주행거리와 주유량을 기록하면 실제 연비를 측정할 수 있습니다."},

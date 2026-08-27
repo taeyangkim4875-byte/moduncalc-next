@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import WaterIntakeCalc from "./WaterIntakeCalc";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="건강" title="물 섭취량 계산기" description="체중과 활동량으로 하루 권장 물 섭취량을 계산합니다.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '건강', href: '/health' }, { name: '물 섭취량', href: '/health/water' }]} />
       <CalculatorJsonLd name="물 섭취량 계산기" description="체중과 활동량으로 하루 권장 물 섭취량을 계산합니다. 컵 수로도 안내." url="https://moduncalc.com/health/water" />
       <FaqJsonLd items={[
         { q: "하루에 물을 얼마나 마셔야 하나요?", a: "체중 1kg당 약 30ml가 기본이며, 활동량에 따라 보정됩니다. 예를 들어 70kg 성인은 하루 약 2,100ml(약 10컵)이 권장됩니다." },

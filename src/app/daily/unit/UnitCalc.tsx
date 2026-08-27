@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 const fmt=(n:number)=>parseFloat(n.toFixed(4)).toLocaleString('ko-KR',{maximumFractionDigits:4});
 export default function UnitCalc(){
   const [len,setLen]=useState(1);const [wt,setWt]=useState(1);const [temp,setTemp]=useState(36.5);const [area,setArea]=useState(33);

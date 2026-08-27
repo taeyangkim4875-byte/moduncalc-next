@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 const ANIMALS=['원숭이','닭','개','돼지','쥐','소','호랑이','토끼','용','뱀','말','양'];
 const SIGNS:[string,number][]=[['염소',119],['물병',218],['물고기',320],['양',419],['황소',520],['쌍둥이',620],['게',722],['사자',822],['처녀',922],['천칭',1022],['전갈',1121],['사수',1221],['염소',1231]];
 

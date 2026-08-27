@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 
 const fmtW=(n:number)=>{
   if(n>=10000)return `${(n/10000).toFixed(1)}억원`;

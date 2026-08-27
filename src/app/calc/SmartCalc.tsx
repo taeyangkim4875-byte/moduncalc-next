@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import ShareButtons from '@/components/ShareButtons';
 
 // 한국어 → 수식 변환 맵
 const KO_MAP: [RegExp, string][] = [

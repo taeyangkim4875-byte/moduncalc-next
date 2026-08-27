@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function YouTubeCalc() {
   const [monthlyViews, setMonthlyViews] = useState(10000);

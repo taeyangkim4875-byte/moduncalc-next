@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import ShareButtons from '@/components/ShareButtons';
 
 type Tab = 'diff' | 'add' | 'work';
 

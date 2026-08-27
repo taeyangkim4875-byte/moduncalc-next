@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import RegistrationCalc from "./RegistrationCalc";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="부동산" title="등기비용 계산기" description="매매가·전용면적·주택수를 입력하면 취득세부터 법무사비까지 총 등기비용을 계산합니다.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '부동산', href: '/realestate' }, { name: '등기비용', href: '/realestate/registration' }]} />
       <CalculatorJsonLd name="등기비용 계산기" description="부동산 매매 시 등기에 필요한 총비용을 계산. 취득세, 지방교육세, 인지세, 증지대, 법무사비 포함." url="https://moduncalc.com/realestate/registration" />
       <FaqJsonLd items={[
         { q: "등기비용에는 어떤 항목이 포함되나요?", a: "취득세, 지방교육세, 농어촌특별세, 인지세, 증지대, 법무사 수수료가 포함됩니다. 매매가와 주택 수에 따라 세율이 달라집니다." },

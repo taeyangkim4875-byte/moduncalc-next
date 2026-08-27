@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import AirconCalc from "./AirconCalc";
 
 export const metadata: Metadata = {
@@ -34,6 +34,7 @@ export default function Page() {
       title="에어컨 전기요금 계산기"
       description="에어컨 사용 시간과 소비전력을 입력하면 월 추가 전기요금을 바로 계산해 드려요."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '에어컨 전기요금', href: '/daily/aircon' }]} />
       <CalculatorJsonLd
         name="에어컨 전기요금 계산기"
         description="에어컨 하루 사용 시간과 소비전력으로 월 전기요금을 계산합니다. 2026년 여름 누진 완화 구간 반영, 인버터·정속형 비교."

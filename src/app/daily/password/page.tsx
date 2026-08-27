@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import PasswordGen from "./PasswordGen";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="일상 도구" title="비밀번호 생성기" description="강력한 랜덤 비밀번호를 즉시 생성하세요. 길이와 문자 조합을 설정하고 강도를 확인합니다.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '비밀번호', href: '/daily/password' }]} />
       <CalculatorJsonLd name="비밀번호 생성기" description="강력한 랜덤 비밀번호를 즉시 생성. 길이, 대소문자, 숫자, 특수문자 옵션 설정 가능. 비밀번호 강도 표시." url="https://moduncalc.com/daily/password" />
       <FaqJsonLd items={[
         {q:"안전한 비밀번호 길이는 최소 몇 자인가요?",a:"최소 12자 이상이 권장됩니다. 16자 이상이면 브루트포스 공격에 대한 안전성이 크게 높아집니다. 대소문자, 숫자, 특수문자를 모두 포함하는 것이 중요합니다."},

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 const DAYS=['일','월','화','수','목','금','토'];
 const today=()=>new Date().toISOString().slice(0,10);
 export default function DdayCalc(){

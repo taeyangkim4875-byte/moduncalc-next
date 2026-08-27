@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import CharCountCalc from "./CharCountCalc";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="텍스트 도구" title="글자수 세기" description="글자수·바이트·키워드 분석·플랫폼별 제한 체크를 한번에.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '글자수', href: '/daily/charcount' }]} />
       <CalculatorJsonLd name="글자수 세기" description="글자수, 바이트(UTF-8/EUC-KR), 단어수, 문장수 실시간 카운터. 자소서·SNS 플랫폼별 제한 초과 확인, 키워드 빈도 분석." url="https://moduncalc.com/daily/charcount" />
       <FaqJsonLd items={[
         {q:"한글은 몇 바이트인가요?",a:"UTF-8 기준 한글 1자 = 3바이트, EUC-KR 기준 2바이트입니다. 영문/숫자는 두 인코딩 모두 1바이트입니다."},

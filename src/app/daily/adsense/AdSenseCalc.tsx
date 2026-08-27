@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function AdSenseCalc() {
   const [pageviews, setPageviews] = useState(1000);

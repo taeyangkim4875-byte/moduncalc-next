@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import RandomPicker from "./RandomPicker";
 
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="일상 도구" title="랜덤 번호 뽑기" description="숫자 추첨, 로또 번호 생성, 목록 섞기를 한번에.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '랜덤 뽑기', href: '/daily/random' }]} />
       <CalculatorJsonLd name="랜덤 번호 뽑기" description="랜덤 숫자 추첨, 로또 번호 생성, 순서 섞기." url="https://moduncalc.com/daily/random" />
       <FaqJsonLd items={[
         {q:"랜덤 추첨은 공정한가요?",a:"이 생성기는 crypto.getRandomValues()를 사용하여 암호학적으로 안전한 난수를 생성합니다. 모든 숫자가 동일한 확률로 선택됩니다."},

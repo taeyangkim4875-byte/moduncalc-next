@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import AgeCalc from "./AgeCalc";
 
@@ -8,11 +8,17 @@ export const metadata: Metadata = {
   title: "나이 계산기 - 만 나이·한국 나이·띠·별자리",
   description: "나는 만 몇 살? 생년월일 입력하면 만 나이·한국 나이·띠·별자리 한번에 확인.",
   alternates: { canonical: "https://moduncalc.com/daily/age" },
+  openGraph: {
+    title: "나이 계산기 - 만 나이·한국 나이·띠·별자리",
+    description: "나는 만 몇 살? 생년월일 입력하면 만 나이·한국 나이·띠·별자리 한번에 확인.",
+    url: "https://moduncalc.com/daily/age",
+  },
 };
 
 export default function Page() {
   return (
     <PageLayout eyebrow="나이 계산" title="나이 계산기" description="만 나이, 한국 나이, 띠, 별자리를 알려드려요.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '나이', href: '/daily/age' }]} />
       <CalculatorJsonLd name="나이 계산기" description="생년월일로 만 나이, 한국 나이, 띠, 별자리를 알려드려요." url="https://moduncalc.com/daily/age" />
       <FaqJsonLd items={[{q:"만 나이가 법적 기준인가요?",a:"네. 2023년 6월 28일 시행된 이른바 만 나이 통일법에 따라 민법과 행정기본법상 나이는 별도 규정이 없으면 모두 만 나이로 해석합니다."},{q:"띠(십이지)는 어떻게 정해지나요?",a:"태어난 해를 12로 나눈 나머지로 정해집니다. 자(쥐)부터 해(돼지)까지 12년 주기입니다."},{q:"세는 나이와 연 나이는 어떻게 다른가요?",a:"세는 나이는 태어나자마자 1세로 시작해 해가 바뀔 때마다 한 살을 더하고, 연 나이는 현재 연도에서 출생 연도를 뺀 값입니다. 같은 사람이라도 세는 나이가 연 나이보다 항상 한 살 많습니다."}]} />
       <AgeCalc />

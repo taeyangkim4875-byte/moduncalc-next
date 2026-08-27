@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { CalculatorJsonLd, FaqJsonLd } from "@/components/JsonLd";
+import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "연말정산 초보 가이드 - 환급 많이 받는 법 (2026년 귀속)",
@@ -39,6 +39,7 @@ export default function YearEndTaxGuidePage() {
       title="연말정산 초보 가이드"
       description="13월의 월급, 환급 많이 받는 법을 초보자 눈높이에서 정리합니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'year-end-tax', href: '/guide/year-end-tax' }]} />
       <CalculatorJsonLd
         name="연말정산 가이드"
         description="연말정산 절차와 공제 항목을 초보자도 이해하기 쉽게 정리합니다."

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import SleepCalc from "./SleepCalc";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="건강" title="수면 시간 계산기" description="수면 주기(90분)에 맞춰 최적의 취침·기상 시간을 계산합니다.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '건강', href: '/health' }, { name: '수면 계산기', href: '/health/sleep' }]} />
       <CalculatorJsonLd name="수면 시간 계산기" description="수면 주기(90분)에 맞춰 최적의 취침·기상 시간을 알려드립니다. 개운하게 일어나는 시간 계산." url="https://moduncalc.com/health/sleep" />
       <FaqJsonLd items={[
         {q:"수면 주기란 무엇인가요?",a:"수면 주기는 NREM(비렘수면)과 REM(렘수면)이 반복되는 약 90분 단위의 사이클입니다. 한 밤에 4~6회 반복되며, 수면 주기가 끝나는 시점에 일어나면 개운합니다."},

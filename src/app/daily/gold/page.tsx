@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import GoldCalc from "./GoldCalc";
 
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="투자" title="금 시세 계산기" description="금 무게와 시세를 입력하면 금액을 환산합니다.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '금 시세', href: '/daily/gold' }]} />
       <CalculatorJsonLd name="금 시세 계산기" description="금 무게(돈, g, oz)를 입력하면 현재 시세 기준 금액을 환산합니다." url="https://moduncalc.com/daily/gold" />
       <FaqJsonLd items={[
         { q: "금 1돈은 몇 그램인가요?", a: "금 1돈은 3.75g입니다. 1냥은 10돈(37.5g)이며, 국제 단위 1트로이온스(oz)는 31.1035g입니다." },

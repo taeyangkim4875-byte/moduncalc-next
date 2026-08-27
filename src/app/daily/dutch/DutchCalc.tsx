@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 export default function DutchCalc(){
   const [total,setTotal]=useState(150000);const [people,setPeople]=useState(4);
   const [tipTotal,setTipTotal]=useState(100000);const [tipRate,setTipRate]=useState(10);

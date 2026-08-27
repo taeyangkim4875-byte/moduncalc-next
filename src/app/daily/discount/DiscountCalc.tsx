@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 export default function DiscountCalc(){
   const [price,setPrice]=useState(50000);const [rate,setRate]=useState(30);const [bp,setBp]=useState(3000);
   return(<>

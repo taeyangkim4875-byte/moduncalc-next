@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { CalculatorJsonLd, FaqJsonLd } from "@/components/JsonLd";
+import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "청년도약계좌 vs 청년미래적금 비교 - 어떤 게 유리할까? (2026)",
@@ -39,6 +39,7 @@ export default function DoyakVsMiraeGuidePage() {
       title="청년도약계좌 vs 청년미래적금"
       description="2026년 기준 두 상품의 금리·정부지원·가입조건을 상세 비교합니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'doyak-vs-mirae', href: '/guide/doyak-vs-mirae' }]} />
       <CalculatorJsonLd
         name="청년도약계좌 vs 청년미래적금 비교 가이드"
         description="두 상품의 금리, 정부지원, 가입조건을 상세 비교합니다."

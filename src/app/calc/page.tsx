@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import SmartCalc from "./SmartCalc";
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export default function Page() {
       title="스마트 계산기"
       description="수식을 입력하면 실시간으로 계산해 드려요. 한국어도 지원!"
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: 'calc', href: '/calc' }]} />
       <CalculatorJsonLd name="스마트 계산기" description="공학용 계산기. cos, sin, sqrt, log 등 수식을 텍스트로 입력하면 실시간 계산. 한국어 지원." url="https://moduncalc.com/calc" />
       <FaqJsonLd items={[
         {q:"어떤 함수를 지원하나요?",a:"삼각함수(sin, cos, tan), 제곱근(sqrt), 로그(log, ln), 절대값(abs), 반올림(round), 올림(ceil), 내림(floor), 거듭제곱(pow, ^), 원주율(π) 등을 지원합니다."},

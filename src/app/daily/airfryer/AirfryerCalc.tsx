@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 
 const RECIPES=[
   {name:'치킨너겟',ovenTemp:200,ovenMin:15,afTemp:185,afMin:12},

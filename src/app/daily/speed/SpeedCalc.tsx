@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 const fmt=(n:number)=>parseFloat(n.toFixed(2)).toLocaleString('ko-KR',{maximumFractionDigits:2});
 export default function SpeedCalc(){
   const [dist,setDist]=useState(300);const [speed,setSpeed]=useState(100);const [conv,setConv]=useState(100);

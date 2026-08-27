@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { FaqJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "FIRE 조기 은퇴 가이드 - 경제적 자유 달성 전략",
   description: "FIRE(Financial Independence, Retire Early) 개념과 실현 방법을 단계별로 설명합니다.",
   alternates: { canonical: "https://moduncalc.com/guide/fire-retirement" },
+  openGraph: {
+    title: "FIRE 조기 은퇴 가이드 - 경제적 자유 달성 전략",
+    description: "FIRE(Financial Independence, Retire Early) 개념과 실현 방법을 단계별로 설명합니다.",
+    url: "https://moduncalc.com/guide/fire-retirement",
+  },
 };
 
 export default function Page() {
@@ -17,6 +22,7 @@ export default function Page() {
       title="FIRE 조기 은퇴 가이드"
       description="경제적 자유를 달성하고 조기 은퇴하기 위한 전략을 단계별로 알려드립니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'fire-retirement', href: '/guide/fire-retirement' }]} />
       <FaqJsonLd
         items={[
           { q: "FIRE를 달성하려면 얼마가 필요한가요?", a: "4% 룰에 따르면 연간 지출의 25배에 해당하는 자산이 필요합니다. 예를 들어 월 지출이 300만원(연 3,600만원)이라면 약 9억원의 자산이 필요합니다." },

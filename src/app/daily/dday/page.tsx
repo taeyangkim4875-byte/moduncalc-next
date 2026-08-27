@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import DdayCalc from "./DdayCalc";
 
@@ -8,11 +8,17 @@ export const metadata: Metadata = {
   title: "D-day 계산기 - 날짜 차이·날짜 더하기",
   description: "그날까지 며칠 남았을까? 두 날짜 사이 일수 + 날짜 더하기/빼기 바로 계산.",
   alternates: { canonical: "https://moduncalc.com/daily/dday" },
+  openGraph: {
+    title: "D-day 계산기 - 날짜 차이·날짜 더하기",
+    description: "그날까지 며칠 남았을까? 두 날짜 사이 일수 + 날짜 더하기/빼기 바로 계산.",
+    url: "https://moduncalc.com/daily/dday",
+  },
 };
 
 export default function Page() {
   return (
     <PageLayout eyebrow="날짜 계산" title="D-day 계산기" description="두 날짜 사이 일수를 계산해요.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: 'D-day', href: '/daily/dday' }]} />
       <CalculatorJsonLd name="D-day 계산기" description="두 날짜 사이 일수와 날짜 더하기를 계산해요." url="https://moduncalc.com/daily/dday" />
       <FaqJsonLd items={[{q:"D-day와 D+day의 차이는?",a:"D-day는 목표일까지 남은 날, D+day는 기준일로부터 지난 날을 의미합니다."},{q:"음수 일수를 입력하면?",a:"과거 날짜를 계산할 수 있습니다. 과거 기념일이 며칠 전이었는지 확인할 때 유용합니다."},{q:"연애 100일은 왜 사귄 날부터 99일 뒤인가요?",a:"기념일은 사귄 첫날을 1일째로 세기 때문입니다. 따라서 100일째는 시작일에 99를 더한 날짜입니다."}]} />
       <DdayCalc />

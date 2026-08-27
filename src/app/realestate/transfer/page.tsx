@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import TransferTaxCalc from "./TransferTaxCalc";
 
@@ -8,11 +8,17 @@ export const metadata: Metadata = {
   title: "양도소득세 계산기 - 부동산 양도세",
   description: "양도소득세 얼마 나올까? 매수가·매도가 입력하면 장기보유공제·비과세 자동 적용.",
   alternates: { canonical: "https://moduncalc.com/realestate/transfer" },
+  openGraph: {
+    title: "양도소득세 계산기 - 부동산 양도세",
+    description: "양도소득세 얼마 나올까? 매수가·매도가 입력하면 장기보유공제·비과세 자동 적용.",
+    url: "https://moduncalc.com/realestate/transfer",
+  },
 };
 
 export default function Page() {
   return (
     <PageLayout eyebrow="2026 세법 기준" title="양도소득세 계산기" description="부동산 매도 시 예상 양도소득세를 간편하게 계산해 드려요.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '부동산', href: '/realestate' }, { name: '양도소득세', href: '/realestate/transfer' }]} />
       <CalculatorJsonLd name="양도소득세 계산기" description="부동산 양도소득세를 간편 계산. 1세대1주택 비과세, 장기보유특별공제 자동 적용." url="https://moduncalc.com/realestate/transfer" />
       <FaqJsonLd items={[{q:"1세대1주택 비과세 조건은 무엇인가요?",a:"2년 이상 보유(취득 당시 조정대상지역이었다면 2년 거주 포함)하고 양도가액이 12억원 이하이면 비과세입니다. 12억원을 넘으면 초과분에 해당하는 양도차익에만 과세됩니다."},{q:"장기보유특별공제는 어떻게 적용되나요?",a:"3년 이상 보유 시 연 2%씩 최대 30%까지 공제됩니다. 1세대1주택은 보유기간 연 4%와 거주기간 연 4%를 합산해 최대 80%까지 공제받을 수 있습니다."},{q:"2년 미만 보유 시 세율이 높아지나요?",a:"주택과 조합원입주권은 1년 미만 보유 시 70%, 1~2년 보유 시 60%의 단일세율이 적용됩니다. 토지·상가 등 그 밖의 부동산은 1년 미만 50%, 1~2년 40%입니다. 본 계산기는 자산 종류를 구분하지 않는 간편 계산이라 1년 미만에 45% 단일세율을 적용하므로, 주택 단기 양도라면 실제 세액이 계산 결과보다 큽니다."}]} />
       <TransferTaxCalc />

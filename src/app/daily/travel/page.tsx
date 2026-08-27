@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import TravelCalc from "./TravelCalc";
 
 export const metadata: Metadata = {
@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description:
     "여행 일수, 인원, 목적지를 선택하면 예상 경비를 자동 계산. 항공, 숙소, 식비, 교통, 관광 비용 포함.",
   alternates: { canonical: "https://moduncalc.com/daily/travel" },
+  openGraph: {
+    title: "여행 경비 계산기 - 국내·해외 여행 예산 짜기 (2026)",
+    description: "여행 일수, 인원, 목적지를 선택하면 예상 경비를 자동 계산. 항공, 숙소, 식비, 교통, 관광 비용 포함.",
+    url: "https://moduncalc.com/daily/travel",
+  },
 };
 
 export default function Page() {
@@ -17,6 +22,7 @@ export default function Page() {
       title="여행 경비 계산기"
       description="목적지, 일수, 인원, 스타일을 선택하면 예상 여행 경비를 자동으로 계산해요."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '여행 경비', href: '/daily/travel' }]} />
       <CalculatorJsonLd
         name="여행 경비 계산기"
         description="여행 일수, 인원, 목적지를 선택하면 예상 경비를 자동 계산. 항공, 숙소, 식비, 교통, 관광 비용 포함."

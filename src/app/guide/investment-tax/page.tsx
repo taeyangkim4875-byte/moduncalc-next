@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { FaqJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "주식·ETF 세금 총정리 - 양도세·배당세·금투세 (2026)",
   description: "주식 투자 시 발생하는 각종 세금을 초보자도 이해하기 쉽게 정리합니다.",
   alternates: { canonical: "https://moduncalc.com/guide/investment-tax" },
+  openGraph: {
+    title: "주식·ETF 세금 총정리 - 양도세·배당세·금투세 (2026)",
+    description: "주식 투자 시 발생하는 각종 세금을 초보자도 이해하기 쉽게 정리합니다.",
+    url: "https://moduncalc.com/guide/investment-tax",
+  },
 };
 
 export default function Page() {
@@ -17,6 +22,7 @@ export default function Page() {
       title="주식·ETF 세금 총정리 (2026)"
       description="양도소득세, 배당소득세, 증권거래세까지 투자 세금의 모든 것을 알려드립니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'investment-tax', href: '/guide/investment-tax' }]} />
       <FaqJsonLd
         items={[
           { q: "국내 주식 매매 시 세금은 얼마나 내나요?", a: "일반 개인투자자는 증권거래세(코스피 0%, 코스닥 0.15%)만 부담합니다. 대주주에 해당하면 양도소득세 22~27.5%가 추가로 과세됩니다." },

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { CalculatorJsonLd, FaqJsonLd } from "@/components/JsonLd";
+import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "전세 계약 완전 가이드 - 보증금 보호·계약 체크리스트 (2026)",
@@ -39,6 +39,7 @@ export default function JeonseGuidePage() {
       title="전세 계약 완전 가이드"
       description="보증금 보호부터 전세사기 예방까지, 전세 계약의 모든 것을 정리합니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'jeonse', href: '/guide/jeonse' }]} />
       <CalculatorJsonLd
         name="전세 계약 가이드"
         description="전세 계약 전 꼭 알아야 할 보증금 보호 방법과 체크리스트."

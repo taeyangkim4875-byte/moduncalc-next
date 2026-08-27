@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import CryptoCalc from "./CryptoCalc";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="생활" title="비트코인 수익률 계산기" description="매수가, 수량, 현재가를 입력하면 수익률과 실수익을 계산합니다.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '가상자산', href: '/daily/crypto' }]} />
       <CalculatorJsonLd name="비트코인 수익률 계산기" description="매수가와 현재가로 비트코인·가상자산 수익률을 계산하세요. 투자금, 수량, 수수료 반영." url="https://moduncalc.com/daily/crypto" />
       <FaqJsonLd items={[
         { q: "가상자산 수익에 세금이 부과되나요?", a: "가상자산 과세는 여러 차례 유예되어 2027년 시행 예정이었으나 추가 유예 가능성이 있습니다. 시행 시 연 250만원 초과 수익에 22%(지방세 포함)가 과세됩니다." },

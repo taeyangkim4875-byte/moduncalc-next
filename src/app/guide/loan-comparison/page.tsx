@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { FaqJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "원리금균등 vs 원금균등 상환 - 어떤 게 유리할까?",
   description: "대출 상환 방식의 차이와 각각의 장단점을 비교합니다.",
   alternates: { canonical: "https://moduncalc.com/guide/loan-comparison" },
+  openGraph: {
+    title: "원리금균등 vs 원금균등 상환 - 어떤 게 유리할까?",
+    description: "대출 상환 방식의 차이와 각각의 장단점을 비교합니다.",
+    url: "https://moduncalc.com/guide/loan-comparison",
+  },
 };
 
 export default function Page() {
@@ -17,6 +22,7 @@ export default function Page() {
       title="원리금균등 vs 원금균등 상환"
       description="대출 상환 방식별 차이점과 총 이자 비교, 나에게 맞는 방식을 찾아보세요."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'loan-comparison', href: '/guide/loan-comparison' }]} />
       <FaqJsonLd
         items={[
           { q: "원리금균등과 원금균등 중 어떤 게 이자를 덜 내나요?", a: "총 이자 부담은 원금균등 상환이 더 적습니다. 원금을 빨리 갚아 이자 계산 기준이 되는 잔액이 빠르게 줄어들기 때문입니다. 3억원, 연 3.5%, 30년 기준 약 1,400만원 차이가 납니다." },

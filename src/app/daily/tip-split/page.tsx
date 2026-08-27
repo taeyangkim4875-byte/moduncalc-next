@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import TipSplitCalc from "./TipSplitCalc";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="생활" title="모임 정산 계산기" description="균등 분배, 차등 분배, 송금 최소화로 모임비를 정산합니다.">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '모임 정산', href: '/daily/tip-split' }]} />
       <CalculatorJsonLd name="모임 정산 계산기" description="모임비를 참석자별로 정산. 균등 분배, 차등 분배, 송금 최소화 계산." url="https://moduncalc.com/daily/tip-split" />
       <FaqJsonLd items={[
         { q: "균등 분배와 차등 분배의 차이는 무엇인가요?", a: "균등 분배는 총 금액을 참석자 수로 나누는 N분의1 계산이고, 차등 분배는 각 참석자가 다른 금액을 부담하는 방식입니다. 예를 들어 술을 마신 사람과 안 마신 사람의 금액을 다르게 설정할 수 있습니다." },

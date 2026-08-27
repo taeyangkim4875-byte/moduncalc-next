@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import ShareButtons from '@/components/ShareButtons';
 
 const CHECKUPS=[
   {week:8,name:'초기 초음파',desc:'임신 확인, 태아 심박 확인'},

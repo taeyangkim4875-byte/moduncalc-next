@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
-import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import SubscriptionCalc from "./SubscriptionCalc";
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <PageLayout eyebrow="부동산" title="청약 가점 계산기" description="무주택 기간, 부양가족 수, 청약통장 가입 기간으로 가점을 계산합니다. (84점 만점)">
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '부동산', href: '/realestate' }, { name: '청약 가점', href: '/realestate/subscription' }]} />
       <CalculatorJsonLd name="청약 가점 계산기" description="청약 가점을 자동 계산합니다. 무주택 기간, 부양가족 수, 청약통장 가입 기간별 점수 확인. 2026년 기준." url="https://moduncalc.com/realestate/subscription" />
       <FaqJsonLd items={[
         {q:"청약 가점제란 무엇인가요?",a:"청약 가점제는 무주택 기간(32점), 부양가족 수(35점), 청약통장 가입 기간(17점) 등 3개 항목의 점수를 합산하여 총 84점 만점으로 당첨자를 선정하는 제도입니다."},

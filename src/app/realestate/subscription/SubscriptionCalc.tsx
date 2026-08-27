@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import ShareButtons from '@/components/ShareButtons';
 
 const HOMELESS_OPTIONS = [
   { label: '1년 미만', score: 2 },

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
 import { won } from '@/utils/format';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function RentalCalc(){
   const [buyPrice,setBuyPrice]=useState(50000);

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { CalculatorJsonLd, FaqJsonLd } from "@/components/JsonLd";
+import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "4대보험 완전 정리 - 2026년 요율·계산 방법·혜택",
@@ -39,6 +39,7 @@ export default function FourInsuranceGuidePage() {
       title="4대보험 완전 정리"
       description="2026년 요율·계산 방법·혜택을 항목별로 상세히 알아봅니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: '4-insurance', href: '/guide/4-insurance' }]} />
       <CalculatorJsonLd
         name="4대보험 가이드"
         description="국민연금, 건강보험, 고용보험, 산재보험의 요율과 혜택을 총정리합니다."

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import ShareButtons from '@/components/ShareButtons';
 
 export default function CoupangCalc() {
   const [dailyClicks, setDailyClicks] = useState(100);

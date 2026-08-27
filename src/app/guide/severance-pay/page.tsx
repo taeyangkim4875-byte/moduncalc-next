@@ -2,12 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
-import { FaqJsonLd } from "@/components/JsonLd";
+import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "퇴직금 계산법 완전 정리 - 지급 기준·세금·청구 방법",
   description: "퇴직금 지급 조건, 계산법, 세금, 미지급 시 대처법을 상세 설명합니다.",
   alternates: { canonical: "https://moduncalc.com/guide/severance-pay" },
+  openGraph: {
+    title: "퇴직금 계산법 완전 정리 - 지급 기준·세금·청구 방법",
+    description: "퇴직금 지급 조건, 계산법, 세금, 미지급 시 대처법을 상세 설명합니다.",
+    url: "https://moduncalc.com/guide/severance-pay",
+  },
 };
 
 export default function Page() {
@@ -17,6 +22,7 @@ export default function Page() {
       title="퇴직금 계산법 완전 정리"
       description="지급 기준부터 세금, 청구 방법까지 퇴직금의 모든 것을 알려드립니다."
     >
+      <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '가이드', href: '/guide' }, { name: 'severance-pay', href: '/guide/severance-pay' }]} />
       <FaqJsonLd
         items={[
           { q: "퇴직금은 언제 받을 수 있나요?", a: "1년 이상 근무하고 주 15시간 이상 일한 근로자라면 퇴직 시 퇴직금을 받을 수 있습니다. 사용자는 퇴직일로부터 14일 이내에 지급해야 합니다." },
