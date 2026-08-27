@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import FuelCalc from "./FuelCalc";
 
 export const metadata: Metadata = {
@@ -28,6 +29,42 @@ export default function Page() {
         {q:"내연차와 전기차 연료비 차이는?",a:"월 1,500km 주행 기준 내연차는 약 20만원, 전기차는 약 9.5만원으로 월 약 11만원, 연간 약 130만원 절약됩니다."},
       ]} />
       <FuelCalc />
+
+      <SeoSection title="내 차 실연비, 직접 측정하는 법">
+        <p>
+          공인연비와 실연비는 평균 15~30% 차이납니다. 내 차의 <strong>진짜 연비</strong>를 알아야 유류비 예산을 제대로 잡을 수 있어요.
+        </p>
+        <SeoFormula>
+          <div>실연비(km/L) = 주행 거리(km) ÷ 주유량(L)</div>
+          <div>유류비 = 주행 거리 ÷ 연비 × 리터당 기름값</div>
+          <div>전기차 충전비 = 주행 거리 ÷ 전비(km/kWh) × kWh당 단가</div>
+        </SeoFormula>
+        <p>
+          측정법: 주유소에서 가득 넣고, 트립미터 리셋. 다음 주유 시 주행거리와 넣은 양을 이 계산기에 입력하세요.
+          3~4번 반복하면 꽤 정확한 내 차 평균 연비가 나옵니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="내연차 vs 전기차, 연간 연료비 비교">
+        <SeoList>
+          <li><strong>내연차 (연비 12km/L)</strong> — 월 1,500km 주행 시 약 20만원 (리터당 1,600원 기준)</li>
+          <li><strong>전기차 (전비 5.5km/kWh)</strong> — 같은 거리 완속충전 시 약 9.5만원 (kWh당 350원)</li>
+          <li><strong>연간 차이</strong> — 약 126만원 절약. 10년이면 1,260만원</li>
+        </SeoList>
+        <p>
+          근데 전기차는 차 값이 더 비싸죠. 보조금 고려하면 5~7년 타야 손익분기가 나옵니다.
+          자동차세도 전기차가 유리해요 — 내연차 대비 연 40~50만원 저렴. <SeoLink href="/daily/cartax">자동차세 계산기</SeoLink>에서 비교해 보세요.
+        </p>
+      </SeoSection>
+
+      <SeoFaq
+        title="연비 관련 궁금증"
+        items={[
+          { q: '연비가 갑자기 나빠졌는데 원인이 뭔가요?', a: '에어컨 과다 사용, 타이어 공기압 부족, 에어필터 오염, 엔진오일 교체 시기 초과가 흔한 원인입니다. 공기압만 체크해도 연비가 3~5% 개선될 수 있어요.' },
+          { q: '고속도로가 시내보다 연비가 좋은가요?', a: '일반적으로 그렇습니다. 80~100km/h 정속 주행이 가장 연비가 좋고, 시내 정체 구간은 연비가 30~50% 떨어집니다. 다만 120km/h 이상에서는 공기 저항이 급증해 연비가 다시 나빠져요.' },
+          { q: '셀프 주유소가 얼마나 저렴한가요?', a: '일반 주유소 대비 리터당 50~100원 정도 저렴합니다. 월 100L 주유하면 5,000~10,000원 절약. 오피넷(opinet.co.kr)에서 주변 최저가 주유소를 확인할 수 있어요.' },
+        ]}
+      />
     </PageLayout>
   );
 }

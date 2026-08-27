@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { SeoFaq } from "@/components/SeoContent";
 
 export const metadata: Metadata = {
   title: "청년도약계좌 vs 청년미래적금 비교 - 어떤 게 유리할까? (2026)",
@@ -247,6 +248,15 @@ export default function DoyakVsMiraeGuidePage() {
           ))}
         </div>
       </Card>
+
+      <SeoFaq
+        title="환승 판단, 이런 상황이라면"
+        items={[
+          { q: '도약계좌 37개월째인데 해지하고 미래적금 가입이 나은가요?', a: '일반 해지하면 정부기여금 반환 + 이자과세라 손해가 큽니다. 특별중도해지 사유에 해당하지 않는 한 만기까지 유지하는 게 유리해요. 두 상품 동시 가입이 가능하므로 미래적금을 별도로 가입하는 방법도 있습니다.' },
+          { q: '두 상품 다 비과세인데 일반 적금 대비 실제 차이가 얼마나 되나요?', a: '일반 적금은 이자에서 15.4%를 떼니까, 연 5% 적금이면 실질 금리가 약 4.2%로 떨어집니다. 비과세 상품은 5% 그대로 받으니까 월 50만원, 3년 기준으로 약 40~50만원 차이가 나요.' },
+          { q: '소득이 올라서 도약계좌 기여금 구간이 바뀌면?', a: '매년 소득을 재심사해서 기여금 구간이 조정됩니다. 소득이 올라가면 기여금이 줄어들 수 있지만, 총급여 7,500만원을 초과하지 않는 한 가입 자격 자체는 유지돼요.' },
+        ]}
+      />
     </PageLayout>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { SeoFaq } from "@/components/SeoContent";
 
 export const metadata: Metadata = {
   title: "연말정산 초보 가이드 - 환급 많이 받는 법 (2026년 귀속)",
@@ -249,6 +250,15 @@ export default function YearEndTaxGuidePage() {
           ))}
         </div>
       </Card>
+
+      <SeoFaq
+        title="연말정산, 이런 상황은 어떻게 하나요"
+        items={[
+          { q: '올해 이직했는데 연말정산은 어떻게 하나요?', a: '현재 회사에서 전 직장 근로소득원천징수영수증을 제출하면 합산 정산해줍니다. 전 직장에서 원천징수영수증을 못 받았으면 홈택스에서 직접 조회할 수 있어요. 제출 안 하면 5월 종합소득세로 직접 신고해야 합니다.' },
+          { q: '연말정산에서 빼먹은 공제를 나중에 받을 수 있나요?', a: '경정청구를 통해 최대 5년 이내의 과거분을 정정할 수 있습니다. 홈택스에서 직접 신청 가능하고, 환급까지 보통 2~3개월 걸려요. 의료비나 기부금을 빼먹었다면 꼭 챙기세요.' },
+          { q: '맞벌이 부부 공제 분배는 어떻게 하는 게 유리한가요?', a: '인적공제(부양가족)는 소득이 높은 쪽이, 의료비 세액공제는 소득이 낮은 쪽이 유리한 경우가 많습니다. 의료비는 총급여의 3%를 넘어야 공제가 시작되니까 급여가 낮은 쪽이 문턱을 넘기 쉽거든요.' },
+        ]}
+      />
     </PageLayout>
   );
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { SeoFaq } from "@/components/SeoContent";
 
 export const metadata: Metadata = {
   title: "2026 연봉 실수령액 완전 정리 - 4대보험·소득세 공제 후 실수령액",
@@ -217,6 +218,15 @@ export default function SalaryNetPayGuidePage() {
           ))}
         </div>
       </Card>
+
+      <SeoFaq
+        title="실수령액, 이런 경우는 어떻게 되나요"
+        items={[
+          { q: '성과급이나 상여금 받는 달은 세금이 더 많이 빠지나요?', a: '네. 상여금은 해당 월 급여에 합산되어 원천징수되므로 일시적으로 높은 세율이 적용됩니다. 근데 이건 연말정산에서 정산되니까 최종적으로는 똑같아요. 그 달만 실수령이 예상보다 적게 느껴지는 거예요.' },
+          { q: '퇴직하는 달 급여가 적게 나오는 이유가 뭔가요?', a: '퇴직월에는 일할 계산으로 급여가 지급됩니다. 15일에 퇴사하면 월급의 절반만 나오고, 4대보험료는 일할 계산 없이 한 달치가 빠지는 경우도 있어서 실수령이 더 적어요.' },
+          { q: '연봉이 같은데 동료와 실수령이 다른 이유가 있나요?', a: '부양가족 수, 비과세 항목 설정, 간이세액표 적용 비율(80%/100%/120%)에 따라 원천징수액이 달라집니다. 연말정산 후 최종 세액은 비슷해지지만 매월 실수령은 차이가 날 수 있어요.' },
+        ]}
+      />
     </PageLayout>
   );
 }

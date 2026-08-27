@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { SeoFaq } from "@/components/SeoContent";
 
 export const metadata: Metadata = {
   title: "전세 계약 완전 가이드 - 보증금 보호·계약 체크리스트 (2026)",
@@ -208,6 +209,15 @@ export default function JeonseGuidePage() {
           ))}
         </div>
       </Card>
+
+      <SeoFaq
+        title="전세 계약, 이런 상황은 어떻게 하나요"
+        items={[
+          { q: '전세보증보험 가입이 거절되면 어떻게 하나요?', a: '건물 시세 대비 전세가율이 높거나, 근저당 설정이 과도하면 보증보험 가입이 거절될 수 있습니다. 이 경우 계약 자체를 재고하는 게 안전해요. 그래도 계약해야 한다면 전세권 설정등기라도 해두세요.' },
+          { q: '묵시적 갱신과 계약갱신청구권은 뭐가 다른가요?', a: '묵시적 갱신은 계약 만료 전 아무도 통보하지 않으면 자동으로 같은 조건으로 연장되는 것이고, 계약갱신청구권은 임차인이 적극적으로 갱신을 요구하는 권리입니다. 묵시적 갱신은 횟수 제한이 없지만 계약갱신청구권은 1회만 가능해요.' },
+          { q: '전세금 못 돌려받으면 임차권등기명령은 어떻게 하나요?', a: '계약 만료 후 보증금을 돌려받지 못하면 관할 법원에 임차권등기명령을 신청할 수 있습니다. 등기가 되면 이사를 가더라도 대항력과 우선변제권이 유지돼요. 비용은 법원 수수료 포함 약 5만원 수준입니다.' },
+        ]}
+      />
     </PageLayout>
   );
 }

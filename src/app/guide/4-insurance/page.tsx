@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { SeoFaq } from "@/components/SeoContent";
 
 export const metadata: Metadata = {
   title: "4대보험 완전 정리 - 2026년 요율·계산 방법·혜택",
@@ -169,6 +170,15 @@ export default function FourInsuranceGuidePage() {
           ))}
         </div>
       </Card>
+
+      <SeoFaq
+        title="4대보험 실무에서 자주 겪는 상황"
+        items={[
+          { q: '이직하면 4대보험은 어떻게 되나요?', a: '기존 회사에서 상실 처리되고, 새 회사에서 취득 처리됩니다. 공백 기간이 생기면 건강보험은 지역가입자로 자동 전환되고, 국민연금은 납부예외 신청이 가능해요. 고용보험은 이직 전후 가입기간이 합산됩니다.' },
+          { q: '비과세 식대 20만원이 4대보험료도 줄여주나요?', a: '네. 비과세 식대는 보수월액 산정에서 제외되므로 4대보험료도 줄어듭니다. 연봉 4,000만원에서 식대 240만원을 비과세로 분리하면 4대보험료가 연간 약 22만원 절감돼요.' },
+          { q: '프리랜서도 4대보험에 가입해야 하나요?', a: '사업소득자(3.3% 원천징수)는 의무 가입 대상이 아니지만, 국민연금과 건강보험은 지역가입자로 의무 가입입니다. 고용보험은 자영업자 임의가입이 가능하고, 나중에 실업급여를 받을 수 있어요.' },
+        ]}
+      />
     </PageLayout>
   );
 }

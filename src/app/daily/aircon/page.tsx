@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import AirconCalc from "./AirconCalc";
 
 export const metadata: Metadata = {
@@ -61,6 +62,42 @@ export default function Page() {
         ]}
       />
       <AirconCalc />
+
+      <SeoSection title="에어컨 전기세, 생각보다 덜 나올 수 있습니다">
+        <p>
+          솔직히 여름마다 &quot;에어컨 틀면 전기세 폭탄&quot;이라는 말에 겁먹고 더위 참는 분들 많죠.
+          근데 요즘 인버터 에어컨 기준으로 계산하면, <strong>하루 8시간 돌려도 월 2~3만원 추가</strong>되는 수준입니다.
+        </p>
+        <SeoFormula>
+          <div>월 추가 전기요금 = 소비전력(kW) × 가동률 × 하루 사용시간 × 30일 × kWh당 단가</div>
+          <div>인버터형 가동률: 약 40~60% (정속형은 100%)</div>
+        </SeoFormula>
+        <p>
+          핵심은 <strong>가동률</strong>입니다. 인버터 에어컨은 설정 온도에 도달하면 컴프레서가 천천히 돌아서,
+          실제 전력 소비가 표기 전력의 절반도 안 됩니다. 선풍기 끼고 참는 것보다 인버터 에어컨 하나 트는 게 건강에도 지갑에도 나을 수 있어요.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="여름 전기요금 아끼는 진짜 꿀팁">
+        <SeoList>
+          <li><strong>26도 설정 + 선풍기 병행</strong> — 24도와 26도의 전기요금 차이가 월 1만원 이상입니다</li>
+          <li><strong>에어컨 필터 2주마다 청소</strong> — 필터 막히면 같은 냉방에 전력 15~20% 더 씀</li>
+          <li><strong>자주 끄지 말 것</strong> — 인버터 에어컨은 켜놓는 게 오히려 절전. 30분 이내 외출이면 끄지 마세요</li>
+          <li><strong>7~8월 누진 완화 활용</strong> — 1구간이 300kWh까지 올라가서, 일반 가정은 누진 걱정 거의 없음</li>
+        </SeoList>
+        <p>
+          전체 전기요금이 궁금하면 <SeoLink href="/daily/electric">전기요금 계산기</SeoLink>에서 기본사용량까지 포함해서 확인하세요.
+        </p>
+      </SeoSection>
+
+      <SeoFaq
+        title="에어컨 전기요금, 이것도 궁금하시죠?"
+        items={[
+          { q: '에어컨 소비전력은 어디서 확인하나요?', a: '에어컨 본체 옆면이나 아래쪽 스티커에 "소비전력" 또는 "정격소비전력"이 W(와트) 단위로 적혀 있습니다. 보통 인버터형은 600~1,200W, 정속형은 1,000~2,000W 정도입니다.' },
+          { q: '에어컨 1등급과 3등급 전기세 차이가 크나요?', a: '같은 냉방 능력 기준으로 1등급이 3등급보다 연간 약 3~5만원 절약됩니다. 10년 쓰면 30~50만원 차이이니 구매 시 참고하세요.' },
+          { q: '창문형 에어컨도 이 계산기로 계산 가능한가요?', a: '네. 창문형은 대부분 정속형이라 가동률 100%로 계산하시면 됩니다. 소비전력은 보통 900~1,200W 수준입니다.' },
+        ]}
+      />
     </PageLayout>
   );
 }
