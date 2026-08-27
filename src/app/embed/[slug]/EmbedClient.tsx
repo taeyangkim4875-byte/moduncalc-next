@@ -14,6 +14,9 @@ const CALC_MAP: Record<string, ReturnType<typeof dynamic>> = {
   commission: dynamic(() => import('@/app/realestate/commission/CommissionCalc')),
   convert: dynamic(() => import('@/app/realestate/convert/ConvertCalc')),
   'tax-income': dynamic(() => import('@/app/tax/income/IncomeTaxCalc')),
+  'tax-eitc': dynamic(() => import('@/app/tax/eitc/EitcCalc')),
+  'tax-property': dynamic(() => import('@/app/tax/property/PropertyTaxCalc')),
+  'salary-insurance': dynamic(() => import('@/app/salary/insurance/InsuranceCalc')),
 };
 
 export default function EmbedClient({ slug }: { slug: string }) {

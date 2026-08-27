@@ -40,6 +40,7 @@ const MENUS_KO: MenuItem[] = [
     { label: '평생 근로소득', href: '/salary/lifetime' },
     { label: '육아휴직 급여', href: '/salary/parental' },
     { label: '연차 계산기', href: '/salary/annual' },
+    { label: '4대보험', href: '/salary/insurance' },
   ]},
   { href: '/pension', ico: '👵', label: '연금/보험', sub: [
     { label: '실업급여', href: '/pension/jobless' },
@@ -120,6 +121,8 @@ const MENUS_KO: MenuItem[] = [
     { label: '종합소득세', href: '/tax/income' },
     { label: '증여세', href: '/tax/gift' },
     { label: '상속세', href: '/tax/inherit' },
+    { label: '종부세', href: '/tax/property' },
+    { label: '근로장려금', href: '/tax/eitc' },
   ]},
   { href: '/guide', ico: '📖', label: '가이드', sub: [
     { label: '연봉 실수령액 정리', href: '/guide/salary-net-pay' },

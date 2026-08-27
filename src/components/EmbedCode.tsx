@@ -15,6 +15,9 @@ const SLUG_MAP: Record<string, string> = {
   '/realestate/commission': 'commission',
   '/realestate/convert': 'convert',
   '/tax/income': 'tax-income',
+  '/tax/eitc': 'tax-eitc',
+  '/tax/property': 'tax-property',
+  '/salary/insurance': 'salary-insurance',
 };
 
 export default function EmbedCode({ href }: { href: string }) {

@@ -20,6 +20,7 @@ const ALL_KO: CalcMeta[] = [
   { href: '/salary/parental', icon: '👶', title: '육아휴직', desc: '6+6 급여', category: '연봉', keywords: ['육아휴직', '육아', '출산', '6+6', '부모휴직', '급여'], related: ['/salary/annual', '/salary/severance'] },
   { href: '/salary/annual', icon: '📅', title: '연차', desc: '입사일 기준', category: '연봉', keywords: ['연차', '월차', '유급휴가', '연차일수', '입사일'], related: ['/salary/severance', '/salary/minimum'] },
   { href: '/salary/lifetime', icon: '💰', title: '평생 근로소득', desc: '은퇴까지', category: '연봉', keywords: ['평생', '근로소득', '총소득', '은퇴', '임금상승률'] },
+  { href: '/salary/insurance', icon: '🛡️', title: '4대보험', desc: '보험료 상세 계산', category: '연봉', keywords: ['4대보험', '국민연금', '건강보험', '고용보험', '장기요양', '보험료', '사회보험'], related: ['/salary', '/pension/nps'] },
 
   // 적금 / 예금
   { href: '/savings/doyak', icon: '🏦', title: '청년도약계좌', desc: '적립액+만기+특별해지', category: '적금', keywords: ['도약', '도약계좌', '청년도약', '적금', '5년'], related: ['/savings/mirae', '/salary'] },
@@ -45,6 +46,8 @@ const ALL_KO: CalcMeta[] = [
   { href: '/tax/income', icon: '🧾', title: '종합소득세', desc: '누진세율', category: '세금', keywords: ['종합소득세', '종소세', '소득세', '누진세', '세율', '프리랜서'], related: ['/tax/vat', '/salary'] },
   { href: '/tax/gift', icon: '🧾', title: '증여세', desc: '가족 간', category: '세금', keywords: ['증여세', '증여', '자녀', '배우자', '면제한도', '상속'] },
   { href: '/tax/inherit', icon: '🧾', title: '상속세', desc: '공제 자동 계산', category: '세금', keywords: ['상속세', '상속', '유산', '배우자공제', '일괄공제', '세율'] },
+  { href: '/tax/property', icon: '🏘️', title: '종합부동산세', desc: '종부세 시뮬레이션', category: '세금', keywords: ['종부세', '종합부동산세', '보유세', '공시가격', '부동산세', '재산세'], related: ['/realestate/acqtax', '/tax/income'] },
+  { href: '/tax/eitc', icon: '🧾', title: '근로장려금', desc: '자녀장려금 포함', category: '세금', keywords: ['근로장려금', '자녀장려금', 'EITC', '장려금', '신청', '지급', '반기'], related: ['/salary', '/tax/income'] },
   { href: '/daily/cartax', icon: '🚗', title: '자동차세', desc: '배기량·연식', category: '자동차', keywords: ['자동차세', '배기량', '연식', '차량세', '지방교육세', '연납'] },
 
   // 연금 / 보험
@@ -194,7 +197,7 @@ export const HOMEPAGE_CATEGORIES: HomepageCategory[] = [
   { title: '💰 연봉 / 급여', items: [
     '/salary', '/salary/table', '/salary/minimum', '/salary/severance',
     '/salary/live', '/salary/convert', '/salary/calendar', '/salary/parental',
-    '/salary/annual', '/salary/lifetime',
+    '/salary/annual', '/salary/lifetime', '/salary/insurance',
   ]},
   { title: '🏦 적금 / 예금', items: [
     '/savings/doyak', '/savings/mirae', '/savings/interest', '/daily/compound',
@@ -206,7 +209,7 @@ export const HOMEPAGE_CATEGORIES: HomepageCategory[] = [
     '/realestate/subscription', '/daily/pyeong',
   ]},
   { title: '🧾 세금', items: [
-    '/tax/vat', '/tax/income', '/tax/gift', '/tax/inherit', '/daily/cartax',
+    '/tax/vat', '/tax/income', '/tax/gift', '/tax/inherit', '/tax/property', '/tax/eitc', '/daily/cartax',
   ]},
   { title: '👵 연금 / 보험', items: [
     '/pension/jobless', '/pension/nps',
