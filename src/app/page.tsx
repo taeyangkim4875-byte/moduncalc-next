@@ -71,11 +71,6 @@ export default function Home() {
         </div>
       ))}
 
-      <div className="mt-4 text-center">
-        <Link href="/en" className="text-sm font-bold text-[var(--primary)] no-underline hover:text-[var(--primary-dark)]">
-          🌍 English Calculators for Foreigners →
-        </Link>
-      </div>
 
       <Card className="mt-4">
         <h2 className="text-base font-extrabold mb-3">📖 모든 계산기란?</h2>

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description:
     '모든계산의 계산기들이 어떻게 연결되는지 한눈에 확인하세요. 연봉→세금, BMI→기초대사량 등 자연스러운 계산 여정을 따라갈 수 있습니다.',
   alternates: { canonical: 'https://moduncalc.com/map' },
+  robots: { index: false, follow: true },
 };
 
 export default function MapPage() {

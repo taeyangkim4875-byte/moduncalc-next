@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: '계산 기록 - 모든 계산기',
   description: '지금까지 사용한 계산 기록을 확인하고, 이전 결과를 복원하거나 비교해 보세요.',
   alternates: { canonical: 'https://moduncalc.com/history' },
+  robots: { index: false, follow: true },
 };
 
 export default function Page() {

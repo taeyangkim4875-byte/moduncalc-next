@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: '취득세 예산으로 매수 가능 금액 역산 - 취득세 역방향 계산기',
   description: '준비한 취득세 예산으로 살 수 있는 최대 집값을 역산합니다. 주택 수·면적별 세율 자동 적용.',
   alternates: { canonical: 'https://moduncalc.com/realestate/acqtax/reverse' },
+  robots: { index: false, follow: true },
   openGraph: {
     title: '취득세 예산으로 매수 한도 역산하기 (2026)',
     description: '취득세 예산 입력 → 매수 가능 최대 금액 역산. 1~3주택 세율 자동 반영.',

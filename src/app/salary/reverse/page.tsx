@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: '실수령액으로 연봉 역산 - 희망 실수령 연봉 계산기',
   description: '원하는 실수령액을 입력하면 필요한 세전 연봉을 역산합니다. 2026년 4대보험·소득세 반영.',
   alternates: { canonical: 'https://moduncalc.com/salary/reverse' },
+  robots: { index: false, follow: true },
   openGraph: {
     title: '실수령액으로 필요 연봉 역산하기 (2026)',
     description: '희망 월 실수령액으로 세전 연봉 역산. 4대보험·소득세 자동 반영.',

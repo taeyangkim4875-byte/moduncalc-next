@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "월 상환액으로 대출 한도 역산 - 대출 역방향 계산기",
   description: "월 납입 가능 금액으로 대출 한도를 역산합니다. 원리금균등 기준 최대 대출 금액을 바로 확인.",
   alternates: { canonical: "https://moduncalc.com/loan/reverse" },
+  robots: { index: false, follow: true },
   openGraph: { title: "월 상환액으로 대출 한도 역산하기 (2026)", description: "내가 낼 수 있는 월 상환액으로 대출 가능 금액을 역산. 금리·기간 조건별 비교.", url: "https://moduncalc.com/loan/reverse" },
 };
 

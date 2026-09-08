@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: '목표 연금액으로 필요 가입기간 역산 - 국민연금 역방향 계산기',
   description: '원하는 월 연금액을 받으려면 몇 년 납입해야 하는지 역산합니다. 소득 기준 자동 반영.',
   alternates: { canonical: 'https://moduncalc.com/pension/nps/reverse' },
+  robots: { index: false, follow: true },
   openGraph: {
     title: '국민연금 목표액 역산하기 (2026)',
     description: '희망 월 연금액 입력 → 필요 가입기간 역산. 소득대체율 43% 기준.',
