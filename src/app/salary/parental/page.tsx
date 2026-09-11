@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import ParentalCalc from "./ParentalCalc";
 export const metadata: Metadata = { title: "육아휴직 급여 계산기 - 6+6 부모육아휴직제 반영", description: "육아휴직하면 월급 얼마 받을까? 2026 하반기 상한 250만원 반영. 6+6 부모휴직 최대 450만원.", alternates: { canonical: "https://moduncalc.com/salary/parental" },
   openGraph: {
@@ -30,6 +30,16 @@ export default function Page() { return (<PageLayout eyebrow="2026 육아휴직 
         </p>
       </SeoSection>
 
+      <SeoSection title="연봉 4,000만원이면 육아휴직 급여가 얼마나 될까">
+        <p>통상임금 월 333만원(연봉 4,000만원 기준) 기준으로 시뮬레이션해보겠습니다.</p>
+        <SeoList>
+          <li><strong>일반 육아휴직</strong> — 1~3개월: 월 150만원(상한), 4~12개월: 월 120만원(상한). 12개월 합산 약 1,530만원</li>
+          <li><strong>6+6 부모육아휴직 (부부 모두 사용)</strong> — 1개월차: 200만원, 2개월차: 250만원, 3개월차: 300만원, 4개월차: 333만원(통상임금 100%), 5개월차: 333만원, 6개월차: 333만원. 6개월 합산 약 1,749만원</li>
+        </SeoList>
+        <p>6+6를 쓰면 같은 6개월 기준으로 일반 육아휴직(810만원)보다 2배 넘게 받습니다. 아빠 육아휴직 사용률이 2024년 25%에서 2025년 28%로 올라간 건 이 제도 덕분이에요. 근데 아직도 직장 분위기 때문에 신청을 망설이는 아빠들이 많습니다.</p>
+        <p>복직 후 불이익은 남녀고용평등법 제19조에서 명확히 금지하고 있어요. 육아휴직을 이유로 해고, 불리한 처우를 하면 3년 이하의 징역 또는 3,000만원 이하의 벌금입니다. 퇴직금 산정 시에도 육아휴직 기간은 근속 기간에 포함되니까 <SeoLink href="/salary/severance">퇴직금 계산기</SeoLink>에서 확인해 보세요.</p>
+      </SeoSection>
+
       <SeoFaq
         title="육아휴직 급여 실무 Q&A"
         items={[
@@ -37,6 +47,8 @@ export default function Page() { return (<PageLayout eyebrow="2026 육아휴직 
           { q: '통상임금에 상여금도 포함되나요?', a: '정기적·일률적으로 지급되는 상여금은 통상임금에 포함됩니다. 명절 상여도 매년 고정 지급이면 포함될 수 있으니 회사 취업규칙을 확인하세요.' },
           { q: '육아휴직 중에 다른 일을 해도 되나요?', a: '원칙적으로 취업은 금지입니다. 적발되면 급여가 중단되고 환수될 수 있어요. 다만 주 15시간 미만의 단시간 근로는 사업주 동의 하에 가능합니다.' },
           { q: '1년 넘게 육아휴직을 쓸 수 있나요?', a: '자녀 1명당 부모 각각 최대 1년(12개월)까지 가능합니다. 자녀가 2명이면 각 자녀에 대해 별도로 1년씩 쓸 수 있어요.' },
+          { q: '배우자가 전업주부인데 6+6 사용할 수 있나요?', a: '안 됩니다. 6+6 부모육아휴직제는 부모 둘 다 고용보험에 가입된 근로자여야 해요. 배우자가 자영업자거나 미취업 상태면 일반 육아휴직만 가능합니다.' },
+          { q: '육아휴직 급여에 세금이 붙나요?', a: '비과세입니다. 소득세, 4대보험료가 부과되지 않아요. 그래서 세전 월급 대비 실질적인 체감 차이는 생각보다 크지 않을 수 있습니다.' },
         ]}
       />
     </PageLayout>

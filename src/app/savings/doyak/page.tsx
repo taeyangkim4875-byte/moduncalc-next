@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import DoyakCalculator from "./DoyakCalculator";
 
 export const metadata: Metadata = {
@@ -37,12 +37,26 @@ export default function Page() {
         </p>
       </SeoSection>
 
+      <SeoSection title="소득 구간별 정부기여금, 얼마나 받을 수 있나요">
+        <p>정부기여금은 본인 소득에 따라 달라집니다. 납입한 금액에 비례해서 매칭해주는 방식이에요.</p>
+        <SeoList>
+          <li><strong>총급여 2,400만원 이하</strong> — 납입액의 6.0% 기여 (월 70만원 납입 시 월 42,000원)</li>
+          <li><strong>2,400~3,600만원</strong> — 납입액의 4.6% (월 70만원 납입 시 월 32,200원)</li>
+          <li><strong>3,600~4,800만원</strong> — 납입액의 3.7% (월 70만원 납입 시 월 25,900원)</li>
+          <li><strong>4,800~6,000만원</strong> — 납입액의 3.0% (월 70만원 납입 시 월 21,000원)</li>
+        </SeoList>
+        <p>5년 만기까지 매달 70만원씩 꼬박 넣으면, 소득 2,400만원 이하인 경우 정부기여금만 252만원입니다. 여기에 이자 비과세까지 합치면 일반 적금 대비 수백만원 차이가 나요. 근데 현실적으로 매달 70만원을 5년간 넣기가 쉽지 않죠. 50만원만 넣어도 기여금 비율은 같으니까 무리하지 않는 선에서 넣는 게 좋습니다.</p>
+        <p>청년미래적금으로 환승을 고민 중이라면 <SeoLink href="/savings/mirae">청년미래적금 계산기</SeoLink>에서 수령액을 비교해 보세요. 도약계좌와 미래적금은 <SeoLink href="/guide/doyak-vs-mirae">도약계좌 vs 미래적금 비교 가이드</SeoLink>에서 자세히 다루고 있습니다.</p>
+      </SeoSection>
+
       <SeoFaq
         title="청년도약계좌 실전 Q&A"
         items={[
           { q: '변동금리가 더 내려갈 수도 있나요?', a: '네. 변동금리는 기준금리에 연동되므로 한국은행 기준금리가 내리면 같이 떨어집니다. 반대로 금리가 오르면 올라갈 수도 있어요. 은행별 변동금리 산정 기준이 조금씩 다릅니다.' },
           { q: '납입을 몇 달 쉬어도 계좌가 유지되나요?', a: '6개월 연속 미납하면 계좌가 해지될 수 있습니다. 형편이 어려우면 최소 1만원이라도 넣어서 연속 미납을 피하세요. 납입 금액은 월 1천원~70만원까지 자유롭게 조절 가능해요.' },
           { q: '결혼하면 특별중도해지가 되나요?', a: '네. 혼인은 특별중도해지 9가지 사유 중 하나입니다. 혼인신고일 전후 2년 이내에 신청하면 정부기여금과 비과세 혜택을 유지한 채 해지할 수 있어요.' },
+          { q: '미래적금 환승 후 후회하면 다시 돌아올 수 있나요?', a: '없습니다. 환승은 도약계좌를 특별중도해지하고 미래적금에 새로 가입하는 거라, 한 번 환승하면 도약계좌 재가입이 불가능해요. 남은 기간과 금리를 잘 비교하고 결정하세요.' },
+          { q: '군 복무 중에도 도약계좌를 유지할 수 있나요?', a: '네. 군 복무 중 납입이 어려우면 월 1천원만 넣어도 유지됩니다. 만기가 군 복무 기간만큼 자동 연장되진 않으니, 입대 전 납입 전략을 세워두는 게 좋아요.' },
         ]}
       />
     </PageLayout>

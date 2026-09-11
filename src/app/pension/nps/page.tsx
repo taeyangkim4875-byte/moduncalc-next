@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { ogImageUrl } from "@/utils/og";
 import { won } from "@/utils/format";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import PensionCalculator from "./PensionCalculator";
 
 type Props = {
@@ -69,12 +69,26 @@ export default function Page() {
         </p>
       </SeoSection>
 
+      <SeoSection title="연금개혁 후 보험료율, 앞으로 얼마까지 오를까">
+        <p>2026년 연금개혁으로 보험료율이 9%에서 매년 0.5%p씩 올라 2033년에 13%가 됩니다. 월급 300만원 기준으로 보면 이렇습니다.</p>
+        <SeoList>
+          <li><strong>2026년 (9.5%)</strong> — 본인 부담 142,500원/월, 사업주 142,500원/월</li>
+          <li><strong>2028년 (10.5%)</strong> — 본인 부담 157,500원/월</li>
+          <li><strong>2030년 (11.5%)</strong> — 본인 부담 172,500원/월</li>
+          <li><strong>2033년 (13%)</strong> — 본인 부담 195,000원/월</li>
+        </SeoList>
+        <p>대신 소득대체율은 42%에서 43%로 올라가요. 40년 가입 기준으로 평균소득자가 받는 연금이 소득의 43%가 된다는 뜻입니다. 솔직히 보험료 인상 폭에 비하면 수령액 증가는 크지 않지만, 기금 고갈 시점이 2056년에서 2064년으로 8년 늦춰진 게 핵심이에요.</p>
+        <p>본인 월급에서 4대보험이 얼마나 빠지는지 궁금하면 <SeoLink href="/salary">연봉 실수령액 계산기</SeoLink>에서 바로 확인하세요. 국민연금과 퇴직연금을 합친 노후 설계는 <SeoLink href="/pension">연금 메인 페이지</SeoLink>에서 다루고 있습니다.</p>
+      </SeoSection>
+
       <SeoFaq
         title="국민연금 실전 Q&A"
         items={[
           { q: '10년 못 채우면 낸 돈은 어떻게 되나요?', a: '60세 도달 시 가입기간이 10년 미만이면 반환일시금으로 원금+이자를 돌려받습니다. 다만 임의계속가입으로 60세 이후에도 납부를 이어가서 10년을 채울 수도 있어요.' },
           { q: '기준소득월액 상한이 뭔가요?', a: '2026년 7월부터 기준소득월액 상한은 659만원입니다. 월급이 700만원이든 1,000만원이든 659만원 기준으로만 보험료가 산정돼요.' },
           { q: '국민연금도 세금을 내야 하나요?', a: '네. 연금소득도 종합소득세 과세 대상입니다. 다만 연간 연금소득이 일정 금액 이하면 분리과세를 선택할 수 있고, 실효세율은 크지 않은 편이에요.' },
+          { q: '부부 합산으로 받을 때 감액이 있나요?', a: '부부 모두 국민연금을 받으면, 배우자의 노령연금과 본인의 유족연금이 중복될 때 유족연금의 일부가 감액됩니다. 하지만 각자의 노령연금은 감액 없이 전액 수령해요.' },
+          { q: '해외에 나가면 연금을 못 받나요?', a: '해외 거주해도 수급 요건을 갖추면 정상적으로 지급됩니다. 해외 계좌로 송금도 가능해요. 다만 매년 생존 확인 서류를 제출해야 합니다. 사회보장협정 체결국이면 가입기간 합산도 가능합니다.' },
         ]}
       />
     </PageLayout>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import JoblessCalculator from "./JoblessCalculator";
 
 export const metadata: Metadata = {
@@ -37,6 +37,17 @@ export default function Page() {
         </p>
       </SeoSection>
 
+      <SeoSection title="연봉 3,000만원이면 실업급여 얼마나 받을까">
+        <p>월급 250만원(연봉 3,000만원) 기준으로 시뮬레이션해보겠습니다. 퇴직 전 3개월 평균임금을 일수로 나눈 평균임금이 약 83,333원이에요.</p>
+        <SeoFormula>
+          <div>구직급여 1일액 = 퇴직 전 평균임금 × 60% = 약 50,000원</div>
+          <div>상한액(66,000원) 이내이므로 50,000원 그대로 적용</div>
+          <div>하한액(63,104원)보다 낮으므로 → 실제 지급액: 63,104원</div>
+        </SeoFormula>
+        <p>이게 좀 아이러니한 구조인데, 월급 250만원인 사람이나 200만원인 사람이나 실업급여 1일액이 거의 같습니다. 둘 다 하한액에 걸리거든요. 2026년 하한액이 63,104원(최저임금 10,470원 × 8시간 × 80%)이라서 웬만한 직장인은 다 하한액을 받게 됩니다.</p>
+        <p>수급 기간은 나이와 근속에 따라 다릅니다. 30세 미만이고 고용보험 3년 가입이면 120일(약 4개월), 50세 이상 20년 가입이면 270일(약 9개월)이에요. 퇴사 전에 본인 예상 수령액을 꼭 확인하세요. 퇴직금은 <SeoLink href="/salary/severance">퇴직금 계산기</SeoLink>에서 별도로 확인할 수 있습니다.</p>
+      </SeoSection>
+
       <SeoFaq
         title="실업급여 실무 Q&A"
         items={[
@@ -44,6 +55,8 @@ export default function Page() {
           { q: '실업급여 받으면서 알바를 해도 되나요?', a: '주 15시간 미만, 월 60시간 미만의 단시간 근로는 가능합니다. 다만 취업한 날은 실업급여가 지급되지 않고, 미신고 시 부정수급으로 3배 환수될 수 있어요.' },
           { q: '신청은 퇴사 후 언제까지 해야 하나요?', a: '퇴사일 다음 날부터 12개월 이내에 신청해야 합니다. 이 기간이 지나면 남은 수급일수가 있어도 받을 수 없으니 빨리 신청하세요.' },
           { q: '실업급여 수급 중 취업하면 나머지는 못 받나요?', a: '조기에 재취업하면 남은 수급일수의 절반을 조기재취업수당으로 일시금 수령할 수 있습니다. 남은 일수가 많을수록 유리해요.' },
+          { q: '계약직 만료도 실업급여 대상인가요?', a: '네. 계약 기간 만료로 퇴사하는 건 비자발적 이직으로 인정됩니다. 피보험단위기간 180일만 채우면 수급 가능해요. 계약 갱신을 본인이 거부한 경우는 자발적 퇴사로 볼 수 있으니 주의하세요.' },
+          { q: '실업급여에 세금이 붙나요?', a: '구직급여는 비과세소득입니다. 소득세도, 4대보험료도 부과되지 않아요. 다만 종합소득세 신고 시 소득 합산에는 포함되지 않으니까 다른 소득과 별개로 생각하면 됩니다.' },
         ]}
       />
     </PageLayout>

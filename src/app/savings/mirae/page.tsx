@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import MiraeCalculator from "./MiraeCalculator";
 
 export const metadata: Metadata = {
@@ -39,6 +39,18 @@ export default function Page() {
         </p>
       </SeoSection>
 
+      <SeoSection title="미래적금 3년 만기, 얼마나 모을 수 있을까">
+        <p>매달 70만원씩 3년간 넣으면 원금은 2,520만원입니다. 여기에 이자와 정부기여금이 붙어요.</p>
+        <SeoFormula>
+          <div>기본금리 5% 기준: 이자 약 195만원</div>
+          <div>우대금리 8% 적용 시: 이자 약 312만원</div>
+          <div>정부기여금 (소득 2,400만원 이하): 약 151만원</div>
+          <div>최대 수령액: 원금 2,520 + 이자 312 + 기여금 151 = 약 2,983만원</div>
+        </SeoFormula>
+        <p>도약계좌(5년)보다 기간이 짧아서 총 수령액은 적지만, 연 환산 수익률로 보면 미래적금이 더 높을 수 있어요. 특히 기본금리 5%가 고정이라 금리 하락기에 유리합니다. 도약계좌는 3년차부터 변동금리로 떨어지니까요.</p>
+        <p>도약계좌와 어떤 게 유리한지 헷갈린다면 <SeoLink href="/guide/doyak-vs-mirae">도약계좌 vs 미래적금 비교 가이드</SeoLink>에서 상세 비교를 확인하세요. 만기 후 자금 운용은 <SeoLink href="/daily/compound">복리 계산기</SeoLink>로 시뮬레이션해 보세요.</p>
+      </SeoSection>
+
       <SeoFaq
         title="청년미래적금 실전 Q&A"
         items={[
@@ -46,6 +58,8 @@ export default function Page() {
           { q: '도약계좌 환승은 아직 가능한가요?', a: '환승 신청 기간은 2026년 6월 22일~7월 3일이었고, 이미 종료되었습니다. 추가 환승 기회가 있을지는 아직 미정이에요.' },
           { q: '3년 만기 전에 해지하면 금리가 어떻게 되나요?', a: '중도해지 시 기본금리의 일부만 적용되고 우대금리는 전부 사라집니다. 가입 후 1년 미만이면 연 1% 수준의 해지이율이 적용돼서 일반 적금보다도 불리해요.' },
           { q: '총급여 5,000만원 기준, 세전인가요 세후인가요?', a: '세전 총급여(연봉) 기준입니다. 근로소득원천징수영수증의 총급여란 금액이 5,000만원 이하여야 가입 자격이 있어요.' },
+          { q: '미래적금이랑 도약계좌 둘 다 가입할 수 있나요?', a: '안 됩니다. 미래적금과 도약계좌는 동시 가입이 불가합니다. 하나를 해지해야 다른 하나에 가입할 수 있어요. 환승은 도약→미래 방향만 가능했고, 반대는 안 됩니다.' },
+          { q: '미래적금 이자에 세금이 붙나요?', a: '비과세입니다. 3년간 발생하는 이자소득 전액이 비과세 처리되어 15.4% 이자소득세를 내지 않아요. 일반 적금 대비 연 8% 기준으로 약 48만원의 세금을 아끼는 셈입니다.' },
         ]}
       />
     </PageLayout>
