@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import AnnualCalc from "./AnnualCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "연차 계산기 - 입사일 기준 연차 일수 자동 계산",
@@ -22,6 +23,7 @@ export default function Page() {
       <CalculatorJsonLd name="연차 계산기" description="입사일만 입력하면 현재 발생 연차 일수를 자동 계산. 근로기준법 기준." url="https://moduncalc.com/salary/annual" />
       <FaqJsonLd items={[{q:"1년 미만인데 연차가 있나요?",a:"네, 1개월 개근 시 1일의 유급휴가(월차)가 발생합니다. 최대 11일."},{q:"연차는 언제 소멸하나요?",a:"발생일로부터 1년 이내에 사용하지 않으면 소멸됩니다."},{q:"연차수당은 어떻게 계산하나요?",a:"미사용 연차 × 1일 통상임금으로 계산됩니다."}]} />
       <AnnualCalc />
+      <ShareButtons title="연차 계산 결과" />
 
       <SeoSection title="근로기준법이 정한 연차 발생 기준">
         <p>

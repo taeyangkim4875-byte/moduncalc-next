@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import WaterIntakeCalc from "./WaterIntakeCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "물 섭취량 계산기 - 하루 권장 물 섭취량",
@@ -26,6 +27,7 @@ export default function Page() {
         { q: "물을 너무 많이 마시면 해로운가요?", a: "극단적으로 과다 섭취하면 저나트륨혈증(물중독)이 발생할 수 있습니다. 일반적으로 하루 3~4리터 이내라면 건강한 성인에게 문제가 되지 않습니다." },
       ]} />
       <WaterIntakeCalc />
+      <ShareButtons title="물 섭취량 계산 결과" />
 
       <SeoSection title="하루 물 8잔, 사실 정확한 기준이 아닙니다">
         <p>하루에 물 2리터 마시라는 말 많이 들어봤죠? 근데 이게 1945년 미국 식품영양위원회 권장 사항에서 나온 건데, 음식에서 섭취하는 수분을 빼고 말한 거였어요. 국이나 과일, 채소에서 이미 하루 수분의 20~30%를 섭취하고 있거든요.</p>

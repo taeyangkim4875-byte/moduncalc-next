@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList } from "@/components/SeoContent";
 import TipSplitCalc from "./TipSplitCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "모임 정산 계산기 - N분의1 · 차등 정산 · 송금 최소화",
@@ -26,6 +27,7 @@ export default function Page() {
         { q: "정산할 때 편리한 앱이 있나요?", a: "토스의 더치페이 기능, 카카오페이 송금, 네이버페이 정산하기 등을 활용하면 편리합니다. 링크를 공유하면 각자 자동으로 송금할 수 있습니다." },
       ]} />
       <TipSplitCalc />
+      <ShareButtons title="모임 정산 결과" />
 
       <SeoSection title="회식비 정산, 매번 애매하죠">
         <p>4명이서 고깃집 갔는데 한 명은 술을 안 마셨어요. 총 24만원 나왔는데 N분의1로 하면 그 사람이 억울하잖아요. 근데 정확히 나누자니 또 쪼잔해 보이고. 솔직히 이런 상황 매번 있습니다.</p>

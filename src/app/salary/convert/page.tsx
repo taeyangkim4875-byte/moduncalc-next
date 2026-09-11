@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import SalaryConverter from "./SalaryConverter";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "연봉 환산기 - 내 월급으로 ___까지 얼마나 일해야 할까?",
@@ -26,6 +27,7 @@ export default function Page() {
       <CalculatorJsonLd name="연봉 환산기" description="연봉을 입력하면 아이폰, 테슬라, 아파트 등을 사려면 며칠을 일해야 하는지 계산합니다." url="https://moduncalc.com/salary/convert" />
       <FaqJsonLd items={[{q:"세후 기준으로 볼 수 있나요?",a:"현재는 세전 기준입니다. 실수령액 기준으로 보려면 연봉 실수령액 계산기에서 실수령액을 확인한 후 그 금액을 입력하세요."},{q:"근무일 252일은 어떤 기준인가요?",a:"연 365일에서 주말 104일, 공휴일 약 15일을 제외한 평균 근무일수입니다."}]} />
       <SalaryConverter />
+      <ShareButtons title="연봉 환산 결과" />
 
       <SeoSection title="내 월급으로 아이폰 사려면 며칠을 일해야 할까">
         <p>연봉 3,600만원이면 세후 월급이 약 260만원이에요. 하루 일당으로 환산하면 약 11.8만원입니다. 아이폰 16 Pro가 155만원이니까 약 13일을 일해야 살 수 있는 거죠. 테슬라 모델 3가 5,500만원이면? 약 466일, 거의 2년 치 월급입니다.</p>

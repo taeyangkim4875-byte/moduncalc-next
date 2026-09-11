@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList } from "@/components/SeoContent";
 import PasswordGen from "./PasswordGen";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "비밀번호 생성기 - 안전한 랜덤 비밀번호 만들기",
@@ -26,6 +27,7 @@ export default function Page() {
         {q:"생성된 비밀번호는 안전한가요?",a:"이 생성기는 브라우저의 crypto.getRandomValues()를 사용하여 암호학적으로 안전한 난수를 생성합니다. 비밀번호는 서버로 전송되지 않으며 브라우저에서만 처리됩니다."},
       ]} />
       <PasswordGen />
+      <ShareButtons title="비밀번호 생성 결과" />
 
       <SeoSection title="비밀번호, 진짜 바꿔야 할 때">
         <p>솔직히 비밀번호 바꾸라는 팝업 뜨면 대부분 뒤에 숫자 1 붙이고 끝내잖아요. 근데 2024년 한국인터넷진흥원(KISA) 발표 보면 개인정보 유출 사고의 68%가 비밀번호 재사용 때문이었습니다. 네이버 비번이랑 은행 비번이 같다? 사실 그거 하나만 뚫려도 전부 위험해요.</p>

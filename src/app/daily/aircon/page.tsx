@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import AirconCalc from "./AirconCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "에어컨 전기요금 계산기 - 하루 몇 시간 틀면 얼마? (2026 여름)",
@@ -62,6 +63,7 @@ export default function Page() {
         ]}
       />
       <AirconCalc />
+      <ShareButtons title="에어컨 전기요금 계산 결과" />
 
       <SeoSection title="에어컨 전기세, 생각보다 덜 나올 수 있습니다">
         <p>

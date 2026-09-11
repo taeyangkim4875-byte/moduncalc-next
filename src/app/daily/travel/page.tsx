@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq } from "@/components/SeoContent";
 import TravelCalc from "./TravelCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "여행 경비 계산기 - 국내·해외 여행 예산 짜기 (2026)",
@@ -46,6 +47,7 @@ export default function Page() {
         ]}
       />
       <TravelCalc />
+      <ShareButtons title="여행 경비 계산 결과" />
 
       <SeoSection title="여행 예산, 현실적으로 짜는 법">
         <p>일본 3박 4일 예산 잡을 때 항공+숙소만 계산하고 가면 진짜 큰일 납니다. 현지 교통비, 밥값, 입장료, 쇼핑 이런 거 다 합치면 보통 예상의 1.5배는 나와요. 특히 2026년 엔화가 100엔에 900원대라 일본 물가가 체감상 꽤 올랐습니다.</p>

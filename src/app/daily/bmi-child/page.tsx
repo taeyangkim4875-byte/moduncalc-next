@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import BmiChildCalc from "./BmiChildCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "어린이 BMI 계산기 - 소아 청소년 성장 백분위 (2026)",
@@ -26,6 +27,7 @@ export default function Page() {
         { q: "성장기에 다이어트를 해도 되나요?", a: "성장기에는 극단적인 식이제한보다 균형 잡힌 영양 섭취와 규칙적인 신체활동이 권장됩니다. 소아 비만이 걱정된다면 소아과 전문의와 상담하세요." },
       ]} />
       <BmiChildCalc />
+      <ShareButtons title="어린이 BMI 계산 결과" />
 
       <SeoSection title="우리 아이 살찐 걸까? 성인 BMI와 다른 이유">
         <p>

@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import MilitaryCalc from "./MilitaryCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "전역일 계산기 - 육군·해군·공군·해병대·사회복무 (2026)",
@@ -22,6 +23,7 @@ export default function Page() {
       <CalculatorJsonLd name="전역일 계산기" description="입대일만 입력하면 전역일과 남은 복무일수를 자동 계산. 군별 복무기간 반영." url="https://moduncalc.com/daily/military" />
       <FaqJsonLd items={[{q:"전역일은 정확한가요?",a:"입대일 기준 군별 복무기간으로 계산합니다. 실제로는 훈련소 입소일 등에 따라 1~2일 차이가 날 수 있습니다."},{q:"복무 단축이 적용되나요?",a:"현재 기준 복무기간으로 계산하며, 추가 단축 제도는 별도 반영하지 않습니다."}]} />
       <MilitaryCalc />
+      <ShareButtons title="전역일 계산 결과" />
 
       <SeoSection title="군별 복무기간 기준 (2026년)">
         <p>현행 병역법 기준 의무복무 기간은 다음과 같습니다.</p>

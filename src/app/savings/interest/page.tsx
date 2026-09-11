@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import InterestCalc from "./InterestCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "적금 이자 계산기 - 예금·적금 만기 수령액",
@@ -18,6 +19,7 @@ export default function Page() {
       <CalculatorJsonLd name="적금 이자 계산기" description="적금·예금 만기 수령액을 자동 계산합니다. 월 납입액, 이자율, 기간, 이자과세 적용." url="https://moduncalc.com/savings/interest" />
       <FaqJsonLd items={[{q:"단리와 복리의 차이는 무엇인가요?",a:"단리는 원금에 대해서만 이자를 계산하고, 복리는 이자에 대한 이자까지 계산합니다. 일반적인 은행 적금·예금은 단리로 계산됩니다."},{q:"비과세 혜택은 누가 받을 수 있나요?",a:"비과세종합저축은 만 65세 이상, 장애인, 국가유공자 등이 가입할 수 있으며, 1인당 5,000만원 한도 내에서 이자소득세가 면제됩니다."},{q:"적금과 예금의 차이는 무엇인가요?",a:"적금은 매달 일정 금액을 납입하는 방식이고, 예금은 목돈을 한 번에 맡기는 방식입니다. 같은 금리라면 예금이 이자가 더 많습니다."}]} />
       <InterestCalc />
+      <ShareButtons title="적금 이자 계산 결과" />
 
       <SeoSection title="적금 이자가 생각보다 적은 이유">
         <p>

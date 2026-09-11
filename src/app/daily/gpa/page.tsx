@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import GpaCalc from "./GpaCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "학점 계산기 - GPA 평점 계산 (4.5 만점)",
@@ -22,6 +23,7 @@ export default function Page() {
       <CalculatorJsonLd name="학점 계산기" description="과목별 학점과 성적을 입력하면 4.5 만점 기준 평균 평점을 자동 계산합니다." url="https://moduncalc.com/daily/gpa" />
       <FaqJsonLd items={[{q:"4.5 만점과 4.3 만점의 차이는?",a:"A+를 4.5로 보느냐 4.3으로 보느냐의 차이입니다. 대부분의 한국 대학은 4.5 만점제를 사용합니다."},{q:"재수강하면 성적이 어떻게 반영되나요?",a:"학교마다 다르지만, 대부분 새 성적으로 대체됩니다. 일부 학교는 평균 처리합니다."}]} />
       <GpaCalc />
+      <ShareButtons title="학점 계산 결과" />
 
       <SeoSection title="GPA 계산 공식">
         <p>평균 평점(GPA)은 <strong>과목별 학점 × 성적 점수의 합</strong>을 <strong>총 학점 수</strong>로 나눈 값입니다.</p>

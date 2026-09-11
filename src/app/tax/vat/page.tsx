@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import VatCalc from "./VatCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "부가세 계산기 - 공급가액·부가세 역산",
@@ -22,6 +23,7 @@ export default function Page() {
       <CalculatorJsonLd name="부가세 계산기" description="공급가액 또는 합계금액에서 부가세를 계산하세요." url="https://moduncalc.com/tax/vat" />
       <FaqJsonLd items={[{q:"부가세 포함가에서 공급가를 구하는 공식은?",a:"합계금액 ÷ 1.1 = 공급가액, 합계금액 - 공급가액 = 부가세입니다."},{q:"부가세가 면제되는 품목이 있나요?",a:"기본 식료품, 의료, 교육, 도서 등은 부가세가 면제됩니다."}]} />
       <VatCalc />
+      <ShareButtons title="부가세 계산 결과" />
 
       <SeoSection title="부가가치세의 구조와 신고 일정">
         <p>

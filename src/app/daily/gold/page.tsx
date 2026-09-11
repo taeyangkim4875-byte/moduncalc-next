@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import GoldCalc from "./GoldCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "금 시세 계산기 - 금 1돈·1g 가격 환산 (2026)",
@@ -22,6 +23,7 @@ export default function Page() {
         { q: "금 투자 방법에는 어떤 것이 있나요?", a: "골드바 구매, KRX 금시장, 금 ETF, 금 통장(골드뱅킹), 금 펀드 등이 있습니다. 실물 보유를 원하면 골드바, 세금 혜택을 원하면 KRX 금시장을 추천합니다." },
       ]} />
       <GoldCalc />
+      <ShareButtons title="금 시세 계산 결과" />
 
       <SeoSection title="금 무게 단위 정리">
         <p>금을 거래할 때는 다양한 무게 단위가 혼용됩니다. 핵심 단위만 정리하면:</p>

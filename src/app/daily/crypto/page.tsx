@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import CryptoCalc from "./CryptoCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "비트코인 수익률 계산기 - 가상자산 투자 손익 계산",
@@ -26,6 +27,7 @@ export default function Page() {
         { q: "수익률은 어떻게 계산하나요?", a: "수익률 = (현재가 - 매수가) / 매수가 × 100입니다. 수수료를 반영한 실수익은 매수·매도 수수료를 차감한 후 계산됩니다." },
       ]} />
       <CryptoCalc />
+      <ShareButtons title="가상자산 수익 계산 결과" />
 
       <SeoSection title="가상자산 수익 계산, 수수료까지 빼야 진짜 수익입니다">
         <p>

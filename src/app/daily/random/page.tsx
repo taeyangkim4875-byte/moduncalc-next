@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import RandomPicker from "./RandomPicker";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "랜덤 번호 뽑기 - 숫자 추첨 · 로또 번호 생성기",
@@ -21,6 +22,7 @@ export default function Page() {
         {q:"로또 당첨 확률은 얼마인가요?",a:"로또 6/45의 1등 당첨 확률은 1/8,145,060(약 814만분의 1)입니다."},
       ]} />
       <RandomPicker />
+      <ShareButtons title="랜덤 뽑기 결과" />
 
       <SeoSection title="이 추첨기의 공정성">
         <p>

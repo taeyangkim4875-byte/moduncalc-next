@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq } from "@/components/SeoContent";
 import RegistrationCalc from "./RegistrationCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "등기비용 계산기 - 취득세·인지세·법무사비 포함 총비용 (2026)",
@@ -26,6 +27,7 @@ export default function Page() {
         { q: "취득세 감면 혜택이 있나요?", a: "생애 첫 주택 구입 시 취득세 감면(200만원 한도), 신혼부부 감면, 다자녀 감면 등이 있습니다. 지자체별 추가 감면도 확인하세요." },
       ]} />
       <RegistrationCalc />
+      <ShareButtons title="등기비용 계산 결과" />
 
       <SeoSection title="등기비용, 예상보다 많이 나와서 당황했던 경험">
         <p>

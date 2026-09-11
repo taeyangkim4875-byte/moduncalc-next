@@ -3,6 +3,7 @@ import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
 import NetPayTable from './NetPayTable';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: '연봉 실수령액표 · 2026',
@@ -22,6 +23,7 @@ export default function NetPayTablePage() {
       <CalculatorJsonLd name="연봉 실수령액표" description="2026년 연봉별 실수령액을 한눈에 비교하세요. 2,000만원부터 1억 5,000만원까지." url="https://moduncalc.com/salary/table" />
       <FaqJsonLd items={[{q:"표에서 내 연봉 구간을 어떻게 찾나요?",a:"연봉은 100만원 단위로 나열되어 있으며, Ctrl+F로 검색하거나 스크롤하세요."},{q:"부양가족이 많으면 실수령액이 달라지나요?",a:"네, 부양가족 수에 따라 소득세가 달라져 실수령액이 변합니다."}]} />
       <NetPayTable />
+      <ShareButtons title="실수령액 표" />
 
       <SeoSection title="2026년 실수령액표는 어떤 기준으로 만들어졌나요">
         <p>

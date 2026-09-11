@@ -3,6 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import CharCountCalc from "./CharCountCalc";
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "글자수 세기 - 공백 포함·제외 · 바이트 · 키워드 분석 · 플랫폼별 체크",
@@ -27,6 +28,7 @@ export default function Page() {
         {q:"읽기 시간은 어떻게 계산하나요?",a:"한국어 평균 읽기 속도 분당 500자 기준으로 추정합니다. A4 1장은 약 500~600자 분량입니다."},
       ]} />
       <CharCountCalc />
+      <ShareButtons title="글자수 세기 결과" />
 
       <SeoSection title="자소서 글자수, 기업마다 기준이 다릅니다">
         <p>
