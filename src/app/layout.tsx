@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import Sidebar from "@/components/Sidebar";
 import ScrollToTop from "@/components/ScrollToTop";
-import { WebsiteJsonLd } from "@/components/JsonLd";
+import { WebsiteJsonLd, OrganizationJsonLd } from "@/components/JsonLd";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -60,6 +60,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="모든계산기" />
         <link rel="apple-touch-icon" href="/icons/icon.svg" />
         <WebsiteJsonLd />
+        <OrganizationJsonLd />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-NX4JK10SS6"
           strategy="afterInteractive"

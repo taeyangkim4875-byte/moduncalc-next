@@ -2,16 +2,23 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "이용약관",
   description: "모든 계산기(moduncalc.com) 서비스 이용약관",
   alternates: { canonical: "https://moduncalc.com/terms" },
+  openGraph: {
+    title: "이용약관 - 모든 계산기",
+    description: "모든 계산기(moduncalc.com) 서비스 이용에 관한 약관입니다.",
+    url: "https://moduncalc.com/terms",
+  },
 };
 
 export default function Page() {
   return (
     <PageLayout eyebrow="법적 고지" title="이용약관" description="모든 계산기 서비스 이용에 관한 약관입니다.">
+      <BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "이용약관", href: "/terms" }]} />
       <Card>
         <div className="text-sm text-[#4E5968] leading-[1.8]">
           <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-0 mb-2.5">제1조 (목적)</h2>
@@ -31,9 +38,8 @@ export default function Page() {
           </ul>
           <p className="mt-2">③ 운영자는 계산 결과의 <b>정확성·완전성·최신성을 보증하지 않습니다.</b> 관계 법령 및 정부 고시의 개정 내용이 서비스에 반영되기까지 시차가 발생할 수 있습니다.</p>
           <p className="mt-2">④ 정확한 금액과 법적 판단은 반드시 국세청·금융기관·국민연금공단 등 소관 기관의 공식 자료를 직접 확인하거나, 세무사·변호사·공인노무사·의사 등 해당 분야 전문가와 상담하시기 바랍니다. 서비스는 이러한 전문가의 조언을 대체하지 않습니다.</p>
-          <p className="mt-2">⑤ 서비스에 포함된 AI 챗봇·AI 분석 기능이 생성한 답변에는 부정확한 정보가 포함될 수 있으며, 운영자는 그 내용에 대해 책임을 지지 않습니다.</p>
-          <p className="mt-2">⑥ 서비스는 사전 고지 없이 내용을 변경하거나 중단할 수 있습니다.</p>
-          <p className="mt-2">⑦ 본 조의 면책은 관련 법령이 허용하는 최대 범위 내에서 적용되며, 보다 상세한 내용은 <Link href="/disclaimer" className="text-[var(--primary)] font-bold underline">면책조항</Link>에서 확인하실 수 있습니다.</p>
+          <p className="mt-2">⑤ 서비스는 사전 고지 없이 내용을 변경하거나 중단할 수 있습니다.</p>
+          <p className="mt-2">⑥ 본 조의 면책은 관련 법령이 허용하는 최대 범위 내에서 적용되며, 보다 상세한 내용은 <Link href="/disclaimer" className="text-[var(--primary)] font-bold underline">면책조항</Link>에서 확인하실 수 있습니다.</p>
 
           <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">제4조 (개인정보)</h2>
           <p>서비스는 별도의 회원가입 없이 이용 가능하며, 사용자가 입력하는 계산 데이터는 서버에 저장되지 않습니다. 개인정보 처리에 관한 사항은 <Link href="/privacy" className="text-[var(--primary)] font-bold underline">개인정보처리방침</Link>을 따릅니다.</p>

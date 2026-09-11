@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침 - 모든 계산기",
   description: "모든 계산기(moduncalc.com)의 개인정보 수집·이용·보호에 관한 안내입니다.",
   alternates: { canonical: "https://moduncalc.com/privacy" },
+  openGraph: {
+    title: "개인정보처리방침 - 모든 계산기",
+    description: "모든 계산기(moduncalc.com)의 개인정보 수집·이용·보호에 관한 안내입니다.",
+    url: "https://moduncalc.com/privacy",
+  },
 };
 
 export default function Page() {
   return (
     <PageLayout eyebrow="법적 고지" title="개인정보처리방침" description="모든 계산기의 개인정보 처리에 관한 안내입니다.">
+      <BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "개인정보처리방침", href: "/privacy" }]} />
       <Card>
         <div className="text-sm text-[#4E5968] leading-[1.8]">
           <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-0 mb-2.5">1. 개인정보의 수집 및 이용</h2>

@@ -1,23 +1,30 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "문의하기 - 모든 계산기",
   description: "모든 계산기에 대한 문의, 건의, 오류 신고를 받고 있습니다.",
   alternates: { canonical: "https://moduncalc.com/contact" },
+  openGraph: {
+    title: "문의하기 - 모든 계산기",
+    description: "모든 계산기에 대한 문의, 건의, 오류 신고를 받고 있습니다.",
+    url: "https://moduncalc.com/contact",
+  },
 };
 
 export default function ContactPage() {
   return (
     <PageLayout eyebrow="Contact" title="문의하기" description="궁금한 점이나 건의 사항이 있으시면 알려주세요.">
+      <BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "문의하기", href: "/contact" }]} />
       <Card>
         <h2 className="text-base font-extrabold mb-3">📬 문의 안내</h2>
         <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-3">
           <p>모든 계산기(moduncalc.com)에 대한 문의, 건의, 오류 신고를 받고 있습니다.</p>
           <div className="bg-[var(--bg)] rounded-xl p-4">
             <div className="text-sm font-bold text-[var(--ink)] mb-2">이메일</div>
-            <a href="mailto:contact@moduncalc.com" className="text-[var(--primary)] font-bold no-underline hover:underline">contact@moduncalc.com</a>
+            <a href="mailto:taeyang.kim4875@gmail.com" className="text-[var(--primary)] font-bold no-underline hover:underline">taeyang.kim4875@gmail.com</a>
           </div>
         </div>
       </Card>

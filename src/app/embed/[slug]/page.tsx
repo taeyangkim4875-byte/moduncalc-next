@@ -1,4 +1,9 @@
+import type { Metadata } from 'next';
 import EmbedClient from './EmbedClient';
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 export default async function EmbedPage({
   params,

@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
+import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "면책조항 - 모든 계산기",
   description: "모든 계산기(moduncalc.com)의 계산 결과에 대한 면책 고지사항입니다.",
   alternates: { canonical: "https://moduncalc.com/disclaimer" },
+  openGraph: {
+    title: "면책조항 - 모든 계산기",
+    description: "모든 계산기(moduncalc.com)의 계산 결과에 대한 면책 고지사항입니다.",
+    url: "https://moduncalc.com/disclaimer",
+  },
 };
 
 export default function Page() {
   return (
     <PageLayout eyebrow="법적 고지" title="면책조항" description="모든 계산기 서비스의 면책 고지사항입니다.">
+      <BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "면책조항", href: "/disclaimer" }]} />
       <Card>
         <div className="text-sm text-[#4E5968] leading-[1.8]">
           <div className="bg-[#FFF8E1] border border-[#F0D48A] rounded-xl p-4 mb-6">
@@ -52,23 +59,15 @@ export default function Page() {
             <li>음주 후 운전 가능 시간 계산은 추정치이며, 실제 혈중알코올농도는 개인차가 큽니다. 안전을 위해 음주 후에는 대리운전 또는 대중교통을 이용하세요.</li>
           </ul>
 
-          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">5. AI 기능</h2>
-          <p>서비스에 포함된 AI 챗봇 및 AI 분석 기능은 NVIDIA NIM API를 기반으로 하며, AI가 생성한 답변은 <b>참고용</b>입니다.</p>
-          <ul className="pl-5 my-2 list-disc">
-            <li>AI 답변에는 부정확한 정보가 포함될 수 있습니다.</li>
-            <li>AI 답변을 근거로 한 재무·건강·법률적 의사결정에 대해 운영자는 책임을 지지 않습니다.</li>
-            <li>중요한 결정은 반드시 전문가(세무사, 변호사, 의사 등)와 상담하세요.</li>
-          </ul>
-
-          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">6. 부동산 계산</h2>
+          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">5. 부동산 계산</h2>
           <p>취득세, 양도소득세, 중개수수료, 전월세 전환, 임대수익률, 등기비용 등 부동산 관련 계산 결과는 일반적인 세율과 요율을 기반으로 한 추정치입니다.</p>
           <ul className="pl-5 my-2 list-disc">
             <li>다주택자 중과, 조정대상지역 여부, 감면 혜택 등은 개별 상황에 따라 다릅니다.</li>
             <li>정확한 세액은 관할 세무서 또는 세무사에게 확인하세요.</li>
           </ul>
 
-          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">7. 손해배상 책임의 제한</h2>
-          <p>서비스의 계산 결과, AI 답변, 가이드 콘텐츠를 신뢰하여 내린 의사결정으로 발생한 직접적·간접적 손해에 대해 운영자는 <b>책임을 지지 않습니다.</b> 서비스는 정보 제공 목적으로만 운영되며, 전문적인 조언을 대체하지 않습니다.</p>
+          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">6. 손해배상 책임의 제한</h2>
+          <p>서비스의 계산 결과, 가이드 콘텐츠를 신뢰하여 내린 의사결정으로 발생한 직접적·간접적 손해에 대해 운영자는 <b>책임을 지지 않습니다.</b> 서비스는 정보 제공 목적으로만 운영되며, 전문적인 조언을 대체하지 않습니다.</p>
           <p className="mt-2">구체적으로 다음 사항에 대하여 운영자는 명시적·묵시적을 불문하고 <b>어떠한 보증도 하지 않으며 법적 책임을 부담하지 않습니다.</b></p>
           <ul className="pl-5 my-2 list-disc">
             <li>계산 결과에 근거한 <b>금융 상품 가입·해지, 대출 실행, 투자</b> 및 그 손익</li>
@@ -76,11 +75,11 @@ export default function Page() {
             <li>계산 결과에 근거한 <b>세금 신고·납부</b> 및 그로 인한 가산세·과소신고 등 불이익</li>
             <li>계산 결과에 근거한 <b>퇴사, 이직, 급여 협상 등 근로 관계</b> 관련 판단</li>
             <li>법령·요율·고시의 개정으로 게시된 정보가 최신 상태가 아니게 되어 발생한 손해</li>
-            <li>제3자 광고, 외부 링크, AI 생성 답변의 내용으로 인해 발생한 손해</li>
+            <li>제3자 광고, 외부 링크의 내용으로 인해 발생한 손해</li>
           </ul>
           <p className="mt-2">본 조항은 관련 법령이 허용하는 최대 범위 내에서 적용됩니다.</p>
 
-          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">8. 정보의 기준 시점과 갱신</h2>
+          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">7. 정보의 기준 시점과 갱신</h2>
           <p>서비스에 게시된 세율·요율·공제 한도 등은 <b>2026년 시행 기준</b>으로 작성되었습니다. 다만 관계 법령과 정부 고시는 수시로 개정되며, 개정 내용이 서비스에 반영되기까지 시차가 발생할 수 있습니다.</p>
           <ul className="pl-5 my-2 list-disc">
             <li>일부 요율은 연중 특정 시점(예: 국민연금 기준소득월액 상한은 매년 7월)에 변경됩니다.</li>
@@ -88,10 +87,10 @@ export default function Page() {
             <li>이용 시점에 개정 여부가 불확실하다면 반드시 소관 기관의 최신 고시를 직접 확인하시기 바랍니다.</li>
           </ul>
 
-          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">9. 제3자 서비스</h2>
-          <p>서비스에는 Google AdSense 광고, Google Analytics 분석 도구, NVIDIA AI API가 포함되어 있습니다. 이들 제3자 서비스의 이용 약관 및 개인정보 처리에 대한 책임은 해당 서비스 제공자에게 있습니다.</p>
+          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">8. 제3자 서비스</h2>
+          <p>서비스에는 Google AdSense 광고, Google Analytics 분석 도구가 포함되어 있습니다. 이들 제3자 서비스의 이용 약관 및 개인정보 처리에 대한 책임은 해당 서비스 제공자에게 있습니다.</p>
 
-          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">10. 계산 기준 및 출처</h2>
+          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">9. 계산 기준 및 출처</h2>
           <p>서비스의 계산 기준은 다음 공식 출처를 기반으로 합니다:</p>
           <ul className="pl-5 my-2 list-disc">
             <li>소득세법 제55조 (종합소득세 누진세율)</li>
@@ -105,7 +104,7 @@ export default function Page() {
             <li>최저임금위원회 고시 (연도별 최저임금)</li>
           </ul>
 
-          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">11. 이용자의 확인 의무</h2>
+          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">10. 이용자의 확인 의무</h2>
           <p>이용자는 서비스를 이용함으로써 본 면책조항의 내용에 동의한 것으로 봅니다. 특히 아래에 해당하는 경우, 계산 결과를 그대로 신뢰하지 마시고 <b>반드시 해당 분야 전문가 또는 소관 기관의 공식 확인을 거치시기 바랍니다.</b></p>
           <ul className="pl-5 my-2 list-disc">
             <li>주택 매매·전세 등 <b>고액 부동산 거래</b>를 앞두고 있는 경우 → 관할 세무서, 공인중개사, 세무사</li>
@@ -115,7 +114,7 @@ export default function Page() {
             <li><b>건강 이상</b>이 의심되는 경우 → 의사 등 전문 의료인</li>
           </ul>
 
-          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">12. 문의</h2>
+          <h2 className="text-[17px] font-extrabold text-[var(--ink)] mt-7 mb-2.5">11. 문의</h2>
           <p>면책조항에 대한 문의는 아래로 연락해 주세요.</p>
           <p>운영자: 김태양<br/>이메일: taeyang.kim4875@gmail.com</p>
 

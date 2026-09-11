@@ -2,16 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
+import { PersonJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "소개 - 모든 계산기 (moduncalc.com)",
-  description: "모든 계산기(moduncalc.com)는 2026년 최신 세법·요율을 반영한 무료 계산기 80종 이상을 제공하는 웹 서비스입니다. 운영자 소개, 계산 기준, 출처를 안내합니다.",
+  description: "모든 계산기(moduncalc.com)는 2026년 최신 세법·요율을 반영한 무료 계산기 82종을 제공하는 웹 서비스입니다. 운영자 김태양 소개, 계산 기준, 출처를 안내합니다.",
   alternates: { canonical: "https://moduncalc.com/about" },
+  openGraph: {
+    title: "소개 - 모든 계산기",
+    description: "모든 계산기(moduncalc.com)의 운영자 소개, 서비스 특징, 계산 기준 및 공식 출처를 안내합니다.",
+    url: "https://moduncalc.com/about",
+  },
 };
 
 export default function Page() {
   return (
     <PageLayout eyebrow="서비스 소개" title="모든 계산기" description="일상에서 자주 필요한 계산을 빠르고 정확하게.">
+      <PersonJsonLd />
+      <BreadcrumbJsonLd items={[{ name: "홈", href: "/" }, { name: "소개", href: "/about" }]} />
+
       <Card>
         <h2 className="text-base font-extrabold mb-3">🧮 모든 계산기란?</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
@@ -19,15 +28,19 @@ export default function Page() {
           2026년 최신 세법·보험 요율·정책을 반영하여 정확한 계산 결과를 제공합니다.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          현재 <b>한국어 계산기 80종 이상</b>과 <b>영어 계산기·가이드 60종 이상</b>을 제공하고 있으며, 새로운 계산기와 콘텐츠를 지속적으로 추가하고 있습니다.
+          현재 <b>한국어 계산기 82종</b>과 <b>가이드 10편</b>을 제공하고 있으며, 새로운 계산기와 콘텐츠를 지속적으로 추가하고 있습니다.
         </p>
       </Card>
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">👤 운영자 소개</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          모든 계산기는 <b>김태양</b>이 개인 프로젝트로 기획·개발·운영하고 있습니다.
+          모든 계산기는 <b>김태양</b>이 기획·개발·운영하는 개인 프로젝트입니다.
           한국의 복잡한 세금·보험·금융 제도를 누구나 쉽게 이해하고 계산할 수 있도록 돕는 것을 목표로 합니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          모든 계산기의 세율·요율은 국세청, 국민연금공단, 건강보험공단, 고용노동부 등 정부 기관의 공식 고시를 직접 확인하여 반영합니다.
+          매년 1월 세법 개정과 요율 변경 시 즉시 업데이트하고, 연중 변경 사항(7월 국민연금 기준소득월액 상한 등)도 고시 직후 반영합니다.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           문의사항이나 오류 신고는 <Link href="/contact" className="text-[var(--primary)] font-bold no-underline hover:underline">문의하기</Link> 페이지를 이용해 주세요.
@@ -50,8 +63,8 @@ export default function Page() {
             <p className="mt-1">모바일·태블릿·데스크톱 어디서든 동일한 사용 경험을 제공합니다.</p>
           </div>
           <div className="bg-[var(--bg)] rounded-xl p-3">
-            <b className="text-[var(--ink)]">🌍 한국어 + 영어</b>
-            <p className="mt-1">한국어 사용자와 한국에 거주하는 외국인 모두를 위한 계산기와 가이드를 제공합니다.</p>
+            <b className="text-[var(--ink)]">📐 공식 출처 기반</b>
+            <p className="mt-1">소득세법, 국민연금공단 고시, 건강보험공단 고시 등 법령·고시에 명시된 세율과 공식을 직접 확인하여 적용합니다.</p>
           </div>
           <div className="bg-[var(--bg)] rounded-xl p-3">
             <b className="text-[var(--ink)]">💯 무료 · 회원가입 없음</b>
@@ -74,6 +87,8 @@ export default function Page() {
           <li><b>금융위원회</b> — 청년도약계좌·청년미래적금 정부기여금 기준</li>
           <li><b>은행연합회</b> — 은행별 금리 고시</li>
           <li><b>국토교통부</b> — 부동산 중개수수료 요율표</li>
+          <li><b>근로기준법·근로자퇴직급여 보장법</b> — 연차수당·퇴직금 기준</li>
+          <li><b>최저임금위원회 고시</b> — 2026년 최저임금 10,470원</li>
         </ul>
       </Card>
 
@@ -86,17 +101,22 @@ export default function Page() {
         <p className="text-sm text-[#4E5968] leading-relaxed">
           계산 결과를 신뢰하여 내린 의사결정으로 발생한 손해에 대해 운영자는 책임을 지지 않습니다.
           세금·보험 관련 정확한 상담이 필요하시면 세무사 또는 국세청(☎ 126)에 문의하세요.
+          자세한 내용은 <Link href="/disclaimer" className="text-[var(--primary)] font-bold no-underline hover:underline">면책조항</Link>을 참고해 주세요.
         </p>
       </Card>
 
       <Card>
         <h2 className="text-base font-extrabold mb-3">📬 연락처</h2>
         <div className="text-sm text-[#4E5968] leading-relaxed flex flex-col gap-2">
+          <p><b>운영자:</b> 김태양</p>
           <p><b>이메일:</b> taeyang.kim4875@gmail.com</p>
+          <p><b>서비스 문의:</b> <a href="mailto:taeyang.kim4875@gmail.com" className="text-[var(--primary)] font-bold no-underline hover:underline">taeyang.kim4875@gmail.com</a></p>
           <p><b>문의 페이지:</b> <Link href="/contact" className="text-[var(--primary)] font-bold no-underline hover:underline">moduncalc.com/contact</Link></p>
           <p className="text-xs text-[var(--sub)] mt-2">오류 신고, 기능 건의, 제휴 문의를 받고 있습니다.</p>
         </div>
       </Card>
+
+      <p className="text-xs text-[var(--sub)] text-center mt-4">최종 수정일: 2026년 9월 11일</p>
     </PageLayout>
   );
 }

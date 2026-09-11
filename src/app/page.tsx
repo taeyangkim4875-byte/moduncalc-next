@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
+import { FaqJsonLd } from "@/components/JsonLd";
 import { getCalc, HOMEPAGE_HOT, HOMEPAGE_CATEGORIES } from "@/data/calculators";
 
 export const metadata: Metadata = {
@@ -23,6 +24,12 @@ export default function Home() {
       title="모든 계산기"
       description="필요한 계산기를 찾아보세요. 2026년 최신 정책 반영."
     >
+      <FaqJsonLd items={[
+        { q: '계산 결과가 정확한가요?', a: '국세청, 고용노동부, 건강보험공단 등 공식 기관의 2026년 기준을 적용합니다. 다만 개인별 세부 조건에 따라 실제 금액과 차이가 있을 수 있어요.' },
+        { q: '개인정보가 수집되나요?', a: '아니요. 모든 계산은 브라우저에서 처리되며 서버로 어떤 데이터도 전송하지 않습니다.' },
+        { q: '모바일에서도 사용할 수 있나요?', a: '네. 모든 계산기가 모바일에 최적화되어 있습니다. 홈 화면에 추가하면 앱처럼 바로 열 수 있어요.' },
+        { q: '새로운 계산기를 요청할 수 있나요?', a: '물론이요. 문의 페이지에서 원하는 계산기를 알려주시면 검토 후 추가합니다.' },
+      ]} />
       {/* 인기 / 추천 */}
       <div className="mb-5">
         <div className="text-xs font-bold text-[var(--primary)] mb-2 px-1">🔥 인기 계산기</div>
