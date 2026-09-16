@@ -16,7 +16,7 @@ import TrustBadge from '@/components/TrustBadge';
 import EmbedCode from '@/components/EmbedCode';
 import { trackCalcComplete, trackPrefillUsed } from '@/utils/analytics';
 
-const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6370000, NPS_FLOOR=400000;
+const NPS_CONST=1.29, NPS_A=3193511, NPS_CAP=6590000, NPS_FLOOR=410000;
 function pensionAge(by:number){if(by<=1952)return 60;if(by<=1956)return 61;if(by<=1960)return 62;if(by<=1964)return 63;if(by<=1968)return 64;return 65;}
 
 export default function PensionCalculator(){

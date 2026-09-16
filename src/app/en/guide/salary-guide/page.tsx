@@ -32,7 +32,7 @@ const faqItems = [
   },
   {
     q: "How do I verify that my deductions are correct?",
-    a: "Calculate each deduction yourself using the 2026 rates: National Pension at 4.75% of your gross (up to the income cap of 6,370,000 KRW), Health Insurance at 3.595% divided by 2, Long-term Care at 13.14% of your HI premium, and Employment Insurance at 0.9%. Compare these with your payslip. For income tax, check the National Tax Service simplified tax table (간이세액표) for your salary bracket. Use our Salary Calculator to verify your expected net pay.",
+    a: "Calculate each deduction yourself using the 2026 rates: National Pension at 4.75% of your gross (up to the standard monthly income cap of 6,590,000 KRW, which applies July 2026 to June 2027), Health Insurance at 3.595% of your gross -- that is already your half of the 7.19% total, so do not halve it again -- Long-term Care at 13.14% of your health insurance share, and Employment Insurance at 0.9%. Compare these with your payslip. For income tax, check the National Tax Service simplified tax table (간이세액표) for your salary bracket. Use our Salary Calculator to verify your expected net pay.",
   },
 ];
 
@@ -101,17 +101,17 @@ export default function SalaryGuidePage() {
               <tr className="border-t border-[#eee]">
                 <td className="p-2">National Pension (국민연금)</td>
                 <td className="p-2">4.75%</td>
-                <td className="p-2">Capped at monthly income of 6,370,000 KRW</td>
+                <td className="p-2">Capped at standard monthly income of 6,590,000 KRW (2026.7-2027.6)</td>
               </tr>
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Health Insurance (건강보험)</td>
-                <td className="p-2">3.595% / 2 = 1.7975%</td>
-                <td className="p-2">Employee pays half of total 3.595%</td>
+                <td className="p-2">3.595%</td>
+                <td className="p-2">Your half of the 7.19% total premium</td>
               </tr>
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Long-term Care (장기요양보험)</td>
                 <td className="p-2">13.14% of HI premium</td>
-                <td className="p-2">Calculated on your HI amount, split 50/50</td>
+                <td className="p-2">13.14% of your 3.595% health insurance share</td>
               </tr>
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Employment Insurance (고용보험)</td>

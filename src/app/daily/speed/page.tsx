@@ -63,6 +63,42 @@ export default function Page() {
           이동 시간까지의 D-day는 <SeoLink href="/daily/dday">D-day 계산기</SeoLink>로 확인할 수 있습니다.
         </p>
       </SeoSection>
+
+      <SeoSection title="평균 속도는 단순 평균이 아닙니다">
+        <p>
+          가장 흔한 착각입니다. 갈 때 시속 100km, 올 때 시속 50km로 같은 거리를 달렸다면
+          평균 속도는 75km/h가 아니라 <strong>약 66.7km/h</strong>입니다.
+          느린 구간에 시간을 더 많이 쓰기 때문입니다.
+        </p>
+        <SeoFormula>
+          <div>평균 속도 = 총 거리 ÷ 총 소요 시간</div>
+          <div>같은 거리를 두 속도로 달렸을 때 = 2 × v₁ × v₂ ÷ (v₁ + v₂)</div>
+          <div>예: 2 × 100 × 50 ÷ 150 = 66.7km/h</div>
+        </SeoFormula>
+        <p>
+          100km 구간을 100km/h로 가면 1시간, 50km/h로 오면 2시간이라 총 200km를 3시간에 이동한 셈입니다.
+          200 ÷ 3 = 66.7km/h. 이것을 조화평균이라고 부릅니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="내비게이션 예상 시간이 자주 빗나가는 이유">
+        <p>
+          서울에서 부산까지 약 400km를 제한속도 100km/h로 달리면 산술적으로 4시간입니다.
+          그런데 실제로는 5시간 안팎이 걸립니다. 순수 주행 외의 시간이 빠져 있기 때문입니다.
+        </p>
+        <SeoList>
+          <li><strong>휴게소 정차</strong> — 한 번 들를 때마다 15~20분. 장거리에서는 두 번 이상 들르는 경우가 많습니다.</li>
+          <li><strong>톨게이트·요금소</strong> — 하이패스라도 감속이 필요하고, 정체 시간대에는 더 걸립니다.</li>
+          <li><strong>가감속 구간</strong> — 진출입로, 터널, 곡선 구간에서는 제한속도보다 느리게 달립니다.</li>
+          <li><strong>정체</strong> — 시속 30km 구간이 20분만 있어도 전체 평균이 크게 떨어집니다.</li>
+        </SeoList>
+        <p>
+          그래서 실무적으로는 <strong>제한속도의 80% 정도를 실질 평균 속도</strong>로 잡으면
+          실제 도착 시간과 비슷하게 맞습니다.
+          장거리 이동 비용까지 함께 계산하려면 <SeoLink href="/daily/fuel">연비 계산기</SeoLink>와
+          <SeoLink href="/daily/travel"> 여행 경비 계산기</SeoLink>를 이용해 보세요.
+        </p>
+      </SeoSection>
     </PageLayout>
   );
 }

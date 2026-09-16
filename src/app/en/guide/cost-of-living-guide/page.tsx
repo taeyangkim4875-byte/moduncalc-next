@@ -256,7 +256,7 @@ export default function CostOfLivingGuidePage() {
           <li><b>Hospital outpatient:</b> 10,000-30,000 KRW copay depending on tests and procedures</li>
           <li><b>Prescription medication:</b> 3,000-10,000 KRW for most common prescriptions</li>
           <li><b>Dental cleaning:</b> 15,000-30,000 KRW with insurance. Major dental work (crowns, implants) can cost 500K-1.5M KRW even with insurance.</li>
-          <li><b>Monthly NHI premium:</b> Approximately 3.545% of your monthly salary (split 50/50 with your employer). For a 3M KRW salary, your share is about 53,000 KRW.</li>
+          <li><b>Monthly NHI premium:</b> The 2026 rate is 7.19% of your monthly salary, split 50/50 with your employer, so your share is 3.595%. For a 3M KRW salary that is about 107,850 KRW, plus roughly 14,200 KRW of long-term care insurance.</li>
         </ul>
       </Card>
 

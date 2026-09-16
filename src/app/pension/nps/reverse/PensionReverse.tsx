@@ -14,8 +14,8 @@ import { bisect } from '@/utils/solver';
 
 const NPS_CONST = 1.29;
 const NPS_A = 3193511;
-const NPS_CAP = 6370000;
-const NPS_FLOOR = 400000;
+const NPS_CAP = 6590000;
+const NPS_FLOOR = 410000;
 
 function pensionAge(by: number) {
   if (by <= 1952) return 60;
@@ -187,7 +187,7 @@ export default function PensionReverse() {
           <div>
             <div className="text-sm font-bold text-[var(--ink)] mb-1">소득이 올라가면 연금도 비례해서 오르나요?</div>
             <div className="text-sm text-[#4E5968] leading-relaxed">
-              기준소득월액 상한(637만원)까지만 반영돼요. 그 이상 소득은 연금 산정에 포함되지 않습니다.
+              기준소득월액 상한(659만원)까지만 반영돼요. 그 이상 소득은 연금 산정에 포함되지 않습니다.
             </div>
           </div>
         </div>

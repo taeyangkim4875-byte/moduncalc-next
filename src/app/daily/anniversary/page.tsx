@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoList, SeoLink, SeoFormula } from "@/components/SeoContent";
 import AnniversaryCalc from "./AnniversaryCalc";
 
 export const metadata: Metadata = {
@@ -58,6 +58,44 @@ export default function Page() {
           두 날짜 사이의 정확한 일수를 구하려면 <SeoLink href="/daily/dday">D-day 계산기</SeoLink>가 편하고,
           아기 백일·돌 기념일이 궁금하면 <SeoLink href="/daily/baby100">아기 100일 계산기</SeoLink>를 이용하세요.
           만 나이가 헷갈릴 때는 <SeoLink href="/daily/age">나이 계산기</SeoLink>를 확인해 보세요.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="한국식 기념일은 &lsquo;만&rsquo;이 아니라 &lsquo;사귄 날 1일&rsquo;">
+        <p>
+          한국에서 커플 기념일을 셀 때는 <strong>사귀기 시작한 날을 1일</strong>로 봅니다.
+          나이를 셀 때 쓰는 만 나이 개념과 반대라 헷갈리기 쉽습니다.
+          1월 1일에 사귀기 시작했다면 그날이 1일이고, 100일은 4월 10일입니다.
+          1월 1일에 100을 더하면 4월 11일이 나오는데, 시작일을 1일로 세기 때문에 하루가 당겨집니다.
+        </p>
+        <SeoFormula>
+          <div>N일째 날짜 = 시작일 + (N − 1)일</div>
+          <div>예: 1월 1일 시작 → 100일 = 1월 1일 + 99일 = 4월 10일</div>
+        </SeoFormula>
+        <p>
+          반대로 결혼기념일이나 창립기념일 같은 &lsquo;주년&rsquo;은 만으로 셉니다.
+          2020년 5월 1일에 결혼했다면 2021년 5월 1일이 1주년입니다.
+          일(日) 단위는 시작일 포함, 년(年) 단위는 만 기준이라고 기억하면 편합니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="많이 챙기는 기념일과 대략의 시점">
+        <SeoList>
+          <li><strong>22일</strong> — 커플이 처음 챙기는 기념일로 자리 잡은 날. 약 3주 뒤입니다.</li>
+          <li><strong>50일</strong> — 약 1개월 반 뒤.</li>
+          <li><strong>100일</strong> — 약 3개월 하고 일주일 뒤. 가장 크게 챙기는 날입니다.</li>
+          <li><strong>200일</strong> — 약 6개월 반 뒤.</li>
+          <li><strong>365일(1주년)</strong> — 만 1년. 366일째가 1주년이 아니라는 점을 자주 헷갈립니다.</li>
+          <li><strong>500일</strong> — 약 1년 4개월 반 뒤.</li>
+          <li><strong>1,000일</strong> — 약 2년 8개월 20일 뒤. 윤년이 끼면 하루 차이가 납니다.</li>
+        </SeoList>
+        <p>
+          윤년(2월 29일)이 사이에 끼면 &lsquo;며칠째&rsquo;와 &lsquo;몇 개월째&rsquo;가 어긋납니다.
+          이 계산기는 실제 달력 일수로 세기 때문에 윤년을 자동으로 반영합니다.
+        </p>
+        <p>
+          기념일 알림을 D-day로 관리하려면 <SeoLink href="/daily/dday">D-day 계산기</SeoLink>가 편하고,
+          아기 백일·돌은 세는 방식이 조금 달라 <SeoLink href="/daily/baby100">아기 100일 계산기</SeoLink>를 따로 쓰시는 편이 정확합니다.
         </p>
       </SeoSection>
     </PageLayout>

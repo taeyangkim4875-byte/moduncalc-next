@@ -3,6 +3,7 @@ import Script from "next/script";
 import Sidebar from "@/components/Sidebar";
 import ScrollToTop from "@/components/ScrollToTop";
 import { WebsiteJsonLd, OrganizationJsonLd } from "@/components/JsonLd";
+import AdsenseScript from "@/components/AdsenseScript";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -68,11 +69,7 @@ export default function RootLayout({
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-NX4JK10SS6');`}
         </Script>
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3741035032582828"
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-        />
+        <AdsenseScript />
       </head>
       <body>
         <Sidebar />

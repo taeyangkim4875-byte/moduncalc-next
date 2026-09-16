@@ -67,6 +67,53 @@ export default function Page() {
           에어컨 전기요금이 궁금하면 <SeoLink href="/daily/aircon">에어컨 전기요금 계산기</SeoLink>도 유용합니다.
         </p>
       </SeoSection>
+
+      <SeoSection title="도시가스 요금은 부피가 아니라 열량으로 계산합니다">
+        <p>
+          가스 계량기는 사용량을 <strong>㎥(세제곱미터)</strong>로 재지만, 요금은 <strong>MJ(메가줄)</strong> 기준으로 매깁니다.
+          같은 1㎥라도 공급되는 가스의 열량이 다를 수 있어서, 이를 보정하는 값이 <strong>열량환산계수</strong>입니다.
+        </p>
+        <SeoFormula>
+          <div>사용 열량(MJ) = 사용량(㎥) × 열량환산계수(MJ/㎥)</div>
+          <div>가스요금 = 기본요금 + (사용 열량 × 단가) + 부가세 10%</div>
+        </SeoFormula>
+        <p>
+          열량환산계수는 지역과 월에 따라 조금씩 다르며 보통 43 안팎입니다.
+          고지서에 그달의 계수가 적혀 있으니, 정확히 계산하려면 고지서 값을 넣어보세요.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="겨울 가스비가 여름의 10배가 되는 이유">
+        <p>
+          도시가스는 전기와 달리 <strong>누진제가 없습니다.</strong>
+          그런데도 겨울 요금이 폭등하는 것은 순전히 사용량 차이 때문입니다.
+        </p>
+        <SeoList>
+          <li><strong>여름(6~8월)</strong> — 취사만 사용해 월 5㎥ 안팎.</li>
+          <li><strong>봄·가을(4~5월, 9~10월)</strong> — 간헐적 난방으로 월 20~30㎥.</li>
+          <li><strong>겨울(12~2월)</strong> — 상시 난방으로 월 80~150㎥. 단열이 약한 집은 200㎥를 넘기도 합니다.</li>
+        </SeoList>
+        <p>
+          여름 5㎥와 겨울 100㎥는 20배 차이입니다. 기본요금이 고정이라 요금 차이는 그보다 조금 작지만,
+          10배 안팎으로 벌어지는 것이 보통입니다.
+          겨울 요금이 갑자기 올랐다면 누진제가 아니라 <strong>사용량 자체가 늘었는지</strong>부터 확인해 보세요.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="난방비를 줄이는 현실적인 방법">
+        <SeoList>
+          <li><strong>보일러를 끄지 말고 온도를 낮춰 유지하세요.</strong> 완전히 식은 집을 다시 데우는 데 드는 열량이 낮은 온도로 유지하는 것보다 큽니다. 외출 모드를 활용하는 편이 낫습니다.</li>
+          <li><strong>실내 적정 온도는 18~20도입니다.</strong> 1도를 낮추면 난방 에너지가 약 7% 절약되는 것으로 알려져 있습니다.</li>
+          <li><strong>온수 온도를 낮추세요.</strong> 온수 설정이 높으면 쓸 때마다 가스를 더 씁니다.</li>
+          <li><strong>창문 단열이 가장 효과적입니다.</strong> 열 손실의 상당 부분이 창을 통해 일어납니다. 뽁뽁이와 문풍지는 비용 대비 효과가 큽니다.</li>
+          <li><strong>안 쓰는 방의 분배기 밸브를 잠그세요.</strong> 다만 전부 잠그면 보일러에 무리가 가므로 일부는 열어둡니다.</li>
+        </SeoList>
+        <p>
+          다른 공과금도 함께 확인하고 싶다면 <SeoLink href="/daily/electric">전기요금 계산기</SeoLink>와
+          <SeoLink href="/daily/water"> 수도요금 계산기</SeoLink>를 이용해 보세요.
+          여름 냉방비는 <SeoLink href="/daily/aircon">에어컨 전기요금 계산기</SeoLink>에서 계산할 수 있습니다.
+        </p>
+      </SeoSection>
     </PageLayout>
   );
 }

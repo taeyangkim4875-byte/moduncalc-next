@@ -18,11 +18,11 @@ const UNIT_LABELS: Record<Unit, string> = {
 };
 
 const QUICK_REF = [
+  { label: '1푼', g: 0.375 },
   { label: '1돈', g: 3.75 },
-  { label: '3.75돈 (1냥)', g: 14.0625 },
-  { label: '10돈', g: 37.5 },
-  { label: '37.5g (10돈)', g: 37.5 },
-  { label: '1oz', g: 31.1035 },
+  { label: '5돈', g: 18.75 },
+  { label: '1냥 (10돈)', g: 37.5 },
+  { label: '1트로이온스', g: 31.1035 },
   { label: '100g', g: 100 },
 ];
 

@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     q: "How much does NHI cost for an employee earning 3 million KRW per month?",
-    a: "For an employee with a monthly salary of 3 million KRW in 2026, the health insurance premium is approximately 107,850 KRW (3,000,000 x 3.595%), split equally between employee and employer. So you pay about 53,925 KRW. Additionally, long-term care insurance is 13.14% of your health insurance premium, adding roughly 7,086 KRW to your employee share. Your total monthly health insurance deduction would be about 61,011 KRW.",
+    a: "For an employee with a monthly salary of 3 million KRW in 2026, the total health insurance premium is 215,700 KRW (3,000,000 x 7.19%), split equally between you and your employer. Your half is 107,850 KRW -- that is the 3.595% employee rate you will see on your payslip. Long-term care insurance adds 13.14% of your health insurance share, or about 14,171 KRW. Your total monthly health insurance deduction is therefore about 122,021 KRW.",
   },
   {
     q: "Can I use NHI at any hospital or clinic in Korea?",
@@ -108,7 +108,7 @@ export default function HealthInsuranceGuidePage() {
             <tbody className="text-[#4E5968]">
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Health Insurance (건강보험)</td>
-                <td className="p-2">3.595% of salary</td>
+                <td className="p-2">7.19% of salary (your half: 3.595%)</td>
                 <td className="p-2">50% employee, 50% employer</td>
               </tr>
               <tr className="border-t border-[#eee]">
@@ -120,7 +120,7 @@ export default function HealthInsuranceGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          <b>Example:</b> If your monthly salary is 4,000,000 KRW, your total health insurance premium is 143,800 KRW (3.595%). You pay half: 71,900 KRW. Long-term care adds 13.14% of that: 9,448 KRW. Your total monthly deduction is approximately <b>81,348 KRW</b>.
+          <b>Example:</b> If your monthly salary is 4,000,000 KRW, the total health insurance premium is 287,600 KRW (4,000,000 x 7.19%). You pay half -- 143,800 KRW, which is 3.595% of your salary. Long-term care adds 13.14% of your share: 18,895 KRW. Your total monthly deduction is approximately <b>162,695 KRW</b>. A common mistake is to halve the 3.595% figure again; 3.595% is already the employee half, so do not divide it a second time.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           Use our{" "}

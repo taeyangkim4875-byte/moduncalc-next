@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import AlcoholCalc from "./AlcoholCalc";
 export const metadata: Metadata = { title: "음주 후 운전 가능 시간 계산기 - 혈중알코올 분해 시간", description: "소주 한 병 마셨는데 언제 운전 가능? 음주량·체중 입력하면 혈중알코올 분해 시간 바로 계산.", alternates: { canonical: "https://moduncalc.com/daily/alcohol" },
   openGraph: {
@@ -50,4 +50,66 @@ export default function Page() { return <PageLayout eyebrow="음주 계산" titl
           { q: '자전거도 음주운전에 해당되나요?', a: '네. 도로교통법상 자전거도 "차"에 해당하며, 음주 상태로 운전하면 20만원 이하의 벌금·구류에 처해질 수 있습니다. 전동킥보드도 마찬가지입니다.' },
         ]}
       />
+
+      <SeoSection title="면허 정지와 취소 기준">
+        <p>
+          도로교통법상 음주운전 단속 기준은 <strong>혈중알코올농도 0.03%</strong>입니다.
+          이른바 윤창호법 시행으로 2019년부터 기준이 대폭 강화됐습니다.
+        </p>
+        <SeoList>
+          <li><strong>0.03% 이상 0.08% 미만</strong> — 면허 정지(100일). 1년 이하 징역 또는 500만원 이하 벌금.</li>
+          <li><strong>0.08% 이상 0.2% 미만</strong> — 면허 취소. 1년 이상 2년 이하 징역 또는 500만원 이상 1천만원 이하 벌금.</li>
+          <li><strong>0.2% 이상</strong> — 면허 취소. 2년 이상 5년 이하 징역 또는 1천만원 이상 2천만원 이하 벌금.</li>
+          <li><strong>측정 거부</strong> — 면허 취소. 1년 이상 5년 이하 징역 또는 500만원 이상 2천만원 이하 벌금.</li>
+        </SeoList>
+        <p>
+          0.03%는 <strong>소주 한 잔으로도 넘길 수 있는 수치</strong>입니다.
+          체중이 가볍거나 공복이면 더 쉽게 도달합니다. &ldquo;한 잔은 괜찮다&rdquo;는 말은 법적으로 성립하지 않습니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="이 계산기가 쓰는 공식과 그 한계">
+        <p>
+          혈중알코올농도 추정에는 <strong>위드마크(Widmark) 공식</strong>이 널리 쓰입니다.
+          마신 술의 알코올 양을 체중과 체수분 비율로 나눈 뒤, 시간이 지나며 분해되는 양을 빼는 방식입니다.
+        </p>
+        <SeoFormula>
+          <div>알코올량(g) = 음주량(ml) × 도수(%) ÷ 100 × 0.7894</div>
+          <div>최고 혈중농도(%) = 알코올량 ÷ (체중kg × r) ÷ 10</div>
+          <div>r = 체내 알코올 분포 계수 (남성 약 0.68, 여성 약 0.55)</div>
+          <div>현재 농도 = 최고 농도 − (경과 시간 × 시간당 분해율 약 0.015%)</div>
+        </SeoFormula>
+        <p>
+          문제는 이 값들이 <strong>사람마다 크게 다르다</strong>는 점입니다.
+          알코올 분해 효소(ALDH2) 활성도는 유전적으로 차이가 크고,
+          공복 여부, 간 기능, 복용 중인 약, 수면 상태, 체지방률에 따라 실제 수치가 달라집니다.
+          같은 사람도 컨디션에 따라 다릅니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="숙취운전이 더 위험한 이유">
+        <p>
+          음주 단속에 걸리는 상당수가 <strong>다음 날 아침</strong>입니다.
+          밤 12시까지 소주 두 병을 마셨다면 이론적으로도 아침 8~9시까지 알코올이 남아 있을 수 있습니다.
+          잠을 자는 동안에는 분해 속도가 오히려 느려진다는 연구도 있습니다.
+        </p>
+        <p>
+          더 위험한 것은 <strong>본인이 멀쩡하다고 느낀다</strong>는 점입니다.
+          취기는 사라졌지만 혈중알코올농도는 여전히 기준을 넘는 상태가 흔합니다.
+          전날 과음했다면 다음 날 오전은 대중교통을 이용하시길 권합니다.
+        </p>
+        <p className="text-xs text-[var(--sub)]">
+          ※ 이 계산기의 결과는 통계적 평균에 기반한 <strong>참고용 추정치</strong>이며,
+          실제 혈중알코올농도나 법적 판단의 근거가 될 수 없습니다.
+          음주 후에는 시간 계산과 무관하게 운전하지 마세요.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="함께 보면 좋은 계산기">
+        <p>
+          모임 비용 정산은 <SeoLink href="/daily/dutch">더치페이 계산기</SeoLink>,
+          숙취 해소에 도움이 되는 수분 섭취량은 <SeoLink href="/health/water">물 섭취량 계산기</SeoLink>에서 확인해 보세요.
+          대리운전 대신 첫차를 기다린다면 <SeoLink href="/daily/time">시간 계산기</SeoLink>가 유용합니다.
+        </p>
+      </SeoSection>
     </PageLayout>; }

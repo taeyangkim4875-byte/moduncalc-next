@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoList } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoList, SeoFormula, SeoLink } from "@/components/SeoContent";
 import TipSplitCalc from "./TipSplitCalc";
 import ShareButtons from '@/components/ShareButtons';
 
@@ -60,6 +60,40 @@ export default function Page() {
           { q: '정산 요청이 늦어지면 어떻게 해야 하나요?', a: '3일 이내에 요청하는 게 적절합니다. 늦어졌다면 "잊고 있었는데"라고 가볍게 언급하고, 금액과 계좌를 함께 보내세요. 토스 송금 요청 기능을 쓰면 메시지 보내기가 한결 편합니다.' },
         ]}
       />
+
+      <SeoSection title="차등 정산은 이렇게 계산합니다">
+        <p>
+          술을 마신 사람과 안 마신 사람이 섞여 있거나, 메뉴 가격 차이가 큰 모임에서는
+          N분의 1이 오히려 불공정합니다. 이럴 때 쓰는 방식이 차등 정산입니다.
+        </p>
+        <SeoFormula>
+          <div>공통비(음식·자릿세) = 전체 인원으로 균등 분배</div>
+          <div>개별비(주류·추가 메뉴) = 해당 인원끼리만 분배</div>
+          <div>각자 부담액 = 공통비 몫 + 개별비 몫</div>
+        </SeoFormula>
+        <p>
+          예를 들어 6명이 모여 음식값 12만원, 술값 9만원이 나왔고 술을 마신 사람이 3명이라면
+          음식값은 1인당 2만원, 술값은 마신 3명이 3만원씩 부담합니다.
+          술을 마신 사람은 5만원, 안 마신 사람은 2만원을 내게 됩니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="송금 횟수를 줄이면 정산이 훨씬 편합니다">
+        <p>
+          6명이 각자 다른 금액을 주고받아야 하는 상황에서 모든 쌍이 송금하면 최대 15번의 이체가 생깁니다.
+          하지만 <strong>받을 사람과 낼 사람만 추려서 상계</strong>하면 이체 횟수가 크게 줄어듭니다.
+        </p>
+        <p>
+          원리는 간단합니다. 각자의 &lsquo;낸 금액 − 내야 할 금액&rsquo;을 구해
+          플러스인 사람(받을 사람)과 마이너스인 사람(낼 사람)만 남긴 뒤,
+          가장 많이 받을 사람과 가장 많이 낼 사람부터 짝지어 정산합니다.
+          이렇게 하면 <strong>인원수보다 적은 횟수</strong>로 정산이 끝납니다.
+        </p>
+        <p>
+          단순히 N분의 1만 하면 되는 자리라면 <SeoLink href="/daily/dutch">더치페이 계산기</SeoLink>가 더 빠르고,
+          인원을 무작위로 정해야 한다면 <SeoLink href="/daily/random">랜덤 뽑기</SeoLink>를 이용해 보세요.
+        </p>
+      </SeoSection>
     </PageLayout>
   );
 }

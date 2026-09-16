@@ -27,7 +27,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   };
 
   if (income > 0 && years >= 10) {
-    const NPS_CONST = 1.29, NPS_A = 3193511, NPS_CAP = 6370000, NPS_FLOOR = 400000;
+    const NPS_CONST = 1.29, NPS_A = 3193511, NPS_CAP = 6590000, NPS_FLOOR = 410000;
     const B = Math.min(Math.max(income * 10000, NPS_FLOOR), NPS_CAP);
     const n = Math.max(0, (years - 20)) * 12;
     const baseRatio = Math.min(years, 20) / 20;

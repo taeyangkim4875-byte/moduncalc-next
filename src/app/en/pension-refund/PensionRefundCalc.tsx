@@ -108,7 +108,7 @@ export default function PensionRefundCalc() {
         <h2 className="text-base font-extrabold mb-3">📖 About National Pension Refund</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">Foreign workers in Korea pay into the National Pension System (NPS) at a rate of <b>4.75%</b> of their monthly salary (2026 rate). When you leave Korea permanently, you can request a lump-sum refund of your employee contributions plus accrued interest.</p>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3"><b>Important:</b> Only YOUR contributions (employee portion) are refunded. The employer&apos;s matching 4.75% stays in the NPS fund and is not refunded.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">The monthly contribution cap is based on a maximum standard monthly income of ₩6,370,000. If your salary exceeds this, pension contributions are calculated based on the cap.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">The monthly contribution cap is based on a maximum standard monthly income of ₩6,590,000 (applies July 2026 – June 2027). If your salary exceeds this, pension contributions are calculated based on the cap.</p>
       </Card>
 
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">

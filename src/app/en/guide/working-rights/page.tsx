@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     q: "What is the minimum wage in Korea for 2026?",
-    a: "The 2026 minimum wage in Korea is 10,030 KRW per hour. This translates to approximately 2,096,270 KRW per month for standard full-time work (209 hours per month, based on 40 hours per week plus paid weekly holidays). The minimum wage applies equally to Korean and foreign workers -- your employer cannot pay you less based on your nationality.",
+    a: "The 2026 minimum wage in Korea is 10,320 KRW per hour, up 2.9% from 10,030 KRW in 2025. This translates to 2,156,880 KRW per month for standard full-time work (209 hours per month, based on 40 hours per week plus paid weekly holidays). The Minimum Wage Commission has already confirmed 10,700 KRW per hour for 2027, effective 1 January 2027. The minimum wage applies equally to Korean and foreign workers -- your employer cannot pay you less based on your nationality, and this holds for every visa type including E-9, E-7, D-2 part-time work and F-series visas.",
   },
   {
     q: "Can my employer force me to work overtime without extra pay?",
@@ -78,7 +78,7 @@ export default function WorkingRightsPage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">2026 Minimum Wage</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          The 2026 minimum wage is <b>10,030 KRW per hour</b>, set by the Minimum Wage Commission. Here is how it translates to different pay periods:
+          The 2026 minimum wage is <b>10,320 KRW per hour</b>, set by the Minimum Wage Commission and in force since 1 January 2026. Here is how it translates to different pay periods:
         </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">
@@ -92,34 +92,34 @@ export default function WorkingRightsPage() {
             <tbody className="text-[#4E5968]">
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Hourly</td>
-                <td className="p-2">10,030</td>
+                <td className="p-2">10,320</td>
                 <td className="p-2">Base rate</td>
               </tr>
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Daily (8 hrs)</td>
-                <td className="p-2">80,240</td>
-                <td className="p-2">10,030 x 8</td>
+                <td className="p-2">82,560</td>
+                <td className="p-2">10,320 x 8</td>
               </tr>
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Weekly (40 hrs + 8 weekly holiday)</td>
-                <td className="p-2">481,440</td>
-                <td className="p-2">10,030 x 48</td>
+                <td className="p-2">495,360</td>
+                <td className="p-2">10,320 x 48</td>
               </tr>
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Monthly (209 hrs)</td>
-                <td className="p-2">2,096,270</td>
-                <td className="p-2">10,030 x 209</td>
+                <td className="p-2">2,156,880</td>
+                <td className="p-2">10,320 x 209</td>
               </tr>
               <tr className="border-t border-[#eee]">
                 <td className="p-2">Annual</td>
-                <td className="p-2">25,155,240</td>
-                <td className="p-2">2,096,270 x 12</td>
+                <td className="p-2">25,882,560</td>
+                <td className="p-2">2,156,880 x 12</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          The 209 monthly hours include 40 working hours per week plus 8 hours of paid weekly holiday (주휴시간), averaged over a month: (40 + 8) x (365 / 7) / 12 = 209 hours. The minimum is a floor, not a benchmark -- our{" "}
+          The 209 monthly hours include 40 working hours per week plus 8 hours of paid weekly holiday (주휴시간), averaged over a month: (40 + 8) x (365 / 7) / 12 = 209 hours. From 1 January 2027 the hourly minimum rises to 10,700 KRW, which works out to 2,236,300 KRW a month on the same 209-hour basis. The minimum is a floor, not a benchmark -- our{" "}
           <Link href="/en/salary-negotiation" className="text-[var(--primary)] font-bold hover:underline">Korea Salary Guide by Industry</Link> shows what foreigners are typically paid in each field.
         </p>
       </Card>

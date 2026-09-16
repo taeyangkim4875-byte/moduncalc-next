@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api/', '/en/', '/embed/'],
+      disallow: ['/api/', '/embed/'],
     },
     sitemap: 'https://moduncalc.com/sitemap.xml',
   };

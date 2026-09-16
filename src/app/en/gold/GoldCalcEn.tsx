@@ -18,9 +18,10 @@ const UNIT_LABELS: Record<Unit, string> = {
 };
 
 const QUICK_REF = [
+  { label: '1 Pun', g: 0.375 },
   { label: '1 Don', g: 3.75 },
-  { label: '3.75 Don (1 Nyang)', g: 14.0625 },
-  { label: '10 Don', g: 37.5 },
+  { label: '5 Don', g: 18.75 },
+  { label: '1 Nyang (10 Don)', g: 37.5 },
   { label: '1 Troy Ounce', g: 31.1035 },
   { label: '100g', g: 100 },
 ];

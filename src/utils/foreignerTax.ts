@@ -13,7 +13,7 @@
  *   Deductions (earned income deduction, personal exemption, tax credit) apply
  *
  * - 4대보험 rates (2026):
- *   National Pension 4.75% (cap: ₩6,370,000/month)
+ *   National Pension 4.75% (cap: ₩6,590,000/month, 2026.7~2027.6)
  *   Health Insurance 3.595%
  *   Long-term Care 13.14% of health insurance
  *   Employment Insurance 0.9%

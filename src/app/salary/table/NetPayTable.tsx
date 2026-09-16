@@ -92,7 +92,7 @@ export default function NetPayTable() {
 
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
         <b className="text-[#6B7684]">기준</b><br />
-        · 국민연금 4.75%(상한 637만) · 건강 3.595% · 장기요양 13.14% · 고용 0.9%<br />
+        · 국민연금 4.75%(상한 659만) · 건강 3.595% · 장기요양 13.14% · 고용 0.9%<br />
         · 소득세: 간이세액 기준 · 식대 비과세 월 20만원
         <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">
           이 표는 일반적인 요율 기준 추정치이며, 실제 급여와 다를 수 있습니다.

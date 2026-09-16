@@ -118,7 +118,7 @@ export default function PensionGuidePage() {
           </table>
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          There is a monthly income cap for contribution calculation purposes. In 2026, the upper limit is <b>6,370,000 KRW per month</b>. If your monthly salary is higher than this, you only pay pension on 6,370,000 KRW. The lower limit is 390,000 KRW. Your maximum monthly employee contribution is therefore 302,575 KRW (6,370,000 x 4.75%). To see the pension line next to your tax and insurance deductions, enter your salary into our{" "}
+          There is a monthly income cap for contribution purposes, and the National Pension Service revises it every July. For <b>July 2026 to June 2027</b> the upper limit is <b>6,590,000 KRW per month</b> (raised from 6,370,000 KRW) and the lower limit is 410,000 KRW. If your monthly salary is above the cap, you only pay pension on 6,590,000 KRW. Your maximum monthly employee contribution is therefore 313,025 KRW (6,590,000 x 4.75%). To see the pension line next to your tax and insurance deductions, enter your salary into our{" "}
           <Link href="/en/salary" className="text-[var(--primary)] font-bold hover:underline">Korea Salary Calculator</Link>.
         </p>
       </Card>

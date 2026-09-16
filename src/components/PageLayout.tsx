@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import RelatedCalcs from './RelatedCalcs';
 import RelatedGuides from './RelatedGuides';
 import FirstSaveNotice from './FirstSaveNotice';
+import PageMeta from './PageMeta';
 
 interface PageLayoutProps {
   eyebrow: string;
@@ -24,6 +25,7 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
       <RelatedGuides />
       <RelatedCalcs />
       <FirstSaveNotice />
+      <PageMeta />
       <footer className="mt-8 pt-6 border-t border-[var(--line)] text-center text-xs text-[var(--sub)]">
         <nav className="flex flex-wrap justify-center gap-x-3 gap-y-1 mb-3">
           <Link href="/about" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">소개</Link>

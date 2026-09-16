@@ -28,7 +28,7 @@ export default function Page() {
           2026년 최신 세법·보험 요율·정책을 반영하여 정확한 계산 결과를 제공합니다.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          현재 <b>한국어 계산기 82종</b>과 <b>가이드 10편</b>을 제공하고 있으며, 새로운 계산기와 콘텐츠를 지속적으로 추가하고 있습니다.
+          현재 <b>한국어 계산기 82종</b>과 <b>한국어 가이드 10편</b>을 제공하고 있습니다. 여기에 한국에 거주하는 외국인을 위한 <b>영문 계산기 32종</b>과 <b>영문 가이드 28편</b>을 더해 모두 152개 페이지를 운영하며, 새로운 계산기와 콘텐츠를 지속적으로 추가하고 있습니다.
         </p>
       </Card>
 
@@ -52,7 +52,7 @@ export default function Page() {
         <div className="flex flex-col gap-2 text-sm text-[#4E5968]">
           <div className="bg-[var(--bg)] rounded-xl p-3">
             <b className="text-[var(--ink)]">📊 2026년 최신 정책 반영</b>
-            <p className="mt-1">국민연금 9.5%(본인 4.75%), 건강보험 3.595%, 소득세 누진세율 등 2026년 확정 요율을 적용합니다.</p>
+            <p className="mt-1">국민연금 9.5%(본인 4.75%), 건강보험 7.19%(본인 3.595%), 장기요양 13.14%, 고용보험 0.9%, 소득세 누진세율 등 2026년 확정 요율을 적용합니다.</p>
           </div>
           <div className="bg-[var(--bg)] rounded-xl p-3">
             <b className="text-[var(--ink)]">🔒 개인정보 미수집</b>
@@ -80,7 +80,7 @@ export default function Page() {
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 flex flex-col gap-1.5">
           <li><b>소득세법 제55조</b> — 종합소득세 8구간 누진세율 (6%~45%)</li>
-          <li><b>국민연금공단 고시</b> — 2026년 보험료율 9.5% (본인 4.75%), 기준소득월액 상한 637만원</li>
+          <li><b>국민연금공단 고시</b> — 2026년 보험료율 9.5% (본인 4.75%), 기준소득월액 상한 659만원·하한 41만원 (2026.7~2027.6)</li>
           <li><b>건강보험공단 고시</b> — 2026년 보험료율 7.19% (본인 3.595%), 장기요양 13.14%</li>
           <li><b>고용보험법</b> — 근로자 부담 0.9%</li>
           <li><b>조세특례제한법 제18조의2</b> — 외국인 근로자 flat tax 19%</li>
@@ -88,7 +88,7 @@ export default function Page() {
           <li><b>은행연합회</b> — 은행별 금리 고시</li>
           <li><b>국토교통부</b> — 부동산 중개수수료 요율표</li>
           <li><b>근로기준법·근로자퇴직급여 보장법</b> — 연차수당·퇴직금 기준</li>
-          <li><b>최저임금위원회 고시</b> — 2026년 최저임금 10,470원</li>
+          <li><b>최저임금위원회 고시</b> — 2026년 최저임금 10,320원 (2027년 10,700원 확정)</li>
         </ul>
       </Card>
 
@@ -116,7 +116,7 @@ export default function Page() {
         </div>
       </Card>
 
-      <p className="text-xs text-[var(--sub)] text-center mt-4">최종 수정일: 2026년 9월 11일</p>
+      <p className="text-xs text-[var(--sub)] text-center mt-4">최종 수정일: 2026년 9월 16일</p>
     </PageLayout>
   );
 }

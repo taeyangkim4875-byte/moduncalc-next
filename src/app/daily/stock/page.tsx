@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoLink } from "@/components/SeoContent";
 import StockCalc from "./StockCalc";
 import ShareButtons from '@/components/ShareButtons';
 
@@ -40,7 +40,7 @@ export default function Page() {
           -50%면 100% 올라야 본전이고, -70%면 233% 올라야 해요.
           그래서 손절 타이밍이 중요한 겁니다. -10%에서 자르면 11%만 회복하면 되지만,
           -50%까지 버티면 원금 회복이 현실적으로 거의 불가능해요.
-          주식 수익에 세금이 얼마나 붙는지는 <a href="/tax/capital-gains">양도소득세 계산기</a>에서 확인하세요.
+          주식 수익에 세금이 얼마나 붙는지는 <SeoLink href="/guide/investment-tax">주식·투자 세금 가이드</SeoLink>에 정리해 두었습니다.
         </p>
       </SeoSection>
 
@@ -52,7 +52,7 @@ export default function Page() {
           셋째, <strong>내 투자 비중이 과도하지 않은가</strong> — 전체 자산의 30% 이상이 한 종목이면 물타기보다 분산이 먼저입니다.
         </p>
         <p>
-          투자 수익의 복리 효과가 궁금하면 <a href="/daily/compound">복리 계산기</a>에서 장기 시뮬레이션해 보세요.
+          투자 수익의 복리 효과가 궁금하면 <SeoLink href="/daily/compound">복리 계산기</SeoLink>에서 장기 시뮬레이션해 보세요.
         </p>
       </SeoSection>
 

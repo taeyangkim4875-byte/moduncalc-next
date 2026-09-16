@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoList, SeoLink, SeoFormula } from "@/components/SeoContent";
 import Baby100Calc from "./Baby100Calc";
 
 export const metadata: Metadata = {
@@ -67,6 +67,42 @@ export default function Page() {
           연애 기념일은 <SeoLink href="/daily/anniversary">기념일 계산기</SeoLink>에서 100일·200일·1000일을 한번에 확인하고,
           출산 예정일을 역산하려면 <SeoLink href="/daily/due-date">출산 예정일 계산기</SeoLink>를 이용하세요.
           아이의 성장 지표가 궁금하면 <SeoLink href="/daily/bmi-child">어린이 BMI 계산기</SeoLink>도 유용합니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="백일·돌을 세는 방식">
+        <p>
+          아기 기념일은 <strong>태어난 날을 1일</strong>로 셉니다.
+          1월 1일에 태어났다면 그날이 1일이고, 100일째는 4월 10일입니다.
+          커플 기념일과 같은 방식이라 &ldquo;생일 + 100일&rdquo;로 계산하면 하루가 밀립니다.
+        </p>
+        <SeoFormula>
+          <div>백일 = 생년월일 + 99일</div>
+          <div>돌(첫 생일) = 생년월일 + 1년 (만 1세가 되는 날)</div>
+        </SeoFormula>
+        <p>
+          <strong>돌은 백일과 세는 방식이 다릅니다.</strong>
+          돌은 태어난 날로부터 만 1년이 되는 날, 즉 이듬해 같은 날짜입니다.
+          365일째가 아니라 366일째가 돌이 되는 셈인데,
+          &ldquo;만 1세가 되는 날&rdquo;이라고 생각하면 헷갈리지 않습니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="백일 전후로 챙기는 날들">
+        <SeoList>
+          <li><strong>삼칠일(21일)</strong> — 예로부터 산모와 아기가 외부 접촉을 피하고 몸을 회복하던 기간입니다. 요즘도 이 무렵까지는 방문을 자제하는 집이 많습니다.</li>
+          <li><strong>50일</strong> — 백일 전에 가볍게 사진을 남기는 시점으로 자리 잡았습니다.</li>
+          <li><strong>백일(100일)</strong> — 영아 사망률이 높던 시절, 100일을 넘기면 한숨 돌린다는 의미에서 크게 축하하던 데서 유래했습니다.</li>
+          <li><strong>돌(1년)</strong> — 돌잡이를 하는 날. 만 1세 생일입니다.</li>
+        </SeoList>
+        <p>
+          백일과 돌 사진 촬영은 예약이 몰리는 편이라 보통 <strong>한 달 전쯤 예약</strong>합니다.
+          날짜를 먼저 확정해 두면 스튜디오와 가족 일정을 잡기 수월합니다.
+        </p>
+        <p>
+          출산 전이라면 <SeoLink href="/daily/due-date">출산 예정일 계산기</SeoLink>로 주수를 확인하고,
+          육아휴직 급여는 <SeoLink href="/salary/parental">육아휴직 계산기</SeoLink>에서 미리 계산해 보세요.
+          아이 성장 상태는 <SeoLink href="/daily/bmi-child">어린이 BMI 계산기</SeoLink>로 확인할 수 있습니다.
         </p>
       </SeoSection>
     </PageLayout>

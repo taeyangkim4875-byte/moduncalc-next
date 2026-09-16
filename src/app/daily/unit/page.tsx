@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoList, SeoLink, SeoFormula } from "@/components/SeoContent";
 import UnitCalc from "./UnitCalc";
 
 export const metadata: Metadata = {
@@ -65,6 +65,43 @@ export default function Page() {
           부동산 평수 변환은 <SeoLink href="/daily/pyeong">평수 계산기</SeoLink>가 더 상세하고,
           속도 단위 변환이 필요하면 <SeoLink href="/daily/speed">속도·시간 계산기</SeoLink>를 이용하세요.
           금 무게 환산은 <SeoLink href="/daily/gold">금 시세 계산기</SeoLink>에서 돈·g·oz를 한번에 확인할 수 있습니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="한국에서 자주 쓰는 단위 환산">
+        <p>
+          부동산, 금은방, 전통시장에서는 아직 옛 단위가 널리 쓰입니다.
+          2007년부터 법정 계량단위가 아니지만 실생활에서는 여전히 통용되므로 환산값을 알아두면 유용합니다.
+        </p>
+        <SeoList>
+          <li><strong>1평 = 3.3058㎡</strong> — 반대로 1㎡ = 0.3025평. 아파트 &lsquo;34평&rsquo;은 약 112㎡입니다.</li>
+          <li><strong>1돈 = 3.75g</strong> — 금·은 무게 단위. 1냥 = 10돈 = 37.5g, 1푼 = 0.375g입니다.</li>
+          <li><strong>1근 = 600g</strong> — 고기·채소용. 다만 과일이나 일부 품목은 375g을 1근으로 쓰기도 해 시장마다 다릅니다.</li>
+          <li><strong>1되 = 1.8L</strong> — 곡물·술 부피. 1말 = 10되 = 18L입니다.</li>
+          <li><strong>1자(척) = 30.3cm</strong> — 한복이나 목재에서 쓰입니다.</li>
+        </SeoList>
+      </SeoSection>
+
+      <SeoSection title="해외 직구·여행에서 헷갈리는 단위">
+        <p>
+          미국과 영국은 야드파운드법을 쓰기 때문에 온라인 쇼핑이나 여행 중에 환산이 필요합니다.
+          특히 온도는 덧셈이 들어가서 단순 곱셈으로는 맞지 않습니다.
+        </p>
+        <SeoFormula>
+          <div>℃ → ℉ : (℃ × 9 ÷ 5) + 32</div>
+          <div>℉ → ℃ : (℉ − 32) × 5 ÷ 9</div>
+          <div>1inch = 2.54cm · 1ft = 30.48cm · 1mile = 1.609km</div>
+          <div>1lb = 0.4536kg · 1oz = 28.35g · 1gallon(미국) = 3.785L</div>
+        </SeoFormula>
+        <p>
+          여행지 일기예보에서 &ldquo;80°F&rdquo;를 보면 (80 − 32) × 5 ÷ 9 = 약 26.7℃입니다.
+          암산 요령으로 <strong>&ldquo;32를 빼고 반으로 나눈 뒤 10%를 더한다&rdquo;</strong>고 기억하면
+          (80−32)=48 → 24 → 26.4로 실제값에 가깝게 나옵니다.
+        </p>
+        <p>
+          옷·신발 사이즈는 단순 길이 환산으로 맞지 않으므로 브랜드별 사이즈표를 확인하세요.
+          집 면적 환산은 <SeoLink href="/daily/pyeong">평수 변환 계산기</SeoLink>,
+          금 무게와 시세는 <SeoLink href="/daily/gold">금 시세 계산기</SeoLink>가 더 편합니다.
         </p>
       </SeoSection>
     </PageLayout>

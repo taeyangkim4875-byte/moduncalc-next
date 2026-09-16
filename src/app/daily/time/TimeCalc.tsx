@@ -43,7 +43,7 @@ export default function TimeCalc() {
   const [workEndH, setWorkEndH] = useState(18);
   const [workEndM, setWorkEndM] = useState(0);
   const [breakMin, setBreakMin] = useState(60);
-  const [hourlyWage, setHourlyWage] = useState(10030);
+  const [hourlyWage, setHourlyWage] = useState(10320);
 
   const diffResult = useMemo(() => {
     let diff = parseTime(endH, endM) - parseTime(startH, startM);

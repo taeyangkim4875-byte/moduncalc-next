@@ -80,7 +80,7 @@ export default function Page() {
         <p>
           국민연금은 <strong>기준소득월액 상한 659만원</strong>이 적용됩니다.
           월 급여가 659만원을 넘어도 보험료는 659만원 기준으로 동결됩니다.
-          반대로 하한은 39만원이며, 이 이하 소득이면 39만원 기준으로 계산됩니다.
+          반대로 하한은 41만원이며, 이 이하 소득이면 41만원 기준으로 계산됩니다.
         </p>
         <p>
           건강보험과 고용보험에는 상한이 없으므로, 급여가 높을수록 보험료가 비례하여 증가합니다.
@@ -104,6 +104,73 @@ export default function Page() {
           <SeoLink href="/salary">연봉 실수령액 계산기</SeoLink>를 이용하세요.
           국민연금을 얼마나 받게 될지는 <SeoLink href="/pension/nps">국민연금 수령액 계산기</SeoLink>,
           퇴사 후 받을 수 있는 금액은 <SeoLink href="/pension/jobless">실업급여 계산기</SeoLink>에서 확인할 수 있습니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="2026년 4대보험 요율표">
+        <p>
+          근로자가 급여에서 공제당하는 항목은 국민연금, 건강보험(+장기요양), 고용보험 세 가지입니다.
+          산재보험은 <strong>전액 사업주 부담</strong>이라 급여에서 빠지지 않습니다.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-[var(--bg)]">
+                <th className="text-left p-2 font-bold">항목</th>
+                <th className="text-right p-2 font-bold">총 요율</th>
+                <th className="text-right p-2 font-bold">근로자</th>
+                <th className="text-right p-2 font-bold">사업주</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-t border-[var(--line)]"><td className="p-2">국민연금</td><td className="p-2 text-right">9.5%</td><td className="p-2 text-right font-bold">4.75%</td><td className="p-2 text-right">4.75%</td></tr>
+              <tr className="border-t border-[var(--line)]"><td className="p-2">건강보험</td><td className="p-2 text-right">7.19%</td><td className="p-2 text-right font-bold">3.595%</td><td className="p-2 text-right">3.595%</td></tr>
+              <tr className="border-t border-[var(--line)]"><td className="p-2">장기요양보험</td><td className="p-2 text-right">건강보험료의 13.14%</td><td className="p-2 text-right font-bold">절반</td><td className="p-2 text-right">절반</td></tr>
+              <tr className="border-t border-[var(--line)]"><td className="p-2">고용보험(실업급여)</td><td className="p-2 text-right">1.8%</td><td className="p-2 text-right font-bold">0.9%</td><td className="p-2 text-right">0.9%</td></tr>
+              <tr className="border-t border-[var(--line)]"><td className="p-2">산재보험</td><td className="p-2 text-right">업종별 상이</td><td className="p-2 text-right font-bold">없음</td><td className="p-2 text-right">전액</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          월 급여 300만원이면 근로자 부담은 국민연금 142,500원, 건강보험 107,850원,
+          장기요양 약 14,170원, 고용보험 27,000원으로 <strong>합계 약 291,520원</strong>입니다.
+          여기에 소득세와 지방소득세가 더 빠집니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="국민연금에만 상·하한이 있습니다">
+        <p>
+          건강보험과 고용보험은 소득에 정률로 붙지만,
+          국민연금은 <strong>기준소득월액에 상한과 하한</strong>이 있습니다.
+          2026년 7월부터 2027년 6월까지 적용되는 금액은 <strong>상한 659만원, 하한 41만원</strong>입니다.
+        </p>
+        <p>
+          월 소득이 800만원이어도 659만원까지만 보험료를 부과하므로,
+          근로자 부담 국민연금은 659만원 × 4.75% = <strong>313,025원</strong>이 최대입니다.
+          반대로 월 소득이 30만원이어도 41만원을 기준으로 계산합니다.
+          이 상·하한액은 전체 가입자의 평균소득 변동률에 따라 매년 7월에 조정됩니다.
+        </p>
+        <p>
+          2026년에는 국민연금 보험료율이 9%에서 9.5%로 올랐습니다.
+          연금개혁에 따라 <strong>2033년까지 매년 0.5%p씩 인상</strong>되어 13%에 도달할 예정이므로,
+          앞으로 몇 년간 실수령액이 매년 조금씩 줄어드는 효과가 있습니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="건강보험료 정산이 4월에 몰리는 이유">
+        <p>
+          직장가입자의 건강보험료는 <strong>전년도 보수를 기준으로 임시 부과</strong>했다가,
+          다음 해에 실제 보수총액을 신고받아 정산합니다. 정산 결과는 보통 <strong>4월 급여</strong>에 반영됩니다.
+        </p>
+        <p>
+          그래서 전년도에 연봉이 올랐거나 성과급을 많이 받은 해에는
+          4월에 추가 보험료가 한꺼번에 빠져 실수령액이 확 줄어듭니다.
+          반대로 연봉이 줄었다면 환급받습니다. 금액이 크면 분할 납부를 신청할 수도 있습니다.
+        </p>
+        <p>
+          공제 후 실제 입금액이 궁금하다면 <SeoLink href="/salary">연봉 실수령액 계산기</SeoLink>,
+          내야 할 국민연금이 나중에 얼마로 돌아오는지는 <SeoLink href="/pension/nps">국민연금 계산기</SeoLink>에서 확인해 보세요.
+          제도 전반은 <SeoLink href="/guide/4-insurance">4대보험 완전 정리</SeoLink>에 자세히 적어두었습니다.
         </p>
       </SeoSection>
     </PageLayout>

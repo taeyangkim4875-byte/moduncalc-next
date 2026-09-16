@@ -1,6 +1,6 @@
 # 모든 계산기 (moduncalc.com)
 
-> **82종 한국어 + 32종 영어 무료 계산기 · 가이드 28편 · 총 146페이지**
+> **한국어 계산기 82종 + 영문 계산기 32종 · 한국어 가이드 10편 + 영문 가이드 28편 · 총 152페이지**
 
 **[moduncalc.com](https://moduncalc.com)** | **[English](https://moduncalc.com/en)**
 
@@ -13,7 +13,7 @@
 ### 연봉 / 급여
 - [연봉 실수령액](https://moduncalc.com/salary) - 4대보험·소득세 공제 후 실수령액 + 백분위
 - [실수령액 표](https://moduncalc.com/salary/table) - 2천만~1.5억 한눈에 비교
-- [최저시급](https://moduncalc.com/salary/minimum) - 2026 최저시급 10,320원 · 주휴수당
+- [최저시급](https://moduncalc.com/salary/minimum) - 2026 최저시급 10,320원 / 2027년 10,700원 · 주휴수당
 - [퇴직금](https://moduncalc.com/salary/severance) · [육아휴직](https://moduncalc.com/salary/parental) · [연차](https://moduncalc.com/salary/annual)
 - [월급 카운터](https://moduncalc.com/salary/live) · [연봉 환산기](https://moduncalc.com/salary/convert) · [월급 달력](https://moduncalc.com/salary/calendar)
 
@@ -67,9 +67,12 @@
 | 항목 | 출처 |
 |------|------|
 | 소득세 8구간 (6~45%) | 소득세법 제55조 |
-| 국민연금 4.75% | 국민연금공단 2026 고시 |
-| 건강보험 3.595% | 건강보험공단 2026 고시 |
-| 고용보험 0.9% | 고용보험법 |
+| 국민연금 9.5% (본인 4.75%) | 국민연금공단 2026 고시 |
+| 건강보험 7.19% (본인 3.595%) | 건강보험공단 2026 고시 |
+| 고용보험 0.9% (근로자 실업급여분) | 고용보험법 |
+| 장기요양 13.14% | 건강보험공단 2026 고시 |
+| 최저시급 10,320원 (2026) | 고용노동부 고시 |
+| 기준소득월액 상한 659만원 | 국민연금공단 (2026.7~2027.6) |
 | 외국인 flat tax 19% | 조세특례제한법 제18조의2 |
 
 ## 로컬 개발

@@ -24,7 +24,7 @@ const faqItems = [
   },
   {
     q: "Should foreigners choose flat tax or progressive tax for year-end settlement?",
-    a: "It depends on your income level and eligible deductions. The 19% flat tax is simpler and often better for high earners (roughly above 45-50 million KRW annually) because no deductions are needed and the effective rate stays at 19%. Progressive tax rates start at 6% and go up to 45%, but you can claim deductions that significantly reduce your taxable income. For lower to mid-range salaries, progressive rates with full deductions often result in a lower effective tax rate. Use our Tax Comparison Calculator to compare both options with your actual numbers before deciding.",
+    a: "It depends on your income level and eligible deductions. The flat rate is 19% plus 1.9% local income tax, so 20.9% of your gross with no deductions at all. Progressive rates run from 6% to 45%, but the earned income deduction, personal exemptions, your four-insurance contributions and the earned income tax credit all cut your taxable base first, so your effective rate stays well below the headline bracket. On a single-dependent basis the crossover sits at roughly 160 million KRW a year: below that, progressive almost always wins; above it, the flat rate pulls ahead and the gap widens quickly. Use our Tax Comparison Calculator to check the crossover for your own dependent count before deciding.",
   },
   {
     q: "Can foreigners claim housing rent deduction (월세 세액공제)?",

@@ -64,6 +64,38 @@ export default function Page() {
           단위 변환이 필요하면 <SeoLink href="/daily/unit">단위 변환기</SeoLink>도 유용합니다.
         </p>
       </SeoSection>
+
+      <SeoSection title="페인트와 벽지, 얼마나 사야 할까">
+        <p>
+          자재를 모자라게 사는 것이 남기는 것보다 훨씬 곤란합니다.
+          페인트는 제조 로트(lot)에 따라 같은 색상이라도 미세하게 색이 다를 수 있어
+          중간에 추가로 사면 이어 칠한 부분이 티 납니다.
+        </p>
+        <SeoFormula>
+          <div>벽 면적 = (가로 + 세로) × 2 × 높이 − 문·창문 면적</div>
+          <div>필요 페인트(L) = 벽 면적 ÷ 도포면적 × 도포 횟수</div>
+          <div>수성페인트 도포면적 ≈ 1L당 8~10㎡ (1회 기준)</div>
+        </SeoFormula>
+        <p>
+          실제로는 흡수율이 높은 벽면, 색상 변화가 큰 경우(진한 색 위에 밝은 색),
+          롤러 작업 중 손실을 감안해 <strong>계산값의 10~15%를 여유분</strong>으로 더 잡는 것이 안전합니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="셀프 시공 전에 알아둘 것">
+        <SeoList>
+          <li><strong>도포는 두 번이 기본입니다.</strong> 한 번만 칠하면 아래 색이 비칩니다. 특히 흰색으로 덮을 때는 3회가 필요할 수도 있습니다.</li>
+          <li><strong>프라이머(하도)를 바르면 페인트가 덜 듭니다.</strong> 벽이 도배지이거나 흡수율이 높으면 프라이머 한 번이 페인트 한 번보다 경제적입니다.</li>
+          <li><strong>벽지는 합지와 실크가 다릅니다.</strong> 폭과 롤 길이가 제품마다 달라 구매 전 규격을 확인해야 하고, 무늬가 있으면 무늬 맞춤 때문에 손실분이 더 생깁니다.</li>
+          <li><strong>천장은 벽보다 어렵습니다.</strong> 같은 면적이라도 시간이 두 배 가까이 걸리므로 일정을 여유 있게 잡으세요.</li>
+          <li><strong>건조 시간을 지키세요.</strong> 덧칠 간격은 보통 2~4시간이며, 습도가 높으면 더 걸립니다. 덜 마른 상태에서 덧칠하면 들뜹니다.</li>
+        </SeoList>
+        <p>
+          방 면적을 평 단위로 환산하려면 <SeoLink href="/daily/pyeong">평수 변환 계산기</SeoLink>가 편하고,
+          길이·면적 단위 변환은 <SeoLink href="/daily/unit">단위 변환기</SeoLink>에서 할 수 있습니다.
+          이사와 함께 진행한다면 <SeoLink href="/realestate/registration">등기비용 계산기</SeoLink>로 전체 예산을 잡아두세요.
+        </p>
+      </SeoSection>
     </PageLayout>
   );
 }

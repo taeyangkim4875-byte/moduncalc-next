@@ -96,7 +96,7 @@ describe('BMI calculation regression', () => {
 
 describe('pension NPS regression', () => {
   it('300만원 소득 30년 가입', () => {
-    const NPS_CONST = 1.29, NPS_A = 3193511, NPS_CAP = 6370000, NPS_FLOOR = 400000;
+    const NPS_CONST = 1.29, NPS_A = 3193511, NPS_CAP = 6590000, NPS_FLOOR = 410000;
     const income = 300;
     const years = 30;
     const B = Math.min(Math.max(income * 10000, NPS_FLOOR), NPS_CAP);

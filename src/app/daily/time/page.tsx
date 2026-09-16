@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import TimeCalc from "./TimeCalc";
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function Page() {
       <TimeCalc />
 
       <SeoSection title="알바 시급 제대로 받고 있는지 확인하는 법">
-        <p>편의점에서 오후 6시부터 밤 12시까지 일했는데, 사장님이 6시간분만 주면 안 되거든요. 22시 이후 2시간은 야간수당이 붙어서 시급의 1.5배를 받아야 합니다. 2026년 최저시급 10,470원 기준으로 22시~24시는 시간당 15,705원이에요.</p>
+        <p>편의점에서 오후 6시부터 밤 12시까지 일했는데, 사장님이 6시간분만 주면 안 되거든요. 22시 이후 2시간은 야간수당이 붙어서 시급의 1.5배를 받아야 합니다. 2026년 최저시급 10,320원 기준으로 22시~24시는 시간당 15,480원이에요.</p>
         <p>근데 휴게시간도 꼭 확인하세요. 4시간 일하면 30분, 8시간 일하면 1시간 쉬어야 하는데 이건 근무시간에 안 들어갑니다. 사실 편의점이나 카페에서는 손님 없을 때 잠깐 쉬는 걸 휴게로 치는 경우가 많은데, 자유롭게 이용할 수 없으면 그건 대기 시간이라 근무시간입니다.</p>
       </SeoSection>
 
@@ -55,6 +55,49 @@ export default function Page() {
           { q: '포괄임금제면 연장수당을 못 받나요?', a: '포괄임금제라도 실제 연장근무 시간이 포괄 산정된 시간을 초과하면 추가 수당을 받을 수 있습니다. 근로계약서에 명시된 시간을 확인하세요.' },
         ]}
       />
+
+      <SeoSection title="근로시간 가산수당, 어떻게 붙나">
+        <p>
+          근로기준법은 연장·야간·휴일 근로에 <strong>통상임금의 50% 이상을 가산</strong>하도록 정하고 있습니다.
+          중요한 것은 이 가산들이 <strong>중복해서 붙는다</strong>는 점입니다.
+        </p>
+        <SeoList>
+          <li><strong>연장근로</strong> — 1일 8시간 또는 1주 40시간을 넘는 근로. 통상임금의 50% 가산 (합계 150%).</li>
+          <li><strong>야간근로</strong> — 밤 10시부터 다음 날 오전 6시 사이의 근로. 50% 가산.</li>
+          <li><strong>휴일근로</strong> — 8시간 이내 50%, 8시간 초과분은 100% 가산.</li>
+          <li><strong>중복 적용</strong> — 밤 11시에 하는 연장근로는 연장 50% + 야간 50%가 함께 붙어 통상임금의 200%가 됩니다.</li>
+        </SeoList>
+        <p>
+          2026년 최저시급 10,320원을 기준으로 계산해 보면,
+          평일 야간 연장근로 1시간의 임금은 10,320 × 2 = <strong>20,640원</strong>입니다.
+          같은 시간을 일해도 언제 일했는지에 따라 임금이 두 배까지 차이 납니다.
+        </p>
+        <p>
+          다만 <strong>5인 미만 사업장</strong>에는 연장·야간·휴일 가산수당 규정이 적용되지 않습니다.
+          본인 사업장의 상시 근로자 수를 먼저 확인해 보세요.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="휴게시간은 근로시간이 아닙니다">
+        <p>
+          근로기준법상 4시간 근로에 30분 이상, 8시간 근로에 1시간 이상의 휴게시간을
+          근로시간 도중에 주어야 합니다. 이 시간은 <strong>임금이 지급되지 않습니다.</strong>
+        </p>
+        <p>
+          그래서 오전 9시에 출근해 오후 6시에 퇴근하면 체류 시간은 9시간이지만
+          점심 1시간을 빼고 <strong>8시간이 근로시간</strong>이 됩니다.
+          이 계산기의 근무시간 모드도 휴게시간을 빼고 계산합니다.
+        </p>
+        <p>
+          문제는 &ldquo;휴게시간인데 자리를 지켜야 하는&rdquo; 경우입니다.
+          사용자의 지휘·감독 아래 대기하는 시간은 휴게시간이 아니라 근로시간으로 봅니다.
+          점심시간에 전화를 받아야 한다면 그 시간은 근로시간에 해당할 수 있습니다.
+        </p>
+        <p>
+          시급 기준 월급 환산은 <SeoLink href="/salary/minimum">최저시급 계산기</SeoLink>에서,
+          연차 일수는 <SeoLink href="/salary/annual">연차 계산기</SeoLink>에서 확인할 수 있습니다.
+        </p>
+      </SeoSection>
     </PageLayout>
   );
 }
