@@ -135,7 +135,7 @@ export default function YearEndSettlementPage() {
           <li><b>Personal exemption (본인 공제):</b> A basic deduction of 1,500,000 KRW for yourself. This is automatic and does not require any documents.</li>
           <li><b>Spouse exemption (배우자 공제):</b> An additional 1,500,000 KRW deduction if your spouse resides in Korea and earns less than 1 million KRW per year (or has no income). Your spouse does not need to be Korean.</li>
           <li><b>Dependent exemption (부양가족 공제):</b> 1,500,000 KRW per qualifying dependent (children, parents) living with you in Korea.</li>
-          <li><b>National Pension contributions (국민연금 납입액):</b> Your 4.5% National Pension contributions are fully deductible from your income.</li>
+          <li><b>National Pension contributions (국민연금 납입액):</b> Your National Pension contributions — 4.75% of salary in 2026 — are fully deductible from your income.</li>
           <li><b>Health Insurance premiums (건강보험료):</b> Both your health insurance and long-term care insurance premiums are deductible.</li>
           <li><b>Housing rent deduction (월세 세액공제):</b> If you pay rent and earn 70 million KRW or less annually, you can claim 15-17% of your annual rent as a tax credit (up to 10 million KRW in rent). Our{" "}
             <Link href="/en/rent" className="text-[var(--primary)] font-bold hover:underline">Jeonse vs Wolse Calculator</Link> is useful here, since only wolse rent payments qualify for the credit.</li>

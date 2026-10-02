@@ -1,11 +1,21 @@
 import { ImageResponse } from 'next/og';
 import { type NextRequest } from 'next/server';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 
 export const runtime = 'nodejs';
 
-const fontData = fetch(
-  new URL('./Pretendard-Bold.ttf', import.meta.url),
-).then((res) => res.arrayBuffer());
+/**
+ * 폰트는 파일시스템에서 읽습니다.
+ * `fetch(new URL('./x.ttf', import.meta.url))` 방식은 Node 런타임에서 동작하지 않아
+ * 이 엔드포인트가 운영 환경에서 500을 반환하고 있었습니다.
+ * 모듈 로드 시점이 아니라 첫 요청 때 한 번만 읽고 캐시합니다.
+ */
+let fontPromise: Promise<Buffer> | null = null;
+function loadFont(): Promise<Buffer> {
+  fontPromise ??= readFile(join(process.cwd(), 'src/app/api/og/Pretendard-Bold.ttf'));
+  return fontPromise;
+}
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
@@ -14,7 +24,7 @@ export async function GET(req: NextRequest) {
   const desc = searchParams.get('desc') || '';
   const inputs = searchParams.get('inputs') || '';
 
-  const font = await fontData;
+  const font = await loadFont();
 
   return new ImageResponse(
     (

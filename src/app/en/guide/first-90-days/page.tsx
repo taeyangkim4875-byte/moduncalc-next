@@ -125,7 +125,7 @@ export default function First90DaysPage() {
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>National Health Insurance (국민건강보험):</b> If you are employed, your employer enrolls you automatically and you share the premium 50/50. If self-employed or not working, you must enroll yourself at the NHI office within 6 months of getting your ARC. Premiums are based on income and property. Use our{" "}
             <Link href="/en/health-insurance" className="text-[var(--primary)] font-bold hover:underline">Health Insurance Calculator</Link> to estimate your premium.</li>
-          <li><b>National Pension (국민연금):</b> Employees contribute 4.5% of salary (employer matches 4.5%). Citizens of countries with a pension totalization agreement with Korea can claim a lump-sum refund when they leave. Check if your country qualifies, then estimate the payout with our{" "}
+          <li><b>National Pension (국민연금):</b> Employees contribute 4.75% of salary and the employer matches it, for a total of 9.5% in 2026 (up from 9% in 2025). Citizens of countries with a pension totalization agreement with Korea can claim a lump-sum refund when they leave. Check if your country qualifies, then estimate the payout with our{" "}
             <Link href="/en/pension-refund" className="text-[var(--primary)] font-bold hover:underline">Pension Refund Calculator</Link>.</li>
           <li><b>Understand your payslip:</b> Korean payslips list deductions for income tax (소득세), NHI (건강보험), pension (국민연금), and employment insurance (고용보험). Use our{" "}
             <Link href="/en/salary" className="text-[var(--primary)] font-bold hover:underline">Salary Calculator</Link> to verify your deductions are correct.</li>
