@@ -145,6 +145,80 @@ export default function Page() {
           최저시급 계산기 바로가기 &rarr;
         </Link>
       </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">주휴수당, 요건과 계산법</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          최저임금 이야기에서 가장 많이 빠뜨리는 것이 <strong>주휴수당</strong>입니다.
+          주 15시간 이상 일하고 그 주의 소정근로일을 모두 개근하면,
+          일하지 않은 하루치 임금을 추가로 받습니다. 법정 수당이라 주지 않으면 임금 체불입니다.
+        </p>
+        <div className="bg-[var(--bg-alt)] rounded-lg p-4 mb-3">
+          <p className="text-sm font-bold text-center">주휴수당 = (1주 소정근로시간 ÷ 40) × 8 × 시급</p>
+        </div>
+        <ul className="text-sm leading-relaxed text-[var(--sub)] list-disc pl-5 space-y-1.5">
+          <li><strong>주 40시간 근무</strong> — 8시간분이 추가됩니다. 2026년 최저시급 10,320원 기준 82,560원.</li>
+          <li><strong>주 20시간 근무</strong> — (20 ÷ 40) × 8 = 4시간분, 41,280원이 추가됩니다.</li>
+          <li><strong>주 15시간 미만</strong> — 주휴수당이 발생하지 않습니다. 사업주가 주 14시간으로 계약을 쪼개는 이유가 여기 있습니다.</li>
+        </ul>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
+          주휴수당을 포함하면 주 40시간 근로자의 <strong>실질 시급은 약 12,384원</strong>입니다.
+          48시간분(40시간 + 주휴 8시간)을 받으면서 실제로는 40시간만 일하기 때문입니다.
+          아르바이트 공고에 &ldquo;주휴수당 포함 시급&rdquo;이라고 적혀 있다면 이 금액과 비교해 보세요.
+          월 209시간 기준 월급 2,156,880원에도 주휴시간이 이미 포함되어 있습니다.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">수습 감액, 아무에게나 적용되지 않습니다</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          수습기간에 최저임금의 90%까지 감액할 수 있다는 규정은 조건이 꽤 까다롭습니다.
+          아래를 <strong>모두</strong> 충족해야 합니다.
+        </p>
+        <ul className="text-sm leading-relaxed text-[var(--sub)] list-disc pl-5 space-y-1.5">
+          <li><strong>근로계약 기간이 1년 이상</strong>이어야 합니다. 6개월 계약직에는 적용할 수 없습니다.</li>
+          <li><strong>수습 시작일부터 3개월 이내</strong>에만 가능합니다. 4개월째부터는 전액 지급해야 합니다.</li>
+          <li><strong>단순노무업무 종사자는 제외</strong>됩니다. 고용노동부가 고시한 단순노무 직종(배달원, 청소원, 주방보조 등)은 수습이라도 감액할 수 없습니다.</li>
+        </ul>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
+          2026년 기준 감액 적용 시 시급은 <strong>9,288원</strong>(10,320원의 90%)입니다.
+          편의점·카페 아르바이트 상당수가 단순노무에 해당해 감액 대상이 아닌데도
+          &ldquo;수습이라 90%&rdquo;라고 하는 경우가 있으니, 본인 직무가 고시 목록에 있는지 확인해 보세요.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">내 시급이 최저임금 위반인지 보는 법</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          시급제라면 단순 비교로 끝나지만, 월급제는 <strong>최저임금에 산입되는 항목만 추려서</strong>
+          월 소정근로시간으로 나눠야 합니다. 2024년부터 상여금과 복리후생비는 전액 산입됩니다.
+        </p>
+        <ul className="text-sm leading-relaxed text-[var(--sub)] list-disc pl-5 space-y-1.5">
+          <li><strong>산입되는 것</strong> — 기본급, 매월 지급되는 정기상여금 전액, 식대·교통비 등 복리후생비 전액.</li>
+          <li><strong>산입되지 않는 것</strong> — 연장·야간·휴일근로수당, 연차수당, 매월 지급되지 않는 상여금.</li>
+        </ul>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
+          예를 들어 월 220만원을 받지만 그중 40만원이 고정 연장근로수당이라면,
+          최저임금 판단에 쓰이는 금액은 180만원입니다.
+          209시간으로 나누면 시급 약 8,612원이 되어 2026년 최저시급에 미달합니다.
+          <strong>총액이 아니라 구성</strong>을 봐야 하는 이유입니다.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">위반이 확인됐을 때</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          최저임금법 위반은 <strong>3년 이하 징역 또는 2,000만원 이하 벌금</strong> 대상입니다.
+          최저임금에 못 미치는 금액으로 정한 근로계약은 그 부분이 무효가 되고,
+          최저임금과 같은 금액으로 지급한 것으로 봅니다. 즉 차액을 청구할 수 있습니다.
+        </p>
+        <ul className="text-sm leading-relaxed text-[var(--sub)] list-disc pl-5 space-y-1.5">
+          <li><strong>증거부터 모으세요.</strong> 근로계약서, 급여명세서, 출퇴근 기록(앱 기록·메신저 대화도 유효), 입금 내역을 남겨두세요.</li>
+          <li><strong>고용노동부에 진정</strong>을 넣습니다. 고용노동부 홈페이지나 노동포털에서 온라인으로 접수할 수 있고, 관할 지청 방문도 가능합니다.</li>
+          <li><strong>소멸시효는 3년</strong>입니다. 이미 퇴사했더라도 3년 이내의 임금 차액은 청구할 수 있습니다.</li>
+          <li>상담이 필요하면 <strong>고용노동부 고객상담센터(☎ 1350)</strong>를 이용하세요. 익명 상담도 가능합니다.</li>
+        </ul>
+      </Card>
     </PageLayout>
   );
 }

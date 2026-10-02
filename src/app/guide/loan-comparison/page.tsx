@@ -85,13 +85,13 @@ export default function Page() {
               </tr>
               <tr>
                 <td className="py-2 font-bold">이자 차이</td>
-                <td colSpan={2} className="text-right py-2 font-bold text-[var(--primary)]">약 2,710만원</td>
+                <td colSpan={2} className="text-right py-2 font-bold text-[var(--primary)]">약 2,703만원</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
-          원금균등 상환이 총 이자에서 약 2,710만원 유리하지만, 초기 월 납부금이 약 36만원 더 높습니다.
+          원금균등 상환이 총 이자에서 약 2,703만원 유리하지만, 초기 월 납부금이 약 36만원 더 높습니다.
         </p>
       </Card>
 
@@ -200,6 +200,77 @@ export default function Page() {
             자동차 할부 계산기 &rarr;
           </Link>
         </div>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">만기일시상환까지 넣어 세 방식 비교</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          전세자금대출이나 신용대출에서 흔한 <strong>만기일시상환</strong>은 기간 내내 이자만 내고
+          만기에 원금을 한 번에 갚는 방식입니다. 같은 조건(3억원·연 3.5%·30년)으로 세 방식을 나란히 놓으면 차이가 분명합니다.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-[var(--border)]">
+                <th className="text-left py-2 font-bold">구분</th>
+                <th className="text-right py-2 font-bold">원리금균등</th>
+                <th className="text-right py-2 font-bold">원금균등</th>
+                <th className="text-right py-2 font-bold">만기일시</th>
+              </tr>
+            </thead>
+            <tbody className="text-[var(--sub)]">
+              <tr className="border-b border-[var(--border)]"><td className="py-2">첫 달 납부금</td><td className="text-right py-2">134.7만원</td><td className="text-right py-2">170.8만원</td><td className="text-right py-2">87.5만원</td></tr>
+              <tr className="border-b border-[var(--border)]"><td className="py-2">마지막 달</td><td className="text-right py-2">134.7만원</td><td className="text-right py-2">83.6만원</td><td className="text-right py-2">원금 3억 + 87.5만원</td></tr>
+              <tr><td className="py-2 font-bold">총 이자</td><td className="text-right py-2 font-bold">1억 8,497만원</td><td className="text-right py-2 font-bold">1억 5,794만원</td><td className="text-right py-2 font-bold">3억 1,500만원</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
+          만기일시상환은 월 부담이 가장 가볍지만 <strong>총 이자가 원금보다 많아집니다.</strong>
+          원금이 30년 내내 3억 그대로 남아 있으니 이자도 줄지 않기 때문입니다.
+          그래서 만기일시는 보통 <strong>2~4년짜리 전세자금대출</strong>처럼 기간이 짧고,
+          만기에 보증금을 돌려받아 상환하는 구조에서만 합리적입니다.
+          30년짜리 주택담보대출에서 선택할 방식은 아닙니다.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">중도상환, 언제 하는 게 가장 이득일까</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          결론부터 말하면 <strong>빠를수록 좋습니다.</strong> 원리금균등 상환은 초기에 이자 비중이 크기 때문에,
+          초반에 갚은 원금 1,000만원이 후반에 갚은 1,000만원보다 훨씬 많은 이자를 없앱니다.
+        </p>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          3억원·연 3.5%·30년 원리금균등에서 <strong>5년차에 3,000만원을 중도상환</strong>하면
+          남은 기간 이자가 약 3,690만원 줄어듭니다. 같은 3,000만원을 <strong>20년차에 넣으면</strong>
+          절감액이 약 1,076만원으로 떨어집니다. 넣는 돈은 같은데 효과가 세 배 넘게 차이 납니다. (월 납입액을 그대로 두고 상환 기간을 줄이는 기간단축형 기준입니다.)
+        </p>
+        <p className="text-sm leading-relaxed text-[var(--sub)]">
+          다만 <strong>중도상환수수료</strong>를 먼저 확인해야 합니다. 보통 대출 실행 후 3년간 부과되며,
+          잔여기간에 비례해 줄어드는 슬라이딩 방식이 일반적입니다.
+          또 은행마다 <strong>연간 원금의 일정 비율까지는 수수료 없이</strong> 상환할 수 있는 한도를 두는 경우가 많으니,
+          그 한도만큼씩 매년 상환하는 것도 좋은 전략입니다.
+          수수료가 면제되는 3년째를 기다릴지, 수수료를 내고라도 지금 갚을지는
+          <strong> 절감되는 이자와 수수료를 직접 비교</strong>해서 결정하세요.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">금리를 낮추는 두 가지 방법</h2>
+        <ul className="text-sm leading-relaxed text-[var(--sub)] list-disc pl-5 space-y-2">
+          <li>
+            <strong>금리인하요구권</strong> — 대출을 받은 뒤 승진, 이직으로 인한 소득 증가, 신용점수 상승,
+            부채 감소처럼 신용상태가 나아졌다면 은행에 금리를 내려달라고 요구할 수 있는 법적 권리입니다.
+            영업점 방문 없이 앱으로 신청할 수 있고, 은행은 10영업일 이내에 수용 여부와 사유를 알려줘야 합니다.
+            거절되더라도 불이익이 없으니 소득이 오를 때마다 신청해 볼 만합니다.
+          </li>
+          <li>
+            <strong>대환대출</strong> — 더 낮은 금리의 상품으로 갈아타는 것입니다.
+            온라인 대환대출 인프라를 통해 영업점 방문 없이 비교·실행이 가능해졌습니다.
+            다만 기존 대출의 중도상환수수료, 새 대출의 인지세·근저당 설정비 같은 부대비용을 합산해
+            <strong> 실제로 이득인지</strong> 따져야 합니다. 금리 차이가 0.3%p 미만이면 비용을 빼고 나면 남는 게 거의 없는 경우도 있습니다.
+          </li>
+        </ul>
       </Card>
     </PageLayout>
   );

@@ -139,6 +139,98 @@ export default function Page() {
           퇴직금 계산기 바로가기 &rarr;
         </Link>
       </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">퇴직소득세, 실제로 얼마나 떼나</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          퇴직소득세는 근로소득세와 계산 구조가 완전히 다릅니다.
+          <strong>오래 다닐수록 세 부담이 급격히 낮아지도록</strong> 설계되어 있어서,
+          같은 금액을 받아도 근속연수에 따라 세금이 몇 배씩 차이 납니다.
+        </p>
+        <h3 className="text-sm font-bold mt-4 mb-2">1단계. 근속연수공제</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-[var(--border)]">
+                <th className="text-left py-2 font-bold">근속연수</th>
+                <th className="text-left py-2 font-bold">공제액</th>
+              </tr>
+            </thead>
+            <tbody className="text-[var(--sub)]">
+              <tr className="border-b border-[var(--border)]"><td className="py-2">5년 이하</td><td className="py-2">100만원 × 근속연수</td></tr>
+              <tr className="border-b border-[var(--border)]"><td className="py-2">6~10년</td><td className="py-2">500만원 + 200만원 × (근속연수 − 5)</td></tr>
+              <tr className="border-b border-[var(--border)]"><td className="py-2">11~20년</td><td className="py-2">1,500만원 + 250만원 × (근속연수 − 10)</td></tr>
+              <tr><td className="py-2">20년 초과</td><td className="py-2">4,000만원 + 300만원 × (근속연수 − 20)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 className="text-sm font-bold mt-4 mb-2">2단계. 환산급여와 환산급여공제</h3>
+        <p className="text-sm leading-relaxed text-[var(--sub)]">
+          근속연수공제를 뺀 금액을 근속연수로 나눈 뒤 12를 곱해 <strong>환산급여</strong>를 구합니다.
+          여기에 다시 환산급여공제(800만원 이하는 전액, 그 위로는 구간별 60%·55%·45%·35%)를 적용해
+          과세표준을 만들고, 종합소득세와 같은 6~45% 누진세율을 적용합니다.
+          마지막으로 그 세액을 12로 나눈 뒤 근속연수를 곱하면 최종 퇴직소득세가 나옵니다.
+        </p>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mt-3">
+          이 구조 때문에 <strong>근속 2~3년에 받는 소액 퇴직금은 세금이 거의 없거나 몇만원 수준</strong>인 반면,
+          20년 넘게 근무하고 받는 큰 금액도 실효세율이 한 자릿수에 머무는 경우가 많습니다.
+          중간정산을 받으면 근속연수가 초기화되어 이 혜택이 사라지는 점이 중요합니다.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">하루 차이로 퇴직금이 0원이 될 수 있습니다</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          퇴직금은 <strong>1년 이상 계속 근로</strong>가 요건입니다.
+          364일 근무하고 퇴사하면 퇴직금은 <strong>0원</strong>이고, 365일을 채우면 한 달치 평균임금이 나옵니다.
+          월급 300만원 수준이라면 하루 차이로 약 300만원이 갈리는 셈입니다.
+        </p>
+        <ul className="text-sm leading-relaxed text-[var(--sub)] list-disc pl-5 space-y-1.5">
+          <li><strong>기산일은 입사일</strong>입니다. 수습기간도 포함되고, 근로계약서를 늦게 썼더라도 실제 근로를 시작한 날이 기준입니다.</li>
+          <li><strong>퇴사일은 마지막 근무일의 다음 날</strong>로 보는 것이 일반적입니다. 사직서에 적는 날짜가 애매하면 인사팀에 재직기간 산정 기준을 먼저 확인하세요.</li>
+          <li><strong>남은 연차를 소진하고 퇴사</strong>하면 그 기간도 재직기간에 포함됩니다. 1년이 며칠 모자란다면 연차 소진으로 채워지는지 확인해 볼 만합니다.</li>
+          <li>계약직이 반복 갱신된 경우, 중간에 공백이 없다면 <strong>전체 기간을 합산</strong>해 계속근로로 인정받을 수 있습니다.</li>
+        </ul>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">일시금으로 받을까, 연금으로 받을까</h2>
+        <p className="text-sm leading-relaxed text-[var(--sub)] mb-3">
+          퇴직금을 IRP(개인형 퇴직연금) 계좌로 받은 뒤 <strong>만 55세 이후 연금 형태로 수령</strong>하면
+          퇴직소득세를 감면받습니다. 연금수령 10년 이내 구간은 산출된 퇴직소득세의 <strong>70%</strong>만,
+          10년을 초과하는 구간은 <strong>60%</strong>만 냅니다. 즉 30~40%를 덜 내는 셈입니다.
+        </p>
+        <ul className="text-sm leading-relaxed text-[var(--sub)] list-disc pl-5 space-y-1.5">
+          <li><strong>일시금</strong> — 당장 목돈이 필요하거나 상환할 대출이 있을 때. 퇴직소득세를 전액 부담합니다.</li>
+          <li><strong>연금</strong> — 노후 생활비로 쪼개 쓸 계획이라면 세금이 줄고 운용 수익에 대한 과세도 이연됩니다.</li>
+          <li>퇴직 후 <strong>60일 이내</strong>에 IRP로 이체하면 이미 원천징수된 퇴직소득세를 환급받을 수 있습니다. 기한을 넘기면 돌려받지 못합니다.</li>
+        </ul>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">실무에서 자주 생기는 분쟁</h2>
+        <ul className="text-sm leading-relaxed text-[var(--sub)] list-disc pl-5 space-y-1.5">
+          <li>
+            <strong>&quot;연봉에 퇴직금이 포함되어 있다&quot;</strong> — 이른바 13분할 계약입니다.
+            퇴직금을 매달 나눠 지급하는 약정은 원칙적으로 <strong>무효</strong>이며,
+            퇴직 시 별도로 퇴직금을 청구할 수 있다는 것이 법원의 일관된 입장입니다.
+            계약서에 그런 문구가 있어도 실제 급여가 최저임금 등 기준을 충족한다면 퇴직금을 따로 받을 수 있습니다.
+          </li>
+          <li>
+            <strong>퇴사 직전 급여가 줄어든 경우</strong> — 평균임금은 퇴직 전 3개월 기준이라
+            무급휴직이나 임금 삭감이 있으면 퇴직금이 줄어듭니다.
+            다만 산정된 평균임금이 <strong>통상임금보다 적으면 통상임금을 기준</strong>으로 계산하도록 되어 있습니다.
+          </li>
+          <li>
+            <strong>5인 미만 사업장</strong> — 연장·야간·휴일 가산수당 규정은 적용되지 않지만,
+            <strong>퇴직금은 5인 미만 사업장에도 적용</strong>됩니다. 사업장 규모를 이유로 거절할 수 없습니다.
+          </li>
+          <li>
+            <strong>청구 기한</strong> — 퇴직금 청구권의 소멸시효는 <strong>3년</strong>입니다.
+            퇴사한 지 오래됐더라도 3년이 지나지 않았다면 청구할 수 있습니다.
+          </li>
+        </ul>
+      </Card>
     </PageLayout>
   );
 }
