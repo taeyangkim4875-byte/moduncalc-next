@@ -160,6 +160,17 @@ export interface ChangeEntry {
 /** 최신순 */
 export const CHANGELOG: ChangeEntry[] = [
   {
+    appliedDate: '2026-10-06',
+    type: 'correction',
+    category: '연금',
+    title: '영문 가이드의 외국인 반환일시금 수급 요건 정정',
+    before: '협정 체결국 국민은 반환일시금을 받을 수 없고, 미체결국 국민이 받을 수 있다고 설명',
+    after: '사회보장협정 체결국(미국·캐나다·독일 등) 또는 상호주의 인정국 국민, 그리고 E-8·E-9·H-2 체류자격 보유자가 받을 수 있음',
+    basis: '국민연금법 제126조 및 국민연금공단 외국인 반환일시금 지급 대상국 고시',
+    affected: ['/en/guide/pension-guide', '/en/guide/pension-refund-countries'],
+    note: '요건을 정반대로 설명하고 있었습니다. 미국·캐나다·독일 국적자가 받을 수 있는 돈을 받을 수 없다고 안내한 셈이라, 실제 금전적 불이익으로 이어질 수 있는 오류였습니다. 정정하면서 국적별 수급 가능 여부를 전부 정리한 페이지를 새로 만들었습니다.',
+  },
+  {
     effectiveDate: '2026-01-01',
     appliedDate: '2026-10-02',
     type: 'law',

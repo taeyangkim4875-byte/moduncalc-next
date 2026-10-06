@@ -124,6 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/guide/learning-korean', priority: 0.7 },
     { path: '/en/guide/nightlife-guide', priority: 0.7 },
     { path: '/en/guide/pension-guide', priority: 0.7 },
+    { path: '/en/guide/pension-refund-countries', priority: 0.8 },
     { path: '/en/guide/phone-guide', priority: 0.7 },
     { path: '/en/guide/remittance-guide', priority: 0.7 },
     { path: '/en/guide/salary-guide', priority: 0.7 },

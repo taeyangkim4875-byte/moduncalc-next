@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Living in Korea - Guides for Foreigners',
     description:
-      '28 practical guides on visas, taxes, housing, healthcare and daily life in Korea, written for foreign residents and updated for 2026.',
+      '29 practical guides on visas, taxes, housing, healthcare and daily life in Korea, written for foreign residents and updated for 2026.',
     url: 'https://moduncalc.com/en/guide',
     locale: 'en_US',
   },
@@ -45,6 +45,7 @@ const SECTIONS: { title: string; note: string; items: Guide[] }[] = [
       { slug: 'salary-guide', title: 'Understanding Your Payslip', desc: 'Every line on a Korean payslip explained, with the 2026 rates so you can check the arithmetic yourself.' },
       { slug: 'year-end-settlement', title: 'Year-End Tax Settlement', desc: '연말정산 explained: what you can deduct, what documents to gather, and the January-February timeline.' },
       { slug: 'pension-guide', title: 'National Pension for Foreigners', desc: 'Contribution rates, the income cap, social security treaties, and how the lump-sum refund works.' },
+      { slug: 'pension-refund-countries', title: 'Pension Refund by Nationality', desc: 'The full country list: who can claim the lump sum, who cannot, and why your visa can override your passport.' },
       { slug: 'tax-refund-leaving', title: 'Tax Refund When Leaving Korea', desc: 'What you can claim on your way out, in what order, and the deadlines that make claims fail.' },
       { slug: 'severance-guide', title: 'Severance Pay (퇴직금)', desc: 'One year of service makes it mandatory. How it is calculated and how it is taxed.' },
       { slug: 'freelancer-tax', title: 'Freelancer Tax Guide', desc: '3.3% withholding, May filing, and why the foreigner flat tax usually does not apply to freelance income.' },
@@ -67,7 +68,7 @@ const SECTIONS: { title: string; note: string; items: Guide[] }[] = [
     note: 'The things nobody tells you until you have already done them the hard way.',
     items: [
       { slug: 'transportation-guide', title: 'Subway, Bus, KTX and Taxi', desc: 'T-money, transfer discounts, intercity trains, and the apps that actually work in English.' },
-      { slug: 'drivers-license', title: 'Getting a Driver&rsquo;s License', desc: 'Converting a foreign license, which countries have agreements, and the tests you cannot skip.' },
+      { slug: 'drivers-license', title: 'Getting a Driver’s License', desc: 'Converting a foreign license, which countries have agreements, and the tests you cannot skip.' },
       { slug: 'delivery-apps', title: 'Korean Delivery Apps', desc: 'Baemin, Coupang Eats and Yogiyo: signing up without a Korean ID, and minimum order rules.' },
       { slug: 'shopping-guide', title: 'Shopping in Korea', desc: 'Online marketplaces, overseas shipping, tax-free shopping and returns.' },
       { slug: 'korean-food-guide', title: 'Korean Food Guide', desc: 'Ordering without Korean, typical prices, dishes worth seeking out, and allergy vocabulary.' },

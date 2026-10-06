@@ -36,6 +36,8 @@ const PAGE_LABELS: Record<string, string> = {
   '/en/guide/freelancer-tax': 'EN · Freelancer Tax',
   '/en/guide/first-90-days': 'EN · First 90 Days',
   '/en/guide/year-end-settlement': 'EN · Year-End Settlement',
+  '/en/guide/pension-guide': 'EN · National Pension',
+  '/en/guide/pension-refund-countries': 'EN · Pension Refund by Nationality',
 };
 
 function groupRates() {

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: "Can I get a refund of my National Pension contributions when I leave Korea?",
-    a: "Yes, if your home country does not have a pension treaty with Korea, you are eligible for a lump-sum refund (반환일시금) of your contributions when you leave the country. You must apply after your visa is cancelled or within the allowed period. Citizens from treaty countries (such as the US, Canada, Germany, and others) generally cannot receive a lump-sum refund because their contributions are transferred or counted toward their home country pension.",
+    a: "Only if you fall into one of three groups. Korean law gives foreign nationals no automatic right to a lump-sum refund (반환일시금). You qualify if your country has a social security agreement with Korea covering the refund (the United States, Canada, Germany, Australia, India, the Philippines and about 20 others), if your country is recognised under the reciprocity rule (Thailand, Indonesia, Sri Lanka, Kenya, Cambodia and about 25 others, some with a minimum contribution period), or if you hold an E-8, E-9 or H-2 visa, in which case nationality is irrelevant. Note that Ireland, Denmark, Spain, Sweden, Finland, New Zealand and Norway have agreements with Korea but their nationals still cannot claim the refund.",
   },
   {
     q: "How much will I get back as a pension refund?",
@@ -126,7 +126,11 @@ export default function PensionGuidePage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Lump-Sum Refund: Getting Your Money Back</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          If you are from a country that does <b>not</b> have a pension treaty with Korea, you can apply for a <b>lump-sum refund</b> (반환일시금) when you leave the country permanently. This is the most common scenario for foreigners from countries in Southeast Asia, South Asia, Africa, and parts of Latin America.
+          Under Korean law a foreign national is <b>not</b> entitled to a lump-sum refund (반환일시금) by default. You can claim one only if you fall into at least one of three groups: your country has a <b>social security agreement</b> with Korea that covers the refund, your country is recognised under the <b>reciprocity</b> rule because it pays an equivalent benefit to Koreans, or you hold an <b>E-8, E-9 or H-2 visa</b> — in which case your nationality does not matter.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          This is the opposite of what many people assume. Americans, Canadians, Germans and Filipinos <b>can</b> claim the refund; Vietnamese, Irish and Danish nationals generally cannot claim it on nationality alone. We list every country in the{" "}
+          <Link href="/en/guide/pension-refund-countries" className="text-[var(--primary)] font-bold hover:underline">pension refund eligibility guide</Link>.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
           <b>What you get back:</b> Your own employee contributions (4.75%) plus interest. The employer&apos;s 4.75% contribution is not refunded -- it remains in the NPS fund. A small withholding tax (typically 3-5%) is deducted before payment.
@@ -138,17 +142,20 @@ export default function PensionGuidePage() {
       </Card>
 
       <Card>
-        <h2 className="text-base font-extrabold mb-3">Countries with Pension Treaties</h2>
+        <h2 className="text-base font-extrabold mb-3">Having an Agreement Is Not the Same as Getting a Refund</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Korea has signed pension totalization agreements with many countries. If your home country is on this list, you generally <b>cannot</b> receive a lump-sum refund. Instead, your Korean pension contributions may count toward your home country pension eligibility, or you may eventually receive a Korean pension when you reach retirement age.
+          Korea has social security agreements with more than 40 countries, but they come in two forms and only one of them carries the equal-treatment clause that makes a lump-sum refund payable.
         </p>
-        <div className="p-3 bg-[var(--bg)] rounded-xl mb-3">
-          <p className="text-sm text-[#4E5968] leading-relaxed">
-            <b>Treaty countries include:</b> United States, Canada, Germany, France, United Kingdom, Australia, Japan, China, Czech Republic, Ireland, Belgium, Poland, Slovak Republic, Hungary, Bulgaria, Romania, Austria, Denmark, Switzerland, Netherlands, Sweden, Finland, Norway, Spain, Italy, Luxembourg, Mongolia, India, Brazil, Turkey, Philippines, Indonesia, Uzbekistan, and others.
-          </p>
-        </div>
+        <ul className="text-sm text-[#4E5968] leading-relaxed list-disc pl-5 space-y-1.5 mb-3">
+          <li><b>Totalization agreements (가입기간 합산)</b> — periods in both countries are added together so you can qualify for a pension. Most, but not all, also allow the lump-sum refund.</li>
+          <li><b>Contribution-exemption agreements (보험료 면제)</b> — these only stop you paying into both systems at once. They usually do <b>not</b> entitle you to a refund. Japan, China, the United Kingdom, the Netherlands, Italy, Mongolia and Uzbekistan are in this group. Switzerland is the notable exception: it is an exemption-only agreement, yet the refund is still paid.</li>
+        </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          The trap is the group in between. <b>Ireland, Denmark, Spain, Sweden, Finland, New Zealand and Norway</b> all have totalization agreements with Korea, and their nationals still cannot claim the lump-sum refund. Their contributions count toward a future pension instead.
+        </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          <b>Non-treaty countries</b> (eligible for lump-sum refund): Vietnam, Thailand, Myanmar, Cambodia, Nepal, Bangladesh, Pakistan, Sri Lanka, Nigeria, Ghana, Kenya, and many others. Check with NPS (call 1355) if you are unsure about your country&apos;s status.
+          Because the answer turns entirely on your specific nationality and visa, we keep a full country-by-country list — including the minimum contribution periods that apply to some countries — in the{" "}
+          <Link href="/en/guide/pension-refund-countries" className="text-[var(--primary)] font-bold hover:underline">pension refund eligibility guide</Link>. If you are unsure, call the NPS international team on <b>063-713-7101</b>.
         </p>
       </Card>
 
