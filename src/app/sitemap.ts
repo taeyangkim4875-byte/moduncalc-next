@@ -135,6 +135,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/guide/visa-guide', priority: 0.7 },
     { path: '/en/guide/working-rights', priority: 0.7 },
     { path: '/en/guide/year-end-settlement', priority: 0.7 },
+    { path: '/changelog', priority: 0.8 },
     { path: '/about', priority: 0.5 },
     { path: '/contact', priority: 0.5 },
     { path: '/privacy', priority: 0.5 },

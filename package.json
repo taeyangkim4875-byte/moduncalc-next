@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "vitest run"
+    "test": "vitest run",
+    "check:rates": "node scripts/check-rates.mjs",
+    "prebuild": "node scripts/check-rates.mjs"
   },
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",

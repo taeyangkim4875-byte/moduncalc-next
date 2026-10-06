@@ -29,6 +29,7 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
       <footer className="mt-8 pt-6 border-t border-[var(--line)] text-center text-xs text-[var(--sub)]">
         <nav className="flex flex-wrap justify-center gap-x-3 gap-y-1 mb-3">
           <Link href="/about" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">소개</Link>
+          <Link href="/changelog" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">변경 이력</Link>
           <Link href="/contact" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">문의하기</Link>
           <Link href="/privacy" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">개인정보처리방침</Link>
           <Link href="/terms" className="text-[var(--sub)] no-underline hover:text-[var(--ink)]">이용약관</Link>

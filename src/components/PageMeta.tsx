@@ -16,6 +16,12 @@ export default function PageMeta() {
           <span>2026년 기준 적용</span>
         </span>
         <span className="text-[var(--sub)] font-medium">최종 검토 {LAST_REVIEWED_LABEL}</span>
+        <Link
+          href="/changelog"
+          className="text-[var(--sub)] font-medium no-underline hover:text-[var(--ink)] underline-offset-2 hover:underline"
+        >
+          변경 이력 보기
+        </Link>
       </div>
       <p className="text-xs text-[var(--sub)] leading-relaxed m-0">
         작성·검토{' '}

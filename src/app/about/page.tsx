@@ -90,6 +90,10 @@ export default function Page() {
           <li><b>근로기준법·근로자퇴직급여 보장법</b> — 연차수당·퇴직금 기준</li>
           <li><b>최저임금위원회 고시</b> — 2026년 최저임금 10,320원 (2027년 10,700원 확정)</li>
         </ul>
+        <p className="text-sm text-[#4E5968] leading-relaxed mt-3">
+          현재 적용 중인 기준값과 그동안의 변경 내역은 <Link href="/changelog" className="text-[var(--primary)] font-bold no-underline hover:underline">세율·요율 변경 이력</Link> 페이지에서 날짜·근거와 함께 확인하실 수 있습니다.
+          잘못 표기했다가 바로잡은 기록도 함께 공개합니다.
+        </p>
       </Card>
 
       <Card>
@@ -116,7 +120,7 @@ export default function Page() {
         </div>
       </Card>
 
-      <p className="text-xs text-[var(--sub)] text-center mt-4">최종 수정일: 2026년 9월 16일</p>
+      <p className="text-xs text-[var(--sub)] text-center mt-4">최종 수정일: 2026년 10월 6일</p>
     </PageLayout>
   );
 }
