@@ -38,6 +38,10 @@ const PAGE_LABELS: Record<string, string> = {
   '/en/guide/year-end-settlement': 'EN · Year-End Settlement',
   '/en/guide/pension-guide': 'EN · National Pension',
   '/en/guide/pension-refund-countries': 'EN · Pension Refund by Nationality',
+  '/en/guide/working-rights': 'EN · Worker Rights',
+  '/en/guide/housing-guide': 'EN · Housing',
+  '/en/guide/leaving-korea-checklist': 'EN · Leaving Korea Checklist',
+  '/en/guide/visa-guide': 'EN · Visa Types',
 };
 
 function groupRates() {

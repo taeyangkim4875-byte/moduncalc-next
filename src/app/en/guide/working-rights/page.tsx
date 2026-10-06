@@ -137,7 +137,7 @@ export default function WorkingRightsPage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Overtime and Holiday Pay Rates</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Any work beyond the standard hours must be compensated at premium rates:
+          At workplaces with <b>5 or more</b> regular employees, any work beyond the standard hours must be compensated at premium rates. Smaller workplaces are exempt from these premiums, though the hours themselves must still be paid at your normal rate:
         </p>
         <div className="overflow-x-auto mb-3">
           <table className="w-full text-sm border-collapse">
@@ -178,9 +178,57 @@ export default function WorkingRightsPage() {
       </Card>
 
       <Card>
+        <h2 className="text-base font-extrabold mb-3">⚠️ Workplaces with Fewer Than 5 Employees</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          Before you rely on anything above, check how many people your employer has. The Labor Standards Act
+          exempts workplaces with <b>fewer than 5 regular employees</b> from several of its most valuable
+          provisions. This catches a lot of foreign workers, because small hagwon, restaurants, cafés and
+          start-ups frequently fall under the threshold.
+        </p>
+        <div className="overflow-x-auto mb-3">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-[var(--bg)]">
+                <th className="text-left p-2 font-bold">Right</th>
+                <th className="text-left p-2 font-bold">Under 5 employees</th>
+              </tr>
+            </thead>
+            <tbody className="text-[#4E5968]">
+              <tr className="border-t border-[#eee]"><td className="p-2">Minimum wage</td><td className="p-2 text-[#00A05E] font-bold">Applies</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Weekly holiday pay (주휴수당)</td><td className="p-2 text-[#00A05E] font-bold">Applies</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Severance pay (퇴직금)</td><td className="p-2 text-[#00A05E] font-bold">Applies</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Rest breaks</td><td className="p-2 text-[#00A05E] font-bold">Applies</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Four social insurances</td><td className="p-2 text-[#00A05E] font-bold">Applies</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Written contract and payslip</td><td className="p-2 text-[#00A05E] font-bold">Applies</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Dismissal notice</td><td className="p-2 text-[#00A05E] font-bold">Applies</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Overtime / night / holiday premium (50%)</td><td className="p-2 text-[#E5484D] font-bold">Does not apply</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Paid annual leave (연차)</td><td className="p-2 text-[#E5484D] font-bold">Does not apply</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">52-hour weekly cap</td><td className="p-2 text-[#E5484D] font-bold">Does not apply</td></tr>
+              <tr className="border-t border-[#eee]"><td className="p-2">Protection against unfair dismissal</td><td className="p-2 text-[#E5484D] font-bold">Does not apply</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          In practical terms: at a four-person hagwon you are still owed the minimum wage, weekly holiday pay and
+          severance, but your employer is not legally required to pay a 50% premium for overtime or to give you
+          paid annual leave. Working 60 hours in a week is not itself a breach of the 52-hour cap either.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          The count is of <b>regular employees</b>, not of full-time staff or of people on the payroll on one
+          particular day, and it includes part-timers who work regularly. Owners and their family members living in
+          the same household are generally not counted. If you are near the boundary, the exact figure matters and
+          is worth confirming with the labour office rather than taking the employer&apos;s word for it.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          Note that extending these provisions to smaller workplaces has been under government discussion, so the
+          exemption may narrow in future. The table above reflects the law as it currently stands.
+        </p>
+      </Card>
+
+      <Card>
         <h2 className="text-base font-extrabold mb-3">Annual Leave (연차 / Yeoncha)</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          All employees are entitled to paid annual leave under Korean law. The system works as follows:
+          Employees at workplaces with <b>5 or more</b> regular employees are entitled to paid annual leave. Workplaces below that threshold are exempt — see the section above. Where it applies, the system works as follows:
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5 mb-3">
           <li><b>First year:</b> You earn 1 day of paid leave for each month of perfect attendance, up to 11 days maximum during your first year.</li>
@@ -210,7 +258,7 @@ export default function WorkingRightsPage() {
         </p>
         <ul className="text-sm text-[#4E5968] leading-relaxed space-y-2 list-disc pl-5">
           <li><b>Maternity leave:</b> 90 days of paid leave (120 days for multiple births), with at least 45 days taken after delivery</li>
-          <li><b>Parental leave:</b> Up to 1 year per child (for children under age 8 or in 2nd grade or below). Available to both mothers and fathers.</li>
+          <li><b>Parental leave:</b> Up to 1 year per child as standard, extended to <b>1 year 6 months</b> since February 2025 where both parents each take at least 3 months. Available for children under age 8 or in 2nd grade or below, to both mothers and fathers, and it can now be split into up to four separate periods.</li>
           <li><b>Paternity leave:</b> 10 days of paid leave within 90 days of the child&apos;s birth</li>
           <li><b>Family care leave:</b> Up to 10 days per year for caring for family members with illness or injury</li>
         </ul>

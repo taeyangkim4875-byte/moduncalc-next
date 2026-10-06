@@ -32,7 +32,7 @@ const faqItems = [
   },
   {
     q: "How do I get my deposit back when I move out?",
-    a: "Your landlord is legally obligated to return your deposit on the day your lease ends, provided you have not damaged the property beyond normal wear and tear. Give your landlord written notice of your intent to move out at least 1-2 months before the lease end date. On the last day, do a walkthrough inspection together, agree on any deductions for damage, and receive the remaining deposit. If the landlord refuses to return your deposit, you can file a complaint with the 주택임대차분쟁조정위원회 (Housing Lease Dispute Mediation Committee) or take legal action.",
+    a: "Your landlord is legally obligated to return your deposit on the day your lease ends, provided you have not damaged the property beyond normal wear and tear. Timing matters: give written notice between 6 months and 2 months before the lease end date. If you miss that window the lease renews automatically on the same terms, and once it has auto-renewed your notice only takes effect 3 months after the landlord receives it. On the last day, do a walkthrough inspection together, agree on any deductions for damage, and receive the remaining deposit. If the landlord refuses to return your deposit, you can file a complaint with the 주택임대차분쟁조정위원회 (Housing Lease Dispute Mediation Committee) or take legal action.",
   },
 ];
 
