@@ -272,8 +272,8 @@ export default function Page() {
         </div>
         <p className="text-sm text-[#4E5968] leading-relaxed">
           The pension is only one of several things you can reclaim on your way out. Our{' '}
-          <Link href="/en/guide/tax-refund-leaving" className="text-[var(--primary)] font-bold hover:underline">
-            guide to leaving Korea
+          <Link href="/en/guide/leaving-korea-checklist" className="text-[var(--primary)] font-bold hover:underline">
+            leaving Korea checklist
           </Link>{' '}
           covers the income tax settlement, your housing deposit and account closures in the order they need to happen.
         </p>

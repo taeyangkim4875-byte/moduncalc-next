@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Living in Korea - Guides for Foreigners',
     description:
-      '29 practical guides on visas, taxes, housing, healthcare and daily life in Korea, written for foreign residents and updated for 2026.',
+      '30 practical guides on visas, taxes, housing, healthcare and daily life in Korea, written for foreign residents and updated for 2026.',
     url: 'https://moduncalc.com/en/guide',
     locale: 'en_US',
   },
@@ -46,6 +46,7 @@ const SECTIONS: { title: string; note: string; items: Guide[] }[] = [
       { slug: 'year-end-settlement', title: 'Year-End Tax Settlement', desc: '연말정산 explained: what you can deduct, what documents to gather, and the January-February timeline.' },
       { slug: 'pension-guide', title: 'National Pension for Foreigners', desc: 'Contribution rates, the income cap, social security treaties, and how the lump-sum refund works.' },
       { slug: 'pension-refund-countries', title: 'Pension Refund by Nationality', desc: 'The full country list: who can claim the lump sum, who cannot, and why your visa can override your passport.' },
+      { slug: 'leaving-korea-checklist', title: 'Leaving Korea Checklist', desc: 'The 90-day timeline: notice periods, the deposit mistake that costs the most, and what order to cancel things in.' },
       { slug: 'tax-refund-leaving', title: 'Tax Refund When Leaving Korea', desc: 'What you can claim on your way out, in what order, and the deadlines that make claims fail.' },
       { slug: 'severance-guide', title: 'Severance Pay (퇴직금)', desc: 'One year of service makes it mandatory. How it is calculated and how it is taxed.' },
       { slug: 'freelancer-tax', title: 'Freelancer Tax Guide', desc: '3.3% withholding, May filing, and why the foreigner flat tax usually does not apply to freelance income.' },

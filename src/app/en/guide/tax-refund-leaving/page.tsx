@@ -144,7 +144,9 @@ export default function TaxRefundLeavingPage() {
       <Card>
         <h2 className="text-base font-extrabold mb-3">Checklist Before Leaving Korea</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
-          Use this timeline to make sure you do not miss any refunds or leave any loose ends:
+          Use this timeline to make sure you do not miss any refunds or leave any loose ends. For the full
+          dependency-ordered plan — including notice periods and how to protect your housing deposit — see the{" "}
+          <Link href="/en/guide/leaving-korea-checklist" className="text-[var(--primary)] font-bold hover:underline">90-day leaving Korea checklist</Link>.
         </p>
         <div className="space-y-2 mb-3">
           <div className="flex items-start gap-3 p-2.5 bg-[var(--bg)] rounded-lg">

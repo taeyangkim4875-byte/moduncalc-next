@@ -131,6 +131,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/guide/severance-guide', priority: 0.7 },
     { path: '/en/guide/shopping-guide', priority: 0.7 },
     { path: '/en/guide/tax-guide', priority: 0.7 },
+    { path: '/en/guide/leaving-korea-checklist', priority: 0.8 },
     { path: '/en/guide/tax-refund-leaving', priority: 0.7 },
     { path: '/en/guide/transportation-guide', priority: 0.7 },
     { path: '/en/guide/visa-guide', priority: 0.7 },
