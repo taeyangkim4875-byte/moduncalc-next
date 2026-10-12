@@ -13,6 +13,8 @@ import {
   type NamedAmount,
   type RentPaymentType,
   type SettlementLine,
+  ROLE_LABELS,
+  type SettlementRole,
 } from '@/utils/moveOutSettlement';
 import SettlementLetter from './SettlementLetter';
 
@@ -113,6 +115,7 @@ function NamedAmountList({
 }
 
 export default function MoveOutCalc() {
+  const [role, setRole] = useState<SettlementRole>('tenant');
   const [deposit, setDeposit] = useState(0);
 
   const [repairMode, setRepairMode] = useState<'total' | 'estimate'>('total');
@@ -164,14 +167,44 @@ export default function MoveOutCalc() {
     ],
   );
 
+  const L = ROLE_LABELS[role];
   const hasAnything = result.receivables.length > 0 || result.deductions.length > 0;
   const monthDays = moveOut ? daysInMonth(moveOut.year, moveOut.month) : 0;
 
   return (
     <>
-      {/* ── 받을 금액 ── */}
+      {/* ── 입장 선택 ── */}
       <Card>
-        <SectionTitle num="1">받을 금액</SectionTitle>
+        <div className="flex gap-1.5">
+          <button
+            type="button"
+            onClick={() => setRole('tenant')}
+            className={`flex-1 py-3 rounded-xl text-sm font-bold transition-colors ${
+              role === 'tenant' ? 'bg-[var(--primary)] text-white' : 'bg-[var(--bg)] text-[var(--sub)]'
+            }`}
+          >
+            🧳 세입자예요
+          </button>
+          <button
+            type="button"
+            onClick={() => setRole('landlord')}
+            className={`flex-1 py-3 rounded-xl text-sm font-bold transition-colors ${
+              role === 'landlord' ? 'bg-[var(--primary)] text-white' : 'bg-[var(--bg)] text-[var(--sub)]'
+            }`}
+          >
+            🏠 집주인이에요
+          </button>
+        </div>
+        <p className="text-xs text-[var(--sub)] mt-2 mb-0 leading-relaxed">
+          {role === 'tenant'
+            ? '받을 금액을 계산하고, 집주인에게 보낼 정산 요청서를 만들어 드려요.'
+            : '돌려줄 금액을 계산하고, 세입자에게 보낼 퇴실 정산 내역서를 만들어 드려요. 계산 항목은 같습니다.'}
+        </p>
+      </Card>
+
+      {/* ── 받을 금액 / 반환 대상 금액 ── */}
+      <Card>
+        <SectionTitle num="1">{L.receivables}</SectionTitle>
 
         <MoneyInput label="임대차 보증금" value={deposit} onChange={setDeposit} />
 
@@ -372,7 +405,7 @@ export default function MoveOutCalc() {
 
             {result.receivables.length > 0 && (
               <div className="mb-4">
-                <div className="text-xs font-extrabold text-[var(--primary)] mb-1">받을 금액</div>
+                <div className="text-xs font-extrabold text-[var(--primary)] mb-1">{L.receivables}</div>
                 {result.receivables.map(l => (
                   <LineRow key={l.key} line={l} sign="+" />
                 ))}
@@ -385,7 +418,7 @@ export default function MoveOutCalc() {
 
             {result.deductions.length > 0 && (
               <div className="mb-4">
-                <div className="text-xs font-extrabold text-[#E5484D] mb-1">공제할 금액</div>
+                <div className="text-xs font-extrabold text-[#E5484D] mb-1">{L.deductions}</div>
                 {result.deductions.map(l => (
                   <LineRow key={l.key} line={l} sign="−" />
                 ))}
@@ -406,7 +439,7 @@ export default function MoveOutCalc() {
                   result.tenantOwes ? 'text-[#E5484D]' : 'text-[var(--primary-dark)]'
                 }`}
               >
-                {result.tenantOwes ? '추가로 지급해야 할 금액' : '최종 반환받을 금액'}
+                {result.tenantOwes ? L.netNegative : L.netPositive}
               </div>
               <div
                 className={`text-[32px] font-extrabold tracking-tight ${
@@ -417,7 +450,7 @@ export default function MoveOutCalc() {
               </div>
               {result.tenantOwes && (
                 <div className="text-xs text-[#4E5968] mt-1">
-                  공제액이 받을 금액보다 많습니다.
+                  {role === 'tenant' ? '공제액이 받을 금액보다 많습니다.' : '공제액이 반환 대상 금액보다 많습니다.'}
                 </div>
               )}
             </div>
@@ -438,7 +471,7 @@ export default function MoveOutCalc() {
         </Card>
       )}
 
-      {hasAnything && <SettlementLetter result={result} />}
+      {hasAnything && <SettlementLetter result={result} role={role} />}
 
       <div className="bg-[var(--bg)] rounded-xl p-3.5 text-xs text-[var(--sub)] leading-relaxed mb-3.5">
         입력값은 브라우저에서만 계산되며 서버로 전송되지 않습니다.

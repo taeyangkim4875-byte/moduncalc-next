@@ -269,7 +269,7 @@ describe('정산 요청서 문구', () => {
     expect(t).toContain('장기수선충당금 대납액: 384,000원');
     expect(t).toContain('[공제할 금액]');
     expect(t).toContain('벽지 교체: 200,000원');
-    expect(t).toContain('[최종 반환 요청 금액] 10,184,000원');
+    expect(t).toContain('[최종 반환받을 금액] 10,184,000원');
   });
 
   it('장기수선충당금이 있으면 법령 근거와 확인서 문구가 붙는다', () => {
@@ -325,8 +325,8 @@ describe('정산 요청서 문구', () => {
       unpaidRent: 1_200_000,
     });
     const t = buildSettlementLetter(owes, { account: '○○은행 123-456' });
-    expect(t).toContain('[추가 지급할 금액] 700,000원');
-    expect(t).not.toContain('[최종 반환 요청 금액]');
+    expect(t).toContain('[추가로 지급해야 할 금액] 700,000원');
+    expect(t).not.toContain('[최종 반환받을 금액]');
     // 추가 지급 상황에서는 입금 계좌를 넣지 않는다
     expect(t).not.toContain('입금 계좌:');
   });
@@ -335,5 +335,81 @@ describe('정산 요청서 문구', () => {
     const t = buildSettlementLetter(base);
     expect(t).not.toMatch(/반드시 반환해야 합니다|법적 의무입니다|위법입니다|고소/);
     expect(t).toContain('정하고 있습니다');
+  });
+});
+
+describe('임대인 입장 (역할 토글)', () => {
+  const positive = calcMoveOutSettlement({
+    ...emptyMoveOutInput(),
+    deposit: 10_000_000,
+    longTermRepair: { mode: 'total', total: 384_000 },
+    agreedDeductions: [{ label: '벽지 교체', amount: 200_000 }],
+  });
+
+  it('금액과 항목은 역할과 무관하게 동일하다', () => {
+    const t = buildSettlementLetter(positive, {}, 'tenant');
+    const l = buildSettlementLetter(positive, {}, 'landlord');
+    expect(t).toContain('10,184,000원');
+    expect(l).toContain('10,184,000원');
+    expect(t).toContain('벽지 교체: 200,000원');
+    expect(l).toContain('벽지 교체: 200,000원');
+  });
+
+  it('수신인이 반대가 된다', () => {
+    expect(buildSettlementLetter(positive, {}, 'tenant')).toContain('임대인님께');
+    expect(buildSettlementLetter(positive, {}, 'landlord')).toContain('임차인님께');
+  });
+
+  it('이름을 넣으면 각자 상대방 이름이 수신인이 된다', () => {
+    const party = { tenantName: '홍길동', landlordName: '김철수' };
+    expect(buildSettlementLetter(positive, party, 'tenant')).toContain('김철수 님께');
+    expect(buildSettlementLetter(positive, party, 'landlord')).toContain('홍길동 님께');
+  });
+
+  it('라벨이 입장에 맞게 바뀐다', () => {
+    const l = buildSettlementLetter(positive, {}, 'landlord');
+    expect(l).toContain('[반환 대상 금액]');
+    expect(l).toContain('[최종 반환할 금액]');
+    expect(l).not.toContain('[최종 반환 요청 금액]');
+  });
+
+  it('임대인은 계좌를 적지 않고 물어본다', () => {
+    const l = buildSettlementLetter(positive, { account: '○○은행 123-456' }, 'landlord');
+    expect(l).not.toContain('입금 계좌:');
+    expect(l).toContain('계좌를 알려주시면');
+  });
+
+  it('음수면 청구 문구로 바뀐다', () => {
+    const owes = calcMoveOutSettlement({
+      ...emptyMoveOutInput(),
+      deposit: 500_000,
+      unpaidRent: 1_200_000,
+    });
+    const l = buildSettlementLetter(owes, {}, 'landlord');
+    expect(l).toContain('[추가로 청구할 금액] 700,000원');
+    expect(l).toContain('청구드릴 금액이 있습니다');
+
+    const t = buildSettlementLetter(owes, {}, 'tenant');
+    expect(t).toContain('[추가로 지급해야 할 금액] 700,000원');
+  });
+
+  it('장기수선충당금 문구도 입장에 맞게 바뀐다', () => {
+    const t = buildSettlementLetter(positive, {}, 'tenant');
+    const l = buildSettlementLetter(positive, {}, 'landlord');
+    expect(t).toContain('공동주택관리법 시행령 제31조 제8항');
+    expect(t).toContain('납부확인서를 첨부합니다');
+    // 임대인은 반환하는 쪽이라 법령을 들이밀 이유가 없다
+    expect(l).toContain('반환 금액에 포함했습니다');
+    expect(l).not.toContain('공동주택관리법');
+  });
+
+  it('임대인도 단정적인 표현을 쓰지 않는다', () => {
+    const l = buildSettlementLetter(positive, {}, 'landlord');
+    expect(l).not.toMatch(/반드시|의무입니다|위법|지급하지 않겠습니다/);
+    expect(l).toContain('함께 확인하겠습니다');
+  });
+
+  it('기본값은 임차인', () => {
+    expect(buildSettlementLetter(positive)).toBe(buildSettlementLetter(positive, {}, 'tenant'));
   });
 });

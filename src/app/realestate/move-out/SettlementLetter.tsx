@@ -2,7 +2,12 @@
 
 import { useState, useMemo, useCallback } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
-import { buildSettlementLetter, type MoveOutSettlementResult } from '@/utils/moveOutSettlement';
+import {
+  buildSettlementLetter,
+  ROLE_LABELS,
+  type MoveOutSettlementResult,
+  type SettlementRole,
+} from '@/utils/moveOutSettlement';
 
 /**
  * 정산 요청서 생성.
@@ -17,9 +22,11 @@ import { buildSettlementLetter, type MoveOutSettlementResult } from '@/utils/mov
 
 interface Props {
   result: MoveOutSettlementResult;
+  role: SettlementRole;
 }
 
-export default function SettlementLetter({ result }: Props) {
+export default function SettlementLetter({ result, role }: Props) {
+  const isTenant = role === 'tenant';
   const [address, setAddress] = useState('');
   const [tenantName, setTenantName] = useState('');
   const [landlordName, setLandlordName] = useState('');
@@ -28,8 +35,8 @@ export default function SettlementLetter({ result }: Props) {
   const [saving, setSaving] = useState(false);
 
   const letter = useMemo(
-    () => buildSettlementLetter(result, { address, tenantName, landlordName, account }),
-    [address, tenantName, landlordName, account, result],
+    () => buildSettlementLetter(result, { address, tenantName, landlordName, account }, role),
+    [address, tenantName, landlordName, account, result, role],
   );
 
   const copyText = useCallback(async () => {
@@ -66,22 +73,24 @@ export default function SettlementLetter({ result }: Props) {
       });
       el.removeChild(mark);
       const link = document.createElement('a');
-      link.download = '이사정산요청서.png';
+      link.download = isTenant ? '이사정산요청서.png' : '퇴실정산내역서.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
     } catch {
       alert('이미지 저장에 실패했습니다.');
     }
     setSaving(false);
-  }, []);
+  }, [isTenant]);
 
   const printLetter = useCallback(() => window.print(), []);
 
   return (
     <Card>
-      <SectionTitle num="5">정산 요청서</SectionTitle>
+      <SectionTitle num="5">{ROLE_LABELS[role].documentTitle}</SectionTitle>
       <p className="text-sm text-[var(--sub)] leading-relaxed mb-4">
-        집주인이나 중개사에게 보낼 문구를 만들어 드려요.
+        {isTenant
+          ? '집주인이나 중개사에게 보낼 문구를 만들어 드려요.'
+          : '세입자에게 보낼 정산 내역 문구를 만들어 드려요.'}{' '}
         이름과 주소는 넣지 않아도 되고, 어디에도 저장되지 않습니다.
       </p>
 
@@ -112,7 +121,7 @@ export default function SettlementLetter({ result }: Props) {
             className="flex-1 min-w-0 px-3.5 py-3 rounded-xl border border-[var(--line)] text-sm outline-none focus:border-[var(--primary)]"
           />
         </div>
-        {!result.tenantOwes && (
+        {isTenant && !result.tenantOwes && (
           <div className="mb-4">
             <label className="block text-sm font-bold mb-2">입금 계좌 (선택)</label>
             <input
