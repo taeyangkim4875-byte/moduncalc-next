@@ -44,7 +44,7 @@ const GROUPS = [
   {
     title: '🍽️ 모임·기타',
     note: '사람이 여럿일 때 돈을 나누거나, 숫자를 빨리 정해야 할 때 씁니다.',
-    items: ['/daily/dutch', '/daily/tip-split', '/daily/gpa', '/daily/calorie'],
+    items: ['/daily/gift-money', '/daily/dutch', '/daily/tip-split', '/daily/gpa', '/daily/calorie'],
   },
 ];
 

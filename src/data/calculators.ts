@@ -104,6 +104,7 @@ const ALL_KO: CalcMeta[] = [
   { href: '/daily/youtube', icon: '🎬', title: '유튜브 수익', desc: '조회수별', category: '부업', keywords: ['유튜브', 'youtube', '조회수', 'CPM', '수익', '구독자', '광고'], related: ['/daily/adsense', '/daily/coupang', '/daily/stock'] },
 
   // 기타
+  { href: '/daily/gift-money', icon: '💌', title: '축의금', desc: '관계·식대로 판단', category: '생활', keywords: ['축의금', '부조금', '경조사비', '결혼식', '얼마', '식대', '조의금'], related: ['/daily/dutch', '/daily/tip-split', '/savings/interest'] },
   { href: '/daily/dutch', icon: '🍽️', title: '더치페이', desc: 'N분의1', category: '일상', keywords: ['더치페이', 'n분의1', '나누기', '팁', '모임'], related: ['/daily/tip-split', '/daily/discount', '/daily/percent'] },
   { href: '/daily/tip-split', icon: '🧾', title: '모임 정산', desc: '차등 정산', category: '일상', keywords: ['정산', '모임', 'n분의1', '차등', '송금', '더치'], related: ['/daily/dutch', '/daily/percent', '/daily/random'] },
   { href: '/daily/alcohol', icon: '🍺', title: '음주 운전', desc: 'BAC 계산', category: '일상', keywords: ['음주', '운전', '알코올', '혈중', '소주', '맥주', '분해'], related: ['/health/water', '/daily/time', '/daily/dutch'] },

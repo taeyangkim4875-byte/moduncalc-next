@@ -66,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/daily/anniversary', priority: 0.7 },
     { path: '/daily/baby100', priority: 0.7 },
     { path: '/daily/discount', priority: 0.8 },
+    { path: '/daily/gift-money', priority: 0.9 },
     { path: '/daily/dutch', priority: 0.7 },
     { path: '/daily/gas', priority: 0.8 },
     { path: '/daily/gold', priority: 0.8 },

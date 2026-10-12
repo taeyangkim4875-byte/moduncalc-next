@@ -102,6 +102,7 @@ const MENUS_KO: MenuItem[] = [
   { href: '/daily/calorie', ico: '🍎', label: '기타', sub: [
     { label: '칼로리', href: '/daily/calorie' },
     { label: '수면 계산기', href: '/health/sleep' },
+    { label: '축의금', href: '/daily/gift-money' },
     { label: '더치페이', href: '/daily/dutch' },
     { label: '모임 정산', href: '/daily/tip-split' },
     { label: '음주 운전', href: '/daily/alcohol' },
