@@ -109,6 +109,7 @@ const MENUS_KO: MenuItem[] = [
     { label: '속도·시간', href: '/daily/speed' },
   ]},
   { href: '/realestate', ico: '🏢', label: '부동산', sub: [
+    { label: '이사 정산', href: '/realestate/move-out' },
     { label: '취득세', href: '/realestate/acqtax' },
     { label: '전월세 전환', href: '/realestate/convert' },
     { label: '임대수익률', href: '/realestate/rental' },

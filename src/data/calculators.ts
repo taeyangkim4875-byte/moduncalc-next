@@ -34,6 +34,7 @@ const ALL_KO: CalcMeta[] = [
   { href: '/loan/dsr', icon: '🏠', title: 'DSR', desc: '대출 한도 확인', category: '대출', keywords: ['DSR', '대출', '한도', '총부채', '원리금', '상환비율', '주담대'], related: ['/loan', '/realestate/acqtax', '/salary'] },
   { href: '/loan/car', icon: '🚗', title: '자동차 할부', desc: '월 납입액', category: '대출', keywords: ['자동차', '할부', '차량', '오토론', '취등록세', '선수금', '다운페이'], related: ['/loan', '/realestate/commission'] },
   { href: '/realestate/acqtax', icon: '🏢', title: '취득세', desc: '주택 매매', category: '부동산', keywords: ['취득세', '부동산', '매매', '아파트', '주택', '세금'], related: ['/realestate/commission', '/realestate/transfer', '/loan'] },
+  { href: '/realestate/move-out', icon: '📦', title: '이사 정산', desc: '보증금·장충금 반환', category: '부동산', keywords: ['이사', '정산', '퇴실', '보증금', '장기수선충당금', '장충금', '반환', '관리비', '일할'], related: ['/realestate/convert', '/realestate/commission', '/daily/pyeong'] },
   { href: '/realestate/registration', icon: '🏢', title: '등기비용', desc: '인지세·법무사', category: '부동산', keywords: ['등기', '등기비용', '인지세', '법무사', '소유권이전', '부동산'], related: ['/realestate/acqtax', '/realestate/commission', '/loan'] },
   { href: '/realestate/convert', icon: '🏢', title: '전월세 전환', desc: '전세↔월세', category: '부동산', keywords: ['전월세', '전세', '월세', '전환율', '보증금'], related: ['/realestate/commission', '/realestate/acqtax'] },
   { href: '/realestate/commission', icon: '🏢', title: '복비', desc: '중개수수료', category: '부동산', keywords: ['복비', '중개수수료', '중개보수', '부동산', '매매', '전세'], related: ['/realestate/acqtax', '/realestate/convert'] },

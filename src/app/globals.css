@@ -36,3 +36,21 @@ body {
   from { opacity: 0; transform: translate(-50%, 20px); }
   to { opacity: 1; transform: translate(-50%, 0); }
 }
+
+/* 인쇄: 정산 요청서만 남기고 전부 숨긴다.
+   PDF 저장을 별도 라이브러리 없이 브라우저 인쇄 기능으로 처리하기 위한 것.
+   (jsPDF 계열은 한글 폰트를 직접 임베드해야 해서 번들이 과하게 커진다) */
+@media print {
+  body { padding-bottom: 0; background: #fff; }
+  body * { visibility: hidden; }
+  #settlement-letter,
+  #settlement-letter * { visibility: visible; }
+  #settlement-letter {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    border: 0;
+  }
+}

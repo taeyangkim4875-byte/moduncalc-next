@@ -29,7 +29,7 @@ const GROUPS = [
   {
     title: '🔑 전세·월세·임대',
     note: '전세와 월세 중 무엇이 유리한지, 임대를 놓으면 수익률이 얼마인지 따져볼 때 씁니다.',
-    items: ['/realestate/convert', '/realestate/rental', '/realestate/subscription', '/daily/pyeong'],
+    items: ['/realestate/move-out', '/realestate/convert', '/realestate/rental', '/realestate/subscription', '/daily/pyeong'],
   },
 ];
 

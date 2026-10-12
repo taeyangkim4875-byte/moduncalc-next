@@ -7,6 +7,7 @@ import {
   daysInMonth,
   emptyMoveOutInput,
   roundWon,
+  buildSettlementLetter,
 } from '../moveOutSettlement';
 
 describe('일수 산정', () => {
@@ -250,5 +251,89 @@ describe('전체 정산', () => {
       agreedDeductions: [{ label: '   ', amount: 50_000 }],
     });
     expect(r.deductions[0].label).toBe('합의 공제');
+  });
+});
+
+describe('정산 요청서 문구', () => {
+  const base = calcMoveOutSettlement({
+    ...emptyMoveOutInput(),
+    deposit: 10_000_000,
+    longTermRepair: { mode: 'total', total: 384_000 },
+    agreedDeductions: [{ label: '벽지 교체', amount: 200_000 }],
+  });
+
+  it('받을 금액·공제·최종 금액이 모두 들어간다', () => {
+    const t = buildSettlementLetter(base);
+    expect(t).toContain('[받을 금액]');
+    expect(t).toContain('임대차 보증금: 10,000,000원');
+    expect(t).toContain('장기수선충당금 대납액: 384,000원');
+    expect(t).toContain('[공제할 금액]');
+    expect(t).toContain('벽지 교체: 200,000원');
+    expect(t).toContain('[최종 반환 요청 금액] 10,184,000원');
+  });
+
+  it('장기수선충당금이 있으면 법령 근거와 확인서 문구가 붙는다', () => {
+    const t = buildSettlementLetter(base);
+    expect(t).toContain('공동주택관리법 시행령 제31조 제8항');
+    expect(t).toContain('납부확인서를 첨부합니다');
+  });
+
+  it('추정 모드면 확인서를 받아 첨부하겠다는 문구로 바뀐다', () => {
+    const est = calcMoveOutSettlement({
+      ...emptyMoveOutInput(),
+      deposit: 1_000_000,
+      longTermRepair: { mode: 'estimate', periods: [{ monthlyAmount: 8_000, months: 24 }] },
+    });
+    const t = buildSettlementLetter(est);
+    expect(t).toContain('추정치이며');
+    expect(t).toContain('받아 첨부하겠습니다');
+  });
+
+  it('장기수선충당금이 없으면 관련 문구가 나오지 않는다', () => {
+    const none = calcMoveOutSettlement({ ...emptyMoveOutInput(), deposit: 1_000_000 });
+    expect(buildSettlementLetter(none)).not.toContain('공동주택관리법');
+  });
+
+  it('선택 정보를 넣으면 반영되고, 비우면 나오지 않는다', () => {
+    const withParty = buildSettlementLetter(base, {
+      address: '서울시 ○○구 ○○아파트 101동 1001호',
+      tenantName: '홍길동',
+      landlordName: '김철수',
+      account: '○○은행 123-456',
+    });
+    expect(withParty).toContain('김철수 님께');
+    expect(withParty).toContain('대상 주택: 서울시');
+    expect(withParty).toContain('임차인: 홍길동');
+    expect(withParty).toContain('입금 계좌: ○○은행 123-456');
+
+    const without = buildSettlementLetter(base);
+    expect(without).toContain('임대인님께');
+    expect(without).not.toContain('대상 주택:');
+    expect(without).not.toContain('입금 계좌:');
+  });
+
+  it('공백만 입력한 선택 항목은 무시한다', () => {
+    const t = buildSettlementLetter(base, { address: '   ', tenantName: '  ' });
+    expect(t).not.toContain('대상 주택:');
+    expect(t).not.toContain('임차인:');
+  });
+
+  it('음수 결과면 추가 지급 문구로 바뀐다', () => {
+    const owes = calcMoveOutSettlement({
+      ...emptyMoveOutInput(),
+      deposit: 500_000,
+      unpaidRent: 1_200_000,
+    });
+    const t = buildSettlementLetter(owes, { account: '○○은행 123-456' });
+    expect(t).toContain('[추가 지급할 금액] 700,000원');
+    expect(t).not.toContain('[최종 반환 요청 금액]');
+    // 추가 지급 상황에서는 입금 계좌를 넣지 않는다
+    expect(t).not.toContain('입금 계좌:');
+  });
+
+  it('단정적인 법률 자문 표현을 쓰지 않는다', () => {
+    const t = buildSettlementLetter(base);
+    expect(t).not.toMatch(/반드시 반환해야 합니다|법적 의무입니다|위법입니다|고소/);
+    expect(t).toContain('정하고 있습니다');
   });
 });

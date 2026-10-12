@@ -78,6 +78,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/daily/speed', priority: 0.7 },
     { path: '/daily/unit', priority: 0.7 },
     { path: '/daily/water', priority: 0.7 },
+    { path: '/realestate/move-out', priority: 0.9 },
     { path: '/realestate/acqtax', priority: 0.8 },
     { path: '/realestate/convert', priority: 0.8 },
     { path: '/realestate/commission', priority: 0.8 },

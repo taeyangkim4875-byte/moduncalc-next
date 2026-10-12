@@ -322,3 +322,84 @@ export function emptyMoveOutInput(): MoveOutInput {
     agreedDeductions: [],
   };
 }
+
+/* ─────────────────────────────────────────────
+   정산 요청서 문구 생성
+   ───────────────────────────────────────────── */
+
+export interface LetterParty {
+  /** 대상 주택 주소 (선택) */
+  address?: string;
+  /** 임차인 이름 (선택) */
+  tenantName?: string;
+  /** 임대인 이름 (선택) */
+  landlordName?: string;
+  /** 입금 계좌 (선택) */
+  account?: string;
+}
+
+/**
+ * 임대인에게 보낼 정산 요청 문구.
+ *
+ * 임대인용 퇴실 정산서에서도 같은 결과 구조를 받아 문구만 바꿔 쓸 수 있도록
+ * UI 가 아니라 여기에 둔다. 법률 자문처럼 단정하는 표현은 쓰지 않는다.
+ */
+export function buildSettlementLetter(
+  result: MoveOutSettlementResult,
+  party: LetterParty = {},
+): string {
+  const t = (s?: string) => (s ?? '').trim();
+  const lines: string[] = [];
+
+  lines.push(t(party.landlordName) ? `${t(party.landlordName)} 님께` : '임대인님께');
+  lines.push('');
+  lines.push('안녕하세요. 퇴거에 따른 정산 내역을 정리해 보내드립니다.');
+  if (t(party.address)) lines.push(`대상 주택: ${t(party.address)}`);
+  if (t(party.tenantName)) lines.push(`임차인: ${t(party.tenantName)}`);
+  lines.push('');
+
+  const money = (n: number) => `${Math.round(n).toLocaleString('ko-KR')}원`;
+
+  if (result.receivables.length) {
+    lines.push('[받을 금액]');
+    result.receivables.forEach((l) => lines.push(`· ${l.label}: ${money(l.amount)}`));
+    lines.push(`  소계: ${money(result.totalReceivable)}`);
+    lines.push('');
+  }
+
+  if (result.deductions.length) {
+    lines.push('[공제할 금액]');
+    result.deductions.forEach((l) => lines.push(`· ${l.label}: ${money(l.amount)}`));
+    lines.push(`  소계: ${money(result.totalDeduction)}`);
+    lines.push('');
+  }
+
+  if (result.tenantOwes) {
+    lines.push(`[추가 지급할 금액] ${money(Math.abs(result.netAmount))}`);
+    lines.push('');
+    lines.push('공제액이 받을 금액을 넘어 추가로 지급해야 할 금액이 있습니다.');
+    lines.push('내역 중 확인이 필요한 부분이 있으면 말씀해 주세요.');
+  } else {
+    lines.push(`[최종 반환 요청 금액] ${money(result.netAmount)}`);
+    lines.push('');
+    if (t(party.account)) lines.push(`입금 계좌: ${t(party.account)}`);
+    lines.push('확인 후 반환해 주시면 감사하겠습니다.');
+  }
+
+  if (result.receivables.some((l) => l.key === 'long-term-repair')) {
+    lines.push('');
+    lines.push('※ 장기수선충당금은 공동주택관리법 시행령 제31조 제8항에 따라');
+    lines.push('   임차인이 대신 납부한 경우 소유자가 반환하도록 정하고 있습니다.');
+    lines.push(
+      result.longTermRepairEstimated
+        ? '   금액은 추정치이며, 관리사무소 납부확인서를 받아 첨부하겠습니다.'
+        : '   관리사무소 납부확인서를 첨부합니다.',
+    );
+  }
+
+  lines.push('');
+  lines.push('내역 중 사실과 다른 부분이 있으면 알려주시면 함께 확인하겠습니다.');
+  lines.push('감사합니다.');
+
+  return lines.join('\n');
+}
