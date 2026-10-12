@@ -57,6 +57,12 @@ const STALE_VALUES = [
   { name: '금 1냥 (10돈 = 37.5g)', bad: [/3\.75\s*(돈|Don)\s*\(1\s*(냥|Nyang)\)/, /14\.0625/] },
   { name: 'flat tax 분기점 (약 1.6억)', bad: [/45-50 million/] },
   { name: '간이과세 기준 (1억 400만원)', bad: [/simplified VAT taxpayer[^.]{0,40}40 million/i] },
+  /**
+   * 주휴시간은 8시간이 상한이다(근로기준법 제50조).
+   * Math.min 없이 (주시간/40)*8 을 그대로 쓰면 주 40시간 초과 시 과다 계산된다.
+   * 계산은 utils/holidayPay 의 calcHolidayHours 를 쓸 것.
+   */
+  { name: '주휴시간 8시간 상한', bad: [/\/\s*40\s*\)\s*\*\s*8(?![^;]*Math\.min)/] },
 ];
 
 /**

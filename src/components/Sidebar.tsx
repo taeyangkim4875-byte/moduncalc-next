@@ -32,7 +32,8 @@ const MENUS_KO: MenuItem[] = [
   { href: '/salary', ico: '💰', label: '연봉/급여', sub: [
     { label: '연봉 상위%', href: '/salary' },
     { label: '실수령액 표', href: '/salary/table' },
-    { label: '최저시급·주휴수당', href: '/salary/minimum' },
+    { label: '최저시급', href: '/salary/minimum' },
+    { label: '주휴수당', href: '/salary/holiday-pay' },
     { label: '퇴직금', href: '/salary/severance' },
     { label: '월급 카운터', href: '/salary/live' },
     { label: '연봉 환산기', href: '/salary/convert' },

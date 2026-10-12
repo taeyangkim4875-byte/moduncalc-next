@@ -42,6 +42,7 @@ const PAGE_LABELS: Record<string, string> = {
   '/en/guide/housing-guide': 'EN · Housing',
   '/en/guide/leaving-korea-checklist': 'EN · Leaving Korea Checklist',
   '/en/guide/visa-guide': 'EN · Visa Types',
+  '/salary/holiday-pay': '주휴수당 계산기',
 };
 
 function groupRates() {

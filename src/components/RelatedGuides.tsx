@@ -12,6 +12,9 @@ const GUIDES: Record<string, { href: string; title: string }[]> = {
   '/salary/table': [
     { href: '/guide/salary-net-pay', title: '📖 연봉 실수령액 완전 정리' },
   ],
+  '/salary/holiday-pay': [
+    { href: '/guide/minimum-wage', title: '📖 2026 최저시급 완전 정리' },
+  ],
   '/salary/minimum': [
     { href: '/guide/minimum-wage', title: '📖 2026 최저시급 완전 정리' },
   ],

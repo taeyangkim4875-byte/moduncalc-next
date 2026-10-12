@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/salary', priority: 0.9 },
     { path: '/salary/table', priority: 0.9 },
     { path: '/salary/minimum', priority: 0.9 },
+    { path: '/salary/holiday-pay', priority: 0.9 },
     { path: '/salary/live', priority: 0.9 },
     { path: '/salary/convert', priority: 0.9 },
     { path: '/salary/calendar', priority: 0.9 },

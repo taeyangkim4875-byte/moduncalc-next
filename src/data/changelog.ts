@@ -160,6 +160,17 @@ export interface ChangeEntry {
 /** 최신순 */
 export const CHANGELOG: ChangeEntry[] = [
   {
+    appliedDate: '2026-10-12',
+    type: 'correction',
+    category: '근로',
+    title: '최저시급 계산기의 주휴시간 8시간 상한 누락 수정',
+    before: '주휴시간 = (1주 소정근로시간 ÷ 40) × 8 — 상한 없음. 주 48시간 입력 시 9.6시간으로 과다 계산',
+    after: '주휴시간 최대 8시간. 주 40시간 초과분은 소정근로가 아니라 연장근로로 분리',
+    basis: '근로기준법 제50조 (소정근로시간 1일 8시간·1주 40시간 상한)',
+    affected: ['/salary/minimum', '/salary/holiday-pay'],
+    note: '주 40시간을 넘겨 일하는 경우 주휴수당이 실제보다 많게 나왔습니다. 계산 로직을 공용 함수로 분리해 단위 테스트를 붙였고, 상한 없는 산식이 다시 들어오면 배포 전 점검에서 걸리도록 규칙을 추가했습니다.',
+  },
+  {
     appliedDate: '2026-10-06',
     type: 'correction',
     category: '근로',

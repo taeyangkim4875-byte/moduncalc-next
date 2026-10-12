@@ -12,7 +12,8 @@ const ALL_KO: CalcMeta[] = [
   // 연봉 / 급여
   { href: '/salary', icon: '💰', title: '연봉 실수령액', desc: '백분위 포함', category: '연봉', keywords: ['연봉', '상위', '퍼센트', '백분위', '급여', '소득', '실수령액'], related: ['/salary/table', '/salary/insurance'] },
   { href: '/salary/table', icon: '📋', title: '실수령액 표', desc: '2천만~1.5억', category: '연봉', keywords: ['실수령액', '표', '연봉', '세후', '월급', '공제'], related: ['/salary', '/salary/minimum'] },
-  { href: '/salary/minimum', icon: '💰', title: '최저시급', desc: '주휴수당·월급', category: '연봉', keywords: ['최저시급', '최저임금', '시급', '주휴수당', '알바', '아르바이트'], related: ['/salary/annual', '/daily/time', '/salary/table'] },
+  { href: '/salary/minimum', icon: '💰', title: '최저시급', desc: '연도별 시급·수습', category: '연봉', keywords: ['최저시급', '최저임금', '시급', '수습', '알바', '아르바이트'], related: ['/salary/holiday-pay', '/daily/time', '/salary/table'] },
+  { href: '/salary/holiday-pay', icon: '📅', title: '주휴수당', desc: '지급 대상 판정', category: '연봉', keywords: ['주휴수당', '주휴', '15시간', '개근', '알바', '아르바이트', '사장님', '쪼개기'], related: ['/salary/minimum', '/daily/time', '/salary/annual'] },
   { href: '/salary/severance', icon: '💰', title: '퇴직금', desc: '예상 퇴직금', category: '연봉', keywords: ['퇴직금', '퇴직', '퇴사', '재직기간', '평균임금'], related: ['/pension/jobless', '/salary/annual'] },
   { href: '/salary/live', icon: '⏱️', title: '월급 카운터', desc: '초당 버는 돈', category: '연봉', keywords: ['실시간', '카운터', '초당', '시급', '분당', '월급'], related: ['/salary', '/salary/calendar', '/salary/convert'] },
   { href: '/salary/convert', icon: '🛒', title: '연봉 환산기', desc: '아이폰 며칠?', category: '연봉', keywords: ['환산', '월급', '아이폰', '테슬라', '아파트', '얼마나', '일해야'], related: ['/salary', '/salary/live', '/daily/discount'] },

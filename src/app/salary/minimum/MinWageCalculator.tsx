@@ -7,9 +7,11 @@ import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
 import { getParams, setParams } from '@/utils/params';
+import { calcHolidayHours } from '@/utils/holidayPay';
+import { WEEKS_PER_MONTH, WEEKLY_HOLIDAY_MIN_HOURS, MINIMUM_WAGE_BY_YEAR } from '@/data/labor';
 
-const MIN_WAGE_2026 = 10320;
-const MIN_WAGE_2027 = 10700;
+const MIN_WAGE_2026 = MINIMUM_WAGE_BY_YEAR[2026];
+const MIN_WAGE_2027 = MINIMUM_WAGE_BY_YEAR[2027];
 
 interface CalcResult {
   hourly: number;
@@ -62,13 +64,16 @@ export default function MinWageCalculator() {
     const hourly = state.hourly || 0, dailyHours = state.dailyHours || 0, weekDays = state.weekDays || 0;
     const weeklyHours = dailyHours * weekDays;
 
-    /* 주휴수당: 주 15시간 이상 근무 시 발생 */
-    const qualifies = weeklyHours >= 15;
-    const juhuyu_hours = qualifies ? (weeklyHours / 40) * 8 : 0;
-    const juhuyu = qualifies ? hourly * juhuyu_hours : 0;
+    /* 주휴수당: 주 15시간 이상 근무 시 발생. 주휴시간은 8시간이 상한이다.
+       소정근로시간이 1주 40시간을 넘을 수 없어(근로기준법 제50조) 40시간 초과분은
+       연장근로이지 소정근로가 아니다. 상한을 빼면 주 48시간 입력 시 9.6시간이 나와
+       과다 계산된다. 계산은 utils/holidayPay 의 공용 함수를 쓴다. */
+    const qualifies = weeklyHours >= WEEKLY_HOLIDAY_MIN_HOURS;
+    const juhuyu_hours = qualifies ? calcHolidayHours(weeklyHours) : 0;
+    const juhuyu = juhuyu_hours * hourly;
 
-    /* 월 환산: (주 소정근로시간 + 주휴시간) × 4.345주 × 시급 */
-    const weeksPerMonth = 4.345;
+    /* 월 환산: (주 소정근로시간 + 주휴시간) × 1개월 평균 주수 × 시급 */
+    const weeksPerMonth = WEEKS_PER_MONTH;
     const basePay = hourly * weeklyHours * weeksPerMonth;
     const juhuyuPay = juhuyu * weeksPerMonth;
     const totalMonth = basePay + juhuyuPay;
@@ -209,12 +214,12 @@ export default function MinWageCalculator() {
                   <span className="font-bold text-[var(--primary)]">{won(result.juhuyu)}</span>
                 </div>
                 <div className="text-xs text-[var(--sub)] mt-1 leading-relaxed bg-[var(--primary-weak)] rounded-xl p-3.5">
-                  주휴수당 = 시급 x (주 소정근로시간 / 40) x 8시간
+                  주휴수당 = 시급 x (주 소정근로시간 / 40) x 8시간 (주휴시간 최대 8시간)
                 </div>
               </div>
             ) : (
               <div className="text-sm text-[var(--sub)] leading-relaxed">
-                주 15시간 미만 근무 시 주휴수당이 발생하지 않습니다.
+                주 15시간 미만 근무 시 주휴수당이 발생하지 않습니다. 지급 대상 여부를 자세히 보려면 주휴수당 계산기를 이용하세요.
                 <div className="text-xs mt-2 bg-[#FFF4E5] rounded-xl p-3.5 text-[#B26A00] font-medium">
                   현재 주 {result.weeklyHours}시간 — 주 15시간 이상 근무해야 주휴수당을 받을 수 있어요.
                 </div>
@@ -281,7 +286,7 @@ export default function MinWageCalculator() {
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
         <b className="text-[#6B7684]">계산 가정</b><br />
         · 2026년 최저시급 {MIN_WAGE_2026.toLocaleString()}원 기준<br />
-        · 월 환산: (주 소정근로시간 + 주휴시간) x 4.345주<br />
+        · 월 환산: (주 소정근로시간 + 주휴시간) x 4.3452주 (365÷7÷12)<br />
         · 주휴수당: 주 15시간 이상 근무 시 발생
         <div className="mt-3.5 bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1] leading-relaxed">
           세전 기준이며, 4대보험·세금 공제 전 금액입니다.
