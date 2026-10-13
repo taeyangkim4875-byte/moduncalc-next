@@ -59,6 +59,9 @@ const MENUS_KO: MenuItem[] = [
     { label: '어린이 BMI', href: '/daily/bmi-child' },
     { label: '기초대사량', href: '/health/bmr' }
   ]},
+  { href: '/daily', ico: '🗂️', label: '일상 전체', sub: [
+    { label: '일상 계산기 모음', href: '/daily' },
+  ]},
   { href: '/daily/charcount', ico: '🔧', label: '도구', sub: [
     { label: '글자수 세기', href: '/daily/charcount' },
     { label: '비밀번호 생성', href: '/daily/password' },

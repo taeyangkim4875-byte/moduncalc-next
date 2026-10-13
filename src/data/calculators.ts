@@ -19,7 +19,7 @@ const ALL_KO: CalcMeta[] = [
   { href: '/salary/convert', icon: '🛒', title: '연봉 환산기', desc: '아이폰 며칠?', category: '연봉', keywords: ['환산', '월급', '아이폰', '테슬라', '아파트', '얼마나', '일해야'], related: ['/salary', '/salary/live', '/daily/discount'] },
   { href: '/salary/calendar', icon: '📆', title: '월급 달력', desc: 'D-day', category: '연봉', keywords: ['월급날', '달력', 'D-day', '디데이', '페이데이', '카운트다운'], related: ['/salary/live', '/daily/dday', '/salary'] },
   { href: '/salary/parental', icon: '👶', title: '육아휴직', desc: '6+6 급여', category: '연봉', keywords: ['육아휴직', '육아', '출산', '6+6', '부모휴직', '급여'], related: ['/salary/annual', '/salary/severance'] },
-  { href: '/salary/annual', icon: '📅', title: '연차', desc: '입사일 기준', category: '연봉', keywords: ['연차', '월차', '유급휴가', '연차일수', '입사일'], related: ['/salary/severance', '/salary/minimum'] },
+  { href: '/salary/annual', icon: '📅', title: '연차', desc: '입사일 기준', category: '연봉', keywords: ['연차', '월차', '유급휴가', '연차일수', '입사일'], related: ['/salary/severance', '/salary/holiday-pay'] },
   { href: '/salary/lifetime', icon: '💰', title: '평생 근로소득', desc: '은퇴까지', category: '연봉', keywords: ['평생', '근로소득', '총소득', '은퇴', '임금상승률'], related: ['/daily/fire', '/pension/nps', '/salary'] },
   { href: '/salary/insurance', icon: '🛡️', title: '4대보험', desc: '보험료 상세 계산', category: '연봉', keywords: ['4대보험', '국민연금', '건강보험', '고용보험', '장기요양', '보험료', '사회보험'], related: ['/salary', '/pension/nps'] },
 
@@ -36,7 +36,7 @@ const ALL_KO: CalcMeta[] = [
   { href: '/realestate/acqtax', icon: '🏢', title: '취득세', desc: '주택 매매', category: '부동산', keywords: ['취득세', '부동산', '매매', '아파트', '주택', '세금'], related: ['/realestate/commission', '/realestate/transfer', '/loan'] },
   { href: '/realestate/move-out', icon: '📦', title: '이사 정산', desc: '보증금·장충금 반환', category: '부동산', keywords: ['이사', '정산', '퇴실', '보증금', '장기수선충당금', '장충금', '반환', '관리비', '일할'], related: ['/realestate/convert', '/realestate/commission', '/daily/pyeong'] },
   { href: '/realestate/registration', icon: '🏢', title: '등기비용', desc: '인지세·법무사', category: '부동산', keywords: ['등기', '등기비용', '인지세', '법무사', '소유권이전', '부동산'], related: ['/realestate/acqtax', '/realestate/commission', '/loan'] },
-  { href: '/realestate/convert', icon: '🏢', title: '전월세 전환', desc: '전세↔월세', category: '부동산', keywords: ['전월세', '전세', '월세', '전환율', '보증금'], related: ['/realestate/commission', '/realestate/acqtax'] },
+  { href: '/realestate/convert', icon: '🏢', title: '전월세 전환', desc: '전세↔월세', category: '부동산', keywords: ['전월세', '전세', '월세', '전환율', '보증금'], related: ['/realestate/move-out', '/realestate/commission', '/realestate/rental'] },
   { href: '/realestate/commission', icon: '🏢', title: '복비', desc: '중개수수료', category: '부동산', keywords: ['복비', '중개수수료', '중개보수', '부동산', '매매', '전세'], related: ['/realestate/acqtax', '/realestate/convert'] },
   { href: '/realestate/transfer', icon: '🏢', title: '양도소득세', desc: '부동산 양도세', category: '부동산', keywords: ['양도세', '양도소득세', '부동산', '매매', '차익'], related: ['/realestate/acqtax', '/tax/income'] },
   { href: '/realestate/rental', icon: '🏢', title: '임대수익률', desc: '투자 수익률', category: '부동산', keywords: ['임대', '수익률', '월세', '투자', '부동산', '회수기간'], related: ['/realestate/convert', '/realestate/transfer', '/loan'] },
@@ -105,8 +105,8 @@ const ALL_KO: CalcMeta[] = [
 
   // 기타
   { href: '/daily/gift-money', icon: '💌', title: '축의금', desc: '관계·식대로 판단', category: '생활', keywords: ['축의금', '부조금', '경조사비', '결혼식', '얼마', '식대', '조의금'], related: ['/daily/dutch', '/daily/tip-split', '/savings/interest'] },
-  { href: '/daily/dutch', icon: '🍽️', title: '더치페이', desc: 'N분의1', category: '일상', keywords: ['더치페이', 'n분의1', '나누기', '팁', '모임'], related: ['/daily/tip-split', '/daily/discount', '/daily/percent'] },
-  { href: '/daily/tip-split', icon: '🧾', title: '모임 정산', desc: '차등 정산', category: '일상', keywords: ['정산', '모임', 'n분의1', '차등', '송금', '더치'], related: ['/daily/dutch', '/daily/percent', '/daily/random'] },
+  { href: '/daily/dutch', icon: '🍽️', title: '더치페이', desc: 'N분의1', category: '일상', keywords: ['더치페이', 'n분의1', '나누기', '팁', '모임'], related: ['/daily/gift-money', '/daily/tip-split', '/daily/discount'] },
+  { href: '/daily/tip-split', icon: '🧾', title: '모임 정산', desc: '차등 정산', category: '일상', keywords: ['정산', '모임', 'n분의1', '차등', '송금', '더치'], related: ['/daily/dutch', '/daily/gift-money', '/daily/percent'] },
   { href: '/daily/alcohol', icon: '🍺', title: '음주 운전', desc: 'BAC 계산', category: '일상', keywords: ['음주', '운전', '알코올', '혈중', '소주', '맥주', '분해'], related: ['/health/water', '/daily/time', '/daily/dutch'] },
   { href: '/daily/gpa', icon: '🎓', title: '학점(GPA)', desc: '평점 계산', category: '일상', keywords: ['학점', 'gpa', '평점', '대학', '성적', '평균'], related: ['/daily/percent', '/daily/charcount', '/calc'] },
   // 역방향 계산기
