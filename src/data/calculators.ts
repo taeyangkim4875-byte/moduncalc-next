@@ -193,13 +193,21 @@ export interface HomepageCategory {
   items: string[];
 }
 
+/**
+ * 홈 상단에 크게 보여줄 계산기 6개.
+ *
+ * 계절을 타는 항목(에어컨 전기요금, 연말정산 등)을 넣을 때는 설명 문구가
+ * 철 지난 채로 남지 않게 주의할 것. 한겨울에 "여름 필수!"가 떠 있으면
+ * 사이트가 방치된 것처럼 보인다.
+ * 지금은 사철 수요가 꾸준한 것 위주로 둔다.
+ */
 export const HOMEPAGE_HOT: { href: string; desc: string }[] = [
-  { href: '/savings/doyak', desc: '적립액 조회·만기 수령액' },
-  { href: '/savings/mirae', desc: '은행별 우대금리 비교' },
-  { href: '/salary', desc: '4대보험 공제 후' },
+  { href: '/salary', desc: '4대보험 공제 후 실수령액' },
   { href: '/salary/minimum', desc: '2026 시급 10,320원' },
-  { href: '/daily/aircon', desc: '여름 필수!' },
+  { href: '/savings/doyak', desc: '적립액 조회·만기 수령액' },
+  { href: '/salary/severance', desc: '퇴사 전 미리 확인' },
   { href: '/daily/charcount', desc: '자소서·SNS 필수' },
+  { href: '/health/bmi', desc: '아시아태평양 기준' },
 ];
 
 export const HOMEPAGE_CATEGORIES: HomepageCategory[] = [

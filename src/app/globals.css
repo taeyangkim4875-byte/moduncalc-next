@@ -37,6 +37,20 @@ body {
   to { opacity: 1; transform: translate(-50%, 0); }
 }
 
+/* iOS Safari 는 글자 크기가 16px 미만인 입력란에 포커스하면 화면을 자동으로 확대한다.
+   확대된 화면은 저절로 돌아오지 않아서, 숫자를 몇 개만 넣어도 화면이 계속 튄다.
+   계산기마다 input 크기를 일일이 고치는 대신(70개 파일) 여기서 최소값을 보장한다.
+
+   터치 기기에서만 적용해 데스크톱 레이아웃은 건드리지 않고,
+   range·checkbox·radio 는 글자가 없으므로 제외한다. */
+@media (hover: none) and (pointer: coarse) {
+  input:not([type='range']):not([type='checkbox']):not([type='radio']),
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
 /* 인쇄: 정산 요청서만 남기고 전부 숨긴다.
    PDF 저장을 별도 라이브러리 없이 브라우저 인쇄 기능으로 처리하기 위한 것.
    (jsPDF 계열은 한글 폰트를 직접 임베드해야 해서 번들이 과하게 커진다) */

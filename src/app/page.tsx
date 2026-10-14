@@ -4,7 +4,8 @@ import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import { FaqJsonLd } from "@/components/JsonLd";
-import { getCalc, HOMEPAGE_HOT, HOMEPAGE_CATEGORIES } from "@/data/calculators";
+import { getCalc, HOMEPAGE_HOT } from "@/data/calculators";
+import { SECTIONS, RECENTLY_ADDED } from "@/data/homeSections";
 
 export const metadata: Metadata = {
   title: "모든 계산기 - 연봉, 적금, 대출, 부동산, 건강, 세금 무료 계산기",
@@ -30,9 +31,9 @@ export default function Home() {
         { q: '모바일에서도 사용할 수 있나요?', a: '네. 모든 계산기가 모바일에 최적화되어 있습니다. 홈 화면에 추가하면 앱처럼 바로 열 수 있어요.' },
         { q: '새로운 계산기를 요청할 수 있나요?', a: '물론이요. 문의 페이지에서 원하는 계산기를 알려주시면 검토 후 추가합니다.' },
       ]} />
-      {/* 인기 / 추천 */}
+      {/* 인기 계산기 — 큼직하게 6개만 */}
       <div className="mb-5">
-        <div className="text-xs font-bold text-[var(--primary)] mb-2 px-1">🔥 인기 계산기</div>
+        <div className="text-xs font-bold text-[var(--primary)] mb-2 px-1">🔥 많이 쓰는 계산기</div>
         <div className="grid grid-cols-2 gap-2">
           {HOMEPAGE_HOT.map(hot => {
             const c = getCalc(hot.href);
@@ -41,44 +42,59 @@ export default function Home() {
               <Link
                 key={c.href}
                 href={c.href}
-                className="flex items-start gap-2.5 p-3 bg-white rounded-xl shadow-[var(--shadow)] no-underline text-[var(--ink)] transition-all hover:translate-y-[-1px] hover:shadow-[var(--shadow-h)] border-[1.5px] border-[var(--primary-weak)]"
+                className="flex items-start gap-2.5 p-3.5 bg-white rounded-xl shadow-[var(--shadow)] no-underline text-[var(--ink)] transition-all hover:translate-y-[-1px] hover:shadow-[var(--shadow-h)] border-[1.5px] border-[var(--primary-weak)]"
               >
                 <span className="text-xl flex-none mt-0.5">{c.icon}</span>
-                <div className="min-w-0">
-                  <div className="text-sm font-bold truncate">{c.title}</div>
-                  <div className="text-[11px] text-[var(--sub)] font-medium">{hot.desc}</div>
-                </div>
+                <span className="min-w-0">
+                  <span className="block text-sm font-bold truncate">{c.title}</span>
+                  <span className="block text-[11px] text-[var(--sub)] font-medium">{hot.desc}</span>
+                </span>
               </Link>
             );
           })}
         </div>
       </div>
 
-      {/* 카테고리별 */}
-      {HOMEPAGE_CATEGORIES.map(cat => (
-        <div key={cat.title} className="mb-4">
-          <div className="text-sm font-extrabold text-[var(--ink)] mb-2 px-1">{cat.title}</div>
-          <div className="grid grid-cols-2 gap-1.5">
-            {cat.items.map(href => {
-              const c = getCalc(href);
-              if (!c) return null;
-              return (
-                <Link
-                  key={c.href}
-                  href={c.href}
-                  className="flex items-center gap-2 px-3 py-2.5 bg-white rounded-xl no-underline text-[var(--ink)] transition-all hover:bg-[var(--primary-weak)] border border-[var(--line)]"
-                >
-                  <div className="min-w-0">
-                    <div className="text-[13px] font-bold truncate">{c.title}</div>
-                    <div className="text-[10px] text-[var(--sub)] font-medium">{c.desc}</div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+      {/* 분야별 — 허브로 보내고 홈에서는 나열하지 않는다 */}
+      <div className="mb-5">
+        <div className="text-xs font-bold text-[var(--primary)] mb-2 px-1">📂 분야별로 찾기</div>
+        <div className="grid grid-cols-2 gap-2">
+          {SECTIONS.map(sec => (
+            <Link
+              key={sec.href}
+              href={sec.href}
+              className="flex items-center gap-2.5 px-3.5 py-3 bg-white rounded-xl no-underline text-[var(--ink)] border border-[var(--line)] transition-all hover:border-[var(--primary)] hover:bg-[var(--primary-weak)]"
+            >
+              <span className="text-lg flex-none">{sec.icon}</span>
+              <span className="min-w-0">
+                <span className="block text-[13px] font-bold truncate">{sec.label}</span>
+                <span className="block text-[11px] text-[var(--sub)] font-medium truncate">{sec.desc}</span>
+              </span>
+            </Link>
+          ))}
         </div>
-      ))}
+      </div>
 
+      {/* 최근 추가 — 새로 만든 것을 드러내 재방문 이유를 만든다 */}
+      <div className="mb-5">
+        <div className="text-xs font-bold text-[var(--primary)] mb-2 px-1">✨ 새로 추가했어요</div>
+        <div className="flex flex-col gap-1.5">
+          {RECENTLY_ADDED.map(item => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="flex items-center gap-2.5 px-3.5 py-2.5 bg-white rounded-xl no-underline text-[var(--ink)] border border-[var(--line)] transition-all hover:border-[var(--primary)]"
+            >
+              <span className="text-base flex-none">{item.icon}</span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[13px] font-bold">{item.label}</span>
+                <span className="block text-[11px] text-[var(--sub)] font-medium">{item.desc}</span>
+              </span>
+              <span className="text-[10px] font-bold text-[var(--primary)] flex-none">NEW</span>
+            </Link>
+          ))}
+        </div>
+      </div>
 
       <Card className="mt-4">
         <h2 className="text-base font-extrabold mb-3">📖 모든 계산기란?</h2>
