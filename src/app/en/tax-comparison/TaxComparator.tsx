@@ -3,9 +3,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import { compareTax, type ComparisonResult } from '@/utils/foreignerTax';
-
-const won = (n: number) => '₩' + Math.round(n).toLocaleString();
-const wonMan = (n: number) => won(n * 10000);
+import { MAN_SUFFIX_EN, eokFromMan, won, wonFromMan as wonMan } from '@/utils/krwEn';
 
 export default function TaxComparator() {
   const [salary, setSalary] = useState(5000);
@@ -23,7 +21,7 @@ export default function TaxComparator() {
           <label className="block text-sm font-bold mb-2">
             Annual Gross Salary
             <span className="text-xs text-[var(--sub)] font-medium ml-1">
-              {wonMan(salary)} ({(salary / 100).toFixed(1)}억원)
+              {wonMan(salary)} ({eokFromMan(salary)})
             </span>
           </label>
           <div className="flex items-center gap-2.5">
@@ -33,7 +31,7 @@ export default function TaxComparator() {
               onChange={e => setSalary(+e.target.value)}
               className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]"
             />
-            <span className="text-sm font-bold text-[var(--sub)]">만원</span>
+            <span className="text-sm font-bold text-[var(--sub)]">{MAN_SUFFIX_EN}</span>
           </div>
           <input type="range" min={2000} max={50000} step={100} value={salary} onChange={e => setSalary(+e.target.value)} className="w-full mt-3.5" />
         </div>
@@ -77,7 +75,7 @@ export default function TaxComparator() {
                 saves you {won(Math.abs(result.savings))}/year
               </div>
               <div className="text-xs text-[var(--sub)] mt-2">
-                Break-even salary: {wonMan(result.breakEvenSalary)} ({(result.breakEvenSalary / 100).toFixed(1)}억원)
+                Break-even salary: {wonMan(result.breakEvenSalary)} ({eokFromMan(result.breakEvenSalary)})
               </div>
             </div>
           </Card>
@@ -160,7 +158,7 @@ export default function TaxComparator() {
                 and the earned income tax credit. For most employees earning under ~₩160M, these deductions make progressive cheaper.
               </p>
               <p>
-                <b>The break-even point</b> is approximately <b>{wonMan(result.breakEvenSalary)}</b> ({(result.breakEvenSalary / 100).toFixed(1)}억원) per year.
+                <b>The break-even point</b> is approximately <b>{wonMan(result.breakEvenSalary)}</b> ({eokFromMan(result.breakEvenSalary)}) per year.
                 Above this salary, flat tax saves you money. Below it, progressive is better.
                 The more dependents you have, the higher the break-even shifts (because personal exemptions increase).
               </p>

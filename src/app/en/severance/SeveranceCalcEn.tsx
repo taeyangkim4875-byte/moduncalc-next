@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 
-const won = (n: number) => '₩' + Math.round(n).toLocaleString();
+import { MAN_SUFFIX_EN, won } from '@/utils/krwEn';
 
 export default function SeveranceCalcEn() {
   const [startDate, setStartDate] = useState('2023-01-01');
@@ -36,7 +36,7 @@ export default function SeveranceCalcEn() {
           <label className="block text-sm font-bold mb-2">Monthly Salary (last 3 months avg)</label>
           <div className="flex items-center gap-2.5">
             <input type="number" value={monthlySalary || ''} onChange={e => setMonthlySalary(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
-            <span className="text-sm font-bold text-[var(--sub)]">만원</span>
+            <span className="text-sm font-bold text-[var(--sub)]">{MAN_SUFFIX_EN}</span>
           </div>
         </div>
       </Card>

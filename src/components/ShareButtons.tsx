@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 import { trackShareClick } from '@/utils/analytics';
+import { isEnPath } from '@/utils/locale';
 
 interface ShareButtonsProps {
   title: string;
@@ -11,6 +13,7 @@ interface ShareButtonsProps {
 export default function ShareButtons({ title, resultId = 'calc-result' }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const [saving, setSaving] = useState(false);
+  const isEn = isEnPath(usePathname());
 
   const getShareUrl = useCallback(() => window.location.href, []);
 
@@ -34,13 +37,13 @@ export default function ShareButtons({ title, resultId = 'calc-result' }: ShareB
     try {
       trackShareClick('native_share', title);
       await navigator.share({
-        title: `${title} | 모든 계산기`,
+        title: isEn ? `${title} | moduncalc` : `${title} | 모든 계산기`,
         url: getShareUrl(),
       });
     } catch {
       /* user cancelled or not supported */
     }
-  }, [title, getShareUrl]);
+  }, [title, getShareUrl, isEn]);
 
   const saveImage = useCallback(async () => {
     const el = document.getElementById(resultId);
@@ -50,34 +53,35 @@ export default function ShareButtons({ title, resultId = 'calc-result' }: ShareB
       const html2canvas = (await import('html2canvas')).default;
       const watermark = document.createElement('div');
       watermark.style.cssText = 'text-align:center;padding:12px 0 8px;font-size:11px;color:#8B95A1;font-weight:600;';
-      watermark.textContent = 'moduncalc.com · 모든 계산기';
+      watermark.textContent = isEn ? 'moduncalc.com' : 'moduncalc.com · 모든 계산기';
       el.appendChild(watermark);
       const canvas = await html2canvas(el, { backgroundColor: '#F2F4F6', scale: 2, useCORS: true, logging: false });
       el.removeChild(watermark);
       const link = document.createElement('a');
-      link.download = `모든계산기_${title.replace(/[^가-힣a-zA-Z0-9]/g, '_')}.png`;
+      const slug = title.replace(/[^가-힣a-zA-Z0-9]/g, '_');
+      link.download = isEn ? `moduncalc_${slug}.png` : `모든계산기_${slug}.png`;
       link.href = canvas.toDataURL('image/png');
       link.click();
       trackShareClick('save_image', title);
     } catch {
-      alert('이미지 저장에 실패했습니다.');
+      alert(isEn ? 'Could not save the image.' : '이미지 저장에 실패했습니다.');
     }
     setSaving(false);
-  }, [resultId, title]);
+  }, [resultId, title, isEn]);
 
   const hasNativeShare = typeof navigator !== 'undefined' && !!navigator.share;
 
   return (
     <div className="flex gap-2 mt-3 mb-2">
       <button onClick={copyLink} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-[1.5px] border-[var(--line)] bg-white text-[13px] font-bold text-[var(--ink)] cursor-pointer transition-all hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[.97]">
-        {copied ? '✓ 복사됨' : '🔗 링크 복사'}
+        {copied ? (isEn ? '✓ Copied' : '✓ 복사됨') : isEn ? '🔗 Copy link' : '🔗 링크 복사'}
       </button>
       <button onClick={saveImage} disabled={saving} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-[1.5px] border-[var(--line)] bg-white text-[13px] font-bold text-[var(--ink)] cursor-pointer transition-all hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[.97] disabled:opacity-50">
-        {saving ? '저장 중...' : '📷 이미지 저장'}
+        {saving ? (isEn ? 'Saving…' : '저장 중...') : isEn ? '📷 Save image' : '📷 이미지 저장'}
       </button>
       {hasNativeShare && (
         <button onClick={nativeShare} className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl border-[1.5px] border-[var(--line)] bg-white text-[13px] font-bold text-[var(--ink)] cursor-pointer transition-all hover:border-[var(--primary)] hover:text-[var(--primary)] active:scale-[.97]">
-          📤 공유
+          {isEn ? '📤 Share' : '📤 공유'}
         </button>
       )}
     </div>

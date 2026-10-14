@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import { netPay } from '@/utils/tax';
 
-const won = (n: number) => '₩' + Math.round(n).toLocaleString();
+import { MAN_SUFFIX_EN, won, wonFromMan } from '@/utils/krwEn';
 
 export default function SalaryCalcEn() {
   const [salary, setSalary] = useState(5000);
@@ -20,11 +20,11 @@ export default function SalaryCalcEn() {
         <SectionTitle num="1">Your Info</SectionTitle>
         <div className="mb-3">
           <label className="block text-sm font-bold mb-2">
-            Annual Gross Salary <span className="text-xs text-[var(--sub)] font-medium ml-1">{salary.toLocaleString()}만원</span>
+            Annual Gross Salary <span className="text-xs text-[var(--sub)] font-medium ml-1">{wonFromMan(salary)} / year</span>
           </label>
           <div className="flex items-center gap-2.5">
             <input type="number" value={salary || ''} onChange={e => setSalary(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
-            <span className="text-sm font-bold text-[var(--sub)]">만원</span>
+            <span className="text-sm font-bold text-[var(--sub)]">{MAN_SUFFIX_EN}</span>
           </div>
           <input type="range" min={2000} max={30000} step={100} value={salary} onChange={e => setSalary(+e.target.value)} className="w-full mt-3.5" />
         </div>

@@ -12,6 +12,8 @@
 export const CURRENT_YEAR = 2026;
 export const LAST_REVIEWED = '2026.10';
 export const LAST_REVIEWED_LABEL = '2026년 10월 6일';
+/** 영문 페이지용. LAST_REVIEWED_LABEL 을 고칠 때 같이 고칠 것. */
+export const LAST_REVIEWED_LABEL_EN = 'October 6, 2026';
 
 /* ── 4대보험 (근로자 부담분) ───────────────────────────── */
 /** 국민연금 근로자 부담 4.75% (총 9.5%, 2026년 0.5%p 인상) */

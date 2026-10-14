@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 
-const won = (n: number) => '₩' + Math.round(n).toLocaleString();
+import { MAN_SUFFIX_EN, MAN_SUFFIX_EN_MONTHLY, won, wonFromMan } from '@/utils/krwEn';
 
 export default function RentCalcEn() {
   const [mode, setMode] = useState<'toWolse' | 'toJeonse'>('toWolse');
@@ -39,14 +39,14 @@ export default function RentCalcEn() {
               <label className="block text-sm font-bold mb-2">Jeonse Deposit</label>
               <div className="flex items-center gap-2.5">
                 <input type="number" value={jeonse || ''} onChange={e => setJeonse(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
-                <span className="text-sm font-bold text-[var(--sub)]">만원</span>
+                <span className="text-sm font-bold text-[var(--sub)]">{MAN_SUFFIX_EN}</span>
               </div>
             </div>
             <div className="mb-3">
               <label className="block text-sm font-bold mb-2">New Deposit (보증금)</label>
               <div className="flex items-center gap-2.5">
                 <input type="number" value={deposit || ''} onChange={e => setDeposit(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
-                <span className="text-sm font-bold text-[var(--sub)]">만원</span>
+                <span className="text-sm font-bold text-[var(--sub)]">{MAN_SUFFIX_EN}</span>
               </div>
             </div>
           </>
@@ -57,14 +57,14 @@ export default function RentCalcEn() {
               <label className="block text-sm font-bold mb-2">Monthly Rent</label>
               <div className="flex items-center gap-2.5">
                 <input type="number" value={wolse || ''} onChange={e => setWolse(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
-                <span className="text-sm font-bold text-[var(--sub)]">만원/mo</span>
+                <span className="text-sm font-bold text-[var(--sub)]">{MAN_SUFFIX_EN_MONTHLY}</span>
               </div>
             </div>
             <div className="mb-3">
               <label className="block text-sm font-bold mb-2">Current Deposit</label>
               <div className="flex items-center gap-2.5">
                 <input type="number" value={wolseDeposit || ''} onChange={e => setWolseDeposit(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
-                <span className="text-sm font-bold text-[var(--sub)]">만원</span>
+                <span className="text-sm font-bold text-[var(--sub)]">{MAN_SUFFIX_EN}</span>
               </div>
             </div>
           </>
@@ -83,13 +83,13 @@ export default function RentCalcEn() {
             <>
               <div className="text-xs font-bold text-[var(--sub)] mb-1">Equivalent Monthly Rent</div>
               <div className="text-[42px] font-extrabold text-[var(--primary-dark)] tracking-tight">{won(monthlyRent)}</div>
-              <div className="text-sm text-[var(--sub)] mt-1">with {deposit.toLocaleString()}만원 deposit</div>
+              <div className="text-sm text-[var(--sub)] mt-1">with a {wonFromMan(deposit)} deposit</div>
             </>
           ) : (
             <>
               <div className="text-xs font-bold text-[var(--sub)] mb-1">Equivalent Jeonse</div>
               <div className="text-[42px] font-extrabold text-[var(--primary-dark)] tracking-tight">{won(jeonseEquiv * 10000)}</div>
-              <div className="text-sm text-[var(--sub)] mt-1">{Math.round(jeonseEquiv).toLocaleString()}만원</div>
+              <div className="text-sm text-[var(--sub)] mt-1">{wonFromMan(Math.round(jeonseEquiv))}</div>
             </>
           )}
         </div>

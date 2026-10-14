@@ -3,15 +3,17 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getRelated } from '@/data/calculators';
+import { isEnPath } from '@/utils/locale';
 
 export default function RelatedCalcs() {
   const pathname = usePathname();
   const items = getRelated(pathname);
+  const isEn = isEnPath(pathname);
   if (items.length === 0) return null;
 
   return (
     <div className="mt-4 mb-2">
-      <div className="text-xs font-bold text-[var(--sub)] mb-2 px-1">📎 관련 계산기</div>
+      <div className="text-xs font-bold text-[var(--sub)] mb-2 px-1">{isEn ? '📎 Related calculators' : '📎 관련 계산기'}</div>
       <div className="flex gap-2 overflow-x-auto pb-1">
         {items.map(item => (
           <Link

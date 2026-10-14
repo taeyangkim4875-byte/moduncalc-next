@@ -124,6 +124,66 @@ console.log('\n3) 사이트맵 검사');
 if (ghosts.length === 0) console.log(`  ✅ 사이트맵 ${listed.length}개 항목 모두 실재 라우트`);
 else ghosts.forEach((g) => fail(`사이트맵에 있으나 라우트 없음: ${g}`));
 
+/* ───────── 4. 영문 계산기에 남은 한국어 단위 ───────── */
+/*
+ * 영문 계산기는 금액을 "만원" 단위로 입력받는데, 접미사를 맨 "만원" 으로만 적으면
+ * 영문 독자는 단위를 알 수 없다. src/utils/krwEn.ts 의 MAN_SUFFIX_EN 처럼 원화
+ * 환산을 같이 적어야 한다. 예전에 영문 계산기 7개가 맨 "만원" 만 달고 있었다.
+ *
+ * 그리고 만원 → 억원 환산은 10,000 으로 나눈다. /en/tax-comparison 이 100 으로
+ * 나눠서 5,000만원(₩50,000,000)을 "50.0억원"으로 100배 틀리게 적고 있었다.
+ */
+const EN_DIR = path.join(APP, 'en');
+const SEP = path.sep;
+const enCalcFiles = codeFiles.filter(
+  (f) => f.startsWith(EN_DIR + SEP) && !f.includes(SEP + 'guide' + SEP),
+);
+
+console.log('\n4) 영문 계산기 단위 표기 검사');
+let unitFails = 0;
+for (const f of enCalcFiles) {
+  const src = fs.readFileSync(f, 'utf8');
+  if (/>\s*만원(\/mo)?\s*</.test(src)) {
+    fail(rel(f) + ': 원화 환산 없는 "만원" 표기 — @/utils/krwEn 의 MAN_SUFFIX_EN 을 쓸 것');
+    unitFails++;
+  }
+  if (/\/\s*100\s*\)\s*\.toFixed\([^)]*\)\s*\}\s*억원/.test(src)) {
+    fail(rel(f) + ': 만원→억원 환산을 100 으로 나눔 — eokFromMan 을 쓸 것 (1억 = 10,000만원)');
+    unitFails++;
+  }
+}
+if (unitFails === 0) console.log('  ✅ 영문 계산기 ' + enCalcFiles.length + '개 단위 표기 정상');
+
+/* ───────── 5. 영문 페이지 공통 UI 가 한국어로 고정돼 있지 않은지 ───────── */
+/*
+ * PageLayout 이 붙는 영문 페이지 78개에 한국어 푸터·작성자 블록이 그대로
+ * 노출되던 적이 있다. 공통 컴포넌트는 isEnPath 로 언어를 갈라야 한다.
+ */
+const BILINGUAL = [
+  'src/components/PageMeta.tsx',
+  'src/components/SiteFooter.tsx',
+  'src/components/SearchBar.tsx',
+  'src/components/RelatedCalcs.tsx',
+  'src/components/ShareButtons.tsx',
+  'src/components/ScrollToTop.tsx',
+  'src/components/FirstSaveNotice.tsx',
+];
+console.log('\n5) 영문 페이지 공통 UI 이중언어 검사');
+let langFails = 0;
+for (const r of BILINGUAL) {
+  if (!fs.existsSync(r)) {
+    fail(r + ': 파일이 없음 (이중언어 대상 목록을 고칠 것)');
+    langFails++;
+    continue;
+  }
+  const src = fs.readFileSync(r, 'utf8');
+  if (!/isEnPath|isEn\b/.test(src)) {
+    fail(r + ': 영문 페이지에도 붙는 공통 UI 인데 언어 분기가 없음 — isEnPath 를 쓸 것');
+    langFails++;
+  }
+}
+if (langFails === 0) console.log('  ✅ 공통 UI ' + BILINGUAL.length + '개 모두 언어 분기 있음');
+
 /* ───────── 결과 ───────── */
 if (failures) {
   console.error(`\n✗ ${failures}건 실패 — 배포를 중단합니다.`);

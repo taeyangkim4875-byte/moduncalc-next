@@ -109,7 +109,7 @@ export default function PyeongCalcEn() {
           <p><b>Apartment size by lifestyle:</b> Studios and officetels (오피스텔) range from 10-20 pyeong, suitable for singles. The most common family apartment is the 33-pyeong (109㎡ gross, ~84㎡ exclusive) with 3 bedrooms. Premium apartments at 43+ pyeong offer spacious living with 3-4 bedrooms and separate living/dining areas.</p>
           <p><b>Reading Korean listings:</b> Look for 전용면적 (exclusive area) in listings -- this is your actual space. The 공급면적 (gross area) includes shared building areas. Some listings also show 계약면적 (contract area) which includes even more shared spaces. Always compare exclusive areas when comparing apartments.</p>
           <p><b>Common Korean apartment terms:</b> 아파트 (apartment complex), 빌라 (villa/low-rise), 오피스텔 (officetel/studio), 원룸 (one-room/studio), 전세 (jeonse/deposit lease), 월세 (wolse/monthly rent). For more on rent types, check our <a href="/en/rent" className="text-[var(--primary)] font-bold hover:underline">rent calculator</a>.</p>
-          <p><b>Price context:</b> Korean apartment prices are often quoted per pyeong. For example, if an apartment costs 50만원/평, a 33-pyeong apartment would cost about 1.65억원. This per-pyeong price helps compare apartments of different sizes.</p>
+          <p><b>Price context:</b> Korean apartment prices are often quoted per pyeong. A listing of 50만원/평 (500,000 KRW per pyeong) means a 33-pyeong apartment costs about 1.65억원 — 165 million won, or roughly ₩165,000,000. This per-pyeong price helps compare apartments of different sizes.</p>
         </div>
       </Card>
     </>

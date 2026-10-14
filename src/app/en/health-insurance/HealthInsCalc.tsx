@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import { HI_RATE, LTC_RATE } from '@/utils/tax';
 
-const won = (n: number) => '₩' + Math.round(n).toLocaleString();
+import { MAN_SUFFIX_EN_MONTHLY, won } from '@/utils/krwEn';
 
 export default function HealthInsCalc() {
   const [type, setType] = useState<'employee' | 'self'>('employee');
@@ -38,7 +38,7 @@ export default function HealthInsCalc() {
         <SectionTitle num="1">Monthly Income</SectionTitle>
         <div className="flex items-center gap-2.5 mb-2">
           <input type="number" value={salary || ''} onChange={e => setSalary(+e.target.value)} className="flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]" />
-          <span className="text-sm font-bold text-[var(--sub)]">만원/mo</span>
+          <span className="text-sm font-bold text-[var(--sub)]">{MAN_SUFFIX_EN_MONTHLY}</span>
         </div>
         {type === 'self' && (
           <div className="text-[11px] text-[var(--sub)] mt-1 mb-2">Self-employed foreigners have a minimum monthly premium of ~₩142,810</div>
