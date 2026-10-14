@@ -30,7 +30,8 @@ export const SECTIONS: readonly HomeSection[] = [
   { href: '/guide', icon: '📖', label: '가이드', desc: '제도를 제대로 이해하기' },
 ];
 
-export interface RecentItem extends HomeSection {}
+/** 최근 추가 항목도 같은 모양이라 타입을 그대로 쓴다. */
+export type RecentItem = HomeSection;
 
 /**
  * 최근 추가한 계산기.
