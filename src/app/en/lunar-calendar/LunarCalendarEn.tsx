@@ -18,7 +18,7 @@ const holidays2026: Holiday[] = [
   { name: 'Buddha\'s Birthday', korean: '부처님 오신 날', solarDate: '2026-05-24', lunarDate: '4/8', description: 'Celebrates the birth of Buddha. Temples are decorated with colorful lanterns. Lotus lantern festival in Seoul.', daysOff: 1 },
   { name: 'Memorial Day', korean: '현충일', solarDate: '2026-06-06', lunarDate: '-', description: 'Honors those who died in military service. A moment of silence is observed at 10 AM nationwide.', daysOff: 1 },
   { name: 'Liberation Day', korean: '광복절', solarDate: '2026-08-15', lunarDate: '-', description: 'Celebrates Korea\'s liberation from Japanese colonial rule in 1945.', daysOff: 1 },
-  { name: 'Chuseok', korean: '추석', solarDate: '2026-10-04', lunarDate: '8/15', description: 'Korean harvest thanksgiving. Families visit hometowns, perform ancestral rites, eat songpyeon (송편). Biggest travel season.', daysOff: 3 },
+  { name: 'Chuseok', korean: '추석', solarDate: '2026-09-25', lunarDate: '8/15', description: 'Korean harvest thanksgiving. Families visit hometowns, perform ancestral rites, eat songpyeon (송편). Biggest travel season.', daysOff: 3 },
   { name: 'National Foundation Day', korean: '개천절', solarDate: '2026-10-03', lunarDate: '-', description: 'Celebrates the legendary founding of Gojoseon, the first Korean kingdom, in 2333 BC.', daysOff: 1 },
   { name: 'Hangeul Day', korean: '한글날', solarDate: '2026-10-09', lunarDate: '-', description: 'Celebrates the creation of the Korean alphabet by King Sejong the Great in 1443.', daysOff: 1 },
   { name: 'Christmas', korean: '크리스마스', solarDate: '2026-12-25', lunarDate: '-', description: 'A public holiday in Korea. More of a couples\' date holiday than a family gathering day.', daysOff: 1 },

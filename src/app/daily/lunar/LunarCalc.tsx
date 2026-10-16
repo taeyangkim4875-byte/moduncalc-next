@@ -7,11 +7,11 @@ const HOLIDAYS_2026=[
   {name:'설날',lunar:'1월 1일',solar:'2026-02-17',emoji:'🧧'},
   {name:'정월대보름',lunar:'1월 15일',solar:'2026-03-03',emoji:'🌕'},
   {name:'삼짇날',lunar:'3월 3일',solar:'2026-04-19',emoji:'🌸'},
-  {name:'단오',lunar:'5월 5일',solar:'2026-06-24',emoji:'🎋'},
-  {name:'칠석',lunar:'7월 7일',solar:'2026-08-22',emoji:'🌌'},
-  {name:'백중',lunar:'7월 15일',solar:'2026-08-30',emoji:'🙏'},
-  {name:'추석',lunar:'8월 15일',solar:'2026-10-04',emoji:'🌾'},
-  {name:'중양절',lunar:'9월 9일',solar:'2026-10-27',emoji:'🏔️'},
+  {name:'단오',lunar:'5월 5일',solar:'2026-06-19',emoji:'🎋'},
+  {name:'칠석',lunar:'7월 7일',solar:'2026-08-19',emoji:'🌌'},
+  {name:'백중',lunar:'7월 15일',solar:'2026-08-27',emoji:'🙏'},
+  {name:'추석',lunar:'8월 15일',solar:'2026-09-25',emoji:'🌾'},
+  {name:'중양절',lunar:'9월 9일',solar:'2026-10-19',emoji:'🏔️'},
   {name:'동지',lunar:'양력 고정',solar:'2026-12-22',emoji:'🥣'},
 ];
 
@@ -20,8 +20,8 @@ const HOLIDAYS_2026=[
 const LUNAR_MONTH_STARTS_2026=[
   {month:1,solar:'2026-02-17',days:29},
   {month:2,solar:'2026-03-18',days:30},
-  {month:3,solar:'2026-04-17',days:29},
-  {month:4,solar:'2026-05-16',days:30},
+  {month:3,solar:'2026-04-17',days:30},
+  {month:4,solar:'2026-05-17',days:29},
   {month:5,solar:'2026-06-15',days:29},
   {month:6,solar:'2026-07-14',days:30},
   {month:7,solar:'2026-08-13',days:29},
