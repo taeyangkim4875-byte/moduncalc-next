@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     "국민연금, 건강보험, 고용보험, 산재보험의 요율과 혜택을 총정리합니다. 2026년 변경사항과 절약 팁까지.",
   alternates: { canonical: "https://moduncalc.com/guide/4-insurance" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "4대보험 완전 정리 - 2026년 요율·계산 방법·혜택",
     description:
       "국민연금, 건강보험, 고용보험, 산재보험의 요율과 혜택을 총정리합니다.",

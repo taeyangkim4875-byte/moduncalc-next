@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -6,9 +7,10 @@ import TimeCalc from "./TimeCalc";
 
 export const metadata: Metadata = {
   title: "시간 계산기 - 시간 더하기 빼기 · 근무시간 · 시간 차이",
-  description: "출근부터 퇴근까지 실 근무시간은? 시간 차이·더하기·빼기 + 시급 환산까지.",
+  description: "출근·퇴근 시각만 넣으면 실 근무시간이 바로. 시간 더하기·빼기와 시급 환산, 휴게시간 제외 규칙과 연장근로 가산수당 계산까지 한 곳에서.",
   alternates: { canonical: "https://moduncalc.com/daily/time" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "시간 계산기 - 시간 더하기 빼기 · 근무시간 · 시간 차이",
     description: "두 시간 사이의 차이를 계산하거나, 시간을 더하고 빼세요. 근무시간, 알바 시간 계산에 활용.",
     url: "https://moduncalc.com/daily/time",

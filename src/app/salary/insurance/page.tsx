@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import { ogImageUrl } from "@/utils/og";
 import { won } from "@/utils/format";
 import InsuranceCalc from "./InsuranceCalc";
@@ -19,6 +20,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     description: "월 급여를 입력하면 국민연금, 건강보험, 장기요양, 고용보험 4대보험료를 근로자·사업주 부담분으로 나눠 계산합니다. 2026년 최신 요율 반영.",
     alternates: { canonical: "https://moduncalc.com/salary/insurance" },
     openGraph: {
+      ...KO_OPEN_GRAPH,
       title: "4대보험 계산기 - 국민연금·건강보험·고용보험 보험료 (2026)",
       description: "월급 입력하면 4대보험료 상세 내역을 근로자·사업주 부담분으로 계산. 2026년 요율 적용.",
       url: "https://moduncalc.com/salary/insurance",
@@ -173,6 +175,7 @@ export default function Page() {
           제도 전반은 <SeoLink href="/guide/4-insurance">4대보험 완전 정리</SeoLink>에 자세히 적어두었습니다.
         </p>
       </SeoSection>
+      <SeoSource route="/salary/insurance" />
     </PageLayout>
   );
 }

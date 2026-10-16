@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korea Visa Types for Foreign Workers - Complete Guide (2026)",
+  title: "Korea Visa Types for Foreign Workers (2026)",
   description:
     "Guide to Korean work visas: E-2 teaching, E-7 professional, F-2 residence, F-4 overseas Korean, and more. Requirements, duration, and how to apply.",
   alternates: { canonical: "https://moduncalc.com/en/guide/visa-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korea Visa Types for Foreign Workers - Complete Guide (2026)",
     description:
       "Guide to Korean work visas: E-2 teaching, E-7 professional, F-2 residence, F-4 overseas Korean, and more. Requirements, duration, and how to apply.",

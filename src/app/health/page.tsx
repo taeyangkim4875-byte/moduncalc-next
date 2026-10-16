@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { HubGroups } from '@/components/CategoryHub';
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: 'BMI 체질량지수, 기초대사량(BMR), 체지방률, 하루 칼로리, 수면 사이클, 물 섭취량까지. 아시아태평양 기준을 적용한 무료 건강 계산기.',
   alternates: { canonical: 'https://moduncalc.com/health' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '건강 계산기 모음',
     description: 'BMI·기초대사량·체지방률·칼로리·수면·물 섭취량을 한 곳에서.',
     url: 'https://moduncalc.com/health',

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "정가와 할인율을 입력하면 할인가를 바로 계산. 이중 할인, 1+1·2+1 행사 단가 비교까지 한번에.",
   alternates: { canonical: "https://moduncalc.com/daily/discount" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "할인가 계산기 - 할인율·이중할인·1+1 단가 비교",
     description: "정가와 할인율을 입력하면 할인가를 바로 계산. 이중 할인, 1+1·2+1 행사 단가 비교까지 한번에.",
     url: "https://moduncalc.com/daily/discount",

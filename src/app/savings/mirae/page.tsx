@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import MiraeCalculator from "./MiraeCalculator";
 
 export const metadata: Metadata = {
   title: "청년미래적금 계산기 - 지금까지 모은 돈 · 은행별 우대금리 비교 · 만기 수령액",
   description: "내 미래적금에 지금 얼마 쌓였을까? 7개 은행 우대금리 한눈에 비교 + 정부기여금 포함 만기 수령액 계산.",
   alternates: { canonical: "https://moduncalc.com/savings/mirae" },
-  openGraph: { title: "청년미래적금 계산기 - 은행별 우대금리 비교 · 지금까지 모은 돈", description: "KB·NH·신한·하나·우리·기업·우체국 우대금리 비교 + 만기 수령액 바로 계산.", url: "https://moduncalc.com/savings/mirae" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "청년미래적금 계산기 - 은행별 우대금리 비교 · 지금까지 모은 돈", description: "KB·NH·신한·하나·우리·기업·우체국 우대금리 비교 + 만기 수령액 바로 계산.", url: "https://moduncalc.com/savings/mirae" },
 };
 
 export default function Page() {
@@ -62,6 +63,7 @@ export default function Page() {
           { q: '미래적금 이자에 세금이 붙나요?', a: '비과세입니다. 3년간 발생하는 이자소득 전액이 비과세 처리되어 15.4% 이자소득세를 내지 않아요. 일반 적금 대비 연 8% 기준으로 약 48만원의 세금을 아끼는 셈입니다.' },
         ]}
       />
+      <SeoSource route="/savings/mirae" />
     </PageLayout>
   );
 }

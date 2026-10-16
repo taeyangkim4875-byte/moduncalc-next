@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink, SeoFormula } from "@/components/SeoContent";
 import DueDateCalc from "./DueDateCalc";
 export const metadata: Metadata = { title: "출산 예정일 계산기 - 임신 주수 · 예정일 자동 계산", description: "마지막 생리 시작일로 출산 예정일과 현재 임신 주수를 계산하세요. 주요 검진 일정도 안내합니다.", alternates: { canonical: "https://moduncalc.com/daily/due-date" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "출산 예정일 계산기 - 임신 주수 · 예정일 자동 계산",
     description: "마지막 생리 시작일로 출산 예정일과 현재 임신 주수를 계산하세요. 주요 검진 일정도 안내합니다.",
     url: "https://moduncalc.com/daily/due-date",

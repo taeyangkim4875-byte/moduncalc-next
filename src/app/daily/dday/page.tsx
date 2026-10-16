@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -6,11 +7,12 @@ import DdayCalc from "./DdayCalc";
 
 export const metadata: Metadata = {
   title: "D-day 계산기 - 날짜 차이·날짜 더하기",
-  description: "그날까지 며칠 남았을까? 두 날짜 사이 일수 + 날짜 더하기/빼기 바로 계산.",
+  description: "그날까지 며칠 남았을까? 두 날짜 사이 일수와 날짜 더하기·빼기를 바로 계산합니다. D-day와 D+1 표기법 차이도 함께 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/daily/dday" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "D-day 계산기 - 날짜 차이·날짜 더하기",
-    description: "그날까지 며칠 남았을까? 두 날짜 사이 일수 + 날짜 더하기/빼기 바로 계산.",
+    description: "그날까지 며칠 남았을까? 두 날짜 사이 일수와 날짜 더하기·빼기를 바로 계산합니다. D-day와 D+1 표기법 차이도 함께 정리했습니다.",
     url: "https://moduncalc.com/daily/dday",
   },
 };

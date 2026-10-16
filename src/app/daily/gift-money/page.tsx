@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { SeoSection, SeoFaq, SeoList, SeoLink } from '@/components/SeoContent';
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     '친구 결혼식 축의금 얼마 내야 할까? 관계와 참석 여부, 예식장 식대를 넣으면 근거와 함께 범위를 알려드려요. 인크루트 설문과 한국소비자원 식대 조사 기준.',
   alternates: { canonical: 'https://moduncalc.com/daily/gift-money' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '축의금 계산기 - 관계·식대로 적정 범위 확인',
     description: '설문 데이터와 예식장 식대를 근거로 축의금 범위를 판단해 드려요.',
     url: 'https://moduncalc.com/daily/gift-money',

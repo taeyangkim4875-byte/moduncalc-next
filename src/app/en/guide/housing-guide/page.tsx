@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Renting in Korea as a Foreigner - Jeonse, Wolse & Everything In Between",
+  title: "Renting in Korea as a Foreigner - Jeonse vs Wolse",
   description:
     "Complete guide to Korean rental systems for foreigners: jeonse deposits, wolse monthly rent, finding apartments, contracts, and protecting your deposit.",
   alternates: { canonical: "https://moduncalc.com/en/guide/housing-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Renting in Korea as a Foreigner - Jeonse, Wolse & Everything In Between",
     description:
       "Complete guide to Korean rental systems for foreigners: jeonse deposits, wolse monthly rent, finding apartments, contracts, and protecting your deposit.",

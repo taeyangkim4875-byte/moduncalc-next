@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink, SeoFormula } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "사귄 날짜를 입력하면 100일, 200일, 300일, 500일, 1000일 기념일을 자동 계산합니다. 다음 기념일까지 남은 일수도 확인.",
   alternates: { canonical: "https://moduncalc.com/daily/anniversary" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "기념일 계산기 - 연애 100일·200일·1000일 자동 계산",
     description: "사귄 날짜를 입력하면 100일, 200일, 300일, 500일, 1000일 기념일을 자동 계산합니다. 다음 기념일까지 남은 일수도 확인.",
     url: "https://moduncalc.com/daily/anniversary",

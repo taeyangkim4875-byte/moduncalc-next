@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description: "어린이·청소년의 BMI를 계산하고 성장 백분위를 확인하세요. 2~18세 소아 비만도 판정.",
   alternates: { canonical: "https://moduncalc.com/daily/bmi-child" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "어린이 BMI 계산기 - 소아 청소년 성장 백분위 (2026)",
     description: "어린이·청소년의 BMI를 계산하고 성장 백분위를 확인하세요. 2~18세 소아 비만도 판정.",
     url: "https://moduncalc.com/daily/bmi-child",

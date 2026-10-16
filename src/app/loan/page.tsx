@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -21,6 +22,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     description: "대출 월 납입액 얼마? 원리금균등 vs 원금균등 비교, 총 이자 차이까지 한눈에. 거치기간 포함.",
     alternates: { canonical: "https://moduncalc.com/loan" },
     openGraph: {
+      ...KO_OPEN_GRAPH,
       title: "대출 이자 계산기 - 원리금균등 vs 원금균등 비교 (2026)",
       description: "대출 금액·금리·기간 입력하면 월 납입액과 총 이자를 원리금균등·원금균등으로 비교. 거치기간 포함.",
       url: "https://moduncalc.com/loan",

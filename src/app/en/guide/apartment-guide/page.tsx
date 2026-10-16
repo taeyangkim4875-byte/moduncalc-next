@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Renting an Apartment in Korea as a Foreigner - Complete Guide 2026",
+  title: "Renting an Apartment in Korea as a Foreigner (2026)",
   description:
     "Renting in Korea as a foreigner? Jeonse vs wolse explained, how to find apartments, contract terms in English, deposit protection.",
   alternates: { canonical: "https://moduncalc.com/en/guide/apartment-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Renting an Apartment in Korea as a Foreigner - Complete Guide 2026",
     description:
       "How to find and rent an apartment in Korea. Jeonse vs wolse, real estate agents, contracts, deposits, and tenant rights.",

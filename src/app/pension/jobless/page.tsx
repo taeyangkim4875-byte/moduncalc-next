@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import JoblessCalculator from "./JoblessCalculator";
 
 export const metadata: Metadata = {
   title: "2026 실업급여 계산기 - 구직급여 예상 수령액",
   description: "퇴사하면 실업급여 얼마 받을 수 있을까? 나이·근무기간 입력하면 예상 수령액·기간 바로 계산. 2026 상한 반영.",
   alternates: { canonical: "https://moduncalc.com/pension/jobless" },
-  openGraph: { title: "2026 실업급여 계산기 - 구직급여 예상 수령액 조회", description: "퇴사 후 받을 수 있는 실업급여 금액과 수급 기간을 계산. 2026년 상한·하한 반영. 자발적 퇴사 수급 조건도 안내.", url: "https://moduncalc.com/pension/jobless" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "2026 실업급여 계산기 - 구직급여 예상 수령액 조회", description: "퇴사 후 받을 수 있는 실업급여 금액과 수급 기간을 계산. 2026년 상한·하한 반영. 자발적 퇴사 수급 조건도 안내.", url: "https://moduncalc.com/pension/jobless" },
 };
 
 export default function Page() {
@@ -59,6 +60,7 @@ export default function Page() {
           { q: '실업급여에 세금이 붙나요?', a: '구직급여는 비과세소득입니다. 소득세도, 4대보험료도 부과되지 않아요. 다만 종합소득세 신고 시 소득 합산에는 포함되지 않으니까 다른 소득과 별개로 생각하면 됩니다.' },
         ]}
       />
+      <SeoSource route="/pension/jobless" />
     </PageLayout>
   );
 }

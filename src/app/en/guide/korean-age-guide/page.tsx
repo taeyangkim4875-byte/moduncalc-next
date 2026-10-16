@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korean Age System Explained - Why Koreans Are 'Older' Than You Think",
+  title: "Korean Age System Explained - How Age Works in Korea",
   description:
     "Everything about the Korean age system: how it works, why it changed in 2023, and when each system is still used.",
   alternates: { canonical: "https://moduncalc.com/en/guide/korean-age-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korean Age System Explained - Why Koreans Are 'Older' Than You Think",
     description:
       "Everything about the Korean age system: how it works, why it changed in 2023, and when each system is still used.",

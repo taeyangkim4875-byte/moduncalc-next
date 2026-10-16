@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korea Healthcare System Guide for Foreigners - NHI, Clinics & Hospitals",
+  title: "Korea Healthcare Guide for Foreigners - NHI & Hospitals",
   description: "How does Korean healthcare work? NHI enrollment, finding a doctor, prescription system, dental care & health checkups.",
   alternates: { canonical: "https://moduncalc.com/en/guide/healthcare-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korea Healthcare System Guide for Foreigners - NHI, Clinics & Hospitals",
     description: "Complete guide to Korean healthcare for foreigners: NHI enrollment, hospital system, prescription pickup, dental/vision, and health checkups.",
     url: "https://moduncalc.com/en/guide/healthcare-guide",

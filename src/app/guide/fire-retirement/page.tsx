@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "FIRE(Financial Independence, Retire Early) 개념과 실현 방법을 단계별로 설명합니다.",
   alternates: { canonical: "https://moduncalc.com/guide/fire-retirement" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "FIRE 조기 은퇴 가이드 - 경제적 자유 달성 전략",
     description: "FIRE(Financial Independence, Retire Early) 개념과 실현 방법을 단계별로 설명합니다.",
     url: "https://moduncalc.com/guide/fire-retirement",

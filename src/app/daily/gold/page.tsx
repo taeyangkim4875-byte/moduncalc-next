@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink, SeoFormula } from "@/components/SeoContent";
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "금 시세 계산기 - 금 1돈·1g 가격 환산 (2026)",
   description: "금 무게(돈, g, oz)를 입력하면 현재 시세 기준 금액을 환산합니다. 1돈=3.75g. 금 투자 참고용.",
   alternates: { canonical: "https://moduncalc.com/daily/gold" },
-  openGraph: { title: "금 시세 계산기 - 금 1돈·1g 가격 환산 (2026)", description: "금 무게(돈, g, oz)를 입력하면 현재 시세 기준 금액을 환산합니다.", url: "https://moduncalc.com/daily/gold" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "금 시세 계산기 - 금 1돈·1g 가격 환산 (2026)", description: "금 무게(돈, g, oz)를 입력하면 현재 시세 기준 금액을 환산합니다.", url: "https://moduncalc.com/daily/gold" },
 };
 
 export default function Page() {

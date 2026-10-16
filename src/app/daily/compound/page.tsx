@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import CompoundCalc from "./CompoundCalc";
 export const metadata: Metadata = { title: "복리 계산기 - 원금 · 이자 · 투자 기간별 수익 시뮬레이션", description: "1,000만원을 10년 투자하면 얼마 될까? 복리 수익 시뮬레이션 + 72의 법칙. 월 적립도 가능.", alternates: { canonical: "https://moduncalc.com/daily/compound" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "복리 계산기 - 원금 · 이자 · 투자 기간별 수익 시뮬레이션",
     description: "1,000만원을 10년 투자하면 얼마 될까? 복리 수익 시뮬레이션 + 72의 법칙. 월 적립도 가능.",
     url: "https://moduncalc.com/daily/compound",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "방 크기를 입력하면 필요한 페인트량(L)과 벽지 롤 수를 자동 계산. 셀프 인테리어 필수 도구.",
   alternates: { canonical: "https://moduncalc.com/daily/paint" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "페인트 벽지 계산기 - 방 면적에 필요한 자재량 계산",
     description: "방 크기를 입력하면 필요한 페인트량(L)과 벽지 롤 수를 자동 계산. 셀프 인테리어 필수 도구.",
     url: "https://moduncalc.com/daily/paint",

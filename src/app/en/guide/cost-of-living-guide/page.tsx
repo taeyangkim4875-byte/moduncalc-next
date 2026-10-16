@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     "Detailed breakdown of monthly expenses in Seoul, Busan, and other Korean cities. Covers rent, food, transport, utilities, and money-saving tips.",
   alternates: { canonical: "https://moduncalc.com/en/guide/cost-of-living-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Cost of Living in Korea 2026 - Budget Guide for Foreigners",
     description:
       "Detailed breakdown of monthly expenses in Seoul, Busan, and other Korean cities. Covers rent, food, transport, utilities, and money-saving tips.",

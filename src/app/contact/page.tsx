@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "모든 계산기(moduncalc.com)에 대한 오류 신고, 기능 건의, 세율 문의, 제휴 문의를 받고 있습니다. 운영자 김태양이 직접 확인하고 답변드립니다.",
   alternates: { canonical: "https://moduncalc.com/contact" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "문의하기 - 모든 계산기",
     description: "오류 신고, 기능 건의, 세율 문의를 받고 있습니다. 운영자가 직접 확인합니다.",
     url: "https://moduncalc.com/contact",

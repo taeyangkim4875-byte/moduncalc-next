@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korean Health Insurance for Foreigners - NHI Coverage, Costs & Tips (2026)",
+  title: "Korean Health Insurance for Foreigners - NHI Costs (2026)",
   description:
     "Complete guide to National Health Insurance in Korea for foreigners: enrollment, premiums, coverage, and how to save on medical costs.",
   alternates: { canonical: "https://moduncalc.com/en/guide/health-insurance-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korean Health Insurance for Foreigners - NHI Coverage, Costs & Tips (2026)",
     description:
       "Complete guide to National Health Insurance in Korea for foreigners: enrollment, premiums, coverage, and how to save on medical costs.",

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "How to Get Your ARC (Alien Registration Card) in Korea - 2026 Guide",
+  title: "How to Get Your ARC in Korea - Alien Registration Card",
   description:
     "How to get your ARC in Korea? Step-by-step: documents, cost ₩30,000, timeline 2-3 weeks. Mobile ARC now available.",
   alternates: { canonical: "https://moduncalc.com/en/guide/arc-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "How to Get Your ARC (Alien Registration Card) in Korea - 2026 Guide",
     description:
       "Step-by-step guide to getting your Residence Card (ARC/외국인등록증) in Korea. Documents, cost ₩30,000, timeline, and what to do after.",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq } from "@/components/SeoContent";
@@ -6,11 +7,12 @@ import YouTubeCalc from "./YouTubeCalc";
 
 export const metadata: Metadata = {
   title: "유튜브 수익 계산기 - 조회수별 예상 수익",
-  description: "유튜브 조회수와 CPM으로 예상 광고 수익을 계산하세요.",
+  description: "조회수와 CPM만 입력하면 유튜브 예상 광고 수익이 바로. 카테고리별 CPM 차이와 구독자 수별 현실적인 월 수익까지 함께 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/daily/youtube" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "유튜브 수익 계산기 - 조회수별 예상 수익",
-    description: "유튜브 조회수와 CPM으로 예상 광고 수익을 계산하세요.",
+    description: "조회수와 CPM만 입력하면 유튜브 예상 광고 수익이 바로. 카테고리별 CPM 차이와 구독자 수별 현실적인 월 수익까지 함께 확인하세요.",
     url: "https://moduncalc.com/daily/youtube",
   },
 };

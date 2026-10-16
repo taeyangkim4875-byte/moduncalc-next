@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import { ogImageUrl } from "@/utils/og";
 import { won } from "@/utils/format";
 import AcqTaxCalc from "./AcqTaxCalc";
@@ -18,9 +19,10 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
   const base: Metadata = {
     title: "취득세 계산기 - 주택 매매 취득세·농특세·교육세",
-    description: "집 사면 취득세 얼마? 매매가·주택 수 입력하면 취득세+농특세+교육세 바로 계산.",
+    description: "집 사면 취득세 얼마? 매매가와 주택 수만 넣으면 취득세·농어촌특별세·지방교육세가 한 번에 나옵니다. 6억~9억 구간 세율 계산식까지 정리했습니다.",
     alternates: { canonical: "https://moduncalc.com/realestate/acqtax" },
     openGraph: {
+      ...KO_OPEN_GRAPH,
       title: "취득세 계산기 - 주택 매매 취득세·농특세·교육세 (2026)",
       description: "주택 매매가와 주택 수를 입력하면 취득세·농어촌특별세·지방교육세를 자동 계산. 다주택 중과세율 반영.",
       url: "https://moduncalc.com/realestate/acqtax",
@@ -113,6 +115,7 @@ export default function Page() {
           전세로 방향을 잡았다면 <SeoLink href="/guide/jeonse">전세 계약 완전 가이드</SeoLink>가 도움이 됩니다.
         </p>
       </SeoSection>
+      <SeoSource route="/realestate/acqtax" />
     </PageLayout>
   );
 }

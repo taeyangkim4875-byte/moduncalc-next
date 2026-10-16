@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "First 90 Days in Korea - Essential Checklist for New Foreigners",
+  title: "First 90 Days in Korea - Checklist for New Foreigners",
   description:
     "Just arrived in Korea? Week-by-week checklist: ARC, bank account, phone, housing, insurance. Don't miss these critical steps.",
   alternates: { canonical: "https://moduncalc.com/en/guide/first-90-days" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "First 90 Days in Korea - Essential Checklist for New Foreigners",
     description:
       "Just arrived in Korea? Complete checklist for your first 90 days: ARC, bank account, phone, insurance, housing, and more.",

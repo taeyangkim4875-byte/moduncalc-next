@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Year-End Tax Settlement for Foreigners in Korea (연말정산 Guide)",
+  title: "Year-End Tax Settlement for Foreigners in Korea",
   description:
     "Step-by-step guide to year-end tax settlement for foreign workers: what to submit, what you can deduct, and how to get your refund.",
   alternates: { canonical: "https://moduncalc.com/en/guide/year-end-settlement" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Year-End Tax Settlement for Foreigners in Korea (연말정산 Guide)",
     description:
       "Step-by-step guide to year-end tax settlement for foreign workers: what to submit, what you can deduct, and how to get your refund.",

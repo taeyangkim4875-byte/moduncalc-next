@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "개인정보처리방침 - 모든 계산기",
-  description: "모든 계산기(moduncalc.com)의 개인정보 수집·이용·보호에 관한 안내입니다.",
+  description: "모든 계산기(moduncalc.com)의 개인정보처리방침입니다. 수집하는 정보와 목적, 보유 기간, 쿠키와 구글 애널리틱스·애드센스 이용 내역, 이용자 권리와 행사 방법을 안내합니다.",
   alternates: { canonical: "https://moduncalc.com/privacy" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "개인정보처리방침 - 모든 계산기",
-    description: "모든 계산기(moduncalc.com)의 개인정보 수집·이용·보호에 관한 안내입니다.",
+    description: "모든 계산기(moduncalc.com)의 개인정보처리방침입니다. 수집하는 정보와 목적, 보유 기간, 쿠키와 구글 애널리틱스·애드센스 이용 내역, 이용자 권리와 행사 방법을 안내합니다.",
     url: "https://moduncalc.com/privacy",
   },
 };

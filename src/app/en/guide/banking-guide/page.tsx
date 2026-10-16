@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Opening a Bank Account in Korea as a Foreigner - Complete Guide",
+  title: "Opening a Bank Account in Korea as a Foreigner",
   description:
     "Step-by-step guide to opening a Korean bank account: required documents, best banks, online banking, and international transfers.",
   alternates: { canonical: "https://moduncalc.com/en/guide/banking-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Opening a Bank Account in Korea as a Foreigner - Complete Guide",
     description:
       "Step-by-step guide to opening a Korean bank account: required documents, best banks, online banking, and international transfers.",

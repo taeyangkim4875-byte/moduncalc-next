@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import MoveOutCalc from './MoveOutCalc';
 
 export const metadata: Metadata = {
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     '이사 나갈 때 받을 금액을 한 번에 계산합니다. 보증금, 장기수선충당금 반환, 퇴거월 월세·관리비 일할, 공과금·원상복구 공제까지. 세입자·집주인 양쪽 입장으로 전환할 수 있고 정산 요청서도 바로 만들어 드려요.',
   alternates: { canonical: 'https://moduncalc.com/realestate/move-out' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '이사 정산 계산기 - 보증금·장기수선충당금 받을 금액 계산',
     description: '퇴거 시 받을 금액과 공제액을 항목별로 정리하고 정산 요청서까지 만들어 드려요.',
     url: 'https://moduncalc.com/realestate/move-out',
@@ -225,6 +227,7 @@ export default function Page() {
           전세 계약 자체가 처음이라면 <SeoLink href="/guide/jeonse">전세 계약 안전하게 하는 법</SeoLink>을 먼저 읽어보세요.
         </p>
       </SeoSection>
+      <SeoSource route="/realestate/move-out" />
     </PageLayout>
   );
 }

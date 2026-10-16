@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 import Card from '@/components/Card';
 import { FaqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Leaving Korea Checklist - The 90-Day Timeline and What You Get Back',
+  title: 'Leaving Korea Checklist - The 90-Day Timeline (2026)',
   description:
     'Everything you must reclaim before leaving Korea, in the order it has to happen: housing deposit, severance, pension refund, tax settlement, health insurance, phone and bank account. Includes the deposit mistake that costs foreigners the most money.',
   alternates: { canonical: 'https://moduncalc.com/en/guide/leaving-korea-checklist' },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: 'Leaving Korea Checklist - The 90-Day Timeline',
     description:
       'The order matters more than the list. A dependency-ordered plan for your final 90 days in Korea, and the money you leave behind if you get it wrong.',

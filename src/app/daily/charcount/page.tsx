@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description: "자소서 글자수 제한 초과? 붙여넣기만 하면 글자수·바이트·단어수 + 플랫폼별 제한 체크 + 키워드 분석까지 무료.",
   alternates: { canonical: "https://moduncalc.com/daily/charcount" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "글자수 세기 - 자소서·블로그·SNS 글자수 실시간 카운터",
     description: "글자수(공백 포함/제외), 바이트, 단어수, 키워드 빈도까지. 플랫폼별 제한 초과 체크 + 읽기 시간 + 원고지 환산.",
     url: "https://moduncalc.com/daily/charcount",

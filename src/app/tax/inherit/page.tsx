@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoSource } from "@/components/SeoContent";
 import InheritTaxCalc from "./InheritTaxCalc";
-export const metadata: Metadata = { title: "상속세 계산기 - 2026 상속세율 · 공제 자동 계산", description: "상속세 얼마 나올까? 상속재산 입력하면 배우자·일괄공제 자동 적용. 실효세율까지 확인.", alternates: { canonical: "https://moduncalc.com/tax/inherit" },
+export const metadata: Metadata = { title: "상속세 계산기 - 2026 상속세율 · 공제 자동 계산", description: "상속세 얼마 나올까? 상속재산만 넣으면 배우자공제와 일괄공제가 자동 적용되고 실효세율까지 나옵니다. 상속과 증여 중 유리한 쪽을 비교하는 기준도 정리했습니다.", alternates: { canonical: "https://moduncalc.com/tax/inherit" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "상속세 계산기 - 2026 상속세율 · 공제 자동 계산",
-    description: "상속세 얼마 나올까? 상속재산 입력하면 배우자·일괄공제 자동 적용. 실효세율까지 확인.",
+    description: "상속세 얼마 나올까? 상속재산만 넣으면 배우자공제와 일괄공제가 자동 적용되고 실효세율까지 나옵니다. 상속과 증여 중 유리한 쪽을 비교하는 기준도 정리했습니다.",
     url: "https://moduncalc.com/tax/inherit",
   },};
 export default function Page() { return (<PageLayout eyebrow="세금" title="상속세 계산기" description="상속재산과 상속인 정보를 입력하면 상속세를 실시간으로 계산합니다.">
@@ -68,6 +70,7 @@ export default function Page() { return (<PageLayout eyebrow="세금" title="상
           { q: '해외 재산도 상속세 대상인가요?', a: '피상속인이 거주자(한국에 주소가 있는 사람)이면 전 세계 재산이 과세 대상입니다. 비거주자라면 한국 내 재산만 과세돼요.' },
         ]}
       />
+      <SeoSource route="/tax/inherit" />
     </PageLayout>
   );
 }

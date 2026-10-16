@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import LiveCounter from "./LiveCounter";
 import ShareButtons from '@/components/ShareButtons';
-export const metadata: Metadata = { title: "월급 카운터 - 지금 이 순간 벌고 있는 돈", description: "지금 이 순간에도 돈을 벌고 있다! 연봉 입력하면 초당 버는 돈을 실시간으로 보여드려요.", alternates: { canonical: "https://moduncalc.com/salary/live" },
+export const metadata: Metadata = { title: "월급 카운터 - 지금 이 순간 벌고 있는 돈", description: "지금 이 순간에도 돈을 벌고 있습니다. 연봉을 넣으면 초당·분당 버는 돈을 실시간으로 보여드려요. 연봉별 초당 금액 비교와 회의 비용 환산까지.", alternates: { canonical: "https://moduncalc.com/salary/live" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "월급 카운터 - 지금 이 순간 벌고 있는 돈",
-    description: "지금 이 순간에도 돈을 벌고 있다! 연봉 입력하면 초당 버는 돈을 실시간으로 보여드려요.",
+    description: "지금 이 순간에도 돈을 벌고 있습니다. 연봉을 넣으면 초당·분당 버는 돈을 실시간으로 보여드려요. 연봉별 초당 금액 비교와 회의 비용 환산까지.",
     url: "https://moduncalc.com/salary/live",
   },};
 export default function Page() {

@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import BodyFatCalc from "./BodyFatCalc";
 export const metadata: Metadata = { title: "체지방률 계산기 - 미 해군 공식 기반 체지방 측정", description: "내 체지방률은 몇 %? 허리·목 둘레만 재면 바로 측정. BMI보다 정확한 US Navy 공식.", alternates: { canonical: "https://moduncalc.com/health/bodyfat" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "체지방률 계산기 - 미 해군 공식 기반 체지방 측정",
     description: "내 체지방률은 몇 %? 허리·목 둘레만 재면 바로 측정. BMI보다 정확한 US Navy 공식.",
     url: "https://moduncalc.com/health/bodyfat",

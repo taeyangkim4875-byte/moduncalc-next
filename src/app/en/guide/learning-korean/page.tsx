@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Learning Korean as a Foreigner - Free Resources & Study Tips (2026)",
+  title: "Learning Korean as a Foreigner - Free Resources (2026)",
   description: "Best ways to learn Korean? Free apps, classes, TOPIK prep & immersion tips. From zero to conversational.",
   alternates: { canonical: "https://moduncalc.com/en/guide/learning-korean" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Learning Korean as a Foreigner - Free Resources & Study Tips (2026)",
     description: "Complete guide to learning Korean: free apps, government classes (KIIP), TOPIK test prep, university programs, and immersion tips.",
     url: "https://moduncalc.com/en/guide/learning-korean",

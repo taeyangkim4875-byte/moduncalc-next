@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import DoyakCalculator from "./DoyakCalculator";
 
 export const metadata: Metadata = {
   title: "청년도약계좌 계산기 - 지금까지 모은 돈 · 만기 수령액 · 특별중도해지",
   description: "내 도약계좌에 지금까지 얼마 모였을까? 원금+이자+정부기여금 적립액 바로 확인. 변동금리 반영, 특별중도해지 사유 안내.",
   alternates: { canonical: "https://moduncalc.com/savings/doyak" },
-  openGraph: { title: "청년도약계좌 계산기 - 지금까지 모은 돈 · 특별중도해지 (2026)", description: "도약계좌 적립액 조회 + 만기 수령액 + 특별중도해지 9가지 사유. 2026 변동금리 반영.", url: "https://moduncalc.com/savings/doyak" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "청년도약계좌 계산기 - 지금까지 모은 돈 · 특별중도해지 (2026)", description: "도약계좌 적립액 조회 + 만기 수령액 + 특별중도해지 9가지 사유. 2026 변동금리 반영.", url: "https://moduncalc.com/savings/doyak" },
 };
 
 export default function Page() {
@@ -59,6 +60,7 @@ export default function Page() {
           { q: '군 복무 중에도 도약계좌를 유지할 수 있나요?', a: '네. 군 복무 중 납입이 어려우면 월 1천원만 넣어도 유지됩니다. 만기가 군 복무 기간만큼 자동 연장되진 않으니, 입대 전 납입 전략을 세워두는 게 좋아요.' },
         ]}
       />
+      <SeoSource route="/savings/doyak" />
     </PageLayout>
   );
 }

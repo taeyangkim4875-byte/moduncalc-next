@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoLink } from "@/components/SeoContent";
@@ -7,11 +8,12 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "주식 수익률 계산기 - 손익·물타기 계산",
-  description: "내 주식 수익률은 몇 %? 매수가·현재가 입력하면 손익 + 물타기 시뮬레이션까지 바로.",
+  description: "내 주식 수익률은 몇 %? 매수가·현재가만 넣으면 손익이 바로. 물타기 시뮬레이션과, -30%에서 본전까지 40%가 필요한 이유까지 함께 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/daily/stock" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "주식 수익률 계산기 - 손익·물타기 계산",
-    description: "내 주식 수익률은 몇 %? 매수가·현재가 입력하면 손익 + 물타기 시뮬레이션까지 바로.",
+    description: "내 주식 수익률은 몇 %? 매수가·현재가만 넣으면 손익이 바로. 물타기 시뮬레이션과, -30%에서 본전까지 40%가 필요한 이유까지 함께 확인하세요.",
     url: "https://moduncalc.com/daily/stock",
   },
 };

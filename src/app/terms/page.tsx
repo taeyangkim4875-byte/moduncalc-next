@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -6,9 +7,10 @@ import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "이용약관",
-  description: "모든 계산기(moduncalc.com) 서비스 이용약관",
+  description: "모든 계산기(moduncalc.com) 서비스 이용약관입니다. 서비스 제공 범위, 이용자의 의무, 계산 결과의 효력과 책임 한계, 약관 변경 절차를 안내합니다.",
   alternates: { canonical: "https://moduncalc.com/terms" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "이용약관 - 모든 계산기",
     description: "모든 계산기(moduncalc.com) 서비스 이용에 관한 약관입니다.",
     url: "https://moduncalc.com/terms",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -6,11 +7,12 @@ import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "원리금균등 vs 원금균등 상환 - 어떤 게 유리할까?",
-  description: "대출 상환 방식의 차이와 각각의 장단점을 비교합니다.",
+  description: "원리금균등과 원금균등, 총이자는 얼마나 차이 날까? 두 상환 방식의 월 납입액 흐름을 비교하고 내 상황에 유리한 쪽을 고르는 기준을 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/guide/loan-comparison" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "원리금균등 vs 원금균등 상환 - 어떤 게 유리할까?",
-    description: "대출 상환 방식의 차이와 각각의 장단점을 비교합니다.",
+    description: "원리금균등과 원금균등, 총이자는 얼마나 차이 날까? 두 상환 방식의 월 납입액 흐름을 비교하고 내 상황에 유리한 쪽을 고르는 기준을 정리했습니다.",
     url: "https://moduncalc.com/guide/loan-comparison",
   },
 };

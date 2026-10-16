@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { ogImageUrl } from "@/utils/og";
 import { won } from "@/utils/format";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import PensionCalculator from "./PensionCalculator";
 
 type Props = {
@@ -20,6 +21,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     description: "내 국민연금 월 얼마 받을까? 소득·가입기간 입력하면 예상 수령액 바로 계산. 2026 연금개혁 반영.",
     alternates: { canonical: "https://moduncalc.com/pension/nps" },
     openGraph: {
+      ...KO_OPEN_GRAPH,
       title: "2026 국민연금 계산기 - 예상 월 수령액 조회",
       description: "현재 소득과 가입기간으로 노후 국민연금 예상 수령액을 계산. 2026 연금개혁 보험료율 9.5% 반영.",
       url: "https://moduncalc.com/pension/nps",
@@ -91,6 +93,7 @@ export default function Page() {
           { q: '해외에 나가면 연금을 못 받나요?', a: '해외 거주해도 수급 요건을 갖추면 정상적으로 지급됩니다. 해외 계좌로 송금도 가능해요. 다만 매년 생존 확인 서류를 제출해야 합니다. 사회보장협정 체결국이면 가입기간 합산도 가능합니다.' },
         ]}
       />
+      <SeoSource route="/pension/nps" />
     </PageLayout>
   );
 }

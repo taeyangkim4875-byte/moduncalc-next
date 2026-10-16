@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -6,11 +7,12 @@ import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "주식·ETF 세금 총정리 - 양도세·배당세·금투세 (2026)",
-  description: "주식 투자 시 발생하는 각종 세금을 초보자도 이해하기 쉽게 정리합니다.",
+  description: "주식·ETF에 붙는 세금을 한 번에. 국내외 주식 양도소득세, 배당소득세와 금융소득종합과세, 절세 계좌 활용법까지 초보자 눈높이로 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/guide/investment-tax" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "주식·ETF 세금 총정리 - 양도세·배당세·금투세 (2026)",
-    description: "주식 투자 시 발생하는 각종 세금을 초보자도 이해하기 쉽게 정리합니다.",
+    description: "주식·ETF에 붙는 세금을 한 번에. 국내외 주식 양도소득세, 배당소득세와 금융소득종합과세, 절세 계좌 활용법까지 초보자 눈높이로 정리했습니다.",
     url: "https://moduncalc.com/guide/investment-tax",
   },
 };

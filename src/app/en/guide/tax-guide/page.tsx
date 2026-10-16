@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korea Income Tax Guide for Foreigners - Everything You Need to Know (2026)",
+  title: "Korea Income Tax Guide for Foreigners (2026)",
   description:
     "Complete guide to Korean income tax for expats: progressive rates, flat tax option, deductions, year-end settlement, and filing tips.",
   alternates: { canonical: "https://moduncalc.com/en/guide/tax-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korea Income Tax Guide for Foreigners (2026)",
     description:
       "Complete guide to Korean income tax for expats: progressive rates, flat tax option, deductions, and filing tips.",

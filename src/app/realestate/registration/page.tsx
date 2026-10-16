@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoSource } from "@/components/SeoContent";
 import RegistrationCalc from "./RegistrationCalc";
 import ShareButtons from '@/components/ShareButtons';
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description: "부동산 매매 시 등기에 필요한 총비용을 계산. 취득세, 지방교육세, 인지세, 증지대, 법무사비 포함.",
   alternates: { canonical: "https://moduncalc.com/realestate/registration" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "등기비용 계산기 - 취득세·인지세·법무사비 포함 총비용 (2026)",
     description: "부동산 매매 시 등기에 필요한 총비용을 계산. 취득세, 지방교육세, 인지세, 증지대, 법무사비 포함.",
     url: "https://moduncalc.com/realestate/registration",
@@ -81,6 +83,7 @@ export default function Page() {
           { q: '신혼부부 취득세 감면은 어떻게 받나요?', a: '혼인신고일 기준 5년 이내, 수도권 4억·비수도권 3억 이하 주택에 대해 취득세 50%를 감면받을 수 있습니다. 위택스에서 감면 신청하면 됩니다.' },
         ]}
       />
+      <SeoSource route="/realestate/registration" />
     </PageLayout>
   );
 }

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Freelancer Tax Guide in Korea - Tax Rates, Filing & Tips for Foreigners",
+  title: "Freelancer Tax in Korea - Rates & Filing for Foreigners",
   description:
     "How freelance and self-employed taxes work in Korea for foreigners: 3.3% withholding, comprehensive income tax, and filing obligations.",
   alternates: { canonical: "https://moduncalc.com/en/guide/freelancer-tax" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Freelancer Tax Guide in Korea - Tax Rates, Filing & Tips for Foreigners",
     description:
       "How freelance and self-employed taxes work in Korea for foreigners: 3.3% withholding, comprehensive income tax, and filing obligations.",

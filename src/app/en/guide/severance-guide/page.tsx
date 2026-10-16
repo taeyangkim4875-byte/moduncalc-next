@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Severance Pay in Korea - Your Rights as a Foreign Worker (2026)",
+  title: "Severance Pay in Korea - Foreign Worker Rights (2026)",
   description:
     "Complete guide to Korean severance pay (퇴직금) for foreign workers: eligibility, calculation, tax, and what to do if your employer doesn't pay.",
   alternates: { canonical: "https://moduncalc.com/en/guide/severance-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Severance Pay in Korea - Your Rights as a Foreign Worker (2026)",
     description:
       "Complete guide to Korean severance pay (퇴직금) for foreign workers: eligibility, calculation, tax, and what to do if your employer doesn't pay.",

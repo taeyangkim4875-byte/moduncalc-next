@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -6,11 +7,12 @@ import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "퇴직금 계산법 완전 정리 - 지급 기준·세금·청구 방법",
-  description: "퇴직금 지급 조건, 계산법, 세금, 미지급 시 대처법을 상세 설명합니다.",
+  description: "퇴직금은 1년 이상 근무하면 받습니다. 지급 요건과 평균임금 계산법, 퇴직소득세, 못 받았을 때 노동청 진정 절차까지 단계별로 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/guide/severance-pay" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "퇴직금 계산법 완전 정리 - 지급 기준·세금·청구 방법",
-    description: "퇴직금 지급 조건, 계산법, 세금, 미지급 시 대처법을 상세 설명합니다.",
+    description: "퇴직금은 1년 이상 근무하면 받습니다. 지급 요건과 평균임금 계산법, 퇴직소득세, 못 받았을 때 노동청 진정 절차까지 단계별로 정리했습니다.",
     url: "https://moduncalc.com/guide/severance-pay",
   },
 };

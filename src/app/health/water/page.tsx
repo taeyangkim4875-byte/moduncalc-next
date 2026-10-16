@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -7,11 +8,12 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "물 섭취량 계산기 - 하루 권장 물 섭취량",
-  description: "체중과 활동량으로 하루 권장 물 섭취량을 계산합니다. 컵 수로도 안내.",
+  description: "체중과 활동량으로 하루 권장 물 섭취량을 계산하고 컵 수로 환산해 드립니다. '하루 8잔'이 정확한 기준이 아닌 이유와 운동 시 추가 수분량까지 설명합니다.",
   alternates: { canonical: "https://moduncalc.com/health/water" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "물 섭취량 계산기 - 하루 권장 물 섭취량",
-    description: "체중과 활동량으로 하루 권장 물 섭취량을 계산합니다. 컵 수로도 안내.",
+    description: "체중과 활동량으로 하루 권장 물 섭취량을 계산하고 컵 수로 환산해 드립니다. '하루 8잔'이 정확한 기준이 아닌 이유와 운동 시 추가 수분량까지 설명합니다.",
     url: "https://moduncalc.com/health/water",
   },
 };

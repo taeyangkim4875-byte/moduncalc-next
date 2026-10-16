@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink, SeoFormula } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "아기 생년월일을 입력하면 백일, 200일, 돌, 주요 기념일과 현재 개월 수를 자동 계산합니다.",
   alternates: { canonical: "https://moduncalc.com/daily/baby100" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "아기 100일 계산기 - 백일·돌·개월 수 자동 계산",
     description: "아기 생년월일을 입력하면 백일, 200일, 돌, 주요 기념일과 현재 개월 수를 자동 계산합니다.",
     url: "https://moduncalc.com/daily/baby100",

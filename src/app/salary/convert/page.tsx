@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -7,11 +8,12 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "연봉 환산기 - 내 월급으로 ___까지 얼마나 일해야 할까?",
-  description: "내 월급으로 아이폰 사려면 며칠? 테슬라는? 연봉 입력하면 물건별 근무 일수 바로 계산.",
+  description: "내 월급으로 아이폰 사려면 며칠 일해야 할까? 연봉만 넣으면 물건별 필요 근무 일수가 바로 나옵니다. 연봉별 체감 환산표도 함께 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/salary/convert" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "연봉 환산기 - 내 월급으로 ___까지 얼마나 일해야 할까?",
-    description: "내 월급으로 아이폰 사려면 며칠? 테슬라는? 연봉 입력하면 물건별 근무 일수 바로 계산.",
+    description: "내 월급으로 아이폰 사려면 며칠 일해야 할까? 연봉만 넣으면 물건별 필요 근무 일수가 바로 나옵니다. 연봉별 체감 환산표도 함께 확인하세요.",
     url: "https://moduncalc.com/salary/convert",
   },
 };

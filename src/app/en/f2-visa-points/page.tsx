@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     "Free F-2-7 points calculator for Korea's points-based residence visa. Score age, education, income, TOPIK/KIIP and bonuses instantly — see if you reach 80 points.",
   alternates: { canonical: "https://moduncalc.com/en/f2-visa-points" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "F-2-7 Visa Points Calculator 2026 - Korea Residence Visa Score",
     description:
       "Check your F-2-7 score in seconds. Age, education, income, TOPIK and KIIP scored against the 80-point pass mark. No sign-up.",

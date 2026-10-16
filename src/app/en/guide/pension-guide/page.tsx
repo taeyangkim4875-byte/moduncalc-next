@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korean National Pension for Foreigners - Contributions, Refunds & Treaties",
+  title: "Korean National Pension for Foreigners - Refunds (2026)",
   description:
     "Everything foreigners need to know about Korean National Pension: who pays, how much, lump-sum refund process, and pension treaty countries.",
   alternates: { canonical: "https://moduncalc.com/en/guide/pension-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korean National Pension for Foreigners - Contributions, Refunds & Treaties",
     description:
       "Everything foreigners need to know about Korean National Pension: who pays, how much, lump-sum refund process, and pension treaty countries.",

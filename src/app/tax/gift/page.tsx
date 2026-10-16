@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -6,9 +7,9 @@ import GiftTaxCalc from "./GiftTaxCalc";
 
 export const metadata: Metadata = {
   title: "증여세 계산기 - 가족 간 증여세 자동 계산",
-  description: "자녀에게 증여하면 세금 얼마? 금액·관계 입력하면 증여세 바로 계산. 혼인출산공제 반영.",
+  description: "자녀에게 증여하면 세금 얼마? 금액과 관계만 넣으면 증여세가 바로 나옵니다. 10년 합산 증여재산공제 한도와 혼인·출산 공제까지 반영했습니다.",
   alternates: { canonical: "https://moduncalc.com/tax/gift" },
-  openGraph: { title: "증여세 계산기 - 가족 간 증여세 자동 계산 (2026)", description: "증여재산가액과 관계를 입력하면 증여세를 자동 계산. 배우자·자녀 공제, 혼인출산공제, 신고세액공제 반영.", url: "https://moduncalc.com/tax/gift" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "증여세 계산기 - 가족 간 증여세 자동 계산 (2026)", description: "증여재산가액과 관계를 입력하면 증여세를 자동 계산. 배우자·자녀 공제, 혼인출산공제, 신고세액공제 반영.", url: "https://moduncalc.com/tax/gift" },
 };
 
 export default function Page() {

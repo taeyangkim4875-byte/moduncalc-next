@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "내 차 실제 연비는? 주행거리·주유량 입력하면 바로 측정. 서울→부산 유류비 + 전기차 비용 비교까지 무료.",
   alternates: { canonical: "https://moduncalc.com/daily/fuel" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "자동차 연비 계산기 - 연비·유류비·전기차 전비 비교 (2026)",
     description: "연비 측정 + 유류비 계산 + 전기차 충전비 비교. 내연차 vs 전기차 연간 절약액까지.",
     url: "https://moduncalc.com/daily/fuel",

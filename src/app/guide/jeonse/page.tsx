@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     "전세 계약 전 꼭 알아야 할 보증금 보호 방법과 체크리스트. 전세사기 예방법, 전월세 전환율, 계약갱신청구권까지 총정리.",
   alternates: { canonical: "https://moduncalc.com/guide/jeonse" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "전세 계약 완전 가이드 (2026)",
     description:
       "보증금 보호 방법, 계약 체크리스트, 전세사기 예방법을 총정리합니다.",

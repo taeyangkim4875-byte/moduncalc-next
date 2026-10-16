@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { HubGroups, HubGuides } from '@/components/CategoryHub';
-import { SeoSection, SeoFaq, SeoList, SeoLink } from '@/components/SeoContent';
+import { SeoSection, SeoFaq, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 
 export const metadata: Metadata = {
   title: '부동산 계산기 모음 - 취득세·등기비용·복비·양도세·전월세 전환',
   description: '취득세, 등기비용, 중개수수료(복비), 양도소득세, 전월세 전환율, 임대수익률, 청약 가점까지. 집을 사고 팔 때 필요한 계산을 한 곳에서.',
   alternates: { canonical: 'https://moduncalc.com/realestate' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '부동산 계산기 모음 (2026년 기준)',
     description: '취득세·등기비용·복비·양도세·전월세 전환까지 한 번에 계산하세요.',
     url: 'https://moduncalc.com/realestate',
@@ -99,6 +101,7 @@ export default function Page() {
       />
 
       <HubGuides guides={GUIDES} />
+      <SeoSource route="/realestate" />
     </PageLayout>
   );
 }

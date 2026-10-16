@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd } from "@/components/JsonLd";
 import TaxComparator from "./TaxComparator";
@@ -8,6 +9,7 @@ export const metadata: Metadata = {
   description: "Should you choose 19% flat tax or progressive? Enter your salary and see exactly which saves you more. Break-even at ~\u20A9160M.",
   alternates: { canonical: "https://moduncalc.com/en/tax-comparison" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korea Flat Tax vs Progressive Tax Calculator (2026)",
     description: "Foreign worker? Compare flat 19% vs progressive tax and find your best option.",
     locale: "en_US",

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { HubGroups } from '@/components/CategoryHub';
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: '에어컨 전기요금, 글자수 세기, D-day, 퍼센트, 연비, 자동차세, 더치페이까지. 매일 쓰는 생활 계산기 40여 종을 한 곳에서 무료로.',
   alternates: { canonical: 'https://moduncalc.com/daily' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '일상 계산기 모음',
     description: '전기요금·글자수·D-day·퍼센트·연비 등 생활 계산기 40여 종.',
     url: 'https://moduncalc.com/daily',

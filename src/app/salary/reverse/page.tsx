@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import SalaryReverse from './SalaryReverse';
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: '원하는 월 실수령액을 입력하면 필요한 세전 연봉을 역산합니다. 실수령 300만원이면 연봉 4,140만원. 2026년 4대보험·소득세 반영.',
   alternates: { canonical: 'https://moduncalc.com/salary/reverse' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '실수령액으로 필요 연봉 역산하기 (2026)',
     description: '희망 월 실수령액으로 세전 연봉 역산. 4대보험·소득세 자동 반영.',
     url: 'https://moduncalc.com/salary/reverse',
@@ -144,6 +146,7 @@ export default function Page() {
           퇴직금까지 포함한 총 보상을 따지려면 <SeoLink href="/salary/severance">퇴직금 계산기</SeoLink>도 함께 확인해 보시길 권합니다.
         </p>
       </SeoSection>
+      <SeoSource route="/salary/reverse" />
     </PageLayout>
   );
 }

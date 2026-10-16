@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "면책조항 - 모든 계산기",
-  description: "모든 계산기(moduncalc.com)의 계산 결과에 대한 면책 고지사항입니다.",
+  description: "모든 계산기(moduncalc.com)의 면책 고지입니다. 계산 결과는 참고용 추정치이며 법적·세무적 효력이 없다는 점과, 실제 신고·계약 전 전문가 확인이 필요한 이유를 안내합니다.",
   alternates: { canonical: "https://moduncalc.com/disclaimer" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "면책조항 - 모든 계산기",
-    description: "모든 계산기(moduncalc.com)의 계산 결과에 대한 면책 고지사항입니다.",
+    description: "모든 계산기(moduncalc.com)의 면책 고지입니다. 계산 결과는 참고용 추정치이며 법적·세무적 효력이 없다는 점과, 실제 신고·계약 전 전문가 확인이 필요한 이유를 안내합니다.",
     url: "https://moduncalc.com/disclaimer",
   },
 };

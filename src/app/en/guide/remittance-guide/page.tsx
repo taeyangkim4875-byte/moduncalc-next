@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Sending Money from Korea - Best Remittance Options Compared (2026)",
+  title: "Sending Money from Korea - Best Remittance Options",
   description:
     "Compare ways to send money from Korea: bank transfers, Wise, SentBe, and more. Fees, exchange rates, and speed compared.",
   alternates: { canonical: "https://moduncalc.com/en/guide/remittance-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Sending Money from Korea - Best Remittance Options Compared (2026)",
     description:
       "Compare ways to send money from Korea: bank transfers, Wise, SentBe, and more. Fees, exchange rates, and speed compared.",

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import CarTaxCalc from "./CarTaxCalc";
-export const metadata: Metadata = { title: "자동차세 계산기 - 2026 배기량·연식별 자동차세 계산", description: "내 차 자동차세 얼마? 배기량·연식 입력하면 연간 세금 바로 계산. 연납 할인까지.", alternates: { canonical: "https://moduncalc.com/daily/cartax" },
+export const metadata: Metadata = { title: "자동차세 계산기 - 2026 배기량·연식별 자동차세 계산", description: "내 차 자동차세는 얼마? 배기량과 연식만 넣으면 연간 세액이 바로 나옵니다. 1월 연납 신청 할인율과 배기량별 세액 차이까지 확인하세요.", alternates: { canonical: "https://moduncalc.com/daily/cartax" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "자동차세 계산기 - 2026 배기량·연식별 자동차세 계산",
-    description: "내 차 자동차세 얼마? 배기량·연식 입력하면 연간 세금 바로 계산. 연납 할인까지.",
+    description: "내 차 자동차세는 얼마? 배기량과 연식만 넣으면 연간 세액이 바로 나옵니다. 1월 연납 신청 할인율과 배기량별 세액 차이까지 확인하세요.",
     url: "https://moduncalc.com/daily/cartax",
   },};
 export default function Page() { return <PageLayout eyebrow="생활" title="자동차세 계산기" description="배기량과 연식을 입력하면 연간 자동차세를 실시간으로 계산합니다.">

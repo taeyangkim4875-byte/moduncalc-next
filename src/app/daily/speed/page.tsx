@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -6,11 +7,12 @@ import SpeedCalc from "./SpeedCalc";
 
 export const metadata: Metadata = {
   title: "속도·시간 계산기 - 소요시간·평균속도·속도변환",
-  description: "거리와 속도로 소요 시간을 계산하세요. 평균 속도 역산, km/h ↔ m/s 변환까지.",
+  description: "거리와 속도로 소요 시간을 계산하고 평균 속도를 역산합니다. km/h↔m/s 단위 변환과, 평균 속도가 단순 평균이 아닌 이유까지 설명합니다.",
   alternates: { canonical: "https://moduncalc.com/daily/speed" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "속도·시간 계산기 - 소요시간·평균속도·속도변환",
-    description: "거리와 속도로 소요 시간을 계산하세요. 평균 속도 역산, km/h ↔ m/s 변환까지.",
+    description: "거리와 속도로 소요 시간을 계산하고 평균 속도를 역산합니다. km/h↔m/s 단위 변환과, 평균 속도가 단순 평균이 아닌 이유까지 설명합니다.",
     url: "https://moduncalc.com/daily/speed",
   },
 };

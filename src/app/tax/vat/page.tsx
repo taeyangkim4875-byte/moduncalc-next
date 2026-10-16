@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import VatCalc from "./VatCalc";
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "부가세 계산기 - 공급가액·부가세 역산",
-  description: "공급가액 또는 합계금액에서 부가세를 계산하세요.",
+  description: "공급가액에 부가세 더하기, 합계금액에서 부가세 역산까지 한 번에. 10% 세율 계산 공식과 일반·간이과세자 신고 일정까지 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/tax/vat" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "부가세 계산기 - 공급가액·부가세 역산",
-    description: "공급가액 또는 합계금액에서 부가세를 계산하세요.",
+    description: "공급가액에 부가세 더하기, 합계금액에서 부가세 역산까지 한 번에. 10% 세율 계산 공식과 일반·간이과세자 신고 일정까지 정리했습니다.",
     url: "https://moduncalc.com/tax/vat",
   },
 };
@@ -87,6 +89,7 @@ export default function Page() {
           투자 수익이 있다면 <SeoLink href="/guide/investment-tax">주식·ETF 세금 총정리</SeoLink>가 도움이 됩니다.
         </p>
       </SeoSection>
+      <SeoSource route="/tax/vat" />
     </PageLayout>
   );
 }

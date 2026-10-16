@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     "연말정산 절차와 공제 항목을 초보자도 이해하기 쉽게 정리합니다. 소득공제, 세액공제, 신용카드, 의료비, 월세 공제까지.",
   alternates: { canonical: "https://moduncalc.com/guide/year-end-tax" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "연말정산 초보 가이드 (2026년 귀속)",
     description:
       "환급 많이 받는 법을 초보자도 이해하기 쉽게 정리합니다.",

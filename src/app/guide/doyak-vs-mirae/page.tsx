@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     "두 상품의 금리, 정부지원, 가입조건을 상세 비교합니다. 청년도약계좌와 청년미래적금 중 나에게 유리한 상품을 찾아보세요.",
   alternates: { canonical: "https://moduncalc.com/guide/doyak-vs-mirae" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "청년도약계좌 vs 청년미래적금 비교 (2026)",
     description:
       "금리, 정부지원, 가입조건을 한눈에 비교합니다.",

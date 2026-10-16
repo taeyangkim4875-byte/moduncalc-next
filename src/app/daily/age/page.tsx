@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -6,11 +7,12 @@ import AgeCalc from "./AgeCalc";
 
 export const metadata: Metadata = {
   title: "나이 계산기 - 만 나이·한국 나이·띠·별자리",
-  description: "나는 만 몇 살? 생년월일 입력하면 만 나이·한국 나이·띠·별자리 한번에 확인.",
+  description: "생년월일만 입력하면 만 나이·연 나이·한국 나이를 한 번에. 띠와 별자리까지 확인하고, 만 나이 통일법 이후 달라진 기준도 함께 보세요.",
   alternates: { canonical: "https://moduncalc.com/daily/age" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "나이 계산기 - 만 나이·한국 나이·띠·별자리",
-    description: "나는 만 몇 살? 생년월일 입력하면 만 나이·한국 나이·띠·별자리 한번에 확인.",
+    description: "생년월일만 입력하면 만 나이·연 나이·한국 나이를 한 번에. 띠와 별자리까지 확인하고, 만 나이 통일법 이후 달라진 기준도 함께 보세요.",
     url: "https://moduncalc.com/daily/age",
   },
 };

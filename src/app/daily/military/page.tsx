@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description: "입대일만 입력하면 전역일과 남은 복무일수를 자동 계산. 육군 18개월, 해군 20개월, 공군 21개월, 해병대 18개월 기준.",
   alternates: { canonical: "https://moduncalc.com/daily/military" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "전역일 계산기 - 육군·해군·공군·해병대·사회복무 (2026)",
     description: "입대일만 입력하면 전역일과 남은 복무일수를 자동 계산. 육군 18개월, 해군 20개월, 공군 21개월, 해병대 18개월 기준.",
     url: "https://moduncalc.com/daily/military",

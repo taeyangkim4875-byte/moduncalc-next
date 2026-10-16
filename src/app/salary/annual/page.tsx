@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import AnnualCalc from "./AnnualCalc";
 import ShareButtons from '@/components/ShareButtons';
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description: "내 연차 며칠 남았을까? 입사일만 입력하면 발생 연차·잔여 연차 바로 확인. 근로기준법 기준.",
   alternates: { canonical: "https://moduncalc.com/salary/annual" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "연차 계산기 - 입사일 기준 연차 일수 자동 계산",
     description: "내 연차 며칠 남았을까? 입사일만 입력하면 발생 연차·잔여 연차 바로 확인. 근로기준법 기준.",
     url: "https://moduncalc.com/salary/annual",
@@ -81,6 +83,7 @@ export default function Page() {
           <SeoLink href="/guide/severance-pay">퇴직금 계산법 정리</SeoLink>에서 이어서 확인할 수 있습니다.
         </p>
       </SeoSection>
+      <SeoSource route="/salary/annual" />
     </PageLayout>
   );
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import { ogImageUrl } from "@/utils/og";
 import { won } from "@/utils/format";
 import PropertyTaxCalc from "./PropertyTaxCalc";
@@ -20,6 +21,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     description: "공시가격 입력하면 종부세 바로 계산. 1세대 1주택 공제 12억, 일반 9억. 공정시장가액비율 60% 반영.",
     alternates: { canonical: "https://moduncalc.com/tax/property" },
     openGraph: {
+      ...KO_OPEN_GRAPH,
       title: "종합부동산세 계산기 - 1주택·다주택 종부세 시뮬레이션 (2026)",
       description: "주택 공시가격을 입력하면 종합부동산세와 농어촌특별세를 자동 계산. 2026년 공정시장가액비율 60% 반영.",
       url: "https://moduncalc.com/tax/property",
@@ -141,6 +143,7 @@ export default function Page() {
           부동산 증여를 고려 중이라면 <SeoLink href="/tax/gift">증여세 계산기</SeoLink>로 세액을 비교해 보세요.
         </p>
       </SeoSection>
+      <SeoSource route="/tax/property" />
     </PageLayout>
   );
 }

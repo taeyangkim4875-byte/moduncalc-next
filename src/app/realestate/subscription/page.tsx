@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoSource } from "@/components/SeoContent";
 import SubscriptionCalc from "./SubscriptionCalc";
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "청약 가점을 자동 계산합니다. 무주택 기간, 부양가족 수, 청약통장 가입 기간별 점수 확인.",
   alternates: { canonical: "https://moduncalc.com/realestate/subscription" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "청약 가점 계산기 - 무주택 · 부양가족 · 청약통장 가점 (2026)",
     description: "청약 가점을 자동 계산합니다. 무주택 기간, 부양가족 수, 청약통장 가입 기간별 점수 확인.",
     url: "https://moduncalc.com/realestate/subscription",
@@ -80,6 +82,7 @@ export default function Page() {
           { q: '청약 당첨되면 반드시 계약해야 하나요?', a: '아닙니다. 당첨 후 포기할 수 있지만, 부적격 당첨이면 재당첨 제한(최대 10년)이 걸릴 수 있습니다. 가점을 부풀려서 당첨되면 불이익이 크니 정확하게 신청하세요.' },
         ]}
       />
+      <SeoSource route="/realestate/subscription" />
     </PageLayout>
   );
 }

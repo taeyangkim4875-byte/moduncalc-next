@@ -1,15 +1,17 @@
 import type { Metadata } from 'next';
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 import Card from '@/components/Card';
 import { FaqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Korean Pension Refund by Nationality - Who Can Claim the Lump Sum',
+  title: 'Korean Pension Refund by Nationality (2026)',
   description:
     'Can you get your Korean National Pension back when you leave? It depends on your nationality and your visa. Full country list for 2026: agreement countries, reciprocity countries, minimum contribution periods, and the countries that have an agreement but still get nothing.',
   alternates: { canonical: 'https://moduncalc.com/en/guide/pension-refund-countries' },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: 'Korean Pension Refund by Nationality (2026)',
     description:
       'The full country-by-country list of who can claim the Korean National Pension lump-sum refund — and the seven agreement countries that cannot.',

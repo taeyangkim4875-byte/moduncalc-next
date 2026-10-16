@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     "연봉별 실수령액과 공제 항목을 상세히 설명합니다. 4대보험 요율, 소득세 누진세율, 비과세 식대, 부양가족 공제까지 한눈에 정리.",
   alternates: { canonical: "https://moduncalc.com/guide/salary-net-pay" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "2026 연봉 실수령액 완전 정리",
     description:
       "4대보험·소득세 공제 후 실수령액을 연봉 구간별로 상세히 비교합니다.",

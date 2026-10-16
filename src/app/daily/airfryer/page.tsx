@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList } from "@/components/SeoContent";
 import AirfryerCalc from "./AirfryerCalc";
 export const metadata: Metadata = { title: "에어프라이어 시간·온도 변환기 - 오븐 레시피 변환", description: "오븐 레시피를 에어프라이어용으로 변환하세요. 온도 10~15도 낮추고, 시간 20% 줄이면 됩니다.", alternates: { canonical: "https://moduncalc.com/daily/airfryer" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "에어프라이어 시간·온도 변환기 - 오븐 레시피 변환",
     description: "오븐 레시피를 에어프라이어용으로 변환하세요. 온도 10~15도 낮추고, 시간 20% 줄이면 됩니다.",
     url: "https://moduncalc.com/daily/airfryer",

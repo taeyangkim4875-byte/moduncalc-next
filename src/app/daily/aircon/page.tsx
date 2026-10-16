@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     "에어컨 하루 8시간 틀면 전기세 얼마? 인버터·정속형 비교, 여름 누진 완화 반영. 사용시간별 요금표까지.",
   alternates: { canonical: "https://moduncalc.com/daily/aircon" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "에어컨 전기요금 계산기 - 2026 여름 누진 완화 반영",
     description:
       "에어컨 하루 사용 시간과 소비전력으로 월 전기요금을 계산하세요. 인버터·정속형 비교, 여름 누진 완화 구간 반영.",
@@ -89,6 +91,62 @@ export default function Page() {
         </SeoList>
         <p>
           전체 전기요금이 궁금하면 <SeoLink href="/daily/electric">전기요금 계산기</SeoLink>에서 기본사용량까지 포함해서 확인하세요.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="같은 에어컨인데 집마다 요금이 두 배씩 차이 나는 이유">
+        <p>
+          주택용 전기요금은 <strong>누진제</strong>라서, 추가로 쓴 전력의 단가가 집집마다 다릅니다.
+          에어컨이 월 120kWh를 더 먹는다고 할 때, 그 120kWh가 몇 번째 구간에 얹히는지에 따라
+          요금이 갈립니다.
+        </p>
+        <SeoList>
+          <li>
+            기존 사용량이 <strong>150kWh</strong>인 집 → 추가분 대부분이 1구간 안에서 처리되어
+            가장 낮은 단가가 적용됩니다.
+          </li>
+          <li>
+            기존 사용량이 <strong>350kWh</strong>인 집 → 추가분이 전부 상위 구간에 얹혀,
+            같은 120kWh인데도 1구간 단가의 두 배 이상이 매겨집니다.
+          </li>
+        </SeoList>
+        <p>
+          그래서 &ldquo;에어컨 하루 몇 시간이면 얼마&rdquo;라는 식의 단일 답은 성립하지 않습니다.
+          내 집의 <strong>기존 사용량</strong>을 먼저 알아야 추가 요금이 정해집니다.
+          구간별 단가를 반영한 총액은{' '}
+          <SeoLink href="/daily/electric">전기요금 계산기</SeoLink>에서 기본사용량까지 넣어 확인하세요.
+        </p>
+        <p>
+          7~8월 사용분에 적용되는 하계 누진 완화가 중요한 이유도 같습니다. 1구간 상한이
+          200kWh에서 300kWh로 올라가면, 에어컨 사용분이 상위 구간으로 밀려 올라가는 시점이
+          그만큼 늦춰집니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="표기 소비전력대로 계산하면 왜 안 맞을까">
+        <p>
+          스티커에 적힌 숫자는 <strong>정격소비전력</strong>, 즉 컴프레서가 최대로 돌 때의 값입니다.
+          실제 사용에서는 이 값이 계속 유지되지 않습니다.
+        </p>
+        <SeoList>
+          <li>
+            <strong>초기 냉방 구간</strong> — 실내 온도를 설정 온도까지 끌어내리는 동안은
+            표기값에 가깝게 전력을 씁니다. 이 구간은 보통 처음 10~30분입니다.
+          </li>
+          <li>
+            <strong>유지 구간</strong> — 설정 온도에 도달한 뒤 인버터형은 컴프레서 회전수를 낮춰
+            표기값의 절반 안팎으로 떨어집니다. 정속형은 켜짐과 꺼짐을 반복하므로 평균은 낮아지지만
+            켜질 때마다 기동 전력이 다시 들어갑니다.
+          </li>
+          <li>
+            <strong>설정 온도의 영향</strong> — 실외 온도와 설정 온도의 차이가 클수록 유지 구간에서도
+            컴프레서가 자주 올라갑니다. 온도를 1~2도 올리는 것이 사용 시간을 줄이는 것보다
+            효과가 큰 경우가 많은 이유입니다.
+          </li>
+        </SeoList>
+        <p>
+          즉 인버터형을 짧게 자주 끄고 켜면 기동 구간만 반복해서 오히려 불리합니다.
+          짧은 외출이라면 켜둔 채로 설정 온도를 올려두는 쪽이 낫습니다.
         </p>
       </SeoSection>
 

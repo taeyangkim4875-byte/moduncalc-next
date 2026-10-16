@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import ParentalCalc from "./ParentalCalc";
 export const metadata: Metadata = { title: "육아휴직 급여 계산기 - 6+6 부모육아휴직제 반영", description: "육아휴직하면 월급 얼마 받을까? 2026 하반기 상한 250만원 반영. 6+6 부모휴직 최대 450만원.", alternates: { canonical: "https://moduncalc.com/salary/parental" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "육아휴직 급여 계산기 - 6+6 부모육아휴직제 반영",
     description: "육아휴직하면 월급 얼마 받을까? 2026 하반기 상한 250만원 반영. 6+6 부모휴직 최대 450만원.",
     url: "https://moduncalc.com/salary/parental",
@@ -51,6 +53,7 @@ export default function Page() { return (<PageLayout eyebrow="2026 육아휴직 
           { q: '육아휴직 급여에 세금이 붙나요?', a: '비과세입니다. 소득세, 4대보험료가 부과되지 않아요. 그래서 세전 월급 대비 실질적인 체감 차이는 생각보다 크지 않을 수 있습니다.' },
         ]}
       />
+      <SeoSource route="/salary/parental" />
     </PageLayout>
   );
 }

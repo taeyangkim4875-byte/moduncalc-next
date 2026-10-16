@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -7,9 +8,9 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "랜덤 번호 뽑기 - 숫자 추첨 · 로또 번호 생성기",
-  description: "공정한 추첨이 필요할 때! 랜덤 숫자 뽑기 + 로또 번호 생성 + 목록 섞기. 무료.",
+  description: "공정한 추첨이 필요할 때. 랜덤 숫자 뽑기와 로또 번호 생성, 목록 섞기를 무료로. 브라우저 암호화 난수를 쓰는 이유도 함께 설명합니다.",
   alternates: { canonical: "https://moduncalc.com/daily/random" },
-  openGraph: { title: "랜덤 번호 뽑기 - 숫자 추첨 · 로또 번호 생성기", description: "랜덤 숫자 추첨, 로또 번호 생성, 순서 섞기.", url: "https://moduncalc.com/daily/random" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "랜덤 번호 뽑기 - 숫자 추첨 · 로또 번호 생성기", description: "랜덤 숫자 추첨, 로또 번호 생성, 순서 섞기.", url: "https://moduncalc.com/daily/random" },
 };
 
 export default function Page() {

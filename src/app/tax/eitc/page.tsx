@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -20,6 +21,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     description: "2026년 근로장려금·자녀장려금 얼마 받을까? 총급여와 가구 유형만 입력하면 예상 지급액 바로 확인. 재산 감액까지 반영.",
     alternates: { canonical: "https://moduncalc.com/tax/eitc" },
     openGraph: {
+      ...KO_OPEN_GRAPH,
       title: "근로장려금 계산기 - 자녀장려금 포함 예상 수령액 (2026)",
       description: "총급여·가구 유형·재산을 입력하면 근로장려금과 자녀장려금 예상액을 바로 계산. 2026년 기준.",
       url: "https://moduncalc.com/tax/eitc",

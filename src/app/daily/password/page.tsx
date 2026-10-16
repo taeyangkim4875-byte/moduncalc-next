@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList } from "@/components/SeoContent";
@@ -7,9 +8,10 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "비밀번호 생성기 - 안전한 랜덤 비밀번호 만들기",
-  description: "해킹 걱정 없는 안전한 비밀번호를 1초 만에 생성. 길이·특수문자 설정 + 강도 표시.",
+  description: "해킹에 안전한 랜덤 비밀번호를 1초 만에 생성합니다. 길이·특수문자·숫자 조합을 설정하고 강도를 바로 확인하세요. 길이별 해독 소요시간도 함께 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/daily/password" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "비밀번호 생성기 - 안전한 랜덤 비밀번호 만들기",
     description: "강력한 랜덤 비밀번호를 즉시 생성. 길이, 대소문자, 숫자, 특수문자 옵션 설정. 비밀번호 강도 표시.",
     url: "https://moduncalc.com/daily/password",
@@ -30,7 +32,7 @@ export default function Page() {
       <ShareButtons title="비밀번호 생성 결과" />
 
       <SeoSection title="비밀번호, 진짜 바꿔야 할 때">
-        <p>솔직히 비밀번호 바꾸라는 팝업 뜨면 대부분 뒤에 숫자 1 붙이고 끝내잖아요. 근데 2024년 한국인터넷진흥원(KISA) 발표 보면 개인정보 유출 사고의 68%가 비밀번호 재사용 때문이었습니다. 네이버 비번이랑 은행 비번이 같다? 사실 그거 하나만 뚫려도 전부 위험해요.</p>
+        <p>솔직히 비밀번호 바꾸라는 팝업 뜨면 대부분 뒤에 숫자 1 붙이고 끝내잖아요. 문제는 비밀번호를 여러 곳에 똑같이 쓰는 쪽입니다. 네이버 비번이랑 은행 비번이 같다면, 둘 중 보안이 약한 한 곳만 뚫려도 나머지가 전부 위험해져요. 뒤에 숫자를 바꾸는 식의 변형도 대입 목록에 함께 들어갑니다.</p>
         <p>요즘은 비밀번호 관리 앱을 쓰는 게 현실적입니다. 삼성 패스, 아이폰 키체인, 1Password 같은 도구로 사이트마다 다른 비밀번호를 저장해두면 외울 필요가 없어요. 이 생성기로 16자 이상 랜덤 비밀번호를 만들고 관리 앱에 저장하면 끝입니다.</p>
       </SeoSection>
 
@@ -50,6 +52,58 @@ export default function Page() {
           결론은 간단합니다 — <strong>12자 이상, 가능하면 16자</strong>.
           이 생성기가 기본 16자로 설정되어 있는 이유가 이겁니다.
           외울 필요 없이 비밀번호 관리 앱에 저장하면 됩니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="한 곳만 뚫려도 전부 위험해지는 구조">
+        <p>
+          비밀번호 재사용이 위험한 이유는 공격 방식이 &ldquo;뚫는 것&rdquo;이 아니라
+          <strong>&ldquo;대조하는 것&rdquo;</strong>이기 때문입니다. 이걸 크리덴셜 스터핑이라고 부릅니다.
+        </p>
+        <SeoList>
+          <li>
+            어느 사이트에서 아이디와 비밀번호 목록이 한 번 유출됩니다. 보통 보안이 가장 약한
+            작은 서비스가 출발점입니다.
+          </li>
+          <li>
+            공격자는 그 목록을 그대로 들고 은행·포털·쇼핑몰에 <strong>자동으로 대입</strong>합니다.
+            비밀번호를 추측하는 게 아니라 이미 아는 값을 넣어보는 것이라, 길이가 16자여도
+            재사용했다면 아무 소용이 없습니다.
+          </li>
+          <li>
+            하나가 열리면 그 계정의 메일로 다른 서비스의 비밀번호를 재설정합니다.
+            메일 계정이 열리는 순간 나머지는 연쇄적으로 넘어갑니다.
+          </li>
+        </SeoList>
+        <p>
+          그래서 <strong>길이보다 중복 여부가 먼저</strong>입니다. 메일 계정만큼은 다른 어디에도
+          쓰지 않는 비밀번호를 두는 것이 가장 효과가 큽니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="비밀번호를 강화하기 전에 할 일이 하나 더 있습니다">
+        <p>
+          비밀번호만으로 버티는 구조 자체를 줄이는 쪽이 더 확실합니다. 우선순위는 이렇습니다.
+        </p>
+        <SeoList>
+          <li>
+            <strong>패스키(passkey)를 쓸 수 있으면 먼저 전환</strong> — 기기에 저장된 키로 로그인하는
+            방식이라 서버에 비밀번호가 저장되지 않습니다. 유출될 비밀번호가 없으므로 크리덴셜 스터핑이
+            원리적으로 통하지 않습니다.
+          </li>
+          <li>
+            <strong>2단계 인증은 앱 방식으로</strong> — SMS는 번호 이전(심 스와핑)에 취약합니다.
+            인증 앱이나 보안 키를 쓰면 같은 2단계라도 훨씬 안전합니다.
+          </li>
+          <li>
+            <strong>관리 앱에 맡기고 외우기를 포기</strong> — 외우려고 하면 반드시 규칙이 생기고,
+            규칙이 있으면 재사용으로 이어집니다. 사이트마다 전혀 다른 난수를 쓰는 건 사람이 아니라
+            도구가 할 일입니다.
+          </li>
+        </SeoList>
+        <p>
+          이 생성기는 브라우저의 <code>crypto.getRandomValues()</code>로 난수를 만들고
+          결과를 서버로 보내지 않습니다. 만든 비밀번호는 바로 관리 앱에 저장해 두세요.
         </p>
       </SeoSection>
 

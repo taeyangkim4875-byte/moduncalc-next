@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     "How to use Korean food delivery apps as a foreigner: 배달의민족, 쿠팡이츠, and more. English-friendly tips and ordering guide.",
   alternates: { canonical: "https://moduncalc.com/en/guide/delivery-apps" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korean Delivery Apps Guide - How to Order Food in Korea",
     description:
       "How to use Korean food delivery apps as a foreigner: 배달의민족, 쿠팡이츠, and more. English-friendly tips and ordering guide.",

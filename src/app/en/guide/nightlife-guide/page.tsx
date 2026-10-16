@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korea Nightlife Guide for Foreigners - Bars, Clubs & 노래방 (2026)",
+  title: "Korea Nightlife Guide for Foreigners - Bars & Clubs",
   description: "Going out in Korea? Best areas for nightlife, drinking culture, 소맥 recipe, 노래방 guide & staying safe.",
   alternates: { canonical: "https://moduncalc.com/en/guide/nightlife-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korea Nightlife Guide for Foreigners - Bars, Clubs & 노래방 (2026)",
     description: "Complete guide to Korean nightlife: best areas, drinking culture, karaoke (노래방), pojangmacha, and safety tips for foreigners.",
     url: "https://moduncalc.com/en/guide/nightlife-guide",

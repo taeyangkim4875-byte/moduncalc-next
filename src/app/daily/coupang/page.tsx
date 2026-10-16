@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -6,11 +7,12 @@ import CoupangCalc from "./CoupangCalc";
 
 export const metadata: Metadata = {
   title: "쿠팡 파트너스 수익 계산기 - 예상 수익 시뮬레이션",
-  description: "클릭 수, 전환율, 평균 주문액으로 쿠팡 파트너스 예상 수익을 계산하세요.",
+  description: "클릭 수·전환율·평균 주문액으로 쿠팡 파트너스 예상 수익을 시뮬레이션하세요. 수익을 결정하는 네 가지 숫자와 현실적인 수익 구간, 세금 처리까지 함께 봅니다.",
   alternates: { canonical: "https://moduncalc.com/daily/coupang" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "쿠팡 파트너스 수익 계산기 - 예상 수익 시뮬레이션",
-    description: "클릭 수, 전환율, 평균 주문액으로 쿠팡 파트너스 예상 수익을 계산하세요.",
+    description: "클릭 수·전환율·평균 주문액으로 쿠팡 파트너스 예상 수익을 시뮬레이션하세요. 수익을 결정하는 네 가지 숫자와 현실적인 수익 구간, 세금 처리까지 함께 봅니다.",
     url: "https://moduncalc.com/daily/coupang",
   },
 };

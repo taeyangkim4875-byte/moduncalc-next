@@ -3,11 +3,13 @@ export function WebsiteJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: '모든 계산기',
+    alternateName: 'Moduncalc',
     url: 'https://moduncalc.com',
     description: '연봉, 적금, 대출, 건강, 세금 무료 계산기 모음. 2026년 최신 정책 반영.',
     publisher: {
       '@type': 'Organization',
       name: '모든 계산기',
+      alternateName: 'Moduncalc',
       url: 'https://moduncalc.com',
       founder: {
         '@type': 'Person',
@@ -72,6 +74,7 @@ export function OrganizationJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: '모든 계산기',
+    alternateName: 'Moduncalc',
     url: 'https://moduncalc.com',
     logo: 'https://moduncalc.com/icons/icon.svg',
     description: '2026년 최신 세법·요율을 반영한 무료 계산기 82종을 제공하는 웹 서비스',
@@ -80,7 +83,7 @@ export function OrganizationJsonLd() {
       '@type': 'ContactPoint',
       email: 'taeyang.kim4875@gmail.com',
       contactType: 'customer service',
-      availableLanguage: 'Korean',
+      availableLanguage: ['Korean', 'English'],
     },
     sameAs: [],
   };

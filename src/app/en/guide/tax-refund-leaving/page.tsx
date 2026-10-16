@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     "Guide to tax refunds for foreigners leaving Korea: year-end settlement, pension refund, and other money you might be owed.",
   alternates: { canonical: "https://moduncalc.com/en/guide/tax-refund-leaving" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Tax Refund When Leaving Korea - What Foreigners Can Claim",
     description:
       "Guide to tax refunds for foreigners leaving Korea: year-end settlement, pension refund, and other money you might be owed.",

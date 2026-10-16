@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korean Food Guide for Foreigners - Ordering, Prices & Must-Try Dishes",
+  title: "Korean Food Guide for Foreigners - Ordering & Prices",
   description:
     "What to eat in Korea? 20 must-try dishes with prices, how to order, delivery apps & restaurant etiquette for foreigners.",
   alternates: { canonical: "https://moduncalc.com/en/guide/korean-food-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korean Food Guide for Foreigners - Ordering, Prices & Must-Try Dishes",
     description:
       "How to order food in Korea as a foreigner. Restaurant etiquette, menu translations, prices, delivery apps, and 20 must-try dishes.",

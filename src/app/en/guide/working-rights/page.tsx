@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Foreign Worker Rights in Korea - Labor Laws You Should Know",
+  title: "Foreign Worker Rights in Korea - Labor Laws",
   description:
     "Essential Korean labor law guide for foreign workers: minimum wage, working hours, overtime, annual leave, and discrimination protection.",
   alternates: { canonical: "https://moduncalc.com/en/guide/working-rights" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Foreign Worker Rights in Korea - Labor Laws You Should Know",
     description:
       "Essential Korean labor law guide for foreign workers: minimum wage, working hours, overtime, annual leave, and discrimination protection.",

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import IncomeTaxCalc from "./IncomeTaxCalc";
 
 export const metadata: Metadata = {
   title: "종합소득세 계산기 - 2026 누진세율",
   description: "종합소득세 얼마 나올까? 소득 입력하면 8구간 누진세율 자동 적용. 실효세율·인적공제까지 바로 확인.",
   alternates: { canonical: "https://moduncalc.com/tax/income" },
-  openGraph: { title: "종합소득세 계산기 - 2026 누진세율 8구간 자동 계산", description: "과세표준 입력하면 소득세·지방소득세를 8구간 누진세율로 자동 계산. 인적공제, 실효세율 확인.", url: "https://moduncalc.com/tax/income" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "종합소득세 계산기 - 2026 누진세율 8구간 자동 계산", description: "과세표준 입력하면 소득세·지방소득세를 8구간 누진세율로 자동 계산. 인적공제, 실효세율 확인.", url: "https://moduncalc.com/tax/income" },
 };
 
 export default function Page() {
@@ -78,6 +79,7 @@ export default function Page() {
           금융소득 종합과세 기준을 확인하세요.
         </p>
       </SeoSection>
+      <SeoSource route="/tax/income" />
     </PageLayout>
   );
 }

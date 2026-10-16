@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { HubGroups, HubGuides } from '@/components/CategoryHub';
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: '부가세, 종합소득세, 증여세, 상속세, 종합부동산세, 근로장려금, 자동차세까지. 2026년 세법 기준 무료 세금 계산기 7종을 한 곳에서.',
   alternates: { canonical: 'https://moduncalc.com/tax' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '세금 계산기 모음 (2026년 세법 기준)',
     description: '부가세·종합소득세·증여세·상속세·종부세·근로장려금을 한 곳에서 계산하세요.',
     url: 'https://moduncalc.com/tax',

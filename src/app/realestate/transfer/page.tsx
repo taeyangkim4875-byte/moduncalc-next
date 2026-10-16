@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import TransferTaxCalc from "./TransferTaxCalc";
 
 export const metadata: Metadata = {
   title: "양도소득세 계산기 - 부동산 양도세",
-  description: "양도소득세 얼마 나올까? 매수가·매도가 입력하면 장기보유공제·비과세 자동 적용.",
+  description: "양도소득세 얼마 나올까? 매수가·매도가·보유기간만 넣으면 장기보유특별공제와 1세대1주택 비과세가 자동 반영됩니다. 매도 전 확인할 항목까지 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/realestate/transfer" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "양도소득세 계산기 - 부동산 양도세",
-    description: "양도소득세 얼마 나올까? 매수가·매도가 입력하면 장기보유공제·비과세 자동 적용.",
+    description: "양도소득세 얼마 나올까? 매수가·매도가·보유기간만 넣으면 장기보유특별공제와 1세대1주택 비과세가 자동 반영됩니다. 매도 전 확인할 항목까지 정리했습니다.",
     url: "https://moduncalc.com/realestate/transfer",
   },
 };
@@ -74,6 +76,7 @@ export default function Page() {
           중도상환 시 절감되는 이자를 확인할 수 있습니다.
         </p>
       </SeoSection>
+      <SeoSource route="/realestate/transfer" />
     </PageLayout>
   );
 }

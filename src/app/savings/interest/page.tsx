@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import InterestCalc from "./InterestCalc";
 import ShareButtons from '@/components/ShareButtons';
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: "적금 이자 계산기 - 예금·적금 만기 수령액",
   description: "적금·예금 만기 수령액을 자동 계산합니다. 월 납입액, 이자율, 기간, 이자과세를 입력하면 세후 수령액을 바로 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/savings/interest" },
-  openGraph: { title: "적금·예금 이자 계산기 - 만기 수령액 자동 계산 (2026)", description: "월 납입액, 이자율, 기간 입력하면 세후 만기 수령액을 바로 계산. 단리·복리, 일반과세·비과세 지원.", url: "https://moduncalc.com/savings/interest" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "적금·예금 이자 계산기 - 만기 수령액 자동 계산 (2026)", description: "월 납입액, 이자율, 기간 입력하면 세후 만기 수령액을 바로 계산. 단리·복리, 일반과세·비과세 지원.", url: "https://moduncalc.com/savings/interest" },
 };
 
 export default function Page() {
@@ -74,6 +75,7 @@ export default function Page() {
           은퇴 자금 목표를 세우는 중이라면 <SeoLink href="/guide/fire-retirement">FIRE 조기 은퇴 가이드</SeoLink>도 참고하세요.
         </p>
       </SeoSection>
+      <SeoSource route="/savings/interest" />
     </PageLayout>
   );
 }

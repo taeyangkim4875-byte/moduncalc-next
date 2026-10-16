@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: '최저시급 계산기 - 2027 시급 10,700원 확정 · 2026 시급 10,320원',
   description: '2027 최저시급 10,700원 확정! 2026 대비 380원(3.7%) 인상. 시급 입력하면 주휴수당 포함 월급·연봉 바로 계산.',
   alternates: { canonical: "https://moduncalc.com/salary/minimum" },
-  openGraph: { title: "최저시급 계산기 - 2027년 10,700원 확정 · 2026년 10,320원", description: "2027 최저시급 10,700원 확정! 월급 223만원. 2026 대비 +380원. 주휴수당·수습 감액까지 바로 계산.", url: "https://moduncalc.com/salary/minimum" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "최저시급 계산기 - 2027년 10,700원 확정 · 2026년 10,320원", description: "2027 최저시급 10,700원 확정! 월급 223만원. 2026 대비 +380원. 주휴수당·수습 감액까지 바로 계산.", url: "https://moduncalc.com/salary/minimum" },
 };
 
 export default function MinWagePage() {

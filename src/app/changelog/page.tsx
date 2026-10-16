@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 import Card from '@/components/Card';
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     '최저시급, 4대보험 요율, 국민연금 기준소득월액, 실업급여 상·하한액, 증권거래세까지. 2026년 현재 적용 중인 기준값과 언제 무엇이 바뀌었는지, 앞으로 바뀔 것은 무엇인지 근거와 함께 정리했습니다.',
   alternates: { canonical: 'https://moduncalc.com/changelog' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '세율·요율 변경 이력 - 2026년 적용 기준값 한눈에',
     description: '최저시급·4대보험·실업급여·증권거래세의 현재 기준값과 변경 이력, 예정된 변경을 근거와 함께 정리했습니다.',
     url: 'https://moduncalc.com/changelog',

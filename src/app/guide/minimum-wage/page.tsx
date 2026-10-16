@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -6,11 +7,12 @@ import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "2026 최저시급 완전 정리 - 주휴수당·월급·연봉 환산",
-  description: "2026년 최저시급과 주휴수당, 월급 계산법을 상세히 알려드립니다.",
+  description: "2026년 최저시급은 얼마이고 주휴수당은 어떻게 붙을까? 시급에서 월급·연봉으로 환산하는 방법과 주 15시간 기준, 수습 감액 규정까지 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/guide/minimum-wage" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "2026 최저시급 완전 정리 - 주휴수당·월급·연봉 환산",
-    description: "2026년 최저시급과 주휴수당, 월급 계산법을 상세히 알려드립니다.",
+    description: "2026년 최저시급은 얼마이고 주휴수당은 어떻게 붙을까? 시급에서 월급·연봉으로 환산하는 방법과 주 15시간 기준, 수습 감액 규정까지 정리했습니다.",
     url: "https://moduncalc.com/guide/minimum-wage",
   },
 };

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "월 도시가스 사용량으로 가스요금을 계산하세요. 난방용·취사용 구분, MJ 기준 요금 자동 계산. 겨울 난방비 미리 확인.",
   alternates: { canonical: "https://moduncalc.com/daily/gas" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "도시가스 요금 계산기 - 난방비·가스비 자동 계산 (2026)",
     description: "월 도시가스 사용량으로 가스요금을 계산하세요. 난방용·취사용 구분, MJ 기준 요금 자동 계산. 겨울 난방비 미리 확인.",
     url: "https://moduncalc.com/daily/gas",

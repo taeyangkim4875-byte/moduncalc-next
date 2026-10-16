@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     '주 15시간 이상 개근하면 주휴수당 대상입니다. 시급과 근무시간을 넣으면 지급 대상인지, 안 되면 왜 안 되는지 알려드려요. 주휴시간 8시간 상한, 쪼개기 계약, 5인 미만 사업장까지.',
   alternates: { canonical: 'https://moduncalc.com/salary/holiday-pay' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '주휴수당 계산기 - 받을 수 있는지 조건부터 확인',
     description: '주 15시간 이상 개근 시 지급. 지급 대상 여부와 사유, 주휴수당 금액, 실질 시급까지 한 번에.',
     url: 'https://moduncalc.com/salary/holiday-pay',

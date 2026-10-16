@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
     "How to convert your foreign driver's license or get a new one in Korea: requirements, process, costs, and tips.",
   alternates: { canonical: "https://moduncalc.com/en/guide/drivers-license" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Getting a Driver's License in Korea as a Foreigner",
     description:
       "How to convert your foreign driver's license or get a new one in Korea: requirements, process, costs, and tips.",

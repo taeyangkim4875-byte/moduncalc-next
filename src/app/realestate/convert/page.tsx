@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoSource } from "@/components/SeoContent";
 import ConvertCalc from "./ConvertCalc";
-export const metadata: Metadata = { title: "전월세 전환 계산기 - 전세↔월세 변환", description: "전세 3억이면 월세로 얼마? 전세↔월세 변환, 법정전환율 기준 바로 계산.", alternates: { canonical: "https://moduncalc.com/realestate/convert" },
+export const metadata: Metadata = { title: "전월세 전환 계산기 - 전세↔월세 변환", description: "전세 3억이면 월세로 얼마? 법정전환율 기준으로 전세↔월세를 바로 변환합니다. 보증금을 줄이면 월세가 얼마나 오르는지, 계약서 체크포인트까지 확인하세요.", alternates: { canonical: "https://moduncalc.com/realestate/convert" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "전월세 전환 계산기 - 전세↔월세 변환",
-    description: "전세 3억이면 월세로 얼마? 전세↔월세 변환, 법정전환율 기준 바로 계산.",
+    description: "전세 3억이면 월세로 얼마? 법정전환율 기준으로 전세↔월세를 바로 변환합니다. 보증금을 줄이면 월세가 얼마나 오르는지, 계약서 체크포인트까지 확인하세요.",
     url: "https://moduncalc.com/realestate/convert",
   },};
 export default function Page() { return (<PageLayout eyebrow="2026 법정전환율 기준" title="전월세 전환 계산기" description="전세와 월세를 법정전환율 기준으로 전환해 드려요.">
@@ -67,6 +69,7 @@ export default function Page() { return (<PageLayout eyebrow="2026 법정전환�
           { q: '오피스텔도 법정전환율이 적용되나요?', a: '주거용으로 사용하는 오피스텔은 주택임대차보호법 적용 대상이라 법정전환율이 적용됩니다. 다만 상업용은 제외예요.' },
         ]}
       />
+      <SeoSource route="/realestate/convert" />
     </PageLayout>
   );
 }

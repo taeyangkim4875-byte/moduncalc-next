@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import AcqTaxReverse from './AcqTaxReverse';
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: '준비한 취득세 예산으로 살 수 있는 최대 집값을 역산합니다. 1주택 500만원 예산이면 약 4.5억, 2주택이면 약 5,700만원. 주택 수·면적별 세율 자동 적용.',
   alternates: { canonical: 'https://moduncalc.com/realestate/acqtax/reverse' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '취득세 예산으로 매수 한도 역산하기 (2026)',
     description: '취득세 예산 입력 → 매수 가능 최대 금액 역산. 1~3주택 세율 자동 반영.',
     url: 'https://moduncalc.com/realestate/acqtax/reverse',
@@ -140,6 +142,7 @@ export default function Page() {
           부동산 관련 계산기 전체는 <SeoLink href="/realestate">부동산 계산기 모음</SeoLink>에 모아두었습니다.
         </p>
       </SeoSection>
+      <SeoSource route="/realestate/acqtax/reverse" />
     </PageLayout>
   );
 }

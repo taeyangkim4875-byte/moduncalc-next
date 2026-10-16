@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 import Card from '@/components/Card';
@@ -6,11 +7,12 @@ import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { SeoSection, SeoList, SeoLink } from '@/components/SeoContent';
 
 export const metadata: Metadata = {
-  title: 'Living in Korea - Guides for Foreigners (Visa, Tax, Housing, Health)',
+  title: 'Living in Korea - Guides for Foreigners (Visa, Tax)',
   description:
     'Practical guides for foreigners living in Korea: visas and ARC, income tax and year-end settlement, national pension refunds, health insurance, jeonse and wolse housing, banking, phones and transport. Updated for 2026.',
   alternates: { canonical: 'https://moduncalc.com/en/guide' },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: 'Living in Korea - Guides for Foreigners',
     description:
       '30 practical guides on visas, taxes, housing, healthcare and daily life in Korea, written for foreign residents and updated for 2026.',

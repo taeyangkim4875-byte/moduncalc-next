@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: '연봉 실수령액표 · 2026',
   description: '연봉 2,000만~1.5억까지 월 실수령액을 한눈에 비교. 4대보험·소득세 공제 후 내 연봉은 월 얼마?',
   alternates: { canonical: "https://moduncalc.com/salary/table" },
-  openGraph: { title: "2026 연봉 실수령액표 - 2천만~1.5억 한눈에 비교", description: "연봉별 월 실수령액을 한눈에 비교. 4대보험·소득세 공제 후 실수령액 표. 2026년 최신 요율 반영.", url: "https://moduncalc.com/salary/table" },
+  openGraph: { ...KO_OPEN_GRAPH, title: "2026 연봉 실수령액표 - 2천만~1.5억 한눈에 비교", description: "연봉별 월 실수령액을 한눈에 비교. 4대보험·소득세 공제 후 실수령액 표. 2026년 최신 요율 반영.", url: "https://moduncalc.com/salary/table" },
 };
 
 export default function NetPayTablePage() {

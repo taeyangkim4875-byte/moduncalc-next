@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import AlcoholCalc from "./AlcoholCalc";
 export const metadata: Metadata = { title: "음주 후 운전 가능 시간 계산기 - 혈중알코올 분해 시간", description: "소주 한 병 마셨는데 언제 운전 가능? 음주량·체중 입력하면 혈중알코올 분해 시간 바로 계산.", alternates: { canonical: "https://moduncalc.com/daily/alcohol" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "음주 후 운전 가능 시간 계산기 - 혈중알코올 분해 시간",
     description: "소주 한 병 마셨는데 언제 운전 가능? 음주량·체중 입력하면 혈중알코올 분해 시간 바로 계산.",
     url: "https://moduncalc.com/daily/alcohol",

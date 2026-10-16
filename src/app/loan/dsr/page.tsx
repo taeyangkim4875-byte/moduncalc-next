@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import DsrCalc from "./DsrCalc";
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "내 DSR은 몇 %? 대출 얼마까지 가능할까? 연소득·기존 대출 입력하면 한도 바로 확인.",
   alternates: { canonical: "https://moduncalc.com/loan/dsr" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "DSR 계산기 - 대출 한도 확인 · 총부채원리금상환비율 (2026)",
     description: "내 DSR은 몇 %? 대출 얼마까지 가능할까? 연소득·기존 대출 입력하면 한도 바로 확인.",
     url: "https://moduncalc.com/loan/dsr",
@@ -77,6 +79,7 @@ export default function Page() {
           자동차 구입이라면 <SeoLink href="/loan/car">자동차 할부 계산기</SeoLink>를 함께 확인하는 것이 좋습니다.
         </p>
       </SeoSection>
+      <SeoSource route="/loan/dsr" />
     </PageLayout>
   );
 }

@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import CarLoanCalc from "./CarLoanCalc";
 
 export const metadata: Metadata = {
   title: "자동차 할부 계산기 - 월 납입액·취등록세·총 비용",
-  description: "자동차 할부 월 얼마? 차량가·선수금·금리 입력하면 월 납입액 + 취등록세 바로 계산.",
+  description: "자동차 할부 월 납입액은 얼마? 차량가·선수금·금리·기간만 넣으면 월 납입액과 총 이자, 취등록세까지 한 번에. 2026년 취득세 감면 기준도 반영했습니다.",
   alternates: { canonical: "https://moduncalc.com/loan/car" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "자동차 할부 계산기 - 월 납입액·취등록세·총 비용",
-    description: "자동차 할부 월 얼마? 차량가·선수금·금리 입력하면 월 납입액 + 취등록세 바로 계산.",
+    description: "자동차 할부 월 납입액은 얼마? 차량가·선수금·금리·기간만 넣으면 월 납입액과 총 이자, 취등록세까지 한 번에. 2026년 취득세 감면 기준도 반영했습니다.",
     url: "https://moduncalc.com/loan/car",
   },
 };
@@ -77,6 +79,7 @@ export default function Page() {
           상환 방식별 이자 차이는 <SeoLink href="/guide/loan-comparison">대출 상환 방식 비교 가이드</SeoLink>에서 확인하세요.
         </p>
       </SeoSection>
+      <SeoSource route="/loan/car" />
     </PageLayout>
   );
 }

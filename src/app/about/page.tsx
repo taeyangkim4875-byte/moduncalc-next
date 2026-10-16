@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "모든 계산기(moduncalc.com)는 2026년 최신 세법·요율을 반영한 무료 계산기 82종을 제공하는 웹 서비스입니다. 운영자 김태양 소개, 계산 기준, 출처를 안내합니다.",
   alternates: { canonical: "https://moduncalc.com/about" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "소개 - 모든 계산기",
     description: "모든 계산기(moduncalc.com)의 운영자 소개, 서비스 특징, 계산 기준 및 공식 출처를 안내합니다.",
     url: "https://moduncalc.com/about",
@@ -28,7 +30,7 @@ export default function Page() {
           2026년 최신 세법·보험 요율·정책을 반영하여 정확한 계산 결과를 제공합니다.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          현재 <b>한국어 계산기 82종</b>과 <b>한국어 가이드 10편</b>을 제공하고 있습니다. 여기에 한국에 거주하는 외국인을 위한 <b>영문 계산기 32종</b>과 <b>영문 가이드 28편</b>을 더해 모두 152개 페이지를 운영하며, 새로운 계산기와 콘텐츠를 지속적으로 추가하고 있습니다.
+          현재 <b>한국어 계산기 82종</b>과 <b>한국어 가이드 10편</b>을 제공하고 있습니다. 여기에 한국에 거주하는 외국인을 위한 <b>영문 계산기 46종</b>과 <b>영문 가이드 30편</b>을 더해 모두 168개 페이지를 운영하며, 새로운 계산기와 콘텐츠를 지속적으로 추가하고 있습니다.
         </p>
       </Card>
 

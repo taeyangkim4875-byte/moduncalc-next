@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "모임 총 금액과 인원수를 입력하면 1인당 금액을 바로 계산. 팁 비율 적용, 10원·100원 단위 올림까지.",
   alternates: { canonical: "https://moduncalc.com/daily/dutch" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "더치페이 계산기 - N분의1 · 팁 포함 정산",
     description: "모임 총 금액과 인원수를 입력하면 1인당 금액을 바로 계산. 팁 비율 적용, 10원·100원 단위 올림까지.",
     url: "https://moduncalc.com/daily/dutch",

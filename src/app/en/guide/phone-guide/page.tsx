@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Getting a Phone in Korea as a Foreigner - Plans, SIM Cards & Apps",
+  title: "Getting a Phone in Korea - Plans & SIM for Foreigners",
   description:
     "Complete guide to Korean mobile plans for foreigners: major carriers, budget MVNOs, SIM cards, and essential Korean apps.",
   alternates: { canonical: "https://moduncalc.com/en/guide/phone-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Getting a Phone in Korea as a Foreigner - Plans, SIM Cards & Apps",
     description:
       "Complete guide to Korean mobile plans for foreigners: major carriers, budget MVNOs, SIM cards, and essential Korean apps.",

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import CommissionCalc from "./CommissionCalc";
 
 export const metadata: Metadata = {
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "복비(중개수수료) 얼마 내야 하나? 매매가·전세가 입력하면 수수료 바로 계산. 부가세 포함.",
   alternates: { canonical: "https://moduncalc.com/realestate/commission" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "복비 계산기 - 부동산 중개수수료",
     description: "복비(중개수수료) 얼마 내야 하나? 매매가·전세가 입력하면 수수료 바로 계산. 부가세 포함.",
     url: "https://moduncalc.com/realestate/commission",
@@ -78,6 +80,7 @@ export default function Page() {
           <SeoLink href="/guide/jeonse">전세 계약 완전 가이드</SeoLink>에서 보증금 보호 절차를 확인하세요.
         </p>
       </SeoSection>
+      <SeoSource route="/realestate/commission" />
     </PageLayout>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "100의 25%는? 80에서 120으로 변하면 몇 %? 비율, 변화율, 할인율, 역산까지 한번에 계산하세요.",
   alternates: { canonical: "https://moduncalc.com/daily/percent" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "퍼센트 계산기 - 비율·변화율·할인율 계산",
     description: "100의 25%는? 80에서 120으로 변하면 몇 %? 비율, 변화율, 할인율, 역산까지 한번에 계산하세요.",
     url: "https://moduncalc.com/daily/percent",
@@ -52,6 +54,47 @@ export default function Page() {
         <p>
           투자 수익률, 세율 변동, 지지율 변화 등을 볼 때 이 차이를 알면 수치를 정확하게 해석할 수 있습니다.
           <SeoLink href="/daily/stock">주식 수익률 계산기</SeoLink>에서 투자 수익률을 직접 계산해 볼 수도 있습니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="올랐다가 같은 % 내리면 제자리가 아닙니다">
+        <p>
+          퍼센트 계산에서 가장 많이 틀리는 지점은 <strong>기준값이 바뀐다는 사실</strong>을
+          놓치는 것입니다. 오를 때의 기준과 내릴 때의 기준이 다르기 때문에, 같은 비율로
+          올랐다 내려도 원래 자리로 돌아오지 않습니다.
+        </p>
+        <SeoFormula>
+          <div>30% 상승 후 30% 하락 → 1 × 1.3 × 0.7 = 0.91 (9% 손실)</div>
+          <div>50% 하락 후 50% 상승 → 1 × 0.5 × 1.5 = 0.75 (25% 손실)</div>
+          <div>50% 하락을 복구하려면 → 100% 상승이 필요</div>
+        </SeoFormula>
+        <p>
+          하락은 더 큰 기준값에 적용되고 회복은 더 작은 기준값에 적용되므로, 손실 쪽이 항상
+          더 무겁습니다. 주가가 반토막 났을 때 &ldquo;50%만 오르면 본전&rdquo;이 아니라
+          <strong>두 배가 되어야</strong> 본전인 이유가 이것입니다.
+        </p>
+      </SeoSection>
+
+      <SeoSection title="퍼센트를 평균 내면 틀리는 경우">
+        <p>
+          비율은 서로 기준이 다르면 <strong>단순 평균을 낼 수 없습니다</strong>.
+          다음 두 상황이 대표적입니다.
+        </p>
+        <SeoList>
+          <li>
+            <strong>수익률의 평균</strong> — 1년차 +50%, 2년차 −50%면 단순 평균은 0%지만
+            실제 자산은 0.75배로 25% 줄어 있습니다. 여러 해를 묶어 볼 때는 산술평균이 아니라
+            곱해서 기간으로 제곱근을 취하는 연평균 복리수익률을 써야 맞습니다.
+          </li>
+          <li>
+            <strong>비율의 가중치</strong> — A매장 전환율 10%(방문 100명), B매장 전환율 2%(방문 1,000명)의
+            전체 전환율은 (10+2)÷2 = 6%가 아닙니다. 전환 수를 합쳐 (10+20)÷1,100 = 약 2.7%가 실제 값입니다.
+            분모가 다르면 분자와 분모를 각각 더한 뒤 나눠야 합니다.
+          </li>
+        </SeoList>
+        <p>
+          할인율도 같은 이유로 더하면 안 됩니다. 20% 할인에 추가 10% 할인은 30%가 아니라
+          <strong>28% 할인</strong>입니다. 두 번째 할인은 이미 깎인 금액에 붙기 때문입니다.
         </p>
       </SeoSection>
 

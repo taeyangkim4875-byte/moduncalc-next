@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -6,11 +7,12 @@ import SeveranceCalc from "./SeveranceCalc";
 
 export const metadata: Metadata = {
   title: "퇴직금 계산기 - 예상 퇴직금 조회",
-  description: "퇴직금 얼마 받을 수 있을까? 입사일·퇴사일·월급 입력하면 예상 퇴직금 바로 계산.",
+  description: "퇴직금 얼마 받을까? 입사일·퇴사일·월급만 넣으면 평균임금 기준 예상 퇴직금이 바로. 1년 이상 근무 요건과 퇴직소득세까지 함께 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/salary/severance" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "퇴직금 계산기 - 예상 퇴직금 조회",
-    description: "퇴직금 얼마 받을 수 있을까? 입사일·퇴사일·월급 입력하면 예상 퇴직금 바로 계산.",
+    description: "퇴직금 얼마 받을까? 입사일·퇴사일·월급만 넣으면 평균임금 기준 예상 퇴직금이 바로. 1년 이상 근무 요건과 퇴직소득세까지 함께 확인하세요.",
     url: "https://moduncalc.com/salary/severance",
   },
 };

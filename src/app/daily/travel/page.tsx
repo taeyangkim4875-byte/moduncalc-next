@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq } from "@/components/SeoContent";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
     "여행 일수, 인원, 목적지를 선택하면 예상 경비를 자동 계산. 항공, 숙소, 식비, 교통, 관광 비용 포함.",
   alternates: { canonical: "https://moduncalc.com/daily/travel" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "여행 경비 계산기 - 국내·해외 여행 예산 짜기 (2026)",
     description: "여행 일수, 인원, 목적지를 선택하면 예상 경비를 자동 계산. 항공, 숙소, 식비, 교통, 관광 비용 포함.",
     url: "https://moduncalc.com/daily/travel",

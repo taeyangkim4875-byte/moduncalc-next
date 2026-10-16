@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: '목표 BMI 달성 체중 계산기 - BMI 역방향 계산',
   description: '원하는 BMI를 달성하려면 몇 kg이어야 하는지 계산합니다. 170cm 정상 체중은 53.5~66.5kg. 키별 목표 체중표 포함.',
   alternates: { canonical: 'https://moduncalc.com/health/bmi/reverse' },
-  openGraph: { title: '목표 BMI 달성 체중 계산 (아시아태평양 기준)', description: '목표 BMI 입력 → 필요 체중 역산. 키별 정상 체중 범위도 함께 확인.', url: 'https://moduncalc.com/health/bmi/reverse' },
+  openGraph: { ...KO_OPEN_GRAPH, title: '목표 BMI 달성 체중 계산 (아시아태평양 기준)', description: '목표 BMI 입력 → 필요 체중 역산. 키별 정상 체중 범위도 함께 확인.', url: 'https://moduncalc.com/health/bmi/reverse' },
 };
 
 export default function Page() {

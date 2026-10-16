@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "cos, sin, sqrt, log 등 공학 함수를 텍스트로 입력하면 실시간으로 계산. 한국어 입력 지원. 버튼 계산기 + 수식 입력 모두 가능.",
   alternates: { canonical: "https://moduncalc.com/calc" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "스마트 계산기 - 무료 온라인 공학용 계산기",
     description: "삼각함수, 로그, 제곱근 등 공학 계산을 브라우저에서. 한국어 입력도 지원.",
     url: "https://moduncalc.com/calc",

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import BmrCalculator from "./BmrCalculator";
-export const metadata: Metadata = { title: "기초대사량 계산기 - 일일 권장 칼로리", description: "하루에 가만히 있어도 소모되는 칼로리는? 기초대사량 + 활동별 권장 칼로리 바로 계산.", alternates: { canonical: "https://moduncalc.com/health/bmr" },
+export const metadata: Metadata = { title: "기초대사량 계산기 - 일일 권장 칼로리", description: "가만히 있어도 소모되는 칼로리는? 기초대사량(BMR)과 활동량을 반영한 하루 권장 칼로리를 계산합니다. 근육량이 대사량에 미치는 영향까지 정리했습니다.", alternates: { canonical: "https://moduncalc.com/health/bmr" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "기초대사량 계산기 - 일일 권장 칼로리",
-    description: "하루에 가만히 있어도 소모되는 칼로리는? 기초대사량 + 활동별 권장 칼로리 바로 계산.",
+    description: "가만히 있어도 소모되는 칼로리는? 기초대사량(BMR)과 활동량을 반영한 하루 권장 칼로리를 계산합니다. 근육량이 대사량에 미치는 영향까지 정리했습니다.",
     url: "https://moduncalc.com/health/bmr",
   },};
 export default function Page() {

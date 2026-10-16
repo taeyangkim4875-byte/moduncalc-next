@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { HubGroups, HubGuides } from '@/components/CategoryHub';
-import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
+import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 
 export const metadata: Metadata = {
   title: '적금·예금 계산기 모음 - 청년도약계좌·청년미래적금·만기 이자',
   description: '청년도약계좌 만기 수령액, 청년미래적금 우대금리 비교, 적금·예금 이자, 복리 계산까지. 이자소득세 15.4%까지 반영한 무료 계산기.',
   alternates: { canonical: 'https://moduncalc.com/savings' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '적금·예금 계산기 모음',
     description: '청년도약계좌·청년미래적금·적금 이자·복리 계산을 한 곳에서.',
     url: 'https://moduncalc.com/savings',
@@ -98,6 +100,7 @@ export default function Page() {
       />
 
       <HubGuides guides={GUIDES} />
+      <SeoSource route="/savings" />
     </PageLayout>
   );
 }

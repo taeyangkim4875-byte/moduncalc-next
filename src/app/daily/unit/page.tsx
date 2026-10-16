@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink, SeoFormula } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "1인치는 몇 cm? 1파운드는 몇 kg? 화씨 100도는 섭씨 몇 도? 길이·무게·온도·면적 단위를 한번에 변환하세요.",
   alternates: { canonical: "https://moduncalc.com/daily/unit" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "단위 변환기 - 길이·무게·온도·면적 한번에 변환",
     description: "1인치는 몇 cm? 1파운드는 몇 kg? 화씨 100도는 섭씨 몇 도? 길이·무게·온도·면적 단위를 한번에 변환하세요.",
     url: "https://moduncalc.com/daily/unit",

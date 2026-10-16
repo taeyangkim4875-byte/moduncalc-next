@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
@@ -22,6 +23,7 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     description: '내 연봉 실수령액은 얼마? 연봉 입력하면 4대보험·소득세 공제 후 월 실수령액과 상위 몇 %인지 바로 확인. 2026 최신 요율.',
     alternates: { canonical: "https://moduncalc.com/salary" },
     openGraph: {
+      ...KO_OPEN_GRAPH,
       title: "2026 연봉 실수령액 계산기 - 4대보험 공제 후 실수령액",
       description: "연봉만 입력하면 실수령액 + 동 연령대 백분위 바로 확인. 2026 4대보험 요율 반영.",
       url: "https://moduncalc.com/salary",

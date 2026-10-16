@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -6,11 +7,12 @@ import PyeongCalc from "./PyeongCalc";
 
 export const metadata: Metadata = {
   title: "평수 계산기 - 평↔㎡(제곱미터) 변환 · 부동산 면적 환산",
-  description: "33평은 몇 제곱미터? 평↔㎡ 바로 변환. 아파트 전용면적·공급면적 차이도 설명.",
+  description: "33평은 몇 제곱미터? 평↔㎡를 바로 변환합니다. 전용면적·공급면적·계약면적의 차이와 전용률 계산까지 함께 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/daily/pyeong" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "평수 계산기 - 평↔㎡(제곱미터) 변환 · 부동산 면적 환산",
-    description: "33평은 몇 제곱미터? 평↔㎡ 바로 변환. 아파트 전용면적·공급면적 차이도 설명.",
+    description: "33평은 몇 제곱미터? 평↔㎡를 바로 변환합니다. 전용면적·공급면적·계약면적의 차이와 전용률 계산까지 함께 확인하세요.",
     url: "https://moduncalc.com/daily/pyeong",
   },
 };

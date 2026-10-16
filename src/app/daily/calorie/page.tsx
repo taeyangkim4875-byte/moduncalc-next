@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import CalorieCalc from "./CalorieCalc";
 export const metadata: Metadata = { title: "칼로리 계산기 - 일일 권장 칼로리 · 다이어트 목표 (2026)", description: "하루에 몇 칼로리 먹어야 할까? 성별·나이·체중·활동량 입력하면 TDEE + 다이어트 목표 칼로리 바로 계산.", alternates: { canonical: "https://moduncalc.com/daily/calorie" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "칼로리 계산기 - 일일 권장 칼로리 · 다이어트 목표 (2026)",
     description: "하루에 몇 칼로리 먹어야 할까? 성별·나이·체중·활동량 입력하면 TDEE + 다이어트 목표 칼로리 바로 계산.",
     url: "https://moduncalc.com/daily/calorie",

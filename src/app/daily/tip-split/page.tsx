@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoFormula, SeoLink } from "@/components/SeoContent";
@@ -7,11 +8,12 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "모임 정산 계산기 - N분의1 · 차등 정산 · 송금 최소화",
-  description: "모임비를 참석자별로 정산하세요. 균등 분배, 차등 분배, 송금 최소화 계산.",
+  description: "회식비·모임비를 참석자별로 깔끔하게 정산하세요. N분의1 균등 분배와 차등 정산, 송금 횟수를 최소화하는 계산까지 지원합니다.",
   alternates: { canonical: "https://moduncalc.com/daily/tip-split" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "모임 정산 계산기 - N분의1 · 차등 정산 · 송금 최소화",
-    description: "모임비를 참석자별로 정산하세요. 균등 분배, 차등 분배, 송금 최소화 계산.",
+    description: "회식비·모임비를 참석자별로 깔끔하게 정산하세요. N분의1 균등 분배와 차등 정산, 송금 횟수를 최소화하는 계산까지 지원합니다.",
     url: "https://moduncalc.com/daily/tip-split",
   },
 };

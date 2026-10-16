@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "월 사용량으로 수도요금을 계산하세요. 상수도 + 하수도 + 물이용부담금 포함. 서울 기준 누진제 반영.",
   alternates: { canonical: "https://moduncalc.com/daily/water" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "수도요금 계산기 - 2026 가정용 수도요금 자동 계산",
     description: "월 사용량으로 수도요금을 계산하세요. 상수도 + 하수도 + 물이용부담금 포함. 서울 기준 누진제 반영.",
     url: "https://moduncalc.com/daily/water",

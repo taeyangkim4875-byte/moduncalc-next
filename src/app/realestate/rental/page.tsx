@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq } from "@/components/SeoContent";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "매매가, 보증금, 월세, 대출 조건을 입력하면 총수익률·순수익률·투자금 회수기간을 자동 계산합니다.",
   alternates: { canonical: "https://moduncalc.com/realestate/rental" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "임대수익률 계산기 - 부동산 투자 수익률",
     description: "매매가, 보증금, 월세, 대출 조건을 입력하면 총수익률·순수익률·투자금 회수기간을 자동 계산합니다.",
     url: "https://moduncalc.com/realestate/rental",

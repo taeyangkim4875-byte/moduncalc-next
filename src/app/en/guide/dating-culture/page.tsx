@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Dating in Korea as a Foreigner - Culture, Apps & Expectations (2026)",
+  title: "Dating in Korea as a Foreigner - Culture & Apps (2026)",
   description: "What's dating like in Korea? Meeting people, popular apps, couple culture, and what foreigners should know.",
   alternates: { canonical: "https://moduncalc.com/en/guide/dating-culture" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Dating in Korea as a Foreigner - Culture, Apps & Expectations (2026)",
     description: "Guide to dating culture in Korea for foreigners: apps, couple traditions, social expectations, and navigating relationships.",
     url: "https://moduncalc.com/en/guide/dating-culture",

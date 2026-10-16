@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -18,11 +19,18 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
     title: "BMI 계산기 - 체질량지수·비만도 판정",
     description: "키·체중만 입력하면 BMI + 비만도 판정 바로 확인. WHO 아시아태평양 기준. 정상 범위와 개선 방법까지.",
     alternates: { canonical: "https://moduncalc.com/health/bmi" },
+    openGraph: {
+      ...KO_OPEN_GRAPH,
+      title: "BMI 계산기 - 체질량지수·비만도 판정",
+      description: "키·체중만 입력하면 BMI + 비만도 판정 바로 확인. WHO 아시아태평양 기준.",
+      url: "https://moduncalc.com/health/bmi",
+    },
   };
 
   if (height > 0 && weight > 0) {
     const bmi = weight / Math.pow(height / 100, 2);
     base.openGraph = {
+      ...KO_OPEN_GRAPH,
       title: "BMI 계산기 - 체질량지수·비만도 판정",
       description: "키·체중만 입력하면 BMI + 비만도 판정 바로 확인. WHO 아시아태평양 기준.",
       url: "https://moduncalc.com/health/bmi",

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
-import { WebsiteJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Korea Calculators for Foreigners - Tax, Salary, Pension, Housing",
+  title: { absolute: "Korea Calculators for Foreigners - Tax, Salary, Pension, Housing" },
   description: "Living in Korea? Free calculators for expats: salary, tax, pension refund, rent, subway & more. 30+ tools, no signup needed.",
   alternates: { canonical: "https://moduncalc.com/en" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Korea Calculators for Foreigners",
     description: "Free tools for expats: tax comparison, salary, pension refund, housing, and more.",
     url: "https://moduncalc.com/en",
@@ -106,8 +107,6 @@ export default function EnHome() {
       title="Korea Calculators"
       description="Essential calculators for foreigners living and working in Korea."
     >
-      <WebsiteJsonLd />
-
       <Section title="💰 Money & Tax" items={KOREA_ESSENTIALS} />
       <Section title="🏠 Living in Korea" items={KOREA_LIVING} />
       <Section title="🛂 Practical Tools" items={KOREA_PRACTICAL} />

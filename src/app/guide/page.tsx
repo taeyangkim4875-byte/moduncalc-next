@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 import Card from '@/components/Card';
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   description: '연봉 실수령액, 4대보험, 전세 계약, 연말정산, 퇴직금, 최저시급, 대출 상환, 주식 세금까지. 계산기만으로는 알기 어려운 배경을 정리한 가이드 10편.',
   alternates: { canonical: 'https://moduncalc.com/guide' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '모든 계산기 가이드',
     description: '연봉·4대보험·전세·연말정산·퇴직금을 제대로 이해하는 가이드 모음.',
     url: 'https://moduncalc.com/guide',

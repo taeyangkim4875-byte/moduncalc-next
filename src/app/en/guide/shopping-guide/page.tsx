@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Shopping in Korea for Foreigners - Online & Offline Guide (2026)",
+  title: "Shopping in Korea for Foreigners - Online & Offline",
   description: "Where to shop in Korea? Coupang, Gmarket, Daiso, outlets & traditional markets. Tax refund for tourists. Online shopping tips.",
   alternates: { canonical: "https://moduncalc.com/en/guide/shopping-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Shopping in Korea for Foreigners - Online & Offline Guide (2026)",
     description: "Complete guide to shopping in Korea: Coupang, Gmarket, traditional markets, tax-free shopping, clothing sizes, and online payment methods.",
     url: "https://moduncalc.com/en/guide/shopping-guide",

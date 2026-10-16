@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
@@ -7,11 +8,12 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "비트코인 수익률 계산기 - 가상자산 투자 손익 계산",
-  description: "매수가와 현재가로 비트코인·가상자산 수익률을 계산하세요. 투자금, 수량, 수수료 반영.",
+  description: "매수가와 현재가만 넣으면 비트코인·가상자산 수익률이 바로. 투자금·수량·거래 수수료를 반영하고, 물타기 시뮬레이션과 가상자산 과세까지 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/daily/crypto" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "비트코인 수익률 계산기 - 가상자산 투자 손익 계산",
-    description: "매수가와 현재가로 비트코인·가상자산 수익률을 계산하세요. 투자금, 수량, 수수료 반영.",
+    description: "매수가와 현재가만 넣으면 비트코인·가상자산 수익률이 바로. 투자금·수량·거래 수수료를 반영하고, 물타기 시뮬레이션과 가상자산 과세까지 확인하세요.",
     url: "https://moduncalc.com/daily/crypto",
   },
 };

@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { HubGroups, HubGuides } from '@/components/CategoryHub';
-import { SeoSection, SeoFaq, SeoList, SeoLink } from '@/components/SeoContent';
+import { SeoSection, SeoFaq, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 
 export const metadata: Metadata = {
   title: '연금·보험 계산기 모음 - 국민연금 예상수령액·실업급여·4대보험',
   description: '국민연금 예상 수령액, 실업급여(구직급여) 예상액, 4대보험료까지. 2026년 보험료율 9.5%와 기준소득월액 상한 659만원을 반영한 무료 계산기.',
   alternates: { canonical: 'https://moduncalc.com/pension' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '연금·보험 계산기 모음 (2026년 기준)',
     description: '국민연금 예상수령액, 실업급여, 4대보험료를 한 곳에서 계산하세요.',
     url: 'https://moduncalc.com/pension',
@@ -94,6 +96,7 @@ export default function Page() {
       />
 
       <HubGuides guides={GUIDES} />
+      <SeoSource route="/pension" />
     </PageLayout>
   );
 }

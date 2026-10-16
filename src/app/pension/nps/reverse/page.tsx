@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: '월 100만원 연금을 받으려면 몇 년 납입해야 할까? 소득 300만원이면 30년. 목표 연금액으로 필요 가입기간을 역산합니다.',
   alternates: { canonical: 'https://moduncalc.com/pension/nps/reverse' },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: '국민연금 목표액 역산하기 (2026)',
     description: '희망 월 연금액 입력 → 필요 가입기간 역산. 소득별 시뮬레이션 표 포함.',
     url: 'https://moduncalc.com/pension/nps/reverse',

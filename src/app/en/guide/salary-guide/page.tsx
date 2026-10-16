@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { EN_OPEN_GRAPH } from "@/app/en/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { FaqJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Understanding Your Korean Payslip - Deductions Explained for Foreigners",
+  title: "Korean Payslip Explained - Deductions for Foreigners",
   description:
     "Decode your Korean 급여명세서: what each deduction means, how much you should be paying, and common payslip errors to watch for.",
   alternates: { canonical: "https://moduncalc.com/en/guide/salary-guide" },
   openGraph: {
+    ...EN_OPEN_GRAPH,
     title: "Understanding Your Korean Payslip - Deductions Explained for Foreigners",
     description:
       "Decode your Korean 급여명세서: what each deduction means, how much you should be paying, and common payslip errors to watch for.",

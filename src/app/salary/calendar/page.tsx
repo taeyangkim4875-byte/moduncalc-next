@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
@@ -7,11 +8,12 @@ import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: "월급 달력 - 월급날 D-day & 오늘까지 번 돈",
-  description: "월급날까지 D-몇일? 이번 달 지금까지 번 돈은? 월급 달력으로 매일 확인하세요.",
+  description: "월급날까지 D-며칠? 이번 달 지금까지 번 돈은 얼마? 월급 달력으로 매일 확인하세요. 월급날이 주말일 때 지급일과 첫·마지막 월급 계산법도 정리했습니다.",
   alternates: { canonical: "https://moduncalc.com/salary/calendar" },
   openGraph: {
+    ...KO_OPEN_GRAPH,
     title: "월급 달력 - 월급날 D-day & 오늘까지 번 돈",
-    description: "월급날까지 D-몇일? 이번 달 지금까지 번 돈은? 월급 달력으로 매일 확인하세요.",
+    description: "월급날까지 D-며칠? 이번 달 지금까지 번 돈은 얼마? 월급 달력으로 매일 확인하세요. 월급날이 주말일 때 지급일과 첫·마지막 월급 계산법도 정리했습니다.",
     url: "https://moduncalc.com/salary/calendar",
   },
 };
