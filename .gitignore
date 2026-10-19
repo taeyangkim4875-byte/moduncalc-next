@@ -43,3 +43,7 @@ next-env.d.ts
 # env
 .env.local
 .env
+
+# Search Console 서비스 계정 키 — 절대 커밋하지 말 것
+gsc-key.json
+index-status.csv

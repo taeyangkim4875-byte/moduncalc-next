@@ -9,7 +9,9 @@
     "lint": "eslint",
     "test": "vitest run",
     "check:rates": "node scripts/check-rates.mjs",
-    "prebuild": "node scripts/check-rates.mjs"
+    "prebuild": "node scripts/check-rates.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
+    "gsc:status": "node scripts/gsc-index-status.mjs"
   },
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
