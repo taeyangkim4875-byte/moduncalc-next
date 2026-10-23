@@ -34,11 +34,14 @@ export default function Page() {
           <li><strong>해군</strong> — 20개월</li>
           <li><strong>공군</strong> — 21개월</li>
           <li><strong>사회복무요원</strong> — 21개월</li>
+          <li><strong>대체복무요원</strong> — 36개월</li>
           <li><strong>의경 / 해양의무경찰</strong> — 18개월 (2023년 폐지, 기존 복무자 해당)</li>
         </SeoList>
         <p>
-          전역일은 <strong>입대일 포함</strong>하여 복무기간을 계산한 날짜의 전날입니다.
-          예를 들어 2026년 1월 2일 육군 입대 시, 18개월 후인 2027년 7월 1일이 전역일입니다.
+          전역일은 <strong>입대일을 복무 1일째로 세어</strong> 계산합니다. 병역법상 복무기간은
+          <strong>입영한 날부터 기산</strong>하기 때문입니다. 그래서 2026년 1월 2일 육군 입대라면
+          18개월이 지난 2027년 7월 2일이 아니라 <strong>그 전날인 2027년 7월 1일</strong>이 전역일입니다.
+          하루 차이로 헷갈리는 지점이 여기입니다.
         </p>
       </SeoSection>
 
@@ -65,45 +68,20 @@ export default function Page() {
         ]}
       />
 
-      <SeoSection title="함께 쓰면 좋은 계산기">
-        <p>
-          전역 후 취업까지 남은 날짜를 세려면 <SeoLink href="/daily/dday">D-day 계산기</SeoLink>가 편하고,
-          첫 직장 연봉의 실수령액이 궁금하면 <SeoLink href="/salary">연봉 실수령액 계산기</SeoLink>를 확인해 보세요.
-          만 나이 기준이 헷갈릴 때는 <SeoLink href="/daily/age">나이 계산기</SeoLink>를 이용하세요.
-        </p>
-      </SeoSection>
-
-      <SeoSection title="전역일은 입대일을 1일로 세서 계산합니다">
-        <p>
-          병역법상 복무기간은 <strong>입영한 날부터 기산</strong>합니다.
-          즉 입대한 그날이 복무 1일째이고, 전역일은 복무기간이 끝나는 날의 다음 날이 아니라
-          복무 만료일 당일입니다.
-        </p>
-        <SeoFormula>
-          <div>전역일 = 입대일 + 복무개월 − 1일</div>
-          <div>예: 2026년 1월 2일 육군 입대(18개월) → 2027년 7월 1일 전역</div>
-        </SeoFormula>
-        <p>
-          2026년 1월 2일에 입대해 18개월을 복무하면 2027년 7월 1일이 전역일입니다.
-          &ldquo;18개월 뒤&rdquo;인 2027년 7월 2일이 아니라는 점을 자주 헷갈립니다.
-        </p>
-      </SeoSection>
-
-      <SeoSection title="군별 복무기간과 전역 후 일정">
-        <p>
-          복무기간은 군별로 다릅니다. 육군과 해병대가 18개월로 가장 짧고,
-          해군 20개월, 공군 21개월, 사회복무요원 21개월, 대체복무요원 36개월입니다.
-        </p>
+      <SeoSection title="전역일을 알면 미리 챙길 수 있는 것들">
         <SeoList>
           <li><strong>말년 휴가</strong> — 남은 연가를 전역 직전에 붙여 쓰는 경우가 많아, 실제 부대를 떠나는 날은 전역일보다 앞당겨지기도 합니다. 다만 법적 전역일은 그대로입니다.</li>
           <li><strong>예비군</strong> — 전역한 다음 해부터 1~4년차 동원훈련, 5~6년차 향방작계훈련을 받습니다. 8년차까지 예비역으로 편성됩니다.</li>
           <li><strong>복학</strong> — 전역일이 학기 중간이면 그 학기는 복학이 어려울 수 있습니다. 대학마다 복학 신청 기간이 정해져 있으니 전역일을 알고 미리 확인하세요.</li>
-          <li><strong>호봉·경력 인정</strong> — 공무원 등 일부 직종에서는 군 복무기간을 경력으로 인정받습니다.</li>
+          <li><strong>호봉·경력 인정</strong> — 공무원 등 일부 직종에서는 군 복무기간을 경력으로 인정받습니다. 입사 시 경력 산정의 근거가 되므로 전역증을 보관해 두세요.</li>
         </SeoList>
+      </SeoSection>
+
+      <SeoSection title="함께 쓰면 좋은 계산기">
         <p>
           전역 후 취업을 준비한다면 <SeoLink href="/salary">연봉 실수령액 계산기</SeoLink>로 희망 연봉의 실수령액을 확인해 보고,
-          남은 날짜는 <SeoLink href="/daily/dday">D-day 계산기</SeoLink>로 관리할 수 있습니다.
-          만 나이는 <SeoLink href="/daily/age">나이 계산기</SeoLink>에서 확인하세요.
+          전역일까지 남은 날짜는 <SeoLink href="/daily/dday">D-day 계산기</SeoLink>로 관리할 수 있습니다.
+          만 나이 기준이 헷갈릴 때는 <SeoLink href="/daily/age">나이 계산기</SeoLink>를 이용하세요.
         </p>
       </SeoSection>
     </PageLayout>

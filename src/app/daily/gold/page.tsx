@@ -61,14 +61,6 @@ export default function Page() {
         ]}
       />
 
-      <SeoSection title="함께 쓰면 좋은 계산기">
-        <p>
-          주식 투자 수익률은 <SeoLink href="/daily/stock">주식 수익률 계산기</SeoLink>,
-          가상자산은 <SeoLink href="/daily/crypto">가상자산 수익률 계산기</SeoLink>를 이용하세요.
-          무게 단위 변환이 필요하면 <SeoLink href="/daily/unit">단위 변환기</SeoLink>도 유용합니다.
-        </p>
-      </SeoSection>
-
       <SeoSection title="금 무게 단위, 헷갈리지 않게 정리">
         <p>
           금은방에서는 &lsquo;돈&rsquo;을, 국제 시장에서는 &lsquo;트로이온스&rsquo;를 씁니다.
@@ -130,6 +122,7 @@ export default function Page() {
           <SeoLink href="/daily/crypto"> 가상자산 계산기</SeoLink>에서 확인할 수 있고,
           장기 복리 효과는 <SeoLink href="/daily/compound">복리 계산기</SeoLink>로 그려볼 수 있습니다.
           투자 수익에 붙는 세금은 <SeoLink href="/guide/investment-tax">주식·투자 세금 총정리</SeoLink>에 정리해 두었습니다.
+          돈·그램·트로이온스 사이의 단순 환산만 필요하면 <SeoLink href="/daily/unit">단위 변환기</SeoLink>가 더 빠릅니다.
         </p>
       </SeoSection>
     </PageLayout>

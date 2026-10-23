@@ -98,14 +98,6 @@ export default function Page() {
         ]}
       />
 
-      <SeoSection title="함께 확인하면 좋은 계산기">
-        <p>
-          근로장려금 수급 대상이라면 <SeoLink href="/salary">연봉 실수령액 계산기</SeoLink>로 4대보험 공제 후 실수령액을 확인하고,
-          프리랜서라면 <SeoLink href="/tax/income">종합소득세 계산기</SeoLink>로 5월 신고 세액을 미리 계산해 보세요.
-          실직 상태라면 <SeoLink href="/pension/jobless">실업급여 계산기</SeoLink>도 참고하세요.
-        </p>
-      </SeoSection>
-
       <SeoSection title="근로장려금, 누가 받을 수 있나">
         <p>
           근로장려금은 일은 하지만 소득이 적은 가구를 지원하는 <strong>환급형 세액공제</strong>입니다.
@@ -169,6 +161,7 @@ export default function Page() {
           종합소득세 신고 대상이라면 <SeoLink href="/tax/income">종합소득세 계산기</SeoLink>를,
           근로소득만 있다면 <SeoLink href="/salary">연봉 실수령액 계산기</SeoLink>로 원천징수액을 확인해 보세요.
           연말정산에서 놓치기 쉬운 공제는 <SeoLink href="/guide/year-end-tax">연말정산 가이드</SeoLink>에 정리해 두었습니다.
+          실직 상태라면 <SeoLink href="/pension/jobless">실업급여 계산기</SeoLink>도 함께 확인해 보세요.
         </p>
       </SeoSection>
     </PageLayout>
