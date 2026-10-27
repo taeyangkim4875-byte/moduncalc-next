@@ -33,12 +33,13 @@ export default function AdFitBanner({ slot }: { slot: keyof typeof SLOTS }) {
 
   const { unit, width, height } = SLOTS[slot];
 
+  // 자리를 미리 잡아두지 않습니다(minHeight 없음).
+  // 관리화면에 대체 광고를 걸어두면 미판매 노출도 채워지지만, 광고 차단 확장이
+  // 켜져 있거나 요청 자체가 실패하면 대체 광고도 오지 않습니다. 그때 ins 가
+  // display:none 으로 남아 빈 자리만 보이는 쪽이 광고가 뜰 때 본문이 한 번
+  // 밀리는 것보다 나쁩니다. 그래서 채워진 만큼만 공간을 차지하게 둡니다.
   return (
-    <div
-      // 광고가 채워질 때 본문이 밀려 내려가지 않도록 자리를 미리 잡아둡니다.
-      style={{ minHeight: height }}
-      className="flex items-center justify-center my-4 overflow-hidden"
-    >
+    <div className="flex items-center justify-center my-4 overflow-hidden">
       <ins
         className="kakao_ad_area"
         style={{ display: 'none' }}
