@@ -6,29 +6,28 @@ import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/S
 import FuelCalc from "./FuelCalc";
 
 export const metadata: Metadata = {
-  title: "자동차 연비 계산기 - 연비 측정 · 유류비 · 전기차 전비 비교 (2026)",
-  description: "내 차 실제 연비는? 주행거리·주유량 입력하면 바로 측정. 서울→부산 유류비 + 전기차 비용 비교까지 무료.",
+  title: "자동차 연비 계산기 - 실연비 측정 · 유류비 · 구간별 기름값 (2026)",
+  description: "내 차 실제 연비는? 주행거리·주유량만 넣으면 바로 측정. 서울→부산 같은 주요 구간 유류비와 차종별 평균 연비까지 확인하세요.",
   alternates: { canonical: "https://moduncalc.com/daily/fuel" },
   openGraph: {
     ...KO_OPEN_GRAPH,
-    title: "자동차 연비 계산기 - 연비·유류비·전기차 전비 비교 (2026)",
-    description: "연비 측정 + 유류비 계산 + 전기차 충전비 비교. 내연차 vs 전기차 연간 절약액까지.",
+    title: "자동차 연비 계산기 - 실연비 측정 · 유류비 (2026)",
+    description: "연비 측정 + 여행 유류비 계산 + 차종별 평균 연비 비교.",
     url: "https://moduncalc.com/daily/fuel",
   },
 };
 
 export default function Page() {
   return (
-    <PageLayout eyebrow="자동차 · 전기차 전비 포함" title="자동차 연비 · 전비 계산기" description="내연차 연비 + 전기차 전비 + 비용 비교까지 한번에.">
+    <PageLayout eyebrow="자동차 · 2026 유가 기준" title="자동차 연비 계산기" description="주행거리와 주유량으로 내 차 실제 연비와 유류비를 계산하세요.">
       <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '일상', href: '/daily' }, { name: '연비', href: '/daily/fuel' }]} />
-      <CalculatorJsonLd name="자동차 연비·전비 계산기" description="내연차 연비(km/L) 측정, 유류비 계산, 전기차 전비(km/kWh) 충전비 계산, 내연차 vs 전기차 비용 비교." url="https://moduncalc.com/daily/fuel" />
+      <CalculatorJsonLd name="자동차 연비 계산기" description="자동차 연비(km/L) 측정, 주행 거리별 유류비 계산, 차종별 평균 연비 비교." url="https://moduncalc.com/daily/fuel" />
       <FaqJsonLd items={[
         {q:"자동차 연비는 어떻게 계산하나요?",a:"연비(km/L) = 주행 거리(km) ÷ 사용 연료(L)입니다. 주유 후 트립미터를 0으로 초기화하고, 다음 주유 시 주행거리와 주유량을 기록하면 실제 연비를 측정할 수 있습니다."},
         {q:"실제 연비가 공인연비보다 낮은 이유는?",a:"공인연비는 표준 시험실 조건에서 측정됩니다. 실제 도로에서는 에어컨, 급가속, 도심 정체, 오르막길 등으로 공인연비의 70~85% 수준이 나옵니다."},
         {q:"연비를 높이는 방법은?",a:"경제속도(60~80km/h) 유지, 급가속·급제동 자제, 타이어 공기압 적정 유지(월 1회 점검), 불필요한 짐 줄이기, 에어컨 적정 사용이 효과적입니다. 이것만으로 연비가 10~20% 개선됩니다."},
         {q:"서울에서 부산까지 유류비는 얼마인가요?",a:"서울-부산 약 400km 기준, 연비 12km/L 차량에 리터당 1,650원이면 약 55,000원입니다. 고속도로 통행료(약 25,000원)는 별도입니다."},
-        {q:"전기차 전비는 어떻게 계산하나요?",a:"전비(km/kWh) = 주행 거리 ÷ 사용 전력량입니다. 아이오닉5 기준 복합 전비 약 5.5~6.0km/kWh이며, 완속 충전(350원/kWh) 기준 100km당 약 6,000원입니다."},
-        {q:"내연차와 전기차 연료비 차이는?",a:"월 1,500km 주행 기준 내연차는 약 20만원, 전기차는 약 9.5만원으로 월 약 11만원, 연간 약 130만원 절약됩니다."},
+        {q:"차종별 평균 연비는 어느 정도인가요?",a:"경형 15~18km/L, 준중형 12~14km/L, 중형 세단 10~12km/L, 중형 SUV 9~11km/L 수준입니다. 같은 차종이라도 도심 위주면 공인연비의 70% 안팎까지 떨어집니다."},
       ]} />
       <FuelCalc />
 
@@ -39,7 +38,6 @@ export default function Page() {
         <SeoFormula>
           <div>실연비(km/L) = 주행 거리(km) ÷ 주유량(L)</div>
           <div>유류비 = 주행 거리 ÷ 연비 × 리터당 기름값</div>
-          <div>전기차 충전비 = 주행 거리 ÷ 전비(km/kWh) × kWh당 단가</div>
         </SeoFormula>
         <p>
           측정법: 주유소에서 가득 넣고, 트립미터 리셋. 다음 주유 시 주행거리와 넣은 양을 이 계산기에 입력하세요.
@@ -47,15 +45,16 @@ export default function Page() {
         </p>
       </SeoSection>
 
-      <SeoSection title="내연차 vs 전기차, 연간 연료비 비교">
-        <SeoList>
-          <li><strong>내연차 (연비 12km/L)</strong> — 월 1,500km 주행 시 약 20만원 (리터당 1,600원 기준)</li>
-          <li><strong>전기차 (전비 5.5km/kWh)</strong> — 같은 거리 완속충전 시 약 9.5만원 (kWh당 350원)</li>
-          <li><strong>연간 차이</strong> — 약 126만원 절약. 10년이면 1,260만원</li>
-        </SeoList>
+      <SeoSection title="전기차를 함께 보고 있다면">
         <p>
-          근데 전기차는 차 값이 더 비싸죠. 보조금 고려하면 5~7년 타야 손익분기가 나옵니다.
-          자동차세도 전기차가 유리해요 — 내연차 대비 연 40~50만원 저렴. <SeoLink href="/daily/cartax">자동차세 계산기</SeoLink>에서 비교해 보세요.
+          전기차는 연료가 아니라 전기를 쓰므로 단위가 km/L 이 아니라 <strong>km/kWh</strong>입니다.
+          계산 구조는 같지만 단가 체계(완속·공용완속·급속)와 겨울철 효율 저하처럼 따로 볼 것이 많아서
+          <SeoLink href="/daily/ev">전기차 전비 계산기</SeoLink>로 분리해 두었습니다.
+          전비 측정, 100km당 충전비, 내연차 대비 연간 절감액을 그쪽에서 비교할 수 있습니다.
+        </p>
+        <p>
+          보유 비용까지 보려면 <SeoLink href="/daily/cartax">자동차세 계산기</SeoLink>와{' '}
+          <SeoLink href="/loan/car">자동차 할부 계산기</SeoLink>를 함께 쓰세요.
         </p>
       </SeoSection>
 

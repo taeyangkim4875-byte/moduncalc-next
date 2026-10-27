@@ -82,7 +82,8 @@ const MENUS_KO: MenuItem[] = [
     { label: '전역일', href: '/daily/military' },
   ]},
   { href: '/daily/fuel', ico: '🚗', label: '자동차/생활비', sub: [
-    { label: '연비·전비', href: '/daily/fuel' },
+    { label: '자동차 연비', href: '/daily/fuel' },
+    { label: '전기차 전비', href: '/daily/ev' },
     { label: '자동차세', href: '/daily/cartax' },
     { label: '에어컨 전기요금', href: '/daily/aircon' },
     { label: '전기요금', href: '/daily/electric' },

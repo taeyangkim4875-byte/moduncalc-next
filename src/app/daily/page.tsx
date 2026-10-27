@@ -36,7 +36,7 @@ const GROUPS = [
   {
     title: '🚗 자동차·이동',
     note: '기름값, 자동차세, 여행 경비처럼 이동에 드는 돈을 계산합니다.',
-    items: ['/daily/fuel', '/daily/cartax', '/daily/travel', '/daily/speed'],
+    items: ['/daily/fuel', '/daily/ev', '/daily/cartax', '/daily/travel', '/daily/speed'],
   },
   {
     title: '💹 투자·부업 수익',

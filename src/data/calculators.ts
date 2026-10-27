@@ -85,7 +85,8 @@ const ALL_KO: CalcMeta[] = [
   { href: '/daily/military', icon: '🪖', title: '전역일', desc: '군별 D-day', category: '일상', keywords: ['전역일', '군대', '입대', '복무', '육군', '해군', '공군', '해병대'], related: ['/daily/dday', '/daily/age', '/daily/anniversary'] },
 
   // 자동차 / 생활비
-  { href: '/daily/fuel', icon: '⛽', title: '연비·전비', desc: '내연차 vs 전기차', category: '일상', keywords: ['연비', '주유', '기름값', '유류비', '자동차'], related: ['/daily/cartax', '/daily/travel', '/daily/speed'] },
+  { href: '/daily/fuel', icon: '⛽', title: '자동차 연비', desc: '실연비·유류비', category: '일상', keywords: ['연비', '주유', '기름값', '유류비', '자동차', '실연비'], related: ['/daily/ev', '/daily/cartax', '/daily/travel'] },
+  { href: '/daily/ev', icon: '🔋', title: '전기차 전비', desc: '충전비·내연차 비교', category: '자동차', keywords: ['전기차', '전비', '전기차 연비', '충전비', '충전요금', '전비 비교', '급속', '완속', 'kWh'], related: ['/daily/fuel', '/daily/electric', '/daily/cartax'] },
   { href: '/daily/aircon', icon: '❄️', title: '에어컨 전기요금', desc: '여름 필수', category: '일상', keywords: ['에어컨', '전기요금', '전기세', '냉방', '인버터', '누진', '여름'], related: ['/daily/electric', '/daily/gas', '/daily/water'] },
   { href: '/daily/electric', icon: '⚡', title: '전기요금', desc: '누진제', category: '일상', keywords: ['전기요금', '전기세', '누진제', '전력', 'kWh', '에어컨'], related: ['/daily/aircon', '/daily/gas', '/daily/water'] },
   { href: '/daily/water', icon: '💧', title: '수도요금', desc: '누진 계산', category: '일상', keywords: ['수도', '요금', '수도세', '상수도', '하수도', '물값'], related: ['/daily/electric', '/daily/gas', '/daily/aircon'] },
