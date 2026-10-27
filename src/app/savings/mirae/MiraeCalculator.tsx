@@ -6,6 +6,7 @@ import CtaButton from '@/components/CtaButton';
 import { won } from '@/utils/format';
 import { scrollToResult } from '@/utils/scroll';
 import ShareButtons from '@/components/ShareButtons';
+import NextStepCards from '@/components/NextStepCards';
 import { getParams, setParams } from '@/utils/params';
 
 const MEDIAN_2026: Record<number, number> = {1:2564238,2:4199292,3:5359036,4:6494738,5:7556719,6:8555952};
@@ -378,6 +379,7 @@ export default function MiraeCalculator() {
         </div>
       )}
 
+      {result && <NextStepCards from="/savings/mirae" outputs={{ size: state.size, salary: state.salary, houseIncome: state.houseIncome, pay: state.pay }} />}
       {result && <ShareButtons title="미래적금 수령액" />}
 
       {!result && <Card className="text-center text-[var(--sub)] text-sm py-8">은행을 선택하고 우대 조건을 체크한 후 계산해 보세요.</Card>}

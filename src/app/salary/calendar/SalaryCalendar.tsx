@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import NextStepCards from '@/components/NextStepCards';
 
 function getWorkDaysInMonth(year: number, month: number) {
   let count = 0;
@@ -243,6 +244,8 @@ export default function SalaryCalendar() {
           세전 연봉 기준이며, 실제 수령액과 다를 수 있습니다.
         </div>
       </footer>
+
+      <NextStepCards from="/salary/calendar" outputs={{ salary }} />
     </>
   );
 }

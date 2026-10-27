@@ -1,7 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import NextStepCards from '@/components/NextStepCards';
+import ChainBanner from '@/components/ChainBanner';
+import { getParams } from '@/utils/params';
 
 const fmt = (n: number) => parseFloat(n.toFixed(1)).toLocaleString('ko-KR', { maximumFractionDigits: 1 });
 
@@ -39,10 +42,22 @@ export default function EvCalc() {
   const mGas = gasEff > 0 ? (mDist / gasEff) * (gasPrice || 0) : 0;
   const mEv = evEff > 0 ? (mDist / evEff) * (evPrice || 0) : 0;
 
+  // /daily/fuel 에서 체인으로 넘어온 연비·유가를 받아 비교에 바로 채운다.
+  /* eslint-disable react-hooks/set-state-in-effect */
+  useEffect(() => {
+    const p = getParams();
+    if (p.gasEff) setGasEff(+p.gasEff);
+    if (p.gasPrice) setGasPrice(+p.gasPrice);
+    if (p.evEff) setEvEff(+p.evEff);
+    if (p.evPrice) setEvPrice(+p.evPrice);
+  }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
   const input = 'flex-1 py-3 px-3.5 border-[1.5px] border-[var(--line)] rounded-xl text-base font-bold outline-none focus:border-[var(--primary)]';
   const unit = 'text-sm font-bold text-[var(--sub)]';
 
   return (<>
+    <ChainBanner />
     <Card><SectionTitle num="🔋">내 전기차 전비 측정</SectionTitle>
       <div className="text-xs text-[var(--sub)] mb-3">충전 후 다음 충전까지의 주행거리와 충전량을 넣으면 실제 전비가 나옵니다.</div>
       <div className="mb-4"><label className="block text-sm font-bold mb-2">주행 거리</label>
@@ -120,5 +135,10 @@ export default function EvCalc() {
         </div>
       </div>
     </Card>
+
+    <NextStepCards
+      from="/daily/ev"
+      outputs={{ gasEff, gasPrice, evEff, evPrice, monthlyKwh: evEff > 0 ? mDist / evEff : 0 }}
+    />
   </>);
 }

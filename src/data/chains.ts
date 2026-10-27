@@ -178,6 +178,72 @@ export const CHAIN_LINKS: ChainLink[] = [
     desc: '거래가가 자동 입력됩니다',
     mappings: [{ from: 'jeonse', to: 'price' }],
   },
+
+  // ── 네이버 유입 상위 페이지에서 나가는 체인 ──
+  // 트래픽이 실제로 오는 페이지에는 '다음 단계'가 하나도 없었다.
+  // 체인이 걸린 11개 경로는 모두 유입이 거의 없는 쪽이었다.
+  {
+    from: '/salary/live',
+    to: '/salary',
+    label: '그래서 실수령액은 얼마인지 보기',
+    desc: '연봉이 자동 입력됩니다',
+    mappings: [{ from: 'salary', to: 'salary' }],
+  },
+  {
+    from: '/daily/fuel',
+    to: '/daily/ev',
+    label: '전기차로 바꾸면 얼마 절약되는지 보기',
+    desc: '연비와 유가가 자동 입력됩니다',
+    mappings: [
+      { from: 'eff', to: 'gasEff' },
+      { from: 'price', to: 'gasPrice' },
+    ],
+  },
+  {
+    from: '/savings/doyak',
+    to: '/savings/mirae',
+    label: '청년미래적금과 비교하기',
+    desc: '소득과 납입액이 자동 입력됩니다',
+    mappings: [
+      { from: 'size', to: 'size' },
+      { from: 'salary', to: 'salary' },
+      { from: 'houseIncome', to: 'houseIncome' },
+      { from: 'pay', to: 'pay' },
+    ],
+  },
+  {
+    from: '/salary/calendar',
+    to: '/salary',
+    label: '이 월급의 실수령액 확인하기',
+    desc: '연봉이 자동 입력됩니다',
+    mappings: [{ from: 'salary', to: 'salary' }],
+  },
+  {
+    from: '/salary/annual',
+    to: '/salary/severance',
+    label: '이 입사일로 퇴직금 계산하기',
+    desc: '입사일이 자동 입력됩니다',
+    mappings: [{ from: 'startDate', to: 'startDate' }],
+  },
+  {
+    from: '/daily/ev',
+    to: '/daily/electric',
+    label: '집에서 충전하면 전기요금이 얼마나 오르는지 보기',
+    desc: '월 충전량이 사용량에 더해져 누진 구간을 확인할 수 있습니다',
+    mappings: [{ from: 'monthlyKwh', to: 'kwh', round: true }],
+  },
+  {
+    from: '/savings/mirae',
+    to: '/savings/doyak',
+    label: '청년도약계좌와 비교하기',
+    desc: '소득과 납입액이 자동 입력됩니다',
+    mappings: [
+      { from: 'size', to: 'size' },
+      { from: 'salary', to: 'salary' },
+      { from: 'houseIncome', to: 'houseIncome' },
+      { from: 'pay', to: 'pay' },
+    ],
+  },
 ];
 
 export function getChainLinks(from: string): ChainLink[] {

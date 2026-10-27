@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import NextStepCards from '@/components/NextStepCards';
 
 // 근로기준법 제60조 연차 계산
 // 1년 미만: 1개월 개근 시 1일 (최대 11일)
@@ -139,6 +140,8 @@ export default function AnnualCalc() {
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
         <div className="bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">근로기준법 기준 추정치입니다. 회사별 취업규칙에 따라 다를 수 있습니다.</div>
       </footer>
+
+      {startDate && <NextStepCards from="/salary/annual" outputs={{ startDate }} />}
     </>
   );
 }

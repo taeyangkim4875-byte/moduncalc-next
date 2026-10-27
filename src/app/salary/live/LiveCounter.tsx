@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
+import NextStepCards from '@/components/NextStepCards';
 
 export default function LiveCounter() {
   const [salary, setSalary] = useState(4500);
@@ -178,6 +179,8 @@ export default function LiveCounter() {
           <div><div className="text-sm font-bold text-[var(--ink)] mb-1">Q. 근무일수 252일은 어떤 기준인가요?</div><div className="text-sm text-[#4E5968] leading-relaxed">A. 연 365일에서 주말과 공휴일을 뺀 평균 근무일수예요. 회사마다 다를 수 있어요.</div></div>
         </div>
       </Card>
+
+      <NextStepCards from="/salary/live" outputs={{ salary }} />
 
       <footer className="mt-2 px-1.5 pt-4 text-[11.5px] text-[var(--sub)] leading-relaxed">
         <div className="bg-[#FBFCFD] border border-[var(--line)] rounded-xl p-3.5 text-[11px] text-[#8B95A1]">재미용 계산이며, 실제 급여와 다를 수 있습니다.</div>

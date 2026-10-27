@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Card, { SectionTitle } from '@/components/Card';
 import ResultPanel from '@/components/ResultPanel';
+import NextStepCards from '@/components/NextStepCards';
 const fmt=(n:number)=>parseFloat(n.toFixed(1)).toLocaleString('ko-KR',{maximumFractionDigits:1});
 export default function FuelCalc(){
   const [dist,setDist]=useState(500);const [liter,setLiter]=useState(45);
@@ -22,6 +23,8 @@ export default function FuelCalc(){
         <ResultPanel className="mt-3" value={`${Math.round(cost).toLocaleString()}원`} sub="예상 유류비"/>
       </div>
     </Card>
+
+    <NextStepCards from="/daily/fuel" outputs={{ eff, price }} />
 
     <Card>
       <h2 className="text-base font-extrabold mb-3">📊 차종별 평균 연비 비교</h2>

@@ -1,5 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import ChainBanner from '@/components/ChainBanner';
+import { getParams } from '@/utils/params';
 import Card, { SectionTitle } from '@/components/Card';
 import { won } from '@/utils/format';
 
@@ -40,12 +42,21 @@ export default function ElectricCalc(){
   const [kwh,setKwh]=useState(300);
   const [season,setSeason]=useState<Season>('normal');
 
+  // /daily/ev 에서 월 충전량을 넘겨받아 사용량에 반영한다.
+  /* eslint-disable react-hooks/set-state-in-effect */
+  useEffect(()=>{
+    const p=getParams();
+    if(p.kwh) setKwh(+p.kwh);
+  },[]);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
   const r=calcElectric(kwh,season);
 
   const seg=(opts:{label:string;value:string}[],current:string,set:(v:string)=>void)=>
     <div className="flex flex-wrap gap-2">{opts.map(o=><button key={o.value} onClick={()=>set(o.value)} className={`flex-1 min-w-[60px] py-2.5 px-2 border-[1.5px] rounded-xl text-sm font-bold cursor-pointer transition-all ${current===o.value?'bg-[var(--primary-weak)] border-[var(--primary)] text-[var(--primary-dark)]':'bg-white border-[var(--line)] text-[var(--sub)]'}`}>{o.label}</button>)}</div>;
 
   return(<>
+    <ChainBanner />
     <Card><SectionTitle num="1">사용량 입력</SectionTitle>
       <div className="mb-4">
         <label className="block text-sm font-bold mb-2">월 사용량 <span className="text-xs text-[var(--sub)] font-medium ml-1">{kwh.toLocaleString()}kWh</span></label>
