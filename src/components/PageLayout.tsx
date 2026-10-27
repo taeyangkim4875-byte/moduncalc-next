@@ -1,3 +1,4 @@
+import AdFitBanner, { AdFitLoader } from './AdFitBanner';
 import SearchBar from './SearchBar';
 import RelatedCalcs from './RelatedCalcs';
 import RelatedGuides from './RelatedGuides';
@@ -21,12 +22,16 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
         <h1 className="mt-1.5 mb-2 text-2xl font-extrabold leading-tight tracking-tight">{title}</h1>
         <p className="m-0 text-sm text-[var(--sub)]">{description}</p>
       </header>
+      <AdFitBanner slot="top" />
       {children}
+      <AdFitBanner slot="middle" />
       <RelatedGuides />
       <RelatedCalcs />
       <FirstSaveNotice />
       <PageMeta />
       <SiteFooter />
+      {/* ins 가 모두 DOM 에 올라간 뒤 스크립트가 실행되도록 마지막에 둔다 */}
+      <AdFitLoader />
     </div>
   );
 }
