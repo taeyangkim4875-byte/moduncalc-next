@@ -121,6 +121,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/health/bmi/reverse', priority: 0.6, lastmod: '2026-09-16' },
     { path: '/pension/nps/reverse', priority: 0.6, lastmod: '2026-09-16' },
     { path: '/realestate/acqtax/reverse', priority: 0.6, lastmod: '2026-10-19' },
+    // 영문 정책·소개 (영문 이용자에게 직접 고지하는 문서)
+    { path: '/en/about', priority: 0.5, lastmod: '2026-10-28' },
+    { path: '/en/contact', priority: 0.5, lastmod: '2026-10-28' },
+    { path: '/en/privacy', priority: 0.5, lastmod: '2026-10-28' },
+    { path: '/en/terms', priority: 0.5, lastmod: '2026-10-28' },
+    { path: '/en/disclaimer', priority: 0.5, lastmod: '2026-10-28' },
     // 영문 가이드 (Korea living guides for foreigners)
     { path: '/en/guide', priority: 0.8, lastmod: '2026-10-19' },
     { path: '/en/guide/apartment-guide', priority: 0.7, lastmod: '2026-10-19' },

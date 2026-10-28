@@ -11,9 +11,11 @@ import { isEnPath } from '@/utils/locale';
  * PageLayout 은 서버 컴포넌트라 경로를 읽을 수 없어서, 언어가 갈리는
  * 이 부분만 클라이언트 컴포넌트로 떼어냈습니다.
  *
- * 정책 문서(소개·개인정보·약관·면책) 본문은 한국어로만 발행합니다.
- * 영문 페이지에서는 링크 이름만 영어로 보여주고, 본문이 한국어라는 점을
- * 숨기지 않고 한 줄로 알립니다.
+ * 정책 문서는 한국어(/privacy 등)와 영문(/en/privacy 등)을 따로 발행합니다.
+ * 영문 페이지에서는 영문판을 가리킵니다. 양쪽 내용이 같아야 하므로 한쪽을
+ * 고치면 다른 쪽도 함께 고칠 것.
+ *
+ * 변경 이력(changelog)만 한국어 단일 발행이라 그 점을 한 줄로 알립니다.
  */
 export default function SiteFooter() {
   const isEn = isEnPath(usePathname());
@@ -22,12 +24,12 @@ export default function SiteFooter() {
     ? [
         { href: '/en', label: 'All calculators' },
         { href: '/en/guide', label: 'Guides' },
-        { href: '/about', label: 'About' },
+        { href: '/en/about', label: 'About' },
+        { href: '/en/contact', label: 'Contact' },
+        { href: '/en/privacy', label: 'Privacy' },
+        { href: '/en/terms', label: 'Terms' },
+        { href: '/en/disclaimer', label: 'Disclaimer' },
         { href: '/changelog', label: 'Changelog' },
-        { href: '/contact', label: 'Contact' },
-        { href: '/privacy', label: 'Privacy' },
-        { href: '/terms', label: 'Terms' },
-        { href: '/disclaimer', label: 'Disclaimer' },
       ]
     : [
         { href: '/about', label: '소개' },
@@ -49,7 +51,7 @@ export default function SiteFooter() {
       </nav>
       {isEn && (
         <p className="mt-0 mb-2 text-[11px] text-[var(--sub)]">
-          About, Privacy, Terms and Disclaimer are published in Korean.
+          The changelog is published in Korean only.
         </p>
       )}
       <p className="m-0">
