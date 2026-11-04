@@ -1,3 +1,8 @@
+// slot="middle"(300x250)은 여기서 렌더하지 않습니다.
+// children 뒤에 두면 SEO 본문 1,500~2,000자를 모두 지난 자리가 되어
+// 뷰어빌리티가 15% 까지 떨어졌습니다(상단 320x100은 84%). eCPM 이 7.4배인
+// 사각형 배너를 거기 두는 건 손해라, 트래픽 상위 페이지의 계산기 직후에
+// 개별로 배치합니다.
 import AdFitBanner, { AdFitLoader } from './AdFitBanner';
 import SearchBar from './SearchBar';
 import RelatedCalcs from './RelatedCalcs';
@@ -24,7 +29,6 @@ export default function PageLayout({ eyebrow, title, description, children }: Pa
       </header>
       <AdFitBanner slot="top" />
       {children}
-      <AdFitBanner slot="middle" />
       <RelatedGuides />
       <RelatedCalcs />
       <FirstSaveNotice />

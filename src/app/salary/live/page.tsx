@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
+import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import LiveCounter from "./LiveCounter";
@@ -20,6 +21,7 @@ export default function Page() {
       <FaqJsonLd items={[{q:"세전 기준인가요?",a:"네, 세전 연봉 기준입니다. 실수령 기준으로 보려면 연봉 실수령액 계산기를 먼저 이용하세요."},{q:"근무일수 252일은 어떻게 나온 건가요?",a:"연 365일에서 주말(104일)과 공휴일(약 15일)을 제외한 일반적인 근무일수입니다."}]} />
       <LiveCounter />
       <ShareButtons title="월급 카운터" />
+      <AdFitBanner slot="middle" />
 
       <SeoSection title="화장실 가는 동안에도 돈을 벌고 있어요">
         <p>연봉 4,000만원이면 초당 약 5.5원을 벌고 있습니다. 화장실 다녀오는 5분 동안 1,650원, 점심시간 1시간이면 19,800원이에요. 솔직히 이렇게 보면 야근할 때 위로가 좀 됩니다.</p>

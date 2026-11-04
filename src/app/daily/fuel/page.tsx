@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
+import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import FuelCalc from "./FuelCalc";
@@ -30,6 +31,7 @@ export default function Page() {
         {q:"차종별 평균 연비는 어느 정도인가요?",a:"경형 15~18km/L, 준중형 12~14km/L, 중형 세단 10~12km/L, 중형 SUV 9~11km/L 수준입니다. 같은 차종이라도 도심 위주면 공인연비의 70% 안팎까지 떨어집니다."},
       ]} />
       <FuelCalc />
+      <AdFitBanner slot="middle" />
 
       <SeoSection title="내 차 실연비, 직접 측정하는 법">
         <p>

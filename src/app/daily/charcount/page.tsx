@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
+import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import CharCountCalc from "./CharCountCalc";
@@ -31,6 +32,7 @@ export default function Page() {
       ]} />
       <CharCountCalc />
       <ShareButtons title="글자수 세기 결과" />
+      <AdFitBanner slot="middle" />
 
       <SeoSection title="자소서 글자수, 기업마다 기준이 다릅니다">
         <p>

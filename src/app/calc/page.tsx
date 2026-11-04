@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
+import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
 import SmartCalc from "./SmartCalc";
@@ -32,6 +33,7 @@ export default function Page() {
         {q:"삼각함수는 도(degree) 기준인가요?",a:"네, 이 계산기는 도(degree) 기준입니다. cos(45)는 45도의 코사인 값을 계산합니다."},
       ]} />
       <SmartCalc />
+      <AdFitBanner slot="middle" />
 
       <SeoSection title="폰에서 공학 계산기 쓰는 가장 빠른 방법">
         <p>

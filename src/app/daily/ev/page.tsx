@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
+import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
 import ShareButtons from "@/components/ShareButtons";
@@ -39,6 +40,7 @@ export default function Page() {
       ]} />
       <EvCalc />
       <ShareButtons title="전기차 전비 계산 결과" />
+      <AdFitBanner slot="middle" />
 
       <SeoSection title="전비와 연비, 같은 개념입니다">
         <p>

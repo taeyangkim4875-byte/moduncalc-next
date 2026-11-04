@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
+import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
 import AnnualCalc from "./AnnualCalc";
@@ -26,6 +27,7 @@ export default function Page() {
       <FaqJsonLd items={[{q:"1년 미만인데 연차가 있나요?",a:"네, 1개월 개근 시 1일의 유급휴가(월차)가 발생합니다. 최대 11일."},{q:"연차는 언제 소멸하나요?",a:"발생일로부터 1년 이내에 사용하지 않으면 소멸됩니다."},{q:"연차수당은 어떻게 계산하나요?",a:"미사용 연차 × 1일 통상임금으로 계산됩니다."}]} />
       <AnnualCalc />
       <ShareButtons title="연차 계산 결과" />
+      <AdFitBanner slot="middle" />
 
       <SeoSection title="근로기준법이 정한 연차 발생 기준">
         <p>
