@@ -3,6 +3,7 @@ import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
+import { SeoBarChart } from "@/components/SeoChart";
 import JoblessCalculator from "./JoblessCalculator";
 
 export const metadata: Metadata = {
@@ -19,6 +20,16 @@ export default function Page() {
       <CalculatorJsonLd name="실업급여 계산기" description="2026년 기준 실업급여(구직급여) 1일액, 소정급여일수, 총 수령액을 계산하세요." url="https://moduncalc.com/pension/jobless" />
       <FaqJsonLd items={[{q:"자발적 퇴사도 실업급여를 받을 수 있나요?",a:"원칙적으로 불가하지만, 임금체불·직장 내 괴롭힘·통근 곤란 등 정당한 사유가 있으면 수급 가능합니다."},{q:"실업급여는 얼마나 오래 받을 수 있나요?",a:"나이와 고용보험 가입기간에 따라 120~270일입니다."},{q:"실업급여 신청은 어디서 하나요?",a:"거주지 관할 고용센터에 방문하거나, 고용24 온라인으로 신청할 수 있습니다."}]} />
       <JoblessCalculator />
+
+      <SeoBarChart
+        title="구직급여 1일 지급액 상·하한 (2026)"
+        caption="평균임금의 60%가 기본이고, 그 값이 상한을 넘거나 하한에 못 미치면 상·하한이 적용됩니다."
+        unit="원"
+        items={[
+          { label: '1일 상한액', value: 68100, highlight: true },
+          { label: '1일 하한액', value: 66048, note: '최저시급 × 8시간 × 80%' },
+        ]}
+      />
 
       <SeoSection title="실업급여, 받기 전에 이것만은 알아두세요">
         <p>

@@ -5,6 +5,7 @@ import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
 import { CalculatorJsonLd, FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoFaq } from "@/components/SeoContent";
+import { SeoBarChart } from "@/components/SeoChart";
 
 export const metadata: Metadata = {
   title: "4대보험 완전 정리 - 2026년 요율·계산 방법·혜택",
@@ -172,6 +173,18 @@ export default function FourInsuranceGuidePage() {
           ))}
         </div>
       </Card>
+
+      <SeoBarChart
+        title="4대보험 근로자 부담 요율 (2026)"
+        caption="근로자가 내는 몫입니다. 사업주가 같은 금액을 별도로 부담합니다. 합계 9.717%."
+        unit="%"
+        items={[
+          { label: '국민연금', value: 4.75, note: '기준소득월액 상한 659만원까지' },
+          { label: '건강보험', value: 3.595, note: '소득 상한 없음' },
+          { label: '고용보험', value: 0.9, note: '실업급여 재원분' },
+          { label: '장기요양', value: 0.472, note: '건강보험료의 13.14%' },
+        ]}
+      />
 
       <SeoFaq
         title="4대보험 실무에서 자주 겪는 상황"

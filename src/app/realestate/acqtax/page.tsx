@@ -3,6 +3,7 @@ import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
+import { SeoBarChart } from "@/components/SeoChart";
 import { ogImageUrl } from "@/utils/og";
 import { won } from "@/utils/format";
 import AcqTaxCalc from "./AcqTaxCalc";
@@ -59,6 +60,18 @@ export default function Page() {
       <CalculatorJsonLd name="취득세 계산기" description="주택 매매 시 납부할 취득세, 농어촌특별세, 지방교육세를 계산하세요." url="https://moduncalc.com/realestate/acqtax" />
       <FaqJsonLd items={[{q:"생애 첫 주택 취득세 감면이 있나요?",a:"생애최초로 주택을 취득하는 경우 요건을 충족하면 취득세를 최대 200만원까지 감면받을 수 있습니다. 소득·주택가액 요건이 적용되며 감면 요건은 수시로 바뀌므로 계약 전 관할 시군구청에 확인해야 합니다."},{q:"다주택자 중과세율은 어떻게 되나요?",a:"조정대상지역 2주택은 8%, 3주택 이상은 12%가 적용됩니다."},{q:"전용면적 85㎡ 이하이면 어떤 혜택이 있나요?",a:"농어촌특별세 0.2%가 면제됩니다."}]} />
       <AcqTaxCalc />
+
+      <SeoBarChart
+        title="주택 취득세율 (2026)"
+        caption="농어촌특별세와 지방교육세가 별도로 추가됩니다."
+        unit="%"
+        items={[
+          { label: '1주택 6억 이하', value: 1, note: '최저 구간' },
+          { label: '1주택 9억 초과', value: 3 },
+          { label: '2주택', value: 8 },
+          { label: '3주택 이상', value: 12, highlight: true },
+        ]}
+      />
 
       <SeoSection title="2026년 주택 취득세율 기준">
         <p>

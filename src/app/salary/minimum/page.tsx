@@ -3,6 +3,7 @@ import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from '@/components/PageLayout';
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from '@/components/SeoContent';
+import { SeoBarChart, SeoSampleIO } from "@/components/SeoChart";
 import MinWageCalculator from './MinWageCalculator';
 
 export const metadata: Metadata = {
@@ -23,6 +24,30 @@ export default function MinWagePage() {
       <CalculatorJsonLd name="최저시급 계산기" description="2026년 최저시급 기준 월급과 주휴수당을 계산하세요." url="https://moduncalc.com/salary/minimum" />
       <FaqJsonLd items={[{q:"2027년 최저시급은 얼마인가요?",a:"2027년 최저시급은 10,700원으로 확정되었습니다. 2026년(10,320원) 대비 380원(3.7%) 인상. 주 40시간 기준 월급은 약 2,236,300원이며, 2027년 1월 1일부터 적용됩니다."},{q:"2026년 최저시급은 얼마인가요?",a:"2026년 최저시급은 10,320원입니다. 주 40시간(월 209시간) 근무 시 월급은 약 2,156,880원입니다."},{q:"주휴수당 포함 시급은 얼마인가요?",a:"2026년 기준 주휴수당을 포함하면 실질 시급은 약 12,384원입니다. 2027년은 약 12,840원입니다."},{q:"수습기간에도 최저임금을 받나요?",a:"1년 이상 근로계약 시 수습 3개월간 최저임금의 90%까지 감액 가능합니다. 2026년 기준 9,288원, 2027년 기준 9,630원."},{q:"최저임금 위반 시 처벌은?",a:"최저임금법 위반 시 3년 이하 징역 또는 2,000만원 이하 벌금에 처해질 수 있습니다."}]} />
       <MinWageCalculator />
+
+      <SeoSampleIO
+        inputs={[
+          { label: '시급', value: '10,320원 (2026 최저)' },
+          { label: '주 근무시간', value: '40시간' },
+        ]}
+        outputs={[
+          { label: '월 환산 시간', value: '209시간' },
+          { label: '월급 (주휴 포함)', value: '2,156,880원' },
+          { label: '연봉 환산', value: '25,882,560원' },
+        ]}
+        note="209시간은 주 40시간 근무에 주휴시간을 더해 월로 환산한 법정 기준 시간입니다."
+      />
+
+      <SeoBarChart
+        title="최저시급 추이"
+        caption="2027년분은 2026년 7월 14일 의결·2027년 1월 1일 시행으로 확정된 금액입니다."
+        unit="원"
+        items={[
+          { label: '2025년', value: 10030 },
+          { label: '2026년', value: 10320, highlight: true },
+          { label: '2027년 (확정)', value: 10700, note: '월 209시간 = 2,236,300원' },
+        ]}
+      />
 
       <SeoSection title="2026·2027년 최저시급 기준">
         <p>

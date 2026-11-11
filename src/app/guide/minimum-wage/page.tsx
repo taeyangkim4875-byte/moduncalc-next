@@ -3,6 +3,7 @@ import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import Card from "@/components/Card";
+import { SeoBarChart } from "@/components/SeoChart";
 import { FaqJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
@@ -30,6 +31,17 @@ export default function Page() {
           { q: "2026년 최저시급은 얼마인가요?", a: "2026년 최저시급은 10,320원입니다. 2025년 10,030원 대비 290원(약 2.9%) 인상되었습니다." },
           { q: "주휴수당 포함하면 실질 시급은 얼마인가요?", a: "주 40시간 근무 기준, 주휴수당을 포함한 실질 시급은 약 12,384원입니다. 주휴 8시간분이 추가로 지급되기 때문입니다." },
           { q: "수습기간에도 최저시급을 받나요?", a: "1년 이상 근로계약을 체결한 경우, 수습 시작일부터 3개월간 최저임금의 90%(9,288원)를 적용할 수 있습니다. 단순노무직은 감액 적용이 불가합니다." },
+        ]}
+      />
+
+      <SeoBarChart
+        title="최저시급 추이"
+        caption="2027년분은 2026년 7월 14일 의결·2027년 1월 1일 시행으로 확정된 금액입니다."
+        unit="원"
+        items={[
+          { label: '2025년', value: 10030 },
+          { label: '2026년', value: 10320, highlight: true },
+          { label: '2027년 (확정)', value: 10700, note: '월 209시간 = 2,236,300원' },
         ]}
       />
 

@@ -3,6 +3,7 @@ import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink, SeoSource } from "@/components/SeoContent";
+import { SeoBarChart, SeoSampleIO } from "@/components/SeoChart";
 import { ogImageUrl } from "@/utils/og";
 import { won } from "@/utils/format";
 import InsuranceCalc from "./InsuranceCalc";
@@ -57,6 +58,30 @@ export default function Page() {
         { q: "4대보험은 누가 내나요?", a: "근로자와 사업주가 절반씩 부담합니다. 다만 고용보험은 사업주가 근로자보다 약간 더 부담합니다 (150인 미만 기준 사업주 1.35%)." },
       ]} />
       <InsuranceCalc />
+
+      <SeoSampleIO
+        inputs={[{ label: '월 급여 (세전)', value: '300만원' }]}
+        outputs={[
+          { label: '국민연금 4.75%', value: '142,500원' },
+          { label: '건강보험 3.595%', value: '107,850원' },
+          { label: '장기요양 (건보료의 13.14%)', value: '14,171원' },
+          { label: '고용보험 0.9%', value: '27,000원' },
+          { label: '4대보험 합계', value: '291,521원' },
+        ]}
+        note="사업주도 같은 금액을 별도로 부담합니다. 여기에 소득세와 지방소득세가 추가로 공제됩니다."
+      />
+
+      <SeoBarChart
+        title="4대보험 근로자 부담 요율 (2026)"
+        caption="근로자가 내는 몫입니다. 사업주가 같은 금액을 별도로 부담합니다. 합계 9.717%."
+        unit="%"
+        items={[
+          { label: '국민연금', value: 4.75, note: '기준소득월액 상한 659만원까지' },
+          { label: '건강보험', value: 3.595, note: '소득 상한 없음' },
+          { label: '고용보험', value: 0.9, note: '실업급여 재원분' },
+          { label: '장기요양', value: 0.472, note: '건강보험료의 13.14%' },
+        ]}
+      />
 
       <SeoSection title="4대보험이란?">
         <p>
