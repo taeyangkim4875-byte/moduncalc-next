@@ -101,7 +101,7 @@ export default function Home() {
       <Card className="mt-4">
         <h2 className="text-base font-extrabold mb-3">📖 모든 계산기란?</h2>
         <p className="text-sm text-[#4E5968] leading-relaxed mb-3">모든 계산기(moduncalc.com)는 연봉, 적금, 대출, 부동산, 건강, 세금 등 일상에서 자주 필요한 계산을 한 곳에서 무료로 이용할 수 있는 웹 서비스입니다. 2026년 최신 정책·세율·요율이 반영되어 있으며, 모든 계산은 브라우저에서 즉시 처리됩니다.</p>
-        <p className="text-sm text-[#4E5968] leading-relaxed">청년도약계좌·미래적금, 연봉 실수령액, 최저시급·주휴수당, 실업급여, 국민연금, DSR, 취득세, 양도소득세, BMI, 퇴직금, 에어컨 전기요금 등 한국어 계산기 82종과 가이드 10편을 제공하며, 한국에 사는 외국인을 위한 영문 계산기 32종과 영문 가이드 28편도 함께 운영하고 있습니다.</p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">청년도약계좌·미래적금, 연봉 실수령액, 최저시급·주휴수당, 실업급여, 국민연금, DSR, 취득세, 양도소득세, BMI, 퇴직금, 에어컨 전기요금 등 한국어 계산기 82종과 가이드 15편을 제공하며, 한국에 사는 외국인을 위한 영문 계산기 32종과 영문 가이드 30편도 함께 운영하고 있습니다.</p>
       </Card>
 
       <SeoSection title="매달 정책이 바뀌는데, 계산기는 최신인가요?">

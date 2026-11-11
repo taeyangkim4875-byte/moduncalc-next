@@ -50,9 +50,6 @@ const GUIDES: Record<string, { href: string; title: string }[]> = {
   '/loan': [
     { href: '/guide/loan-comparison', title: '📖 원리금균등 vs 원금균등 비교' },
   ],
-  '/loan/car': [
-    { href: '/guide/loan-comparison', title: '📖 대출 상환 방식 비교' },
-  ],
   '/realestate/acqtax': [
     { href: '/guide/jeonse', title: '📖 전세 계약 가이드' },
   ],
@@ -79,10 +76,25 @@ const GUIDES: Record<string, { href: string; title: string }[]> = {
     { href: '/guide/fire-retirement', title: '📖 FIRE 조기 은퇴 가이드' },
   ],
   '/daily/electric': [
+    { href: '/guide/ev-charging-cost', title: '📖 전기차 충전 요금 완전 정리' },
     { href: '/guide/jeonse', title: '📖 전세 계약·주거 가이드' },
   ],
   '/daily/fuel': [
+    { href: '/guide/ev-running-cost', title: '📖 전기차 5년 유지비 비교' },
     { href: '/guide/loan-comparison', title: '📖 자동차 할부·대출 비교' },
+  ],
+  '/daily/ev': [
+    { href: '/guide/ev-charging-cost', title: '📖 전기차 충전 요금 완전 정리' },
+    { href: '/guide/ev-winter', title: '📖 전기차 겨울 전비' },
+    { href: '/guide/ev-running-cost', title: '📖 전기차 5년 유지비 비교' },
+  ],
+  '/daily/cartax': [
+    { href: '/guide/ev-running-cost', title: '📖 전기차 5년 유지비 비교' },
+    { href: '/guide/ev-resale', title: '📖 전기차 중고 가격과 배터리 보증' },
+  ],
+  '/loan/car': [
+    { href: '/guide/ev-subsidy', title: '📖 전기차 보조금 계산 방법' },
+    { href: '/guide/loan-comparison', title: '📖 대출 상환 방식 비교' },
   ],
   '/daily/aircon': [
     { href: '/guide/jeonse', title: '📖 전세 계약·주거 가이드' },

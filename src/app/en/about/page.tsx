@@ -36,9 +36,9 @@ export default function Page() {
           account. Figures reflect <b>2026 tax law, insurance rates and policy</b>.
         </p>
         <p className="text-sm text-[#4E5968] leading-relaxed">
-          There are currently <b>82 Korean-language calculators</b> and <b>10 Korean guides</b>,
+          There are currently <b>82 Korean-language calculators</b> and <b>15 Korean guides</b>,
           plus <b>46 English calculators</b> and <b>30 English guides</b> for foreign residents —
-          168 pages in total, with more added over time.
+          173 pages in total, with more added over time.
         </p>
       </Card>
 

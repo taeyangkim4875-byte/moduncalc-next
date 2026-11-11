@@ -7,8 +7,8 @@ import { BreadcrumbJsonLd } from '@/components/JsonLd';
 import { SeoSection, SeoLink } from '@/components/SeoContent';
 
 export const metadata: Metadata = {
-  title: '가이드 - 연봉·4대보험·전세·연말정산·퇴직금 완전 정리',
-  description: '연봉 실수령액, 4대보험, 전세 계약, 연말정산, 퇴직금, 최저시급, 대출 상환, 주식 세금까지. 계산기만으로는 알기 어려운 배경을 정리한 가이드 10편.',
+  title: '가이드 - 연봉·4대보험·전세·연말정산·퇴직금·전기차 완전 정리',
+  description: '연봉 실수령액, 4대보험, 전세 계약, 연말정산, 퇴직금, 최저시급, 대출 상환, 주식 세금, 전기차 충전비와 유지비까지. 계산기만으로는 알기 어려운 배경을 정리한 가이드 15편.',
   alternates: { canonical: 'https://moduncalc.com/guide' },
   openGraph: {
     ...KO_OPEN_GRAPH,
@@ -61,6 +61,17 @@ const SECTIONS: { title: string; note: string; items: GuideItem[] }[] = [
       { href: '/guide/fire-retirement', emoji: '🔥', title: 'FIRE 조기 은퇴 가이드', desc: '4% 법칙, 필요 자산 규모, 국민연금 개시 전까지의 공백을 메우는 방법.', reads: '은퇴를 계획할 때' },
     ],
   },
+  {
+    title: '🚗 자동차와 전기차',
+    note: '전기차는 차값보다 충전 환경이 비용을 가릅니다. 항목별로 계산해 정리했습니다.',
+    items: [
+      { href: '/guide/ev-charging-cost', emoji: '🔌', title: '전기차 충전 요금 완전 정리', desc: '완속·공용·급속 단가별 100km 비용과, 집 충전이 가정용 전기요금 누진 구간에 미치는 영향.', reads: '전기차 구매를 고민할 때' },
+      { href: '/guide/ev-running-cost', emoji: '🚙', title: '전기차 5년 유지비 비교', desc: '연료비·자동차세·정비비를 항목별로 계산한 내연차 비교와, 차값 차이를 회수하는 기간.', reads: '내연차와 비교할 때' },
+      { href: '/guide/ev-subsidy', emoji: '💵', title: '전기차 보조금 계산 방법', desc: '국고와 지자체 이중 구조, 계산 순서, 공고 확인 경로와 신청에서 놓치기 쉬운 조건.', reads: '계약 전' },
+      { href: '/guide/ev-winter', emoji: '❄️', title: '전기차 겨울 전비', desc: '전비가 20~30% 떨어지는 두 가지 이유와 비용 차이, 주행거리 손실을 줄이는 방법.', reads: '첫 겨울을 앞두고' },
+      { href: '/guide/ev-resale', emoji: '🔄', title: '전기차 중고 가격과 배터리 보증', desc: '중고값이 빨리 떨어지는 구조적 이유, 남은 보증 계산법, 계약 전 확인할 것들.', reads: '중고 거래 전' },
+    ],
+  },
 ];
 
 export default function Page() {
@@ -111,7 +122,7 @@ export default function Page() {
 
       <SeoSection title="영어 가이드도 있습니다">
         <p>
-          한국에 사는 외국인을 위한 영어 가이드 28편을 별도로 운영하고 있습니다.
+          한국에 사는 외국인을 위한 영어 가이드 30편을 별도로 운영하고 있습니다.
           비자, 외국인등록증(ARC), 건강보험 가입, 연금 반환일시금, 전세·월세 계약, 운전면허 전환 등
           한국 거주 초기에 필요한 내용을 다룹니다.
           <SeoLink href="/en/guide">영문 가이드 목록</SeoLink>에서 전체를 훑어보거나,
