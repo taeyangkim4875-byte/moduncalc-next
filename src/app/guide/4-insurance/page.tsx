@@ -163,6 +163,47 @@ export default function FourInsuranceGuidePage() {
       </Card>
 
       <Card>
+        <h2 className="text-base font-extrabold mb-3">회사가 내는 금액도 당신의 인건비입니다</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          4대보험은 근로자와 사업주가 나눠 부담합니다. 국민연금·건강보험·장기요양보험은
+          <b>양쪽이 같은 금액</b>을 내고, 고용보험은 사업주 부담이 더 크며, 산재보험은
+          사업주가 전액 부담합니다.
+        </p>
+        <div className="bg-[var(--bg)] rounded-xl p-3.5 flex flex-col gap-1 text-[13px] text-[var(--ink)] leading-relaxed my-3">
+          <div>월급 300만원, 양쪽이 동률인 3개 항목만 계산</div>
+          <div>국민연금 142,500 + 건강보험 107,850 + 장기요양 14,171</div>
+          <div>= 회사가 추가로 부담하는 월 264,521원</div>
+          <div>연간 약 317만원 (고용보험·산재보험 별도)</div>
+        </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          즉 월급 300만원을 받는 사람의 <b>실제 인건비는 300만원이 아닙니다.</b> 회사 입장에서는
+          월 265만원 이상을 추가로 쓰고 있고, 퇴직급여 적립(월급의 약 8.3%)까지 더하면
+          더 커집니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          연봉 협상에서 이 구조를 알아두면 도움이 됩니다. &ldquo;연봉 인상 300만원&rdquo;은 회사가
+          실제로는 그보다 더 쓴다는 뜻이고, 반대로 비과세 항목(식대 등)을 늘리는 방식은
+          양쪽 모두의 부담을 줄입니다.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">4월 급여에서 건강보험료가 더 빠지는 이유</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          건강보험료는 매달 <b>전년도 보수를 기준으로 임시 부과</b>됩니다. 그래서 연중에 급여가
+          오르거나 상여를 받았다면 실제 내야 할 금액보다 적게 낸 상태가 되고, 그 차액을
+          <b>이듬해 4월에 정산</b>합니다. 승진이나 연봉 인상이 있었던 해 다음 4월에
+          급여가 유난히 적게 들어오는 것이 이 때문입니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          반대로 급여가 줄었거나 무급휴직이 있었다면 환급을 받습니다. 정산액이 크면 분할 납부를
+          신청할 수 있으니, 금액이 부담스러우면 회사 인사담당자나 건강보험공단에 문의하세요.
+          소득세 연말정산과는 <b>시점도 기준도 다른 별개의 정산</b>이라는 점을 알아두면
+          명세서를 읽기 편합니다.
+        </p>
+      </Card>
+
+      <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="space-y-4">
           {faqItems.map((item, i) => (

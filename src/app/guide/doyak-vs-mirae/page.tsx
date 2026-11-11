@@ -240,6 +240,45 @@ export default function DoyakVsMiraeGuidePage() {
       </Card>
 
       <Card>
+        <h2 className="text-base font-extrabold mb-3">비과세 혜택이 금액으로 얼마인가</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          두 상품의 공통 장점은 <b>이자소득세 15.4% 면제</b>입니다. 일반 적금은 이자를 받을 때
+          소득세 14%와 지방소득세 1.4%가 원천징수되는데, 그만큼을 그대로 더 받는 구조입니다.
+          정부기여금과 별개로 계산되는 혜택입니다.
+        </p>
+        <div className="bg-[var(--bg)] rounded-xl p-3.5 flex flex-col gap-1 text-[13px] text-[var(--ink)] leading-relaxed my-3">
+          <div>월 70만원 × 36개월, 연 5% 단리 가정</div>
+          <div>원금 25,200,000원 · 이자 1,942,500원</div>
+          <div>일반과세라면 세금 299,145원</div>
+          <div>비과세이므로 그 299,145원을 그대로 수령</div>
+        </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          금리가 같다면 비과세 상품이 약 0.8%p 높은 금리와 같은 효과를 냅니다. 그래서 일반 적금의
+          표시 금리가 조금 더 높아 보여도, <b>세후로 비교하면 뒤집히는 경우</b>가 많습니다.
+          상품을 비교할 때는 표시 금리가 아니라 만기 실수령액으로 봐야 합니다.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">중도해지 위험을 먼저 계산하세요</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          두 상품 모두 <b>만기까지 유지해야 혜택이 온전합니다.</b> 중도해지하면 정부기여금과
+          비과세 혜택을 받지 못하거나 일부만 받게 되고, 약정금리 대신 중도해지이율이 적용됩니다.
+          3년은 짧지 않은 기간이라 이 위험이 실제로 발생합니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          그래서 납입액을 정할 때 <b>상한까지 넣는 것이 항상 최선은 아닙니다.</b> 월 70만원을
+          넣다가 2년 차에 해지하는 것보다, 월 40만원으로 3년을 완주하는 쪽이 받는 금액이 더 클 수
+          있습니다. 생활비에서 빼도 흔들리지 않는 금액을 기준으로 잡으세요.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          해지 사유 중 일부는 <b>특별중도해지</b>로 인정되어 혜택을 유지할 수 있습니다. 인정 범위는
+          상품별로 다르고 개정되므로, 가입 전에 해당 은행 상품설명서와 서민금융진흥원 안내에서
+          직접 확인하시기 바랍니다.
+        </p>
+      </Card>
+
+      <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="space-y-4">
           {faqItems.map((item, i) => (

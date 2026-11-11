@@ -201,6 +201,30 @@ export default function JeonseGuidePage() {
       </Card>
 
       <Card>
+        <h2 className="text-base font-extrabold mb-3">전세대출 이자와 월세, 어느 쪽이 싼가</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          전세가 유리한지는 제도의 문제가 아니라 <b>이자와 월세의 비교</b>입니다. 전세대출을 끼고
+          들어간다면 매달 내는 것은 월세가 아니라 이자이고, 그 둘을 나란히 놓으면 답이 나옵니다.
+        </p>
+        <div className="bg-[var(--bg)] rounded-xl p-3.5 flex flex-col gap-1 text-[13px] text-[var(--ink)] leading-relaxed my-3">
+          <div>전세대출 2억 @ 연 4% → 월 이자 666,667원</div>
+          <div>전세대출 2억 @ 연 5% → 월 이자 833,333원</div>
+          <div>전세 3억을 전액 월세로 전환(4.5%) → 월 1,125,000원</div>
+        </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          이 경우 전세대출 이자가 월세보다 월 30~45만원 적습니다. <b>대출금리가 전환율보다 낮으면
+          전세가 유리</b>하다는 것이 핵심이고, 반대로 금리가 전환율을 넘어서면 월세가 싸집니다.
+          2022년 이후 금리가 오르면서 월세가 늘어난 이유가 이것입니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          다만 숫자만으로 끝나지 않습니다. 전세는 <b>보증금 전액이 묶이는 위험</b>을 안고,
+          월세는 그 목돈을 다른 곳에 쓸 수 있습니다. 보증금을 돌려받지 못할 가능성까지 넣으면
+          이자 차이 몇십만원보다 그 위험이 더 클 수 있습니다. 위의 보증금 보호 장치를
+          반드시 함께 확인하세요.
+        </p>
+      </Card>
+
+      <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="space-y-4">
           {faqItems.map((item, i) => (

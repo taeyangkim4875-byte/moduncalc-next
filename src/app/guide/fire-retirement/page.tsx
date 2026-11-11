@@ -193,6 +193,31 @@ export default function Page() {
       </Card>
 
       <Card>
+        <h2 className="text-base font-extrabold mb-3">같은 수익률인데 순서 때문에 결과가 달라집니다</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          4% 룰에서 가장 과소평가되는 위험이 <b>수익률의 순서</b>입니다. 평균 수익률이 같아도
+          하락이 은퇴 직후에 오는지 나중에 오는지에 따라 결과가 크게 달라집니다. 인출을 시작한
+          뒤에는 떨어진 자산에서 돈을 빼게 되어 회복할 원금 자체가 줄어들기 때문입니다.
+        </p>
+        <div className="bg-[var(--bg)] rounded-xl p-3.5 flex flex-col gap-1 text-[13px] text-[var(--ink)] leading-relaxed my-3">
+          <div>자산 6억, 매년 2,400만원 인출, 3년간</div>
+          <div>하락 먼저 (−30% / +20% / +20%) → 5억 1,725만원</div>
+          <div>상승 먼저 (+20% / +20% / −30%) → 5억 4,365만원</div>
+          <div>수익률 구성은 같은데 2,640만원 차이</div>
+        </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          기간이 길어지면 이 격차는 더 벌어집니다. 그래서 은퇴 직후 몇 년이
+          <b>전체 계획의 성패를 가르는 구간</b>입니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          대응은 두 가지입니다. 하나는 <b>현금성 자산을 2~3년치 생활비만큼 따로 두는 것</b>입니다.
+          하락장에서 주식을 팔지 않고 현금으로 버티면 원금이 깎이지 않습니다. 다른 하나는
+          <b>인출률을 상황에 따라 조절하는 것</b>입니다. 하락한 해에는 인출을 줄이고 회복기에
+          늘리는 방식이 고정 4%보다 자산 수명을 길게 가져갑니다.
+        </p>
+      </Card>
+
+      <Card>
         <h2 className="text-base font-extrabold mb-3">FIRE 시뮬레이션 해보기</h2>
         <p className="text-sm leading-relaxed text-[var(--sub)] mb-4">
           현재 소득, 지출, 자산 정보를 입력하면 경제적 자유 달성 시기를 시뮬레이션할 수 있습니다.

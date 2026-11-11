@@ -211,6 +211,46 @@ export default function SalaryNetPayGuidePage() {
       </Card>
 
       <Card>
+        <h2 className="text-base font-extrabold mb-3">매월 떼는 소득세는 확정액이 아닙니다</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          급여명세서의 소득세는 <b>간이세액표에 따른 예납</b>입니다. 국세청이 연봉과 부양가족 수만으로
+          대략 계산해 미리 걷는 금액이고, 실제 세액은 이듬해 <b>연말정산</b>에서 확정됩니다. 그래서
+          매월 실수령액이 같아도 2월에 환급을 받거나 추가로 낼 수 있습니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          환급이 생기는 이유는 간이세액표가 의료비·교육비·기부금·연금저축 같은 개별 공제를 모르기
+          때문입니다. 반대로 연중에 부양가족이 줄었거나 상여가 많았다면 추가 납부가 됩니다.
+          <b>환급을 많이 받는 게 이득인 것도 아닙니다</b> — 그만큼 1년 동안 더 많이 떼였다는 뜻이고,
+          그 돈을 연중에 쓰지 못했을 뿐입니다.
+        </p>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          실수령액을 비교할 때는 이 점을 감안해야 합니다. 같은 연봉이라도 공제 항목이 많은 사람은
+          연말정산 후 실질 실수령액이 더 높아집니다. 월 단위 숫자만 보고 연봉을 비교하면
+          그 차이가 보이지 않습니다.
+        </p>
+      </Card>
+
+      <Card>
+        <h2 className="text-base font-extrabold mb-3">고연봉일수록 국민연금 부담률이 떨어집니다</h2>
+        <p className="text-sm text-[#4E5968] leading-relaxed mb-3">
+          국민연금은 <b>기준소득월액 상한 659만원</b>까지만 부과됩니다. 월 소득이 그보다 높아도
+          보험료는 313,025원에서 더 올라가지 않습니다. 건강보험은 상한이 없어 소득에 비례해
+          계속 늘어나는 것과 다릅니다.
+        </p>
+        <div className="bg-[var(--bg)] rounded-xl p-3.5 flex flex-col gap-1 text-[13px] text-[var(--ink)] leading-relaxed my-3">
+          <div>월 소득 300만원 → 142,500원 (실부담률 4.75%)</div>
+          <div>월 소득 659만원 → 313,025원 (실부담률 4.75%)</div>
+          <div>월 소득 1,000만원 → 313,025원 (실부담률 3.13%)</div>
+          <div>월 소득 1,500만원 → 313,025원 (실부담률 2.09%)</div>
+        </div>
+        <p className="text-sm text-[#4E5968] leading-relaxed">
+          그래서 연봉이 올라갈수록 실수령액 비율이 조금씩 개선되는 구간이 생깁니다. 다만 소득세는
+          누진이라 전체적으로는 공제율이 올라갑니다. 상한은 매년 7월에 조정되므로
+          연중에 보험료가 바뀔 수 있습니다.
+        </p>
+      </Card>
+
+      <Card>
         <h2 className="text-base font-extrabold mb-3">자주 묻는 질문</h2>
         <div className="space-y-4">
           {faqItems.map((item, i) => (
