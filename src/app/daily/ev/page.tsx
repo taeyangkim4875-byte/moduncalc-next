@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoBarChart, SeoSampleIO } from "@/components/SeoChart";
 import ShareButtons from "@/components/ShareButtons";
 import EvCalc from "./EvCalc";
 
@@ -41,6 +42,32 @@ export default function Page() {
       <EvCalc />
       <ShareButtons title="전기차 전비 계산 결과" />
       <AdFitBanner slot="middle" />
+
+      <SeoSampleIO
+        inputs={[
+          { label: '주행 거리', value: '300 km' },
+          { label: '충전량', value: '54.5 kWh' },
+          { label: '충전 단가', value: '350원/kWh (집 완속)' },
+        ]}
+        outputs={[
+          { label: '전비', value: '5.5 km/kWh' },
+          { label: '충전비', value: '19,091원' },
+          { label: '100km당', value: '6,364원' },
+        ]}
+        note="같은 300km 를 연비 12km/L 내연차로 가면 1,650원/L 기준 약 41,250원입니다."
+      />
+
+      <SeoBarChart
+        title="100km 주행 비용 비교"
+        caption="전비 5.5km/kWh, 내연차는 연비 12km/L·유가 1,650원/L 기준입니다."
+        unit="원"
+        items={[
+          { label: '집 완속 350원', value: 6364, highlight: true },
+          { label: '공용 완속 400원', value: 7273 },
+          { label: '급속 500원', value: 9091 },
+          { label: '내연차 (휘발유)', value: 13750 },
+        ]}
+      />
 
       <SeoSection title="전비와 연비, 같은 개념입니다">
         <p>

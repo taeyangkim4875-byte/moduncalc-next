@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoBarChart, SeoSampleIO } from "@/components/SeoChart";
 import PyeongCalc from "./PyeongCalc";
 
 export const metadata: Metadata = {
@@ -26,6 +27,27 @@ export default function Page() {
       <FaqJsonLd items={[{q:"전용면적과 공급면적의 차이는?",a:"전용면적은 실제 거주 공간이고, 공급면적은 전용면적에 복도·계단 등 주거공용면적을 더한 것입니다. 전용면적은 공급면적의 약 70~80%입니다."},{q:"1평은 몇 제곱미터인가요?",a:"1평은 정확히 3.3058㎡입니다. 간편하게 3.3㎡로 계산하기도 합니다."},{q:"24평 아파트의 실제 크기는?",a:"24평형은 공급면적 79㎡, 전용면적 약 59㎡입니다. 방 2~3개, 화장실 1~2개 규모입니다."}]} />
       <PyeongCalc />
       <AdFitBanner slot="middle" />
+
+      <SeoSampleIO
+        inputs={[{ label: '면적', value: '33평' }]}
+        outputs={[
+          { label: '제곱미터', value: '109.1㎡' },
+          { label: '전용면적 기준', value: '약 84㎡' },
+        ]}
+        note="1평은 정확히 3.3058㎡ 입니다. 아파트 광고의 '33평형'은 공급면적 109㎡ 를 뜻하고, 실제 전용면적은 84㎡ 안팎입니다."
+      />
+
+      <SeoBarChart
+        title="평형별 제곱미터 환산"
+        caption="공급면적 기준입니다. 전용면적은 통상 이보다 20~25% 작습니다."
+        unit="㎡"
+        items={[
+          { label: '20평', value: 66.1, note: '원룸·소형' },
+          { label: '25평', value: 82.6, note: '신혼·2~3인' },
+          { label: '33평', value: 109.1, note: '가장 인기 평형', highlight: true },
+          { label: '43평', value: 142.1, note: '방 4개 대형' },
+        ]}
+      />
 
       <SeoSection title="평과 제곱미터, 왜 두 단위를 함께 쓸까">
         <p>

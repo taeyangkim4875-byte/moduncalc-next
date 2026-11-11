@@ -3,6 +3,7 @@ import { KO_OPEN_GRAPH } from "@/app/sharedMetadata";
 import PageLayout from "@/components/PageLayout";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoBarChart, SeoSampleIO } from "@/components/SeoChart";
 import ElectricCalc from "./ElectricCalc";
 import ShareButtons from '@/components/ShareButtons';
 
@@ -26,6 +27,31 @@ export default function Page() {
       <FaqJsonLd items={[{q:"하계 요금이 완화되는 이유는 무엇인가요?",a:"여름철 냉방으로 전력 사용량이 급증하므로, 정부가 가계 부담 완화를 위해 하계 구간을 완화합니다."},{q:"전기요금을 절약하는 방법은?",a:"대기전력 차단, 에어컨 적정 온도(26도) 설정, LED 조명 교체, 에너지 효율 1등급 가전 사용이 효과적입니다."},{q:"누진제는 모든 가정에 적용되나요?",a:"주거용(주택용) 전력에만 적용됩니다. 상업·산업용은 별도 요금체계입니다."}]} />
       <ElectricCalc />
       <ShareButtons title="전기요금 계산 결과" />
+
+      <SeoSampleIO
+        inputs={[
+          { label: '월 사용량', value: '350 kWh' },
+          { label: '계절', value: '일반 (봄·가을)' },
+        ]}
+        outputs={[
+          { label: '기본요금', value: '1,600원' },
+          { label: '전력량요금', value: '56,190원' },
+          { label: '부가세 10% + 전력기금 3.7%', value: '7,917원' },
+          { label: '최종 청구액', value: '65,707원' },
+        ]}
+        note="200kWh 까지는 120원, 넘는 150kWh 는 214.6원으로 계산됩니다. 전체에 높은 단가가 적용되는 것이 아닙니다."
+      />
+
+      <SeoBarChart
+        title="누진 구간별 kWh당 단가"
+        caption="구간이 올라가면 그 구간부터 단가가 바뀝니다. 3구간은 1구간의 2.6배입니다."
+        unit="원"
+        items={[
+          { label: '1구간 ~200kWh', value: 120, note: '기본요금 910원' },
+          { label: '2구간 ~400kWh', value: 214.6, note: '기본요금 1,600원' },
+          { label: '3구간 400kWh+', value: 307.3, note: '기본요금 7,300원', highlight: true },
+        ]}
+      />
 
       <SeoSection title="2026년 전기요금 누진제, 구간별로 이렇게 다릅니다">
         <p>

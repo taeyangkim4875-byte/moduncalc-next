@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoFormula, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoBarChart, SeoSampleIO } from "@/components/SeoChart";
 import FuelCalc from "./FuelCalc";
 
 export const metadata: Metadata = {
@@ -32,6 +33,32 @@ export default function Page() {
       ]} />
       <FuelCalc />
       <AdFitBanner slot="middle" />
+
+      <SeoSampleIO
+        inputs={[
+          { label: '주행 거리', value: '500 km' },
+          { label: '주유량', value: '45 L' },
+          { label: '유가', value: '1,650원/L' },
+        ]}
+        outputs={[
+          { label: '실연비', value: '11.1 km/L' },
+          { label: '100km당 유류비', value: '14,865원' },
+          { label: '500km 주유비', value: '74,250원' },
+        ]}
+        note="만탱 후 트립미터를 0 으로 맞추고 다음 만탱 때 주행거리와 주유량을 넣으면, 계기판 평균 연비보다 정확합니다."
+      />
+
+      <SeoBarChart
+        title="연비별 100km 유류비"
+        caption="유가 1,650원/L 기준. 연비가 8에서 16으로 두 배가 되면 비용은 절반이 됩니다."
+        unit="원"
+        items={[
+          { label: '8 km/L', value: 20625, note: '대형 SUV·구형' },
+          { label: '12 km/L', value: 13750, note: '중형 세단', highlight: true },
+          { label: '16 km/L', value: 10313, note: '준중형·하이브리드' },
+          { label: '20 km/L', value: 8250, note: '경형·하이브리드' },
+        ]}
+      />
 
       <SeoSection title="내 차 실연비, 직접 측정하는 법">
         <p>

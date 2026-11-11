@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoSource } from "@/components/SeoContent";
+import { SeoBarChart, SeoSampleIO } from "@/components/SeoChart";
 import ConvertCalc from "./ConvertCalc";
 export const metadata: Metadata = { title: "전월세 전환 계산기 - 전세↔월세 변환", description: "전세 3억이면 월세로 얼마? 법정전환율 기준으로 전세↔월세를 바로 변환합니다. 보증금을 줄이면 월세가 얼마나 오르는지, 계약서 체크포인트까지 확인하세요.", alternates: { canonical: "https://moduncalc.com/realestate/convert" },
   openGraph: {
@@ -15,6 +16,30 @@ export const metadata: Metadata = { title: "전월세 전환 계산기 - 전세�
 export default function Page() { return (<PageLayout eyebrow="2026 법정전환율 기준" title="전월세 전환 계산기" description="전세와 월세를 법정전환율 기준으로 전환해 드려요.">
       <BreadcrumbJsonLd items={[{ name: '홈', href: '/' }, { name: '부동산', href: '/realestate' }, { name: '전월세 전환', href: '/realestate/convert' }]} /><CalculatorJsonLd name="전월세 전환 계산기" description="전세와 월세를 법정전환율 기준으로 전환해 드려요." url="https://moduncalc.com/realestate/convert" /><FaqJsonLd items={[{q:"법정전환율이란 무엇인가요?",a:"전세를 월세로 전환할 때 적용하는 법정 상한 이율입니다. 기준금리+2%와 연 10% 중 낮은 값."},{q:"임대인이 마음대로 전환율을 올릴 수 있나요?",a:"법정전환율을 초과할 수 없습니다."},{q:"전세와 월세 중 어느 쪽이 유리한가요?",a:"금리가 높을수록 월세가, 낮을수록 전세가 유리합니다. 목돈 운용 능력에 따라 다릅니다."}]} /><ConvertCalc />
       <AdFitBanner slot="middle" />
+
+      <SeoSampleIO
+        inputs={[
+          { label: '전세 보증금', value: '3억원' },
+          { label: '전환율', value: '4.5%' },
+        ]}
+        outputs={[
+          { label: '전액 월세 전환 시', value: '월 112.5만원' },
+          { label: '보증금 1억 남길 때', value: '월 75만원' },
+        ]}
+        note="법정 전환율은 기준금리 + 2% 와 연 10% 중 낮은 값이 상한입니다. 실제 계약 전환율은 집주인과 협의로 정해집니다."
+      />
+
+      <SeoBarChart
+        title="전세 보증금별 전액 월세 전환액"
+        caption="전환율 4.5% 기준. 보증금을 남기면 그만큼 월세가 줄어듭니다."
+        unit="만원"
+        items={[
+          { label: '전세 2억', value: 75 },
+          { label: '전세 3억', value: 112.5, highlight: true },
+          { label: '전세 4억', value: 150 },
+          { label: '전세 5억', value: 187.5 },
+        ]}
+      />
 
       <SeoSection title="전월세 전환, 계산 한 번 잘못하면 수십만원 차이">
         <p>

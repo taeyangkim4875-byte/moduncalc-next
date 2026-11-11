@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import AdFitBanner from "@/components/AdFitBanner";
 import { FaqJsonLd, CalculatorJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { SeoSection, SeoFaq, SeoList, SeoLink } from "@/components/SeoContent";
+import { SeoBarChart, SeoSampleIO } from "@/components/SeoChart";
 import LiveCounter from "./LiveCounter";
 import ShareButtons from '@/components/ShareButtons';
 export const metadata: Metadata = { title: "월급 카운터 - 지금 이 순간 벌고 있는 돈", description: "지금 이 순간에도 돈을 벌고 있습니다. 연봉을 넣으면 초당·분당 버는 돈을 실시간으로 보여드려요. 연봉별 초당 금액 비교와 회의 비용 환산까지.", alternates: { canonical: "https://moduncalc.com/salary/live" },
@@ -22,6 +23,29 @@ export default function Page() {
       <LiveCounter />
       <ShareButtons title="월급 카운터" />
       <AdFitBanner slot="middle" />
+
+      <SeoSampleIO
+        inputs={[{ label: '세전 연봉', value: '4,500만원' }]}
+        outputs={[
+          { label: '초당', value: '6.2원' },
+          { label: '분당', value: '372원' },
+          { label: '시간당', value: '22,321원' },
+          { label: '하루 (8시간)', value: '178,571원' },
+        ]}
+        note="연 252 근무일, 일 8시간 기준입니다. 주말과 공휴일을 뺀 평균 근무일수이고 회사마다 다를 수 있습니다."
+      />
+
+      <SeoBarChart
+        title="연봉별 초당 버는 돈"
+        caption="연 252 근무일 · 일 8시간 기준. 세전입니다."
+        unit="원"
+        items={[
+          { label: '연봉 3,000만원', value: 4.1 },
+          { label: '연봉 4,500만원', value: 6.2, highlight: true },
+          { label: '연봉 6,000만원', value: 8.3 },
+          { label: '연봉 1억원', value: 13.8 },
+        ]}
+      />
 
       <SeoSection title="화장실 가는 동안에도 돈을 벌고 있어요">
         <p>연봉 4,000만원이면 초당 약 5.5원을 벌고 있습니다. 화장실 다녀오는 5분 동안 1,650원, 점심시간 1시간이면 19,800원이에요. 솔직히 이렇게 보면 야근할 때 위로가 좀 됩니다.</p>
